@@ -1,0 +1,6 @@
+framework module NRSimplePlist {
+  umbrella header "NRSimplePlist-umbrella.h"
+
+  export *
+  module * { export * }
+}

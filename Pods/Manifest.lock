@@ -1,0 +1,46 @@
+PODS:
+  - Cartography (0.6.0)
+  - Crashlytics (3.4.0):
+    - Fabric (~> 1.6.0)
+  - Fabric (1.6.0):
+    - Fabric/Base (= 1.6.0)
+  - Fabric/Base (1.6.0)
+  - NRSimplePlist (1.0)
+  - SVProgressHUD (HEAD based on 2.0-beta)
+  - SwiftyJSON (2.3.1)
+  - SwiftyUserDefaults (2.0.0)
+
+DEPENDENCIES:
+  - Cartography (~> 0.6)
+  - Crashlytics
+  - Fabric
+  - NRSimplePlist (from `https://github.com/broderboy/NRSimplePlist.git`, branch `swift2`)
+  - SVProgressHUD (HEAD)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+  - SwiftyUserDefaults
+
+EXTERNAL SOURCES:
+  NRSimplePlist:
+    :branch: swift2
+    :git: https://github.com/broderboy/NRSimplePlist.git
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  NRSimplePlist:
+    :commit: 9497a4efbf6460ea2384b5f2680009621e25b3ce
+    :git: https://github.com/broderboy/NRSimplePlist.git
+  SwiftyJSON:
+    :commit: ece271ab33839d11c2153d71fb59c53545132cf9
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Cartography: 70af183a248547694a8cfaa6b989cb7e04589985
+  Crashlytics: 1ee87895c37472eb3f01f409ea1654a464d2f8d4
+  Fabric: d737eda3a26ac940a5430230eedb35f16b226131
+  NRSimplePlist: c27d95cb456281528885b3c48e15826cf12a970b
+  SVProgressHUD: c83337f10ed32d701c423d519059a249973c8662
+  SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
+  SwiftyUserDefaults: 1266e9734c68bcfbac8294ee84173dc8ba6db312
+
+COCOAPODS: 0.39.0
