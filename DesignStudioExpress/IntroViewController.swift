@@ -9,35 +9,17 @@
 import UIKit
 
 class IntroViewController: UIViewController {
-    @IBOutlet weak var homeButton: UIButton!
-    @IBOutlet weak var faq: UIButton!
-
-    let homeButtonColor = UIColor(red:1.00, green:0.48, blue:0.40, alpha:1.0)
-    let faqButtonColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
-    let buttonRadius = CGFloat(3)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-/*
-        // change the button designs
-        homeButton.layer.cornerRadius = buttonRadius
-        homeButton.layer.borderWidth = 1
-        homeButton.layer.borderColor = homeButtonColor.CGColor
-        homeButton.backgroundColor = homeButtonColor
-
-        faq.layer.cornerRadius = buttonRadius
-        faq.layer.borderWidth = 1
-        faq.layer.borderColor = faqButtonColor.CGColor
-        faq.backgroundColor = faqButtonColor*/
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
+    }   
 
     /*
     // MARK: - Navigation

@@ -76,10 +76,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <connections>
-                        <outlet property="faq" destination="jMB-pt-1Ro" id="z1C-gh-qjS"/>
-                        <outlet property="homeButton" destination="32R-dO-Hca" id="qnN-uQ-c3d"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r89-ai-ONI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
