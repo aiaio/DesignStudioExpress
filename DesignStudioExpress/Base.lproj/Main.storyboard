@@ -203,7 +203,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="error.png" id="kpS-rw-XS5"/>
+                    <tabBarItem key="tabBarItem" title="" id="kpS-rw-XS5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DO6-gC-paA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,7 +229,4 @@
             <point key="canvasLocation" x="1485" y="2011"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="error.png" width="28" height="28"/>
-    </resources>
 </document>

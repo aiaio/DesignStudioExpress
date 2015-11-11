@@ -136,7 +136,7 @@
 			children = (
 				E4BFF0071BF3B33900E4255A /* Intro.mp4 */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E4BFF00D1BF3BF2100E4255A /* Views */ = {
@@ -146,7 +146,7 @@
 				E421C4361BF279FE003F9D8A /* IntroViewController.swift */,
 				E421C4171BF164AD003F9D8A /* ViewController.swift */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		E4BFF00F1BF3BF3300E4255A /* Subviews */ = {
@@ -156,7 +156,7 @@
 				E45128F71BF29E09002AFC8A /* UIButtonRed.swift */,
 				E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */,
 			);
-			name = Subviews;
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
