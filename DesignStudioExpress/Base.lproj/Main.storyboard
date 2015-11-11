@@ -39,7 +39,7 @@
                                 <rect key="frame" x="312" y="535" width="268" height="30"/>
                                 <state key="normal" title="CREATE"/>
                                 <connections>
-                                    <segue destination="alx-4r-Kum" kind="show" id="fkA-8A-Adk"/>
+                                    <segue destination="alx-4r-Kum" kind="presentation" modalTransitionStyle="crossDissolve" id="fkA-8A-Adk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="85" y="784"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="B3E-Cj-aJ5">
             <objects>
-                <tabBarController id="alx-4r-Kum" sceneMemberID="viewController">
+                <tabBarController id="alx-4r-Kum" customClass="TabBarViewController" customModule="DesignStudioExpress" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="fp2-yq-fFR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

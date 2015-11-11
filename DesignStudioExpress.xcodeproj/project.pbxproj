@@ -15,6 +15,7 @@
 		E421C4201BF164AD003F9D8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E421C41E1BF164AD003F9D8A /* LaunchScreen.storyboard */; };
 		E421C42B1BF164AD003F9D8A /* DesignStudioExpressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E421C42A1BF164AD003F9D8A /* DesignStudioExpressTests.swift */; };
 		E421C4371BF279FE003F9D8A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E421C4361BF279FE003F9D8A /* IntroViewController.swift */; };
+		E429AF4E1BF3F65400AE4DA7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF4D1BF3F65400AE4DA7 /* TabBarViewController.swift */; };
 		E45128F81BF29E09002AFC8A /* UIButtonRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45128F71BF29E09002AFC8A /* UIButtonRed.swift */; };
 		E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */; };
 		E4BFF0081BF3B33900E4255A /* Intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E4BFF0071BF3B33900E4255A /* Intro.mp4 */; };
@@ -46,6 +47,7 @@
 		E421C42A1BF164AD003F9D8A /* DesignStudioExpressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignStudioExpressTests.swift; sourceTree = "<group>"; };
 		E421C42C1BF164AD003F9D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E421C4361BF279FE003F9D8A /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		E429AF4D1BF3F65400AE4DA7 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E45128F71BF29E09002AFC8A /* UIButtonRed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonRed.swift; sourceTree = "<group>"; };
 		E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLightBlue.swift; sourceTree = "<group>"; };
 		E4BFF0071BF3B33900E4255A /* Intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Intro.mp4; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				E4BFF00F1BF3BF3300E4255A /* Subviews */,
 				E421C4361BF279FE003F9D8A /* IntroViewController.swift */,
 				E421C4171BF164AD003F9D8A /* ViewController.swift */,
+				E429AF4D1BF3F65400AE4DA7 /* TabBarViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				E421C4161BF164AD003F9D8A /* AppDelegate.swift in Sources */,
 				E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */,
 				E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */,
+				E429AF4E1BF3F65400AE4DA7 /* TabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
