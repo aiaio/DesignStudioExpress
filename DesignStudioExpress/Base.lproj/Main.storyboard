@@ -43,7 +43,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.46593167489035076" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="32R-dO-Hca" firstAttribute="centerY" secondItem="jMB-pt-1Ro" secondAttribute="centerY" id="4YX-j3-Cly"/>
                             <constraint firstItem="jMB-pt-1Ro" firstAttribute="height" secondItem="32R-dO-Hca" secondAttribute="height" id="4rB-eN-88M"/>
@@ -76,6 +75,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="createButton" destination="32R-dO-Hca" id="flW-eo-2XZ"/>
+                        <outlet property="faqButton" destination="jMB-pt-1Ro" id="lTf-tT-eUk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r89-ai-ONI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,7 +190,7 @@
             </objects>
             <point key="canvasLocation" x="1709" y="-204"/>
         </scene>
-        <!--List-->
+        <!--View Controller-->
         <scene sceneID="0Ia-VA-QkO">
             <objects>
                 <viewController id="gKl-x4-5vE" sceneMemberID="viewController">
@@ -200,7 +203,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="List" id="kpS-rw-XS5"/>
+                    <tabBarItem key="tabBarItem" title="" id="kpS-rw-XS5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DO6-gC-paA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

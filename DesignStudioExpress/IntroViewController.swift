@@ -7,28 +7,68 @@
 //
 
 import UIKit
+import AVFoundation
+import Crashlytics
 
 class IntroViewController: UIViewController {
+    @IBOutlet weak var createButton: UIButtonRed!
+    @IBOutlet weak var faqButton: UIButtonLightBlue!
+    
+    lazy var playerLayer:AVPlayerLayer = self.initVideoPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        // add video player
+        self.view.layer.addSublayer(self.playerLayer)
+        
+        // bring buttons on top of the video
+        self.view.bringSubviewToFront(createButton)
+        self.view.bringSubviewToFront(faqButton)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }   
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
-
+    
+    override func viewWillDisappear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func initVideoPlayer() -> AVPlayerLayer {
+        let videoBundle = NSBundle.mainBundle().pathForResource("Intro", ofType: "mp4")
+        let player = AVPlayer(URL:  NSURL(fileURLWithPath: videoBundle!))
+        player.muted = true
+        player.allowsExternalPlayback = false
+        player.appliesMediaSelectionCriteriaAutomatically = false
+        
+        var error:NSError?
+        
+        // Don't cut off users audio (if listening to music etc.)
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+        } catch let e as NSError {
+            error = e
+        } catch {
+            fatalError()
+        }
+        if error != nil {
+            CLSLogv("Error setting the AVAudioSession %@", getVaList([(error?.description)!]));
+        }
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.frame
+        playerLayer.videoGravity = "AVLayerVideoGravityResizeAspectFill"
+        playerLayer.backgroundColor = UIColor.blackColor().CGColor
+        player.play()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"playerDidReachEnd", name:AVPlayerItemDidPlayToEndTimeNotification, object:nil)
+        return playerLayer
+    }
+    
+    func playerDidReachEnd(){
+       self.playerLayer.player!.seekToTime(kCMTimeZero)
+       self.playerLayer.player!.play()
+    }
 }

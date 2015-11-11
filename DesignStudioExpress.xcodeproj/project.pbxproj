@@ -17,6 +17,7 @@
 		E421C4371BF279FE003F9D8A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E421C4361BF279FE003F9D8A /* IntroViewController.swift */; };
 		E45128F81BF29E09002AFC8A /* UIButtonRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45128F71BF29E09002AFC8A /* UIButtonRed.swift */; };
 		E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */; };
+		E4BFF0081BF3B33900E4255A /* Intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E4BFF0071BF3B33900E4255A /* Intro.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		E421C4361BF279FE003F9D8A /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		E45128F71BF29E09002AFC8A /* UIButtonRed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonRed.swift; sourceTree = "<group>"; };
 		E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLightBlue.swift; sourceTree = "<group>"; };
+		E4BFF0071BF3B33900E4255A /* Intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Intro.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		E421C4141BF164AD003F9D8A /* DesignStudioExpress */ = {
 			isa = PBXGroup;
 			children = (
+				E4BFF0051BF3A4C300E4255A /* Resources */,
 				E421C4151BF164AD003F9D8A /* AppDelegate.swift */,
 				E421C4171BF164AD003F9D8A /* ViewController.swift */,
 				E421C4191BF164AD003F9D8A /* Main.storyboard */,
@@ -127,6 +130,14 @@
 				E421C42C1BF164AD003F9D8A /* Info.plist */,
 			);
 			path = DesignStudioExpressTests;
+			sourceTree = "<group>";
+		};
+		E4BFF0051BF3A4C300E4255A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E4BFF0071BF3B33900E4255A /* Intro.mp4 */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4BFF0081BF3B33900E4255A /* Intro.mp4 in Resources */,
 				E421C4201BF164AD003F9D8A /* LaunchScreen.storyboard in Resources */,
 				E421C41D1BF164AD003F9D8A /* Assets.xcassets in Resources */,
 				E421C41B1BF164AD003F9D8A /* Main.storyboard in Resources */,
