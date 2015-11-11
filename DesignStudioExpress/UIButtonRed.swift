@@ -8,11 +8,11 @@
 
 import UIKit
 
-class UIButtonRed: UIButton {
-
-    let defaultColor = UIColor(red:0.99, green:0.49, blue:0.42, alpha:1.0) // #FD7C6B
+class UIButtonRed: UIButtonBase {
+    
     let highlightedColor = UIColor(red:0.98, green:0.59, blue:0.55, alpha:1.0) // #FA968D
-    let buttonRadius = CGFloat(3)
+    override var defaultColor: UIColor { get { return UIColor(red:0.99, green:0.49, blue:0.42, alpha:1.0) } } // #FD7C6B
+    override var textColor:UIColor { get{ return UIColor.whiteColor() } }
 
     override var highlighted: Bool {
         get {
@@ -28,18 +28,5 @@ class UIButtonRed: UIButton {
                 layer.backgroundColor = defaultColor.CGColor
             }
         }
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        // set rounded corners
-        layer.cornerRadius = buttonRadius
-        layer.borderWidth = 1
-        layer.borderColor = defaultColor.CGColor
-        // colors
-        backgroundColor = defaultColor
-        setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        setTitleColor(UIColor.whiteColor(), forState: UIControlState.Highlighted)
     }
 }

@@ -18,6 +18,7 @@
 		E45128F81BF29E09002AFC8A /* UIButtonRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45128F71BF29E09002AFC8A /* UIButtonRed.swift */; };
 		E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */; };
 		E4BFF0081BF3B33900E4255A /* Intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E4BFF0071BF3B33900E4255A /* Intro.mp4 */; };
+		E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		E45128F71BF29E09002AFC8A /* UIButtonRed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonRed.swift; sourceTree = "<group>"; };
 		E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLightBlue.swift; sourceTree = "<group>"; };
 		E4BFF0071BF3B33900E4255A /* Intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Intro.mp4; sourceTree = "<group>"; };
+		E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,16 +111,13 @@
 		E421C4141BF164AD003F9D8A /* DesignStudioExpress */ = {
 			isa = PBXGroup;
 			children = (
-				E4BFF0051BF3A4C300E4255A /* Resources */,
+				E4BFF00D1BF3BF2100E4255A /* Views */,
 				E421C4151BF164AD003F9D8A /* AppDelegate.swift */,
-				E421C4171BF164AD003F9D8A /* ViewController.swift */,
+				E4BFF0051BF3A4C300E4255A /* Resources */,
 				E421C4191BF164AD003F9D8A /* Main.storyboard */,
 				E421C41C1BF164AD003F9D8A /* Assets.xcassets */,
 				E421C41E1BF164AD003F9D8A /* LaunchScreen.storyboard */,
 				E421C4211BF164AD003F9D8A /* Info.plist */,
-				E421C4361BF279FE003F9D8A /* IntroViewController.swift */,
-				E45128F71BF29E09002AFC8A /* UIButtonRed.swift */,
-				E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */,
 			);
 			path = DesignStudioExpress;
 			sourceTree = "<group>";
@@ -138,6 +137,26 @@
 				E4BFF0071BF3B33900E4255A /* Intro.mp4 */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		E4BFF00D1BF3BF2100E4255A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E4BFF00F1BF3BF3300E4255A /* Subviews */,
+				E421C4361BF279FE003F9D8A /* IntroViewController.swift */,
+				E421C4171BF164AD003F9D8A /* ViewController.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E4BFF00F1BF3BF3300E4255A /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */,
+				E45128F71BF29E09002AFC8A /* UIButtonRed.swift */,
+				E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */,
+			);
+			name = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +330,7 @@
 				E45128F81BF29E09002AFC8A /* UIButtonRed.swift in Sources */,
 				E421C4181BF164AD003F9D8A /* ViewController.swift in Sources */,
 				E421C4161BF164AD003F9D8A /* AppDelegate.swift in Sources */,
+				E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */,
 				E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

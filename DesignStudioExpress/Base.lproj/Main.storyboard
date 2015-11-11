@@ -23,7 +23,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="L1e-aV-nWk"/>
                                 </constraints>
-                                <state key="normal" title="Guide"/>
+                                <state key="normal" title="GUIDE"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="L1e-aV-nWk"/>
@@ -37,7 +37,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32R-dO-Hca" customClass="UIButtonRed" customModule="DesignStudioExpress" customModuleProvider="target">
                                 <rect key="frame" x="312" y="535" width="268" height="30"/>
-                                <state key="normal" title="Create"/>
+                                <state key="normal" title="CREATE"/>
                                 <connections>
                                     <segue destination="alx-4r-Kum" kind="show" id="fkA-8A-Adk"/>
                                 </connections>
