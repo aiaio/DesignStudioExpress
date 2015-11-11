@@ -21,7 +21,7 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMB-pt-1Ro" customClass="UIButtonLightBlue" customModule="DesignStudioExpress">
                                 <rect key="frame" x="20" y="535" width="269" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="L1e-aV-nWk"/>
+                                    <constraint firstAttribute="height" constant="60" id="L1e-aV-nWk"/>
                                 </constraints>
                                 <state key="normal" title="GUIDE"/>
                                 <variation key="default">
@@ -203,7 +203,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" id="kpS-rw-XS5"/>
+                    <tabBarItem key="tabBarItem" title="" image="error.png" id="kpS-rw-XS5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DO6-gC-paA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,4 +229,7 @@
             <point key="canvasLocation" x="1485" y="2011"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="error.png" width="28" height="28"/>
+    </resources>
 </document>

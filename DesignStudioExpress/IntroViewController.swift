@@ -25,6 +25,13 @@ class IntroViewController: UIViewController {
         // bring buttons on top of the video
         self.view.bringSubviewToFront(createButton)
         self.view.bringSubviewToFront(faqButton)
+        
+        let attributedString = createButton.titleLabel?.attributedText as! NSMutableAttributedString
+        attributedString.addAttribute(NSKernAttributeName, value: 3.0, range: NSMakeRange(0, attributedString.length))
+        createButton.titleLabel?.attributedText = attributedString
+        
+        //let astr: NSMutableAttributedString = UIButtonBase.getAttributedString("CCREATE", tracking: 3.0, font: UIFont(name: "Avenir-Light", size: 13)!)
+        //createButton.titleLabel!.attributedText = astr
     }
 
     override func didReceiveMemoryWarning() {
