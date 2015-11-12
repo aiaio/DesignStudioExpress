@@ -18,7 +18,6 @@ class BaseViewController: UIViewController {
     private func customizeNavBarStyle() {
         // remove "Back" title from all back buttons
         let backButton = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-        //backButton.imageInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         self.navigationItem.backBarButtonItem = backButton
         
         // set the color for the back arrow
