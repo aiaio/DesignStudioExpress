@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+class BaseTabBarController: UITabBarController {
     
     let higlightedItemColor = DesignStudioStyles.bottomNavigationIconSelected
     let barItemBackgroundColor = DesignStudioStyles.bottomNavigationBGColorUnselected
@@ -18,7 +18,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        customizeStyle()
+        self.customizeStyle()
     }
 
     override func didReceiveMemoryWarning() {

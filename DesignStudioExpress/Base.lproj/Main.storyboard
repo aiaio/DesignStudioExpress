@@ -84,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="85" y="784"/>
         </scene>
-        <!--Tab Bar View Controller-->
+        <!--Base Tab Bar Controller-->
         <scene sceneID="B3E-Cj-aJ5">
             <objects>
-                <tabBarController id="alx-4r-Kum" customClass="TabBarViewController" customModule="DesignStudioExpress" sceneMemberID="viewController">
+                <tabBarController id="alx-4r-Kum" customClass="BaseTabBarController" customModule="DesignStudioExpress" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="fp2-yq-fFR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="1709" y="1194"/>
         </scene>
-        <!--View Controller-->
+        <!--Base View Controller-->
         <scene sceneID="Txi-ih-m5u">
             <objects>
-                <viewController id="735-tX-yNI" sceneMemberID="viewController">
+                <viewController id="735-tX-yNI" customClass="BaseViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CKQ-Xn-6ue"/>
                         <viewControllerLayoutGuide type="bottom" id="Rnz-Cl-jYd"/>
@@ -153,10 +153,10 @@
             </objects>
             <point key="canvasLocation" x="2439" y="1194"/>
         </scene>
-        <!--View Controller-->
+        <!--Base View Controller-->
         <scene sceneID="Crm-Rk-DRP">
             <objects>
-                <viewController id="udv-3V-LLk" sceneMemberID="viewController">
+                <viewController id="udv-3V-LLk" customClass="BaseViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="csc-7q-6IB"/>
                         <viewControllerLayoutGuide type="bottom" id="h3e-c8-cHr"/>
@@ -171,10 +171,10 @@
             </objects>
             <point key="canvasLocation" x="3180" y="1194"/>
         </scene>
-        <!--View Controller-->
+        <!--huge design studio name-->
         <scene sceneID="A2k-Yd-poh">
             <objects>
-                <viewController id="dLs-bE-YaS" sceneMemberID="viewController">
+                <viewController id="dLs-bE-YaS" customClass="BaseViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lna-Su-ilg"/>
                         <viewControllerLayoutGuide type="bottom" id="pFn-Ej-NQy"/>
@@ -184,7 +184,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QUG-hZ-zjT"/>
+                    <navigationItem key="navigationItem" title="huge design studio name" id="QUG-hZ-zjT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibn-CI-tEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
