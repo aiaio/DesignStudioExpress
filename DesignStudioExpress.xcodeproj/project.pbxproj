@@ -16,6 +16,8 @@
 		E421C42B1BF164AD003F9D8A /* DesignStudioExpressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E421C42A1BF164AD003F9D8A /* DesignStudioExpressTests.swift */; };
 		E421C4371BF279FE003F9D8A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E421C4361BF279FE003F9D8A /* IntroViewController.swift */; };
 		E429AF4E1BF3F65400AE4DA7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF4D1BF3F65400AE4DA7 /* TabBarViewController.swift */; };
+		E429AF581BF530B200AE4DA7 /* DesignStudioStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF571BF530B200AE4DA7 /* DesignStudioStyles.swift */; };
+		E429AF5B1BF539BC00AE4DA7 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF5A1BF539BC00AE4DA7 /* UIImageExtension.swift */; };
 		E45128F81BF29E09002AFC8A /* UIButtonRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45128F71BF29E09002AFC8A /* UIButtonRed.swift */; };
 		E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */; };
 		E4BFF0081BF3B33900E4255A /* Intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E4BFF0071BF3B33900E4255A /* Intro.mp4 */; };
@@ -48,6 +50,8 @@
 		E421C42C1BF164AD003F9D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E421C4361BF279FE003F9D8A /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		E429AF4D1BF3F65400AE4DA7 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		E429AF571BF530B200AE4DA7 /* DesignStudioStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignStudioStyles.swift; sourceTree = "<group>"; };
+		E429AF5A1BF539BC00AE4DA7 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		E45128F71BF29E09002AFC8A /* UIButtonRed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonRed.swift; sourceTree = "<group>"; };
 		E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLightBlue.swift; sourceTree = "<group>"; };
 		E4BFF0071BF3B33900E4255A /* Intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Intro.mp4; sourceTree = "<group>"; };
@@ -113,9 +117,10 @@
 		E421C4141BF164AD003F9D8A /* DesignStudioExpress */ = {
 			isa = PBXGroup;
 			children = (
+				E429AF591BF5396C00AE4DA7 /* Extensions */,
 				E4BFF00D1BF3BF2100E4255A /* Views */,
-				E421C4151BF164AD003F9D8A /* AppDelegate.swift */,
 				E4BFF0051BF3A4C300E4255A /* Resources */,
+				E421C4151BF164AD003F9D8A /* AppDelegate.swift */,
 				E421C4191BF164AD003F9D8A /* Main.storyboard */,
 				E421C41C1BF164AD003F9D8A /* Assets.xcassets */,
 				E421C41E1BF164AD003F9D8A /* LaunchScreen.storyboard */,
@@ -133,9 +138,18 @@
 			path = DesignStudioExpressTests;
 			sourceTree = "<group>";
 		};
+		E429AF591BF5396C00AE4DA7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E429AF5A1BF539BC00AE4DA7 /* UIImageExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E4BFF0051BF3A4C300E4255A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E429AF571BF530B200AE4DA7 /* DesignStudioStyles.swift */,
 				E4BFF0071BF3B33900E4255A /* Intro.mp4 */,
 			);
 			path = Resources;
@@ -330,9 +344,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E421C4371BF279FE003F9D8A /* IntroViewController.swift in Sources */,
+				E429AF581BF530B200AE4DA7 /* DesignStudioStyles.swift in Sources */,
 				E45128F81BF29E09002AFC8A /* UIButtonRed.swift in Sources */,
 				E421C4181BF164AD003F9D8A /* ViewController.swift in Sources */,
 				E421C4161BF164AD003F9D8A /* AppDelegate.swift in Sources */,
+				E429AF5B1BF539BC00AE4DA7 /* UIImageExtension.swift in Sources */,
 				E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */,
 				E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */,
 				E429AF4E1BF3F65400AE4DA7 /* TabBarViewController.swift in Sources */,
