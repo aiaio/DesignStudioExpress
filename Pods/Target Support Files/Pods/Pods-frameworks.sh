@@ -85,6 +85,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Cartography.framework"
+  install_framework "Pods/MGSwipeTableCell.framework"
   install_framework "Pods/NRSimplePlist.framework"
   install_framework "Pods/SVProgressHUD.framework"
   install_framework "Pods/SwiftyJSON.framework"
@@ -92,6 +93,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Cartography.framework"
+  install_framework "Pods/MGSwipeTableCell.framework"
   install_framework "Pods/NRSimplePlist.framework"
   install_framework "Pods/SVProgressHUD.framework"
   install_framework "Pods/SwiftyJSON.framework"
