@@ -163,8 +163,6 @@
 				E4BFF00F1BF3BF3300E4255A /* Subviews */,
 				E421C4361BF279FE003F9D8A /* IntroViewController.swift */,
 				E421C4171BF164AD003F9D8A /* ViewController.swift */,
-				E429AF4D1BF3F65400AE4DA7 /* BaseTabBarController.swift */,
-				E429AF5C1BF5404200AE4DA7 /* BaseViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,6 +173,8 @@
 				E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */,
 				E45128F71BF29E09002AFC8A /* UIButtonRed.swift */,
 				E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */,
+				E429AF4D1BF3F65400AE4DA7 /* BaseTabBarController.swift */,
+				E429AF5C1BF5404200AE4DA7 /* BaseViewController.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
