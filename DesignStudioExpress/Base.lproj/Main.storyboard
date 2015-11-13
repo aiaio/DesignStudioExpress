@@ -115,10 +115,10 @@
             </objects>
             <point key="canvasLocation" x="84" y="783.75"/>
         </scene>
-        <!--Base Tab Bar Controller-->
+        <!--BaseUI Tab Bar Controller-->
         <scene sceneID="B3E-Cj-aJ5">
             <objects>
-                <tabBarController id="alx-4r-Kum" customClass="BaseTabBarController" customModule="DesignStudioExpress" sceneMemberID="viewController">
+                <tabBarController id="alx-4r-Kum" customClass="BaseUITabBarController" customModule="DesignStudioExpress" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="fp2-yq-fFR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -152,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="1709" y="1194"/>
         </scene>
-        <!--Base View Controller-->
+        <!--BaseUI View Cntroller-->
         <scene sceneID="Txi-ih-m5u">
             <objects>
-                <viewController id="735-tX-yNI" customClass="BaseViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="735-tX-yNI" customClass="BaseUIViewCntroller" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CKQ-Xn-6ue"/>
                         <viewControllerLayoutGuide type="bottom" id="Rnz-Cl-jYd"/>
@@ -184,10 +184,10 @@
             </objects>
             <point key="canvasLocation" x="2439" y="1194"/>
         </scene>
-        <!--Base View Controller-->
+        <!--BaseUI View Cntroller-->
         <scene sceneID="Crm-Rk-DRP">
             <objects>
-                <viewController id="udv-3V-LLk" customClass="BaseViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="udv-3V-LLk" customClass="BaseUIViewCntroller" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="csc-7q-6IB"/>
                         <viewControllerLayoutGuide type="bottom" id="h3e-c8-cHr"/>
@@ -205,15 +205,77 @@
         <!--huge design studio name-->
         <scene sceneID="A2k-Yd-poh">
             <objects>
-                <viewController id="dLs-bE-YaS" customClass="BaseViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dLs-bE-YaS" customClass="BaseUIViewCntroller" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lna-Su-ilg"/>
                         <viewControllerLayoutGuide type="bottom" id="pFn-Ej-NQy"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IxX-ud-ToH">
+                    <view key="view" contentMode="scaleToFill" id="IxX-ud-ToH" customClass="ADBannerView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yWg-r4-0ds">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Is-7t-pGq">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="3j9-DC-piE"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3j9-DC-piE"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="3j9-DC-piE"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yWg-r4-0ds" firstAttribute="top" secondItem="IxX-ud-ToH" secondAttribute="top" id="5oB-a1-O2b"/>
+                            <constraint firstAttribute="trailing" secondItem="8Is-7t-pGq" secondAttribute="trailing" id="79N-Ks-yG2"/>
+                            <constraint firstItem="8Is-7t-pGq" firstAttribute="leading" secondItem="IxX-ud-ToH" secondAttribute="leading" id="KuO-Aa-mIW"/>
+                            <constraint firstItem="yWg-r4-0ds" firstAttribute="trailing" secondItem="8Is-7t-pGq" secondAttribute="trailing" id="QiE-Sa-N0B"/>
+                            <constraint firstItem="8Is-7t-pGq" firstAttribute="bottom" secondItem="pFn-Ej-NQy" secondAttribute="top" id="VoA-M4-1ki"/>
+                            <constraint firstItem="yWg-r4-0ds" firstAttribute="leading" secondItem="8Is-7t-pGq" secondAttribute="leading" id="Y2l-tC-8HA"/>
+                            <constraint firstItem="8Is-7t-pGq" firstAttribute="top" secondItem="yWg-r4-0ds" secondAttribute="bottom" id="kIe-mr-iOQ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="yWg-r4-0ds"/>
+                                <exclude reference="8Is-7t-pGq"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="5oB-a1-O2b"/>
+                                <exclude reference="QiE-Sa-N0B"/>
+                                <exclude reference="Y2l-tC-8HA"/>
+                                <exclude reference="79N-Ks-yG2"/>
+                                <exclude reference="KuO-Aa-mIW"/>
+                                <exclude reference="VoA-M4-1ki"/>
+                                <exclude reference="kIe-mr-iOQ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="yWg-r4-0ds"/>
+                                <include reference="8Is-7t-pGq"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="5oB-a1-O2b"/>
+                                <include reference="QiE-Sa-N0B"/>
+                                <include reference="Y2l-tC-8HA"/>
+                                <include reference="79N-Ks-yG2"/>
+                                <include reference="KuO-Aa-mIW"/>
+                                <include reference="VoA-M4-1ki"/>
+                                <include reference="kIe-mr-iOQ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="huge design studio name" id="QUG-hZ-zjT"/>
                 </viewController>

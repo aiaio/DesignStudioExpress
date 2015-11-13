@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseTabBarController: UITabBarController {
+class BaseUITabBarController: UITabBarController {
     
     let higlightedItemColor = DesignStudioStyles.bottomNavigationIconSelected
     let barItemBackgroundColor = DesignStudioStyles.bottomNavigationBGColorUnselected
