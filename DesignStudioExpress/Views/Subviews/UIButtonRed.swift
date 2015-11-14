@@ -10,9 +10,9 @@ import UIKit
 
 class UIButtonRed: UIButtonBase {
     
-    let highlightedColor = UIColor(red:0.98, green:0.59, blue:0.55, alpha:1.0) // #FA968D
-    override var defaultColor: UIColor { get { return UIColor(red:0.99, green:0.49, blue:0.42, alpha:1.0) } } // #FD7C6B
-    override var textColor:UIColor { get{ return UIColor.whiteColor() } }
+    let highlightedColor = DesignStudioStyles.secondaryOrange
+    override var defaultColor: UIColor { get { return DesignStudioStyles.primaryOrange } }
+    override var textColor:UIColor { get{ return DesignStudioStyles.white } }
 
     override var highlighted: Bool {
         get {

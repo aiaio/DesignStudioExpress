@@ -20,7 +20,9 @@
 		E429AF5B1BF539BC00AE4DA7 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF5A1BF539BC00AE4DA7 /* UIImageExtension.swift */; };
 		E429AF5D1BF5404200AE4DA7 /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF5C1BF5404200AE4DA7 /* BaseUIViewController.swift */; };
 		E429AF651BF64DD300AE4DA7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF641BF64DD300AE4DA7 /* HomeViewController.swift */; };
+		E429AF691BF6619200AE4DA7 /* MGSwiteTableCellCentered.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF681BF6619200AE4DA7 /* MGSwiteTableCellCentered.swift */; };
 		E45128F81BF29E09002AFC8A /* UIButtonRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45128F71BF29E09002AFC8A /* UIButtonRed.swift */; };
+		E4607F261BF6A82C000C44C7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */; };
 		E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */; };
 		E4BFF0081BF3B33900E4255A /* Intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E4BFF0071BF3B33900E4255A /* Intro.mp4 */; };
 		E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */; };
@@ -56,7 +58,9 @@
 		E429AF5A1BF539BC00AE4DA7 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		E429AF5C1BF5404200AE4DA7 /* BaseUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
 		E429AF641BF64DD300AE4DA7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E429AF681BF6619200AE4DA7 /* MGSwiteTableCellCentered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSwiteTableCellCentered.swift; sourceTree = "<group>"; };
 		E45128F71BF29E09002AFC8A /* UIButtonRed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonRed.swift; sourceTree = "<group>"; };
+		E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLightBlue.swift; sourceTree = "<group>"; };
 		E4BFF0071BF3B33900E4255A /* Intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Intro.mp4; sourceTree = "<group>"; };
 		E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonBase.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		E421C4141BF164AD003F9D8A /* DesignStudioExpress */ = {
 			isa = PBXGroup;
 			children = (
+				E4607F241BF6A7B8000C44C7 /* ViewModels */,
 				E429AF591BF5396C00AE4DA7 /* Extensions */,
 				E4BFF00D1BF3BF2100E4255A /* Views */,
 				E4BFF0051BF3A4C300E4255A /* Resources */,
@@ -150,6 +155,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E4607F241BF6A7B8000C44C7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		E4BFF0051BF3A4C300E4255A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,11 +186,12 @@
 		E4BFF00F1BF3BF3300E4255A /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				E429AF4D1BF3F65400AE4DA7 /* BaseUITabBarController.swift */,
+				E429AF5C1BF5404200AE4DA7 /* BaseUIViewController.swift */,
+				E429AF681BF6619200AE4DA7 /* MGSwiteTableCellCentered.swift */,
 				E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */,
 				E45128F71BF29E09002AFC8A /* UIButtonRed.swift */,
 				E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */,
-				E429AF4D1BF3F65400AE4DA7 /* BaseUITabBarController.swift */,
-				E429AF5C1BF5404200AE4DA7 /* BaseUIViewController.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -357,9 +371,11 @@
 				E429AF5B1BF539BC00AE4DA7 /* UIImageExtension.swift in Sources */,
 				E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */,
 				E429AF651BF64DD300AE4DA7 /* HomeViewController.swift in Sources */,
+				E4607F261BF6A82C000C44C7 /* HomeViewModel.swift in Sources */,
 				E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */,
 				E429AF5D1BF5404200AE4DA7 /* BaseUIViewController.swift in Sources */,
 				E429AF4E1BF3F65400AE4DA7 /* BaseUITabBarController.swift in Sources */,
+				E429AF691BF6619200AE4DA7 /* MGSwiteTableCellCentered.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

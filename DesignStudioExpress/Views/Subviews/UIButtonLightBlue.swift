@@ -11,8 +11,8 @@ import UIKit
 class UIButtonLightBlue: UIButtonBase {
     
     
-    override var defaultColor: UIColor { get { return UIColor(red:0.95, green:0.96, blue:0.97, alpha:1.0) } } // #F1F5F8
-    override var textColor:UIColor { get{ return UIColor(red:0.49, green:0.50, blue:0.54, alpha:1.0) } } // #7E7F89
+    override var defaultColor: UIColor { get { return DesignStudioStyles.secondaryButton } }
+    override var textColor:UIColor { get{ return DesignStudioStyles.secondaryButtonText } }
     let highlightedOpacity = CGFloat(0.8)
     
     override var highlighted: Bool {
