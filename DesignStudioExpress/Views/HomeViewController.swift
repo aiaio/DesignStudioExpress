@@ -20,9 +20,6 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         
         self.customizeStyle()
-        
-        // display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     private func customizeStyle() {
@@ -30,14 +27,11 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         self.navigationController?.navigationBar.tintColor = UIColor.blackColor() // TODO: change this
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        
-        //self.navigationController?.navigationBar.translucent = true
-        //self.navigationController?.view.backgroundColor = UIColor.clearColor()
-        //self.navigationController?.navigationBar.backgroundColor = UIColor.clearColor()
 
         // style the button
-        self.createButton.setTitleColor(DesignStudioStyles.secondaryButtonText, forState: .Normal)
+        self.createButton.setTitleColor(DesignStudioStyles.headerTextLightBG, forState: .Normal)
         self.createButton.backgroundColor = DesignStudioStyles.white
+        self.createButton.titleLabel?.font = UIFont(name: "Avenir-Book", size: 22)
     }
     
     override func didReceiveMemoryWarning() {
@@ -56,14 +50,6 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         return vm.getTotalRows()
     }
     
-    // Override to support conditional editing of the table view.
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if indexPath.row < 2 {
-            return false
-        }
-        return true
-    }
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let reuseIdentifier = "programmaticCell"
@@ -77,29 +63,11 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         cell.detailTextLabel!.text = vm.getDetail(indexPath)
         cell.delegate = self //optional
         
+        // alignt labels
         cell.textLabel!.textAlignment = NSTextAlignment.Center
         cell.detailTextLabel!.textAlignment = .Center
         
         return cell
-    }
-
-    // support rearranging of the rows
-    func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-        vm.reorderRows(fromIndexPath, toIndexPath: toIndexPath)
-    }
-    
-    // Override to support conditional rearranging of the table view.
-    // Return NO if you do not want the item to be re-orderable.
-    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return vm.isRowEditable(indexPath)
-    }
-    
-    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        return .None
-    }
-    
-    func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
     }
     
     // MARK - MGSwipeTableCellDelegate
@@ -133,11 +101,8 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         
         if direction == .RightToLeft {
             return [MGSwipeButton(title: "Edit", backgroundColor: UIColor.redColor())]
-        } else if direction == .LeftToRight {
-            return [MGSwipeButton(title: "Delete", backgroundColor: UIColor.grayColor())]
         }
-        
-        return []
+        return [MGSwipeButton(title: "Delete", backgroundColor: UIColor.grayColor())]
     }
     
     /*

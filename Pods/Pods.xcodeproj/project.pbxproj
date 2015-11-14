@@ -1659,6 +1659,14 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					01F2FAAF48B4CFE9933A1165FB93C16E = {
+						DevelopmentTeam = 2S449SVK3Q;
+					};
+					4E1263BFF45F6446CF3DE29AE234C893 = {
+						DevelopmentTeam = 2S449SVK3Q;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1957,6 +1965,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B54F3465B2D7F1A2FC9A6CEBB5D01B5 /* MGSwipeTableCell.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1972,6 +1981,7 @@
 				MODULEMAP_FILE = "Target Support Files/MGSwipeTableCell/MGSwipeTableCell.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = MGSwipeTableCell;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2101,6 +2111,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B54F3465B2D7F1A2FC9A6CEBB5D01B5 /* MGSwipeTableCell.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2116,6 +2127,7 @@
 				MODULEMAP_FILE = "Target Support Files/MGSwipeTableCell/MGSwipeTableCell.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = MGSwipeTableCell;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2357,6 +2369,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E02504D5FDE562ADD1C73E6E646ADE65 /* NRSimplePlist.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2372,6 +2385,7 @@
 				MODULEMAP_FILE = "Target Support Files/NRSimplePlist/NRSimplePlist.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = NRSimplePlist;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2411,6 +2425,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E02504D5FDE562ADD1C73E6E646ADE65 /* NRSimplePlist.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2426,6 +2441,7 @@
 				MODULEMAP_FILE = "Target Support Files/NRSimplePlist/NRSimplePlist.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = NRSimplePlist;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

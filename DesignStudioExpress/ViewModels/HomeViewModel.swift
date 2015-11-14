@@ -6,29 +6,53 @@
 //  Copyright © 2015 Alexander Interactive. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import RealmSwift
 
 class HomeViewModel {
+    lazy var realm = try! Realm()
+    lazy var data: Results<DesignStudio> = self.loadDesignStudios()
     
-    var data = [AnyObject]()
+    private func loadDesignStudios() -> Results<DesignStudio> {
+        let realm = try! Realm()
+        var designStudios = realm.objects(DesignStudio)
+        
+        if designStudios.count == 0 {
+            createDefaultDesignStudios()
+            designStudios = realm.objects(DesignStudio)
+        }
+        
+        return designStudios
+    }
+
+    private func createDefaultDesignStudios() {
+        let realm = try! Realm()
+        
+        realm.beginWrite()
+        
+        let ds1 = DesignStudio()
+        ds1.title = "First template"
+        ds1.duration = 120
+        realm.add(ds1)
+        
+        let ds2 = DesignStudio()
+        ds2.title = "Second template"
+        ds2.duration = 60
+        realm.add(ds2)
+
+        try! realm.commitWrite()
+    }
     
     func getTotalRows() -> Int {
         return data.count
     }
     
-    func reorderRows(fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-        let val = self.data.removeAtIndex(fromIndexPath.row)
-        
-        // insert it into the new position
-        self.data.insert(val, atIndex: toIndexPath.row)
-    }
-    
     func getTitle(indexPath: NSIndexPath) -> String {
-        return "Title"
+        return data[indexPath.row].title
     }
     
     func getDetail(indexPath: NSIndexPath) -> String {
-        return "Detail text"
+        return "\(data[indexPath.row].duration)"
     }
     
     func isRowEditable(indexPath: NSIndexPath) -> Bool {

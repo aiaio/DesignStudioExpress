@@ -26,6 +26,7 @@
 		E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */; };
 		E4BFF0081BF3B33900E4255A /* Intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E4BFF0071BF3B33900E4255A /* Intro.mp4 */; };
 		E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */; };
+		E4FF2BC01BF78DE500A3C732 /* DesignStudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF2BBF1BF78DE500A3C732 /* DesignStudio.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLightBlue.swift; sourceTree = "<group>"; };
 		E4BFF0071BF3B33900E4255A /* Intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Intro.mp4; sourceTree = "<group>"; };
 		E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonBase.swift; sourceTree = "<group>"; };
+		E4FF2BBF1BF78DE500A3C732 /* DesignStudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignStudio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		E421C4141BF164AD003F9D8A /* DesignStudioExpress */ = {
 			isa = PBXGroup;
 			children = (
+				E4FF2BBE1BF78DB200A3C732 /* Models */,
 				E4607F241BF6A7B8000C44C7 /* ViewModels */,
 				E429AF591BF5396C00AE4DA7 /* Extensions */,
 				E4BFF00D1BF3BF2100E4255A /* Views */,
@@ -194,6 +197,14 @@
 				E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */,
 			);
 			path = Subviews;
+			sourceTree = "<group>";
+		};
+		E4FF2BBE1BF78DB200A3C732 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4FF2BBF1BF78DE500A3C732 /* DesignStudio.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +383,7 @@
 				E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */,
 				E429AF651BF64DD300AE4DA7 /* HomeViewController.swift in Sources */,
 				E4607F261BF6A82C000C44C7 /* HomeViewModel.swift in Sources */,
+				E4FF2BC01BF78DE500A3C732 /* DesignStudio.swift in Sources */,
 				E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */,
 				E429AF5D1BF5404200AE4DA7 /* BaseUIViewController.swift in Sources */,
 				E429AF4E1BF3F65400AE4DA7 /* BaseUITabBarController.swift in Sources */,
