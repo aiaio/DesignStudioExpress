@@ -20,6 +20,8 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         
         self.customizeStyle()
+        
+        
     }
     
     private func customizeStyle() {
@@ -52,7 +54,21 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let reuseIdentifier = "programmaticCell"
+        if indexPath.row == 0 {
+            let reuseIdentifier = "photoCell"
+            var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as UITableViewCell!
+            if cell == nil
+            {
+                cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
+            }
+            let img = UIImage(named: "Cell_Test")?.stretchableImageWithLeftCapWidth(0, topCapHeight: 5)
+            let iv = UIImageView(image: img)
+            cell.backgroundView = iv
+            
+            return cell
+        }
+        
+        let reuseIdentifier = "swipeCell"
         var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! MGSwiteTableCellCentered!
         if cell == nil
         {
@@ -66,8 +82,8 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         // alignt labels
         cell.textLabel!.textAlignment = NSTextAlignment.Center
         cell.detailTextLabel!.textAlignment = .Center
-        
         return cell
+        
     }
     
     // MARK - MGSwipeTableCellDelegate

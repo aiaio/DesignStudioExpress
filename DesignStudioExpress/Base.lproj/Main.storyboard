@@ -228,7 +228,7 @@
                         <viewControllerLayoutGuide type="top" id="lna-Su-ilg"/>
                         <viewControllerLayoutGuide type="bottom" id="pFn-Ej-NQy"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IxX-ud-ToH" customClass="ADBannerView">
+                    <view key="view" contentMode="scaleToFill" id="IxX-ud-ToH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -239,6 +239,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yWg-r4-0ds">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="dataSource" destination="dLs-bE-YaS" id="FMN-ll-koj"/>
                                     <outlet property="delegate" destination="dLs-bE-YaS" id="QQj-gT-J2F"/>
