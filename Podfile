@@ -6,5 +6,6 @@ pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 pod 'Fabric'
 pod 'Crashlytics'
 pod 'MGSwipeTableCell', '~> 1.5.1'
+pod 'RealmSwift'
 
 use_frameworks!

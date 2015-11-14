@@ -7,6 +7,11 @@ PODS:
   - Fabric/Base (1.6.0)
   - MGSwipeTableCell (1.5.1)
   - NRSimplePlist (1.0)
+  - Realm (0.96.2):
+    - Realm/Headers (= 0.96.2)
+  - Realm/Headers (0.96.2)
+  - RealmSwift (0.96.2):
+    - Realm (= 0.96.2)
   - SVProgressHUD (HEAD based on 2.0-beta)
   - SwiftyJSON (2.3.1)
   - SwiftyUserDefaults (2.0.0)
@@ -17,6 +22,7 @@ DEPENDENCIES:
   - Fabric
   - MGSwipeTableCell (~> 1.5.1)
   - NRSimplePlist (from `https://github.com/broderboy/NRSimplePlist.git`, branch `swift2`)
+  - RealmSwift
   - SVProgressHUD (HEAD)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
   - SwiftyUserDefaults
@@ -42,6 +48,8 @@ SPEC CHECKSUMS:
   Fabric: d737eda3a26ac940a5430230eedb35f16b226131
   MGSwipeTableCell: a51fa670c01f0aa048f12af040acebf315223137
   NRSimplePlist: c27d95cb456281528885b3c48e15826cf12a970b
+  Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3
+  RealmSwift: 485599fe54e35461c4a0daa7d01d8fbf11424873
   SVProgressHUD: c83337f10ed32d701c423d519059a249973c8662
   SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
   SwiftyUserDefaults: 1266e9734c68bcfbac8294ee84173dc8ba6db312
