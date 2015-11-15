@@ -39,6 +39,14 @@ class HomeViewModel {
         ds2.title = "Second template"
         ds2.duration = 60
         realm.add(ds2)
+        
+        // TODO remote - test data for demo
+        for item in 1...3 {
+            let ds = DesignStudio()
+            ds.title = "Studio " + "\(item)"
+            ds.duration = 90
+            realm.add(ds)
+        }
 
         try! realm.commitWrite()
     }
@@ -69,8 +77,15 @@ class HomeViewModel {
         return false
     }
     
-    func swipeButtonClicked(indexPath: NSIndexPath) {
-        print("Button clicked")
+    // handler for Delete buttonr
+    // since we have only one swipe button
+    func swipeButtonClicked(indexPath: NSIndexPath) -> Bool {
+        var success = false
+        try! self.realm.write {
+            self.realm.delete(self.data[indexPath.row-1])
+            success = true
+        }
+        
+        return success
     }
-
 }

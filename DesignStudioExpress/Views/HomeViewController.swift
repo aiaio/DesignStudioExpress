@@ -65,12 +65,12 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
             cell.backgroundView = imageView
         
             // style title
-            cell.textLabel?.backgroundColor = UIColor.blueColor() // TODO change to #88A7D0
+            cell.textLabel?.textColor = UIColor.blueColor() // TODO change to #88A7D0
             cell.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 13)
             // TODO add spacing
             
             // style detail
-            cell.detailTextLabel?.backgroundColor = DesignStudioStyles.white
+            cell.detailTextLabel?.textColor = DesignStudioStyles.white
             cell.detailTextLabel?.font = UIFont(name: "Avenir-Light", size: 22)
             cell.detailTextLabel?.lineBreakMode = .ByWordWrapping
             cell.detailTextLabel?.numberOfLines = 2
@@ -128,7 +128,9 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
     
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         if let indexPath = self.tableView.indexPathForCell(cell) {
-            vm.swipeButtonClicked(indexPath)
+            if vm.swipeButtonClicked(indexPath) {
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            }
         }
         
         return true
@@ -141,68 +143,13 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
             return []
         } 
         
-        if direction == .RightToLeft {
-            return [MGSwipeButton(title: "Edit", backgroundColor: UIColor.redColor())]
+        if direction == .LeftToRight {
+            let button = MGSwipeButton(title: "Delete", backgroundColor: DesignStudioStyles.white)
+            button.setTitleColor(DesignStudioStyles.primaryOrange, forState: .Normal)
+            return [button]
         }
-        return [MGSwipeButton(title: "Delete", backgroundColor: UIColor.grayColor())]
+        return []
     }
-    
-    /*
-    // customize cell
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("photoCell", forIndexPath: indexPath) as UITableViewCell
-    
-    // Configure the cell...
-    let currentPhoto = photos[indexPath.row]
-    cell.textLabel?.text = currentPhoto.name
-    
-    return cell
-    }*/
-    
-    
-    
-    
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    photos.removeAtIndex(indexPath.row)
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    
-    }
-    }*/
-    
-    /*
-    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-    if (indexPath.row == photos.count) {
-    
-    return UITableViewCellEditingStyle.Insert;
-    
-    } else {
-    return UITableViewCellEditingStyle.Delete
-    }
-    }
-    
-    // swipable actions
-    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-    let deleteClosure = { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
-    print("Delete closure called")
-    }
-    
-    let moreClosure = { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
-    print("More closure called")
-    }
-    
-    let deleteAction = UITableViewRowAction(style: .Default, title: "Delete", handler: deleteClosure)
-    let moreAction = UITableViewRowAction(style: .Normal, title: "More", handler: moreClosure)
-    
-    return [deleteAction, moreAction]
-    }*/
-    
-    // Override to support rearranging the table view.
-    
     
     
     // MARK: - Navigation
