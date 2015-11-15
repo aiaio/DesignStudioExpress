@@ -14,14 +14,17 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var createButton: UIButton!
     
+    @IBAction func createButtonClick(sender: AnyObject) {
+        segueActionTriggered(nil)
+    }
+    
     let vm = HomeViewModel()
+    let editDesignStudioSegue = "EditDesignStudio"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.customizeStyle()
-        
-        
     }
     
     private func customizeStyle() {
@@ -87,29 +90,16 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
-    func createCell<T: UITableViewCell>(reuseIdentifier: String, indexPath: NSIndexPath, _: T.Type) -> T {
-        var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! T!
-        if cell == nil
-        {
-            cell = T(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
-        }
-        
-        cell.textLabel!.text = vm.getTitle(indexPath)
-        cell.detailTextLabel!.text = vm.getDetail(indexPath)
-        
-        // align labels
-        cell.textLabel!.textAlignment = NSTextAlignment.Center
-        cell.detailTextLabel!.textAlignment = .Center
-        
-        return cell
-    }
-    
     // customize row height
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 300
         }
         return 90
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.segueActionTriggered(indexPath)
     }
     
     // MARK - MGSwipeTableCellDelegate
@@ -151,12 +141,38 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         return []
     }
     
-    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-    }   
+        if segue.identifier == self.editDesignStudioSegue {
+            let destination = segue.destinationViewController as! DetailDesignStudioViewController
+            destination.designStudio = sender as? DesignStudio
+        }
+    }
     
+    // MARK: - Custom
+    
+    private func segueActionTriggered(indexPath: NSIndexPath?) {
+        let data = vm.getData(indexPath)
+        self.performSegueWithIdentifier(self.editDesignStudioSegue, sender: data)
+    }
+    
+    // creates table view cell of a specified type
+    private func createCell<T: UITableViewCell>(reuseIdentifier: String, indexPath: NSIndexPath, _: T.Type) -> T {
+        var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! T!
+        if cell == nil
+        {
+            cell = T(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
+        }
+        
+        cell.textLabel!.text = vm.getTitle(indexPath)
+        cell.detailTextLabel!.text = vm.getDetail(indexPath)
+        
+        // align labels
+        cell.textLabel!.textAlignment = NSTextAlignment.Center
+        cell.detailTextLabel!.textAlignment = .Center
+        
+        return cell
+    }
 }

@@ -27,6 +27,7 @@
 		E4BFF0081BF3B33900E4255A /* Intro.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = E4BFF0071BF3B33900E4255A /* Intro.mp4 */; };
 		E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */; };
 		E4E9A5A91BF8287700CE0C12 /* UITableViewCellCentered.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E9A5A81BF8287700CE0C12 /* UITableViewCellCentered.swift */; };
+		E4ECC4F11BF8E92C00834AD3 /* DetailDesignStudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECC4F01BF8E92C00834AD3 /* DetailDesignStudioViewController.swift */; };
 		E4FF2BC01BF78DE500A3C732 /* DesignStudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF2BBF1BF78DE500A3C732 /* DesignStudio.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		E4BFF0071BF3B33900E4255A /* Intro.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Intro.mp4; sourceTree = "<group>"; };
 		E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonBase.swift; sourceTree = "<group>"; };
 		E4E9A5A81BF8287700CE0C12 /* UITableViewCellCentered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellCentered.swift; sourceTree = "<group>"; };
+		E4ECC4F01BF8E92C00834AD3 /* DetailDesignStudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDesignStudioViewController.swift; sourceTree = "<group>"; };
 		E4FF2BBF1BF78DE500A3C732 /* DesignStudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignStudio.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +186,7 @@
 				E421C4361BF279FE003F9D8A /* IntroViewController.swift */,
 				E421C4171BF164AD003F9D8A /* ViewController.swift */,
 				E429AF641BF64DD300AE4DA7 /* HomeViewController.swift */,
+				E4ECC4F01BF8E92C00834AD3 /* DetailDesignStudioViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				E45128F81BF29E09002AFC8A /* UIButtonRed.swift in Sources */,
 				E421C4181BF164AD003F9D8A /* ViewController.swift in Sources */,
 				E421C4161BF164AD003F9D8A /* AppDelegate.swift in Sources */,
+				E4ECC4F11BF8E92C00834AD3 /* DetailDesignStudioViewController.swift in Sources */,
 				E429AF5B1BF539BC00AE4DA7 /* UIImageExtension.swift in Sources */,
 				E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */,
 				E429AF651BF64DD300AE4DA7 /* HomeViewController.swift in Sources */,
@@ -519,6 +523,7 @@
 			baseConfigurationReference = 2F6E83CBFE1ADF513DD680AE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = DesignStudioExpress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderinteractive.whackjobapp;

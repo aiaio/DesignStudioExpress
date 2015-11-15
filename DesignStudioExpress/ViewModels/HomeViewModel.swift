@@ -17,7 +17,8 @@ class HomeViewModel {
         let realm = try! Realm()
         var designStudios = realm.objects(DesignStudio)
         
-        if designStudios.count == 0 {
+        // TODO fix this after demo, this will add test data that we can delete
+        if designStudios.count == 0 || designStudios.count < 4 {
             createDefaultDesignStudios()
             designStudios = realm.objects(DesignStudio)
         }
@@ -55,19 +56,6 @@ class HomeViewModel {
         return data.count + 1
     }
     
-    func getTitle(indexPath: NSIndexPath) -> String {
-        if indexPath.row == 0 {
-            return "MY DESIGN STUDIOS"
-        }
-        return data[indexPath.row-1].title
-    }
-    
-    func getDetail(indexPath: NSIndexPath) -> String {
-        if indexPath.row == 0 {
-            return "Start fast from a template or create a new one"
-        }
-        return "\(data[indexPath.row-1].duration)"
-    }
     
     func isRowEditable(indexPath: NSIndexPath) -> Bool {
         if indexPath.row > 2 {
@@ -87,5 +75,26 @@ class HomeViewModel {
         }
         
         return success
+    }
+    
+    func getTitle(indexPath: NSIndexPath) -> String {
+        if indexPath.row == 0 {
+            return "MY DESIGN STUDIOS"
+        }
+        return data[indexPath.row-1].title
+    }
+    
+    func getDetail(indexPath: NSIndexPath) -> String {
+        if indexPath.row == 0 {
+            return "Start fast from a template or create a new one"
+        }
+        return "\(data[indexPath.row-1].duration)"
+    }
+    
+    func getData(indexPath: NSIndexPath?) -> DesignStudio? {
+        guard indexPath?.row > 0 else {
+            return nil
+        }
+        return data[indexPath!.row-1]
     }
 }

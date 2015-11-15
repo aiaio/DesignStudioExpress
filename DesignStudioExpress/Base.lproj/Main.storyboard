@@ -170,10 +170,10 @@
             </objects>
             <point key="canvasLocation" x="1709" y="1194"/>
         </scene>
-        <!--BaseUI View Cntroller-->
+        <!--BaseUI View Controller-->
         <scene sceneID="Txi-ih-m5u">
             <objects>
-                <viewController id="735-tX-yNI" customClass="BaseUIViewCntroller" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="735-tX-yNI" customClass="BaseUIViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CKQ-Xn-6ue"/>
                         <viewControllerLayoutGuide type="bottom" id="Rnz-Cl-jYd"/>
@@ -240,6 +240,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xBq-IG-bji">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xBq-IG-bji" id="9dx-az-0Aq">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Fgk-O3-KZM" kind="show" identifier="EditDesignStudio" id="gcr-15-crY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="dLs-bE-YaS" id="FMN-ll-koj"/>
                                     <outlet property="delegate" destination="dLs-bE-YaS" id="QQj-gT-J2F"/>
@@ -261,6 +272,9 @@
                                         <include reference="3j9-DC-piE"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="createButtonClick:" destination="dLs-bE-YaS" eventType="touchUpInside" id="wVd-QD-umd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -312,7 +326,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibn-CI-tEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2626" y="-204"/>
+            <point key="canvasLocation" x="2514" y="-204"/>
+        </scene>
+        <!--Detail Design Studio View Controller-->
+        <scene sceneID="qo3-EG-jvo">
+            <objects>
+                <viewController id="Fgk-O3-KZM" customClass="DetailDesignStudioViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bab-s9-4mB"/>
+                        <viewControllerLayoutGuide type="bottom" id="ebn-cM-bwx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eUu-hw-rpN">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g9d-B7-zFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3312" y="-204"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0Ia-VA-QkO">
