@@ -10,12 +10,13 @@ import UIKit
 
 class DetailDesignStudioViewController: BaseUIViewController {
     
-    var designStudio: DesignStudio?
+    let vm = DetailDesignStudioViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.title = vm.getTitle()
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,10 +24,6 @@ class DetailDesignStudioViewController: BaseUIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-    
-
     /*
     // MARK: - Navigation
 

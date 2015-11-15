@@ -147,7 +147,7 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == self.editDesignStudioSegue {
             let destination = segue.destinationViewController as! DetailDesignStudioViewController
-            destination.designStudio = sender as? DesignStudio
+            destination.vm.setDesignStudio(sender as? DesignStudio)
         }
     }
     
