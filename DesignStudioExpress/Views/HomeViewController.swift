@@ -55,35 +55,61 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         if indexPath.row == 0 {
-            let reuseIdentifier = "photoCell"
-            var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as UITableViewCell!
-            if cell == nil
-            {
-                cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
-            }
-            let img = UIImage(named: "Cell_Test")?.stretchableImageWithLeftCapWidth(0, topCapHeight: 5)
-            let iv = UIImageView(image: img)
-            cell.backgroundView = iv
+            let cell = self.createCell("photoCell", indexPath: indexPath, UITableViewCellCentered.self)
+            
+            // set the background image
+            let image = UIImage(named: "Cell_Test")
+            let imageView = UIImageView(image: image)
+            imageView.clipsToBounds = true
+            imageView.contentMode = .ScaleAspectFill
+            cell.backgroundView = imageView
+        
+            // style title
+            cell.textLabel?.backgroundColor = UIColor.blueColor() // TODO change to #88A7D0
+            cell.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 13)
+            // TODO add spacing
+            
+            // style detail
+            cell.detailTextLabel?.backgroundColor = DesignStudioStyles.white
+            cell.detailTextLabel?.font = UIFont(name: "Avenir-Light", size: 22)
+            cell.detailTextLabel?.lineBreakMode = .ByWordWrapping
+            cell.detailTextLabel?.numberOfLines = 2
+            
+            // disable user interactions so we don't have highlighted state
+            cell.userInteractionEnabled = false
             
             return cell
         }
         
-        let reuseIdentifier = "swipeCell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! MGSwiteTableCellCentered!
+        let cell = self.createCell("swipeCell", indexPath: indexPath, MGSwiteTableCellCentered.self)
+        cell.delegate = self
+        
+        return cell
+    }
+    
+    func createCell<T: UITableViewCell>(reuseIdentifier: String, indexPath: NSIndexPath, _: T.Type) -> T {
+        var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! T!
         if cell == nil
         {
-            cell = MGSwiteTableCellCentered(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
+            cell = T(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
         }
         
         cell.textLabel!.text = vm.getTitle(indexPath)
         cell.detailTextLabel!.text = vm.getDetail(indexPath)
-        cell.delegate = self //optional
         
-        // alignt labels
+        // align labels
         cell.textLabel!.textAlignment = NSTextAlignment.Center
         cell.detailTextLabel!.textAlignment = .Center
-        return cell
         
+        return cell
+    }
+    
+    // customize row height
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 300
+        }
+        return 90
     }
     
     // MARK - MGSwipeTableCellDelegate

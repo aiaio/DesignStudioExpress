@@ -44,15 +44,21 @@ class HomeViewModel {
     }
     
     func getTotalRows() -> Int {
-        return data.count
+        return data.count + 1
     }
     
     func getTitle(indexPath: NSIndexPath) -> String {
-        return data[indexPath.row].title
+        if indexPath.row == 0 {
+            return "MY DESIGN STUDIOS"
+        }
+        return data[indexPath.row-1].title
     }
     
     func getDetail(indexPath: NSIndexPath) -> String {
-        return "\(data[indexPath.row].duration)"
+        if indexPath.row == 0 {
+            return "Start fast from a template or create a new one"
+        }
+        return "\(data[indexPath.row-1].duration)"
     }
     
     func isRowEditable(indexPath: NSIndexPath) -> Bool {
