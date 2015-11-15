@@ -92,6 +92,21 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         
         let cell = self.createCell("swipeCell", indexPath: indexPath, MGSwiteTableCellCentered.self)
         cell.delegate = self
+
+        // set the icon for the duration lable
+        // we have to add an image to the attachment
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: "12x12")
+        attachment.bounds = CGRectMake(-4, -2, attachment.image!.size.width, attachment.image!.size.height);
+        
+        // create a attributed string with attachment
+        let attributedString = NSAttributedString(attachment: attachment)
+        // create mutable string from that so we can add more attributes
+        let iconString = NSMutableAttributedString(attributedString: attributedString)
+        // add the text to the iconString so that the text is on the right side of the icon
+        let durationText = NSMutableAttributedString(string: cell.detailTextLabel!.text!)
+        iconString.appendAttributedString(durationText)
+        cell.detailTextLabel?.attributedText = iconString
         
         return cell
     }
@@ -176,7 +191,7 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         cell.detailTextLabel!.text = vm.getDetail(indexPath)
         
         // align labels
-        cell.textLabel!.textAlignment = NSTextAlignment.Center
+        cell.textLabel!.textAlignment = .Center
         cell.detailTextLabel!.textAlignment = .Center
         
         // this in comb. with UIEdgeInsetsZero on layoutMargins for a tableView
