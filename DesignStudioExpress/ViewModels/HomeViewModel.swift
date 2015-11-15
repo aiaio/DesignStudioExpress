@@ -41,7 +41,7 @@ class HomeViewModel {
         ds2.duration = 60
         realm.add(ds2)
         
-        // TODO remote - test data for demo
+        // TODO remove - test data for demo
         for item in 1...3 {
             let ds = DesignStudio()
             ds.title = "Studio " + "\(item)"

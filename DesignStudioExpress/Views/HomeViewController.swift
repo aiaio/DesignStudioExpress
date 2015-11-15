@@ -28,12 +28,18 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
     }
     
     private func customizeStyle() {
-        // make navigation bar transparent
+        // TableView - style separator
+        self.tableView.separatorColor = DesignStudioStyles.white
+        // this in comb. with UIEdgeInsetsZero on layoutMargins for a cell
+        // will make the cell separator show from edge to edge
+        self.tableView.layoutMargins = UIEdgeInsetsZero
+        
+        // NavigationBar - make navigation bar transparent
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
         self.navigationController?.navigationBar.tintColor = UIColor.blackColor() // TODO: change this
         self.navigationController?.navigationBar.shadowImage = UIImage()
 
-        // style the button
+        // CreateButton - style the create button
         self.createButton.setTitleColor(DesignStudioStyles.headerTextLightBG, forState: .Normal)
         self.createButton.backgroundColor = DesignStudioStyles.white
         self.createButton.titleLabel?.font = UIFont(name: "Avenir-Book", size: 22)
@@ -172,6 +178,10 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         // align labels
         cell.textLabel!.textAlignment = NSTextAlignment.Center
         cell.detailTextLabel!.textAlignment = .Center
+        
+        // this in comb. with UIEdgeInsetsZero on layoutMargins for a tableView
+        // will make the cell separator show from edge to edge
+        cell.layoutMargins = UIEdgeInsetsZero
         
         return cell
     }
