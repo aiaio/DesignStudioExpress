@@ -185,7 +185,7 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         // TODO change to constant from DesignStudioStyle
         cell.textLabel?.textColor = UIColor(red:0.53, green:0.65, blue:0.82, alpha:1.0)
         cell.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 14)
-        // TODO add spacing
+        NSAttributedString.attributedStringWithSpacing(cell.textLabel!.attributedText!, kerning: 2.5)
         
         // style detail
         cell.detailTextLabel?.textColor = DesignStudioStyles.white

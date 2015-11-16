@@ -14,7 +14,7 @@ class UIButtonBase: UIButton {
     var textColor:UIColor { get{ return UIColor.blueColor() } }
     let borderRadius = CGFloat(3)
     let titleFont = UIFont(name: "Avenir-Light", size: 13)
-    let kerning = 3.0
+    let kerning: Float = 3.0
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -33,8 +33,6 @@ class UIButtonBase: UIButton {
         titleLabel?.font = titleFont
         
         // set spacing between title characters to 3.0
-        let attributedString = titleLabel?.attributedText as! NSMutableAttributedString
-        attributedString.addAttribute(NSKernAttributeName, value: kerning, range: NSMakeRange(0, attributedString.length))
-        titleLabel?.attributedText = attributedString
+        titleLabel?.attributedText = NSAttributedString.attributedStringWithSpacing(titleLabel!.attributedText!, kerning: kerning)
     }
 }

@@ -88,8 +88,7 @@ class HomeViewModel {
         if indexPath.row == 0 {
             return "Start fast from a template or create a new one"
         }
-        let durationString = String.localizedStringWithFormat("% %@", data[indexPath.row-1].duration, "min")
-        return "Duration \(durationString)"
+        return "Duration \(data[indexPath.row-1].duration) min"
     }
     
     func getImageName(indexPath: NSIndexPath) -> String {
