@@ -56,15 +56,15 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         
         return self.styleSwipeCell(cell, indexPath: indexPath)
     }
-    
+
     // customize row height
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 350
+            return 280
         }
         return 90
     }
-    
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.segueActionTriggered(indexPath)
     }
