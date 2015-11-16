@@ -13,6 +13,7 @@ class DesignStudio: Object {
     dynamic var id = NSUUID().UUIDString
     dynamic var title = ""
     dynamic var duration: Int = 60 // minutes
+    dynamic var dateCreated: NSDate = NSDate()
     
     override static func primaryKey() -> String? {
         return "id"

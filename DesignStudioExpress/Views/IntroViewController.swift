@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import Crashlytics
+import RealmSwift
 
 class IntroViewController: UIViewController {
     @IBOutlet weak var createButton: UIButtonRed!
@@ -26,9 +27,9 @@ class IntroViewController: UIViewController {
         self.view.bringSubviewToFront(createButton)
         self.view.bringSubviewToFront(faqButton)
         
-        let attributedString = createButton.titleLabel?.attributedText as! NSMutableAttributedString
-        attributedString.addAttribute(NSKernAttributeName, value: 3.0, range: NSMakeRange(0, attributedString.length))
-        createButton.titleLabel?.attributedText = attributedString
+        // TODO: this drops entire db
+        // remove it!
+        //try! NSFileManager.defaultManager().removeItemAtPath(Realm.defaultPath)
     }
 
     override func didReceiveMemoryWarning() {

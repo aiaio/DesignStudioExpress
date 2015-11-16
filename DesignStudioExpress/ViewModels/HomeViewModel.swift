@@ -11,11 +11,11 @@ import RealmSwift
 
 class HomeViewModel {
     lazy var realm = try! Realm()
-    lazy var data: Results<DesignStudio> = self.loadDesignStudios()
+    lazy var data: [DesignStudio] = self.loadDesignStudios()
     
-    private func loadDesignStudios() -> Results<DesignStudio> {
+    private func loadDesignStudios() -> [DesignStudio] {
         let realm = try! Realm()
-        var designStudios = realm.objects(DesignStudio)
+        var designStudios = realm.objects(DesignStudio).sorted("dateCreated")
         
         // TODO fix this after demo, this will add test data that we can delete
         if designStudios.count == 0 || designStudios.count < 4 {
@@ -23,7 +23,7 @@ class HomeViewModel {
             designStudios = realm.objects(DesignStudio)
         }
         
-        return designStudios
+        return designStudios.toArray(DesignStudio.self)
     }
 
     private func createDefaultDesignStudios() {
@@ -68,11 +68,15 @@ class HomeViewModel {
     // handler for Delete buttonr
     // since we have only one swipe button
     func swipeButtonClicked(indexPath: NSIndexPath) -> Bool {
+        let idx = indexPath.row-1
         var success = false
+        
         try! self.realm.write {
-            self.realm.delete(self.data[indexPath.row-1])
+            self.realm.delete(self.data[idx])
             success = true
         }
+        
+        data.removeAtIndex(idx)
         
         return success
     }
