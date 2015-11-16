@@ -64,18 +64,19 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         if indexPath.row == 0 {
-            let cell = self.createCell("photoCell", indexPath: indexPath, UITableViewCellCentered.self)
+            let cell = self.createCell("photoCell", indexPath: indexPath, MGSwiteTableCellCentered.self)
             
             // set the background image
-            let image = UIImage(named: "Cell_Test")
+            let image = UIImage(named: "DS_Home_BG_image")
             let imageView = UIImageView(image: image)
             imageView.clipsToBounds = true
             imageView.contentMode = .ScaleAspectFill
             cell.backgroundView = imageView
         
             // style title
-            cell.textLabel?.textColor = UIColor.blueColor() // TODO change to #88A7D0
-            cell.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 13)
+            // TODO change to constant from DesignStudioStyle
+            cell.textLabel?.textColor = UIColor(red:0.53, green:0.65, blue:0.82, alpha:1.0)
+            cell.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 14)
             // TODO add spacing
             
             // style detail
@@ -92,11 +93,25 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         
         let cell = self.createCell("swipeCell", indexPath: indexPath, MGSwiteTableCellCentered.self)
         cell.delegate = self
+        
+        // no highlighted color so that we don't have higlighted cell
+        // when we go back
+        cell.selectionStyle = .None
+        
+        // background colors for cells
+        var cellColor: UIColor?
+        if vm.isRowEditable(indexPath) {
+            cellColor = DesignStudioStyles.secondaryOrange
+        } else {
+            cellColor = DesignStudioStyles.primaryOrange
+        }
+        cell.backgroundColor = cellColor
 
         // set the icon for the duration lable
         // we have to add an image to the attachment
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: "12x12")
+        // adjust the position of the icon
         attachment.bounds = CGRectMake(-4, -2, attachment.image!.size.width, attachment.image!.size.height);
         
         // create a attributed string with attachment
@@ -107,6 +122,16 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         let durationText = NSMutableAttributedString(string: cell.detailTextLabel!.text!)
         iconString.appendAttributedString(durationText)
         cell.detailTextLabel?.attributedText = iconString
+        
+        // styling for for title
+        cell.textLabel?.font = UIFont(name: "Avenir-Book", size: 22)
+        cell.textLabel?.textColor = DesignStudioStyles.white
+        
+        cell.detailTextLabel?.font = UIFont(name: "Avenir-Light", size: 11)
+        cell.detailTextLabel?.textColor = DesignStudioStyles.white
+        
+        // we need this here so that the separator is not set to margin 
+        cell.layoutMargins = UIEdgeInsetsZero
         
         return cell
     }
@@ -189,14 +214,6 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         
         cell.textLabel!.text = vm.getTitle(indexPath)
         cell.detailTextLabel!.text = vm.getDetail(indexPath)
-        
-        // align labels
-        cell.textLabel!.textAlignment = .Center
-        cell.detailTextLabel!.textAlignment = .Center
-        
-        // this in comb. with UIEdgeInsetsZero on layoutMargins for a tableView
-        // will make the cell separator show from edge to edge
-        cell.layoutMargins = UIEdgeInsetsZero
         
         return cell
     }

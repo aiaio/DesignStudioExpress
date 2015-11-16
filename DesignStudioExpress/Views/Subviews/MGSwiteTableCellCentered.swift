@@ -18,5 +18,12 @@ class MGSwiteTableCellCentered: MGSwipeTableCell {
         // so that they can be centered
         self.textLabel!.frame = CGRectMake(0, self.textLabel!.frame.origin.y, self.frame.size.width, self.textLabel!.frame.size.height);
         self.detailTextLabel!.frame = CGRectMake(0, self.detailTextLabel!.frame.origin.y, self.frame.size.width, self.detailTextLabel!.frame.size.height);
+        
+        self.textLabel!.textAlignment = .Center
+        self.detailTextLabel!.textAlignment = .Center
+        
+        // this in comb. with UIEdgeInsetsZero on layoutMargins for a tableView
+        // will make the cell separator show from edge to edge
+        self.layoutMargins = UIEdgeInsetsZero
     }
 }

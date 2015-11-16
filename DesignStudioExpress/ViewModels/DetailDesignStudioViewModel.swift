@@ -13,9 +13,6 @@ class DetailDesignStudioViewModel {
     
     lazy var realm = try! Realm()
     private var data: DesignStudio?
-
-    init() {
-    }
     
     func setDesignStudio(newDesignStudio: DesignStudio?) {
         if let designStudio = newDesignStudio {

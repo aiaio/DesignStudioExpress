@@ -33,12 +33,12 @@ class HomeViewModel {
         
         let ds1 = DesignStudio()
         ds1.title = "First template"
-        ds1.duration = 120
+        ds1.duration = 45
         realm.add(ds1)
         
         let ds2 = DesignStudio()
         ds2.title = "Second template"
-        ds2.duration = 60
+        ds2.duration = 62
         realm.add(ds2)
         
         // TODO remove - test data for demo
@@ -88,7 +88,17 @@ class HomeViewModel {
         if indexPath.row == 0 {
             return "Start fast from a template or create a new one"
         }
-        return "Duration \(data[indexPath.row-1].duration) min"
+        // format duration string to 2 decimals if we have a remainder
+        let duration = Float(data[indexPath.row-1].duration) / 60
+        let stringFormat: String
+        
+        if (duration % 1) != 0 {
+            stringFormat = "%.2f %@"
+        } else {
+            stringFormat = "%.0f %@"
+        }
+        let durationString = String.localizedStringWithFormat(stringFormat, duration, "hr")
+        return "Duration \(durationString)"
     }
     
     func getData(indexPath: NSIndexPath?) -> DesignStudio? {
