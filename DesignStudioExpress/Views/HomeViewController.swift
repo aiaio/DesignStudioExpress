@@ -59,10 +59,26 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
 
     // customize row height
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        // default row height for DS cells
+        var rowHeight = 90
+        
+        // row height for photo
+        // dynamically adjust based on the device height
+        // should refactor to use autoconstraints
         if indexPath.row == 0 {
-            return 280
+            let screenSize = UIScreen.mainScreen().bounds.height
+            if screenSize <= 480  { // 4s
+                rowHeight = 280
+            } else if screenSize <= 560 { // 5
+                rowHeight = 300
+            } else if screenSize <= 667 { // 6
+                rowHeight = 330
+            } else { // 6++
+                rowHeight = 360
+            }
         }
-        return 90
+        
+        return CGFloat(rowHeight)
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
