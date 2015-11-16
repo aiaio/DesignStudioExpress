@@ -285,9 +285,9 @@
                             <constraint firstAttribute="trailing" secondItem="8Is-7t-pGq" secondAttribute="trailing" id="79N-Ks-yG2"/>
                             <constraint firstItem="8Is-7t-pGq" firstAttribute="leading" secondItem="IxX-ud-ToH" secondAttribute="leading" id="KuO-Aa-mIW"/>
                             <constraint firstItem="yWg-r4-0ds" firstAttribute="trailing" secondItem="8Is-7t-pGq" secondAttribute="trailing" id="QiE-Sa-N0B"/>
-                            <constraint firstItem="8Is-7t-pGq" firstAttribute="bottom" secondItem="pFn-Ej-NQy" secondAttribute="top" id="VoA-M4-1ki"/>
                             <constraint firstItem="yWg-r4-0ds" firstAttribute="leading" secondItem="8Is-7t-pGq" secondAttribute="leading" id="Y2l-tC-8HA"/>
                             <constraint firstItem="8Is-7t-pGq" firstAttribute="top" secondItem="yWg-r4-0ds" secondAttribute="bottom" id="kIe-mr-iOQ"/>
+                            <constraint firstItem="pFn-Ej-NQy" firstAttribute="top" secondItem="8Is-7t-pGq" secondAttribute="bottom" constant="10" id="mVZ-Ep-OwE"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -295,9 +295,9 @@
                                 <exclude reference="8Is-7t-pGq"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="mVZ-Ep-OwE"/>
                                 <exclude reference="79N-Ks-yG2"/>
                                 <exclude reference="KuO-Aa-mIW"/>
-                                <exclude reference="VoA-M4-1ki"/>
                                 <exclude reference="kIe-mr-iOQ"/>
                                 <exclude reference="5oB-a1-O2b"/>
                                 <exclude reference="QiE-Sa-N0B"/>
@@ -310,9 +310,9 @@
                                 <include reference="8Is-7t-pGq"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="mVZ-Ep-OwE"/>
                                 <include reference="79N-Ks-yG2"/>
                                 <include reference="KuO-Aa-mIW"/>
-                                <include reference="VoA-M4-1ki"/>
                                 <include reference="kIe-mr-iOQ"/>
                                 <include reference="5oB-a1-O2b"/>
                                 <include reference="QiE-Sa-N0B"/>

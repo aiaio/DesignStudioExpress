@@ -60,7 +60,7 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
     // customize row height
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 300
+            return 350
         }
         return 90
     }
@@ -202,7 +202,7 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         let attachment = NSTextAttachment()
         attachment.image = UIImage(named: vm.getImageName(indexPath))
         // adjust the position of the icon
-        attachment.bounds = CGRectMake(-4, -2, attachment.image!.size.width, attachment.image!.size.height);
+        attachment.bounds = CGRectMake(-4, -1, attachment.image!.size.width, attachment.image!.size.height);
         
         // create a attributed string with attachment
         let attributedString = NSAttributedString(attachment: attachment)

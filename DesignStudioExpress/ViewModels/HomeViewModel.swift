@@ -107,7 +107,7 @@ class HomeViewModel {
             return "DS_Home_BG_image"
         }
         // icon for
-        return "12x12"
+        return "Clock"
     }
     
     func getData(indexPath: NSIndexPath?) -> DesignStudio? {
