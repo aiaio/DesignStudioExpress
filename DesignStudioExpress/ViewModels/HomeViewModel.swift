@@ -101,6 +101,15 @@ class HomeViewModel {
         return "Duration \(durationString)"
     }
     
+    func getImageName(indexPath: NSIndexPath) -> String {
+        // big image
+        if indexPath.row == 0 {
+            return "DS_Home_BG_image"
+        }
+        // icon for
+        return "12x12"
+    }
+    
     func getData(indexPath: NSIndexPath?) -> DesignStudio? {
         guard indexPath?.row > 0 else {
             return nil

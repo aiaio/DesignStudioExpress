@@ -24,25 +24,7 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.customizeStyle()
-    }
-    
-    private func customizeStyle() {
-        // TableView - style separator
-        self.tableView.separatorColor = DesignStudioStyles.white
-        // this in comb. with UIEdgeInsetsZero on layoutMargins for a cell
-        // will make the cell separator show from edge to edge
-        self.tableView.layoutMargins = UIEdgeInsetsZero
-        
-        // NavigationBar - make navigation bar transparent
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        self.navigationController?.navigationBar.tintColor = UIColor.blackColor() // TODO: change this
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-
-        // CreateButton - style the create button
-        self.createButton.setTitleColor(DesignStudioStyles.headerTextLightBG, forState: .Normal)
-        self.createButton.backgroundColor = DesignStudioStyles.white
-        self.createButton.titleLabel?.font = UIFont(name: "Avenir-Book", size: 22)
+        self.customizeTableStyle()
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,74 +48,13 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         if indexPath.row == 0 {
             let cell = self.createCell("photoCell", indexPath: indexPath, MGSwiteTableCellCentered.self)
             
-            // set the background image
-            let image = UIImage(named: "DS_Home_BG_image")
-            let imageView = UIImageView(image: image)
-            imageView.clipsToBounds = true
-            imageView.contentMode = .ScaleAspectFill
-            cell.backgroundView = imageView
-        
-            // style title
-            // TODO change to constant from DesignStudioStyle
-            cell.textLabel?.textColor = UIColor(red:0.53, green:0.65, blue:0.82, alpha:1.0)
-            cell.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 14)
-            // TODO add spacing
-            
-            // style detail
-            cell.detailTextLabel?.textColor = DesignStudioStyles.white
-            cell.detailTextLabel?.font = UIFont(name: "Avenir-Light", size: 22)
-            cell.detailTextLabel?.lineBreakMode = .ByWordWrapping
-            cell.detailTextLabel?.numberOfLines = 2
-            
-            // disable user interactions so we don't have highlighted state
-            cell.userInteractionEnabled = false
-            
-            return cell
+            return self.stylePhotoCell(cell, indexPath: indexPath)
         }
         
         let cell = self.createCell("swipeCell", indexPath: indexPath, MGSwiteTableCellCentered.self)
         cell.delegate = self
         
-        // no highlighted color so that we don't have higlighted cell
-        // when we go back
-        cell.selectionStyle = .None
-        
-        // background colors for cells
-        var cellColor: UIColor?
-        if vm.isRowEditable(indexPath) {
-            cellColor = DesignStudioStyles.secondaryOrange
-        } else {
-            cellColor = DesignStudioStyles.primaryOrange
-        }
-        cell.backgroundColor = cellColor
-
-        // set the icon for the duration lable
-        // we have to add an image to the attachment
-        let attachment = NSTextAttachment()
-        attachment.image = UIImage(named: "12x12")
-        // adjust the position of the icon
-        attachment.bounds = CGRectMake(-4, -2, attachment.image!.size.width, attachment.image!.size.height);
-        
-        // create a attributed string with attachment
-        let attributedString = NSAttributedString(attachment: attachment)
-        // create mutable string from that so we can add more attributes
-        let iconString = NSMutableAttributedString(attributedString: attributedString)
-        // add the text to the iconString so that the text is on the right side of the icon
-        let durationText = NSMutableAttributedString(string: cell.detailTextLabel!.text!)
-        iconString.appendAttributedString(durationText)
-        cell.detailTextLabel?.attributedText = iconString
-        
-        // styling for for title
-        cell.textLabel?.font = UIFont(name: "Avenir-Book", size: 22)
-        cell.textLabel?.textColor = DesignStudioStyles.white
-        
-        cell.detailTextLabel?.font = UIFont(name: "Avenir-Light", size: 11)
-        cell.detailTextLabel?.textColor = DesignStudioStyles.white
-        
-        // we need this here so that the separator is not set to margin 
-        cell.layoutMargins = UIEdgeInsetsZero
-        
-        return cell
+        return self.styleSwipeCell(cell, indexPath: indexPath)
     }
     
     // customize row height
@@ -214,6 +135,94 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         
         cell.textLabel!.text = vm.getTitle(indexPath)
         cell.detailTextLabel!.text = vm.getDetail(indexPath)
+        
+        return cell
+    }
+    
+    private func customizeTableStyle() {
+        // TableView - style separator
+        self.tableView.separatorColor = DesignStudioStyles.white
+        // this in comb. with UIEdgeInsetsZero on layoutMargins for a cell
+        // will make the cell separator show from edge to edge
+        self.tableView.layoutMargins = UIEdgeInsetsZero
+        
+        // NavigationBar - make navigation bar transparent
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        self.navigationController?.navigationBar.tintColor = UIColor.blackColor() // TODO: change this
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        // CreateButton - style the create button
+        self.createButton.setTitleColor(DesignStudioStyles.headerTextLightBG, forState: .Normal)
+        self.createButton.backgroundColor = DesignStudioStyles.white
+        self.createButton.titleLabel?.font = UIFont(name: "Avenir-Book", size: 22)
+    }
+    
+    func stylePhotoCell(cell: MGSwiteTableCellCentered, indexPath: NSIndexPath) -> MGSwiteTableCellCentered {
+        // set the background image
+        let image = UIImage(named: vm.getImageName(indexPath))
+        let imageView = UIImageView(image: image)
+        imageView.clipsToBounds = true
+        imageView.contentMode = .ScaleAspectFill
+        cell.backgroundView = imageView
+        
+        // style title
+        // TODO change to constant from DesignStudioStyle
+        cell.textLabel?.textColor = UIColor(red:0.53, green:0.65, blue:0.82, alpha:1.0)
+        cell.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 14)
+        // TODO add spacing
+        
+        // style detail
+        cell.detailTextLabel?.textColor = DesignStudioStyles.white
+        cell.detailTextLabel?.font = UIFont(name: "Avenir-Light", size: 22)
+        cell.detailTextLabel?.lineBreakMode = .ByWordWrapping
+        cell.detailTextLabel?.numberOfLines = 2
+        
+        // disable user interactions so we don't have highlighted state
+        cell.userInteractionEnabled = false
+        
+        return cell
+    }
+    
+    func styleSwipeCell(cell: MGSwiteTableCellCentered, indexPath: NSIndexPath) -> MGSwiteTableCellCentered {
+        // no highlighted color so that we don't have higlighted cell
+        // when we go back
+        cell.selectionStyle = .None
+        
+        // background colors for cells
+        var cellColor: UIColor?
+        if vm.isRowEditable(indexPath) {
+            cellColor = DesignStudioStyles.secondaryOrange
+        } else {
+            cellColor = DesignStudioStyles.primaryOrange
+        }
+        cell.backgroundColor = cellColor
+        
+        // set the icon for the duration lable
+        // we have to add an image to the attachment
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: vm.getImageName(indexPath))
+        // adjust the position of the icon
+        attachment.bounds = CGRectMake(-4, -2, attachment.image!.size.width, attachment.image!.size.height);
+        
+        // create a attributed string with attachment
+        let attributedString = NSAttributedString(attachment: attachment)
+        // create mutable string from that so we can add more attributes
+        let iconString = NSMutableAttributedString(attributedString: attributedString)
+        // add the text to the iconString so that the text is on the right side of the icon
+        let durationText = NSMutableAttributedString(string: cell.detailTextLabel!.text!)
+        iconString.appendAttributedString(durationText)
+        cell.detailTextLabel?.attributedText = iconString
+        
+        // styling for for title
+        cell.textLabel?.font = UIFont(name: "Avenir-Book", size: 22)
+        cell.textLabel?.textColor = DesignStudioStyles.white
+        
+        // styling for the detail
+        cell.detailTextLabel?.font = UIFont(name: "Avenir-Light", size: 11)
+        cell.detailTextLabel?.textColor = DesignStudioStyles.white
+        
+        // set separator from edge to edge
+        cell.layoutMargins = UIEdgeInsetsZero
         
         return cell
     }
