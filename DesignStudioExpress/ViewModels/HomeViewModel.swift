@@ -88,16 +88,7 @@ class HomeViewModel {
         if indexPath.row == 0 {
             return "Start fast from a template or create a new one"
         }
-        // format duration string to 2 decimals if we have a remainder
-        let duration = Float(data[indexPath.row-1].duration) / 60
-        let stringFormat: String
-        
-        if (duration % 1) != 0 {
-            stringFormat = "%.2f %@"
-        } else {
-            stringFormat = "%.0f %@"
-        }
-        let durationString = String.localizedStringWithFormat(stringFormat, duration, "hr")
+        let durationString = String.localizedStringWithFormat("% %@", data[indexPath.row-1].duration, "min")
         return "Duration \(durationString)"
     }
     
