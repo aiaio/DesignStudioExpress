@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 extension Results {
+    // converts the Results object to and array 
     func toArray<T>(ofType: T.Type) -> [T] {
         return (0..<self.count).flatMap { self[$0] as? T }
     }

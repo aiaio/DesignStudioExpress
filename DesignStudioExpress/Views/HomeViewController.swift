@@ -185,13 +185,14 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         // TODO change to constant from DesignStudioStyle
         cell.textLabel?.textColor = UIColor(red:0.53, green:0.65, blue:0.82, alpha:1.0)
         cell.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 14)
-        NSAttributedString.attributedStringWithSpacing(cell.textLabel!.attributedText!, kerning: 2.5)
+        cell.textLabel?.attributedText = NSAttributedString.attributedStringWithSpacing(cell.textLabel!.attributedText!, kerning: 2.5)
         
         // style detail
         cell.detailTextLabel?.textColor = DesignStudioStyles.white
         cell.detailTextLabel?.font = UIFont(name: "Avenir-Light", size: 22)
         cell.detailTextLabel?.lineBreakMode = .ByWordWrapping
-        cell.detailTextLabel?.numberOfLines = 2
+        cell.detailTextLabel?.numberOfLines = 0
+        cell.detailTextLabel?.sizeToFit()
         
         // disable user interactions so we don't have highlighted state
         cell.userInteractionEnabled = false

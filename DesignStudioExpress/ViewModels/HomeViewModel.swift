@@ -90,7 +90,7 @@ class HomeViewModel {
     
     func getDetail(indexPath: NSIndexPath) -> String {
         if indexPath.row == 0 {
-            return "Start fast from a template or create a new one"
+            return "Start fast from a template\n or create a new one"
         }
         return "Duration \(data[indexPath.row-1].duration) min"
     }

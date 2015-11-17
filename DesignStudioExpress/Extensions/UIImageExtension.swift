@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension UIImage {
+    // creates image with specified color and size
     class func makeImageWithColorAndSize(color: UIColor, size: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         color.setFill()
