@@ -14,8 +14,8 @@ class DetailDesignStudioViewController: BaseUIViewController, UITextFieldDelegat
     @IBOutlet weak var continueButton: UIButtonRed!
     
     let vm = DetailDesignStudioViewModel()
-
-    var activeField: UIView?
+    
+    let openDesignStudioSegue = "OpenDesignStudio"
     var changedY = false
     var keyboardHeight: CGFloat = 300
     
@@ -27,10 +27,6 @@ class DetailDesignStudioViewController: BaseUIViewController, UITextFieldDelegat
         
         self.addObservers()
         self.populateFields()
-        
-        var frameRect = name.frame;
-        frameRect.size.height = 100;
-        name.frame = frameRect;
     }
     
     deinit {
@@ -46,37 +42,49 @@ class DetailDesignStudioViewController: BaseUIViewController, UITextFieldDelegat
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        activeField = nil
+        vm.setDuration(textField.text!)
         return true
     }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        var fieldName: DetailDesignStudioViewModel.FieldNames
-        if textField == self.name {
-            fieldName = .Title
-        } else if textField == self.duration {
-            fieldName = .Duration
-        } else {
+        return vm.maxLengthExceeded(.Duration, textFieldLength: (textField.text?.length)!, range: range, replacementStringLength: string.length)
+    }
+    
+    // MARK: - UITextViewDelegate
+        
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            vm.setTitle(textView.text!)
             return false
         }
-        
-        return vm.maxLengthExceeded(fieldName, textFieldLength: (textField.text?.length)!, range: range, replacementStringLength: string.length)
-    }
-    
-    // MARK: - Actions
-    
-    @IBAction func textFieldEditingDidBegin(sender: UITextField){
-        activeField = sender
-    }
-    
-    @IBAction func textFieldEditingDidEnd(sender: UITextField) {
-        activeField = nil
+        return vm.maxLengthExceeded(.Title, textFieldLength: (textView.text?.length)!, range: range, replacementStringLength: text.length)
     }
     
     // hide any active keyboard when background is touched
     @IBAction func backgroundTouched(sender: AnyObject) {
-        activeField?.resignFirstResponder()
-        activeField = nil
+        self.name.resignFirstResponder()
+        self.duration.resignFirstResponder()
+        
+        vm.setTitle(self.name.text!)
+        vm.setDuration(self.duration.text!)
+    }
+    
+    // activate keyboard whenever the whole UIControl parent for duration is touched
+    @IBAction func durationBackgroundTouched(sender: AnyObject) {
+        self.duration.becomeFirstResponder()
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == self.openDesignStudioSegue {
+            vm.openDesignStudio(self.name.text, duration: self.duration.text!)
+            /*
+            let destination = segue.destinationViewController as! ChallengesViewController
+            destination.vm.setDesignStudio(sender as? DesignStudio)*/
+        }
     }
     
     // MARK: - custom
@@ -95,12 +103,10 @@ class DetailDesignStudioViewController: BaseUIViewController, UITextFieldDelegat
         var aRect = self.view.frame;
         aRect.size.height = aRect.size.height - kbSize!.height - CGFloat(20);
 
-        if activeField != nil && !CGRectContainsPoint(aRect, activeField!.frame.origin) {
-            if (!changedY) {
-                self.view.frame.origin.y -= keyboardHeight
-            }
-            changedY = true
+        if (!changedY) {
+            self.view.frame.origin.y -= keyboardHeight
         }
+        changedY = true
     }
     
     func keyboardWillHide(sender: NSNotification) {
@@ -113,18 +119,6 @@ class DetailDesignStudioViewController: BaseUIViewController, UITextFieldDelegat
     func populateFields () {
         self.name.text = vm.getTitle()
         self.duration.text = vm.getDuration()
+        self.continueButton.setTitle(vm.getButtonTitle(), forState: .Normal)
     }
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

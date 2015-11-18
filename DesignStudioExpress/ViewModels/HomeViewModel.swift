@@ -11,14 +11,17 @@ import RealmSwift
 
 class HomeViewModel {
     lazy var realm = try! Realm()
-    lazy var data: [DesignStudio] = self.loadDesignStudios()
+    private var data: [DesignStudio]!
+    
+    init () {
+        data = self.loadDesignStudios()
+    }
     
     private func loadDesignStudios() -> [DesignStudio] {
         let realm = try! Realm()
         var designStudios = realm.objects(DesignStudio).sorted("dateCreated")
         
-        // TODO fix this after demo, this will add test data that we can delete
-        if designStudios.count == 0 || designStudios.count < 4 {
+        if designStudios.count == 0 {
             createDefaultDesignStudios()
             designStudios = realm.objects(DesignStudio)
         }
@@ -41,15 +44,11 @@ class HomeViewModel {
         ds2.duration = 62
         realm.add(ds2)
         
-        // TODO remove - test data for demo
-        for item in 1...3 {
-            let ds = DesignStudio()
-            ds.title = "Studio " + "\(item)"
-            ds.duration = 90
-            realm.add(ds)
-        }
-
         try! realm.commitWrite()
+    }
+    
+    func refreshData() {
+        data = loadDesignStudios()
     }
     
     func getTotalRows() -> Int {

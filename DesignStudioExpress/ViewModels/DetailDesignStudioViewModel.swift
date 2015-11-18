@@ -15,8 +15,13 @@ class DetailDesignStudioViewModel {
         case Duration
     }
     
+    let newStudioNameText = "Studio Name Goes Here"
+    let newStudioButtonText = "CREATE"
+    let editStudioButtonText = "OPEN"
+    
     lazy var realm = try! Realm()
     private var data: DesignStudio?
+    private var isNew = false
     
     func setDesignStudio(newDesignStudio: DesignStudio?) {
         if let designStudio = newDesignStudio {
@@ -24,22 +29,51 @@ class DetailDesignStudioViewModel {
         } else {
             // create new DS, but don't save it until we segue to next screen
             let ds = DesignStudio()
+            ds.title = self.newStudioNameText
+            ds.duration = 60
             self.data = ds
+            self.isNew = true
         }
     }
     
     func getTitle () -> String {
-        if let title = data?.title {
-            return title
+        return self.data!.title
+    }
+    
+    func setTitle(newTitle: String) {
+        try! realm.write {
+            self.data!.title = newTitle
         }
-        return "Studio Name Goes Here"
     }
     
     func getDuration() -> String {
-        if let duration = data?.duration {
-            return "\(duration)"
+        return "\(data!.duration)"
+    }
+    
+    func setDuration(newDuration: String) {
+        try! realm.write {
+            self.data!.duration = Int(newDuration) ?? 0
         }
-        return "\(60)"
+    }
+    
+    func getButtonTitle() -> String {
+        if isNew {
+            return newStudioButtonText
+        }
+        return editStudioButtonText
+    }
+    
+    func openDesignStudio(title: String, duration: String) {
+        // save the design studio when we're moving to the next screen
+        if isNew {
+            try! realm.write {
+                self.realm.add(self.data!)
+            }
+        } else {
+            // in case user clicks continue while the keyboard is still active
+            self.setTitle(title)
+            self.setDuration(duration)
+        }
     }
     
     func maxLengthExceeded(fieldType: FieldNames, textFieldLength: Int, range: NSRange, replacementStringLength: Int) -> Bool {
