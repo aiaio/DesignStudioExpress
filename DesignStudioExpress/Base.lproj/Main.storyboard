@@ -222,62 +222,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="735-tX-yNI" kind="relationship" relationship="rootViewController" id="2jV-KJ-Syg"/>
+                        <segue destination="Fgk-O3-KZM" kind="relationship" relationship="rootViewController" id="Y1W-m4-EqR"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ya-71-oyb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1709" y="1194"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Txi-ih-m5u">
-            <objects>
-                <viewController id="735-tX-yNI" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="CKQ-Xn-6ue"/>
-                        <viewControllerLayoutGuide type="bottom" id="Rnz-Cl-jYd"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="AXB-QO-K4b">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lP-Te-2or">
-                                <rect key="frame" x="277" y="271" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="udv-3V-LLk" kind="show" id="Upe-fj-7eS"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="1lP-Te-2or" firstAttribute="top" secondItem="CKQ-Xn-6ue" secondAttribute="bottom" constant="207" id="LIK-pg-5ib"/>
-                            <constraint firstItem="1lP-Te-2or" firstAttribute="centerX" secondItem="AXB-QO-K4b" secondAttribute="centerX" id="Muo-ff-3ve"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="ERh-he-zs6"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wwm-vi-l9K" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2439" y="1194"/>
-        </scene>
-        <!--BaseUI View Cntroller-->
-        <scene sceneID="Crm-Rk-DRP">
-            <objects>
-                <viewController id="udv-3V-LLk" customClass="BaseUIViewCntroller" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="csc-7q-6IB"/>
-                        <viewControllerLayoutGuide type="bottom" id="h3e-c8-cHr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bTC-G0-kNX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O3F-kh-K3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3180" y="1194"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="A2k-Yd-poh">
@@ -626,6 +576,7 @@
                             <action selector="backgroundTouched:" destination="Fgk-O3-KZM" eventType="touchUpInside" id="t73-xN-wvM"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="Tek-py-X8f"/>
                     <connections>
                         <outlet property="continueButton" destination="qra-NB-i6S" id="lBG-0o-5V0"/>
                         <outlet property="duration" destination="tdV-Xf-uov" id="FfB-wn-JEQ"/>
@@ -634,7 +585,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9d-B7-zFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3312" y="-204"/>
+            <point key="canvasLocation" x="2452" y="1194"/>
         </scene>
         <!--Challenges View Controller-->
         <scene sceneID="Arj-1v-XL8">
@@ -810,7 +761,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fqw-pl-cgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4084.5" y="-204"/>
+            <point key="canvasLocation" x="3206" y="1194"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0Ia-VA-QkO">
@@ -879,4 +830,7 @@
         <image name="Settings_Icon" width="24" height="24"/>
         <image name="Stopwatch" width="12" height="15"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gcr-15-crY"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -18,41 +18,51 @@ class DetailDesignStudioViewModel {
     let newStudioNameText = "Studio Name Goes Here"
     let newStudioButtonText = "CREATE"
     let editStudioButtonText = "OPEN"
+    let defaultDuration = 60
     
     lazy var realm = try! Realm()
-    private var data: DesignStudio?
+    private var data: DesignStudio!
     private var isNew = false
+    
+    init () {
+        createNewDesignStudio()
+    }
     
     func setDesignStudio(newDesignStudio: DesignStudio?) {
         if let designStudio = newDesignStudio {
             self.data = designStudio
+            isNew = false
         } else {
             // create new DS, but don't save it until we segue to next screen
-            let ds = DesignStudio()
-            ds.title = self.newStudioNameText
-            ds.duration = 60
-            self.data = ds
-            self.isNew = true
+            createNewDesignStudio()
         }
     }
     
+    func createNewDesignStudio() {
+        let ds = DesignStudio()
+        ds.title = self.newStudioNameText
+        ds.duration = defaultDuration
+        self.data = ds
+        self.isNew = true
+    }
+    
     func getTitle () -> String {
-        return self.data!.title
+        return self.data.title
     }
     
     func setTitle(newTitle: String) {
         try! realm.write {
-            self.data!.title = newTitle
+            self.data.title = newTitle
         }
     }
     
     func getDuration() -> String {
-        return "\(data!.duration)"
+        return "\(data.duration)"
     }
     
     func setDuration(newDuration: String) {
         try! realm.write {
-            self.data!.duration = Int(newDuration) ?? 0
+            self.data.duration = Int(newDuration) ?? 0
         }
     }
     
@@ -67,7 +77,7 @@ class DetailDesignStudioViewModel {
         // save the design studio when we're moving to the next screen
         if isNew {
             try! realm.write {
-                self.realm.add(self.data!)
+                self.realm.add(self.data)
             }
         } else {
             // in case user clicks continue while the keyboard is still active

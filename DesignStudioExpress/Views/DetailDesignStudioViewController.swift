@@ -29,6 +29,11 @@ class DetailDesignStudioViewController: BaseUIViewController, UITextFieldDelegat
         self.populateFields()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.populateFields()
+    }
+    
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self);
     }

@@ -14,10 +14,6 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var createButton: UIButton!
     
-    @IBAction func createButtonClick(sender: AnyObject) {
-        segueActionTriggered(nil)
-    }
-    
     let vm = HomeViewModel()
     let editDesignStudioSegue = "EditDesignStudio"
     
@@ -142,10 +138,16 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
     
     // MARK: - Custom
     
+    @IBAction func createButtonClick(sender: AnyObject) {
+        segueActionTriggered(nil)
+    }
     
     private func segueActionTriggered(indexPath: NSIndexPath?) {
-        let data = vm.getData(indexPath)
-        self.performSegueWithIdentifier(self.editDesignStudioSegue, sender: data)
+        var notificationData: [NSObject: AnyObject]? = nil
+        if let data = vm.getData(indexPath) {
+            notificationData = ["DesignStudio":data]
+        }
+        NSNotificationCenter.defaultCenter().postNotificationName("DesignStudioLoaded", object: self, userInfo: notificationData)
     }
     
     // creates table view cell of a specified type

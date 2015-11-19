@@ -10,20 +10,44 @@ import UIKit
 
 class BaseUITabBarController: UITabBarController {
     
+    // tabbar style customization
     let higlightedItemColor = DesignStudioStyles.bottomNavigationIconSelected
     let barItemBackgroundColor = DesignStudioStyles.bottomNavigationBGColorUnselected
     let barItemBackgroundColorSelected = DesignStudioStyles.bottomNavigationBGColorSelected
     let tabBarHeight = CGFloat(60)
     
+    let createDesignStudioNavTabIndex = 2
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.customizeStyle()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showDesignStudio:", name: "DesignStudioLoaded", object: nil)
+    }
+    
+    func showDesignStudio(notification: NSNotification) {
+        let userInfo = notification.userInfo as? [String: AnyObject]
+        let designStudio = userInfo?["DesignStudio"] as? DesignStudio
+        
+        let navViewController = self.viewControllers![createDesignStudioNavTabIndex] as! UINavigationController
+        let designStudioViewController = navViewController.viewControllers[0] as! DetailDesignStudioViewController
+        
+        designStudioViewController.vm.setDesignStudio(designStudio)
+        
+        navViewController.popToRootViewControllerAnimated(false)
+        
+        // jump to design studio tab
+        self.selectedIndex = createDesignStudioNavTabIndex
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     /**
