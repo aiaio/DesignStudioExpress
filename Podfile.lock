@@ -1,6 +1,6 @@
 PODS:
   - Cartography (0.6.0)
-  - Crashlytics (3.4.0):
+  - Crashlytics (3.4.1):
     - Fabric (~> 1.6.0)
   - Fabric (1.6.0):
     - Fabric/Base (= 1.6.0)
@@ -44,7 +44,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Cartography: 70af183a248547694a8cfaa6b989cb7e04589985
-  Crashlytics: 1ee87895c37472eb3f01f409ea1654a464d2f8d4
+  Crashlytics: 41574a245bc6ae10c55d57f385ebd2004e5bee05
   Fabric: d737eda3a26ac940a5430230eedb35f16b226131
   MGSwipeTableCell: a51fa670c01f0aa048f12af040acebf315223137
   NRSimplePlist: c27d95cb456281528885b3c48e15826cf12a970b

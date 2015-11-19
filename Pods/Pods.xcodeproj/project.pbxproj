@@ -334,7 +334,6 @@
 		02A49DCA3898EEA52EC9184E5FA431AF /* Migration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Migration.swift; path = RealmSwift/Migration.swift; sourceTree = "<group>"; };
 		02B70123AC08F2937491569FF9B66591 /* RLMObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMObject.h; path = include/realm/RLMObject.h; sourceTree = "<group>"; };
 		034A4786E5D0C1ACD6A20910C4CF2586 /* Cartography.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Cartography.modulemap; sourceTree = "<group>"; };
-		036A838406A6485F486BC7AC625B4561 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		039AA0781178283F86F87CF39C65A3EE /* row.hpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.h; name = row.hpp; path = include/realm/row.hpp; sourceTree = "<group>"; };
 		0462866CF70AF84AD18E782FBD6A9C53 /* column_mixed_tpl.hpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.h; name = column_mixed_tpl.hpp; path = include/realm/column_mixed_tpl.hpp; sourceTree = "<group>"; };
 		0722140D5F299710C3010E366E31187C /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -425,6 +424,7 @@
 		52D89E79EF49D262B49BFB8A939D2C3E /* MGSwipeTableCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MGSwipeTableCell.h; path = MGSwipeTableCell/MGSwipeTableCell.h; sourceTree = "<group>"; };
 		552ADB56D2F7436027B66B6478BDEA37 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56A426F77BD5FFB780A0C499738AF165 /* column_basic.hpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.h; name = column_basic.hpp; path = include/realm/column_basic.hpp; sourceTree = "<group>"; };
+		596BDE85C1E38AC6F03870BCC424FEC2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
 		5BB3C39B8AEAB0ED22503C10FD712E4C /* exceptions.hpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.h; name = exceptions.hpp; path = include/realm/exceptions.hpp; sourceTree = "<group>"; };
 		5C12B6DAB876877ADD3257617E4C5F48 /* column_fwd.hpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.h; name = column_fwd.hpp; path = include/realm/column_fwd.hpp; sourceTree = "<group>"; };
 		5C9859751AD983B1BD719BF1D7D7C826 /* NRSimplePlist.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = NRSimplePlist.modulemap; sourceTree = "<group>"; };
@@ -899,7 +899,7 @@
 		7EFB5FF6D90964F668958F708848FFF1 /* Crashlytics */ = {
 			isa = PBXGroup;
 			children = (
-				F5C01DCFB2EF0A354E181645BC700553 /* Frameworks */,
+				BFC0F4D478D4087A6073347A952469AD /* Frameworks */,
 			);
 			path = Crashlytics;
 			sourceTree = "<group>";
@@ -1129,6 +1129,14 @@
 			path = "../Target Support Files/Cartography";
 			sourceTree = "<group>";
 		};
+		BFC0F4D478D4087A6073347A952469AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				596BDE85C1E38AC6F03870BCC424FEC2 /* Crashlytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C90742ADAFAB20BEB477FFA7133E44E7 /* NRSimplePlist */ = {
 			isa = PBXGroup;
 			children = (
@@ -1222,14 +1230,6 @@
 				6CE7AFA11917419EA41176D0F4A87DF4 /* Support Files */,
 			);
 			path = SwiftyJSON;
-			sourceTree = "<group>";
-		};
-		F5C01DCFB2EF0A354E181645BC700553 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				036A838406A6485F486BC7AC625B4561 /* Crashlytics.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F614AA355BAFA2716FAB80BFA70C276B /* Products */ = {
@@ -1659,14 +1659,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
-				TargetAttributes = {
-					01F2FAAF48B4CFE9933A1165FB93C16E = {
-						DevelopmentTeam = 2S449SVK3Q;
-					};
-					4E1263BFF45F6446CF3DE29AE234C893 = {
-						DevelopmentTeam = 2S449SVK3Q;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1965,7 +1957,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B54F3465B2D7F1A2FC9A6CEBB5D01B5 /* MGSwipeTableCell.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1981,7 +1972,6 @@
 				MODULEMAP_FILE = "Target Support Files/MGSwipeTableCell/MGSwipeTableCell.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = MGSwipeTableCell;
-				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2111,7 +2101,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B54F3465B2D7F1A2FC9A6CEBB5D01B5 /* MGSwipeTableCell.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2127,7 +2116,6 @@
 				MODULEMAP_FILE = "Target Support Files/MGSwipeTableCell/MGSwipeTableCell.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = MGSwipeTableCell;
-				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2369,7 +2357,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E02504D5FDE562ADD1C73E6E646ADE65 /* NRSimplePlist.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2385,7 +2372,6 @@
 				MODULEMAP_FILE = "Target Support Files/NRSimplePlist/NRSimplePlist.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = NRSimplePlist;
-				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2425,7 +2411,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E02504D5FDE562ADD1C73E6E646ADE65 /* NRSimplePlist.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -2441,7 +2426,6 @@
 				MODULEMAP_FILE = "Target Support Files/NRSimplePlist/NRSimplePlist.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = NRSimplePlist;
-				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
