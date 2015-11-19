@@ -17,7 +17,7 @@ class IntroViewController: UIViewController {
     
     lazy var playerLayer:AVPlayerLayer = self.initVideoPlayer()
     let videoFileName = "Intro"
-    let videoFileType = "mp4"
+    let videoFileType = "mov"
     
     override func viewDidLoad() {
         super.viewDidLoad()
