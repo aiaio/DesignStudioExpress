@@ -89,6 +89,12 @@ class DetailDesignStudioViewController: BaseUIViewController, UITextFieldDelegat
     
     // MARK: - custom
     
+    override func customizeNavBarStyle() {
+        super.customizeNavBarStyle()
+        
+        DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
+    }
+    
     func addObservers() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"),
             name:UIKeyboardWillShowNotification, object: nil);

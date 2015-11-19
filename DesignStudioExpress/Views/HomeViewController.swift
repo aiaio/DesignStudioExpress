@@ -24,10 +24,11 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.customizeTableStyle()
+        self.customizeStyle()
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         vm.refreshData()
         tableView.reloadData()
     }
@@ -141,6 +142,7 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
     
     // MARK: - Custom
     
+    
     private func segueActionTriggered(indexPath: NSIndexPath?) {
         let data = vm.getData(indexPath)
         self.performSegueWithIdentifier(self.editDesignStudioSegue, sender: data)
@@ -160,22 +162,23 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
-    private func customizeTableStyle() {
+    private func customizeStyle() {
         // TableView - style separator
         self.tableView.separatorColor = DesignStudioStyles.white
         // this in comb. with UIEdgeInsetsZero on layoutMargins for a cell
         // will make the cell separator show from edge to edge
         self.tableView.layoutMargins = UIEdgeInsetsZero
         
-        // NavigationBar - make navigation bar transparent
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        self.navigationController?.navigationBar.tintColor = UIColor.blackColor() // TODO: change this
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        
         // CreateButton - style the create button
         self.createButton.setTitleColor(DesignStudioStyles.headerTextLightBG, forState: .Normal)
         self.createButton.backgroundColor = DesignStudioStyles.white
         self.createButton.titleLabel?.font = UIFont(name: "Avenir-Book", size: 22)
+    }
+    
+    override func customizeNavBarStyle() {
+        super.customizeNavBarStyle()
+        
+        DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
     }
     
     func stylePhotoCell(cell: MGSwiteTableCellCentered, indexPath: NSIndexPath) -> MGSwiteTableCellCentered {

@@ -7,6 +7,7 @@
 //
 
 extension String {
+    // convinience method
     var length : Int {
         return self.characters.count
     }
