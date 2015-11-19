@@ -16,6 +16,8 @@ class IntroViewController: UIViewController {
     @IBOutlet weak var faqButton: UIButtonLightBlue!
     
     lazy var playerLayer:AVPlayerLayer = self.initVideoPlayer()
+    let videoFileName = "Intro"
+    let videoFileType = "mp4"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +44,7 @@ class IntroViewController: UIViewController {
     }
     
     func initVideoPlayer() -> AVPlayerLayer {
-        let videoBundle = NSBundle.mainBundle().pathForResource("Intro", ofType: "mp4")
+        let videoBundle = NSBundle.mainBundle().pathForResource(videoFileName, ofType: videoFileType)
         let player = AVPlayer(URL:  NSURL(fileURLWithPath: videoBundle!))
         player.muted = true
         player.allowsExternalPlayback = false
