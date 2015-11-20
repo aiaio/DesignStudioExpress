@@ -23,6 +23,8 @@
 		E42DD3271BFE68380026390E /* DesignStudioStyleCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DD3261BFE68380026390E /* DesignStudioStyleCustomization.swift */; };
 		E42DD32E1BFE83FD0026390E /* Intro.mov in Resources */ = {isa = PBXBuildFile; fileRef = E42DD32D1BFE83FD0026390E /* Intro.mov */; };
 		E42DD3301BFE98020026390E /* ChallengesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DD32F1BFE98020026390E /* ChallengesViewModel.swift */; };
+		E42DD3321BFF76800026390E /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DD3311BFF76800026390E /* Challenge.swift */; };
+		E42DD3341BFF97C70026390E /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DD3331BFF97C70026390E /* Activity.swift */; };
 		E45128F81BF29E09002AFC8A /* UIButtonRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45128F71BF29E09002AFC8A /* UIButtonRed.swift */; };
 		E4607F261BF6A82C000C44C7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */; };
 		E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */; };
@@ -70,6 +72,8 @@
 		E42DD3261BFE68380026390E /* DesignStudioStyleCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignStudioStyleCustomization.swift; sourceTree = "<group>"; };
 		E42DD32D1BFE83FD0026390E /* Intro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Intro.mov; sourceTree = "<group>"; };
 		E42DD32F1BFE98020026390E /* ChallengesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengesViewModel.swift; sourceTree = "<group>"; };
+		E42DD3311BFF76800026390E /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		E42DD3331BFF97C70026390E /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		E45128F71BF29E09002AFC8A /* UIButtonRed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonRed.swift; sourceTree = "<group>"; };
 		E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLightBlue.swift; sourceTree = "<group>"; };
@@ -235,6 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				E4FF2BBF1BF78DE500A3C732 /* DesignStudio.swift */,
+				E42DD3311BFF76800026390E /* Challenge.swift */,
+				E42DD3331BFF97C70026390E /* Activity.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -414,6 +420,7 @@
 				E421C4161BF164AD003F9D8A /* AppDelegate.swift in Sources */,
 				E49F45D91BFD468100F32AE9 /* ChallengesViewController.swift in Sources */,
 				E4ECC4F11BF8E92C00834AD3 /* DetailDesignStudioViewController.swift in Sources */,
+				E42DD3341BFF97C70026390E /* Activity.swift in Sources */,
 				E429AF5B1BF539BC00AE4DA7 /* UIImageExtension.swift in Sources */,
 				E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */,
 				E4C113301BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift in Sources */,
@@ -428,6 +435,7 @@
 				E429AF4E1BF3F65400AE4DA7 /* BaseUITabBarController.swift in Sources */,
 				E429AF691BF6619200AE4DA7 /* MGSwiteTableCellCentered.swift in Sources */,
 				E49F45DC1BFE443B00F32AE9 /* StyledNavigationBarProtocol.swift in Sources */,
+				E42DD3321BFF76800026390E /* Challenge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -377,10 +377,10 @@
                                     <segue destination="uXv-4T-Okg" kind="show" identifier="OpenDesignStudio" id="J4V-V2-8sg"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYY-da-6Bn" customClass="UIControl">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYY-da-6Bn" customClass="UIControl">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="120" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tdV-Xf-uov">
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="120" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tdV-Xf-uov">
                                         <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -650,7 +650,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <segue destination="7iM-cl-ZBW" kind="show" id="mkR-Ff-fxU"/>
+                                            <segue destination="7iM-cl-ZBW" kind="show" identifier="AddNewChallenge" id="mkR-Ff-fxU"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DS_Icon_big" translatesAutoresizingMaskIntoConstraints="NO" id="prv-DN-Bob">
@@ -775,6 +775,7 @@
                         <viewControllerLayoutGuide type="bottom" id="8Fy-Ov-mv4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Y5e-dN-xX0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

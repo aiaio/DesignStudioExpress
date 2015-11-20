@@ -12,10 +12,11 @@ import RealmSwift
 class ChallengesViewModel {
     
     lazy var realm = try! Realm()
-    private var data: DesignStudio?
-    private var isNew = false
+    private var designStudio: DesignStudio!
     
-    func setDesignStudio(designStudio: DesignStudio) {
-        self.data = designStudio
+    func setDesignStudio(newDesignStudio: DesignStudio) {
+        if (self.designStudio?.id != newDesignStudio.id) {
+            self.designStudio = newDesignStudio
+        }
     }
 }

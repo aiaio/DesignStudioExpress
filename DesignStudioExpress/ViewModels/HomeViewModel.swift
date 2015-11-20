@@ -36,13 +36,32 @@ class HomeViewModel {
         
         let ds1 = DesignStudio()
         ds1.title = "First template"
-        ds1.duration = 45
         realm.add(ds1)
         
         let ds2 = DesignStudio()
         ds2.title = "Second template"
-        ds2.duration = 62
         realm.add(ds2)
+
+        for idx in 1...10 {
+            let ds = DesignStudio()
+
+            ds.title = "template\(idx)"
+            for idx2 in 1...5 {
+                let challenge = Challenge()
+                challenge.title = "challenge \(idx2)"
+                challenge.challengeDescription  = "desc"
+                
+                for idx3 in 1...10 {
+                    let activity = Activity()
+                    activity.title = "Activity \(idx3)"
+                    activity.duration = 10
+                    challenge.activities.append(activity)
+                }
+                
+                ds.challenges.append(challenge)
+            }
+            realm.add(ds)
+        }
         
         try! realm.commitWrite()
     }

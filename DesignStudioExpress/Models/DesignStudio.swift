@@ -12,8 +12,19 @@ import RealmSwift
 class DesignStudio: Object {
     dynamic var id = NSUUID().UUIDString
     dynamic var title = ""
-    dynamic var duration: Int = 60 // minutes
     dynamic var dateCreated: NSDate = NSDate()
+    let challenges = List<Challenge>()
+    
+    // minutes
+    var duration: Int {
+        get {
+            var duration = 0
+            for challenge in self.challenges {
+                duration += challenge.duration
+            }
+            return duration
+        }
+    }
     
     override static func primaryKey() -> String? {
         return "id"

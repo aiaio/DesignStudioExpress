@@ -18,7 +18,6 @@ class DetailDesignStudioViewModel {
     let newStudioNameText = "Studio Name Goes Here"
     let newStudioButtonText = "CREATE"
     let editStudioButtonText = "OPEN"
-    let defaultDuration = 60
     
     lazy var realm = try! Realm()
     private var data: DesignStudio!
@@ -41,7 +40,6 @@ class DetailDesignStudioViewModel {
     func createNewDesignStudio() {
         let ds = DesignStudio()
         ds.title = self.newStudioNameText
-        ds.duration = defaultDuration
         self.data = ds
         self.isNew = true
     }
@@ -60,11 +58,15 @@ class DetailDesignStudioViewModel {
         return "\(data.duration)"
     }
     
+    /* Duration on DesignStudio is now a sum of all durations from activities
+     * functionality is left commented so that we can revert this decision 
+     * in future phases
     func setDuration(newDuration: String) {
         try! realm.write {
-            self.data.duration = Int(newDuration) ?? 0
+            //self.data.duration = Int(newDuration) ?? 0
         }
     }
+    */
     
     func getButtonTitle() -> String {
         if isNew {
@@ -82,7 +84,7 @@ class DetailDesignStudioViewModel {
         } else {
             // in case user clicks continue while the keyboard is still active
             self.setTitle(title)
-            self.setDuration(duration)
+            //self.setDuration(duration)
         }
         
         return self.data
