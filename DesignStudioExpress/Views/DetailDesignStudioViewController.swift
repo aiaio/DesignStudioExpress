@@ -85,10 +85,10 @@ class DetailDesignStudioViewController: BaseUIViewController, UITextFieldDelegat
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == self.openDesignStudioSegue {
-            vm.openDesignStudio(self.name.text, duration: self.duration.text!)
+            let data = vm.openDesignStudio(self.name.text, duration: self.duration.text!)
             
             let destination = segue.destinationViewController as! ChallengesViewController
-            destination.vm.setDesignStudio(sender as! DesignStudio)
+            destination.vm.setDesignStudio(data)
         }
     }
     

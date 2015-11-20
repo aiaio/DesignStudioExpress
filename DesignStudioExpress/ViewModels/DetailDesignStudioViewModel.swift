@@ -73,7 +73,7 @@ class DetailDesignStudioViewModel {
         return editStudioButtonText
     }
     
-    func openDesignStudio(title: String, duration: String) {
+    func openDesignStudio(title: String, duration: String) -> DesignStudio {
         // save the design studio when we're moving to the next screen
         if isNew {
             try! realm.write {
@@ -84,6 +84,8 @@ class DetailDesignStudioViewModel {
             self.setTitle(title)
             self.setDuration(duration)
         }
+        
+        return self.data
     }
     
     func maxLengthExceeded(fieldType: FieldNames, textFieldLength: Int, range: NSRange, replacementStringLength: Int) -> Bool {
