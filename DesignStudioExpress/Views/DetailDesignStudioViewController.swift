@@ -86,9 +86,9 @@ class DetailDesignStudioViewController: BaseUIViewController, UITextFieldDelegat
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == self.openDesignStudioSegue {
             vm.openDesignStudio(self.name.text, duration: self.duration.text!)
-            /*
+            
             let destination = segue.destinationViewController as! ChallengesViewController
-            destination.vm.setDesignStudio(sender as? DesignStudio)*/
+            destination.vm.setDesignStudio(sender as! DesignStudio)
         }
     }
     

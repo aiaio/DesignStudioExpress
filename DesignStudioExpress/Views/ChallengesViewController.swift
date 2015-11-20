@@ -9,7 +9,9 @@
 import UIKit
 
 class ChallengesViewController: BaseUIViewController {
-
+    
+    let vm = ChallengesViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
