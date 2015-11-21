@@ -11,6 +11,7 @@ import MGSwipeTableCell
 
 class ChallengesViewController: BaseUIViewController, UITableViewDataSource, UITableViewDelegate, MGSwipeTableCellDelegate {
     @IBOutlet weak var addChallengeView: UIView!
+    @IBOutlet weak var tableViewParentView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
     let vm = ChallengesViewModel()
@@ -22,12 +23,11 @@ class ChallengesViewController: BaseUIViewController, UITableViewDataSource, UIT
     func showView() {
         if vm.isNewDesignStudio() {
             addChallengeView.hidden = false
-            tableView.hidden = true
+            tableViewParentView.hidden = true
         } else {
             addChallengeView.hidden = true
-            tableView.hidden = false
+            tableViewParentView.hidden = false
         }
-        
     }
     
     override func viewWillAppear(animated: Bool) {
