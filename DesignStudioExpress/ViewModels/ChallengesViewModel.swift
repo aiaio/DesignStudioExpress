@@ -32,11 +32,13 @@ class ChallengesViewModel {
     }
     
     func isRowEditable(indexPath: NSIndexPath) -> Bool {
-        if indexPath.row < data.count {
-            return true
+        return indexPath.row < data.count
+    }
+    
+    func reorderRows(sourceRow: NSIndexPath, destinationRow: NSIndexPath) {
+        try! realm.write {
+            self.data.move(from: sourceRow.row, to: destinationRow.row)
         }
-        
-        return false
     }
     
     // handler for Delete button
@@ -53,6 +55,9 @@ class ChallengesViewModel {
         return success
     }
 
+    func getDesignStudioTitle() -> String {
+        return self.designStudio.title
+    }
     
     func getTitle(indexPath: NSIndexPath) -> String {
         if indexPath.row == getTotalRows() - 1 {

@@ -18,22 +18,25 @@ class ChallengesViewController: BaseUIViewController, UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    func showView() {
-        if vm.isNewDesignStudio() {
-            addChallengeView.hidden = false
-            tableViewParentView.hidden = true
-        } else {
-            addChallengeView.hidden = true
-            tableViewParentView.hidden = false
-        }
+        
+        self.navigationItem.title = vm.getDesignStudioTitle()
+        
+        // show the edit button for reordering of the rows
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     override func viewWillAppear(animated: Bool) {
         self.showView()
         tableView.reloadData()
     }
+    
+    override func setEditing(editing: Bool, animated: Bool) {
+        // Toggles the edit button state
+        super.setEditing(editing, animated: animated)
+        // Toggles the actual editing actions appearing on a table view
+        tableView.setEditing(editing, animated: true)
+    }
+
     
     // MARK: - Table view data source
     
@@ -75,24 +78,33 @@ class ChallengesViewController: BaseUIViewController, UITableViewDataSource, UIT
         return 110
     }
     
-    // MARK: - Custom
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        vm.reorderRows(sourceIndexPath, destinationRow: destinationIndexPath)
+    }
+        
+    // Conditional rearranging of the table view.
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return vm.isRowEditable(indexPath)
+    }
     
-    // creates table view cell of a specified type
-    private func createCell<T: UITableViewCell>(reuseIdentifier: String, indexPath: NSIndexPath, _: T.Type) -> T {
-        var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! T!
-        if cell == nil
-        {
-            cell = T(style: UITableViewCellStyle.Default, reuseIdentifier: reuseIdentifier)
+    func tableView(tableView: UITableView, targetIndexPathForMoveFromRowAtIndexPath sourceIndexPath: NSIndexPath, toProposedIndexPath proposedDestinationIndexPath: NSIndexPath) -> NSIndexPath {
+        if vm.isRowEditable(proposedDestinationIndexPath) {
+            return proposedDestinationIndexPath
         }
-        
-        return cell
+        return sourceIndexPath
     }
     
-    override func customizeNavBarStyle() {
-        super.customizeNavBarStyle()
-        
-        DesignStudioElementStyles.pinkNavigationBar(self.navigationController!.navigationBar)
+    // Don't show delete/insert controls when editing
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        return .None
     }
+    
+    // Don't indent rows when editing
+    func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+    
+    // MARK: - MGSwipeTableCellDelegate
     
     /**
      * Delegate method to enable/disable swipe gestures
@@ -131,6 +143,34 @@ class ChallengesViewController: BaseUIViewController, UITableViewDataSource, UIT
         return []
     }
 
+    // MARK: - Custom
+    
+    func showView() {
+        if vm.isNewDesignStudio() {
+            addChallengeView.hidden = false
+            tableViewParentView.hidden = true
+        } else {
+            addChallengeView.hidden = true
+            tableViewParentView.hidden = false
+        }
+    }
+    
+    // creates table view cell of a specified type
+    private func createCell<T: UITableViewCell>(reuseIdentifier: String, indexPath: NSIndexPath, _: T.Type) -> T {
+        var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! T!
+        if cell == nil
+        {
+            cell = T(style: UITableViewCellStyle.Default, reuseIdentifier: reuseIdentifier)
+        }
+        
+        return cell
+    }
+    
+    override func customizeNavBarStyle() {
+        super.customizeNavBarStyle()
+        
+        DesignStudioElementStyles.pinkNavigationBar(self.navigationController!.navigationBar)
+    }
 
     /*
     // MARK: - Navigation
