@@ -34,6 +34,7 @@
 		E4C113301BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C1132F1BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift */; };
 		E4C113321BFA855700A7E1B3 /* RealmSwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C113311BFA855700A7E1B3 /* RealmSwiftExtension.swift */; };
 		E4C113361BFBBE3B00A7E1B3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C113351BFBBE3B00A7E1B3 /* StringExtension.swift */; };
+		E4CEA34B1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CEA34A1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift */; };
 		E4ECC4F11BF8E92C00834AD3 /* DetailDesignStudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECC4F01BF8E92C00834AD3 /* DetailDesignStudioViewController.swift */; };
 		E4ECC4F31BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECC4F21BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift */; };
 		E4FF2BC01BF78DE500A3C732 /* DesignStudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF2BBF1BF78DE500A3C732 /* DesignStudio.swift */; };
@@ -83,6 +84,7 @@
 		E4C1132F1BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtension.swift; sourceTree = "<group>"; };
 		E4C113311BFA855700A7E1B3 /* RealmSwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSwiftExtension.swift; sourceTree = "<group>"; };
 		E4C113351BFBBE3B00A7E1B3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		E4CEA34A1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSwipeTableCellChallenge.swift; sourceTree = "<group>"; };
 		E4ECC4F01BF8E92C00834AD3 /* DetailDesignStudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDesignStudioViewController.swift; sourceTree = "<group>"; };
 		E4ECC4F21BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDesignStudioViewModel.swift; sourceTree = "<group>"; };
 		E4FF2BBF1BF78DE500A3C732 /* DesignStudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignStudio.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				E429AF4D1BF3F65400AE4DA7 /* BaseUITabBarController.swift */,
 				E429AF5C1BF5404200AE4DA7 /* BaseUIViewController.swift */,
 				E429AF681BF6619200AE4DA7 /* MGSwiteTableCellCentered.swift */,
+				E4CEA34A1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift */,
 				E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */,
 				E45128F71BF29E09002AFC8A /* UIButtonRed.swift */,
 				E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */,
@@ -430,6 +433,7 @@
 				E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */,
 				E42DD3271BFE68380026390E /* DesignStudioStyleCustomization.swift in Sources */,
 				E429AF5D1BF5404200AE4DA7 /* BaseUIViewController.swift in Sources */,
+				E4CEA34B1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift in Sources */,
 				E4ECC4F31BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift in Sources */,
 				E4C113361BFBBE3B00A7E1B3 /* StringExtension.swift in Sources */,
 				E429AF4E1BF3F65400AE4DA7 /* BaseUITabBarController.swift in Sources */,
