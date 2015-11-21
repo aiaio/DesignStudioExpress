@@ -93,6 +93,43 @@ class ChallengesViewController: BaseUIViewController, UITableViewDataSource, UIT
         
         DesignStudioElementStyles.pinkNavigationBar(self.navigationController!.navigationBar)
     }
+    
+    /**
+     * Delegate method to enable/disable swipe gestures
+     * @return true if swipe is allowed
+     **/
+    func swipeTableCell(cell: MGSwipeTableCell!, canSwipe direction: MGSwipeDirection) -> Bool {
+        if let indexPath = self.tableView.indexPathForCell(cell) {
+            return vm.isRowEditable(indexPath)
+        }
+        
+        return false
+    }
+    
+    func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
+        if let indexPath = self.tableView.indexPathForCell(cell) {
+            if vm.swipeButtonClicked(indexPath) {
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            }
+        }
+        
+        return true
+    }
+    
+    func swipeTableCell(cell: MGSwipeTableCell!, swipeButtonsForDirection direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]! {
+        let indexPath = tableView?.indexPathForCell(cell)
+        guard indexPath != nil else {
+            // cell is not visible
+            return []
+        }
+        
+        if direction == .LeftToRight {
+            let button = MGSwipeButton(title: "Delete", backgroundColor: DesignStudioStyles.primaryOrange)
+            button.setTitleColor(DesignStudioStyles.white, forState: .Normal)
+            return [button]
+        }
+        return []
+    }
 
 
     /*

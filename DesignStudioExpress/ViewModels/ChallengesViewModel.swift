@@ -31,6 +31,29 @@ class ChallengesViewModel {
         return data.count == 0
     }
     
+    func isRowEditable(indexPath: NSIndexPath) -> Bool {
+        if indexPath.row < data.count {
+            return true
+        }
+        
+        return false
+    }
+    
+    // handler for Delete button
+    // since we have only one swipe button
+    func swipeButtonClicked(indexPath: NSIndexPath) -> Bool {
+        let idx = indexPath.row
+        var success = false
+        
+        try! self.realm.write {
+            self.realm.delete(self.data[idx])
+            success = true
+        }
+        
+        return success
+    }
+
+    
     func getTitle(indexPath: NSIndexPath) -> String {
         if indexPath.row == getTotalRows() - 1 {
             return ""// TODO?

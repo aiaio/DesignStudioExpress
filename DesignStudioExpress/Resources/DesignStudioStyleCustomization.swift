@@ -20,5 +20,6 @@ public class DesignStudioElementStyles {
     class func pinkNavigationBar(navigationBar: UINavigationBar) {
         navigationBar.setBackgroundImage(nil, forBarMetrics: .Default)
         navigationBar.barTintColor = DesignStudioStyles.primaryOrange
+        navigationBar.shadowImage = UIImage()
     }
 }

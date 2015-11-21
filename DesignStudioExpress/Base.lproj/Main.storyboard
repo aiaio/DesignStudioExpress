@@ -868,6 +868,9 @@
                                                                     <include reference="Z9x-vP-maj"/>
                                                                 </mask>
                                                             </variation>
+                                                            <connections>
+                                                                <segue destination="7iM-cl-ZBW" kind="show" identifier="AddNewChallengeCell" id="Tyj-mL-nW9"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -1155,5 +1158,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gcr-15-crY"/>
+        <segue reference="mkR-Ff-fxU"/>
     </inferredMetricsTieBreakers>
 </document>
