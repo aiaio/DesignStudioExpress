@@ -54,6 +54,13 @@ class BaseUITabBarController: UITabBarController {
      * Customize the tab bar style
      */
     private func customizeStyle() {
+        // Set empty background image, so that we can remove the tab bar shadow
+        self.tabBar.backgroundImage = UIImage()
+        // Set empty shadow image
+        self.tabBar.shadowImage = UIImage()
+        // make the tab bar not translucen, so that we can apply back. color
+        self.tabBar.translucent = false
+        
         // color for the highlighted item
         self.tabBar.tintColor = higlightedItemColor
         // color for the bar

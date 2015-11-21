@@ -11,19 +11,14 @@ public class DesignStudioElementStyles {
     
     // set the navigation bar
     class func transparentNavigationBar(navigationBar: UINavigationBar) {
-        // NavigationBar - make navigation bar transparent
-        navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        // remove the shadow bar
-        navigationBar.shadowImage = UIImage()
+        navigationBar.translucent = true
     }
     
     class func pinkNavigationBar(navigationBar: UINavigationBar) {
-        // set the background image to nil so that the background color is applied
-        navigationBar.setBackgroundImage(nil, forBarMetrics: .Default)
-        // background color for the nav bar
+        // If the background image is set, we need this so that the barTintColor is visible
+        navigationBar.translucent = false
+        // Background color for the nav bar
         navigationBar.barTintColor = DesignStudioStyles.primaryOrange
-        // remove the shadow bar
-        navigationBar.shadowImage = UIImage()
         // set the Title text color
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
     }

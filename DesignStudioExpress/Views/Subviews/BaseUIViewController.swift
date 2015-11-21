@@ -21,11 +21,18 @@ class BaseUIViewController: UIViewController, StyledNavigationBarProtocol {
     }
     
     func customizeNavBarStyle() {
-        // remove "Back" title from all back buttons
+        // Remove "Back" title from all back buttons
         let backButton = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButton
         
-        // make navigation text and buttons white
+        // Make navigation text and buttons white
         self.navigationController?.navigationBar.tintColor = DesignStudioStyles.white
+        
+        // We need to set the background image so we can remove the shadow bar
+        // If we need to control the color of the background navigation, 
+        // we can set translucent property to true
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        // Remove the shadow bar
+        self.navigationController?.navigationBar.shadowImage = UIImage()
     }
 }

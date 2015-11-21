@@ -727,19 +727,19 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iDC-X6-CHq" userLabel="Table View Parent View">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iDC-X6-CHq" userLabel="Table View Parent View">
                                 <rect key="frame" x="-20" y="44" width="440" height="727"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WZH-d9-lmw">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" bounces="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WZH-d9-lmw">
                                         <rect key="frame" x="20" y="20" width="400" height="687"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" showsReorderControl="YES" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="challengeCell" rowHeight="110" id="FwK-TZ-qVW" customClass="MGSwipeTableCellChallenge" customModule="DesignStudioExpress" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                <rect key="frame" x="0.0" y="92" width="400" height="110"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FwK-TZ-qVW" id="YB4-4x-Nbp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="109"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="109"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6Q-H7-qC7">
@@ -841,10 +841,10 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="addButtonCell" rowHeight="75" id="c7z-w7-tMF">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                <rect key="frame" x="0.0" y="202" width="400" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c7z-w7-tMF" id="PS2-Aq-nEu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="74"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="74"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynE-yr-ku8" customClass="UIButtonTransparent" customModule="DesignStudioExpress" customModuleProvider="target">
@@ -982,17 +982,17 @@
                                         <exclude reference="T27-tB-Zgt"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="1jS-GJ-z2W"/>
-                                        <exclude reference="HiB-dk-pQr"/>
-                                        <exclude reference="ezn-Qi-FZN"/>
-                                        <exclude reference="m9h-L8-rNE"/>
-                                        <exclude reference="v1x-FY-ExG"/>
                                         <exclude reference="5Du-14-QqG"/>
                                         <exclude reference="6HU-AN-s16"/>
                                         <exclude reference="6q8-wO-iw0"/>
                                         <exclude reference="Fz5-l3-cIi"/>
                                         <exclude reference="h7j-Ob-xBr"/>
                                         <exclude reference="syH-pg-8eM"/>
+                                        <exclude reference="1jS-GJ-z2W"/>
+                                        <exclude reference="HiB-dk-pQr"/>
+                                        <exclude reference="ezn-Qi-FZN"/>
+                                        <exclude reference="m9h-L8-rNE"/>
+                                        <exclude reference="v1x-FY-ExG"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -1000,17 +1000,17 @@
                                         <include reference="T27-tB-Zgt"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="1jS-GJ-z2W"/>
-                                        <exclude reference="HiB-dk-pQr"/>
-                                        <include reference="ezn-Qi-FZN"/>
-                                        <include reference="m9h-L8-rNE"/>
-                                        <include reference="v1x-FY-ExG"/>
                                         <include reference="5Du-14-QqG"/>
                                         <include reference="6HU-AN-s16"/>
                                         <include reference="6q8-wO-iw0"/>
                                         <exclude reference="Fz5-l3-cIi"/>
                                         <include reference="h7j-Ob-xBr"/>
                                         <exclude reference="syH-pg-8eM"/>
+                                        <include reference="1jS-GJ-z2W"/>
+                                        <exclude reference="HiB-dk-pQr"/>
+                                        <include reference="ezn-Qi-FZN"/>
+                                        <include reference="m9h-L8-rNE"/>
+                                        <include reference="v1x-FY-ExG"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -1032,14 +1032,14 @@
                                 <exclude reference="Kd8-ut-0aD"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="DuM-wl-RtL"/>
-                                <exclude reference="N10-bD-TaV"/>
-                                <exclude reference="YV4-KG-kCJ"/>
                                 <exclude reference="12k-h3-eqO"/>
                                 <exclude reference="5bm-S9-BNa"/>
                                 <exclude reference="g3p-Za-2eu"/>
                                 <exclude reference="ssH-jf-Pcn"/>
                                 <exclude reference="dYb-Ss-973"/>
+                                <exclude reference="DuM-wl-RtL"/>
+                                <exclude reference="N10-bD-TaV"/>
+                                <exclude reference="YV4-KG-kCJ"/>
                                 <exclude reference="5P9-rD-dlN"/>
                             </mask>
                         </variation>
@@ -1048,14 +1048,14 @@
                                 <include reference="Kd8-ut-0aD"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="DuM-wl-RtL"/>
-                                <include reference="N10-bD-TaV"/>
-                                <include reference="YV4-KG-kCJ"/>
                                 <include reference="12k-h3-eqO"/>
                                 <include reference="5bm-S9-BNa"/>
                                 <include reference="g3p-Za-2eu"/>
                                 <include reference="ssH-jf-Pcn"/>
                                 <include reference="dYb-Ss-973"/>
+                                <include reference="DuM-wl-RtL"/>
+                                <include reference="N10-bD-TaV"/>
+                                <include reference="YV4-KG-kCJ"/>
                                 <include reference="5P9-rD-dlN"/>
                             </mask>
                         </variation>
