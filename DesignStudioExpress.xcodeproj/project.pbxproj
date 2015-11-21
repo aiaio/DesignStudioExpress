@@ -27,6 +27,8 @@
 		E42DD3341BFF97C70026390E /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DD3331BFF97C70026390E /* Activity.swift */; };
 		E45128F81BF29E09002AFC8A /* UIButtonRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45128F71BF29E09002AFC8A /* UIButtonRed.swift */; };
 		E4607F261BF6A82C000C44C7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */; };
+		E46A22061C010FC1004D5292 /* ChallengeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46A22051C010FC1004D5292 /* ChallengeDetailViewController.swift */; };
+		E46A22081C010FE5004D5292 /* ChallengeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46A22071C010FE5004D5292 /* ChallengeDetailViewModel.swift */; };
 		E47294E71C00C9FF00E59587 /* UIButtonTransparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47294E61C00C9FF00E59587 /* UIButtonTransparent.swift */; };
 		E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */; };
 		E49F45D91BFD468100F32AE9 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49F45D81BFD468100F32AE9 /* ChallengesViewController.swift */; };
@@ -78,6 +80,8 @@
 		E42DD3331BFF97C70026390E /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		E45128F71BF29E09002AFC8A /* UIButtonRed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonRed.swift; sourceTree = "<group>"; };
 		E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E46A22051C010FC1004D5292 /* ChallengeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewController.swift; sourceTree = "<group>"; };
+		E46A22071C010FE5004D5292 /* ChallengeDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewModel.swift; sourceTree = "<group>"; };
 		E47294E61C00C9FF00E59587 /* UIButtonTransparent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonTransparent.swift; sourceTree = "<group>"; };
 		E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLightBlue.swift; sourceTree = "<group>"; };
 		E49F45D81BFD468100F32AE9 /* ChallengesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */,
 				E4ECC4F21BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift */,
 				E42DD32F1BFE98020026390E /* ChallengesViewModel.swift */,
+				E46A22071C010FE5004D5292 /* ChallengeDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				E429AF641BF64DD300AE4DA7 /* HomeViewController.swift */,
 				E4ECC4F01BF8E92C00834AD3 /* DetailDesignStudioViewController.swift */,
 				E49F45D81BFD468100F32AE9 /* ChallengesViewController.swift */,
+				E46A22051C010FC1004D5292 /* ChallengeDetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -429,7 +435,9 @@
 				E4ECC4F11BF8E92C00834AD3 /* DetailDesignStudioViewController.swift in Sources */,
 				E42DD3341BFF97C70026390E /* Activity.swift in Sources */,
 				E429AF5B1BF539BC00AE4DA7 /* UIImageExtension.swift in Sources */,
+				E46A22081C010FE5004D5292 /* ChallengeDetailViewModel.swift in Sources */,
 				E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */,
+				E46A22061C010FC1004D5292 /* ChallengeDetailViewController.swift in Sources */,
 				E4C113301BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift in Sources */,
 				E429AF651BF64DD300AE4DA7 /* HomeViewController.swift in Sources */,
 				E4607F261BF6A82C000C44C7 /* HomeViewModel.swift in Sources */,

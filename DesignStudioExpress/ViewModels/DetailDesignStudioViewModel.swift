@@ -80,11 +80,11 @@ class DetailDesignStudioViewModel {
         if isNew {
             try! realm.write {
                 self.realm.add(self.data)
+                self.isNew = false
             }
         } else {
             // in case user clicks continue while the keyboard is still active
             self.setTitle(title)
-            //self.setDuration(duration)
         }
         
         return self.data

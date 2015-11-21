@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class ChallengesViewModel {
+    let newChallengeNameText = "Challenge Name Goes Here"
     
     lazy var realm = try! Realm()
     private var designStudio: DesignStudio!
@@ -43,7 +44,7 @@ class ChallengesViewModel {
     
     // handler for Delete button
     // since we have only one swipe button
-    func swipeButtonClicked(indexPath: NSIndexPath) -> Bool {
+    func deleteChallenge(indexPath: NSIndexPath) -> Bool {
         let idx = indexPath.row
         var success = false
         
@@ -60,24 +61,42 @@ class ChallengesViewModel {
     }
     
     func getTitle(indexPath: NSIndexPath) -> String {
-        if indexPath.row == getTotalRows() - 1 {
-            return ""// TODO?
+        if self.isRowEditable(indexPath) {
+            return data[indexPath.row].title
         }
-        return data[indexPath.row].title
+        return ""
     }
     
     func getActivities(indexPath: NSIndexPath) -> String {
-        if indexPath.row == getTotalRows() - 1 {
-            return ""// TODO?
+        if self.isRowEditable(indexPath) {
+            "\(data[indexPath.row].activities.count) Activities"
         }
-        return "\(data[indexPath.row].activities.count) Activities"
+        return ""
     }
     
     func getDuration(indexPath: NSIndexPath) -> String {
-        if indexPath.row == getTotalRows() - 1 {
-            return ""// TODO?
+        if self.isRowEditable(indexPath) {
+            return "\(data[indexPath.row].duration)"
         }
-        return "\(data[indexPath.row].duration)"
+        return ""
+    }
+    
+    func getData(indexPath: NSIndexPath?) -> Challenge {
+        if indexPath != nil && self.isRowEditable(indexPath!) {
+            return data[indexPath!.row]
+        }
+        return createNewChallenge()
+    }
+    
+    private func createNewChallenge() -> Challenge {
+        let challenge = Challenge()
+        challenge.title = self.newChallengeNameText
+        
+        try! realm.write {
+            self.designStudio.challenges.append(challenge)
+        }
+        
+        return challenge
     }
 
 }

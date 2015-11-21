@@ -33,6 +33,8 @@ class UIButtonBase: UIButton {
         titleLabel?.font = titleFont
         
         // set spacing between title characters to 3.0
-        titleLabel?.attributedText = NSAttributedString.attributedStringWithSpacing(titleLabel!.attributedText!, kerning: kerning)
+        if titleLabel?.attributedText != nil {
+            titleLabel?.attributedText = NSAttributedString.attributedStringWithSpacing(titleLabel!.attributedText!, kerning: kerning)
+        }
     }
 }

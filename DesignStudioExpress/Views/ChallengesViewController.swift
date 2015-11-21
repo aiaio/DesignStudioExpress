@@ -36,7 +36,6 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         // Toggles the actual editing actions appearing on a table view
         tableView.setEditing(editing, animated: true)
     }
-
     
     // MARK: - Table view data source
     
@@ -120,7 +119,7 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         if let indexPath = self.tableView.indexPathForCell(cell) {
-            if vm.swipeButtonClicked(indexPath) {
+            if vm.deleteChallenge(indexPath) {
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             }
         }
@@ -155,6 +154,12 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         }
     }
     
+    override func customizeNavBarStyle() {
+        super.customizeNavBarStyle()
+        
+        DesignStudioElementStyles.pinkNavigationBar(self.navigationController!.navigationBar)
+    }
+    
     // creates table view cell of a specified type
     private func createCell<T: UITableViewCell>(reuseIdentifier: String, indexPath: NSIndexPath, _: T.Type) -> T {
         var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! T!
@@ -166,20 +171,26 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         return cell
     }
     
-    override func customizeNavBarStyle() {
-        super.customizeNavBarStyle()
-        
-        DesignStudioElementStyles.pinkNavigationBar(self.navigationController!.navigationBar)
-    }
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let destination = segue.destinationViewController as! ChallengeDetailViewController
+        
+        switch segue.identifier! {
+            
+        case "AddNewChallenge":
+            fallthrough
+        case "AddNewChallengeCell":
+            destination.vm.setChallenge(vm.getData(nil))
+        case "EditChallenge":
+            if let indexPath = self.tableView.indexPathForCell(sender as! MGSwipeTableCellChallenge) {
+                destination.vm.setChallenge(vm.getData(indexPath))
+            }
+        default:
+            destination.vm.setChallenge(vm.getData(nil))
+        }
     }
-    */
-
 }
