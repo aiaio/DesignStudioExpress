@@ -14,12 +14,12 @@
 		E421C4201BF164AD003F9D8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E421C41E1BF164AD003F9D8A /* LaunchScreen.storyboard */; };
 		E421C42B1BF164AD003F9D8A /* DesignStudioExpressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E421C42A1BF164AD003F9D8A /* DesignStudioExpressTests.swift */; };
 		E421C4371BF279FE003F9D8A /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E421C4361BF279FE003F9D8A /* IntroViewController.swift */; };
-		E429AF4E1BF3F65400AE4DA7 /* BaseUITabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF4D1BF3F65400AE4DA7 /* BaseUITabBarController.swift */; };
+		E429AF4E1BF3F65400AE4DA7 /* UITabBarControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF4D1BF3F65400AE4DA7 /* UITabBarControllerBase.swift */; };
 		E429AF581BF530B200AE4DA7 /* DesignStudioStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF571BF530B200AE4DA7 /* DesignStudioStyles.swift */; };
 		E429AF5B1BF539BC00AE4DA7 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF5A1BF539BC00AE4DA7 /* UIImageExtension.swift */; };
-		E429AF5D1BF5404200AE4DA7 /* BaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF5C1BF5404200AE4DA7 /* BaseUIViewController.swift */; };
+		E429AF5D1BF5404200AE4DA7 /* UIViewControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF5C1BF5404200AE4DA7 /* UIViewControllerBase.swift */; };
 		E429AF651BF64DD300AE4DA7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF641BF64DD300AE4DA7 /* HomeViewController.swift */; };
-		E429AF691BF6619200AE4DA7 /* MGSwiteTableCellCentered.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF681BF6619200AE4DA7 /* MGSwiteTableCellCentered.swift */; };
+		E429AF691BF6619200AE4DA7 /* MGSwipeTableCellCentered.swift in Sources */ = {isa = PBXBuildFile; fileRef = E429AF681BF6619200AE4DA7 /* MGSwipeTableCellCentered.swift */; };
 		E42DD3271BFE68380026390E /* DesignStudioStyleCustomization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DD3261BFE68380026390E /* DesignStudioStyleCustomization.swift */; };
 		E42DD32E1BFE83FD0026390E /* Intro.mov in Resources */ = {isa = PBXBuildFile; fileRef = E42DD32D1BFE83FD0026390E /* Intro.mov */; };
 		E42DD3301BFE98020026390E /* ChallengesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DD32F1BFE98020026390E /* ChallengesViewModel.swift */; };
@@ -30,7 +30,7 @@
 		E47294E71C00C9FF00E59587 /* UIButtonTransparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47294E61C00C9FF00E59587 /* UIButtonTransparent.swift */; };
 		E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */; };
 		E49F45D91BFD468100F32AE9 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49F45D81BFD468100F32AE9 /* ChallengesViewController.swift */; };
-		E49F45DC1BFE443B00F32AE9 /* StyledNavigationBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49F45DB1BFE443B00F32AE9 /* StyledNavigationBarProtocol.swift */; };
+		E49F45DC1BFE443B00F32AE9 /* StyledNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49F45DB1BFE443B00F32AE9 /* StyledNavigationBar.swift */; };
 		E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */; };
 		E4C113301BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C1132F1BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift */; };
 		E4C113321BFA855700A7E1B3 /* RealmSwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C113311BFA855700A7E1B3 /* RealmSwiftExtension.swift */; };
@@ -65,12 +65,12 @@
 		E421C42A1BF164AD003F9D8A /* DesignStudioExpressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignStudioExpressTests.swift; sourceTree = "<group>"; };
 		E421C42C1BF164AD003F9D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E421C4361BF279FE003F9D8A /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
-		E429AF4D1BF3F65400AE4DA7 /* BaseUITabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUITabBarController.swift; sourceTree = "<group>"; };
+		E429AF4D1BF3F65400AE4DA7 /* UITabBarControllerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITabBarControllerBase.swift; sourceTree = "<group>"; };
 		E429AF571BF530B200AE4DA7 /* DesignStudioStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignStudioStyles.swift; sourceTree = "<group>"; };
 		E429AF5A1BF539BC00AE4DA7 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
-		E429AF5C1BF5404200AE4DA7 /* BaseUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUIViewController.swift; sourceTree = "<group>"; };
+		E429AF5C1BF5404200AE4DA7 /* UIViewControllerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerBase.swift; sourceTree = "<group>"; };
 		E429AF641BF64DD300AE4DA7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		E429AF681BF6619200AE4DA7 /* MGSwiteTableCellCentered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSwiteTableCellCentered.swift; sourceTree = "<group>"; };
+		E429AF681BF6619200AE4DA7 /* MGSwipeTableCellCentered.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSwipeTableCellCentered.swift; sourceTree = "<group>"; };
 		E42DD3261BFE68380026390E /* DesignStudioStyleCustomization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignStudioStyleCustomization.swift; sourceTree = "<group>"; };
 		E42DD32D1BFE83FD0026390E /* Intro.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Intro.mov; sourceTree = "<group>"; };
 		E42DD32F1BFE98020026390E /* ChallengesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengesViewModel.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		E47294E61C00C9FF00E59587 /* UIButtonTransparent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonTransparent.swift; sourceTree = "<group>"; };
 		E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLightBlue.swift; sourceTree = "<group>"; };
 		E49F45D81BFD468100F32AE9 /* ChallengesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
-		E49F45DB1BFE443B00F32AE9 /* StyledNavigationBarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledNavigationBarProtocol.swift; sourceTree = "<group>"; };
+		E49F45DB1BFE443B00F32AE9 /* StyledNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledNavigationBar.swift; sourceTree = "<group>"; };
 		E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonBase.swift; sourceTree = "<group>"; };
 		E4C1132F1BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtension.swift; sourceTree = "<group>"; };
 		E4C113311BFA855700A7E1B3 /* RealmSwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSwiftExtension.swift; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 		E49F45DA1BFE442500F32AE9 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				E49F45DB1BFE443B00F32AE9 /* StyledNavigationBarProtocol.swift */,
+				E49F45DB1BFE443B00F32AE9 /* StyledNavigationBar.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -229,9 +229,9 @@
 		E4BFF00F1BF3BF3300E4255A /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				E429AF4D1BF3F65400AE4DA7 /* BaseUITabBarController.swift */,
-				E429AF5C1BF5404200AE4DA7 /* BaseUIViewController.swift */,
-				E429AF681BF6619200AE4DA7 /* MGSwiteTableCellCentered.swift */,
+				E429AF4D1BF3F65400AE4DA7 /* UITabBarControllerBase.swift */,
+				E429AF5C1BF5404200AE4DA7 /* UIViewControllerBase.swift */,
+				E429AF681BF6619200AE4DA7 /* MGSwipeTableCellCentered.swift */,
 				E4CEA34A1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift */,
 				E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */,
 				E45128F71BF29E09002AFC8A /* UIButtonRed.swift */,
@@ -436,13 +436,13 @@
 				E4FF2BC01BF78DE500A3C732 /* DesignStudio.swift in Sources */,
 				E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */,
 				E42DD3271BFE68380026390E /* DesignStudioStyleCustomization.swift in Sources */,
-				E429AF5D1BF5404200AE4DA7 /* BaseUIViewController.swift in Sources */,
+				E429AF5D1BF5404200AE4DA7 /* UIViewControllerBase.swift in Sources */,
 				E4CEA34B1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift in Sources */,
 				E4ECC4F31BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift in Sources */,
 				E4C113361BFBBE3B00A7E1B3 /* StringExtension.swift in Sources */,
-				E429AF4E1BF3F65400AE4DA7 /* BaseUITabBarController.swift in Sources */,
-				E429AF691BF6619200AE4DA7 /* MGSwiteTableCellCentered.swift in Sources */,
-				E49F45DC1BFE443B00F32AE9 /* StyledNavigationBarProtocol.swift in Sources */,
+				E429AF4E1BF3F65400AE4DA7 /* UITabBarControllerBase.swift in Sources */,
+				E429AF691BF6619200AE4DA7 /* MGSwipeTableCellCentered.swift in Sources */,
+				E49F45DC1BFE443B00F32AE9 /* StyledNavigationBar.swift in Sources */,
 				E42DD3321BFF76800026390E /* Challenge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

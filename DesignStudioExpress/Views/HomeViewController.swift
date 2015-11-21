@@ -9,7 +9,7 @@
 import UIKit
 import MGSwipeTableCell
 
-class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableViewDelegate, MGSwipeTableCellDelegate {
+class HomeViewController: UIViewControllerBase, UITableViewDataSource, UITableViewDelegate, MGSwipeTableCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var createButton: UIButton!
@@ -48,15 +48,17 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         if indexPath.row == 0 {
-            let cell = self.createCell("photoCell", indexPath: indexPath, MGSwiteTableCellCentered.self)
-            
-            return self.stylePhotoCell(cell, indexPath: indexPath)
+            let cell = self.createCell("photoCell", indexPath: indexPath, MGSwipeTableCellCentered.self)
+            self.stylePhotoCell(cell, indexPath: indexPath)
+            return cell
         }
         
-        let cell = self.createCell("swipeCell", indexPath: indexPath, MGSwiteTableCellCentered.self)
+        let cell = self.createCell("swipeCell", indexPath: indexPath, MGSwipeTableCellCentered.self)
         cell.delegate = self
         
-        return self.styleSwipeCell(cell, indexPath: indexPath)
+        self.styleSwipeCell(cell, indexPath: indexPath)
+        
+        return cell
     }
 
     // customize row height
@@ -183,7 +185,7 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
     }
     
-    func stylePhotoCell(cell: MGSwiteTableCellCentered, indexPath: NSIndexPath) -> MGSwiteTableCellCentered {
+    func stylePhotoCell(cell: MGSwipeTableCellCentered, indexPath: NSIndexPath) {
         // set the background image
         let image = UIImage(named: vm.getImageName(indexPath))
         let imageView = UIImageView(image: image)
@@ -206,11 +208,9 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         
         // disable user interactions so we don't have highlighted state
         cell.userInteractionEnabled = false
-        
-        return cell
     }
     
-    func styleSwipeCell(cell: MGSwiteTableCellCentered, indexPath: NSIndexPath) -> MGSwiteTableCellCentered {
+    func styleSwipeCell(cell: MGSwipeTableCellCentered, indexPath: NSIndexPath) {
         // no highlighted color so that we don't have higlighted cell
         // when we go back
         cell.selectionStyle = .None
@@ -250,7 +250,5 @@ class HomeViewController: BaseUIViewController, UITableViewDataSource, UITableVi
         
         // set separator from edge to edge
         cell.layoutMargins = UIEdgeInsetsZero
-        
-        return cell
     }
 }

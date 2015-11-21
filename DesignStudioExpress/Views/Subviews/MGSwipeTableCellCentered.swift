@@ -9,7 +9,7 @@
 import Foundation
 import MGSwipeTableCell
 
-class MGSwiteTableCellCentered: MGSwipeTableCell {
+class MGSwipeTableCellCentered: MGSwipeTableCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseUIViewController: UIViewController, StyledNavigationBarProtocol {
+class UIViewControllerBase: UIViewController, StyledNavigationBar {
     override func viewDidLoad() {
         super.viewDidLoad()
         

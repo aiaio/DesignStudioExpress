@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailDesignStudioViewController: BaseUIViewController, UITextFieldDelegate, UITextViewDelegate {
+class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegate, UITextViewDelegate {
     @IBOutlet weak var name: UITextView!
     @IBOutlet weak var duration: UITextField!
     @IBOutlet weak var continueButton: UIButtonRed!

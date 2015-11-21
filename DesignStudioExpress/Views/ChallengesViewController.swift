@@ -9,7 +9,7 @@
 import UIKit
 import MGSwipeTableCell
 
-class ChallengesViewController: BaseUIViewController, UITableViewDataSource, UITableViewDelegate, MGSwipeTableCellDelegate {
+class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UITableViewDelegate, MGSwipeTableCellDelegate {
     @IBOutlet weak var addChallengeView: UIView!
     @IBOutlet weak var tableViewParentView: UIView!
     @IBOutlet weak var tableView: UITableView!

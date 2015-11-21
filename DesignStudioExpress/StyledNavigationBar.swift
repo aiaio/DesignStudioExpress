@@ -6,6 +6,6 @@
 //  Copyright © 2015 Alexander Interactive. All rights reserved.
 //
 
-protocol StyledNavigationBarProtocol {
+protocol StyledNavigationBar {
     func customizeNavBarStyle() 
 }

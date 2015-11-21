@@ -192,10 +192,10 @@
             </objects>
             <point key="canvasLocation" x="84" y="783.75"/>
         </scene>
-        <!--BaseUI Tab Bar Controller-->
+        <!--Tab Bar Controller Base-->
         <scene sceneID="B3E-Cj-aJ5">
             <objects>
-                <tabBarController id="alx-4r-Kum" customClass="BaseUITabBarController" customModule="DesignStudioExpress" sceneMemberID="viewController">
+                <tabBarController id="alx-4r-Kum" customClass="UITabBarControllerBase" customModule="DesignStudioExpress" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="fp2-yq-fFR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1036,11 +1036,11 @@
                                 <exclude reference="5bm-S9-BNa"/>
                                 <exclude reference="g3p-Za-2eu"/>
                                 <exclude reference="ssH-jf-Pcn"/>
-                                <exclude reference="dYb-Ss-973"/>
                                 <exclude reference="DuM-wl-RtL"/>
                                 <exclude reference="N10-bD-TaV"/>
                                 <exclude reference="YV4-KG-kCJ"/>
                                 <exclude reference="5P9-rD-dlN"/>
+                                <exclude reference="dYb-Ss-973"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1052,11 +1052,11 @@
                                 <include reference="5bm-S9-BNa"/>
                                 <include reference="g3p-Za-2eu"/>
                                 <include reference="ssH-jf-Pcn"/>
-                                <include reference="dYb-Ss-973"/>
                                 <include reference="DuM-wl-RtL"/>
                                 <include reference="N10-bD-TaV"/>
                                 <include reference="YV4-KG-kCJ"/>
                                 <include reference="5P9-rD-dlN"/>
+                                <include reference="dYb-Ss-973"/>
                             </mask>
                         </variation>
                     </view>
