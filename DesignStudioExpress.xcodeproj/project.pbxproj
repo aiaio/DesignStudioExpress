@@ -27,6 +27,7 @@
 		E42DD3341BFF97C70026390E /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DD3331BFF97C70026390E /* Activity.swift */; };
 		E45128F81BF29E09002AFC8A /* UIButtonRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45128F71BF29E09002AFC8A /* UIButtonRed.swift */; };
 		E4607F261BF6A82C000C44C7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */; };
+		E47294E71C00C9FF00E59587 /* UIButtonTransparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47294E61C00C9FF00E59587 /* UIButtonTransparent.swift */; };
 		E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */; };
 		E49F45D91BFD468100F32AE9 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49F45D81BFD468100F32AE9 /* ChallengesViewController.swift */; };
 		E49F45DC1BFE443B00F32AE9 /* StyledNavigationBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49F45DB1BFE443B00F32AE9 /* StyledNavigationBarProtocol.swift */; };
@@ -77,6 +78,7 @@
 		E42DD3331BFF97C70026390E /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		E45128F71BF29E09002AFC8A /* UIButtonRed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonRed.swift; sourceTree = "<group>"; };
 		E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E47294E61C00C9FF00E59587 /* UIButtonTransparent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonTransparent.swift; sourceTree = "<group>"; };
 		E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLightBlue.swift; sourceTree = "<group>"; };
 		E49F45D81BFD468100F32AE9 /* ChallengesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		E49F45DB1BFE443B00F32AE9 /* StyledNavigationBarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledNavigationBarProtocol.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */,
 				E45128F71BF29E09002AFC8A /* UIButtonRed.swift */,
 				E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */,
+				E47294E61C00C9FF00E59587 /* UIButtonTransparent.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				E421C4371BF279FE003F9D8A /* IntroViewController.swift in Sources */,
 				E429AF581BF530B200AE4DA7 /* DesignStudioStyles.swift in Sources */,
 				E45128F81BF29E09002AFC8A /* UIButtonRed.swift in Sources */,
+				E47294E71C00C9FF00E59587 /* UIButtonTransparent.swift in Sources */,
 				E4C113321BFA855700A7E1B3 /* RealmSwiftExtension.swift in Sources */,
 				E421C4161BF164AD003F9D8A /* AppDelegate.swift in Sources */,
 				E49F45D91BFD468100F32AE9 /* ChallengesViewController.swift in Sources */,

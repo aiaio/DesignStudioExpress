@@ -49,33 +49,41 @@ class ChallengesViewController: BaseUIViewController, UITableViewDataSource, UIT
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         if indexPath.row == vm.getTotalRows() - 1 {
-            let cell = self.createCell("challengeCell", indexPath: indexPath)
+            let cell = self.createCell("addButtonCell", indexPath: indexPath, UITableViewCell.self)
             
+            // hide separator
+            cell.separatorInset = UIEdgeInsetsMake(0, self.view.frame.width, 0, 0);
             return cell
-            //return self.stylePhotoCell(cell, indexPath: indexPath)
         }
         
-        let cell = self.createCell("challengeCell", indexPath: indexPath)
-
+        let cell = self.createCell("challengeCell", indexPath: indexPath, MGSwipeTableCellChallenge.self)
         cell.delegate = self
+        cell.challengeName.text = vm.getTitle(indexPath)
+        cell.activitiesLabel.text = vm.getActivities(indexPath)
+        cell.duration.text = vm.getDuration(indexPath)
+        
+        // set separator from edge to edge
+        cell.layoutMargins = UIEdgeInsetsZero
         
         return cell
-        //return self.styleSwipeCell(cell, indexPath: indexPath)
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == vm.getTotalRows() - 1 {
+            return 75
+        }
+        return 110
     }
     
     // MARK: - Custom
     
     // creates table view cell of a specified type
-    private func createCell(reuseIdentifier: String, indexPath: NSIndexPath) -> MGSwipeTableCellChallenge {
-        var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! MGSwipeTableCellChallenge!
+    private func createCell<T: UITableViewCell>(reuseIdentifier: String, indexPath: NSIndexPath, _: T.Type) -> T {
+        var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! T!
         if cell == nil
         {
-            cell = MGSwipeTableCellChallenge(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
+            cell = T(style: UITableViewCellStyle.Default, reuseIdentifier: reuseIdentifier)
         }
-        
-        cell.challengeName.text = vm.getTitle(indexPath)
-        cell.activitiesLabel.text = vm.getActivities(indexPath)
-        cell.duration.text = vm.getDuration(indexPath)
         
         return cell
     }
