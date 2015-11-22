@@ -11,7 +11,6 @@ import RealmSwift
 
 class Challenge: Object {
     dynamic var id = NSUUID().UUIDString
-    dynamic var designStudioId = ""
     dynamic var title = ""
     dynamic var challengeDescription = "" // we can't use just description, because that's an NSObject stored property
     dynamic var dateCreated: NSDate = NSDate()
