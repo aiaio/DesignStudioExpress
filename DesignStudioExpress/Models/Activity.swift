@@ -14,6 +14,7 @@ class Activity: Object {
     dynamic var title = ""
     dynamic var activityDescription = "" // we can't use just description, because that's an NSObject stored property
     dynamic var duration: Int = 10
+    dynamic var details = ""
     dynamic var dateCreated: NSDate = NSDate()
     
     override static func primaryKey() -> String? {

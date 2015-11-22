@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource, UITableViewDelegate {
+class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addActivityButton: UIButtonRed!
 
@@ -63,19 +63,17 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
             cell.separatorInset = UIEdgeInsetsMake(0, self.view.frame.width, 0, 0);
             return cell
         }
-        
-        return UITableViewCell(style: .Default, reuseIdentifier: "bla")
-      /*
-        let cell = self.createCell("challengeCell", indexPath: indexPath, MGSwipeTableCellChallenge.self)
-        cell.delegate = self
-        cell.challengeName.text = vm.getTitle(indexPath)
-        cell.activitiesLabel.text = vm.getActivities(indexPath)
-        cell.duration.text = vm.getDuration(indexPath)
+      
+        let cell = self.createCell("activityCell", indexPath: indexPath, UITableViewCellActivity.self)
+        cell.title.text = vm.activityTitle(indexPath)
+        cell.activityDescription.text = vm.activityDescription(indexPath)
+        cell.duration.text = vm.activityDuration(indexPath)
+        cell.details.text = vm.activityDetails(indexPath)
         
         // set separator from edge to edge
         cell.layoutMargins = UIEdgeInsetsZero
         
-        return cell*/
+        return cell
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -103,9 +101,7 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         
         return cell
     }
-
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -113,6 +109,4 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
-
 }

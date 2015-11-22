@@ -54,6 +54,8 @@ class HomeViewModel {
                 for idx3 in 1...10 {
                     let activity = Activity()
                     activity.title = "Activity \(idx3)"
+                    activity.activityDescription = "description for activity"
+                    activity.details = "1 presenter note"
                     activity.duration = 10
                     challenge.activities.append(activity)
                 }

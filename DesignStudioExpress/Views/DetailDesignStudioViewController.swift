@@ -47,7 +47,6 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        //vm.setDuration(textField.text!)
         return true
     }
     
@@ -72,7 +71,6 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
         self.duration.resignFirstResponder()
         
         vm.setTitle(self.name.text!)
-        //vm.setDuration(self.duration.text!)
     }
     
     // activate keyboard whenever the whole UIControl parent for duration is touched

@@ -30,7 +30,9 @@ class ChallengeDetailViewModel {
             return self.data!.title
         }
         set {
-            // TODO
+            try! realm.write {
+                self.data.title = newValue
+            }
         }
     }
     
@@ -39,7 +41,9 @@ class ChallengeDetailViewModel {
             return data!.challengeDescription
         }
         set {
-            //TODO
+            try! realm.write {
+                self.data.challengeDescription = newValue
+            }
         }
     }
 
@@ -47,5 +51,37 @@ class ChallengeDetailViewModel {
         get {
             return "Duration: \(data!.duration) min"
         }
+    }
+    
+    func isRowEditable(indexPath: NSIndexPath) -> Bool {
+        return indexPath.row > 0
+    }
+    
+    func activityTitle(indexPath: NSIndexPath) -> String {
+        if self.isRowEditable(indexPath) {
+            return data.activities[indexPath.row].title
+        }
+        return ""
+    }
+    
+    func activityDescription(indexPath: NSIndexPath) -> String {
+        if self.isRowEditable(indexPath) {
+            return data.activities[indexPath.row].activityDescription
+        }
+        return ""
+    }
+    
+    func activityDuration(indexPath: NSIndexPath) -> String {
+        if self.isRowEditable(indexPath) {
+            return "\(data.activities[indexPath.row].duration)"
+        }
+        return ""
+    }
+    
+    func activityDetails(indexPath: NSIndexPath) -> String {
+        if self.isRowEditable(indexPath) {
+            return data.activities[indexPath.row].details
+        }
+        return ""
     }
 }

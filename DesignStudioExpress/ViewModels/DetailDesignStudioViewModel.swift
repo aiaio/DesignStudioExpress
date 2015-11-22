@@ -93,9 +93,9 @@ class DetailDesignStudioViewModel {
     func maxLengthExceeded(fieldType: FieldNames, textFieldLength: Int, range: NSRange, replacementStringLength: Int) -> Bool {
         var maxLength = 0
         if fieldType == .Title {
-            maxLength = 30
+            maxLength = 30 // TODO
         } else if fieldType == .Duration {
-            maxLength = 3
+            maxLength = 3 // TODO
         } else {
             maxLength = 0
         }
@@ -103,7 +103,7 @@ class DetailDesignStudioViewModel {
         return checkMaxLength(textFieldLength, range: range, replacementStringLength: replacementStringLength, maxAllowedLength: maxLength)
     }
     
-    func checkMaxLength(textFieldLength: Int, range: NSRange, replacementStringLength: Int, maxAllowedLength: Int) -> Bool {
+    private func checkMaxLength(textFieldLength: Int, range: NSRange, replacementStringLength: Int, maxAllowedLength: Int) -> Bool {
         // prevents Undo bug
         // check http://stackoverflow.com/a/1773257/515053 for reference
         if (range.length + range.location > textFieldLength )

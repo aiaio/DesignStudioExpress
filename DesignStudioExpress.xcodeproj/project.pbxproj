@@ -25,6 +25,7 @@
 		E42DD3301BFE98020026390E /* ChallengesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DD32F1BFE98020026390E /* ChallengesViewModel.swift */; };
 		E42DD3321BFF76800026390E /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DD3311BFF76800026390E /* Challenge.swift */; };
 		E42DD3341BFF97C70026390E /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DD3331BFF97C70026390E /* Activity.swift */; };
+		E446360B1C023675004B3156 /* UITableViewCellActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E446360A1C023675004B3156 /* UITableViewCellActivity.swift */; };
 		E45128F81BF29E09002AFC8A /* UIButtonRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45128F71BF29E09002AFC8A /* UIButtonRed.swift */; };
 		E4607F261BF6A82C000C44C7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */; };
 		E46A22061C010FC1004D5292 /* ChallengeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46A22051C010FC1004D5292 /* ChallengeDetailViewController.swift */; };
@@ -79,6 +80,7 @@
 		E42DD32F1BFE98020026390E /* ChallengesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengesViewModel.swift; sourceTree = "<group>"; };
 		E42DD3311BFF76800026390E /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		E42DD3331BFF97C70026390E /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		E446360A1C023675004B3156 /* UITableViewCellActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellActivity.swift; sourceTree = "<group>"; };
 		E45128F71BF29E09002AFC8A /* UIButtonRed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonRed.swift; sourceTree = "<group>"; };
 		E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E46A22051C010FC1004D5292 /* ChallengeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				E47294E61C00C9FF00E59587 /* UIButtonTransparent.swift */,
 				E429AF5C1BF5404200AE4DA7 /* UIViewControllerBase.swift */,
 				E4EAC13E1C0228410079364C /* UITableViewCellChallengeHeader.swift */,
+				E446360A1C023675004B3156 /* UITableViewCellActivity.swift */,
 				E429AF4D1BF3F65400AE4DA7 /* UITabBarControllerBase.swift */,
 			);
 			path = Subviews;
@@ -427,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E446360B1C023675004B3156 /* UITableViewCellActivity.swift in Sources */,
 				E42DD3301BFE98020026390E /* ChallengesViewModel.swift in Sources */,
 				E421C4371BF279FE003F9D8A /* IntroViewController.swift in Sources */,
 				E429AF581BF530B200AE4DA7 /* DesignStudioStyles.swift in Sources */,
