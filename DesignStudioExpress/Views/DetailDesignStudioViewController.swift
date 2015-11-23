@@ -10,7 +10,6 @@ import UIKit
 
 class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegate, UITextViewDelegate {
     
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var name: UITextView!
     @IBOutlet weak var duration: UITextField!
     @IBOutlet weak var continueButton: UIButtonRed!
@@ -29,7 +28,6 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
         
         self.addObservers()
         self.populateFields()
-        self.customizeStyle()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -104,12 +102,6 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
         self.name.text = vm.getTitle()
         self.duration.text = vm.getDuration()
         self.continueButton.setTitle(vm.getButtonTitle(), forState: .Normal)
-    }
-    
-    func customizeStyle() {
-        if let text = self.nameLabel.attributedText {
-            self.nameLabel.attributedText = NSAttributedString.attributedStringWithSpacing(text, kerning: 2.5)
-        }
     }
     
     func keyboardWillShow(sender: NSNotification) {
