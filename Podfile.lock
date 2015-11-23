@@ -5,6 +5,7 @@ PODS:
   - Fabric (1.6.0):
     - Fabric/Base (= 1.6.0)
   - Fabric/Base (1.6.0)
+  - FXLabel (1.5.8)
   - MGSwipeTableCell (1.5.1)
   - NRSimplePlist (1.0)
   - Realm (0.96.2):
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - Cartography (~> 0.6)
   - Crashlytics
   - Fabric
+  - FXLabel
   - MGSwipeTableCell (~> 1.5.1)
   - NRSimplePlist (from `https://github.com/broderboy/NRSimplePlist.git`, branch `swift2`)
   - RealmSwift
@@ -46,6 +48,7 @@ SPEC CHECKSUMS:
   Cartography: 70af183a248547694a8cfaa6b989cb7e04589985
   Crashlytics: 41574a245bc6ae10c55d57f385ebd2004e5bee05
   Fabric: d737eda3a26ac940a5430230eedb35f16b226131
+  FXLabel: 14f7d4abb0eb531a0824b327a86f5b790171207f
   MGSwipeTableCell: a51fa670c01f0aa048f12af040acebf315223137
   NRSimplePlist: c27d95cb456281528885b3c48e15826cf12a970b
   Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3

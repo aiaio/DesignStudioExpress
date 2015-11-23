@@ -7,5 +7,6 @@ pod 'Fabric'
 pod 'Crashlytics'
 pod 'MGSwipeTableCell', '~> 1.5.1'
 pod 'RealmSwift'
+pod 'FXLabel'
 
 use_frameworks!
