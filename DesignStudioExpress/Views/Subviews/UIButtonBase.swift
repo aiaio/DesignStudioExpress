@@ -20,21 +20,32 @@ class UIButtonBase: UIButton {
         super.init(coder: aDecoder)
         
         // set rounded corners
-        layer.cornerRadius = borderRadius
-        layer.borderWidth = 1
+        self.layer.cornerRadius = borderRadius
+        self.layer.borderWidth = 1
         
         // colors
-        layer.borderColor = defaultColor.CGColor
-        backgroundColor = defaultColor
-        setTitleColor(textColor, forState: UIControlState.Normal)
-        setTitleColor(textColor, forState: UIControlState.Highlighted)
+        self.layer.borderColor = defaultColor.CGColor
+        self.backgroundColor = defaultColor
+        self.setTitleColor(textColor, forState: UIControlState.Normal)
+        self.setTitleColor(textColor, forState: UIControlState.Highlighted)
         
         // font
-        titleLabel?.font = titleFont
+        self.titleLabel?.font = titleFont
         
+        self.styleTitle(self.titleLabel?.text)
+    }
+    
+    override func setTitle(title: String?, forState state: UIControlState) {
+        super.setTitle(title, forState: state)
+        
+        self.styleTitle(title)
+    }
+    
+    private func styleTitle(title: String?) {
         // set spacing between title characters to 3.0
-        if titleLabel?.attributedText != nil {
-            titleLabel?.attributedText = NSAttributedString.attributedStringWithSpacing(titleLabel!.attributedText!, kerning: kerning)
+        if title != nil {
+            let attributedString = NSMutableAttributedString(string: title!)
+            self.titleLabel?.attributedText = NSAttributedString.attributedStringWithSpacing(attributedString, kerning: kerning)
         }
     }
 }

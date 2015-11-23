@@ -580,7 +580,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="UI4-2e-JqN"/>
                                 </constraints>
-                                <state key="normal" title=" "/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="UI4-2e-JqN"/>
@@ -1262,8 +1261,7 @@
                                                             <exclude reference="kFy-YO-Ana"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="55" y="34" width="130" height="29"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="subviews">
                                                             <include reference="hbr-94-lLC"/>
                                                             <include reference="rK7-HV-JTV"/>
@@ -1294,8 +1292,7 @@
                                                             <exclude reference="MS1-q4-xo0"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="-60" y="68" width="360" height="30"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="1no-mU-II7"/>
                                                             <include reference="MS1-q4-xo0"/>
@@ -1319,9 +1316,8 @@
                                                             <exclude reference="bTH-hm-Ddj"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                        <rect key="frame" x="-60" y="106" width="360" height="100"/>
                                                         <mask key="constraints">
                                                             <include reference="FQy-sI-gGy"/>
                                                             <include reference="bTH-hm-Ddj"/>
