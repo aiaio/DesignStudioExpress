@@ -23,6 +23,56 @@ class DetailDesignStudioViewModel {
     private var data: DesignStudio!
     private var isNew = false
     
+    var title: String {
+        get {
+            return self.data.title
+        }
+        set {
+            try! self.realm.write {
+                self.data.title = newValue
+            }
+        }
+    }
+    
+    var duration: String {
+        get {
+            return "\(data.duration)"
+        }
+        set {
+            /* Duration on DesignStudio is now a sum of all durations from activities
+            * functionality is left commented so that we can revert this decision
+            * in future phases
+            *
+            try! realm.write {
+                self.data.duration = Int(newValue) ?? 0
+            }
+            */
+        }
+    }
+    
+    var challenges: String {
+        get {
+            let challengesCount = data.challenges.count
+            
+            // handle plural version of the label
+            var challengeLabel = "challenge"
+            if (challengesCount != 1) {
+                challengeLabel += "s"
+            }
+            
+            return "(\(challengesCount) \(challengeLabel))"
+        }
+    }
+    
+    var buttonTitle: String {
+        get {
+            if isNew {
+                return newStudioButtonText
+            }
+            return editStudioButtonText
+        }
+    }
+    
     init () {
         createNewDesignStudio()
     }
@@ -44,37 +94,6 @@ class DetailDesignStudioViewModel {
         self.isNew = true
     }
     
-    func getTitle () -> String {
-        return self.data.title
-    }
-    
-    func setTitle(newTitle: String) {
-        try! realm.write {
-            self.data.title = newTitle
-        }
-    }
-    
-    func getDuration() -> String {
-        return "\(data.duration)"
-    }
-    
-    /* Duration on DesignStudio is now a sum of all durations from activities
-     * functionality is left commented so that we can revert this decision 
-     * in future phases
-    func setDuration(newDuration: String) {
-        try! realm.write {
-            //self.data.duration = Int(newDuration) ?? 0
-        }
-    }
-    */
-    
-    func getButtonTitle() -> String {
-        if isNew {
-            return newStudioButtonText
-        }
-        return editStudioButtonText
-    }
-    
     func openDesignStudio(title: String, duration: String) -> DesignStudio {
         // save the design studio when we're moving to the next screen
         if isNew {
@@ -84,7 +103,8 @@ class DetailDesignStudioViewModel {
             }
         } else {
             // in case user clicks continue while the keyboard is still active
-            self.setTitle(title)
+            // save the title
+            self.title = title
         }
         
         return self.data

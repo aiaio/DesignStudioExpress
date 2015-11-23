@@ -12,6 +12,7 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
     
     @IBOutlet weak var name: UITextView!
     @IBOutlet weak var duration: UITextField!
+    @IBOutlet weak var challenges: UILabel!
     @IBOutlet weak var continueButton: UIButtonRed!
     
     let vm = DetailDesignStudioViewModel()
@@ -55,7 +56,7 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             textView.resignFirstResponder()
-            vm.setTitle(textView.text!)
+            vm.title = textView.text!
             return false
         }
         return vm.maxLengthExceeded(.Title, textFieldLength: (textView.text?.length)!, range: range, replacementStringLength: text.length)
@@ -80,7 +81,7 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
         // close the keyboard so that we don't have layouting problems when switching back to the screen
         self.name.resignFirstResponder()
         // update the title
-        vm.setTitle(self.name.text!)
+        vm.title = self.name.text!
     }
     
     // MARK: - custom
@@ -99,9 +100,10 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
     }
     
     func populateFields () {
-        self.name.text = vm.getTitle()
-        self.duration.text = vm.getDuration()
-        self.continueButton.setTitle(vm.getButtonTitle(), forState: .Normal)
+        self.name.text = vm.title
+        self.duration.text = vm.duration
+        self.continueButton.setTitle(vm.buttonTitle, forState: .Normal)
+        self.challenges.text = vm.challenges
     }
     
     func keyboardWillShow(sender: NSNotification) {
