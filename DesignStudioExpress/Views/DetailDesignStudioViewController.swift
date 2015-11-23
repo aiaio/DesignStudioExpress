@@ -9,6 +9,8 @@
 import UIKit
 
 class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegate, UITextViewDelegate {
+    
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var name: UITextView!
     @IBOutlet weak var duration: UITextField!
     @IBOutlet weak var continueButton: UIButtonRed!
@@ -27,6 +29,7 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
         
         self.addObservers()
         self.populateFields()
+        self.customizeStyle()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -36,11 +39,6 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self);
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - UITextFieldDelegate
@@ -65,14 +63,6 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
         return vm.maxLengthExceeded(.Title, textFieldLength: (textView.text?.length)!, range: range, replacementStringLength: text.length)
     }
     
-    // hide any active keyboard when background is touched
-    @IBAction func backgroundTouched(sender: AnyObject) {
-        self.name.resignFirstResponder()
-        self.duration.resignFirstResponder()
-        
-        vm.setTitle(self.name.text!)
-    }
-    
     // activate keyboard whenever the whole UIControl parent for duration is touched
     @IBAction func durationBackgroundTouched(sender: AnyObject) {
         self.duration.becomeFirstResponder()
@@ -88,6 +78,11 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
             let destination = segue.destinationViewController as! ChallengesViewController
             destination.vm.setDesignStudio(data)
         }
+        
+        // close the keyboard so that we don't have layouting problems when switching back to the screen
+        self.name.resignFirstResponder()
+        // update the title
+        vm.setTitle(self.name.text!)
     }
     
     // MARK: - custom
@@ -103,6 +98,18 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
             name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"),
             name:UIKeyboardWillHideNotification, object: nil);
+    }
+    
+    func populateFields () {
+        self.name.text = vm.getTitle()
+        self.duration.text = vm.getDuration()
+        self.continueButton.setTitle(vm.getButtonTitle(), forState: .Normal)
+    }
+    
+    func customizeStyle() {
+        if let text = self.nameLabel.attributedText {
+            self.nameLabel.attributedText = NSAttributedString.attributedStringWithSpacing(text, kerning: 2.5)
+        }
     }
     
     func keyboardWillShow(sender: NSNotification) {
@@ -123,11 +130,5 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
             self.view.frame.origin.y += keyboardHeight
         }
         changedY = false
-    }
-    
-    func populateFields () {
-        self.name.text = vm.getTitle()
-        self.duration.text = vm.getDuration()
-        self.continueButton.setTitle(vm.getButtonTitle(), forState: .Normal)
     }
 }

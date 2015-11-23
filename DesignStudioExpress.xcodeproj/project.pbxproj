@@ -186,10 +186,10 @@
 		E429AF591BF5396C00AE4DA7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E429AF5A1BF539BC00AE4DA7 /* UIImageExtension.swift */,
 				E4C1132F1BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift */,
 				E4C113311BFA855700A7E1B3 /* RealmSwiftExtension.swift */,
 				E4C113351BFBBE3B00A7E1B3 /* StringExtension.swift */,
+				E429AF5A1BF539BC00AE4DA7 /* UIImageExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

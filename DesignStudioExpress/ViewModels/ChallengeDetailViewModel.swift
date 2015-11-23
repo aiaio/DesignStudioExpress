@@ -59,28 +59,28 @@ class ChallengeDetailViewModel {
     
     func activityTitle(indexPath: NSIndexPath) -> String {
         if self.isRowEditable(indexPath) {
-            return data.activities[indexPath.row].title
+            return data.activities[indexPath.row-1].title
         }
         return ""
     }
     
     func activityDescription(indexPath: NSIndexPath) -> String {
         if self.isRowEditable(indexPath) {
-            return data.activities[indexPath.row].activityDescription
+            return data.activities[indexPath.row-1].activityDescription
         }
         return ""
     }
     
     func activityDuration(indexPath: NSIndexPath) -> String {
         if self.isRowEditable(indexPath) {
-            return "\(data.activities[indexPath.row].duration)"
+            return "\(data.activities[indexPath.row-1].duration)"
         }
         return ""
     }
     
     func activityDetails(indexPath: NSIndexPath) -> String {
         if self.isRowEditable(indexPath) {
-            return data.activities[indexPath.row].details
+            return data.activities[indexPath.row-1].details
         }
         return ""
     }
