@@ -83,7 +83,7 @@
                                 <constraints>
                                     <constraint firstItem="2dB-YU-Shg" firstAttribute="centerY" secondItem="DZu-3P-ol9" secondAttribute="centerY" id="4Jk-RX-gAU"/>
                                     <constraint firstItem="2dB-YU-Shg" firstAttribute="centerX" secondItem="DZu-3P-ol9" secondAttribute="centerX" id="6X4-J1-fQX"/>
-                                    <constraint firstItem="2dB-YU-Shg" firstAttribute="leading" secondItem="DZu-3P-ol9" secondAttribute="leading" constant="40" id="w8w-M3-Dwq"/>
+                                    <constraint firstItem="2dB-YU-Shg" firstAttribute="leading" secondItem="DZu-3P-ol9" secondAttribute="leading" constant="45" id="A9W-nx-L1N"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -92,7 +92,7 @@
                                     <mask key="constraints">
                                         <exclude reference="4Jk-RX-gAU"/>
                                         <exclude reference="6X4-J1-fQX"/>
-                                        <exclude reference="w8w-M3-Dwq"/>
+                                        <exclude reference="A9W-nx-L1N"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -102,12 +102,15 @@
                                     <mask key="constraints">
                                         <include reference="4Jk-RX-gAU"/>
                                         <include reference="6X4-J1-fQX"/>
-                                        <include reference="w8w-M3-Dwq"/>
+                                        <include reference="A9W-nx-L1N"/>
                                     </mask>
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MADE BY ALEXANDER INTERACTIVE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qle-3K-BYy" customClass="FXLabel">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="284" id="btd-wy-gJk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                 <color key="textColor" red="0.94509803921568625" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.94509803921568625" green="0.96078431372549022" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
@@ -116,6 +119,16 @@
                                         <real key="value" value="0.20000000000000001"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="btd-wy-gJk"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="btd-wy-gJk"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
                         <constraints>
@@ -130,12 +143,10 @@
                             <constraint firstAttribute="trailing" secondItem="DZu-3P-ol9" secondAttribute="trailing" id="RSr-Mc-6Le"/>
                             <constraint firstItem="32R-dO-Hca" firstAttribute="trailing" secondItem="1dE-Ax-FUe" secondAttribute="trailingMargin" id="S40-pW-AXh"/>
                             <constraint firstItem="DZu-3P-ol9" firstAttribute="centerX" secondItem="32R-dO-Hca" secondAttribute="centerX" id="bej-xw-vsu"/>
-                            <constraint firstItem="qle-3K-BYy" firstAttribute="leading" secondItem="1dE-Ax-FUe" secondAttribute="leadingMargin" constant="38" id="g5R-HG-dvC"/>
                             <constraint firstItem="32R-dO-Hca" firstAttribute="top" secondItem="DZu-3P-ol9" secondAttribute="bottom" constant="8" symbolic="YES" id="gks-kA-SyV"/>
                             <constraint firstItem="32R-dO-Hca" firstAttribute="leading" secondItem="jMB-pt-1Ro" secondAttribute="trailing" constant="23" id="lef-rS-Ufd"/>
                             <constraint firstItem="qle-3K-BYy" firstAttribute="top" secondItem="jMB-pt-1Ro" secondAttribute="bottom" constant="19" id="pRO-Pw-d0T"/>
                             <constraint firstItem="qle-3K-BYy" firstAttribute="centerX" secondItem="1dE-Ax-FUe" secondAttribute="centerX" id="saZ-64-sD1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qle-3K-BYy" secondAttribute="trailing" constant="38" id="vQe-QA-kYr"/>
                             <constraint firstItem="jMB-pt-1Ro" firstAttribute="leading" secondItem="32R-dO-Hca" secondAttribute="leading" id="wvo-XI-hjW"/>
                         </constraints>
                         <variation key="default">
@@ -145,10 +156,8 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="JBy-o7-QNH"/>
-                                <exclude reference="g5R-HG-dvC"/>
                                 <exclude reference="pRO-Pw-d0T"/>
                                 <exclude reference="saZ-64-sD1"/>
-                                <exclude reference="vQe-QA-kYr"/>
                                 <exclude reference="E5o-Bx-iVB"/>
                                 <exclude reference="IdO-2a-teE"/>
                                 <exclude reference="MYK-z0-K6O"/>
@@ -168,10 +177,8 @@
                             </mask>
                             <mask key="constraints">
                                 <include reference="JBy-o7-QNH"/>
-                                <include reference="g5R-HG-dvC"/>
                                 <include reference="pRO-Pw-d0T"/>
                                 <include reference="saZ-64-sD1"/>
-                                <include reference="vQe-QA-kYr"/>
                                 <include reference="E5o-Bx-iVB"/>
                                 <include reference="IdO-2a-teE"/>
                                 <include reference="MYK-z0-K6O"/>
@@ -1909,6 +1916,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="gcr-15-crY"/>
         <segue reference="mkR-Ff-fxU"/>
-        <segue reference="894-VU-VV9"/>
+        <segue reference="2qG-Ik-ERl"/>
     </inferredMetricsTieBreakers>
 </document>
