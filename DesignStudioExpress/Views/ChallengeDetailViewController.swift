@@ -80,7 +80,7 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         if indexPath.row == 0 {
             return 250
         }
-        return 195
+        return 155
     }
     
     // MARK: - Custom

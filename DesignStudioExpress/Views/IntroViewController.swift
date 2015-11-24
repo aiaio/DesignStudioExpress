@@ -31,7 +31,7 @@ class IntroViewController: UIViewController {
         
         // TODO: this drops entire db
         // remove it!
-        //try! NSFileManager.defaultManager().removeItemAtPath(Realm.defaultPath)
+        try! NSFileManager.defaultManager().removeItemAtPath(Realm.defaultPath)
     }
 
     override func didReceiveMemoryWarning() {

@@ -80,7 +80,10 @@ class ChallengeDetailViewModel {
     
     func activityDetails(indexPath: NSIndexPath) -> String {
         if self.isRowEditable(indexPath) {
-            return data.activities[indexPath.row-1].details
+            if data.activities[indexPath.row-1].notes != "" {
+                return "1 presenter note"
+            }
+            return "0 presenter notes"
         }
         return ""
     }

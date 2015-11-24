@@ -42,20 +42,19 @@ class HomeViewModel {
         ds2.title = "Second template"
         realm.add(ds2)
 
-        for idx in 1...10 {
+        for idx in 1...5 {
             let ds = DesignStudio()
 
             ds.title = "template\(idx)"
             for idx2 in 1...5 {
                 let challenge = Challenge()
                 challenge.title = "challenge \(idx2)"
-                challenge.challengeDescription  = "desc"
+                challenge.challengeDescription  = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne, solum admodum at cum. Sanctus lucilius legendos at pro, eu prompta honestatis quo."
                 
-                for idx3 in 1...10 {
+                for idx3 in 1...5 {
                     let activity = Activity()
                     activity.title = "Activity \(idx3)"
-                    activity.activityDescription = "description for activity"
-                    activity.details = "1 presenter note"
+                    activity.activityDescription = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne, solum admodum at cum. Sanctus lucilius legendos at pro, eu prompta honestatis quo."
                     activity.duration = 10
                     challenge.activities.append(activity)
                 }
