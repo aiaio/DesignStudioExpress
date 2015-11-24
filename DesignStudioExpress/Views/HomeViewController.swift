@@ -114,16 +114,13 @@ class HomeViewController: UIViewControllerBase, UITableViewDataSource, UITableVi
     }
     
     func swipeTableCell(cell: MGSwipeTableCell!, swipeButtonsForDirection direction: MGSwipeDirection, swipeSettings: MGSwipeSettings!, expansionSettings: MGSwipeExpansionSettings!) -> [AnyObject]! {
-        let indexPath = tableView?.indexPathForCell(cell)
-        guard indexPath != nil else {
+        guard tableView?.indexPathForCell(cell) != nil else {
             // cell is not visible
             return []
         } 
         
         if direction == .LeftToRight {
-            let button = MGSwipeButton(title: "Delete", backgroundColor: DesignStudioStyles.white)
-            button.setTitleColor(DesignStudioStyles.primaryOrange, forState: .Normal)
-            return [button]
+            return [DesignStudioElementStyles.swipeDeleteButton()]
         }
         return []
     }

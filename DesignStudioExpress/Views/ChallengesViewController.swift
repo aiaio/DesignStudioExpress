@@ -54,7 +54,8 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
             let cell = self.createCell("addButtonCell", indexPath: indexPath, UITableViewCell.self)
             
             // hide separator
-            cell.separatorInset = UIEdgeInsetsMake(0, self.view.frame.width, 0, 0);
+            //cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, CGRectGetWidth(tableView.bounds))
+            
             return cell
         }
         
@@ -135,9 +136,7 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         }
         
         if direction == .LeftToRight {
-            let button = MGSwipeButton(title: "Delete", backgroundColor: DesignStudioStyles.primaryOrange)
-            button.setTitleColor(DesignStudioStyles.white, forState: .Normal)
-            return [button]
+            return [DesignStudioElementStyles.swipeDeleteButton()]
         }
         return []
     }

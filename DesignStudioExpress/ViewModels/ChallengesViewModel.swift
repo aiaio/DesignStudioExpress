@@ -69,7 +69,7 @@ class ChallengesViewModel {
     
     func getActivities(indexPath: NSIndexPath) -> String {
         if self.isRowEditable(indexPath) {
-            "\(data[indexPath.row].activities.count) Activities"
+            return "\(data[indexPath.row].activities.count) Activities"
         }
         return ""
     }

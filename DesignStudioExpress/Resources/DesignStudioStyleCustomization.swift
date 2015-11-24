@@ -6,6 +6,7 @@
 //  Copyright © 2015 Alexander Interactive. All rights reserved.
 //
 import UIKit
+import MGSwipeTableCell
 
 public class DesignStudioElementStyles {
     
@@ -20,6 +21,16 @@ public class DesignStudioElementStyles {
         // Background color for the nav bar
         navigationBar.barTintColor = DesignStudioStyles.primaryOrange
         // set the Title text color
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName : UIColor.whiteColor(),
+            NSFontAttributeName: UIFont(name: "Avenir-Book", size: 18)!
+        ]
+    }
+    
+    class func swipeDeleteButton () -> MGSwipeButton {
+        let button = MGSwipeButton(title: "Delete", backgroundColor: DesignStudioStyles.primaryOrange)
+        button.setTitleColor(DesignStudioStyles.white, forState: .Normal)
+        button.titleLabel?.font = UIFont(name: "Avenir-Book", size: 13.0)
+        return button
     }
 }
