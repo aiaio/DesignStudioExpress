@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import SZTextView
 
 class UITableViewCellChallengeHeader: UITableViewCell {
 
     @IBOutlet weak var duration: UILabel!
     @IBOutlet weak var title: UITextField!
-    @IBOutlet weak var challengeDescription: UITextView!
+    @IBOutlet weak var challengeDescription: SZTextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

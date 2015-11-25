@@ -36,6 +36,12 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
         self.populateFields()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.updateData()
+    }
+    
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self);
     }
@@ -56,7 +62,6 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" {
             textView.resignFirstResponder()
-            vm.title = textView.text!
             return false
         }
         return vm.maxLengthExceeded(.Title, textFieldLength: (textView.text?.length)!, range: range, replacementStringLength: text.length)
@@ -80,8 +85,6 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
         
         // close the keyboard so that we don't have layouting problems when switching back to the screen
         self.name.resignFirstResponder()
-        // update the title
-        vm.title = self.name.text!
     }
     
     // MARK: - custom
@@ -102,8 +105,13 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
     func populateFields () {
         self.name.text = vm.title
         self.duration.text = vm.duration
-        self.continueButton.setTitle(vm.buttonTitle, forState: .Normal)
         self.challenges.text = vm.challenges
+        // title of the button is different for new and existing design studios
+        self.continueButton.setTitle(vm.buttonTitle, forState: .Normal)
+    }
+    
+    func updateData() {
+        vm.title = self.name.text!
     }
     
     func keyboardWillShow(sender: NSNotification) {

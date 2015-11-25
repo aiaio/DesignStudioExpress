@@ -370,7 +370,7 @@
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background-Image" translatesAutoresizingMaskIntoConstraints="NO" id="xnX-Vg-sph">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EDIT HERE" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Hc-t9-ALZ" customClass="FXLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EDIT IT" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Hc-t9-ALZ" customClass="FXLabel">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="6Of-Lg-m8B"/>
@@ -395,7 +395,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Studio Name Goes Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lI5-bb-OmX">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lI5-bb-OmX" customClass="SZTextView">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -405,6 +405,9 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="35"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="My Awesome Studio Name"/>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="RA8-N6-qhC"/>
@@ -1196,7 +1199,6 @@
                             <constraint firstItem="Kd8-ut-0aD" firstAttribute="leading" secondItem="JYP-oJ-YAK" secondAttribute="leadingMargin" constant="-20" id="5bm-S9-BNa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iDC-X6-CHq" secondAttribute="trailing" constant="-20" id="DuM-wl-RtL"/>
                             <constraint firstItem="iDC-X6-CHq" firstAttribute="leading" secondItem="JYP-oJ-YAK" secondAttribute="leadingMargin" constant="-20" id="N10-bD-TaV"/>
-                            <constraint firstItem="iDC-X6-CHq" firstAttribute="top" secondItem="37G-fI-jCc" secondAttribute="bottom" constant="-64" id="SsB-0c-S8y"/>
                             <constraint firstItem="iDC-X6-CHq" firstAttribute="top" secondItem="JYP-oJ-YAK" secondAttribute="top" id="YV4-KG-kCJ"/>
                             <constraint firstItem="prv-DN-Bob" firstAttribute="centerX" secondItem="JYP-oJ-YAK" secondAttribute="centerX" id="dYb-Ss-973"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kd8-ut-0aD" secondAttribute="trailing" constant="-20" id="g3p-Za-2eu"/>
@@ -1216,7 +1218,6 @@
                                 <exclude reference="dYb-Ss-973"/>
                                 <exclude reference="DuM-wl-RtL"/>
                                 <exclude reference="N10-bD-TaV"/>
-                                <exclude reference="SsB-0c-S8y"/>
                                 <exclude reference="YV4-KG-kCJ"/>
                                 <exclude reference="5H9-Jz-KNG"/>
                                 <exclude reference="kqN-fO-rov"/>
@@ -1235,7 +1236,6 @@
                                 <include reference="dYb-Ss-973"/>
                                 <include reference="DuM-wl-RtL"/>
                                 <include reference="N10-bD-TaV"/>
-                                <include reference="SsB-0c-S8y"/>
                                 <include reference="YV4-KG-kCJ"/>
                                 <include reference="5H9-Jz-KNG"/>
                                 <include reference="kqN-fO-rov"/>
@@ -1364,16 +1364,23 @@
                                                         </mask>
                                                     </variation>
                                                 </view>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0uw-6E-pY1">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0uw-6E-pY1" customClass="SZTextView">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="bTH-hm-Ddj"/>
                                                     </constraints>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  cupidatat non proident, sunt in culpa qui officia </string>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder">
+                                                            <string key="value">Edit this description to state a single design challenge you want the peeps in your studio to solve. Describe the audience, too. Like: “create new app features for gorillas trying to spend less.</string>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="placeholderTextColor">
+                                                            <color key="value" red="1" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="bTH-hm-Ddj"/>
@@ -1385,7 +1392,7 @@
                                                         </mask>
                                                     </variation>
                                                 </textView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Challenge name" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="q0m-gI-nNx">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Challenge Number One" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="q0m-gI-nNx">
                                                     <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -1395,6 +1402,11 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                                            <color key="value" red="1" green="0.75294117647058822" blue="0.75294117647058822" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="1no-mU-II7"/>
@@ -1499,7 +1511,7 @@
                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zma-8D-oFd">
                                                     <rect key="frame" x="-170" y="32" width="555" height="174"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8W-Fm-QOg" userLabel="Duration">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="05" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8W-Fm-QOg" userLabel="Duration">
                                                             <rect key="frame" x="20" y="20" width="400" height="26"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="26" id="J1B-42-1Le"/>
@@ -1563,7 +1575,7 @@
                                                                 </mask>
                                                             </variation>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Activity Number One " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtR-rK-j21" userLabel="Challenge Name">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Activity Number One" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VtR-rK-j21" userLabel="Challenge Name">
                                                             <rect key="frame" x="263" y="22" width="257" height="22"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                                             <color key="textColor" red="0.1215686275" green="0.1450980392" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1591,12 +1603,12 @@
                                                                 </mask>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTe-8S-iPH">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTe-8S-iPH">
                                                             <rect key="frame" x="206" y="78" width="329" height="76"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="76" id="N8S-xB-rHR"/>
                                                             </constraints>
-                                                            <string key="text">Lorem Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  cupidatat non proident, sunt in culpa qui officia </string>
+                                                            <string key="text">Here’s where you describe one step in solving your challenge. Like, “cardstorm new saving features,” or “share sketches within mini-groups".</string>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
                                                             <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>

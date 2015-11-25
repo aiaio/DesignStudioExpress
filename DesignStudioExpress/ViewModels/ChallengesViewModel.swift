@@ -10,7 +10,6 @@ import Foundation
 import RealmSwift
 
 class ChallengesViewModel {
-    let newChallengeNameText = "Challenge Name Goes Here"
     
     lazy var realm = try! Realm()
     private var designStudio: DesignStudio!
@@ -43,7 +42,6 @@ class ChallengesViewModel {
     }
     
     // handler for Delete button
-    // since we have only one swipe button
     func deleteChallenge(indexPath: NSIndexPath) -> Bool {
         let idx = indexPath.row
         var success = false
@@ -69,7 +67,12 @@ class ChallengesViewModel {
     
     func getActivities(indexPath: NSIndexPath) -> String {
         if self.isRowEditable(indexPath) {
-            return "\(data[indexPath.row].activities.count) Activities"
+            let activityCount = data[indexPath.row].activities.count
+            var activityLabel = "Activities"
+            if (activityCount == 1) {
+                activityLabel = "Activity"
+            }
+            return "\(activityCount) \(activityLabel)"
         }
         return ""
     }
@@ -90,7 +93,8 @@ class ChallengesViewModel {
     
     private func createNewChallenge() -> Challenge {
         let challenge = Challenge()
-        challenge.title = self.newChallengeNameText
+        let activity = Activity.createDefaultActivity()
+        challenge.activities.append(activity)
         
         try! realm.write {
             self.designStudio.challenges.append(challenge)

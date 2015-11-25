@@ -15,9 +15,8 @@ class DetailDesignStudioViewModel {
         case Duration
     }
     
-    let newStudioNameText = "Studio Name Goes Here"
     let newStudioButtonText = "CREATE"
-    let editStudioButtonText = "OPEN"
+    let editStudioButtonText = "CONTINUE"
     
     lazy var realm = try! Realm()
     private var data: DesignStudio!
@@ -89,7 +88,6 @@ class DetailDesignStudioViewModel {
     
     func createNewDesignStudio() {
         let ds = DesignStudio()
-        ds.title = self.newStudioNameText
         self.data = ds
         self.isNew = true
     }

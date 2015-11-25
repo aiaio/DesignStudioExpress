@@ -33,6 +33,12 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         tableView.reloadData()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.updateData()
+    }
+    
     override func setEditing(editing: Bool, animated: Bool) {
         // Toggles the edit button state
         super.setEditing(editing, animated: animated)
@@ -106,6 +112,23 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         }
         
         return cell
+    }
+    
+    private func updateData() {
+        print("Update data")
+        let challengeHeader = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! UITableViewCellChallengeHeader
+        
+        if challengeHeader.title.text?.length > 0 {
+            vm.challengeTitle = challengeHeader.title.text!
+        } else {
+            vm.challengeTitle = challengeHeader.title.placeholder ?? ""
+        }
+        if challengeHeader.challengeDescription.text.length > 0 {
+            vm.challengeDescription = challengeHeader.challengeDescription.text!
+        } else {
+            vm.challengeDescription = challengeHeader.challengeDescription.placeholder
+        }
+
     }
     
     // MARK: - Navigation
