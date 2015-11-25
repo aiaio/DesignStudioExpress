@@ -10,6 +10,8 @@ import UIKit
 
 class UITabBarControllerBase: UITabBarController {
     
+    let showDesignStudioNotification = "DesignStudioLoaded"
+    
     // tabbar style customization
     let higlightedItemColor = DesignStudioStyles.bottomNavigationIconSelected
     let barItemBackgroundColor = DesignStudioStyles.bottomNavigationBGColorUnselected
@@ -23,19 +25,21 @@ class UITabBarControllerBase: UITabBarController {
         
         self.customizeStyle()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showDesignStudio:", name: "DesignStudioLoaded", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showDesignStudio:", name: showDesignStudioNotification, object: nil)
     }
     
+    // handler for showing the Detail DS screen when DesignStudioLoaded notification is raised
     func showDesignStudio(notification: NSNotification) {
+        // get the data from the notification
         let userInfo = notification.userInfo as? [String: AnyObject]
         let designStudio = userInfo?["DesignStudio"] as? DesignStudio
         
         let navViewController = self.viewControllers![createDesignStudioNavTabIndex] as! UINavigationController
+        // add data for the first VC
         let designStudioViewController = navViewController.viewControllers[0] as! DetailDesignStudioViewController
-        
         designStudioViewController.vm.setDesignStudio(designStudio)
         
-        navViewController.popToRootViewControllerAnimated(false)
+        navViewController.popToRootViewControllerAnimated(true)
         
         // jump to design studio tab
         self.selectedIndex = createDesignStudioNavTabIndex

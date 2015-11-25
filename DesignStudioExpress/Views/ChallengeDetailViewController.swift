@@ -40,6 +40,11 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         tableView.setEditing(editing, animated: true)
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -59,6 +64,7 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
             cell.title.text = vm.challengeTitle
             cell.challengeDescription.text = vm.challengeDescription
             cell.duration.text = vm.challengeDuration
+            
             // hide separator
             cell.separatorInset = UIEdgeInsetsMake(0, self.view.frame.width, 0, 0);
             return cell

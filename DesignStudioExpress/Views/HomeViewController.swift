@@ -147,6 +147,7 @@ class HomeViewController: UIViewControllerBase, UITableViewDataSource, UITableVi
         if let data = vm.getData(indexPath) {
             notificationData = ["DesignStudio":data]
         }
+        // raise a notification whe
         NSNotificationCenter.defaultCenter().postNotificationName("DesignStudioLoaded", object: self, userInfo: notificationData)
     }
     
