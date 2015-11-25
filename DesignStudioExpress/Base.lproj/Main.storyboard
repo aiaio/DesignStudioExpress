@@ -1467,7 +1467,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B85-3B-pyO" id="JpU-Tl-TVE">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="194"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="154"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkZ-Ce-e3B">
@@ -1640,13 +1640,13 @@
                                                             <exclude reference="Dm8-bZ-pdb"/>
                                                             <exclude reference="KdP-Zt-9C7"/>
                                                             <exclude reference="bg8-I3-qm9"/>
-                                                            <exclude reference="mCs-B9-HvN"/>
-                                                            <exclude reference="z7t-5M-JUv"/>
                                                             <exclude reference="A91-R7-VNR"/>
                                                             <exclude reference="kt1-HD-bRi"/>
                                                             <exclude reference="nBJ-Q8-AeS"/>
                                                             <exclude reference="7yY-yD-5Qt"/>
                                                             <exclude reference="Gfq-lf-l1R"/>
+                                                            <exclude reference="mCs-B9-HvN"/>
+                                                            <exclude reference="z7t-5M-JUv"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
@@ -1659,13 +1659,13 @@
                                                             <include reference="Dm8-bZ-pdb"/>
                                                             <include reference="KdP-Zt-9C7"/>
                                                             <include reference="bg8-I3-qm9"/>
-                                                            <include reference="mCs-B9-HvN"/>
-                                                            <include reference="z7t-5M-JUv"/>
                                                             <include reference="A91-R7-VNR"/>
                                                             <include reference="kt1-HD-bRi"/>
                                                             <include reference="nBJ-Q8-AeS"/>
                                                             <include reference="7yY-yD-5Qt"/>
                                                             <include reference="Gfq-lf-l1R"/>
+                                                            <include reference="mCs-B9-HvN"/>
+                                                            <include reference="z7t-5M-JUv"/>
                                                         </mask>
                                                     </variation>
                                                 </view>

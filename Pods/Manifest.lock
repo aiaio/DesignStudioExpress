@@ -16,6 +16,7 @@ PODS:
   - SVProgressHUD (HEAD based on 2.0-beta)
   - SwiftyJSON (2.3.1)
   - SwiftyUserDefaults (2.0.0)
+  - SZTextView (1.2.1)
 
 DEPENDENCIES:
   - Cartography (~> 0.6)
@@ -28,6 +29,7 @@ DEPENDENCIES:
   - SVProgressHUD (HEAD)
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
   - SwiftyUserDefaults
+  - SZTextView
 
 EXTERNAL SOURCES:
   NRSimplePlist:
@@ -56,5 +58,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: c83337f10ed32d701c423d519059a249973c8662
   SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
   SwiftyUserDefaults: 1266e9734c68bcfbac8294ee84173dc8ba6db312
+  SZTextView: 906df45afd3c1b24fc5252088d5ef8061513c238
 
 COCOAPODS: 0.39.0

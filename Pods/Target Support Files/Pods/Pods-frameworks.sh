@@ -91,6 +91,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Realm.framework"
   install_framework "Pods/RealmSwift.framework"
   install_framework "Pods/SVProgressHUD.framework"
+  install_framework "Pods/SZTextView.framework"
   install_framework "Pods/SwiftyJSON.framework"
   install_framework "Pods/SwiftyUserDefaults.framework"
 fi
@@ -102,6 +103,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Realm.framework"
   install_framework "Pods/RealmSwift.framework"
   install_framework "Pods/SVProgressHUD.framework"
+  install_framework "Pods/SZTextView.framework"
   install_framework "Pods/SwiftyJSON.framework"
   install_framework "Pods/SwiftyUserDefaults.framework"
 fi

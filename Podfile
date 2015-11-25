@@ -8,5 +8,6 @@ pod 'Crashlytics'
 pod 'MGSwipeTableCell', '~> 1.5.1'
 pod 'RealmSwift'
 pod 'FXLabel'
+pod 'SZTextView'
 
 use_frameworks!
