@@ -33,7 +33,8 @@
                                                 <exclude reference="AFN-ce-x8y"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="45" y="207" width="310" height="200"/>
                                             <mask key="constraints">
                                                 <include reference="AFN-ce-x8y"/>
                                             </mask>
@@ -67,10 +68,10 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Made_By_Ai" translatesAutoresizingMaskIntoConstraints="NO" id="lbD-wU-tUt">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Made_By_Ai" translatesAutoresizingMaskIntoConstraints="NO" id="lbD-wU-tUt">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Egm-Qi-ESE"/>
+                                    <constraint firstAttribute="height" constant="21" id="Egm-Qi-ESE"/>
                                     <constraint firstAttribute="width" constant="300" id="Uw1-lJ-qP7"/>
                                 </constraints>
                                 <variation key="default">
@@ -97,7 +98,7 @@
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Pkw-4y-CB4" secondAttribute="bottom" id="TaY-OP-jb4"/>
                             <constraint firstItem="Pkw-4y-CB4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="UZd-Ma-LIi"/>
                             <constraint firstItem="a6f-uf-fWa" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="klh-rV-5Ob"/>
-                            <constraint firstItem="lbD-wU-tUt" firstAttribute="top" secondItem="a6f-uf-fWa" secondAttribute="bottom" constant="138" id="lEh-FO-fVx"/>
+                            <constraint firstItem="lbD-wU-tUt" firstAttribute="top" secondItem="a6f-uf-fWa" secondAttribute="bottom" constant="147" id="lEh-FO-fVx"/>
                             <constraint firstItem="Pkw-4y-CB4" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="qdH-Tm-9Wj"/>
                             <constraint firstItem="a6f-uf-fWa" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="w8b-ce-oXm"/>
                         </constraints>
@@ -108,6 +109,7 @@
                                 <exclude reference="lbD-wU-tUt"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="TaY-OP-jb4"/>
                                 <exclude reference="5a0-Z3-6iS"/>
                                 <exclude reference="UZd-Ma-LIi"/>
                                 <exclude reference="qdH-Tm-9Wj"/>
@@ -117,7 +119,6 @@
                                 <exclude reference="6nA-Xb-tle"/>
                                 <exclude reference="M61-KR-nTj"/>
                                 <exclude reference="lEh-FO-fVx"/>
-                                <exclude reference="TaY-OP-jb4"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -127,6 +128,7 @@
                                 <include reference="lbD-wU-tUt"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="TaY-OP-jb4"/>
                                 <include reference="5a0-Z3-6iS"/>
                                 <include reference="UZd-Ma-LIi"/>
                                 <include reference="qdH-Tm-9Wj"/>
@@ -136,7 +138,6 @@
                                 <include reference="6nA-Xb-tle"/>
                                 <include reference="M61-KR-nTj"/>
                                 <include reference="lEh-FO-fVx"/>
-                                <include reference="TaY-OP-jb4"/>
                             </mask>
                         </variation>
                     </view>
