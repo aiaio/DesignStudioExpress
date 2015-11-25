@@ -33,8 +33,7 @@
                                                 <exclude reference="AFN-ce-x8y"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="45" y="207" width="310" height="200"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="AFN-ce-x8y"/>
                                             </mask>

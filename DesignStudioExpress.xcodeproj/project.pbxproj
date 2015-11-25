@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DE9CC0FF2AB206A55D253AC2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF9E289780C23ADD06A8363 /* Pods.framework */; };
+		E41E772C1C06554D000364D6 /* UITextViewDelegateMaxLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E772B1C06554D000364D6 /* UITextViewDelegateMaxLength.swift */; };
+		E41E772E1C067C6C000364D6 /* UITextDelegateBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E772D1C067C6C000364D6 /* UITextDelegateBase.swift */; };
+		E41E77301C067D25000364D6 /* UITextFieldDelegateMaxLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E772F1C067D25000364D6 /* UITextFieldDelegateMaxLength.swift */; };
 		E421C4161BF164AD003F9D8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E421C4151BF164AD003F9D8A /* AppDelegate.swift */; };
 		E421C41B1BF164AD003F9D8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E421C4191BF164AD003F9D8A /* Main.storyboard */; };
 		E421C41D1BF164AD003F9D8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E421C41C1BF164AD003F9D8A /* Assets.xcassets */; };
@@ -59,6 +62,9 @@
 		2F6E83CBFE1ADF513DD680AE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4C98F6B1E5929336083EA3A8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AAF9E289780C23ADD06A8363 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E41E772B1C06554D000364D6 /* UITextViewDelegateMaxLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewDelegateMaxLength.swift; sourceTree = "<group>"; };
+		E41E772D1C067C6C000364D6 /* UITextDelegateBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextDelegateBase.swift; sourceTree = "<group>"; };
+		E41E772F1C067D25000364D6 /* UITextFieldDelegateMaxLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldDelegateMaxLength.swift; sourceTree = "<group>"; };
 		E421C4121BF164AD003F9D8A /* DesignStudioExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignStudioExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E421C4151BF164AD003F9D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E421C41A1BF164AD003F9D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,6 +142,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E41E77291C0654B5000364D6 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				E41E772D1C067C6C000364D6 /* UITextDelegateBase.swift */,
+				E41E772F1C067D25000364D6 /* UITextFieldDelegateMaxLength.swift */,
+				E41E772B1C06554D000364D6 /* UITextViewDelegateMaxLength.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
 		E421C4091BF164AD003F9D8A = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +175,7 @@
 		E421C4141BF164AD003F9D8A /* DesignStudioExpress */ = {
 			isa = PBXGroup;
 			children = (
+				E41E77291C0654B5000364D6 /* Delegates */,
 				E49F45DA1BFE442500F32AE9 /* Protocols */,
 				E4FF2BBE1BF78DB200A3C732 /* Models */,
 				E4607F241BF6A7B8000C44C7 /* ViewModels */,
@@ -210,7 +227,7 @@
 			children = (
 				E49F45DB1BFE443B00F32AE9 /* StyledNavigationBar.swift */,
 			);
-			name = Protocols;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		E4BFF0051BF3A4C300E4255A /* Resources */ = {
@@ -442,10 +459,12 @@
 				E4ECC4F11BF8E92C00834AD3 /* DetailDesignStudioViewController.swift in Sources */,
 				E42DD3341BFF97C70026390E /* Activity.swift in Sources */,
 				E429AF5B1BF539BC00AE4DA7 /* UIImageExtension.swift in Sources */,
+				E41E772E1C067C6C000364D6 /* UITextDelegateBase.swift in Sources */,
 				E46A22081C010FE5004D5292 /* ChallengeDetailViewModel.swift in Sources */,
 				E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */,
 				E46A22061C010FC1004D5292 /* ChallengeDetailViewController.swift in Sources */,
 				E4C113301BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift in Sources */,
+				E41E772C1C06554D000364D6 /* UITextViewDelegateMaxLength.swift in Sources */,
 				E429AF651BF64DD300AE4DA7 /* HomeViewController.swift in Sources */,
 				E4607F261BF6A82C000C44C7 /* HomeViewModel.swift in Sources */,
 				E4FF2BC01BF78DE500A3C732 /* DesignStudio.swift in Sources */,
@@ -453,6 +472,7 @@
 				E42DD3271BFE68380026390E /* DesignStudioStyleCustomization.swift in Sources */,
 				E429AF5D1BF5404200AE4DA7 /* UIViewControllerBase.swift in Sources */,
 				E4EAC13F1C0228410079364C /* UITableViewCellChallengeHeader.swift in Sources */,
+				E41E77301C067D25000364D6 /* UITextFieldDelegateMaxLength.swift in Sources */,
 				E4CEA34B1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift in Sources */,
 				E4ECC4F31BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift in Sources */,
 				E4C113361BFBBE3B00A7E1B3 /* StringExtension.swift in Sources */,

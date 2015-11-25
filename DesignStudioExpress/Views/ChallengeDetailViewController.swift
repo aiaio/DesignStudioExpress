@@ -14,6 +14,9 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
 
     let vm = ChallengeDetailViewModel()
     
+    let titleDelegate = UITextFieldDelegateMaxLength(maxLength: 10) // TODO adjust max length
+    let descriptionDelegate = UITextViewDelegateMaxLength(maxLength: 5) // TODO adjust max length 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,11 +49,6 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         tableView.setEditing(editing, animated: true)
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -66,6 +64,9 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
     {
         if indexPath.row == 0 {
             let cell = self.createCell("headerCell", indexPath: indexPath, UITableViewCellChallengeHeader.self)
+            
+            cell.title.delegate = self.titleDelegate
+            cell.challengeDescription.delegate = self.descriptionDelegate
             
             cell.title.text = vm.challengeTitle
             cell.challengeDescription.text = vm.challengeDescription
@@ -115,7 +116,6 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
     }
     
     private func updateData() {
-        print("Update data")
         let challengeHeader = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! UITableViewCellChallengeHeader
         
         if challengeHeader.title.text?.length > 0 {
@@ -128,7 +128,6 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         } else {
             vm.challengeDescription = challengeHeader.challengeDescription.placeholder
         }
-
     }
     
     // MARK: - Navigation

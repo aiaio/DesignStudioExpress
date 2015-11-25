@@ -78,7 +78,7 @@ class HomeViewController: UIViewControllerBase, UITableViewDataSource, UITableVi
             } else if screenSize <= 667 { // 6
                 rowHeight = 330
             } else { // 6++
-                rowHeight = 360
+                rowHeight = 310
             }
         }
         

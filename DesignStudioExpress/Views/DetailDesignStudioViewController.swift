@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import SZTextView
 
-class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegate, UITextViewDelegate {
+class DetailDesignStudioViewController: UIViewControllerBase {
     
-    @IBOutlet weak var name: UITextView!
+    @IBOutlet weak var name: SZTextView!
     @IBOutlet weak var duration: UITextField!
     @IBOutlet weak var challenges: UILabel!
     @IBOutlet weak var continueButton: UIButtonRed!
     
     let vm = DetailDesignStudioViewModel()
+    
+    let nameDelegate = UITextViewDelegateMaxLength(maxLength: 20) // TODO adjust max length
+    let durationDelegate = UITextFieldDelegateMaxLength(maxLength: 100) // TODO adjust max legnth
     
     let openDesignStudioSegue = "OpenDesignStudio"
     var changedY = false
@@ -24,8 +28,8 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        name.delegate = self
-        duration.delegate = self
+        name.delegate = nameDelegate
+        duration.delegate = durationDelegate
         
         self.addObservers()
         self.populateFields()
@@ -44,27 +48,6 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self);
-    }
-    
-    // MARK: - UITextFieldDelegate
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        return vm.maxLengthExceeded(.Duration, textFieldLength: (textField.text?.length)!, range: range, replacementStringLength: string.length)
-    }
-    
-    // MARK: - UITextViewDelegate
-        
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n" {
-            textView.resignFirstResponder()
-            return false
-        }
-        return vm.maxLengthExceeded(.Title, textFieldLength: (textView.text?.length)!, range: range, replacementStringLength: text.length)
     }
     
     // activate keyboard whenever the whole UIControl parent for duration is touched
@@ -111,7 +94,11 @@ class DetailDesignStudioViewController: UIViewControllerBase, UITextFieldDelegat
     }
     
     func updateData() {
-        vm.title = self.name.text!
+        if self.name.text?.length > 0 {
+            vm.title = self.name.text!
+        } else {
+            vm.title = self.name.placeholder
+        }
     }
     
     func keyboardWillShow(sender: NSNotification) {
