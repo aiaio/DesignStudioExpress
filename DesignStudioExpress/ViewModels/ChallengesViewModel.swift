@@ -79,6 +79,9 @@ class ChallengesViewModel {
     
     func getDuration(indexPath: NSIndexPath) -> String {
         if self.isRowEditable(indexPath) {
+            if data[indexPath.row].duration == 0 {
+                return "00"
+            }
             return "\(data[indexPath.row].duration)"
         }
         return ""

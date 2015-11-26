@@ -15,7 +15,7 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
     let vm = ChallengeDetailViewModel()
     
     let titleDelegate = UITextFieldDelegateMaxLength(maxLength: 10) // TODO adjust max length
-    let descriptionDelegate = UITextViewDelegateMaxLength(maxLength: 5) // TODO adjust max length 
+    let descriptionDelegate = UITextViewDelegateMaxLength(maxLength: 100) // TODO adjust max length
     
     override func viewDidLoad() {
         super.viewDidLoad()

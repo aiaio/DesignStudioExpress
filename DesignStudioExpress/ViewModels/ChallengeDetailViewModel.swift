@@ -49,6 +49,9 @@ class ChallengeDetailViewModel {
 
     var challengeDuration: String {
         get {
+            if data!.duration == 0 {
+                return "00"
+            }
             return "Duration: \(data!.duration) min"
         }
     }
