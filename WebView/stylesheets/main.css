@@ -134,14 +134,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   line-height: 22px;
   font-family: 'Avenir Book', 'Helvetica', sans-serif;
   text-transform: uppercase;
-  letter-spacing: 2.4px;
+  /*letter-spacing: 2.4px;*/
+  letter-spacing: 3px;
 }
-@media (min-width: 360px) {
+/*@media (min-width: 360px) {
   .guide-intro--next-step-message {
     font-size: 15px;
     line-height: 24px;
   }
-}
+}*/
 
 .guide-intro--next-step-link {
   position: absolute;
