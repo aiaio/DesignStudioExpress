@@ -60,7 +60,7 @@ class HomeViewController: UIViewControllerBase, UITableViewDataSource, UITableVi
         
         return cell
     }
-
+    
     // customize row height
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         // default row height for DS cells
@@ -120,7 +120,7 @@ class HomeViewController: UIViewControllerBase, UITableViewDataSource, UITableVi
         } 
         
         if direction == .LeftToRight {
-            return [DesignStudioElementStyles.swipeDeleteButton()]
+            return [DesignStudioElementStyles.swipeDeleteButtonWhite()]
         }
         return []
     }

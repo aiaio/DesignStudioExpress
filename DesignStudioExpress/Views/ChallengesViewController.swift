@@ -136,7 +136,7 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         }
         
         if direction == .LeftToRight {
-            return [DesignStudioElementStyles.swipeDeleteButton()]
+            return [DesignStudioElementStyles.swipeDeleteButtonRed()]
         }
         return []
     }

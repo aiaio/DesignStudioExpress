@@ -7,29 +7,32 @@
 //
 
 import UIKit
+import SZTextView
 
 class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addActivityButton: UIButtonRed!
+    
+    // store the text elements in a weak var for easy retrieval
+    weak var headerTitle: UITextField?
+    weak var headerDescription: SZTextView? // contains placeholder
 
     let vm = ChallengeDetailViewModel()
     
-    let titleDelegate = UITextFieldDelegateMaxLength(maxLength: 10) // TODO adjust max length
-    let descriptionDelegate = UITextViewDelegateMaxLength(maxLength: 100) // TODO adjust max length
+    let titleDelegate = UITextFieldDelegateMaxLength(maxLength: 20) // TODO adjust max length
+    let descriptionDelegate = UITextViewDelegateMaxLength(maxLength: 200) // TODO adjust max length
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // show the edit button for reordering of the rows
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         // set the title
         self.navigationItem.title = vm.challengeTitle
+        
+        self.addObservers()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -41,14 +44,7 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         
         self.updateData()
     }
-    
-    override func setEditing(editing: Bool, animated: Bool) {
-        // Toggles the edit button state
-        super.setEditing(editing, animated: animated)
-        // Toggles the actual editing actions appearing on a table view
-        tableView.setEditing(editing, animated: true)
-    }
-    
+      
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -71,6 +67,11 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
             cell.title.text = vm.challengeTitle
             cell.challengeDescription.text = vm.challengeDescription
             cell.duration.text = vm.challengeDuration
+            
+            // save the references to the elements in the headers
+            // so that we have easy access when we need to resign first responders
+            self.headerTitle = cell.title
+            self.headerDescription = cell.challengeDescription
             
             // hide separator
             cell.separatorInset = UIEdgeInsetsMake(0, self.view.frame.width, 0, 0);
@@ -96,7 +97,46 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         return 155
     }
     
+    // Don't show delete/insert controls when editing
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        return .None
+    }
+    
+    // Don't indent rows when editing
+    func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        // hide keyboard when we're scrolling
+        self.headerTitle?.resignFirstResponder()
+        self.headerDescription?.resignFirstResponder()
+    }
+    
     // MARK: - Custom
+    
+    func addObservers() {
+        // add observers for when we're
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "challengeDetailChanged:", name: UITextFieldTextDidEndEditingNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "challengeDetailChanged:", name: UITextViewTextDidEndEditingNotification, object: nil)
+    }
+    
+    func challengeDetailChanged(notification: NSNotification) {
+        self.updateData()
+    }
+    
+    func updateData() {
+        if self.headerTitle?.text?.length > 0 {
+            vm.challengeTitle = self.headerTitle!.text!
+        } else {
+            vm.challengeTitle = self.headerTitle!.placeholder ?? ""
+        }
+        if self.headerDescription?.text.length > 0 {
+            vm.challengeDescription = self.headerDescription!.text!
+        } else {
+            vm.challengeDescription = self.headerDescription!.placeholder
+        }
+    }
     
     override func customizeNavBarStyle() {
         super.customizeNavBarStyle()
@@ -115,20 +155,7 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         return cell
     }
     
-    private func updateData() {
-        let challengeHeader = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! UITableViewCellChallengeHeader
-        
-        if challengeHeader.title.text?.length > 0 {
-            vm.challengeTitle = challengeHeader.title.text!
-        } else {
-            vm.challengeTitle = challengeHeader.title.placeholder ?? ""
-        }
-        if challengeHeader.challengeDescription.text.length > 0 {
-            vm.challengeDescription = challengeHeader.challengeDescription.text!
-        } else {
-            vm.challengeDescription = challengeHeader.challengeDescription.placeholder
-        }
-    }
+    
     
     // MARK: - Navigation
 

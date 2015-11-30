@@ -27,9 +27,16 @@ public class DesignStudioElementStyles {
         ]
     }
     
-    class func swipeDeleteButton () -> MGSwipeButton {
+    class func swipeDeleteButtonRed () -> MGSwipeButton {
         let button = MGSwipeButton(title: "Delete", backgroundColor: DesignStudioStyles.primaryOrange)
         button.setTitleColor(DesignStudioStyles.white, forState: .Normal)
+        button.titleLabel?.font = UIFont(name: "Avenir-Book", size: 13.0)
+        return button
+    }
+    
+    class func swipeDeleteButtonWhite () -> MGSwipeButton {
+        let button = MGSwipeButton(title: "Delete", backgroundColor: DesignStudioStyles.white)
+        button.setTitleColor(DesignStudioStyles.primaryOrange, forState: .Normal)
         button.titleLabel?.font = UIFont(name: "Avenir-Book", size: 13.0)
         return button
     }

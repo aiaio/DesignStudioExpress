@@ -23,5 +23,5 @@ class UITextViewDelegateMaxLength: UITextDelegateBase, UITextViewDelegate {
             return false
         }
         return self.checkMaxLength(textView.text.length, range: range, replacementStringLength: text.length, maxAllowedLength: self.maxLength)
-    }    
+    }
 }

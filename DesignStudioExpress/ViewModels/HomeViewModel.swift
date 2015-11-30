@@ -45,17 +45,17 @@ class HomeViewModel {
         for idx in 1...5 {
             let ds = DesignStudio()
 
-            ds.title = "template\(idx)"
-            for idx2 in 1...5 {
+            ds.title = "My studio \(idx)"
+            for idx2 in 1...3 {
                 let challenge = Challenge()
-                challenge.title = "challenge \(idx2)"
-                challenge.challengeDescription  = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne, solum admodum at cum. Sanctus lucilius legendos at pro, eu prompta honestatis quo."
+                challenge.title = "Challenge \(idx2)"
+                challenge.challengeDescription  = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne, solum admodum at cum."
                 
-                for idx3 in 1...5 {
+                for idx3 in 1...3 {
                     let activity = Activity()
                     activity.title = "Activity \(idx3)"
-                    activity.activityDescription = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne, solum admodum at cum. Sanctus lucilius legendos at pro, eu prompta honestatis quo."
-                    activity.duration = 10
+                    activity.activityDescription = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne, solum admodum at cum."
+                    activity.duration = 5
                     challenge.activities.append(activity)
                 }
                 

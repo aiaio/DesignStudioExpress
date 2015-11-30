@@ -49,9 +49,6 @@ class ChallengeDetailViewModel {
 
     var challengeDuration: String {
         get {
-            if data!.duration == 0 {
-                return "00"
-            }
             return "Duration: \(data!.duration) min"
         }
     }
@@ -76,7 +73,11 @@ class ChallengeDetailViewModel {
     
     func activityDuration(indexPath: NSIndexPath) -> String {
         if self.isRowEditable(indexPath) {
-            return "\(data.activities[indexPath.row-1].duration)"
+            let duration = data.activities[indexPath.row-1].duration
+            if duration == 0 {
+                return "00"
+            }
+            return "\(duration)"
         }
         return ""
     }
