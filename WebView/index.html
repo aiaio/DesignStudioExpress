@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.css" />
+  <link rel="stylesheet" href="stylesheets/main.css">
+</head>
+
+<body>
+
+  <section class="">
+
+    <div id="fullpage">
+
+      <div class="section guide guide-intro">
+        <h3 class="guide-intro--header white-space-pre-line">Get a week's worth of<br>work done in a day.</h3>
+        <p class="guide-intro--description">There's no faster way to arrive at an effective group solution than through a design studio. It's a short but intense.</p>
+        <p class="guide-intro--next-step-message">see the steps below</p>
+        <a class="guide-intro--next-step-link" href="#"><img src="images/down-arrow.svg" /></a>
+      </div>
+
+      <div class="section guide guide-step guide-step--step-1">
+        <img class="guide-step--thumb" src="images/Step1@2x.png" />
+        <h3 class="guide-step--header">Step 1. Give 'em context</h3>
+        <p class="guide-step--description">People. Sketchpads. Markers. Just as important: Context. Give everyone the basics on product, competitors, marketplace and target audience. Avoid cat videos unless your product is cat-related. Do this in 30 minutes or less.</p>
+        <div class="guide-step--next-step">
+          <a class="guide-step--next-step-link" href="#"><img src="images/down-arrow.svg" /></a>
+        </div>
+      </div>
+
+      <div class="section guide guide-step guide-step--step-2">
+        <img class="guide-step--thumb" src="images/Step2@2x.png" />
+        <h3 class="guide-step--header">Step 2. Define your challenge</h3>
+        <p class="guide-step--description">Distill the problem you are trying to solve into a short sentence that focuses on a product feature and the audience who will engage with it. Post this challenge so everyone can see it. Hurry people along. 5 minutes.</p>
+        <div class="guide-step--next-step">
+          <a class="guide-step--next-step-link" href="#"><img src="images/down-arrow.svg" /></a>
+        </div>
+      </div>
+
+      <div class="section guide guide-step guide-step--step-3">
+        <img class="guide-step--thumb" src="images/Step3@2x.png" />
+        <h3 class="guide-step--header">Step 3. Speed-date your ideas</h3>
+        <p class="guide-step--description">Break your team into groups of 5 people. Give each group its own space. Everyone has 5 minutes to roughly sketch 5 solutions to the challenge. That’s right, only 5 minutes! Don’t go deep, go broad.</p>
+        <div class="guide-step--next-step">
+          <a class="guide-step--next-step-link" href="#"><img src="images/down-arrow.svg" /></a>
+        </div>
+      </div>
+
+      <div class="section guide guide-step guide-step--step-4">
+        <img class="guide-step--thumb" src="images/Step4@2x.png" />
+        <h3 class="guide-step--header">Step 4. Show your cards</h3>
+        <p class="guide-step--description">Each group member presents their sketches to their group. (The whole team reassembles later.) Groups critique, refine and/or dismiss their ideas to get to the top 3. Be brutal: you have only 25 minutes.</p>
+        <div class="guide-step--next-step">
+          <a class="guide-step--next-step-link" href="#"><img src="images/down-arrow.svg" /></a>
+        </div>
+      </div>
+
+      <div class="section guide guide-step guide-step--step-5">
+        <img class="guide-step--thumb" src="images/Step5@2x.png" />
+        <h3 class="guide-step--header">Step 5. Do it again and again.</h3>
+        <p class="guide-step--description">Each group does two additional sequences of sketching, presenting and discussing -- but are still limited to keeping only the best 3 ideas at the end. Tough. 60 minutes</p>
+        <div class="guide-step--next-step">
+          <a class="guide-step--next-step-link" href="#"><img src="images/down-arrow.svg" /></a>
+        </div>
+      </div>
+
+      <div class="section guide guide-step guide-step--step-6">
+        <img class="guide-step--thumb" src="images/Step6@2x.png" />
+        <h3 class="guide-step--header">Step 6. Avengers, assemble!</h3>
+        <p class="guide-step--description">Your whole team gets back together. Every group presents their top 3 ideas. Everyone votes on the which idea wins. Fortunes are won and lost, but you look like a genius.</p>
+        <div class="guide-step--call-to-action">
+          <a class="guide-step--call-to-action-link" href="#" ng-show="guideStep.callToAction">start a studio</a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/jquery.fullPage.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/vendors/jquery.easings.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.fullpage/2.5.9/vendors/jquery.slimscroll.min.js"></script>
+<script>
+
+  $('#fullpage').fullpage();
+
+  $('.guide-intro--next-step-link, .guide-step--next-step-link').on('click', function(){
+    $.fn.fullpage.moveSectionDown();
+  });
+
+</script>
+</body>
+</html>

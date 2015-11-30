@@ -1,0 +1,272 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+::before,
+::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: 'Avenir Light';
+  src: url("../fonts/Avenir-Light.otf");
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../fonts/Avenir-Medium.otf");
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Avenir Book';
+  src: url("../fonts/Avenir-Book.otf");
+  font-style: normal;
+}
+
+.guide {
+  padding: 0 7%;
+  text-align: center;
+}
+
+.guide-intro {
+  background-color: #1D1E30;
+}
+
+.guide-intro--header {
+  margin: 0 0 15px 0;
+  color: #fff;
+  font-size: 22px;
+  line-height: 32px;
+  font-family: 'Avenir Light', 'Helvetica', sans-serif;
+}
+@media (min-width: 360px) {
+  .guide-intro--header {
+    margin: 0 0 20px 0;
+    font-size: 26px;
+    line-height: 36px;
+  }
+}
+
+.guide-intro--description {
+  width: 255px;
+  margin: 0 auto;
+  color: #D5DAE4;
+  font-size: 13px;
+  line-height: 22px;
+  font-family: 'Avenir Book', 'Helvetica', sans-serif;
+}
+@media (min-width: 360px) {
+  .guide-intro--description {
+    width: 280px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+.guide-intro--next-step-message {
+  color: #D5DAE4;
+  position: absolute;
+  bottom: 65px;
+  width: 100%;
+  left: 0;
+  font-size: 13px;
+  line-height: 22px;
+  font-family: 'Avenir Book', 'Helvetica', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+}
+@media (min-width: 360px) {
+  .guide-intro--next-step-message {
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+.guide-intro--next-step-link {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  left: 0;
+}
+
+.guide-step {
+  background-color: #1D1E30;
+}
+
+.guide-step--step-1 {
+  background-image: url("../images/Step1_IMG.png");
+  background-size: cover;
+}
+
+.guide-step--step-2 {
+  background-image: url("../images/Step2_IMG.png");
+  background-size: cover;
+}
+
+.guide-step--step-3 {
+  background-image: url("../images/Step3_IMG.png");
+  background-size: cover;
+}
+
+.guide-step--step-4 {
+  background-image: url("../images/Step4_IMG.png");
+  background-size: cover;
+}
+
+.guide-step--step-5 {
+  background-image: url("../images/Step5_IMG.png");
+  background-size: cover;
+}
+
+.guide-step--thumb {
+  width: 65px;
+  height: 65px;
+  margin-bottom: 45px;
+}
+@media (min-width: 360px) {
+  .guide-step--thumb {
+    margin-bottom: 55px;
+  }
+}
+
+.guide-step--header {
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 41.5px;
+  font-family: 'Avenir Light', 'Helvetica', sans-serif;
+}
+@media (min-width: 360px) {
+  .guide-step--header {
+    font-size: 22px;
+    line-height: 41.5px;
+  }
+}
+
+.guide-step--description {
+  width: 270px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 13px;
+  line-height: 22px;
+  font-family: 'Avenir Book', 'Helvetica', sans-serif;
+}
+@media (min-width: 360px) {
+  .guide-step--description {
+    width: 320px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+}
+
+.guide-step--next-step {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  left: 0;
+}
+
+.guide-step--next-step-link {
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.guide-step--call-to-action {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  left: 0;
+}
+@media (min-width: 360px) {
+  .guide-step--call-to-action {
+    position: absolute;
+    bottom: 45px;
+    width: 100%;
+    left: 0;
+  }
+}
+
+.guide-step--call-to-action-link {
+  width: 250px;
+  height: 51px;
+  padding-top: 18px;
+  font-family: 'Avenir Book', 'Helvetica', sans-serif;
+  font-size: 13px;
+  color: #FFF;
+  letter-spacing: 3px;
+  line-height: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  background: #FF7D6E;
+  border-radius: 3px;
+  cursor: pointer;
+}
+@media (min-width: 360px) {
+  .guide-step--call-to-action-link {
+    width: 283px;
+    height: 53px;
+  }
+}
