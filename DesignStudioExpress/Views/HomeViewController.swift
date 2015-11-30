@@ -28,12 +28,7 @@ class HomeViewController: UIViewControllerBase, UITableViewDataSource, UITableVi
         vm.refreshData()
         tableView.reloadData()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+        
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -105,7 +100,7 @@ class HomeViewController: UIViewControllerBase, UITableViewDataSource, UITableVi
     
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
         if let indexPath = self.tableView.indexPathForCell(cell) {
-            if vm.swipeButtonClicked(indexPath) {
+            if vm.deleteDesignStudio(indexPath) {
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             }
         }

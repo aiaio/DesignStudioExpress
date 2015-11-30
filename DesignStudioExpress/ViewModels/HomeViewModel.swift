@@ -84,22 +84,24 @@ class HomeViewModel {
         return false
     }
     
-    // handler for Delete buttonr
-    // since we have only one swipe button
-    func swipeButtonClicked(indexPath: NSIndexPath) -> Bool {
-        let idx = indexPath.row-1
+    func deleteDesignStudio(indexPath: NSIndexPath) -> Bool {
         var success = false
         
         try! self.realm.write {
+            let idx = indexPath.row-1
+            let id = self.data[idx].id
+            
             self.realm.delete(self.data[idx])
+            self.data.removeAtIndex(idx)
+            
+            NSNotificationCenter.defaultCenter().postNotificationName("DesignStudioDeleted", object: self, userInfo: ["DesignStudioId": id])
+            
             success = true
         }
         
-        data.removeAtIndex(idx)
-        
         return success
     }
-    
+        
     func getTitle(indexPath: NSIndexPath) -> String {
         if indexPath.row == 0 {
             return "MY DESIGN STUDIOS"

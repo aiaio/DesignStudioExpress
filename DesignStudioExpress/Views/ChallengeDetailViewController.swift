@@ -44,7 +44,7 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         
         self.updateData()
     }
-      
+    
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -154,8 +154,6 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         
         return cell
     }
-    
-    
     
     // MARK: - Navigation
 
