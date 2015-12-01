@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DE9CC0FF2AB206A55D253AC2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF9E289780C23ADD06A8363 /* Pods.framework */; };
+		E40A81A51C0DF11200BC07E3 /* UITextFieldDelegateBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A81A41C0DF11200BC07E3 /* UITextFieldDelegateBase.swift */; };
+		E40A81A71C0DF4DC00BC07E3 /* UITextViewDelegateBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A81A61C0DF4DC00BC07E3 /* UITextViewDelegateBase.swift */; };
 		E41E772C1C06554D000364D6 /* UITextViewDelegateMaxLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E772B1C06554D000364D6 /* UITextViewDelegateMaxLength.swift */; };
 		E41E772E1C067C6C000364D6 /* UITextDelegateBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E772D1C067C6C000364D6 /* UITextDelegateBase.swift */; };
 		E41E77301C067D25000364D6 /* UITextFieldDelegateMaxLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E772F1C067D25000364D6 /* UITextFieldDelegateMaxLength.swift */; };
@@ -62,6 +64,8 @@
 		2F6E83CBFE1ADF513DD680AE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4C98F6B1E5929336083EA3A8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AAF9E289780C23ADD06A8363 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E40A81A41C0DF11200BC07E3 /* UITextFieldDelegateBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldDelegateBase.swift; sourceTree = "<group>"; };
+		E40A81A61C0DF4DC00BC07E3 /* UITextViewDelegateBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewDelegateBase.swift; sourceTree = "<group>"; };
 		E41E772B1C06554D000364D6 /* UITextViewDelegateMaxLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewDelegateMaxLength.swift; sourceTree = "<group>"; };
 		E41E772D1C067C6C000364D6 /* UITextDelegateBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextDelegateBase.swift; sourceTree = "<group>"; };
 		E41E772F1C067D25000364D6 /* UITextFieldDelegateMaxLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldDelegateMaxLength.swift; sourceTree = "<group>"; };
@@ -146,7 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				E41E772D1C067C6C000364D6 /* UITextDelegateBase.swift */,
+				E40A81A41C0DF11200BC07E3 /* UITextFieldDelegateBase.swift */,
 				E41E772F1C067D25000364D6 /* UITextFieldDelegateMaxLength.swift */,
+				E40A81A61C0DF4DC00BC07E3 /* UITextViewDelegateBase.swift */,
 				E41E772B1C06554D000364D6 /* UITextViewDelegateMaxLength.swift */,
 			);
 			path = Delegates;
@@ -472,9 +478,11 @@
 				E42DD3271BFE68380026390E /* DesignStudioStyleCustomization.swift in Sources */,
 				E429AF5D1BF5404200AE4DA7 /* UIViewControllerBase.swift in Sources */,
 				E4EAC13F1C0228410079364C /* UITableViewCellChallengeHeader.swift in Sources */,
+				E40A81A51C0DF11200BC07E3 /* UITextFieldDelegateBase.swift in Sources */,
 				E41E77301C067D25000364D6 /* UITextFieldDelegateMaxLength.swift in Sources */,
 				E4CEA34B1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift in Sources */,
 				E4ECC4F31BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift in Sources */,
+				E40A81A71C0DF4DC00BC07E3 /* UITextViewDelegateBase.swift in Sources */,
 				E4C113361BFBBE3B00A7E1B3 /* StringExtension.swift in Sources */,
 				E429AF4E1BF3F65400AE4DA7 /* UITabBarControllerBase.swift in Sources */,
 				E429AF691BF6619200AE4DA7 /* MGSwipeTableCellCentered.swift in Sources */,

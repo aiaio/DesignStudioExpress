@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class UITextViewDelegateMaxLength: UITextDelegateBase, UITextViewDelegate {
+class UITextViewDelegateMaxLength: UITextViewDelegateBase {
     
     let maxLength: Int
     
@@ -17,11 +17,11 @@ class UITextViewDelegateMaxLength: UITextDelegateBase, UITextViewDelegate {
         self.maxLength = length
     }
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n" {
-            textView.resignFirstResponder()
+    override func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if !super.textView(textView, shouldChangeTextInRange: range, replacementText: text) {
             return false
         }
+        
         return self.checkMaxLength(textView.text.length, range: range, replacementStringLength: text.length, maxAllowedLength: self.maxLength)
     }
 }
