@@ -25,6 +25,12 @@ class ChallengeDetailViewModel {
         }
     }
     
+    var designStudioTitle: String {
+        get {
+            return self.data.designStudio.title
+        }
+    }
+    
     var challengeTitle: String {
         get {
             return self.data!.title

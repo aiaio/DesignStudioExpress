@@ -26,7 +26,7 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         super.viewDidLoad()
         
         // set the title
-        self.navigationItem.title = vm.challengeTitle
+        self.navigationItem.title = vm.designStudioTitle
         
         self.addObservers()
     }

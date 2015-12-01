@@ -26,6 +26,12 @@ class Challenge: Object {
         }
     }
     
+    var designStudio: DesignStudio {
+        let parentDesignStudio = linkingObjects(DesignStudio.self, forProperty: "challenges")
+        
+        return parentDesignStudio[0]
+    }
+    
     override static func primaryKey() -> String? {
         return "id"
     }
