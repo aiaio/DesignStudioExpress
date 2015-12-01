@@ -45,6 +45,10 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         self.updateData()
     }
     
+    @IBAction func editIconTapped(sender: AnyObject) {
+        self.headerTitle?.becomeFirstResponder()
+    }
+    
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

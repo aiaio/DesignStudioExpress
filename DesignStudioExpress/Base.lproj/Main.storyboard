@@ -1456,23 +1456,49 @@
                                                         </mask>
                                                     </variation>
                                                 </textField>
+                                                <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pencil_Icon_Orange" translatesAutoresizingMaskIntoConstraints="NO" id="9yW-MJ-fO7" userLabel="Pencil_Icon_Orange">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <gestureRecognizers/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="Kfi-xx-WJS"/>
+                                                        <constraint firstAttribute="height" constant="50" id="LAw-Kj-pd3"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Kfi-xx-WJS"/>
+                                                            <exclude reference="LAw-Kj-pd3"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="Kfi-xx-WJS"/>
+                                                            <include reference="LAw-Kj-pd3"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="tO8-XZ-l2G" appends="YES" id="VKP-ZB-yhl"/>
+                                                    </connections>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="0uw-6E-pY1" firstAttribute="leading" secondItem="Wrj-h7-cgk" secondAttribute="leadingMargin" constant="25" id="5TG-YZ-97P"/>
-                                                <constraint firstItem="0uw-6E-pY1" firstAttribute="top" secondItem="q0m-gI-nNx" secondAttribute="bottom" constant="8" id="Ggk-5y-csC"/>
+                                                <constraint firstItem="0uw-6E-pY1" firstAttribute="top" secondItem="q0m-gI-nNx" secondAttribute="bottom" constant="4" id="Ggk-5y-csC"/>
                                                 <constraint firstItem="q0m-gI-nNx" firstAttribute="centerX" secondItem="Wrj-h7-cgk" secondAttribute="centerX" id="Gtr-gi-Vgw"/>
+                                                <constraint firstItem="9yW-MJ-fO7" firstAttribute="top" secondItem="OtM-cX-U2h" secondAttribute="top" id="HhQ-A2-Tvg"/>
                                                 <constraint firstItem="0uw-6E-pY1" firstAttribute="centerX" secondItem="Wrj-h7-cgk" secondAttribute="centerX" id="aYO-Y9-8ba"/>
-                                                <constraint firstItem="q0m-gI-nNx" firstAttribute="top" secondItem="OtM-cX-U2h" secondAttribute="bottom" constant="5" id="b3r-GX-XGe"/>
+                                                <constraint firstItem="q0m-gI-nNx" firstAttribute="top" secondItem="OtM-cX-U2h" secondAttribute="bottom" constant="2" id="b3r-GX-XGe"/>
                                                 <constraint firstItem="OtM-cX-U2h" firstAttribute="centerX" secondItem="Wrj-h7-cgk" secondAttribute="centerX" id="k0y-xe-UTl"/>
                                                 <constraint firstItem="q0m-gI-nNx" firstAttribute="centerY" secondItem="Wrj-h7-cgk" secondAttribute="centerY" constant="-30" id="kTV-rg-Osf"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0uw-6E-pY1" secondAttribute="trailing" constant="25" id="w3z-zN-cx5"/>
+                                                <constraint firstItem="9yW-MJ-fO7" firstAttribute="trailing" secondItem="q0m-gI-nNx" secondAttribute="trailing" id="yKW-ig-Ocx"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="OtM-cX-U2h"/>
                                                     <exclude reference="0uw-6E-pY1"/>
                                                     <exclude reference="q0m-gI-nNx"/>
+                                                    <exclude reference="9yW-MJ-fO7"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="Gtr-gi-Vgw"/>
@@ -1483,6 +1509,8 @@
                                                     <exclude reference="aYO-Y9-8ba"/>
                                                     <exclude reference="w3z-zN-cx5"/>
                                                     <exclude reference="k0y-xe-UTl"/>
+                                                    <exclude reference="HhQ-A2-Tvg"/>
+                                                    <exclude reference="yKW-ig-Ocx"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -1490,6 +1518,7 @@
                                                     <include reference="OtM-cX-U2h"/>
                                                     <include reference="0uw-6E-pY1"/>
                                                     <include reference="q0m-gI-nNx"/>
+                                                    <include reference="9yW-MJ-fO7"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="Gtr-gi-Vgw"/>
@@ -1500,6 +1529,8 @@
                                                     <include reference="aYO-Y9-8ba"/>
                                                     <include reference="w3z-zN-cx5"/>
                                                     <include reference="k0y-xe-UTl"/>
+                                                    <include reference="HhQ-A2-Tvg"/>
+                                                    <include reference="yKW-ig-Ocx"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1758,6 +1789,7 @@
                                             <outlet property="details" destination="zEn-Hm-HgN" id="F3r-Rm-85f"/>
                                             <outlet property="duration" destination="J8W-Fm-QOg" id="g7s-sj-vPd"/>
                                             <outlet property="title" destination="VtR-rK-j21" id="wFr-6n-Zld"/>
+                                            <segue destination="dXN-KD-bct" kind="show" identifier="EditActivity" id="p2X-UI-w5l"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1871,6 +1903,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1B3-UB-YbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="tO8-XZ-l2G">
+                    <connections>
+                        <action selector="editIconTapped:" destination="7iM-cl-ZBW" id="3Yy-az-UWD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3858" y="777.75"/>
         </scene>
@@ -1959,12 +1996,13 @@
         <image name="House_Icon" width="23" height="24"/>
         <image name="List_Icon" width="23" height="17"/>
         <image name="Pencil_Icon_Blue" width="20" height="20"/>
+        <image name="Pencil_Icon_Orange" width="22" height="21"/>
         <image name="Settings_Icon" width="24" height="24"/>
         <image name="Stopwatch" width="12" height="15"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gcr-15-crY"/>
         <segue reference="Tyj-mL-nW9"/>
-        <segue reference="2qG-Ik-ERl"/>
+        <segue reference="p2X-UI-w5l"/>
     </inferredMetricsTieBreakers>
 </document>

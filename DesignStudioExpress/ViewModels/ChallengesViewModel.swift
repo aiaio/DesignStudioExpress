@@ -79,10 +79,10 @@ class ChallengesViewModel {
     
     func getDuration(indexPath: NSIndexPath) -> String {
         if self.isRowEditable(indexPath) {
-            if data[indexPath.row].duration == 0 {
-                return "00"
-            }
-            return "\(data[indexPath.row].duration)"
+            let formatter = NSNumberFormatter()
+            formatter.minimumIntegerDigits = 2
+            
+            return formatter.stringFromNumber(data[indexPath.row].duration) ?? ""
         }
         return ""
     }
