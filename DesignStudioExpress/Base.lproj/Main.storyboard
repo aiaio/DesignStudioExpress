@@ -608,6 +608,29 @@
                                     <segue destination="uXv-4T-Okg" kind="show" identifier="OpenDesignStudio" id="J4V-V2-8sg"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pencil_Icon_Blue" translatesAutoresizingMaskIntoConstraints="NO" id="U9D-jf-efE">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="EOW-kP-2Vr"/>
+                                    <constraint firstAttribute="height" constant="50" id="dlF-WC-MRe"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EOW-kP-2Vr"/>
+                                        <exclude reference="dlF-WC-MRe"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="EOW-kP-2Vr"/>
+                                        <include reference="dlF-WC-MRe"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MXw-Nx-uvq" appends="YES" id="J0X-HH-wc4"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -625,7 +648,9 @@
                             <constraint firstItem="ebn-cM-bwx" firstAttribute="top" secondItem="qra-NB-i6S" secondAttribute="bottom" constant="55" id="fOw-Wf-bLY"/>
                             <constraint firstItem="lI5-bb-OmX" firstAttribute="top" secondItem="4Hc-t9-ALZ" secondAttribute="bottom" id="fSJ-sn-But"/>
                             <constraint firstItem="xnX-Vg-sph" firstAttribute="bottom" secondItem="ebn-cM-bwx" secondAttribute="top" id="iGR-RU-7R0"/>
+                            <constraint firstItem="U9D-jf-efE" firstAttribute="trailing" secondItem="KA9-Sj-yDl" secondAttribute="trailing" constant="15" id="jyH-8o-DyW"/>
                             <constraint firstItem="lI5-bb-OmX" firstAttribute="leading" secondItem="qra-NB-i6S" secondAttribute="leading" constant="-8" id="nZ9-gC-jT3"/>
+                            <constraint firstItem="U9D-jf-efE" firstAttribute="top" secondItem="4Hc-t9-ALZ" secondAttribute="top" constant="-15" id="niF-Gm-GdS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qra-NB-i6S" secondAttribute="trailing" constant="30" id="rWq-jm-BwL"/>
                             <constraint firstAttribute="trailing" secondItem="xnX-Vg-sph" secondAttribute="trailing" id="rdA-6Z-nIk">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-1"/>
@@ -639,25 +664,28 @@
                                 <exclude reference="KA9-Sj-yDl"/>
                                 <exclude reference="kYY-da-6Bn"/>
                                 <exclude reference="qra-NB-i6S"/>
+                                <exclude reference="U9D-jf-efE"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="fOw-Wf-bLY"/>
-                                <exclude reference="9cm-bb-sfa"/>
-                                <exclude reference="9pi-e4-WCa"/>
-                                <exclude reference="Nm2-8l-CWv"/>
-                                <exclude reference="rWq-jm-BwL"/>
+                                <exclude reference="I5K-2o-6gz"/>
+                                <exclude reference="P82-qb-iC4"/>
+                                <exclude reference="iGR-RU-7R0"/>
+                                <exclude reference="rdA-6Z-nIk"/>
                                 <exclude reference="X8o-VO-k0B"/>
+                                <exclude reference="fSJ-sn-But"/>
+                                <exclude reference="nZ9-gC-jT3"/>
+                                <exclude reference="jyH-8o-DyW"/>
+                                <exclude reference="niF-Gm-GdS"/>
                                 <exclude reference="2zi-UV-s0g"/>
                                 <exclude reference="A4N-PK-MCz"/>
                                 <exclude reference="PyR-jX-Na9"/>
                                 <exclude reference="3DG-d9-b1f"/>
                                 <exclude reference="AA9-zs-a3b"/>
-                                <exclude reference="fSJ-sn-But"/>
-                                <exclude reference="nZ9-gC-jT3"/>
-                                <exclude reference="I5K-2o-6gz"/>
-                                <exclude reference="P82-qb-iC4"/>
-                                <exclude reference="iGR-RU-7R0"/>
-                                <exclude reference="rdA-6Z-nIk"/>
+                                <exclude reference="9cm-bb-sfa"/>
+                                <exclude reference="9pi-e4-WCa"/>
+                                <exclude reference="Nm2-8l-CWv"/>
+                                <exclude reference="rWq-jm-BwL"/>
+                                <exclude reference="fOw-Wf-bLY"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -668,25 +696,28 @@
                                 <include reference="KA9-Sj-yDl"/>
                                 <include reference="kYY-da-6Bn"/>
                                 <include reference="qra-NB-i6S"/>
+                                <include reference="U9D-jf-efE"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="fOw-Wf-bLY"/>
-                                <include reference="9cm-bb-sfa"/>
-                                <include reference="9pi-e4-WCa"/>
-                                <include reference="Nm2-8l-CWv"/>
-                                <include reference="rWq-jm-BwL"/>
+                                <include reference="I5K-2o-6gz"/>
+                                <include reference="P82-qb-iC4"/>
+                                <include reference="iGR-RU-7R0"/>
+                                <include reference="rdA-6Z-nIk"/>
                                 <include reference="X8o-VO-k0B"/>
+                                <include reference="fSJ-sn-But"/>
+                                <include reference="nZ9-gC-jT3"/>
+                                <include reference="jyH-8o-DyW"/>
+                                <include reference="niF-Gm-GdS"/>
                                 <include reference="2zi-UV-s0g"/>
                                 <include reference="A4N-PK-MCz"/>
                                 <include reference="PyR-jX-Na9"/>
                                 <include reference="3DG-d9-b1f"/>
                                 <include reference="AA9-zs-a3b"/>
-                                <include reference="fSJ-sn-But"/>
-                                <include reference="nZ9-gC-jT3"/>
-                                <include reference="I5K-2o-6gz"/>
-                                <include reference="P82-qb-iC4"/>
-                                <include reference="iGR-RU-7R0"/>
-                                <include reference="rdA-6Z-nIk"/>
+                                <include reference="9cm-bb-sfa"/>
+                                <include reference="9pi-e4-WCa"/>
+                                <include reference="Nm2-8l-CWv"/>
+                                <include reference="rWq-jm-BwL"/>
+                                <include reference="fOw-Wf-bLY"/>
                             </mask>
                         </variation>
                     </view>
@@ -699,6 +730,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9d-B7-zFN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="MXw-Nx-uvq">
+                    <connections>
+                        <action selector="editIconTapped:" destination="Fgk-O3-KZM" id="7NW-sQ-DwF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2334" y="783.75"/>
         </scene>
@@ -1922,6 +1958,7 @@
         <image name="DesignStudioHome_Icon" width="300" height="184"/>
         <image name="House_Icon" width="23" height="24"/>
         <image name="List_Icon" width="23" height="17"/>
+        <image name="Pencil_Icon_Blue" width="20" height="20"/>
         <image name="Settings_Icon" width="24" height="24"/>
         <image name="Stopwatch" width="12" height="15"/>
     </resources>

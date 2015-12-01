@@ -55,6 +55,12 @@ class DetailDesignStudioViewController: UIViewControllerBase {
         self.duration.becomeFirstResponder()
     }
     
+    @IBAction func editIconTapped(sender: AnyObject) {
+        print("tapped")
+        self.name.becomeFirstResponder()
+    }
+
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
