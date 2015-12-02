@@ -9,11 +9,12 @@
 import Foundation
 import UIKit
 import SZTextView
+import GMStepper
 
 class ActivityDetailViewController: UITableViewController {
     
     @IBOutlet weak var name: UITextField!
-    //@IBOutlet weak var duration: UITextField!
+    @IBOutlet weak var duration: GMStepper!
     @IBOutlet weak var activityDescription: SZTextView!
     @IBOutlet weak var notes: SZTextView!
     
@@ -34,32 +35,6 @@ class ActivityDetailViewController: UITableViewController {
         self.populateFields()
     }
     
-    // MARK: - Custom
-    
-    func registerDelegates() {
-        self.name.delegate = nameDelegate
-        self.activityDescription.delegate = descriptionDelegate
-        self.notes.delegate = notesDelegate
-    }
-    
-    func customizeStyle() {
-        // remove the separator from the last row; works when we have only one section
-        self.tableView.tableFooterView = UIView(frame: CGRectMake(0, 0, self.tableView.frame.size.width, 1))
-    }
-    
-    func populateFields () {
-        self.name.text = vm.title
-        //self.duration.text = vm.duration
-        self.activityDescription.text = vm.description
-        self.notes.text = vm.notes
-    }
-    
-    func updateVMData() {
-        vm.title = self.name.text?.length > 0 ?  self.name.text! : self.name.placeholder!
-        vm.description = self.activityDescription.text?.length > 0 ?  self.activityDescription.text! : self.activityDescription.placeholder!
-        vm.notes = self.notes.text?.length > 0 ?  self.notes.text! : self.notes.placeholder!
-    }
-    
     @IBAction func saveActivity(sender: AnyObject) {
         self.updateVMData()
         // don't forget to persist the changes
@@ -71,5 +46,37 @@ class ActivityDetailViewController: UITableViewController {
     @IBAction func deleteActivity(sender: AnyObject) {
         vm.deleteActivity()
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    // MARK: - Custom
+    
+    func registerDelegates() {
+        self.name.delegate = nameDelegate
+        self.activityDescription.delegate = descriptionDelegate
+        self.notes.delegate = notesDelegate
+    }
+    
+    func customizeStyle() {
+        // remove the separator from the last row; works when we have only one section
+        self.tableView.tableFooterView = UIView(frame: CGRectMake(0, 0, self.tableView.frame.size.width, 1))
+        
+        // customize the look of the stepper
+        self.duration.labelFont = UIFont(name: "Avenir-Book", size: 18)!
+        self.duration.buttonsFont = UIFont(name: "Avenir-Book", size: 20)!
+        self.duration.leftButtonText = "–" // N-dash, so it's a little bit longer
+    }
+    
+    func populateFields () {
+        self.name.text = vm.title
+        self.duration.value = Double(vm.duration)
+        self.activityDescription.text = vm.description
+        self.notes.text = vm.notes
+    }
+    
+    func updateVMData() {
+        vm.title = self.name.text?.length > 0 ?  self.name.text! : self.name.placeholder!
+        vm.duration = Int(self.duration.value)
+        vm.description = self.activityDescription.text?.length > 0 ?  self.activityDescription.text! : self.activityDescription.placeholder!
+        vm.notes = self.notes.text?.length > 0 ?  self.notes.text! : self.notes.placeholder!
     }
 }

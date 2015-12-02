@@ -1908,7 +1908,7 @@
                         <sections>
                             <tableViewSection id="vjn-h9-gTo">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" shouldIndentWhileEditing="NO" rowHeight="110" id="tVR-is-xGT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" rowHeight="110" id="tVR-is-xGT">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tVR-is-xGT" id="UDz-H4-bfB">
@@ -1972,7 +1972,7 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="32" minY="0.0" maxX="32" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="u6v-ea-ToR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="80" id="u6v-ea-ToR">
                                         <rect key="frame" x="0.0" y="110" width="600" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="u6v-ea-ToR" id="vTp-cl-cJy">
@@ -1985,37 +1985,85 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKU-aV-QvZ" customClass="GMStepper" customModule="GMStepper">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="130" id="oyt-Jp-mHc"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="buttonsTextColor">
+                                                            <color key="value" red="0.96862745098039216" green="0.70588235294117641" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="buttonsBackgroundColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="labelTextColor">
+                                                            <color key="value" red="0.96862745100000003" green="0.70588235290000001" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="labelBackgroundColor">
+                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="limitHitAnimationColor">
+                                                            <color key="value" red="1" green="0.3591497541" blue="0.36842127060000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="labelWidthWeight">
+                                                            <real key="value" value="0.40000000000000002"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="oyt-Jp-mHc"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="oyt-Jp-mHc"/>
+                                                        </mask>
+                                                    </variation>
+                                                </view>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="ZKU-aV-QvZ" firstAttribute="top" secondItem="vTp-cl-cJy" secondAttribute="topMargin" constant="10" id="AhV-3a-td2"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="GCA-Pk-I2k" secondAttribute="bottom" constant="11" id="MXX-Pn-DBE"/>
                                                 <constraint firstItem="GCA-Pk-I2k" firstAttribute="top" secondItem="vTp-cl-cJy" secondAttribute="topMargin" constant="11" id="Tf6-1L-ida"/>
                                                 <constraint firstItem="GCA-Pk-I2k" firstAttribute="leading" secondItem="vTp-cl-cJy" secondAttribute="leadingMargin" id="kr2-Db-v4B"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ZKU-aV-QvZ" secondAttribute="trailing" id="mIn-th-Frh"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZKU-aV-QvZ" secondAttribute="bottom" constant="10" id="oqg-wK-fHQ"/>
                                             </constraints>
                                             <edgeInsets key="layoutMargins" top="8" left="32" bottom="8" right="32"/>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="GCA-Pk-I2k"/>
+                                                    <exclude reference="ZKU-aV-QvZ"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="MXX-Pn-DBE"/>
                                                     <exclude reference="Tf6-1L-ida"/>
                                                     <exclude reference="kr2-Db-v4B"/>
+                                                    <exclude reference="AhV-3a-td2"/>
+                                                    <exclude reference="mIn-th-Frh"/>
+                                                    <exclude reference="oqg-wK-fHQ"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="GCA-Pk-I2k"/>
+                                                    <include reference="ZKU-aV-QvZ"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="MXX-Pn-DBE"/>
                                                     <include reference="Tf6-1L-ida"/>
                                                     <include reference="kr2-Db-v4B"/>
+                                                    <include reference="AhV-3a-td2"/>
+                                                    <include reference="mIn-th-Frh"/>
+                                                    <include reference="oqg-wK-fHQ"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="32" minY="0.0" maxX="32" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="180" id="BRG-Jb-vM9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="180" id="BRG-Jb-vM9">
                                         <rect key="frame" x="0.0" y="190" width="600" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BRG-Jb-vM9" id="41u-mO-b43">
@@ -2093,7 +2141,7 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="32" minY="0.0" maxX="32" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="180" id="50U-NN-R8j">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="180" id="50U-NN-R8j">
                                         <rect key="frame" x="0.0" y="370" width="600" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="50U-NN-R8j" id="jVY-u4-0oR">
@@ -2169,7 +2217,7 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="32" minY="0.0" maxX="32" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="170" id="8dX-2s-B6Q">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="170" id="8dX-2s-B6Q">
                                         <rect key="frame" x="0.0" y="550" width="600" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8dX-2s-B6Q" id="aGN-8W-O9B">
@@ -2266,6 +2314,7 @@
                     </tableView>
                     <connections>
                         <outlet property="activityDescription" destination="De0-bQ-nJW" id="B2b-mk-bNK"/>
+                        <outlet property="duration" destination="ZKU-aV-QvZ" id="2Ph-ta-3Sc"/>
                         <outlet property="name" destination="cJ3-9p-awJ" id="Nm5-ut-nd8"/>
                         <outlet property="notes" destination="bgO-P0-jyO" id="Ytt-ti-w5j"/>
                     </connections>

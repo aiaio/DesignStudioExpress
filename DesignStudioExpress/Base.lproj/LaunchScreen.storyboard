@@ -92,7 +92,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Pkw-4y-CB4" secondAttribute="trailing" id="5a0-Z3-6iS"/>
                             <constraint firstItem="lbD-wU-tUt" firstAttribute="bottom" secondItem="Pkw-4y-CB4" secondAttribute="bottom" constant="-20" id="6nA-Xb-tle"/>
-                            <constraint firstAttribute="trailing" secondItem="a6f-uf-fWa" secondAttribute="trailing" id="KfM-jh-Esb"/>
+                            <constraint firstAttribute="trailing" secondItem="a6f-uf-fWa" secondAttribute="trailing" constant="-1" id="KfM-jh-Esb"/>
                             <constraint firstItem="lbD-wU-tUt" firstAttribute="centerX" secondItem="Pkw-4y-CB4" secondAttribute="centerX" id="M61-KR-nTj"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Pkw-4y-CB4" secondAttribute="bottom" id="TaY-OP-jb4"/>
                             <constraint firstItem="Pkw-4y-CB4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="UZd-Ma-LIi"/>
