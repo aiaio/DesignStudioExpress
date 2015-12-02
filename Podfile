@@ -9,5 +9,6 @@ pod 'MGSwipeTableCell', '~> 1.5.1'
 pod 'RealmSwift'
 pod 'FXLabel'
 pod 'SZTextView'
+pod 'GMStepper'
 
 use_frameworks!
