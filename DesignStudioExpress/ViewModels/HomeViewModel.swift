@@ -49,12 +49,12 @@ class HomeViewModel {
             for idx2 in 1...3 {
                 let challenge = Challenge()
                 challenge.title = "Challenge \(idx2)"
-                challenge.challengeDescription  = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne, solum admodum at cum."
+                challenge.challengeDescription  = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne."
                 
                 for idx3 in 1...3 {
                     let activity = Activity()
                     activity.title = "Activity \(idx3)"
-                    activity.activityDescription = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne, solum admodum at cum."
+                    activity.activityDescription = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne."
                     activity.duration = 5
                     challenge.activities.append(activity)
                 }

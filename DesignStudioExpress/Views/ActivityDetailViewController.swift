@@ -31,10 +31,20 @@ class ActivityDetailViewController: UITableViewController {
         self.notes.delegate = notesDelegate
         
         self.customizeStyle()
+        
+
     }
     
     override func viewWillAppear(animated: Bool) {
         self.populateFields()
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100.0
     }
     
     // MARK: - Custom
