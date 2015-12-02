@@ -26,13 +26,8 @@ class ActivityDetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.name.delegate = nameDelegate
-        self.activityDescription.delegate = descriptionDelegate
-        self.notes.delegate = notesDelegate
-        
+        self.registerDelegates()
         self.customizeStyle()
-        
-
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -40,6 +35,12 @@ class ActivityDetailViewController: UITableViewController {
     }
     
     // MARK: - Custom
+    
+    func registerDelegates() {
+        self.name.delegate = nameDelegate
+        self.activityDescription.delegate = descriptionDelegate
+        self.notes.delegate = notesDelegate
+    }
     
     func customizeStyle() {
         // remove the separator from the last row; works when we have only one section
@@ -53,15 +54,22 @@ class ActivityDetailViewController: UITableViewController {
         self.notes.text = vm.notes
     }
     
-    @IBAction func saveActivity(sender: AnyObject) {
+    func updateVMData() {
         vm.title = self.name.text?.length > 0 ?  self.name.text! : self.name.placeholder!
         vm.description = self.activityDescription.text?.length > 0 ?  self.activityDescription.text! : self.activityDescription.placeholder!
         vm.notes = self.notes.text?.length > 0 ?  self.notes.text! : self.notes.placeholder!
-
+    }
+    
+    @IBAction func saveActivity(sender: AnyObject) {
+        self.updateVMData()
+        // don't forget to persist the changes
+        vm.saveActivity()
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func deleteActivity(sender: AnyObject) {
+        vm.deleteActivity()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

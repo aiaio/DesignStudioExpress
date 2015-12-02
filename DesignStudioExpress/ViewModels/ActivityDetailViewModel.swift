@@ -13,53 +13,47 @@ class ActivityDetailViewModel {
     lazy var realm = try! Realm()
     private var data: Activity!
     
+    var title: String = ""
+    var duration: Int = 0
+    var description: String = ""
+    var notes: String = ""
+    
     func setActivity(newActivity: Activity) {
+        self.loadActivity(newActivity)
+    }
+    
+    func loadActivity(newActivity: Activity) {
         self.data = newActivity
+        self.title = newActivity.title
+        self.duration = newActivity.duration
+        self.description = newActivity.activityDescription
+        self.notes = newActivity.notes
     }
     
-    var title: String {
-        get {
-            return self.data.title
-        }
-        set {
-            try! self.realm.write {
-                self.data.title = newValue
+    func saveActivity() {
+        do {
+            try realm.write {
+                self.data.title = self.title
+                //self.data.duration = self.duration
+                self.data.activityDescription = self.description
+                self.data.notes = self.notes
+                self.realm.add(self.data, update: true)
             }
+        } catch {
+            //TODO: handle errors
+            print("Couldn't save the activity")
         }
     }
     
-    var duration: String {
-        get {
-            return "\(data.duration)"
-        }
-        set {
-            try! realm.write {
-            self.data.duration = Int(newValue) ?? 0
+    func deleteActivity() {
+        do {
+            try realm.write {
+                self.realm.delete(self.data)
             }
+        } catch {
+            //TODO: handle errors
+            print("Couldn't delete the activity")
         }
     }
-    
-    var description: String {
-        get {
-            return "\(data.activityDescription)"
-        }
-        set {
-            try! realm.write {
-                self.data.activityDescription = newValue
-            }
-        }
-    }
-    
-    var notes: String {
-        get {
-            return "\(data.notes)"
-        }
-        set {
-            try! realm.write {
-                self.data.notes = newValue
-            }
-        }
-    }
-    
 }
 

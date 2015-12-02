@@ -101,6 +101,13 @@ class ChallengeDetailViewModel {
         if indexPath != nil && self.isRowEditable(indexPath!) {
             return data.activities[indexPath!.row-1]
         }
-        return Activity()
+        
+        let activity = Activity.createDefaultActivity()
+        
+        try! realm.write {
+            self.data.activities.append(activity)
+        }
+        
+        return activity
     }
 }
