@@ -96,4 +96,11 @@ class ChallengeDetailViewModel {
         }
         return ""
     }
+    
+    func getData(indexPath: NSIndexPath?) -> Activity {
+        if indexPath != nil && self.isRowEditable(indexPath!) {
+            return data.activities[indexPath!.row-1]
+        }
+        return Activity()
+    }
 }

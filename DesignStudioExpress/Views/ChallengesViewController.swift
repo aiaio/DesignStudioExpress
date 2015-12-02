@@ -23,6 +23,8 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         
         // show the edit button for reordering of the rows
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.customizeStyle()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -151,6 +153,11 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
             addChallengeView.hidden = true
             tableViewParentView.hidden = false
         }
+    }
+    
+    func customizeStyle() {
+        // remove the separator from the last row; works when we have only one section
+        self.tableView.tableFooterView = UIView(frame: CGRectMake(0, 0, self.tableView.frame.size.width, 1))
     }
     
     override func customizeNavBarStyle() {

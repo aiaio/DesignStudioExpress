@@ -10,6 +10,11 @@ import UIKit
 import SZTextView
 
 class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate {
+    enum SegueIdentifier: String {
+        case EditActivity = "EditActivity"
+        case AddActivity = "AddActivity"
+    }
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addActivityButton: UIButtonRed!
     
@@ -29,6 +34,7 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         self.navigationItem.title = vm.designStudioTitle
         
         self.addObservers()
+        self.customizeStyle()
     }
     
     deinit {
@@ -142,12 +148,6 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         }
     }
     
-    override func customizeNavBarStyle() {
-        super.customizeNavBarStyle()
-        
-        DesignStudioElementStyles.pinkNavigationBar(self.navigationController!.navigationBar)
-    }
-    
     // creates table view cell of a specified type
     private func createCell<T: UITableViewCell>(reuseIdentifier: String, indexPath: NSIndexPath, _: T.Type) -> T {
         var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! T!
@@ -159,11 +159,45 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         return cell
     }
     
+    func customizeStyle() {
+        // remove the separator from the last row; works when we have only one section
+        self.tableView.tableFooterView = UIView(frame: CGRectMake(0, 0, self.tableView.frame.size.width, 1))
+    }
+    
+    override func customizeNavBarStyle() {
+        super.customizeNavBarStyle()
+        
+        DesignStudioElementStyles.pinkNavigationBar(self.navigationController!.navigationBar)
+    }
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let destination = segue.destinationViewController as? ActivityDetailViewController
+        
+        guard destination != nil else {
+            return
+        }
+        
+        switch segue.identifier! {
+            
+        case SegueIdentifier.AddActivity.rawValue:
+            destination!.vm.setActivity(vm.getData(nil))
+        case SegueIdentifier.EditActivity.rawValue:
+            var cell: UITableViewCell?
+            if let contentView = sender?.superview {
+                cell = contentView?.superview as? UITableViewCell
+            }
+            
+            if cell != nil {
+                if let indexPath = self.tableView.indexPathForCell(cell!) {
+                    destination!.vm.setActivity(vm.getData(indexPath))
+                }
+            }
+        default:
+            destination!.vm.setActivity(vm.getData(nil))
+        }
     }
 }
