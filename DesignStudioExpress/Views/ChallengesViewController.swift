@@ -201,8 +201,8 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
                 destination.vm.setChallenge(vm.getChallengesData(indexPath))
             }
         case SegueIdentifier.BeginDesignStudio.rawValue:
-            //  TODO kickoff global timer
-            return
+            let destination = segue.destinationViewController as! TimerViewController
+            destination.vm.setDesignStudio(self.vm.getDesignStudioData())
         default:
             return
         }

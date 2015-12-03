@@ -901,7 +901,7 @@
                                                     </mask>
                                                 </variation>
                                                 <connections>
-                                                    <segue destination="Jcl-AR-Twc" kind="presentation" identifier="BeginDesignStudio" modalPresentationStyle="fullScreen" id="qmN-kr-sLT"/>
+                                                    <segue destination="AmZ-1V-xYD" kind="show" identifier="BeginDesignStudio" animates="NO" id="sc1-o4-aot"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1288,9 +1288,26 @@
             <point key="canvasLocation" x="3067.5" y="777.75"/>
         </scene>
         <!--Timer View Controller-->
+        <scene sceneID="hRY-AA-5n1">
+            <objects>
+                <viewController id="AmZ-1V-xYD" customClass="TimerViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CzE-h2-Ij5"/>
+                        <viewControllerLayoutGuide type="bottom" id="umt-eQ-gme"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GWD-B8-Vcl">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QyY-TM-Bia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2323" y="1749"/>
+        </scene>
+        <!--Upcoming Challenge View Controller-->
         <scene sceneID="orm-qB-Kv0">
             <objects>
-                <viewController id="Jcl-AR-Twc" customClass="TimerViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpcomingChallenges" id="Jcl-AR-Twc" customClass="UpcomingChallengeViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sKu-bs-iFp"/>
                         <viewControllerLayoutGuide type="bottom" id="QDM-h2-rPj"/>
@@ -1465,10 +1482,15 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="challengeTitle" destination="Tc6-DL-oN7" id="gTL-zP-bP5"/>
+                        <outlet property="duration" destination="u80-YF-hkb" id="dcS-aP-Zfu"/>
+                        <outlet property="numOfChallenges" destination="bVT-GZ-5md" id="vyg-1H-PZh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ML4-ET-M0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3067.5" y="1471.5"/>
+            <point key="canvasLocation" x="3067" y="1742"/>
         </scene>
         <!--Challenge Detail View Controller-->
         <scene sceneID="ndZ-lY-XXN">
