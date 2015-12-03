@@ -32,6 +32,7 @@ class ActivityDetailViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.populateFields()
     }
     
@@ -77,6 +78,6 @@ class ActivityDetailViewController: UITableViewController {
         vm.title = self.name.text?.length > 0 ?  self.name.text! : self.name.placeholder!
         vm.duration = Int(self.duration.value)
         vm.description = self.activityDescription.text?.length > 0 ?  self.activityDescription.text! : self.activityDescription.placeholder!
-        vm.notes = self.notes.text?.length > 0 ?  self.notes.text! : self.notes.placeholder!
+        vm.notes = self.notes.text?.length > 0 ?  self.notes.text! : ""
     }
 }

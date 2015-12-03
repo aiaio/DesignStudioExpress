@@ -900,6 +900,9 @@
                                                         <include reference="aRD-sf-Wib"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <segue destination="Jcl-AR-Twc" kind="show" identifier="BeginDesignStudio" id="qmN-kr-sLT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1283,6 +1286,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fqw-pl-cgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3067.5" y="777.75"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="orm-qB-Kv0">
+            <objects>
+                <viewController id="Jcl-AR-Twc" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sKu-bs-iFp"/>
+                        <viewControllerLayoutGuide type="bottom" id="QDM-h2-rPj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="26m-Yq-bap">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ML4-ET-M0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3067.5" y="1471.5"/>
         </scene>
         <!--Challenge Detail View Controller-->
         <scene sceneID="ndZ-lY-XXN">
@@ -2088,7 +2108,9 @@
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Write as many feature ideas as you can on individual stickies. Save the stickies as an idea palette for sketching."/>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder">
+                                                            <string key="value">Here’s where you describe one step in solving your challenge. Like, “cardstorm new saving features,” or “share sketches within mini-groups".</string>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -2409,7 +2431,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gcr-15-crY"/>
-        <segue reference="Tyj-mL-nW9"/>
+        <segue reference="SWD-un-Cl3"/>
         <segue reference="KMg-vf-Wsj"/>
     </inferredMetricsTieBreakers>
 </document>

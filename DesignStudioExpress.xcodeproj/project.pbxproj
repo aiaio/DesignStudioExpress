@@ -10,6 +10,8 @@
 		DE9CC0FF2AB206A55D253AC2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF9E289780C23ADD06A8363 /* Pods.framework */; };
 		E40A81A51C0DF11200BC07E3 /* UITextFieldDelegateBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A81A41C0DF11200BC07E3 /* UITextFieldDelegateBase.swift */; };
 		E40A81A71C0DF4DC00BC07E3 /* UITextViewDelegateBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A81A61C0DF4DC00BC07E3 /* UITextViewDelegateBase.swift */; };
+		E40EDF241C10B28200F0D4C4 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EDF231C10B28200F0D4C4 /* TimerViewController.swift */; };
+		E40EDF261C10B34100F0D4C4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EDF251C10B34100F0D4C4 /* TimerViewModel.swift */; };
 		E41E772C1C06554D000364D6 /* UITextViewDelegateMaxLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E772B1C06554D000364D6 /* UITextViewDelegateMaxLength.swift */; };
 		E41E772E1C067C6C000364D6 /* UITextDelegateBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E772D1C067C6C000364D6 /* UITextDelegateBase.swift */; };
 		E41E77301C067D25000364D6 /* UITextFieldDelegateMaxLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E772F1C067D25000364D6 /* UITextFieldDelegateMaxLength.swift */; };
@@ -68,6 +70,8 @@
 		AAF9E289780C23ADD06A8363 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E40A81A41C0DF11200BC07E3 /* UITextFieldDelegateBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldDelegateBase.swift; sourceTree = "<group>"; };
 		E40A81A61C0DF4DC00BC07E3 /* UITextViewDelegateBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewDelegateBase.swift; sourceTree = "<group>"; };
+		E40EDF231C10B28200F0D4C4 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		E40EDF251C10B34100F0D4C4 /* TimerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		E41E772B1C06554D000364D6 /* UITextViewDelegateMaxLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewDelegateMaxLength.swift; sourceTree = "<group>"; };
 		E41E772D1C067C6C000364D6 /* UITextDelegateBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextDelegateBase.swift; sourceTree = "<group>"; };
 		E41E772F1C067D25000364D6 /* UITextFieldDelegateMaxLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldDelegateMaxLength.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 				E42DD32F1BFE98020026390E /* ChallengesViewModel.swift */,
 				E46A22071C010FE5004D5292 /* ChallengeDetailViewModel.swift */,
 				E468028D1C0E5EF3002438E5 /* ActivityDetailViewModel.swift */,
+				E40EDF251C10B34100F0D4C4 /* TimerViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 				E49F45D81BFD468100F32AE9 /* ChallengesViewController.swift */,
 				E46A22051C010FC1004D5292 /* ChallengeDetailViewController.swift */,
 				E468028B1C0E1F7E002438E5 /* ActivityDetailViewController.swift */,
+				E40EDF231C10B28200F0D4C4 /* TimerViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -475,6 +481,7 @@
 				E41E772E1C067C6C000364D6 /* UITextDelegateBase.swift in Sources */,
 				E46A22081C010FE5004D5292 /* ChallengeDetailViewModel.swift in Sources */,
 				E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */,
+				E40EDF261C10B34100F0D4C4 /* TimerViewModel.swift in Sources */,
 				E46A22061C010FC1004D5292 /* ChallengeDetailViewController.swift in Sources */,
 				E4C113301BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift in Sources */,
 				E468028E1C0E5EF3002438E5 /* ActivityDetailViewModel.swift in Sources */,
@@ -485,6 +492,7 @@
 				E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */,
 				E42DD3271BFE68380026390E /* DesignStudioStyleCustomization.swift in Sources */,
 				E429AF5D1BF5404200AE4DA7 /* UIViewControllerBase.swift in Sources */,
+				E40EDF241C10B28200F0D4C4 /* TimerViewController.swift in Sources */,
 				E4EAC13F1C0228410079364C /* UITableViewCellChallengeHeader.swift in Sources */,
 				E40A81A51C0DF11200BC07E3 /* UITextFieldDelegateBase.swift in Sources */,
 				E41E77301C067D25000364D6 /* UITextFieldDelegateMaxLength.swift in Sources */,

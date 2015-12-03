@@ -87,11 +87,15 @@ class ChallengesViewModel {
         return ""
     }
     
-    func getData(indexPath: NSIndexPath?) -> Challenge {
+    func getChallengesData(indexPath: NSIndexPath?) -> Challenge {
         if indexPath != nil && self.isRowEditable(indexPath!) {
             return data[indexPath!.row]
         }
         return createNewChallenge()
+    }
+    
+    func getDesignStudioData() -> DesignStudio {
+        return self.designStudio
     }
     
     private func createNewChallenge() -> Challenge {

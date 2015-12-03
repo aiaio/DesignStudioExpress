@@ -10,6 +10,13 @@ import UIKit
 import MGSwipeTableCell
 
 class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UITableViewDelegate, MGSwipeTableCellDelegate {
+    enum SegueIdentifier: String {
+        case AddNewChallenge = "AddNewChallenge"
+        case AddNewChallengeCell = "AddNewChallengeCell"
+        case EditChallenge = "EditChallenge"
+        case BeginDesignStudio = "BeginDesignStudio"
+    }
+    
     @IBOutlet weak var addChallengeView: UIView!
     @IBOutlet weak var tableViewParentView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -20,9 +27,6 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         super.viewDidLoad()
         
         self.navigationItem.title = vm.getDesignStudioTitle()
-        
-        // show the edit button for reordering of the rows
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.customizeStyle()
     }
@@ -149,9 +153,12 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         if vm.isNewDesignStudio() {
             addChallengeView.hidden = false
             tableViewParentView.hidden = true
+            self.navigationItem.rightBarButtonItem = nil
         } else {
             addChallengeView.hidden = true
             tableViewParentView.hidden = false
+            // show the edit button for reordering of the rows
+            self.navigationItem.rightBarButtonItem = self.editButtonItem()
         }
     }
     
@@ -178,25 +185,24 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     }
     
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        let destination = segue.destinationViewController as! ChallengeDetailViewController
-        
         switch segue.identifier! {
             
-        case "AddNewChallenge":
+        case SegueIdentifier.AddNewChallenge.rawValue:
             fallthrough
-        case "AddNewChallengeCell":
-            destination.vm.setChallenge(vm.getData(nil))
-        case "EditChallenge":
+        case SegueIdentifier.AddNewChallengeCell.rawValue:
+            let destination = segue.destinationViewController as! ChallengeDetailViewController
+            destination.vm.setChallenge(vm.getChallengesData(nil))
+        case SegueIdentifier.EditChallenge.rawValue:
             if let indexPath = self.tableView.indexPathForCell(sender as! MGSwipeTableCellChallenge) {
-                destination.vm.setChallenge(vm.getData(indexPath))
+                let destination = segue.destinationViewController as! ChallengeDetailViewController
+                destination.vm.setChallenge(vm.getChallengesData(indexPath))
             }
+        case SegueIdentifier.BeginDesignStudio.rawValue:
+            let destination = segue.destinationViewController as! TimerViewController
+            destination.vm.setDesignStudio(vm.getDesignStudioData())
         default:
-            destination.vm.setChallenge(vm.getData(nil))
+            return
         }
     }
 }
