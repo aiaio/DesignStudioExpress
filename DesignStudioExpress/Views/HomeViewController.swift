@@ -131,6 +131,14 @@ class HomeViewController: UIViewControllerBase, UITableViewDataSource, UITableVi
         }
     }
     
+    // MARK: StyledNavigationBar
+    
+    override func customizeNavBarStyle() {
+        super.customizeNavBarStyle()
+        
+        DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
+    }
+    
     // MARK: - Custom
     
     @IBAction func createButtonClick(sender: AnyObject) {
@@ -171,12 +179,6 @@ class HomeViewController: UIViewControllerBase, UITableViewDataSource, UITableVi
         self.createButton.setTitleColor(DesignStudioStyles.headerTextLightBG, forState: .Normal)
         self.createButton.backgroundColor = DesignStudioStyles.white
         self.createButton.titleLabel?.font = UIFont(name: "Avenir-Book", size: 22)
-    }
-    
-    override func customizeNavBarStyle() {
-        super.customizeNavBarStyle()
-        
-        DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
     }
     
     func stylePhotoCell(cell: MGSwipeTableCellCentered, indexPath: NSIndexPath) {

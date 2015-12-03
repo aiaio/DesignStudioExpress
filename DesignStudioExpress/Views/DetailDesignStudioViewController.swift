@@ -76,13 +76,15 @@ class DetailDesignStudioViewController: UIViewControllerBase {
         self.name.resignFirstResponder()
     }
     
-    // MARK: - custom
+    // MARK: StyledNavigationBar
     
     override func customizeNavBarStyle() {
         super.customizeNavBarStyle()
         
         DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
     }
+    
+    // MARK: - custom
     
     func addObservers() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"),

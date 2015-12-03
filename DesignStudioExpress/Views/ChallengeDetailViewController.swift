@@ -123,6 +123,14 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         self.headerDescription?.resignFirstResponder()
     }
     
+    // MARK: StyledNavigationBar
+    
+    override func customizeNavBarStyle() {
+        super.customizeNavBarStyle()
+        
+        DesignStudioElementStyles.pinkNavigationBar(self.navigationController!.navigationBar)
+    }
+    
     // MARK: - Custom
     
     func addObservers() {
@@ -162,12 +170,6 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
     func customizeStyle() {
         // remove the separator from the last row; works when we have only one section
         self.tableView.tableFooterView = UIView(frame: CGRectMake(0, 0, self.tableView.frame.size.width, 1))
-    }
-    
-    override func customizeNavBarStyle() {
-        super.customizeNavBarStyle()
-        
-        DesignStudioElementStyles.pinkNavigationBar(self.navigationController!.navigationBar)
     }
     
     // MARK: - Navigation

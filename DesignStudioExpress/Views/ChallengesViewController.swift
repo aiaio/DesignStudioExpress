@@ -146,6 +146,14 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         }
         return []
     }
+    
+    // MARK: StyledNavigationBar
+    
+    override func customizeNavBarStyle() {
+        super.customizeNavBarStyle()
+        
+        DesignStudioElementStyles.pinkNavigationBar(self.navigationController!.navigationBar)
+    }
 
     // MARK: - Custom
     
@@ -165,12 +173,6 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     func customizeStyle() {
         // remove the separator from the last row; works when we have only one section
         self.tableView.tableFooterView = UIView(frame: CGRectMake(0, 0, self.tableView.frame.size.width, 1))
-    }
-    
-    override func customizeNavBarStyle() {
-        super.customizeNavBarStyle()
-        
-        DesignStudioElementStyles.pinkNavigationBar(self.navigationController!.navigationBar)
     }
     
     // creates table view cell of a specified type
@@ -199,8 +201,8 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
                 destination.vm.setChallenge(vm.getChallengesData(indexPath))
             }
         case SegueIdentifier.BeginDesignStudio.rawValue:
-            let destination = segue.destinationViewController as! TimerViewController
-            destination.vm.setDesignStudio(vm.getDesignStudioData())
+            //  TODO kickoff global timer
+            return
         default:
             return
         }
