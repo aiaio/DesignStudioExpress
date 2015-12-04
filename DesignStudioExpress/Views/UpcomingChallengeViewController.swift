@@ -14,7 +14,7 @@ class UpcomingChallengeViewController: UIViewController {
     @IBOutlet weak var challengeTitle: UILabel!
     @IBOutlet weak var duration: UILabel!
 
-    let showDuration = 3.0 // seconds
+    let showDuration = 1.0 // TODO: increase this after testing seconds
     let vm = UpcomingChallengeViewModel()
     
     override func viewDidLoad() {

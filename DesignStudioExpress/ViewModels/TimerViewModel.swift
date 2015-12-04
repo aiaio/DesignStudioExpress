@@ -10,22 +10,28 @@ import Foundation
 
 class TimerViewModel {
     
-    var data: DesignStudio?
-    var currentChallenge = -1
-    
     func setDesignStudio(designStudio: DesignStudio) {
-        self.data = designStudio
-        self.currentChallenge = -1
+        AppDelegate.designStudio.startDesignStudio(designStudio)
     }
     
-    // this will move the design studio to the next challenge
-    func getNextChallenge() -> Challenge? {
-        let nextChallengeIdx = ++self.currentChallenge
-        if (nextChallengeIdx < self.data!.challenges.count) {
-            return self.data!.challenges[nextChallengeIdx]
-        } else {
-            return nil
-        }
+    var currentChallenge: Challenge? {
+        get { return AppDelegate.designStudio.currentChallenge }
+    }
+    
+    var challengeTitle: String {
+        get { return AppDelegate.designStudio.currentChallenge?.title ?? "" }
+    }
+    
+    var activityTitle: String {
+         get { return AppDelegate.designStudio.currentActivity?.title ?? "" }
+    }
+    
+    var activityDescription: String {
+        get { return AppDelegate.designStudio.currentActivity?.activityDescription ?? "" }
+    }
+    
+    var activityNotes: String {
+        get { return AppDelegate.designStudio.currentActivity?.notes ?? "" }
     }
     
 }

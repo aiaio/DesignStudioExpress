@@ -14,6 +14,7 @@
 		E40EDF261C10B34100F0D4C4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EDF251C10B34100F0D4C4 /* TimerViewModel.swift */; };
 		E40EDF291C10E1AA00F0D4C4 /* UpcomingChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EDF281C10E1AA00F0D4C4 /* UpcomingChallengeViewController.swift */; };
 		E40EDF2B1C10EA3F00F0D4C4 /* UpcomingChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EDF2A1C10EA3F00F0D4C4 /* UpcomingChallengeViewModel.swift */; };
+		E40EDF2D1C11F3FA00F0D4C4 /* RunningDesignStudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40EDF2C1C11F3FA00F0D4C4 /* RunningDesignStudio.swift */; };
 		E41E772C1C06554D000364D6 /* UITextViewDelegateMaxLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E772B1C06554D000364D6 /* UITextViewDelegateMaxLength.swift */; };
 		E41E772E1C067C6C000364D6 /* UITextDelegateBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E772D1C067C6C000364D6 /* UITextDelegateBase.swift */; };
 		E41E77301C067D25000364D6 /* UITextFieldDelegateMaxLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41E772F1C067D25000364D6 /* UITextFieldDelegateMaxLength.swift */; };
@@ -76,6 +77,7 @@
 		E40EDF251C10B34100F0D4C4 /* TimerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		E40EDF281C10E1AA00F0D4C4 /* UpcomingChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingChallengeViewController.swift; sourceTree = "<group>"; };
 		E40EDF2A1C10EA3F00F0D4C4 /* UpcomingChallengeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingChallengeViewModel.swift; sourceTree = "<group>"; };
+		E40EDF2C1C11F3FA00F0D4C4 /* RunningDesignStudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningDesignStudio.swift; sourceTree = "<group>"; };
 		E41E772B1C06554D000364D6 /* UITextViewDelegateMaxLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewDelegateMaxLength.swift; sourceTree = "<group>"; };
 		E41E772D1C067C6C000364D6 /* UITextDelegateBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextDelegateBase.swift; sourceTree = "<group>"; };
 		E41E772F1C067D25000364D6 /* UITextFieldDelegateMaxLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldDelegateMaxLength.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				E468028D1C0E5EF3002438E5 /* ActivityDetailViewModel.swift */,
 				E40EDF251C10B34100F0D4C4 /* TimerViewModel.swift */,
 				E40EDF2A1C10EA3F00F0D4C4 /* UpcomingChallengeViewModel.swift */,
+				E40EDF2C1C11F3FA00F0D4C4 /* RunningDesignStudio.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				E4C113321BFA855700A7E1B3 /* RealmSwiftExtension.swift in Sources */,
 				E40EDF2B1C10EA3F00F0D4C4 /* UpcomingChallengeViewModel.swift in Sources */,
 				E421C4161BF164AD003F9D8A /* AppDelegate.swift in Sources */,
+				E40EDF2D1C11F3FA00F0D4C4 /* RunningDesignStudio.swift in Sources */,
 				E49F45D91BFD468100F32AE9 /* ChallengesViewController.swift in Sources */,
 				E4ECC4F11BF8E92C00834AD3 /* DetailDesignStudioViewController.swift in Sources */,
 				E42DD3341BFF97C70026390E /* Activity.swift in Sources */,

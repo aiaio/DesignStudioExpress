@@ -1362,6 +1362,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gF-je-4sC" userLabel="Activity Notes">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-BookOblique" family="Avenir" pointSize="14"/>
+                                <color key="textColor" red="0.37254901960784315" green="0.53333333333333333" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C88-5T-bIJ" customClass="UIButtonLightBlue" customModule="DesignStudioExpress" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -1378,25 +1384,21 @@
                                         <include reference="Pe1-DO-iiz"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="switchDescription:" destination="AmZ-1V-xYD" eventType="touchUpInside" id="wvX-3z-oqK"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gF-je-4sC">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="264" y="449" width="42" height="21"/>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Idx-u8-oLd" firstAttribute="centerY" secondItem="idW-Lh-Kbq" secondAttribute="bottom" id="0y1-Hs-E0f"/>
                             <constraint firstAttribute="trailing" secondItem="C88-5T-bIJ" secondAttribute="trailing" constant="45" id="7LI-LD-dlp"/>
+                            <constraint firstItem="5gF-je-4sC" firstAttribute="trailing" secondItem="WIX-VS-Eg2" secondAttribute="trailing" id="K3G-oX-iN1"/>
                             <constraint firstItem="wBd-QA-Qkf" firstAttribute="top" secondItem="X2F-Uv-w2R" secondAttribute="bottom" constant="10" id="MgW-6j-Gh9"/>
                             <constraint firstItem="WIX-VS-Eg2" firstAttribute="centerX" secondItem="GWD-B8-Vcl" secondAttribute="centerX" id="QbR-hD-zoF"/>
                             <constraint firstItem="idW-Lh-Kbq" firstAttribute="top" secondItem="CzE-h2-Ij5" secondAttribute="bottom" constant="-64" id="ROL-b7-PL0"/>
                             <constraint firstAttribute="leading" secondItem="C88-5T-bIJ" secondAttribute="leading" constant="-45" id="ROb-vA-hB8"/>
+                            <constraint firstItem="5gF-je-4sC" firstAttribute="leading" secondItem="WIX-VS-Eg2" secondAttribute="leading" id="WOY-UL-wII"/>
                             <constraint firstAttribute="trailingMargin" secondItem="idW-Lh-Kbq" secondAttribute="trailing" constant="-20" id="Yma-lb-LC1"/>
                             <constraint firstAttribute="leadingMargin" secondItem="X2F-Uv-w2R" secondAttribute="leading" id="aBg-6a-7oK"/>
                             <constraint firstItem="idW-Lh-Kbq" firstAttribute="leading" secondItem="GWD-B8-Vcl" secondAttribute="leadingMargin" constant="-20" id="d1P-dI-0YO"/>
@@ -1406,7 +1408,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="X2F-Uv-w2R" secondAttribute="trailing" id="grH-dl-Ad3"/>
                             <constraint firstItem="WIX-VS-Eg2" firstAttribute="width" secondItem="C88-5T-bIJ" secondAttribute="width" id="h9j-wu-buo"/>
                             <constraint firstItem="WIX-VS-Eg2" firstAttribute="top" secondItem="wBd-QA-Qkf" secondAttribute="bottom" constant="20" id="lml-Of-Vld"/>
+                            <constraint firstItem="5gF-je-4sC" firstAttribute="bottom" secondItem="WIX-VS-Eg2" secondAttribute="bottom" id="pG1-RJ-bdC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wBd-QA-Qkf" secondAttribute="trailing" id="sUh-gF-qDV"/>
+                            <constraint firstItem="5gF-je-4sC" firstAttribute="top" secondItem="WIX-VS-Eg2" secondAttribute="top" id="tHL-Ph-O51"/>
                             <constraint firstItem="C88-5T-bIJ" firstAttribute="top" secondItem="WIX-VS-Eg2" secondAttribute="bottom" constant="64" id="vKS-xA-hiK"/>
                         </constraints>
                         <variation key="default">
@@ -1416,8 +1420,8 @@
                                 <exclude reference="X2F-Uv-w2R"/>
                                 <exclude reference="wBd-QA-Qkf"/>
                                 <exclude reference="WIX-VS-Eg2"/>
-                                <exclude reference="C88-5T-bIJ"/>
                                 <exclude reference="5gF-je-4sC"/>
+                                <exclude reference="C88-5T-bIJ"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="ROL-b7-PL0"/>
@@ -1431,6 +1435,10 @@
                                 <exclude reference="MgW-6j-Gh9"/>
                                 <exclude reference="dpe-ad-1yE"/>
                                 <exclude reference="sUh-gF-qDV"/>
+                                <exclude reference="K3G-oX-iN1"/>
+                                <exclude reference="WOY-UL-wII"/>
+                                <exclude reference="pG1-RJ-bdC"/>
+                                <exclude reference="tHL-Ph-O51"/>
                                 <exclude reference="QbR-hD-zoF"/>
                                 <exclude reference="h9j-wu-buo"/>
                                 <exclude reference="lml-Of-Vld"/>
@@ -1446,8 +1454,8 @@
                                 <include reference="X2F-Uv-w2R"/>
                                 <include reference="wBd-QA-Qkf"/>
                                 <include reference="WIX-VS-Eg2"/>
-                                <include reference="C88-5T-bIJ"/>
                                 <include reference="5gF-je-4sC"/>
+                                <include reference="C88-5T-bIJ"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="ROL-b7-PL0"/>
@@ -1461,6 +1469,10 @@
                                 <include reference="MgW-6j-Gh9"/>
                                 <include reference="dpe-ad-1yE"/>
                                 <include reference="sUh-gF-qDV"/>
+                                <include reference="K3G-oX-iN1"/>
+                                <include reference="WOY-UL-wII"/>
+                                <include reference="pG1-RJ-bdC"/>
+                                <include reference="tHL-Ph-O51"/>
                                 <include reference="QbR-hD-zoF"/>
                                 <include reference="h9j-wu-buo"/>
                                 <include reference="lml-Of-Vld"/>
@@ -1470,6 +1482,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="activityDescription" destination="WIX-VS-Eg2" id="gkv-Lv-VXS"/>
+                        <outlet property="activityNotes" destination="5gF-je-4sC" id="XtK-lz-2Ws"/>
+                        <outlet property="activityTitle" destination="wBd-QA-Qkf" id="Vij-1Y-yCf"/>
+                        <outlet property="challengeTitle" destination="X2F-Uv-w2R" id="ejJ-wF-71C"/>
+                        <outlet property="toggleButton" destination="C88-5T-bIJ" id="fAC-y4-gXT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QyY-TM-Bia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2739,7 +2758,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DO6-gC-paA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="850" y="1795"/>
+            <point key="canvasLocation" x="621" y="1794.75"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="39B-Jo-tZe">

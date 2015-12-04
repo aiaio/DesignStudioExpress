@@ -13,6 +13,7 @@ class DesignStudio: Object {
     dynamic var id = NSUUID().UUIDString
     dynamic var title = ""
     dynamic var dateCreated: NSDate = NSDate()
+    dynamic var started = false
     let challenges = List<Challenge>()
     
     // minutes
