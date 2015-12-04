@@ -32,6 +32,7 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.showView()
         tableView.reloadData()
     }

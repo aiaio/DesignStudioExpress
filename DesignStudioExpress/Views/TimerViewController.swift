@@ -27,7 +27,7 @@ class TimerViewController: UIViewControllerBase {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         self.showUpcomingChallenge()
+         self.showNextChallenge()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -35,7 +35,7 @@ class TimerViewController: UIViewControllerBase {
                
         self.populateFields()
     }
-
+    
     @IBAction func switchDescription(sender: AnyObject) {
         self.toggleDescription()
     }
@@ -68,23 +68,23 @@ class TimerViewController: UIViewControllerBase {
             self.showPresenterNotes = true
         }
     }
-
     
     // MARK: - Custom
     
-    func showUpcomingChallenge() {
+    func showNextChallenge() {
         
-        let nextChallenge = vm.currentChallenge
+        let currentChallenge = vm.currentChallenge
         
-        if nextChallenge == nil {
-            // TODO: show end screen
-        } else {
+        if currentChallenge != nil {
             if let upcomingChallengeView = self.storyboard?.instantiateViewControllerWithIdentifier("UpcomingChallenges") as? UpcomingChallengeViewController {
-                upcomingChallengeView.vm.setChallenge(nextChallenge!)
-                self.presentViewController(upcomingChallengeView, animated: true, completion: nil)
-            } else {
-                // TODO: handle error
+                upcomingChallengeView.vm.setChallenge(currentChallenge!)
+                
+                self.presentViewController(upcomingChallengeView, animated: true, completion: { () -> Void in
+                    AppDelegate.designStudio.startCurrentActivity()
+                })
             }
+        } else {
+            // TODO: show end screen
         }
     }
 }
