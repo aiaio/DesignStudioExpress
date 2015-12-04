@@ -17,17 +17,18 @@ class TimerViewController: UIViewControllerBase {
     @IBOutlet weak var activityNotes: UILabel!
     
     @IBOutlet weak var toggleButton: UIButtonLightBlue!
-
+    @IBOutlet weak var skipToNextActivity: UIButton!
+    
     let vm = TimerViewModel()
-    var currentChallenge = -1
     var showPresenterNotes = true
+    
     let showNotesButtonLabel = "PRESENTER NOTES"
     let showDescriptionButtonLabel = "BACK TO DESCRIPTION"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         self.showNextChallenge()
+        self.showNextChallenge()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -38,6 +39,22 @@ class TimerViewController: UIViewControllerBase {
     
     @IBAction func switchDescription(sender: AnyObject) {
         self.toggleDescription()
+    }
+    
+    @IBAction func skipToNextActivity(sender: AnyObject) {
+        // there's no new activity, skip to next challenge
+        if self.vm.moveToNextActivity() {
+            // refresh the data
+            self.populateFields()
+        } else {
+            // move to next challenge
+            if self.vm.moveToNextChallenge() {
+                self.showNextChallenge()
+            } else {
+                // there's no next challenge; we've reached the end
+                self.showEndScreen()
+            }
+        }
     }
     
     // MARK: StyledNavigationBar
@@ -72,19 +89,18 @@ class TimerViewController: UIViewControllerBase {
     // MARK: - Custom
     
     func showNextChallenge() {
-        
-        let currentChallenge = vm.currentChallenge
-        
-        if currentChallenge != nil {
+        if let currentChallenge = vm.currentChallenge {
             if let upcomingChallengeView = self.storyboard?.instantiateViewControllerWithIdentifier("UpcomingChallenges") as? UpcomingChallengeViewController {
-                upcomingChallengeView.vm.setChallenge(currentChallenge!)
+                upcomingChallengeView.vm.setChallenge(currentChallenge)
                 
                 self.presentViewController(upcomingChallengeView, animated: true, completion: { () -> Void in
-                    AppDelegate.designStudio.startCurrentActivity()
+                    self.vm.startCurrentActivity()
                 })
             }
-        } else {
-            // TODO: show end screen
         }
+    }
+    
+    func showEndScreen() {
+        // TODO
     }
 }

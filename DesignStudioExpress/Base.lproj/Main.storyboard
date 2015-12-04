@@ -1398,10 +1398,18 @@
                                     <rect key="frame" x="149" y="120" width="103" height="21"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efe-R5-WcJ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="SKIP TO: NEXT CHALLENGE"/>
+                                <connections>
+                                    <action selector="skipToNextActivity:" destination="AmZ-1V-xYD" eventType="touchUpInside" id="Rbz-no-Bn7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Idx-u8-oLd" firstAttribute="centerY" secondItem="idW-Lh-Kbq" secondAttribute="bottom" id="0y1-Hs-E0f"/>
+                            <constraint firstItem="umt-eQ-gme" firstAttribute="top" secondItem="Efe-R5-WcJ" secondAttribute="bottom" constant="32" id="1i5-WM-FLK"/>
                             <constraint firstAttribute="trailing" secondItem="C88-5T-bIJ" secondAttribute="trailing" constant="45" id="7LI-LD-dlp"/>
                             <constraint firstItem="5gF-je-4sC" firstAttribute="trailing" secondItem="WIX-VS-Eg2" secondAttribute="trailing" id="K3G-oX-iN1"/>
                             <constraint firstItem="wBd-QA-Qkf" firstAttribute="top" secondItem="X2F-Uv-w2R" secondAttribute="bottom" constant="10" id="MgW-6j-Gh9"/>
@@ -1411,6 +1419,7 @@
                             <constraint firstItem="5gF-je-4sC" firstAttribute="leading" secondItem="WIX-VS-Eg2" secondAttribute="leading" id="WOY-UL-wII"/>
                             <constraint firstItem="Oga-Wv-HbZ" firstAttribute="centerY" secondItem="idW-Lh-Kbq" secondAttribute="centerY" id="XG0-Mr-CcP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="idW-Lh-Kbq" secondAttribute="trailing" constant="-20" id="Yma-lb-LC1"/>
+                            <constraint firstItem="Efe-R5-WcJ" firstAttribute="centerX" secondItem="GWD-B8-Vcl" secondAttribute="centerX" id="ZtL-5d-7YO"/>
                             <constraint firstAttribute="leadingMargin" secondItem="X2F-Uv-w2R" secondAttribute="leading" id="aBg-6a-7oK"/>
                             <constraint firstItem="idW-Lh-Kbq" firstAttribute="leading" secondItem="GWD-B8-Vcl" secondAttribute="leadingMargin" constant="-20" id="d1P-dI-0YO"/>
                             <constraint firstItem="Idx-u8-oLd" firstAttribute="centerX" secondItem="GWD-B8-Vcl" secondAttribute="centerX" id="dAq-vk-LQj"/>
@@ -1435,6 +1444,7 @@
                                 <exclude reference="5gF-je-4sC"/>
                                 <exclude reference="C88-5T-bIJ"/>
                                 <exclude reference="Oga-Wv-HbZ"/>
+                                <exclude reference="Efe-R5-WcJ"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="ROL-b7-PL0"/>
@@ -1460,6 +1470,8 @@
                                 <exclude reference="7LI-LD-dlp"/>
                                 <exclude reference="ROb-vA-hB8"/>
                                 <exclude reference="vKS-xA-hiK"/>
+                                <exclude reference="ZtL-5d-7YO"/>
+                                <exclude reference="1i5-WM-FLK"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1472,6 +1484,7 @@
                                 <include reference="5gF-je-4sC"/>
                                 <include reference="C88-5T-bIJ"/>
                                 <include reference="Oga-Wv-HbZ"/>
+                                <include reference="Efe-R5-WcJ"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="ROL-b7-PL0"/>
@@ -1497,6 +1510,8 @@
                                 <include reference="7LI-LD-dlp"/>
                                 <include reference="ROb-vA-hB8"/>
                                 <include reference="vKS-xA-hiK"/>
+                                <include reference="ZtL-5d-7YO"/>
+                                <include reference="1i5-WM-FLK"/>
                             </mask>
                         </variation>
                     </view>
@@ -1505,6 +1520,7 @@
                         <outlet property="activityNotes" destination="5gF-je-4sC" id="XtK-lz-2Ws"/>
                         <outlet property="activityTitle" destination="wBd-QA-Qkf" id="Vij-1Y-yCf"/>
                         <outlet property="challengeTitle" destination="X2F-Uv-w2R" id="ejJ-wF-71C"/>
+                        <outlet property="skipToNextActivity" destination="Efe-R5-WcJ" id="AIX-P2-hfh"/>
                         <outlet property="toggleButton" destination="C88-5T-bIJ" id="fAC-y4-gXT"/>
                     </connections>
                 </viewController>

@@ -11,6 +11,7 @@ import Foundation
 class TimerViewModel {
     
     func setDesignStudio(designStudio: DesignStudio) {
+        // start design studio
         AppDelegate.designStudio.startDesignStudio(designStudio)
     }
     
@@ -34,4 +35,15 @@ class TimerViewModel {
         get { return AppDelegate.designStudio.currentActivity?.notes ?? "" }
     }
     
+    func startCurrentActivity() {
+        AppDelegate.designStudio.startCurrentActivity()
+    }
+    
+    func moveToNextActivity() -> Bool {
+        return AppDelegate.designStudio.moveToNextActivity()
+    }
+    
+    func moveToNextChallenge() -> Bool {
+        return AppDelegate.designStudio.moveToNextChallenge()
+    }
 }

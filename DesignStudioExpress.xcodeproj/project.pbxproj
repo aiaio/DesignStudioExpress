@@ -239,8 +239,8 @@
 				E42DD32F1BFE98020026390E /* ChallengesViewModel.swift */,
 				E46A22071C010FE5004D5292 /* ChallengeDetailViewModel.swift */,
 				E468028D1C0E5EF3002438E5 /* ActivityDetailViewModel.swift */,
-				E40EDF251C10B34100F0D4C4 /* TimerViewModel.swift */,
 				E40EDF2A1C10EA3F00F0D4C4 /* UpcomingChallengeViewModel.swift */,
+				E40EDF251C10B34100F0D4C4 /* TimerViewModel.swift */,
 				E40EDF2C1C11F3FA00F0D4C4 /* RunningDesignStudio.swift */,
 			);
 			path = ViewModels;
@@ -274,8 +274,8 @@
 				E49F45D81BFD468100F32AE9 /* ChallengesViewController.swift */,
 				E46A22051C010FC1004D5292 /* ChallengeDetailViewController.swift */,
 				E468028B1C0E1F7E002438E5 /* ActivityDetailViewController.swift */,
-				E40EDF231C10B28200F0D4C4 /* TimerViewController.swift */,
 				E40EDF281C10E1AA00F0D4C4 /* UpcomingChallengeViewController.swift */,
+				E40EDF231C10B28200F0D4C4 /* TimerViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
