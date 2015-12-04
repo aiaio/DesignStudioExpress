@@ -8,6 +8,7 @@ PODS:
   - FXLabel (1.5.8)
   - GMStepper (1.1.0)
   - MGSwipeTableCell (1.5.1)
+  - MZTimerLabel (0.5.4)
   - NRSimplePlist (1.0)
   - Realm (0.96.2):
     - Realm/Headers (= 0.96.2)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - FXLabel
   - GMStepper
   - MGSwipeTableCell (~> 1.5.1)
+  - MZTimerLabel
   - NRSimplePlist (from `https://github.com/broderboy/NRSimplePlist.git`, branch `swift2`)
   - RealmSwift
   - SVProgressHUD (HEAD)
@@ -55,6 +57,7 @@ SPEC CHECKSUMS:
   FXLabel: 14f7d4abb0eb531a0824b327a86f5b790171207f
   GMStepper: 3b7922778a80e0eab89a55003ca36b25fc2393b7
   MGSwipeTableCell: a51fa670c01f0aa048f12af040acebf315223137
+  MZTimerLabel: cd9bfb9304540ef2a9e163384fca9c978f0dbf83
   NRSimplePlist: c27d95cb456281528885b3c48e15826cf12a970b
   Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3
   RealmSwift: 485599fe54e35461c4a0daa7d01d8fbf11424873

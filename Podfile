@@ -10,5 +10,6 @@ pod 'RealmSwift'
 pod 'FXLabel'
 pod 'SZTextView'
 pod 'GMStepper'
+pod 'MZTimerLabel'
 
 use_frameworks!

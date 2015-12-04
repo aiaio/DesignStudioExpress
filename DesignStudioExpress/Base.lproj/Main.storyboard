@@ -1389,6 +1389,15 @@
                                     <action selector="switchDescription:" destination="AmZ-1V-xYD" eventType="touchUpInside" id="wvX-3z-oqK"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oga-Wv-HbZ" customClass="MZTimerLabel">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="149" y="120" width="103" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1400,6 +1409,7 @@
                             <constraint firstItem="idW-Lh-Kbq" firstAttribute="top" secondItem="CzE-h2-Ij5" secondAttribute="bottom" constant="-64" id="ROL-b7-PL0"/>
                             <constraint firstAttribute="leading" secondItem="C88-5T-bIJ" secondAttribute="leading" constant="-45" id="ROb-vA-hB8"/>
                             <constraint firstItem="5gF-je-4sC" firstAttribute="leading" secondItem="WIX-VS-Eg2" secondAttribute="leading" id="WOY-UL-wII"/>
+                            <constraint firstItem="Oga-Wv-HbZ" firstAttribute="centerY" secondItem="idW-Lh-Kbq" secondAttribute="centerY" id="XG0-Mr-CcP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="idW-Lh-Kbq" secondAttribute="trailing" constant="-20" id="Yma-lb-LC1"/>
                             <constraint firstAttribute="leadingMargin" secondItem="X2F-Uv-w2R" secondAttribute="leading" id="aBg-6a-7oK"/>
                             <constraint firstItem="idW-Lh-Kbq" firstAttribute="leading" secondItem="GWD-B8-Vcl" secondAttribute="leadingMargin" constant="-20" id="d1P-dI-0YO"/>
@@ -1408,6 +1418,7 @@
                             <constraint firstItem="X2F-Uv-w2R" firstAttribute="top" secondItem="idW-Lh-Kbq" secondAttribute="bottom" constant="56" id="gSp-x6-7mD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="X2F-Uv-w2R" secondAttribute="trailing" id="grH-dl-Ad3"/>
                             <constraint firstItem="WIX-VS-Eg2" firstAttribute="width" secondItem="C88-5T-bIJ" secondAttribute="width" id="h9j-wu-buo"/>
+                            <constraint firstItem="Oga-Wv-HbZ" firstAttribute="centerX" secondItem="idW-Lh-Kbq" secondAttribute="centerX" id="ipX-tx-HR2"/>
                             <constraint firstItem="WIX-VS-Eg2" firstAttribute="top" secondItem="wBd-QA-Qkf" secondAttribute="bottom" constant="20" id="lml-Of-Vld"/>
                             <constraint firstItem="5gF-je-4sC" firstAttribute="bottom" secondItem="WIX-VS-Eg2" secondAttribute="bottom" id="pG1-RJ-bdC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wBd-QA-Qkf" secondAttribute="trailing" id="sUh-gF-qDV"/>
@@ -1423,13 +1434,22 @@
                                 <exclude reference="WIX-VS-Eg2"/>
                                 <exclude reference="5gF-je-4sC"/>
                                 <exclude reference="C88-5T-bIJ"/>
+                                <exclude reference="Oga-Wv-HbZ"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="7LI-LD-dlp"/>
-                                <exclude reference="ROb-vA-hB8"/>
-                                <exclude reference="vKS-xA-hiK"/>
+                                <exclude reference="ROL-b7-PL0"/>
+                                <exclude reference="Yma-lb-LC1"/>
+                                <exclude reference="d1P-dI-0YO"/>
+                                <exclude reference="XG0-Mr-CcP"/>
+                                <exclude reference="ipX-tx-HR2"/>
                                 <exclude reference="0y1-Hs-E0f"/>
                                 <exclude reference="dAq-vk-LQj"/>
+                                <exclude reference="aBg-6a-7oK"/>
+                                <exclude reference="gSp-x6-7mD"/>
+                                <exclude reference="grH-dl-Ad3"/>
+                                <exclude reference="MgW-6j-Gh9"/>
+                                <exclude reference="dpe-ad-1yE"/>
+                                <exclude reference="sUh-gF-qDV"/>
                                 <exclude reference="K3G-oX-iN1"/>
                                 <exclude reference="WOY-UL-wII"/>
                                 <exclude reference="pG1-RJ-bdC"/>
@@ -1437,15 +1457,9 @@
                                 <exclude reference="QbR-hD-zoF"/>
                                 <exclude reference="h9j-wu-buo"/>
                                 <exclude reference="lml-Of-Vld"/>
-                                <exclude reference="aBg-6a-7oK"/>
-                                <exclude reference="gSp-x6-7mD"/>
-                                <exclude reference="grH-dl-Ad3"/>
-                                <exclude reference="MgW-6j-Gh9"/>
-                                <exclude reference="dpe-ad-1yE"/>
-                                <exclude reference="sUh-gF-qDV"/>
-                                <exclude reference="ROL-b7-PL0"/>
-                                <exclude reference="Yma-lb-LC1"/>
-                                <exclude reference="d1P-dI-0YO"/>
+                                <exclude reference="7LI-LD-dlp"/>
+                                <exclude reference="ROb-vA-hB8"/>
+                                <exclude reference="vKS-xA-hiK"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1457,13 +1471,22 @@
                                 <include reference="WIX-VS-Eg2"/>
                                 <include reference="5gF-je-4sC"/>
                                 <include reference="C88-5T-bIJ"/>
+                                <include reference="Oga-Wv-HbZ"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="7LI-LD-dlp"/>
-                                <include reference="ROb-vA-hB8"/>
-                                <include reference="vKS-xA-hiK"/>
+                                <include reference="ROL-b7-PL0"/>
+                                <include reference="Yma-lb-LC1"/>
+                                <include reference="d1P-dI-0YO"/>
+                                <include reference="XG0-Mr-CcP"/>
+                                <include reference="ipX-tx-HR2"/>
                                 <include reference="0y1-Hs-E0f"/>
                                 <include reference="dAq-vk-LQj"/>
+                                <include reference="aBg-6a-7oK"/>
+                                <include reference="gSp-x6-7mD"/>
+                                <include reference="grH-dl-Ad3"/>
+                                <include reference="MgW-6j-Gh9"/>
+                                <include reference="dpe-ad-1yE"/>
+                                <include reference="sUh-gF-qDV"/>
                                 <include reference="K3G-oX-iN1"/>
                                 <include reference="WOY-UL-wII"/>
                                 <include reference="pG1-RJ-bdC"/>
@@ -1471,15 +1494,9 @@
                                 <include reference="QbR-hD-zoF"/>
                                 <include reference="h9j-wu-buo"/>
                                 <include reference="lml-Of-Vld"/>
-                                <include reference="aBg-6a-7oK"/>
-                                <include reference="gSp-x6-7mD"/>
-                                <include reference="grH-dl-Ad3"/>
-                                <include reference="MgW-6j-Gh9"/>
-                                <include reference="dpe-ad-1yE"/>
-                                <include reference="sUh-gF-qDV"/>
-                                <include reference="ROL-b7-PL0"/>
-                                <include reference="Yma-lb-LC1"/>
-                                <include reference="d1P-dI-0YO"/>
+                                <include reference="7LI-LD-dlp"/>
+                                <include reference="ROb-vA-hB8"/>
+                                <include reference="vKS-xA-hiK"/>
                             </mask>
                         </variation>
                     </view>
