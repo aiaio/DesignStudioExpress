@@ -1401,6 +1401,7 @@
                                 <state key="normal" title="SKIP TO: NEXT CHALLENGE"/>
                                 <connections>
                                     <action selector="skipToNextActivity:" destination="AmZ-1V-xYD" eventType="touchUpInside" id="Rbz-no-Bn7"/>
+                                    <segue destination="AmZ-1V-xYD" kind="show" id="AOF-Uw-xMx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1807,7 +1808,8 @@
                                                             <exclude reference="kFy-YO-Ana"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="55" y="44" width="130" height="29"/>
                                                         <mask key="subviews">
                                                             <include reference="hbr-94-lLC"/>
                                                             <include reference="rK7-HV-JTV"/>
@@ -1844,7 +1846,8 @@
                                                             <exclude reference="bTH-hm-Ddj"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="23" y="119" width="194" height="120"/>
                                                         <mask key="constraints">
                                                             <include reference="bTH-hm-Ddj"/>
                                                         </mask>
@@ -1871,7 +1874,8 @@
                                                             <exclude reference="MS1-q4-xo0"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="-60" y="75" width="360" height="40"/>
                                                         <mask key="constraints">
                                                             <include reference="1no-mU-II7"/>
                                                             <include reference="MS1-q4-xo0"/>
@@ -1891,7 +1895,8 @@
                                                             <exclude reference="LAw-Kj-pd3"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="170" y="44" width="50" height="50"/>
                                                         <mask key="constraints">
                                                             <include reference="Kfi-xx-WJS"/>
                                                             <include reference="LAw-Kj-pd3"/>
@@ -2856,6 +2861,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gcr-15-crY"/>
+        <segue reference="sc1-o4-aot"/>
         <segue reference="SWD-un-Cl3"/>
         <segue reference="KMg-vf-Wsj"/>
     </inferredMetricsTieBreakers>
