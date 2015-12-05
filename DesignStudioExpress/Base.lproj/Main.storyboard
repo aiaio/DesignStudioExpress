@@ -1521,6 +1521,7 @@
                         <outlet property="activityTitle" destination="wBd-QA-Qkf" id="Vij-1Y-yCf"/>
                         <outlet property="challengeTitle" destination="X2F-Uv-w2R" id="ejJ-wF-71C"/>
                         <outlet property="skipToNextActivity" destination="Efe-R5-WcJ" id="AIX-P2-hfh"/>
+                        <outlet property="timer" destination="Oga-Wv-HbZ" id="7Qz-MO-Kss"/>
                         <outlet property="toggleButton" destination="C88-5T-bIJ" id="fAC-y4-gXT"/>
                     </connections>
                 </viewController>

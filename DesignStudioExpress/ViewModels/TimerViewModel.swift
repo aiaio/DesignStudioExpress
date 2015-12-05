@@ -9,10 +9,10 @@
 import Foundation
 
 class TimerViewModel {
+    private var data: DesignStudio?
     
     func setDesignStudio(designStudio: DesignStudio) {
-        // start design studio
-        AppDelegate.designStudio.startDesignStudio(designStudio)
+        self.data = designStudio
     }
     
     var currentChallenge: Challenge? {
@@ -27,12 +27,26 @@ class TimerViewModel {
          get { return AppDelegate.designStudio.currentActivity?.title ?? "" }
     }
     
+    var currentActivityRemainingDuration: Int {
+        get { return AppDelegate.designStudio.currentActivityRemainingDuration }
+    }
+    
     var activityDescription: String {
         get { return AppDelegate.designStudio.currentActivity?.activityDescription ?? "" }
     }
     
     var activityNotes: String {
         get { return AppDelegate.designStudio.currentActivity?.notes ?? "" }
+    }
+    
+    var isDesignStudioRunning: Bool {
+        get { return AppDelegate.designStudio.isRunning }
+    }
+    
+    func startDesignStudio() {
+        if self.data != nil {
+            AppDelegate.designStudio.startDesignStudio(self.data!)
+        }
     }
     
     func startCurrentActivity() {

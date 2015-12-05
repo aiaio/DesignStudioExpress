@@ -8,6 +8,7 @@
 
 import UIKit
 import FXLabel
+import MZTimerLabel
 
 class TimerViewController: UIViewControllerBase {
     
@@ -18,6 +19,7 @@ class TimerViewController: UIViewControllerBase {
     
     @IBOutlet weak var toggleButton: UIButtonLightBlue!
     @IBOutlet weak var skipToNextActivity: UIButton!
+    @IBOutlet weak var timer: MZTimerLabel!
     
     let vm = TimerViewModel()
     var showPresenterNotes = true
@@ -27,13 +29,18 @@ class TimerViewController: UIViewControllerBase {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.setUpTimerLabel()
         
-        self.showNextChallenge()
+        if !vm.isDesignStudioRunning {
+            self.vm.startDesignStudio()
+            self.showNextChallenge()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-               
+        
         self.populateFields()
     }
     
@@ -65,11 +72,18 @@ class TimerViewController: UIViewControllerBase {
         DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
     }
     
+    func setUpTimerLabel() {
+        self.timer.timerType = MZTimerLabelTypeTimer
+        self.timer.timeFormat = "mm:ss"
+    }
+    
     func populateFields () {
         self.challengeTitle.text = vm.challengeTitle
         self.activityTitle.text = vm.activityTitle
         self.activityDescription.text = vm.activityDescription
         self.activityNotes.text = vm.activityNotes
+        
+        self.timer.setCountDownTime(Double(vm.currentActivityRemainingDuration))
     }
     
     func toggleDescription() {
@@ -95,6 +109,7 @@ class TimerViewController: UIViewControllerBase {
                 
                 self.presentViewController(upcomingChallengeView, animated: true, completion: { () -> Void in
                     self.vm.startCurrentActivity()
+                    self.timer.start() // TODO
                 })
             }
         }

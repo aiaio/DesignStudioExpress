@@ -16,8 +16,7 @@ class RunningDesignStudio {
     var isRunning = false
     var currentChallengeIdx = 0
     var currentActivityIdx = 0
-    var designStudioStartTime: NSDate?
-    
+    var currentActivityStart: NSDate?
     
     var currentChallenge: Challenge? {
         get { return self.data?.challenges[self.currentChallengeIdx] }
@@ -25,6 +24,19 @@ class RunningDesignStudio {
     
     var currentActivity: Activity? {
         get { return self.currentChallenge?.activities[self.currentActivityIdx] }
+    }
+    
+    // in seconds
+    var currentActivityRemainingDuration: Int {
+        if currentActivityStart != nil {
+            if let totalDuration = self.currentActivity?.duration {
+                let totalDurationSecs = totalDuration * 60
+                let totalElapsedSecs = -Int(currentActivityStart!.timeIntervalSinceNow) // totalElapsedSecs are negative
+                
+                return totalDurationSecs - totalElapsedSecs
+            }
+        }
+        return self.currentActivity?.duration ?? 0
     }
     
     func isDesignStudioRunning() -> Bool {
@@ -47,17 +59,26 @@ class RunningDesignStudio {
     }
     
     func startCurrentActivity() {
-        if designStudioStartTime == nil {
-            designStudioStartTime = NSDate()
-        }
+        currentActivityStart = NSDate()
     }
     
     func moveToNextActivity() -> Bool {
+        // update the duration of the activity to the actual duration the happend
+        do {
+            if let diff = self.currentActivityStart?.timeIntervalSinceNow {
+                let duration = Int(round(-diff / 60)) // convert seconds to minutes
+                try realm.write {
+                    self.currentActivity?.duration = duration
+                }
+            }
+        } catch {
+            // TODO handle errors
+        }
+        
+        // move the pointer
         let nextActivityIdx = self.currentActivityIdx + 1
         if self.currentChallenge?.activities.count > nextActivityIdx {
             self.currentActivityIdx = nextActivityIdx
-            // TODO - update time???
-            
             return true
         }
         // there's no more activities in the challenge
