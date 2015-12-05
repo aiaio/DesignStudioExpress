@@ -14,14 +14,21 @@ class UpcomingChallengeViewController: UIViewController {
     @IBOutlet weak var challengeTitle: UILabel!
     @IBOutlet weak var duration: UILabel!
 
-    let showDuration = 1.0 // TODO: increase this after testing seconds
+    let showDuration = 5.0 // TODO: increase this after testing seconds
     let vm = UpcomingChallengeViewModel()
+    weak var delegate: UpcomingChallengeDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.populateFields()
         self.hideViewAfterTimeout()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.delegate?.upcomingChallengeWillDisappear()
     }
     
     func populateFields() {

@@ -10,7 +10,7 @@ import UIKit
 import FXLabel
 import MZTimerLabel
 
-class TimerViewController: UIViewControllerBase {
+class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate {
     
     @IBOutlet weak var challengeTitle: FXLabel!
     @IBOutlet weak var activityTitle: UILabel!
@@ -31,17 +31,24 @@ class TimerViewController: UIViewControllerBase {
         super.viewDidLoad()
 
         self.setUpTimerLabel()
-        
-        if !vm.isDesignStudioRunning {
-            self.vm.startDesignStudio()
-            self.showNextChallenge()
-        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         self.populateFields()
+        if !vm.isDesignStudioRunning {
+            self.vm.startDesignStudio()
+            self.showNextChallenge()
+        } else {
+            self.timer.start()
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.timer.pause()
     }
     
     @IBAction func switchDescription(sender: AnyObject) {
@@ -72,6 +79,18 @@ class TimerViewController: UIViewControllerBase {
         DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
     }
     
+    // MARK: - UpcomingChallengeDelegate
+    
+    func upcomingChallengeWillDisappear() {
+        // kick-off counting time
+        self.vm.startCurrentActivity()
+        
+        // start timer label
+        self.timer.start()
+    }
+    
+    // MARK: - Custom
+    
     func setUpTimerLabel() {
         self.timer.timerType = MZTimerLabelTypeTimer
         self.timer.timeFormat = "mm:ss"
@@ -86,6 +105,7 @@ class TimerViewController: UIViewControllerBase {
         self.timer.setCountDownTime(Double(vm.currentActivityRemainingDuration))
     }
     
+    // toggles between showing notes and description labels
     func toggleDescription() {
         if showPresenterNotes {
             self.toggleButton.setTitle(self.showDescriptionButtonLabel, forState: .Normal)
@@ -100,17 +120,13 @@ class TimerViewController: UIViewControllerBase {
         }
     }
     
-    // MARK: - Custom
-    
     func showNextChallenge() {
         if let currentChallenge = vm.currentChallenge {
             if let upcomingChallengeView = self.storyboard?.instantiateViewControllerWithIdentifier("UpcomingChallenges") as? UpcomingChallengeViewController {
                 upcomingChallengeView.vm.setChallenge(currentChallenge)
+                upcomingChallengeView.delegate = self
                 
-                self.presentViewController(upcomingChallengeView, animated: true, completion: { () -> Void in
-                    self.vm.startCurrentActivity()
-                    self.timer.start() // TODO
-                })
+                self.presentViewController(upcomingChallengeView, animated: true, completion: nil)
             }
         }
     }
