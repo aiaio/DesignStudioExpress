@@ -15,6 +15,10 @@ class ChallengesViewModel {
     private var designStudio: DesignStudio!
     private var data: List<Challenge>!
     
+    let buttonLabelTimer = "SHOW TIMER"
+    let buttonLabelBeginDS = "BEGIN DESIGN STUDIO"
+    let buttonLabelRunning = "RUNNING"
+    
     func setDesignStudio(newDesignStudio: DesignStudio) {
         if (self.designStudio?.id != newDesignStudio.id) {
             self.designStudio = newDesignStudio
@@ -23,12 +27,42 @@ class ChallengesViewModel {
     }
     
     // +1 because the last row is a button
-    func getTotalRows() -> Int {
-        return data.count + 1
+    var totalRows: Int {
+        get { return data.count + 1 }
     }
     
-    func isNewDesignStudio () -> Bool {
-        return data.count == 0
+    var isNewDesignStudio: Bool {
+        get { return data.count == 0 }
+    }
+    
+    var isAnotherStudioRunning: Bool {
+        get {
+            if let runningDSId = AppDelegate.designStudio.currentDesignStudio?.id {
+                return runningDSId != self.designStudio.id
+            }
+            return false
+        }
+    }
+    
+    var beginDesignStudioButtonEnabled: Bool {
+        return !isNewDesignStudio || !isAnotherStudioRunning
+    }
+    
+    var beginDesignStudioButtonText: String {
+        
+        if AppDelegate.designStudio.isDesignStudioRunning {
+            if isAnotherStudioRunning {
+                let runningDSTitle = AppDelegate.designStudio.currentDesignStudio!.title
+                return "\(runningDSTitle)" + buttonLabelRunning
+            } else {
+                return buttonLabelTimer
+            }
+        }
+        return buttonLabelBeginDS
+    }
+    
+    var designStudioTitle: String {
+        get { return self.designStudio.title }
     }
     
     func isRowEditable(indexPath: NSIndexPath) -> Bool {
@@ -52,10 +86,6 @@ class ChallengesViewModel {
         }
         
         return success
-    }
-
-    func getDesignStudioTitle() -> String {
-        return self.designStudio.title
     }
     
     func getTitle(indexPath: NSIndexPath) -> String {

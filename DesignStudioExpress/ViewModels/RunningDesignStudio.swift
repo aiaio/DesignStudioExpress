@@ -12,11 +12,15 @@ class RunningDesignStudio {
     
     lazy var realm = try! Realm()
     
-    var data: DesignStudio?
-    var isRunning = false
+    private var data: DesignStudio?
+    private var isRunning = false
     var currentChallengeIdx = 0
     var currentActivityIdx = 0
     var currentActivityStart: NSDate?
+    
+    var currentDesignStudio: DesignStudio? {
+        get { return data }
+    }
     
     var currentChallenge: Challenge? {
         get { return self.data?.challenges[self.currentChallengeIdx] }
@@ -39,7 +43,7 @@ class RunningDesignStudio {
         return self.currentActivity?.duration ?? 0
     }
     
-    func isDesignStudioRunning() -> Bool {
+    var isDesignStudioRunning: Bool {
         return self.isRunning
     }
     
@@ -89,7 +93,7 @@ class RunningDesignStudio {
         let nextChallengeIdx = self.currentChallengeIdx + 1
         if self.data?.challenges.count > nextChallengeIdx {
             self.currentActivityIdx = 0 // reset the activity counter
-            self.currentChallengeIdx = nextChallengeIdx
+            self.currentChallengeIdx = nextChallengeIdx // move the pointer
             
             return true
         }

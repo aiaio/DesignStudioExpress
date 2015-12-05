@@ -55,7 +55,7 @@ class HomeViewModel {
                     let activity = Activity()
                     activity.title = "Activity \(idx3)"
                     activity.activityDescription = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne."
-                    activity.duration = 5
+                    activity.duration = 2
                     challenge.activities.append(activity)
                 }
                 

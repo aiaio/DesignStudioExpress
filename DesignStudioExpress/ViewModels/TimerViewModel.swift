@@ -36,11 +36,20 @@ class TimerViewModel {
     }
     
     var activityNotes: String {
-        get { return AppDelegate.designStudio.currentActivity?.notes ?? "" }
+        get {
+            if self.activityNotesEnabled {
+                return "\"\(AppDelegate.designStudio.currentActivity?.notes)\""
+            }
+            return ""
+        }
+    }
+    
+    var activityNotesEnabled: Bool {
+        get { return AppDelegate.designStudio.currentActivity?.notes != "" }
     }
     
     var isDesignStudioRunning: Bool {
-        get { return AppDelegate.designStudio.isRunning }
+        get { return AppDelegate.designStudio.isDesignStudioRunning }
     }
     
     func startDesignStudio() {

@@ -10,7 +10,7 @@ import UIKit
 import FXLabel
 import MZTimerLabel
 
-class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate {
+class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTimerLabelDelegate {
     
     @IBOutlet weak var challengeTitle: FXLabel!
     @IBOutlet weak var activityTitle: UILabel!
@@ -89,9 +89,20 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate {
         self.timer.start()
     }
     
+    // MARK - MZTimerLabelDelegate
+    
+    func timerLabel(timerLabel: MZTimerLabel!, countingTo time: NSTimeInterval, timertype timerType: MZTimerLabelType) {
+        if time < 60 {
+            timerLabel.timeLabel.textColor = DesignStudioStyles.primaryOrange
+        } else {
+            timerLabel.timeLabel.textColor = DesignStudioStyles.white
+        }
+    }
+    
     // MARK: - Custom
     
     func setUpTimerLabel() {
+        self.timer.delegate = self
         self.timer.timerType = MZTimerLabelTypeTimer
         self.timer.timeFormat = "mm:ss"
     }
@@ -103,6 +114,7 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate {
         self.activityNotes.text = vm.activityNotes
         
         self.timer.setCountDownTime(Double(vm.currentActivityRemainingDuration))
+        self.timer.reset()
     }
     
     // toggles between showing notes and description labels

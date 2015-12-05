@@ -20,20 +20,21 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     @IBOutlet weak var addChallengeView: UIView!
     @IBOutlet weak var tableViewParentView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var beginDesignStudio: UIButtonRed!
     
     let vm = ChallengesViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = vm.getDesignStudioTitle()
+        self.navigationItem.title = vm.designStudioTitle
         
         self.customizeStyle()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.showView()
+        self.prepareViewState()
         tableView.reloadData()
     }
     
@@ -52,12 +53,12 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return vm.getTotalRows()
+        return vm.totalRows
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        if indexPath.row == vm.getTotalRows() - 1 {
+        if indexPath.row == vm.totalRows - 1 {
             let cell = self.createCell("addButtonCell", indexPath: indexPath, UITableViewCell.self)
             
             // hide separator
@@ -79,7 +80,7 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == vm.getTotalRows() - 1 {
+        if indexPath.row == vm.totalRows - 1 {
             return 75
         }
         return 110
@@ -129,6 +130,8 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         if let indexPath = self.tableView.indexPathForCell(cell) {
             if vm.deleteChallenge(indexPath) {
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                
+                self.prepareViewState()
             }
         }
         
@@ -158,10 +161,12 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
 
     // MARK: - Custom
     
-    func showView() {
-        if vm.isNewDesignStudio() {
+    // Shows the Add New Challenge View, if DS is new
+    func prepareViewState() {
+        if vm.isNewDesignStudio {
             addChallengeView.hidden = false
             tableViewParentView.hidden = true
+            // hide reordering rows button; the tableview is hidden
             self.navigationItem.rightBarButtonItem = nil
         } else {
             addChallengeView.hidden = true
@@ -169,6 +174,9 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
             // show the edit button for reordering of the rows
             self.navigationItem.rightBarButtonItem = self.editButtonItem()
         }
+        
+        self.beginDesignStudio.enabled = self.vm.beginDesignStudioButtonEnabled
+        self.beginDesignStudio.setTitle(self.vm.beginDesignStudioButtonText, forState: .Normal)
     }
     
     func customizeStyle() {

@@ -1279,6 +1279,7 @@
                     </view>
                     <connections>
                         <outlet property="addChallengeView" destination="Kd8-ut-0aD" id="VvD-zt-qk6"/>
+                        <outlet property="beginDesignStudio" destination="BaA-1Q-LJs" id="Aul-c4-QlP"/>
                         <outlet property="tableView" destination="WZH-d9-lmw" id="qwu-2B-eDG"/>
                         <outlet property="tableViewParentView" destination="iDC-X6-CHq" id="3ev-Di-gyI"/>
                     </connections>
@@ -1391,7 +1392,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oga-Wv-HbZ" customClass="MZTimerLabel">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="74"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1986,7 +1987,8 @@
                                                             <exclude reference="z4t-1B-hBe"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="170" y="14" width="52" height="42"/>
                                                         <mask key="constraints">
                                                             <include reference="04z-po-ric"/>
                                                             <include reference="z4t-1B-hBe"/>
@@ -2068,6 +2070,9 @@
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                                             <color key="textColor" red="0.1215686275" green="0.1450980392" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="83" y="0.0" width="81" height="28"/>
+                                                            </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="1 presenter note" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEn-Hm-HgN" userLabel="Activities Label">
                                                             <rect key="frame" x="263" y="52" width="85" height="11"/>
@@ -2110,7 +2115,8 @@
                                                                     <exclude reference="N8S-xB-rHR"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="heightClass=regular-widthClass=compact">
+                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="24" y="48" width="160" height="76"/>
                                                                 <mask key="constraints">
                                                                     <include reference="N8S-xB-rHR"/>
                                                                 </mask>
@@ -2154,7 +2160,8 @@
                                                             <exclude reference="z7t-5M-JUv"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="22" width="182" height="110"/>
                                                         <mask key="constraints">
                                                             <include reference="GS0-az-a33"/>
                                                             <include reference="0Ma-Pc-nQq"/>
