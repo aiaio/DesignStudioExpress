@@ -44,8 +44,12 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
             self.vm.startDesignStudio()
             self.showNextChallenge()
         } else {
-            // timer is already running, so we need to start it
-            self.timer.start()
+            // studio is already running, so we need to start the timer
+            // start it with delay, to allow for
+            delay(0.4) {
+                // start timer label
+                self.timer.start()
+            }
         }
     }
     
@@ -60,7 +64,7 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
     }
     
     @IBAction func skipToNextActivity(sender: AnyObject) {
-        // TODO move this logic to VM
+        // TODO move and refactor this logic to VM
         // there's no new activity, skip to next challenge
         if self.vm.moveToNextActivity() {
             self.vm.startCurrentActivity()
@@ -70,6 +74,7 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
             // move to next challenge
             if self.vm.moveToNextChallenge() {
                 self.showNextChallenge()
+                self.vm.startCurrentActivity()
             } else {
                 // there's no next challenge; we've reached the end
                 self.showEndScreen()
@@ -91,8 +96,18 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
         // kick-off counting time
         self.vm.startCurrentActivity()
         
+        delay(0.4) {
         // start timer label
-        self.timer.start()
+            self.timer.start()}
+    }
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
     }
     
     // MARK - MZTimerLabelDelegate

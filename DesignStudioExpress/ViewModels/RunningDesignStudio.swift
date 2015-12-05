@@ -67,17 +67,7 @@ class RunningDesignStudio {
     }
     
     func moveToNextActivity() -> Bool {
-        // update the duration of the activity to the actual duration the happend
-        do {
-            if let diff = self.currentActivityStart?.timeIntervalSinceNow {
-                let duration = Int(round(-diff / 60)) // convert seconds to minutes
-                try realm.write {
-                    self.currentActivity?.duration = duration
-                }
-            }
-        } catch {
-            // TODO handle errors
-        }
+        self.updateCurrentActivityTime()
         
         // move the pointer
         let nextActivityIdx = self.currentActivityIdx + 1
@@ -89,7 +79,23 @@ class RunningDesignStudio {
         return false
     }
     
+    private func updateCurrentActivityTime() {
+        // update the duration of the activity to the actual duration
+        do {
+            if let diff = self.currentActivityStart?.timeIntervalSinceNow {
+                let duration = Int(round(-diff / 60)) // convert seconds to minutes
+                try realm.write {
+                    self.currentActivity?.duration = duration
+                }
+            }
+        } catch {
+            // TODO handle errors
+        }
+    }
+    
     func moveToNextChallenge() -> Bool {
+        self.updateCurrentActivityTime()
+        
         let nextChallengeIdx = self.currentChallengeIdx + 1
         if self.data?.challenges.count > nextChallengeIdx {
             self.currentActivityIdx = 0 // reset the activity counter
