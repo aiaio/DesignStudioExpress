@@ -1291,7 +1291,7 @@
         <!--Timer View Controller-->
         <scene sceneID="hRY-AA-5n1">
             <objects>
-                <viewController id="AmZ-1V-xYD" customClass="TimerViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Timer" id="AmZ-1V-xYD" customClass="TimerViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CzE-h2-Ij5"/>
                         <viewControllerLayoutGuide type="bottom" id="umt-eQ-gme"/>
@@ -1417,7 +1417,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="skipToNextActivity:" destination="AmZ-1V-xYD" eventType="touchUpInside" id="Rbz-no-Bn7"/>
-                                    <segue destination="AmZ-1V-xYD" kind="show" id="AOF-Uw-xMx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1544,6 +1543,7 @@
                         <outlet property="skipToNextActivity" destination="Efe-R5-WcJ" id="AIX-P2-hfh"/>
                         <outlet property="timer" destination="Oga-Wv-HbZ" id="7Qz-MO-Kss"/>
                         <outlet property="toggleButton" destination="C88-5T-bIJ" id="fAC-y4-gXT"/>
+                        <segue destination="Jcl-AR-Twc" kind="presentation" identifier="ShowUpcomingChallenge" animates="NO" modalPresentationStyle="fullScreen" id="B2q-FO-lJa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QyY-TM-Bia" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2883,7 +2883,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gcr-15-crY"/>
-        <segue reference="sc1-o4-aot"/>
         <segue reference="SWD-un-Cl3"/>
         <segue reference="KMg-vf-Wsj"/>
     </inferredMetricsTieBreakers>

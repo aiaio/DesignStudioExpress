@@ -23,7 +23,9 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
     
     let vm = TimerViewModel()
     var showPresenterNotes = true
+    var seguedFromPreviousTimer = false //
     
+    let upcomingChallengeSegueIdentifier = "ShowUpcomingChallenge"
     let showNotesButtonLabel = "PRESENTER NOTES"
     let showDescriptionButtonLabel = "BACK TO DESCRIPTION"
 
@@ -33,9 +35,14 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
         self.removeLastViewFromNavigation()
         self.setUpTimerLabel()
         
-        if !vm.isDesignStudioRunning {
-            self.vm.startDesignStudio()
-            self.showNextChallenge()
+        vm.timerPageLoaded(seguedFromPreviousTimer)
+        
+        if vm.showUpcomingChallenge {
+            self.showUpcomingChallenge()
+        }
+        
+        if vm.showEndScreen {
+            self.showEndScreen()
         }
     }
     
@@ -61,27 +68,18 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
         self.toggleDescription()
     }
     
-    // this  button will automatically segue to next
     @IBAction func skipToNextActivity(sender: AnyObject) {
-        let nextObject = self.vm.getNextObject()
-        
-        // go to next activity
-        if nextObject is Activity {
-            // start the timer on the activity immediately
-            self.vm.startCurrentActivity()
-        } else if nextObject is Challenge {
-            self.showNextChallenge()
-        } else {
-            // there's no next challenge; we've reached the end
-            self.showEndScreen()
-        }
+        self.showNextTimerScreen()
     }
     
     // MARK: - UpcomingChallengeDelegate
     
+    func upcomingChallengeWillDisappear() {
+        self.vm.upcomingChallengeHidden()
+        self.populateFields()
+    }
+    
     func upcomingChallengeDidDisappear() {
-        // kick-off counting time
-        self.vm.startCurrentActivity()
         self.timer.start()
     }
     
@@ -92,7 +90,6 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
         
         DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
     }
-    
     
     // MARK - MZTimerLabelDelegate
     
@@ -119,6 +116,7 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
         self.timer.delegate = self
         self.timer.timerType = MZTimerLabelTypeTimer
         self.timer.timeFormat = "mm:ss"
+        self.timer.timeLabel.textColor = DesignStudioStyles.white
     }
     
     func populateFields () {
@@ -126,6 +124,7 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
         self.activityTitle.text = vm.activityTitle
         self.activityDescription.text = vm.activityDescription
         self.activityNotes.text = vm.activityNotes
+        self.activityNotes.enabled = vm.activityNotesEnabled
         
         self.timer.setCountDownTime(Double(vm.currentActivityRemainingDuration))
         self.timer.reset()
@@ -146,13 +145,25 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
         }
     }
     
-    func showNextChallenge() {
-        if let currentChallenge = vm.currentChallenge {
-            if let upcomingChallengeView = self.storyboard?.instantiateViewControllerWithIdentifier("UpcomingChallenges") as? UpcomingChallengeViewController {
-                upcomingChallengeView.vm.setChallenge(currentChallenge)
-                upcomingChallengeView.delegate = self
-                
-                self.presentViewController(upcomingChallengeView, animated: true, completion: nil)
+    func showNextTimerScreen() {
+        // segue to self
+        if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("Timer") as? TimerViewController {
+            vc.seguedFromPreviousTimer = true
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func showUpcomingChallenge() {
+        self.performSegueWithIdentifier(self.upcomingChallengeSegueIdentifier, sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == self.upcomingChallengeSegueIdentifier {
+            if let currentChallenge = vm.currentChallenge {
+                if let upcomingChallengeView = segue.destinationViewController as? UpcomingChallengeViewController {
+                    upcomingChallengeView.vm.setChallenge(currentChallenge)
+                    upcomingChallengeView.delegate = self
+                }
             }
         }
     }

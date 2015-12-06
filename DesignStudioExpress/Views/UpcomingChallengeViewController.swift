@@ -25,6 +25,12 @@ class UpcomingChallengeViewController: UIViewController {
         self.hideViewAfterTimeout()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.delegate?.upcomingChallengeWillDisappear()
+    }
+    
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         

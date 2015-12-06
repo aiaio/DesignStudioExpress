@@ -8,4 +8,5 @@
 
 protocol UpcomingChallengeDelegate: class {
     func upcomingChallengeDidDisappear()
+    func upcomingChallengeWillDisappear()
 }

@@ -12,22 +12,33 @@ class RunningDesignStudio {
     
     lazy var realm = try! Realm()
     
+    var currentChallengeIdx: Int? = nil
+    var currentActivityIdx: Int? = nil
+    var currentActivityStart: NSDate? = nil
+    
     private var data: DesignStudio?
     private var isRunning = false
-    var currentChallengeIdx = 0
-    var currentActivityIdx = 0
-    var currentActivityStart: NSDate? = nil
     
     var currentDesignStudio: DesignStudio? {
         get { return data }
     }
     
     var currentChallenge: Challenge? {
-        get { return self.data?.challenges[self.currentChallengeIdx] }
+        get {
+            if self.currentChallengeIdx != nil {
+                return self.data?.challenges[self.currentChallengeIdx!]
+            }
+            return nil
+        }
     }
     
     var currentActivity: Activity? {
-        get { return self.currentChallenge?.activities[self.currentActivityIdx] }
+        get {
+            if self.currentActivityIdx != nil {
+                return self.currentChallenge?.activities[self.currentActivityIdx!]
+            }
+            return nil
+        }
     }
     
     // in seconds
@@ -72,28 +83,31 @@ class RunningDesignStudio {
     }
     
     func getNextObject() -> Object? {
+        // if the DS has just started, first object to show is
+        // a challenge
+        if self.currentChallengeIdx == nil {
+            self.currentChallengeIdx = 0
+            return self.currentChallenge
+        }
+        
+        // if challenge has been just showed
+        // show the first activity in that challenge
+        if self.currentActivityIdx == nil {
+            self.currentActivityIdx = 0
+            return self.currentActivity
+        }
+        
+        // try to get next activity in the current challenge
         if self.moveToNextActivity() {
             return self.currentActivity
         }
         
+        // try to get next challenge
         if self.moveToNextChallenge() {
             return self.currentChallenge
         }
         
         return nil
-    }
-    
-    private func moveToNextActivity() -> Bool {
-        self.updateCurrentActivityTime()
-        
-        // move the pointer
-        let nextActivityIdx = self.currentActivityIdx + 1
-        if self.currentChallenge?.activities.count > nextActivityIdx {
-            self.currentActivityIdx = nextActivityIdx
-            return true
-        }
-        // there's no more activities in the challenge
-        return false
     }
     
     private func updateCurrentActivityTime() {
@@ -110,18 +124,31 @@ class RunningDesignStudio {
         }
     }
     
+    private func moveToNextActivity() -> Bool {
+        self.updateCurrentActivityTime()
+        
+        // move the pointer
+        let nextActivityIdx = self.currentActivityIdx! + 1
+        if self.currentChallenge?.activities.count > nextActivityIdx {
+            self.currentActivityIdx = nextActivityIdx
+            return true
+        }
+        self.currentActivityIdx = nil
+        // there's no more activities in the challenge
+        return false
+    }
+    
     private func moveToNextChallenge() -> Bool {
         self.updateCurrentActivityTime()
         
-        let nextChallengeIdx = self.currentChallengeIdx + 1
+        let nextChallengeIdx = self.currentChallengeIdx! + 1
         if self.data?.challenges.count > nextChallengeIdx {
-            self.currentActivityIdx = 0 // reset the activity counter
             self.currentChallengeIdx = nextChallengeIdx // move the pointer
             
             // in case that challenge has no activies move to next challenge
             // this shouldn't happen
             if self.currentChallenge?.activities.count == 0 {
-                return self.moveToNextActivity()
+                return self.moveToNextChallenge()
             }
             
             return true

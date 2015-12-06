@@ -11,6 +11,9 @@ import RealmSwift
 
 class TimerViewModel {
     private var data: DesignStudio?
+    private var nextObject: Object?
+    private var showUpcomingChallengeFlag = false
+    private var showEndScreenFlag = false
     
     func setDesignStudio(designStudio: DesignStudio) {
         self.data = designStudio
@@ -51,21 +54,54 @@ class TimerViewModel {
     
     // MARK - timer workflow
     
-    func getNextObject() -> Object? {
-        return AppDelegate.designStudio.getNextObject()    
-    }
-    
-    var isDesignStudioRunning: Bool {
-        get { return AppDelegate.designStudio.isDesignStudioRunning }
-    }
-    
-    func startDesignStudio() {
-        if self.data != nil {
-            AppDelegate.designStudio.startDesignStudio(self.data!)
+    var showUpcomingChallenge: Bool {
+        get {
+            return self.showUpcomingChallengeFlag
         }
     }
     
-    func startCurrentActivity() {
-        AppDelegate.designStudio.startCurrentActivity()
+    var showEndScreen: Bool {
+        get { return self.showEndScreenFlag }
+    }
+    
+    func timerPageLoaded(cameFromPreviousTimer: Bool) {
+        if !AppDelegate.designStudio.isDesignStudioRunning {
+            self.startDesignStudio()
+            self.goToNextStep()
+            return
+        }
+        
+        // move to the next step if we're comming from the timer page
+        // and challenge is not active
+        if cameFromPreviousTimer {
+            self.goToNextStep()
+        }
+    }
+    
+    func upcomingChallengeHidden() {
+        self.showUpcomingChallengeFlag = false
+        self.goToNextStep()
+    }
+    
+    // TODO: comment the logic for this function
+    private func goToNextStep() {
+        self.nextObject = AppDelegate.designStudio.getNextObject()
+        
+        // go to next activity
+        if nextObject is Activity {
+            // start the timer on the activity immediately
+            AppDelegate.designStudio.startCurrentActivity()
+        } else if nextObject is Challenge {
+            self.showUpcomingChallengeFlag = true
+        } else {
+            // there's no next challenge; we've reached the end
+            self.showEndScreenFlag = true
+        }
+    }
+    
+    private func startDesignStudio() {
+        if self.data != nil {
+            AppDelegate.designStudio.startDesignStudio(self.data!)
+        }
     }
 }
