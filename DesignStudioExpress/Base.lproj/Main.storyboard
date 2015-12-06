@@ -1544,6 +1544,7 @@
                         <outlet property="timer" destination="Oga-Wv-HbZ" id="7Qz-MO-Kss"/>
                         <outlet property="toggleButton" destination="C88-5T-bIJ" id="fAC-y4-gXT"/>
                         <segue destination="Jcl-AR-Twc" kind="presentation" identifier="ShowUpcomingChallenge" animates="NO" modalPresentationStyle="fullScreen" id="B2q-FO-lJa"/>
+                        <segue destination="hQK-eX-rHn" kind="presentation" identifier="StudioEnded" id="JJh-Eh-EHL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QyY-TM-Bia" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1737,7 +1738,99 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ML4-ET-M0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3067" y="1742"/>
+            <point key="canvasLocation" x="3066" y="1749"/>
+        </scene>
+        <!--Studio Ended View Controller-->
+        <scene sceneID="drG-G2-Ldh">
+            <objects>
+                <viewController id="hQK-eX-rHn" customClass="StudioEndedViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Px5-jV-NFe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Arf-4E-rXS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qNw-vf-0Vx">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONGRATS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4b-yB-tuR" customClass="FXLabel">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="T2X-WR-E2c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="T2X-WR-E2c"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="T2X-WR-E2c"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You made it!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4UX-kc-Qrc">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="360" id="MIg-cb-7RQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MIg-cb-7RQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="MIg-cb-7RQ"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.4823529412" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="4UX-kc-Qrc" firstAttribute="top" secondItem="A4b-yB-tuR" secondAttribute="bottom" constant="8" id="MwU-1I-ngz"/>
+                            <constraint firstItem="4UX-kc-Qrc" firstAttribute="centerX" secondItem="qNw-vf-0Vx" secondAttribute="centerX" id="cWG-bs-IFa"/>
+                            <constraint firstItem="4UX-kc-Qrc" firstAttribute="centerY" secondItem="qNw-vf-0Vx" secondAttribute="centerY" id="gIp-p9-kRk"/>
+                            <constraint firstItem="A4b-yB-tuR" firstAttribute="centerX" secondItem="qNw-vf-0Vx" secondAttribute="centerX" id="pvC-w9-mp1"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="A4b-yB-tuR"/>
+                                <exclude reference="4UX-kc-Qrc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="pvC-w9-mp1"/>
+                                <exclude reference="MwU-1I-ngz"/>
+                                <exclude reference="cWG-bs-IFa"/>
+                                <exclude reference="gIp-p9-kRk"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="A4b-yB-tuR"/>
+                                <include reference="4UX-kc-Qrc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="pvC-w9-mp1"/>
+                                <include reference="MwU-1I-ngz"/>
+                                <include reference="cWG-bs-IFa"/>
+                                <include reference="gIp-p9-kRk"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cP3-Ar-BZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3066" y="2430.75"/>
         </scene>
         <!--Challenge Detail View Controller-->
         <scene sceneID="ndZ-lY-XXN">

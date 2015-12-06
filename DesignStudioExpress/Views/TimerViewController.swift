@@ -10,7 +10,7 @@ import UIKit
 import FXLabel
 import MZTimerLabel
 
-class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTimerLabelDelegate {
+class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, StudioEndedDelegate, MZTimerLabelDelegate {
     
     @IBOutlet weak var challengeTitle: FXLabel!
     @IBOutlet weak var activityTitle: UILabel!
@@ -81,6 +81,12 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
     
     func upcomingChallengeDidDisappear() {
         self.timer.start()
+    }
+    
+    // MARK : - StudioEndedDelegate
+    
+    func studioEndedDidDisappear() {
+        self.navigationController?.popViewControllerAnimated(false)
     }
     
     // MARK: StyledNavigationBar
@@ -169,6 +175,6 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
     }
     
     func showEndScreen() {
-        // TODO
+        self.performSegueWithIdentifier("StudioEnded", sender: self)
     }
 }
