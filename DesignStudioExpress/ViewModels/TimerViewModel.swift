@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class TimerViewModel {
     private var data: DesignStudio?
@@ -48,6 +49,12 @@ class TimerViewModel {
         get { return AppDelegate.designStudio.currentActivity?.notes != "" }
     }
     
+    // MARK - timer workflow
+    
+    func getNextObject() -> Object? {
+        return AppDelegate.designStudio.getNextObject()    
+    }
+    
     var isDesignStudioRunning: Bool {
         get { return AppDelegate.designStudio.isDesignStudioRunning }
     }
@@ -60,13 +67,5 @@ class TimerViewModel {
     
     func startCurrentActivity() {
         AppDelegate.designStudio.startCurrentActivity()
-    }
-    
-    func moveToNextActivity() -> Bool {
-        return AppDelegate.designStudio.moveToNextActivity()
-    }
-    
-    func moveToNextChallenge() -> Bool {
-        return AppDelegate.designStudio.moveToNextChallenge()
     }
 }

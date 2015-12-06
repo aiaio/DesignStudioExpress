@@ -7,5 +7,5 @@
 //
 
 protocol UpcomingChallengeDelegate: class {
-    func upcomingChallengeWillDisappear()
+    func upcomingChallengeDidDisappear()
 }

@@ -16,7 +16,7 @@ class RunningDesignStudio {
     private var isRunning = false
     var currentChallengeIdx = 0
     var currentActivityIdx = 0
-    var currentActivityStart: NSDate?
+    var currentActivityStart: NSDate? = nil
     
     var currentDesignStudio: DesignStudio? {
         get { return data }
@@ -32,7 +32,7 @@ class RunningDesignStudio {
     
     // in seconds
     var currentActivityRemainingDuration: Int {
-        if currentActivityStart != nil {
+        if self.currentActivityStart != nil {
             if let totalDuration = self.currentActivity?.duration {
                 let totalDurationSecs = totalDuration * 60
                 let totalElapsedSecs = -Int(currentActivityStart!.timeIntervalSinceNow) // totalElapsedSecs are negative
@@ -40,7 +40,12 @@ class RunningDesignStudio {
                 return totalDurationSecs - totalElapsedSecs
             }
         }
-        return self.currentActivity?.duration ?? 0
+        
+        if let duration = self.currentActivity?.duration {
+            return duration * 60
+        }
+        // fallback
+        return 0
     }
     
     var isDesignStudioRunning: Bool {
@@ -66,7 +71,19 @@ class RunningDesignStudio {
         currentActivityStart = NSDate()
     }
     
-    func moveToNextActivity() -> Bool {
+    func getNextObject() -> Object? {
+        if self.moveToNextActivity() {
+            return self.currentActivity
+        }
+        
+        if self.moveToNextChallenge() {
+            return self.currentChallenge
+        }
+        
+        return nil
+    }
+    
+    private func moveToNextActivity() -> Bool {
         self.updateCurrentActivityTime()
         
         // move the pointer
@@ -93,13 +110,19 @@ class RunningDesignStudio {
         }
     }
     
-    func moveToNextChallenge() -> Bool {
+    private func moveToNextChallenge() -> Bool {
         self.updateCurrentActivityTime()
         
         let nextChallengeIdx = self.currentChallengeIdx + 1
         if self.data?.challenges.count > nextChallengeIdx {
             self.currentActivityIdx = 0 // reset the activity counter
             self.currentChallengeIdx = nextChallengeIdx // move the pointer
+            
+            // in case that challenge has no activies move to next challenge
+            // this shouldn't happen
+            if self.currentChallenge?.activities.count == 0 {
+                return self.moveToNextActivity()
+            }
             
             return true
         }

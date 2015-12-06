@@ -25,10 +25,10 @@ class UpcomingChallengeViewController: UIViewController {
         self.hideViewAfterTimeout()
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
         
-        self.delegate?.upcomingChallengeWillDisappear()
+        self.delegate?.upcomingChallengeDidDisappear()
     }
     
     func populateFields() {

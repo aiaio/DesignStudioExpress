@@ -32,25 +32,23 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
         
         self.removeLastViewFromNavigation()
         self.setUpTimerLabel()
+        
+        if !vm.isDesignStudioRunning {
+            self.vm.startDesignStudio()
+            self.showNextChallenge()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         self.populateFields()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
-        // TODO move this logic to VM
-        if !vm.isDesignStudioRunning {
-            self.vm.startDesignStudio()
-            self.showNextChallenge()
-        } else {
-            // studio is already running, so we need to start the timer
-            // start it with delay, to allow for
-            delay(0.4) {
-                // start timer label
-                self.timer.start()
-            }
-        }
+        self.timer.start()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -63,23 +61,28 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
         self.toggleDescription()
     }
     
+    // this  button will automatically segue to next
     @IBAction func skipToNextActivity(sender: AnyObject) {
-        // TODO move and refactor this logic to VM
-        // there's no new activity, skip to next challenge
-        if self.vm.moveToNextActivity() {
+        let nextObject = self.vm.getNextObject()
+        
+        // go to next activity
+        if nextObject is Activity {
+            // start the timer on the activity immediately
             self.vm.startCurrentActivity()
-            // refresh the data
-            self.populateFields()
+        } else if nextObject is Challenge {
+            self.showNextChallenge()
         } else {
-            // move to next challenge
-            if self.vm.moveToNextChallenge() {
-                self.showNextChallenge()
-                self.vm.startCurrentActivity()
-            } else {
-                // there's no next challenge; we've reached the end
-                self.showEndScreen()
-            }
+            // there's no next challenge; we've reached the end
+            self.showEndScreen()
         }
+    }
+    
+    // MARK: - UpcomingChallengeDelegate
+    
+    func upcomingChallengeDidDisappear() {
+        // kick-off counting time
+        self.vm.startCurrentActivity()
+        self.timer.start()
     }
     
     // MARK: StyledNavigationBar
@@ -90,25 +93,6 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
         DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
     }
     
-    // MARK: - UpcomingChallengeDelegate
-    
-    func upcomingChallengeWillDisappear() {
-        // kick-off counting time
-        self.vm.startCurrentActivity()
-        
-        delay(0.4) {
-        // start timer label
-            self.timer.start()}
-    }
-    
-    func delay(delay:Double, closure:()->()) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(delay * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(), closure)
-    }
     
     // MARK - MZTimerLabelDelegate
     
@@ -126,7 +110,7 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
     // so that Back button leads to Challenges screen
     func removeLastViewFromNavigation() {
         let endIndex = (self.navigationController?.viewControllers.endIndex ?? 0) - 1
-        if endIndex > 1 && self.navigationController?.viewControllers[endIndex-1] is TimerViewController {
+        if endIndex > 0 && self.navigationController?.viewControllers[endIndex-1] is TimerViewController {
             self.navigationController?.viewControllers.removeAtIndex(endIndex-1)
         }
     }
