@@ -102,8 +102,8 @@ class ChallengeDetailViewModel {
             return data.activities[indexPath!.row-1]
         }
         
-        let activity = Activity.createDefaultActivity()
-        activity.activityDescription = "" // remove the description, because placeholder contains the same text
+        let activity = Activity()
+        activity.duration = 5
         
         try! realm.write {
             self.data.activities.append(activity)

@@ -1425,7 +1425,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Idx-u8-oLd" firstAttribute="centerY" secondItem="idW-Lh-Kbq" secondAttribute="bottom" id="0y1-Hs-E0f"/>
-                            <constraint firstItem="umt-eQ-gme" firstAttribute="top" secondItem="Efe-R5-WcJ" secondAttribute="bottom" constant="10" id="1i5-WM-FLK"/>
+                            <constraint firstItem="umt-eQ-gme" firstAttribute="top" secondItem="Efe-R5-WcJ" secondAttribute="bottom" id="1i5-WM-FLK"/>
                             <constraint firstAttribute="trailing" secondItem="C88-5T-bIJ" secondAttribute="trailing" constant="45" id="7LI-LD-dlp"/>
                             <constraint firstItem="5gF-je-4sC" firstAttribute="trailing" secondItem="WIX-VS-Eg2" secondAttribute="trailing" id="K3G-oX-iN1"/>
                             <constraint firstAttribute="trailing" secondItem="Efe-R5-WcJ" secondAttribute="trailing" id="KtZ-yZ-mwJ"/>
@@ -2981,8 +2981,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="gcr-15-crY"/>
         <segue reference="SWD-un-Cl3"/>
+        <segue reference="ecy-m5-O2Z"/>
         <segue reference="KMg-vf-Wsj"/>
-        <segue reference="UKJ-wr-Am4"/>
         <segue reference="B2q-FO-lJa"/>
     </inferredMetricsTieBreakers>
 </document>

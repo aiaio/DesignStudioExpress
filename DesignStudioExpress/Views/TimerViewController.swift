@@ -118,7 +118,7 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
         // hide both buttons when there's no presenter notes
         if !vm.activityNotesEnabled {
             self.activityNotes.hidden = true
-            self.activityDescription.hidden = false
+            self.activityDescription.hidden = true
         } else if showPresenterNotes {
             self.toggleButton.setTitle(self.showDescriptionButtonLabel, forState: .Normal)
             self.activityNotes.hidden = false
