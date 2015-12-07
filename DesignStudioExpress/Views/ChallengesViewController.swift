@@ -15,6 +15,7 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         case AddNewChallengeCell = "AddNewChallengeCell"
         case EditChallenge = "EditChallenge"
         case BeginDesignStudio = "BeginDesignStudio"
+        case ShowTimer = "ShowTimerFromChallenges"
     }
     
     @IBOutlet weak var addChallengeView: UIView!
@@ -43,6 +44,14 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         super.setEditing(editing, animated: animated)
         // Toggles the actual editing actions appearing on a table view
         tableView.setEditing(editing, animated: true)
+    }
+    
+    @IBAction func beginDesignStudio(sender: AnyObject) {
+        if AppDelegate.designStudio.isDesignStudioRunning {
+            performSegueWithIdentifier(SegueIdentifier.ShowTimer.rawValue, sender: self)
+        } else {
+            performSegueWithIdentifier(SegueIdentifier.BeginDesignStudio.rawValue, sender: self)
+        }
     }
     
     // MARK: - Table view data source
@@ -210,8 +219,8 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
                 destination.vm.setChallenge(vm.getChallengesData(indexPath))
             }
         case SegueIdentifier.BeginDesignStudio.rawValue:
-            let destination = segue.destinationViewController as! TimerViewController
-            destination.vm.setDesignStudio(self.vm.getDesignStudioData())
+            let destination = segue.destinationViewController as! UpcomingChallengeViewController
+            destination.vm.designStudio = self.vm.getDesignStudioData()
         default:
             return
         }

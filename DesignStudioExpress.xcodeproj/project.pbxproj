@@ -52,7 +52,6 @@
 		E4C113321BFA855700A7E1B3 /* RealmSwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C113311BFA855700A7E1B3 /* RealmSwiftExtension.swift */; };
 		E4C113361BFBBE3B00A7E1B3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C113351BFBBE3B00A7E1B3 /* StringExtension.swift */; };
 		E4CEA34B1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CEA34A1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift */; };
-		E4CF936D1C1343E8000690D4 /* UpcomingChallengeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CF936C1C1343E8000690D4 /* UpcomingChallengeDelegate.swift */; };
 		E4EAC13F1C0228410079364C /* UITableViewCellChallengeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EAC13E1C0228410079364C /* UITableViewCellChallengeHeader.swift */; };
 		E4ECC4F11BF8E92C00834AD3 /* DetailDesignStudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECC4F01BF8E92C00834AD3 /* DetailDesignStudioViewController.swift */; };
 		E4ECC4F31BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECC4F21BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift */; };
@@ -121,7 +120,6 @@
 		E4C113311BFA855700A7E1B3 /* RealmSwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSwiftExtension.swift; sourceTree = "<group>"; };
 		E4C113351BFBBE3B00A7E1B3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E4CEA34A1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSwipeTableCellChallenge.swift; sourceTree = "<group>"; };
-		E4CF936C1C1343E8000690D4 /* UpcomingChallengeDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingChallengeDelegate.swift; sourceTree = "<group>"; };
 		E4EAC13E1C0228410079364C /* UITableViewCellChallengeHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellChallengeHeader.swift; sourceTree = "<group>"; };
 		E4ECC4F01BF8E92C00834AD3 /* DetailDesignStudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDesignStudioViewController.swift; sourceTree = "<group>"; };
 		E4ECC4F21BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDesignStudioViewModel.swift; sourceTree = "<group>"; };
@@ -254,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				E49F45DB1BFE443B00F32AE9 /* StyledNavigationBar.swift */,
-				E4CF936C1C1343E8000690D4 /* UpcomingChallengeDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -513,7 +510,6 @@
 				E40EDF241C10B28200F0D4C4 /* TimerViewController.swift in Sources */,
 				E4EAC13F1C0228410079364C /* UITableViewCellChallengeHeader.swift in Sources */,
 				E40A81A51C0DF11200BC07E3 /* UITextFieldDelegateBase.swift in Sources */,
-				E4CF936D1C1343E8000690D4 /* UpcomingChallengeDelegate.swift in Sources */,
 				E41E77301C067D25000364D6 /* UITextFieldDelegateMaxLength.swift in Sources */,
 				E4CEA34B1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift in Sources */,
 				E4ECC4F31BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift in Sources */,

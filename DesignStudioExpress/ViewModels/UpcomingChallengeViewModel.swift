@@ -10,7 +10,8 @@ import Foundation
 
 class UpcomingChallengeViewModel {
     
-    var data: Challenge?
+    var designStudio: DesignStudio?
+    private var data: Challenge?
     
     func setChallenge(challenge: Challenge) {
         self.data = challenge
@@ -30,6 +31,21 @@ class UpcomingChallengeViewModel {
             let currentChallenge = self.data!.designStudio.challenges.indexOf(self.data!)! + 1
 
             return "CHALLENGE \(currentChallenge) OF \(totalChallenges)"
+        }
+    }
+    
+    func upcomingChallengeDidLoad() {
+        if !AppDelegate.designStudio.isDesignStudioRunning {
+            self.startDesignStudio()
+            if let challenge = AppDelegate.designStudio.getNextObject() as? Challenge {
+                self.data = challenge
+            }
+        }
+    }
+    
+    private func startDesignStudio() {
+        if self.designStudio != nil {
+            AppDelegate.designStudio.startDesignStudio(self.designStudio!)
         }
     }
 }

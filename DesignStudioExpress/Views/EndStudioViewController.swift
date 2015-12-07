@@ -16,8 +16,7 @@ class EndStudioViewController: UIViewControllerBase {
         super.customizeNavBarStyle()
         
         DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
+        // don't allow going back to the timer screen
         self.navigationItem.setHidesBackButton(true, animated: false)
     }
-
-    
 }

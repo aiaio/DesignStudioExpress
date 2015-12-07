@@ -10,7 +10,7 @@ import UIKit
 import FXLabel
 import MZTimerLabel
 
-class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTimerLabelDelegate {
+class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     
     @IBOutlet weak var challengeTitle: FXLabel!
     @IBOutlet weak var activityTitle: UILabel!
@@ -23,7 +23,6 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
     
     let vm = TimerViewModel()
     var showPresenterNotes = true
-    var seguedFromPreviousTimer = false //
     
     enum SegueIdentifier: String {
         case UpcomingChallenge = "ShowUpcomingChallenge"
@@ -37,15 +36,10 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.vm.timerDidLoad()
+        
         self.removeLastViewFromNavigation()
         self.setUpTimerLabel()
-        
-        vm.timerPageLoaded()
-        
-        if vm.showUpcomingChallenge {
-            self.showUpcomingChallenge()
-            return
-        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -71,7 +65,7 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
     }
     
     @IBAction func skipToNextActivity(sender: AnyObject) {
-        self.vm.skipToNextActivity()
+        self.vm.goToNextStep()
         
         if vm.showEndScreen {
             self.showEndScreen()
@@ -81,18 +75,7 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
              self.showNextTimerScreen()
         }       
     }
-    
-    // MARK: - UpcomingChallengeDelegate
-    
-    func upcomingChallengeWillDisappear() {
-        self.vm.upcomingChallengeHidden()
-        self.populateFields()
-    }
-    
-    func upcomingChallengeDidDisappear() {
-        self.timer.start()
-    }
-    
+        
     // MARK: StyledNavigationBar
     
     override func customizeNavBarStyle() {
@@ -150,15 +133,17 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
     // so that Back button leads to Challenges screen
     func removeLastViewFromNavigation() {
         let endIndex = (self.navigationController?.viewControllers.endIndex ?? 0) - 1
-        if endIndex > 0 && self.navigationController?.viewControllers[endIndex-1] is TimerViewController {
-            self.navigationController?.viewControllers.removeAtIndex(endIndex-1)
+        if endIndex > 0 {
+            let previousVC = self.navigationController?.viewControllers[endIndex-1]
+            if previousVC is TimerViewController || previousVC is UpcomingChallengeViewController {
+                self.navigationController?.viewControllers.removeAtIndex(endIndex-1)
+            }
         }
     }
     
     func showNextTimerScreen() {
         // segue to self
         if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(self.timerViewControllerIdentifier) as? TimerViewController {
-            vc.seguedFromPreviousTimer = true
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -172,7 +157,6 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTi
             if let currentChallenge = vm.currentChallenge {
                 if let upcomingChallengeView = segue.destinationViewController as? UpcomingChallengeViewController {
                     upcomingChallengeView.vm.setChallenge(currentChallenge)
-                    upcomingChallengeView.delegate = self
                 }
             }
         }

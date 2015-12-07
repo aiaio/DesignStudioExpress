@@ -10,15 +10,10 @@ import Foundation
 import RealmSwift
 
 class TimerViewModel {
-    private var data: DesignStudio?
     private var nextObject: Object?
     private var showUpcomingChallengeFlag = false
     private var showEndScreenFlag = false
-    
-    func setDesignStudio(designStudio: DesignStudio) {
-        self.data = designStudio
-    }
-    
+        
     var currentChallenge: Challenge? {
         get { return AppDelegate.designStudio.currentChallenge }
     }
@@ -54,6 +49,8 @@ class TimerViewModel {
     
     // MARK - timer workflow
     
+    var segueFromUpcomingChallenge: Bool = false
+    
     var showUpcomingChallenge: Bool {
         get {
             return self.showUpcomingChallengeFlag
@@ -64,25 +61,17 @@ class TimerViewModel {
         get { return self.showEndScreenFlag }
     }
     
-    func timerPageLoaded() {
-        if !AppDelegate.designStudio.isDesignStudioRunning {
-            self.startDesignStudio()
+    func timerDidLoad() {
+        // if we're coming from a challenge go to next step to load data for the activity
+        // we don't want to kick this off on the challenge screen
+        // because the animation will skew the clock for the activity
+        if self.segueFromUpcomingChallenge {
             self.goToNextStep()
-            return
         }
     }
     
-    func skipToNextActivity() {
-        self.goToNextStep()
-    }
-    
-    func upcomingChallengeHidden() {
-        self.showUpcomingChallengeFlag = false
-        self.goToNextStep()
-    }
-    
     // TODO: comment the logic for this function
-    private func goToNextStep() {
+    func goToNextStep() {
         self.nextObject = AppDelegate.designStudio.getNextObject()
         
         // go to next activity
@@ -94,12 +83,6 @@ class TimerViewModel {
         } else {
             // there's no next challenge; we've reached the end
             self.showEndScreenFlag = true
-        }
-    }
-    
-    private func startDesignStudio() {
-        if self.data != nil {
-            AppDelegate.designStudio.startDesignStudio(self.data!)
         }
     }
 }
