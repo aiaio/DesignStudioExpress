@@ -44,7 +44,12 @@ class TimerViewModel {
     }
     
     var activityNotesEnabled: Bool {
-        get { return AppDelegate.designStudio.currentActivity?.notes != "" }
+        get {
+            if let notes = AppDelegate.designStudio.currentActivity?.notes {
+                return notes.length > 0
+            }
+            return false
+        }
     }
     
     // MARK - timer workflow
