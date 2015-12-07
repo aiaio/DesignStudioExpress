@@ -13,7 +13,7 @@ class Activity: Object {
     dynamic var id = NSUUID().UUIDString
     dynamic var title = ""
     dynamic var activityDescription = "" // we can't use just description, because that's an NSObject stored property
-    dynamic var duration: Int = 5
+    dynamic var duration: Int = 5 // minutes
     dynamic var notes = ""
     dynamic var dateCreated: NSDate = NSDate()
     

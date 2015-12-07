@@ -16,6 +16,7 @@ class ChallengesViewModel {
     private var data: List<Challenge>!
     
     let buttonLabelTimer = "SHOW TIMER"
+    let buttonLabelFinished = "STUDIO FINISHED"
     let buttonLabelBeginDS = "BEGIN DESIGN STUDIO"
     let buttonLabelRunning = "RUNNING"
     
@@ -37,6 +38,9 @@ class ChallengesViewModel {
     
     var isAnotherStudioRunning: Bool {
         get {
+            if !AppDelegate.designStudio.isDesignStudioRunning {
+                return false
+            }
             if let runningDSId = AppDelegate.designStudio.currentDesignStudio?.id {
                 return runningDSId != self.designStudio.id
             }
@@ -45,20 +49,22 @@ class ChallengesViewModel {
     }
     
     var beginDesignStudioButtonEnabled: Bool {
-        return !isNewDesignStudio || !isAnotherStudioRunning
+        return !self.designStudio.finished && !isNewDesignStudio && !isAnotherStudioRunning
     }
     
     var beginDesignStudioButtonText: String {
         
-        if AppDelegate.designStudio.isDesignStudioRunning {
-            if isAnotherStudioRunning {
+        if self.designStudio.finished {
+            return self.buttonLabelFinished
+        } else if AppDelegate.designStudio.isDesignStudioRunning {
+            if self.isAnotherStudioRunning {
                 let runningDSTitle = AppDelegate.designStudio.currentDesignStudio!.title
-                return "\(runningDSTitle)" + buttonLabelRunning
+                return "\(runningDSTitle)" + self.buttonLabelRunning
             } else {
-                return buttonLabelTimer
+                return self.buttonLabelTimer
             }
         }
-        return buttonLabelBeginDS
+        return self.buttonLabelBeginDS
     }
     
     var designStudioTitle: String {

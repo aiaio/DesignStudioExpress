@@ -14,6 +14,10 @@ class DesignStudio: Object {
     dynamic var title = ""
     dynamic var dateCreated: NSDate = NSDate()
     dynamic var started = false
+    dynamic var finished = false
+    dynamic var currentChallengeId: String = ""
+    dynamic var currentActivityId: String = ""
+    
     let challenges = List<Challenge>()
     
     // minutes

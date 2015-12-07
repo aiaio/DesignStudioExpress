@@ -37,7 +37,9 @@ class TimerViewModel {
     var activityNotes: String {
         get {
             if self.activityNotesEnabled {
-                return "\"\(AppDelegate.designStudio.currentActivity?.notes)\""
+                if let notes = AppDelegate.designStudio.currentActivity?.notes {
+                    return "\"\(notes)\""
+                }
             }
             return ""
         }

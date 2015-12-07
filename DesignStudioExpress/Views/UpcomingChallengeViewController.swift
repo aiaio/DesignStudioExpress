@@ -19,7 +19,7 @@ class UpcomingChallengeViewController: UIViewControllerBase {
         case ShowTimer = "ShowTimer"
     }
     
-    let showDuration = 3.0 // TODO: increase this after testing seconds
+    let showDuration = 1.0 // TODO: increase this after testing seconds
     let vm = UpcomingChallengeViewModel()
     
     override func viewDidLoad() {

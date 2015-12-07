@@ -31,8 +31,10 @@ class IntroViewController: UIViewController {
         
         // TODO: this drops entire db
         // remove it!
-        if NSFileManager.defaultManager().fileExistsAtPath(Realm.defaultPath) {
-            try! NSFileManager.defaultManager().removeItemAtPath(Realm.defaultPath)
+        if let path = Realm.Configuration.defaultConfiguration.path {
+            if NSFileManager.defaultManager().fileExistsAtPath(path) {
+                try! NSFileManager.defaultManager().removeItemAtPath(path)
+            }
         }
     }
 

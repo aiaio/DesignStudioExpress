@@ -68,6 +68,10 @@ class RunningDesignStudio {
             self.data = designStudio
             self.isRunning = true
             
+            // reset pointers, so that we can start another studio
+            self.currentChallengeIdx = nil
+            self.currentActivityIdx = nil
+            
             do {
                 try realm.write {
                     self.data?.started = true
@@ -110,6 +114,17 @@ class RunningDesignStudio {
         return nil
     }
     
+    func finishDesignStudio() {
+        do {
+            try realm.write {
+                self.data?.finished = true
+            }
+            self.isRunning = false
+        } catch {
+            // todo
+        }
+    }
+    
     private func updateCurrentActivityTime() {
         // update the duration of the activity to the actual duration
         do {
@@ -127,20 +142,62 @@ class RunningDesignStudio {
     private func moveToNextActivity() -> Bool {
         self.updateCurrentActivityTime()
         
+        let result = self.moveActivityPointer()
+        
+        if result {
+            self.updateDesignStudioActivityIdx()
+        }
+        
+        return result
+    }
+    
+    private func moveActivityPointer() -> Bool {
         // move the pointer
         let nextActivityIdx = self.currentActivityIdx! + 1
         if self.currentChallenge?.activities.count > nextActivityIdx {
             self.currentActivityIdx = nextActivityIdx
             return true
         }
-        self.currentActivityIdx = nil
         // there's no more activities in the challenge
+        self.currentActivityIdx = nil
         return false
+    }
+    
+    private func updateDesignStudioActivityIdx() {
+        do {
+            try realm.write {
+                self.data?.currentActivityId = self.currentActivity?.id ?? ""
+            }
+        } catch {
+            // todo
+        }
     }
     
     private func moveToNextChallenge() -> Bool {
         self.updateCurrentActivityTime()
         
+        let result = self.moveChallengePointer()
+        
+        if result {
+            self.updateDesignStudioChallengeIdx()
+        } else {
+            self.finishDesignStudio()
+        }
+        
+        return result
+    }
+    
+    private func updateDesignStudioChallengeIdx() {
+        do {
+            try realm.write {
+                self.data?.currentChallengeId = self.currentChallenge?.id ?? ""
+            }
+        } catch {
+            // todo
+        }
+    }
+    
+    private func moveChallengePointer() -> Bool {
         let nextChallengeIdx = self.currentChallengeIdx! + 1
         if self.data?.challenges.count > nextChallengeIdx {
             self.currentChallengeIdx = nextChallengeIdx // move the pointer

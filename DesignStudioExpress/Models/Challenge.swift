@@ -17,6 +17,7 @@ class Challenge: Object {
     
     let activities = List<Activity>()
     
+    // minutes
     var duration: Int {
         get {
             if self.activities.count == 0 {
