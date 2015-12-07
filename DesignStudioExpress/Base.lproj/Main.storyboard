@@ -901,7 +901,7 @@
                                                     </mask>
                                                 </variation>
                                                 <connections>
-                                                    <segue destination="AmZ-1V-xYD" kind="show" identifier="BeginDesignStudio" animates="NO" id="sc1-o4-aot"/>
+                                                    <segue destination="AmZ-1V-xYD" kind="show" identifier="" animates="NO" id="sc1-o4-aot"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1544,7 +1544,7 @@
                         <outlet property="timer" destination="Oga-Wv-HbZ" id="7Qz-MO-Kss"/>
                         <outlet property="toggleButton" destination="C88-5T-bIJ" id="fAC-y4-gXT"/>
                         <segue destination="Jcl-AR-Twc" kind="presentation" identifier="ShowUpcomingChallenge" animates="NO" modalPresentationStyle="fullScreen" id="B2q-FO-lJa"/>
-                        <segue destination="hQK-eX-rHn" kind="presentation" identifier="StudioEnded" id="JJh-Eh-EHL"/>
+                        <segue destination="hQK-eX-rHn" kind="show" identifier="ShowEndStudio" id="JJh-Eh-EHL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QyY-TM-Bia" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1740,15 +1740,16 @@
             </objects>
             <point key="canvasLocation" x="3066" y="1749"/>
         </scene>
-        <!--Studio Ended View Controller-->
+        <!--End Studio View Controller-->
         <scene sceneID="drG-G2-Ldh">
             <objects>
-                <viewController id="hQK-eX-rHn" customClass="StudioEndedViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hQK-eX-rHn" customClass="EndStudioViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Px5-jV-NFe"/>
                         <viewControllerLayoutGuide type="bottom" id="Arf-4E-rXS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qNw-vf-0Vx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONGRATS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4b-yB-tuR" customClass="FXLabel">
@@ -1808,10 +1809,10 @@
                                 <exclude reference="4UX-kc-Qrc"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="pvC-w9-mp1"/>
                                 <exclude reference="MwU-1I-ngz"/>
                                 <exclude reference="cWG-bs-IFa"/>
                                 <exclude reference="gIp-p9-kRk"/>
+                                <exclude reference="pvC-w9-mp1"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1820,10 +1821,10 @@
                                 <include reference="4UX-kc-Qrc"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="pvC-w9-mp1"/>
                                 <include reference="MwU-1I-ngz"/>
                                 <include reference="cWG-bs-IFa"/>
                                 <include reference="gIp-p9-kRk"/>
+                                <include reference="pvC-w9-mp1"/>
                             </mask>
                         </variation>
                     </view>

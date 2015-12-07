@@ -10,7 +10,7 @@ import UIKit
 import FXLabel
 import MZTimerLabel
 
-class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, StudioEndedDelegate, MZTimerLabelDelegate {
+class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, MZTimerLabelDelegate {
     
     @IBOutlet weak var challengeTitle: FXLabel!
     @IBOutlet weak var activityTitle: UILabel!
@@ -25,7 +25,12 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, Stud
     var showPresenterNotes = true
     var seguedFromPreviousTimer = false //
     
-    let upcomingChallengeSegueIdentifier = "ShowUpcomingChallenge"
+    enum SegueIdentifier: String {
+        case UpcomingChallenge = "ShowUpcomingChallenge"
+        case EndStudio = "ShowEndStudio"
+    }
+    
+    let timerViewControllerIdentifier = "Timer"
     let showNotesButtonLabel = "PRESENTER NOTES"
     let showDescriptionButtonLabel = "BACK TO DESCRIPTION"
 
@@ -35,14 +40,11 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, Stud
         self.removeLastViewFromNavigation()
         self.setUpTimerLabel()
         
-        vm.timerPageLoaded(seguedFromPreviousTimer)
+        vm.timerPageLoaded()
         
         if vm.showUpcomingChallenge {
             self.showUpcomingChallenge()
-        }
-        
-        if vm.showEndScreen {
-            self.showEndScreen()
+            return
         }
     }
     
@@ -69,7 +71,15 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, Stud
     }
     
     @IBAction func skipToNextActivity(sender: AnyObject) {
-        self.showNextTimerScreen()
+        self.vm.skipToNextActivity()
+        
+        if vm.showEndScreen {
+            self.showEndScreen()
+        } else if vm.showUpcomingChallenge {
+            self.showUpcomingChallenge()
+        } else {
+             self.showNextTimerScreen()
+        }       
     }
     
     // MARK: - UpcomingChallengeDelegate
@@ -81,12 +91,6 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, Stud
     
     func upcomingChallengeDidDisappear() {
         self.timer.start()
-    }
-    
-    // MARK : - StudioEndedDelegate
-    
-    func studioEndedWillDisappear() {
-        self.navigationController?.popViewControllerAnimated(false)
     }
     
     // MARK: StyledNavigationBar
@@ -108,15 +112,6 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, Stud
     }
     
     // MARK: - Custom
-    
-    // since we're segueing to the same VC, we need to remove the previous TimerViewController instance
-    // so that Back button leads to Challenges screen
-    func removeLastViewFromNavigation() {
-        let endIndex = (self.navigationController?.viewControllers.endIndex ?? 0) - 1
-        if endIndex > 0 && self.navigationController?.viewControllers[endIndex-1] is TimerViewController {
-            self.navigationController?.viewControllers.removeAtIndex(endIndex-1)
-        }
-    }
     
     func setUpTimerLabel() {
         self.timer.delegate = self
@@ -151,20 +146,29 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, Stud
         }
     }
     
+    // since we're segueing to the same VC, we need to remove the previous TimerViewController instance
+    // so that Back button leads to Challenges screen
+    func removeLastViewFromNavigation() {
+        let endIndex = (self.navigationController?.viewControllers.endIndex ?? 0) - 1
+        if endIndex > 0 && self.navigationController?.viewControllers[endIndex-1] is TimerViewController {
+            self.navigationController?.viewControllers.removeAtIndex(endIndex-1)
+        }
+    }
+    
     func showNextTimerScreen() {
         // segue to self
-        if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("Timer") as? TimerViewController {
+        if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(self.timerViewControllerIdentifier) as? TimerViewController {
             vc.seguedFromPreviousTimer = true
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
     func showUpcomingChallenge() {
-        self.performSegueWithIdentifier(self.upcomingChallengeSegueIdentifier, sender: self)
+        self.performSegueWithIdentifier(SegueIdentifier.UpcomingChallenge.rawValue, sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == self.upcomingChallengeSegueIdentifier {
+        if segue.identifier == SegueIdentifier.UpcomingChallenge.rawValue {
             if let currentChallenge = vm.currentChallenge {
                 if let upcomingChallengeView = segue.destinationViewController as? UpcomingChallengeViewController {
                     upcomingChallengeView.vm.setChallenge(currentChallenge)
@@ -175,6 +179,6 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, Stud
     }
     
     func showEndScreen() {
-        self.performSegueWithIdentifier("StudioEnded", sender: self)
+        self.performSegueWithIdentifier(SegueIdentifier.EndStudio.rawValue, sender: self)
     }
 }

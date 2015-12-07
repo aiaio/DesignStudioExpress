@@ -46,16 +46,16 @@ class HomeViewModel {
             let ds = DesignStudio()
 
             ds.title = "My studio \(idx)"
-            for idx2 in 1...3 {
+            for idx2 in 1...1 {
                 let challenge = Challenge()
                 challenge.title = "Challenge \(idx2)"
                 challenge.challengeDescription  = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne."
                 
-                for idx3 in 1...3 {
+                for idx3 in 1...1 {
                     let activity = Activity()
                     activity.title = "Activity \(idx3)"
                     activity.activityDescription = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne."
-                    activity.duration = 2
+                    activity.duration = 5
                     challenge.activities.append(activity)
                 }
                 

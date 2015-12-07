@@ -64,18 +64,16 @@ class TimerViewModel {
         get { return self.showEndScreenFlag }
     }
     
-    func timerPageLoaded(cameFromPreviousTimer: Bool) {
+    func timerPageLoaded() {
         if !AppDelegate.designStudio.isDesignStudioRunning {
             self.startDesignStudio()
             self.goToNextStep()
             return
         }
-        
-        // move to the next step if we're comming from the timer page
-        // and challenge is not active
-        if cameFromPreviousTimer {
-            self.goToNextStep()
-        }
+    }
+    
+    func skipToNextActivity() {
+        self.goToNextStep()
     }
     
     func upcomingChallengeHidden() {
