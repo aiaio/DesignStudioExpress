@@ -7,5 +7,5 @@
 //
 
 protocol StudioEndedDelegate: class {
-    func studioEndedDidDisappear()
+    func studioEndedWillDisappear()
 }

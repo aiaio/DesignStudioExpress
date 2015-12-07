@@ -22,7 +22,7 @@ class StudioEndedViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        self.delegate?.studioEndedWillDidDisappear()
+        self.delegate?.studioEndedWillDisappear()
     }
     
     func hideViewAfterTimeout() {

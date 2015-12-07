@@ -85,7 +85,7 @@ class TimerViewController: UIViewControllerBase, UpcomingChallengeDelegate, Stud
     
     // MARK : - StudioEndedDelegate
     
-    func studioEndedDidDisappear() {
+    func studioEndedWillDisappear() {
         self.navigationController?.popViewControllerAnimated(false)
     }
     
