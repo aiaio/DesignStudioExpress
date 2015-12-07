@@ -9,7 +9,8 @@
 import UIKit
 import FXLabel
 
-class UpcomingChallengeViewController: UIViewController {
+class UpcomingChallengeViewController: UIViewControllerBase {
+    
     @IBOutlet weak var numOfChallenges: FXLabel!
     @IBOutlet weak var challengeTitle: UILabel!
     @IBOutlet weak var duration: UILabel!
@@ -25,7 +26,6 @@ class UpcomingChallengeViewController: UIViewController {
         super.viewDidLoad()
 
         self.vm.upcomingChallengeDidLoad()
-        
         self.populateFields()
         self.hideViewAfterTimeout()
     }
@@ -42,6 +42,16 @@ class UpcomingChallengeViewController: UIViewController {
     
     func hideView() {
         self.performSegueWithIdentifier(SegueIdentifier.ShowTimer.rawValue, sender: self)
+    }
+    
+    // MARK: StyledNavigationBar
+    
+    override func customizeNavBarStyle() {
+        super.customizeNavBarStyle()
+        
+        DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
+        // don't allow going back to the timer screen
+        self.navigationItem.setHidesBackButton(true, animated: false)
     }
     
     // MARK - Navigation
