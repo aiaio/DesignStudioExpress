@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class RunningDesignStudio {
+class RunningDesignStudio: NSObject {
     
     lazy var realm = try! Realm()
     
@@ -18,6 +18,7 @@ class RunningDesignStudio {
     
     private var data: DesignStudio?
     private var isRunning = false
+    private var timer: NSTimer?
     
     var currentDesignStudio: DesignStudio? {
         get { return data }
@@ -43,6 +44,9 @@ class RunningDesignStudio {
     
     // in seconds
     var currentActivityRemainingDuration: Int {
+        // TODO REMOVE THIS!!!!!!
+        return 1
+        
         if self.currentActivityStart != nil {
             if let totalDuration = self.currentActivity?.duration {
                 let totalDurationSecs = totalDuration * 60
@@ -83,7 +87,16 @@ class RunningDesignStudio {
     }
     
     func startCurrentActivity() {
-        currentActivityStart = NSDate()
+        self.currentActivityStart = NSDate()
+        
+        self.timer?.invalidate()
+        if let _ = self.currentActivity {
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(Double(self.currentActivityRemainingDuration), target: self, selector: "notifyEndActivity", userInfo: nil, repeats: false)
+        }
+    }
+    
+    func notifyEndActivity() {
+        NSNotificationCenter.defaultCenter().postNotificationName("ActivityEnded", object: self, userInfo: nil)
     }
     
     func getNextObject() -> Object? {
@@ -114,7 +127,13 @@ class RunningDesignStudio {
         return nil
     }
     
+    // it's not private because we have to use it on app exit
     func finishDesignStudio() {
+        // don't forget to stop the timer at the end
+        // we don't want any more popups
+        self.timer?.invalidate()
+        
+        // mark design studio as finished
         do {
             try realm.write {
                 self.data?.finished = true
@@ -213,4 +232,7 @@ class RunningDesignStudio {
         // there's no more challenges
         return false
     }
+    
+    // MARK: - Time is up 
+    
 }

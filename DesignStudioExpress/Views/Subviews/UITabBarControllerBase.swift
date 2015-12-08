@@ -31,6 +31,7 @@ class UITabBarControllerBase: UITabBarController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showDesignStudio:", name: Notifications.DesignStudioLoaded.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "resetCurrentlyActiveDesignStudio:", name: Notifications.DesignStudioDeleted.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEndActivityScreen:", name: "ActivityEnded", object: nil)
     }
     
     // handler for showing the Detail DS screen when DesignStudioLoaded notification is raised
@@ -52,6 +53,13 @@ class UITabBarControllerBase: UITabBarController {
 
         if activeDesignStudioId == deletedDesignStudioId {
             self.setActiveDesignStudio(nil)
+        }
+    }
+    
+    func showEndActivityScreen(notification: NSNotification) {
+        if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ActivityEndedScreen") {
+            vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+            self.presentViewController(vc, animated: true, completion: nil)
         }
     }
     
