@@ -13,7 +13,17 @@ class UITabBarControllerBase: UITabBarController {
     enum Notifications: String {
         case DesignStudioLoaded = "DesignStudioLoaded"
         case DesignStudioDeleted = "DesignStudioDeleted"
+        case ActivityEnded = "ActivityEnded"
+        case EndActivityMoveToNextActivity = "EndActivityMoveToNextActivity"
     }
+    
+    enum ViewControllerIdentifier: String {
+        case ActivityEndedScreen = "ActivityEndedScreen"
+        case ChallengesViewController = "ChallengesViewController"
+        case TimerViewController = "TimerViewController"
+        case DetailDesignStudioViewController = "DetailDesignStudioViewController"
+    }
+    
     // tabbar style customization
     let higlightedItemColor = DesignStudioStyles.bottomNavigationIconSelected
     let barItemBackgroundColor = DesignStudioStyles.bottomNavigationBGColorUnselected
@@ -31,8 +41,8 @@ class UITabBarControllerBase: UITabBarController {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showDesignStudio:", name: Notifications.DesignStudioLoaded.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "resetCurrentlyActiveDesignStudio:", name: Notifications.DesignStudioDeleted.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEndActivityScreen:", name: "ActivityEnded", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showTimerScreen:", name: "EndActivityWillDisappear", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEndActivityScreen:", name: Notifications.ActivityEnded.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showTimerScreen:", name: Notifications.EndActivityMoveToNextActivity.rawValue, object: nil)
     }
     
     // handler for showing the Detail DS screen when DesignStudioLoaded notification is raised
@@ -43,6 +53,9 @@ class UITabBarControllerBase: UITabBarController {
         activeDesignStudioId = designStudio?.id
 
         self.setActiveDesignStudio(designStudio)
+        
+        // jump to design studio tab
+        self.selectedIndex = createDesignStudioNavTabIndex
     }
     
     func resetCurrentlyActiveDesignStudio (notification: NSNotification) {
@@ -54,17 +67,6 @@ class UITabBarControllerBase: UITabBarController {
         }
     }
     
-    func showEndActivityScreen(notification: NSNotification) {
-        if let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ActivityEndedScreen") {
-            vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
-            self.presentViewController(vc, animated: true, completion: nil)
-        }
-    }
-    
-    func showTimerScreen(notification: NSNotification) {
-        // TODO
-    }
-    
     private func setActiveDesignStudio(designStudio: DesignStudio?) {
         let navViewController = self.viewControllers![createDesignStudioNavTabIndex] as! UINavigationController
         let designStudioViewController = navViewController.viewControllers[0] as! DetailDesignStudioViewController
@@ -72,6 +74,50 @@ class UITabBarControllerBase: UITabBarController {
         
         // show the first view in the navigation
         navViewController.popToRootViewControllerAnimated(true)
+    }
+    
+    func showEndActivityScreen(notification: NSNotification) {
+        if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.ActivityEndedScreen.rawValue) {
+            vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+    }
+    
+    func showTimerScreen(notification: NSNotification) {
+        self.addMissingViewControllers()
+        
+        self.navigateToTimerScreen()
+    }
+    
+    func addMissingViewControllers() {
+        let navViewController = self.viewControllers![createDesignStudioNavTabIndex] as! UINavigationController
+        // remove everything from the stack 
+        // so we don't get weird edge cases
+        // calling removeAll directly does not remove them
+        var vc = navViewController.viewControllers
+        vc.removeAll()
+        navViewController.viewControllers = vc
+        
+        if let challengesList = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.DetailDesignStudioViewController.rawValue) as? DetailDesignStudioViewController {
+            challengesList.vm.setDesignStudio(AppDelegate.designStudio.currentDesignStudio!)
+            navViewController.viewControllers.append(challengesList)
+        }
+        
+        if let challengesList = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.ChallengesViewController.rawValue) as? ChallengesViewController {
+            challengesList.vm.setDesignStudio(AppDelegate.designStudio.currentDesignStudio!)
+            navViewController.viewControllers.append(challengesList)
+        }
+        
+        if let timerList = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.TimerViewController.rawValue) as? TimerViewController {
+            navViewController.viewControllers.append(timerList)
+        }
+    }
+    
+    func navigateToTimerScreen() {
+        let navViewController = self.viewControllers![createDesignStudioNavTabIndex] as! UINavigationController
+        let timerVC = navViewController.viewControllers[navViewController.viewControllers.endIndex-1] // endIndex is "past-the-end"
+        navigationController?.popToViewController(timerVC, animated: true)
         
         // jump to design studio tab
         self.selectedIndex = createDesignStudioNavTabIndex

@@ -47,7 +47,7 @@ class RunningDesignStudio: NSObject {
     // in seconds
     var currentActivityRemainingDuration: Int {
         // TODO REMOVE THIS!!!!!!
-        return 1
+        return 5
         
         if self.currentActivityStart != nil {
             if let totalDuration = self.currentActivity?.duration {

@@ -358,7 +358,7 @@
         <!--Detail Design Studio View Controller-->
         <scene sceneID="qo3-EG-jvo">
             <objects>
-                <viewController id="Fgk-O3-KZM" customClass="DetailDesignStudioViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailDesignStudioViewController" id="Fgk-O3-KZM" customClass="DetailDesignStudioViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bab-s9-4mB"/>
                         <viewControllerLayoutGuide type="bottom" id="ebn-cM-bwx"/>
@@ -741,7 +741,7 @@
         <!--Challenges View Controller-->
         <scene sceneID="Arj-1v-XL8">
             <objects>
-                <viewController id="uXv-4T-Okg" customClass="ChallengesViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChallengesViewController" id="uXv-4T-Okg" customClass="ChallengesViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="37G-fI-jCc"/>
                         <viewControllerLayoutGuide type="bottom" id="oqx-gn-HlL"/>
@@ -1293,7 +1293,7 @@
         <!--Timer View Controller-->
         <scene sceneID="hRY-AA-5n1">
             <objects>
-                <viewController storyboardIdentifier="Timer" id="AmZ-1V-xYD" customClass="TimerViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimerViewController" id="AmZ-1V-xYD" customClass="TimerViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CzE-h2-Ij5"/>
                         <viewControllerLayoutGuide type="bottom" id="umt-eQ-gme"/>
@@ -1312,7 +1312,8 @@
                                         <exclude reference="epm-Gr-3I7"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="-44" width="400" height="260"/>
                                     <mask key="constraints">
                                         <include reference="epm-Gr-3I7"/>
                                     </mask>
@@ -1331,7 +1332,8 @@
                                         <exclude reference="Rza-ht-aQn"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="174" y="190" width="53" height="52"/>
                                     <mask key="constraints">
                                         <include reference="4sr-eJ-Dfd"/>
                                         <include reference="Rza-ht-aQn"/>
@@ -1348,12 +1350,18 @@
                                         <real key="value" value="0.29999999999999999"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="272" width="360" height="16"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Present your future idea" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBd-QA-Qkf">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="298" width="360" height="31"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write as many feature ideas as you can on individual stickies. Save the stickies as an idea palette for sketching." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIX-VS-Eg2" customClass="FXLabel">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -1365,12 +1373,18 @@
                                         <real key="value" value="0.19"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="45" y="349" width="310" height="58"/>
+                                </variation>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gF-je-4sC" userLabel="Activity Notes">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-BookOblique" family="Avenir" pointSize="14"/>
                                 <color key="textColor" red="0.37254901960784315" green="0.53333333333333333" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="45" y="349" width="310" height="58"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C88-5T-bIJ" customClass="UIButtonLightBlue" customModule="DesignStudioExpress" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1383,7 +1397,8 @@
                                         <exclude reference="Pe1-DO-iiz"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="45" y="471" width="310" height="50"/>
                                     <mask key="constraints">
                                         <include reference="Pe1-DO-iiz"/>
                                     </mask>
@@ -1397,6 +1412,9 @@
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="74"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="113" y="35" width="174" height="102"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efe-R5-WcJ">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1412,7 +1430,8 @@
                                         <exclude reference="TrW-5k-23h"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="755" width="400" height="45"/>
                                     <mask key="constraints">
                                         <include reference="TrW-5k-23h"/>
                                     </mask>
@@ -3189,8 +3208,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="gcr-15-crY"/>
         <segue reference="SWD-un-Cl3"/>
+        <segue reference="ecy-m5-O2Z"/>
+        <segue reference="ooh-5K-fAd"/>
         <segue reference="KMg-vf-Wsj"/>
-        <segue reference="UKJ-wr-Am4"/>
-        <segue reference="B2q-FO-lJa"/>
     </inferredMetricsTieBreakers>
 </document>

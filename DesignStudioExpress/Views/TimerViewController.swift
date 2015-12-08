@@ -29,7 +29,7 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
         case EndStudio = "ShowEndStudio"
     }
     
-    let timerViewControllerIdentifier = "Timer"
+    let timerViewControllerIdentifier = "TimerViewController"
     let showNotesButtonLabel = "PRESENTER NOTES"
     let showDescriptionButtonLabel = "BACK TO DESCRIPTION"
 

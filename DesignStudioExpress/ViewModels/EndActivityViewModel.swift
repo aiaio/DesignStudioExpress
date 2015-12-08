@@ -10,8 +10,7 @@ import Foundation
 
 class EndActivityViewModel {
     func nextActivity() {
-        AppDelegate.designStudio.getNextObject()
-        self.raiseNotification()
+        NSNotificationCenter.defaultCenter().postNotificationName("EndActivityMoveToNextActivity", object: self, userInfo: nil)
     }
     
     func addMoreTime() {
@@ -20,6 +19,6 @@ class EndActivityViewModel {
     }
     
     func raiseNotification() {
-        NSNotificationCenter.defaultCenter().postNotificationName("EndActivityWillDisappear", object: self, userInfo: nil)
+        
     }
 }
