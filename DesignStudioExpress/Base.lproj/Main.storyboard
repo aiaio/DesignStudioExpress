@@ -1743,10 +1743,10 @@
             </objects>
             <point key="canvasLocation" x="2985" y="1794.75"/>
         </scene>
-        <!--View Controller-->
+        <!--End Activity View Controller-->
         <scene sceneID="Eza-zW-wyM">
             <objects>
-                <viewController storyboardIdentifier="ActivityEndedScreen" id="L7p-8g-BbD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActivityEndedScreen" id="L7p-8g-BbD" customClass="EndActivityViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hoo-PC-iVv"/>
                         <viewControllerLayoutGuide type="bottom" id="DUb-mc-39k"/>
@@ -1829,6 +1829,9 @@
                                                 <include reference="fXT-mI-zfi"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="nextActivity:" destination="L7p-8g-BbD" eventType="touchUpInside" id="Mbd-qk-PPo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlU-ML-Fuk" customClass="UIButtonTransparent" customModule="DesignStudioExpress" customModuleProvider="target">
                                         <rect key="frame" x="151" y="183" width="99" height="30"/>
@@ -1836,7 +1839,7 @@
                                             <constraint firstAttribute="height" constant="55" id="1hu-aB-5M3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
-                                        <state key="normal" title="ADD 2 MINUTES">
+                                        <state key="normal" title="+  ADD 2 MINUTES">
                                             <color key="titleColor" red="1" green="0.49019607843137253" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <variation key="default">
@@ -1849,10 +1852,10 @@
                                                 <include reference="1hu-aB-5M3"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="addMoreTime:" destination="L7p-8g-BbD" eventType="touchUpInside" id="Nd9-wM-QMP"/>
+                                        </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Plus_icon" translatesAutoresizingMaskIntoConstraints="NO" id="4Nb-KA-LFd">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1866,12 +1869,10 @@
                                     <constraint firstItem="P44-PC-iWg" firstAttribute="centerX" secondItem="P6b-Xu-KFM" secondAttribute="centerX" id="4Uj-qG-zZ2"/>
                                     <constraint firstItem="g7E-5i-cXB" firstAttribute="centerX" secondItem="P6b-Xu-KFM" secondAttribute="centerX" id="9Wb-7p-u3A"/>
                                     <constraint firstItem="g7E-5i-cXB" firstAttribute="top" secondItem="P6b-Xu-KFM" secondAttribute="top" constant="20" id="LRs-Ou-KnG"/>
-                                    <constraint firstItem="4Nb-KA-LFd" firstAttribute="centerX" secondItem="dlU-ML-Fuk" secondAttribute="centerX" constant="-85" id="Poo-hd-x2V"/>
-                                    <constraint firstItem="4Nb-KA-LFd" firstAttribute="centerY" secondItem="dlU-ML-Fuk" secondAttribute="centerY" constant="-1" id="Ppk-Ts-mv7"/>
                                     <constraint firstItem="P44-PC-iWg" firstAttribute="leading" relation="lessThanOrEqual" secondItem="P6b-Xu-KFM" secondAttribute="leading" constant="146" id="Yu7-SG-pwV">
                                         <variation key="heightClass=regular-widthClass=compact" constant="80"/>
                                     </constraint>
-                                    <constraint firstItem="dlU-ML-Fuk" firstAttribute="centerX" secondItem="P6b-Xu-KFM" secondAttribute="centerX" constant="6" id="gVE-EV-dUI"/>
+                                    <constraint firstItem="dlU-ML-Fuk" firstAttribute="centerX" secondItem="P6b-Xu-KFM" secondAttribute="centerX" id="gVE-EV-dUI"/>
                                     <constraint firstItem="dlU-ML-Fuk" firstAttribute="width" secondItem="P44-PC-iWg" secondAttribute="width" id="iVl-gb-bnw"/>
                                     <constraint firstItem="sZp-Mx-svG" firstAttribute="centerX" secondItem="P6b-Xu-KFM" secondAttribute="centerX" id="mCD-r3-h8f"/>
                                     <constraint firstAttribute="height" constant="450" id="s2p-S1-uyO"/>
@@ -1882,7 +1883,6 @@
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="g7E-5i-cXB"/>
-                                        <exclude reference="4Nb-KA-LFd"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="s2p-S1-uyO"/>
@@ -1899,14 +1899,11 @@
                                         <exclude reference="gVE-EV-dUI"/>
                                         <exclude reference="iVl-gb-bnw"/>
                                         <exclude reference="wGa-ce-qw8"/>
-                                        <exclude reference="Poo-hd-x2V"/>
-                                        <exclude reference="Ppk-Ts-mv7"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="g7E-5i-cXB"/>
-                                        <include reference="4Nb-KA-LFd"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="s2p-S1-uyO"/>
@@ -1923,8 +1920,6 @@
                                         <include reference="gVE-EV-dUI"/>
                                         <include reference="iVl-gb-bnw"/>
                                         <include reference="wGa-ce-qw8"/>
-                                        <include reference="Poo-hd-x2V"/>
-                                        <include reference="Ppk-Ts-mv7"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -3185,7 +3180,6 @@
         <image name="List_Icon" width="23" height="17"/>
         <image name="Pencil_Icon_Blue" width="20" height="20"/>
         <image name="Pencil_Icon_Orange" width="22" height="21"/>
-        <image name="Plus_icon" width="11" height="11"/>
         <image name="Settings_Icon" width="24" height="24"/>
         <image name="Stopwatch" width="12" height="15"/>
         <image name="Stopwatch_Big_Icon" width="48" height="57"/>
