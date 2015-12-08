@@ -16,6 +16,8 @@ class RunningDesignStudio: NSObject {
     var currentActivityIdx: Int? = nil
     var currentActivityStart: NSDate? = nil
     
+    private let addMoreMinutesDuration = 2 // how many minutes should we add from End activity screen
+    
     private var data: DesignStudio?
     private var isRunning = false
     private var timer: NSTimer?
@@ -86,36 +88,14 @@ class RunningDesignStudio: NSObject {
         }
     }
     
-    func startCurrentActivity() {
-        self.currentActivityStart = NSDate()
-        
-        self.timer?.invalidate()
-        if let _ = self.currentActivity {
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(Double(self.currentActivityRemainingDuration), target: self, selector: "notifyEndActivity", userInfo: nil, repeats: false)
-        }
-    }
-    
     func notifyEndActivity() {
         NSNotificationCenter.defaultCenter().postNotificationName("ActivityEnded", object: self, userInfo: nil)
     }
     
     func getNextObject() -> Object? {
-        // if the DS has just started, first object to show is
-        // a challenge
-        if self.currentChallengeIdx == nil {
-            self.currentChallengeIdx = 0
-            return self.currentChallenge
-        }
-        
-        // if challenge has been just showed
-        // show the first activity in that challenge
-        if self.currentActivityIdx == nil {
-            self.currentActivityIdx = 0
-            return self.currentActivity
-        }
         
         // try to get next activity in the current challenge
-        if self.moveToNextActivity() {
+        if self.currentChallengeIdx != nil && self.moveToNextActivity() {
             return self.currentActivity
         }
         
@@ -125,6 +105,16 @@ class RunningDesignStudio: NSObject {
         }
         
         return nil
+    }
+    
+    func addMoreTimeToActivity() {
+        do {
+            try realm.write {
+                self.currentActivity?.duration += self.addMoreMinutesDuration // mins
+            }
+        } catch {
+            // TODO handle error
+        }
     }
     
     // it's not private because we have to use it on app exit
@@ -158,7 +148,7 @@ class RunningDesignStudio: NSObject {
         }
     }
     
-    private func moveToNextActivity() -> Bool {
+    private func moveToNextActivity() -> Bool {        
         self.updateCurrentActivityTime()
         
         let result = self.moveActivityPointer()
@@ -167,12 +157,14 @@ class RunningDesignStudio: NSObject {
             self.updateDesignStudioActivityIdx()
         }
         
+        self.startCurrentActivity()
+        
         return result
     }
     
     private func moveActivityPointer() -> Bool {
         // move the pointer
-        let nextActivityIdx = self.currentActivityIdx! + 1
+        let nextActivityIdx = self.currentActivityIdx != nil ? self.currentActivityIdx! + 1 : 0
         if self.currentChallenge?.activities.count > nextActivityIdx {
             self.currentActivityIdx = nextActivityIdx
             return true
@@ -189,6 +181,15 @@ class RunningDesignStudio: NSObject {
             }
         } catch {
             // todo
+        }
+    }
+    
+    private func startCurrentActivity() {
+        self.currentActivityStart = NSDate()
+        
+        self.timer?.invalidate()
+        if let _ = self.currentActivity {
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(Double(self.currentActivityRemainingDuration), target: self, selector: "notifyEndActivity", userInfo: nil, repeats: false)
         }
     }
     
@@ -217,7 +218,7 @@ class RunningDesignStudio: NSObject {
     }
     
     private func moveChallengePointer() -> Bool {
-        let nextChallengeIdx = self.currentChallengeIdx! + 1
+        let nextChallengeIdx = self.currentChallengeIdx != nil ? self.currentChallengeIdx! + 1 : 0
         if self.data?.challenges.count > nextChallengeIdx {
             self.currentChallengeIdx = nextChallengeIdx // move the pointer
             
@@ -226,7 +227,7 @@ class RunningDesignStudio: NSObject {
             if self.currentChallenge?.activities.count == 0 {
                 return self.moveToNextChallenge()
             }
-            
+
             return true
         }
         // there's no more challenges

@@ -82,12 +82,9 @@ class TimerViewModel {
         self.nextObject = AppDelegate.designStudio.getNextObject()
         
         // go to next activity
-        if nextObject is Activity {
-            // start the timer on the activity immediately
-            AppDelegate.designStudio.startCurrentActivity()
-        } else if nextObject is Challenge {
+        if nextObject is Challenge {
             self.showUpcomingChallengeFlag = true
-        } else {
+        } else if nextObject == nil {
             // there's no next challenge; we've reached the end
             self.showEndScreenFlag = true
         }
