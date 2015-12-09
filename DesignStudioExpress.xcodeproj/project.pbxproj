@@ -52,6 +52,7 @@
 		E4C113321BFA855700A7E1B3 /* RealmSwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C113311BFA855700A7E1B3 /* RealmSwiftExtension.swift */; };
 		E4C113361BFBBE3B00A7E1B3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C113351BFBBE3B00A7E1B3 /* StringExtension.swift */; };
 		E4CEA34B1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CEA34A1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift */; };
+		E4D5BD501C18EB00005B28BE /* FaqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D5BD4F1C18EB00005B28BE /* FaqViewController.swift */; };
 		E4D87AAB1C17501700362F07 /* EndActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D87AAA1C17501700362F07 /* EndActivityViewController.swift */; };
 		E4D87AAD1C17567800362F07 /* EndActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D87AAC1C17567800362F07 /* EndActivityViewModel.swift */; };
 		E4EAC13F1C0228410079364C /* UITableViewCellChallengeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EAC13E1C0228410079364C /* UITableViewCellChallengeHeader.swift */; };
@@ -122,6 +123,7 @@
 		E4C113311BFA855700A7E1B3 /* RealmSwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSwiftExtension.swift; sourceTree = "<group>"; };
 		E4C113351BFBBE3B00A7E1B3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E4CEA34A1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSwipeTableCellChallenge.swift; sourceTree = "<group>"; };
+		E4D5BD4F1C18EB00005B28BE /* FaqViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqViewController.swift; sourceTree = "<group>"; };
 		E4D87AAA1C17501700362F07 /* EndActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndActivityViewController.swift; sourceTree = "<group>"; };
 		E4D87AAC1C17567800362F07 /* EndActivityViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndActivityViewModel.swift; sourceTree = "<group>"; };
 		E4EAC13E1C0228410079364C /* UITableViewCellChallengeHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellChallengeHeader.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				E40EDF231C10B28200F0D4C4 /* TimerViewController.swift */,
 				E45541A31C14CCC800595944 /* EndStudioViewController.swift */,
 				E4D87AAA1C17501700362F07 /* EndActivityViewController.swift */,
+				E4D5BD4F1C18EB00005B28BE /* FaqViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				E468028C1C0E1F7E002438E5 /* ActivityDetailViewController.swift in Sources */,
 				E41E772E1C067C6C000364D6 /* UITextDelegateBase.swift in Sources */,
 				E46A22081C010FE5004D5292 /* ChallengeDetailViewModel.swift in Sources */,
+				E4D5BD501C18EB00005B28BE /* FaqViewController.swift in Sources */,
 				E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */,
 				E40EDF261C10B34100F0D4C4 /* TimerViewModel.swift in Sources */,
 				E46A22061C010FC1004D5292 /* ChallengeDetailViewController.swift in Sources */,

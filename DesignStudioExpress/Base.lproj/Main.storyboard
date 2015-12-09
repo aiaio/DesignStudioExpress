@@ -58,6 +58,9 @@
                                         <include reference="OAp-aM-ssW"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="aJv-98-1PX" kind="show" id="k4Y-fJ-etK"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZu-3P-ol9">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -203,6 +206,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r89-ai-ONI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="84" y="783.75"/>
+        </scene>
+        <!--Faq View Controller-->
+        <scene sceneID="saD-SH-QxR">
+            <objects>
+                <viewController id="aJv-98-1PX" customClass="FaqViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c1h-Pg-gVl"/>
+                        <viewControllerLayoutGuide type="bottom" id="I2v-hP-3gM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fip-i9-TKG">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PvI-nU-6xQ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PvI-nU-6xQ" firstAttribute="top" secondItem="Fip-i9-TKG" secondAttribute="top" id="7qN-tq-NpJ"/>
+                            <constraint firstItem="PvI-nU-6xQ" firstAttribute="bottom" secondItem="I2v-hP-3gM" secondAttribute="top" id="JG0-lY-7EG"/>
+                            <constraint firstItem="PvI-nU-6xQ" firstAttribute="leading" secondItem="Fip-i9-TKG" secondAttribute="leading" id="PKP-6y-cF5"/>
+                            <constraint firstAttribute="trailing" secondItem="PvI-nU-6xQ" secondAttribute="trailing" id="v26-I5-ALW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="PvI-nU-6xQ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="7qN-tq-NpJ"/>
+                                <exclude reference="JG0-lY-7EG"/>
+                                <exclude reference="PKP-6y-cF5"/>
+                                <exclude reference="v26-I5-ALW"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="PvI-nU-6xQ"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="7qN-tq-NpJ"/>
+                                <include reference="JG0-lY-7EG"/>
+                                <include reference="PKP-6y-cF5"/>
+                                <include reference="v26-I5-ALW"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="PvI-nU-6xQ" id="FIE-GF-NkP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nde-vQ-O8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-88.5" y="1523.25"/>
         </scene>
         <!--Tab Bar Controller Base-->
         <scene sceneID="B3E-Cj-aJ5">
