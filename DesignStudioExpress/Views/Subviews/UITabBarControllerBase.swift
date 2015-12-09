@@ -10,9 +10,10 @@ import UIKit
 
 class UITabBarControllerBase: UITabBarController {
     
-    enum Notifications: String {
+    enum NotificationIdentifier: String {
         case DesignStudioLoaded = "DesignStudioLoaded"
         case DesignStudioDeleted = "DesignStudioDeleted"
+        case DesignStudioStarted = "DesignStudioStarted"
         case ActivityEnded = "ActivityEnded"
         case EndActivityMoveToNextActivity = "EndActivityMoveToNextActivity"
     }
@@ -22,6 +23,7 @@ class UITabBarControllerBase: UITabBarController {
         case ChallengesViewController = "ChallengesViewController"
         case TimerViewController = "TimerViewController"
         case DetailDesignStudioViewController = "DetailDesignStudioViewController"
+        case UpcomingChallengeViewController = "UpcomingChallengeViewController"
     }
     
     // tabbar style customization
@@ -39,10 +41,11 @@ class UITabBarControllerBase: UITabBarController {
         
         self.customizeStyle()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showDesignStudio:", name: Notifications.DesignStudioLoaded.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resetCurrentlyActiveDesignStudio:", name: Notifications.DesignStudioDeleted.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEndActivityScreen:", name: Notifications.ActivityEnded.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showTimerScreen:", name: Notifications.EndActivityMoveToNextActivity.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showDesignStudio:", name: NotificationIdentifier.DesignStudioLoaded.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resetCurrentlyActiveDesignStudio:", name: NotificationIdentifier.DesignStudioDeleted.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEndActivityScreen:", name: NotificationIdentifier.ActivityEnded.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showTimerScreen:", name: NotificationIdentifier.EndActivityMoveToNextActivity.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "beginDesignStudio:", name: NotificationIdentifier.DesignStudioStarted.rawValue, object: nil)
     }
     
     // handler for showing the Detail DS screen when DesignStudioLoaded notification is raised
@@ -103,6 +106,10 @@ class UITabBarControllerBase: UITabBarController {
         self.navigateToTimerScreen()
     }
     
+    func beginDesignStudio(notification: NSNotification) {
+        self.showUpcomingChallengeViewController()
+    }
+    
     func addMissingViewControllers() {
         let navViewController = self.viewControllers![createDesignStudioNavTabIndex] as! UINavigationController
         // remove everything from the stack 
@@ -142,6 +149,13 @@ class UITabBarControllerBase: UITabBarController {
         
         // jump to design studio tab
         self.selectedIndex = createDesignStudioNavTabIndex
+    }
+    
+    private func showUpcomingChallengeViewController() {
+        if let upcomingChallenge = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.UpcomingChallengeViewController.rawValue) as? UpcomingChallengeViewController {
+            upcomingChallenge.modalPresentationStyle = .FullScreen
+            self.presentViewController(upcomingChallenge, animated: true, completion: nil)
+        }
     }
     
     deinit {

@@ -130,8 +130,8 @@ class ChallengesViewModel {
         return createNewChallenge()
     }
     
-    func getDesignStudioData() -> DesignStudio {
-        return self.designStudio
+    func beginDesignStudio() {
+        AppDelegate.designStudio.startDesignStudio(self.designStudio)
     }
     
     private func createNewChallenge() -> Challenge {

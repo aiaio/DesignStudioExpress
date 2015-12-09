@@ -10,42 +10,32 @@ import Foundation
 
 class UpcomingChallengeViewModel {
     
-    var designStudio: DesignStudio?
-    private var data: Challenge?
-    
-    func setChallenge(challenge: Challenge) {
-        self.data = challenge
+    private var data: Challenge? {
+        get { return AppDelegate.designStudio.currentChallenge }
     }
     
     var title: String {
-        get { return self.data!.title }
+        get { return self.data?.title ?? "" }
     }
     
     var duration: String {
-        get { return "Duration: \(self.data!.duration) min" }
+        get { return self.data?.duration != nil ? "Duration: \(self.data!.duration) min" : "" }
     }
     
     var challengeCount: String {
         get {
-            let totalChallenges = self.data!.designStudio.challenges.count
-            let currentChallenge = self.data!.designStudio.challenges.indexOf(self.data!)! + 1
-
-            return "CHALLENGE \(currentChallenge) OF \(totalChallenges)"
-        }
-    }
-    
-    func upcomingChallengeDidLoad() {
-        if !AppDelegate.designStudio.isDesignStudioRunning {
-            self.startDesignStudio()
-            if let challenge = AppDelegate.designStudio.getNextObject() as? Challenge {
-                self.data = challenge
+            let currentChallenges = AppDelegate.designStudio.currentDesignStudio?.challenges
+            let totalChallenges = currentChallenges?.count ?? 0
+            
+            var currentChallengeNumber = 0
+                
+            if currentChallenges != nil && self.data != nil {
+                if let currentChallengeIndex = currentChallenges!.indexOf(self.data!) {
+                    currentChallengeNumber = currentChallengeIndex + 1
+                }
             }
-        }
-    }
-    
-    private func startDesignStudio() {
-        if self.designStudio != nil {
-            AppDelegate.designStudio.startDesignStudio(self.designStudio!)
+
+            return "CHALLENGE \(currentChallengeNumber) OF \(totalChallenges)"
         }
     }
 }

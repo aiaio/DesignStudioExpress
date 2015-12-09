@@ -16,6 +16,11 @@ class RunningDesignStudio: NSObject {
     var currentActivityIdx: Int? = nil
     var currentActivityStart: NSDate? = nil
     
+    enum NotificationIdentifier: String {
+        case DesignStudioStarted = "DesignStudioStarted"
+        case ActivityEnded = "ActivityEnded"
+    }
+    
     private let addMoreMinutesDuration = 2 // how many minutes should we add from End activity screen
     
     private var data: DesignStudio?
@@ -86,10 +91,14 @@ class RunningDesignStudio: NSObject {
                 // TODO handle error
             }
         }
+        
+        // to get the challenge, which is the first screen to display
+        self.getNextObject()
+        NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.DesignStudioStarted.rawValue, object: self, userInfo: nil)
     }
     
     func notifyEndActivity() {
-        NSNotificationCenter.defaultCenter().postNotificationName("ActivityEnded", object: self, userInfo: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ActivityEnded.rawValue, object: self, userInfo: nil)
     }
     
     func getNextObject() -> Object? {

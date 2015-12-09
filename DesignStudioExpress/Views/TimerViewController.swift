@@ -154,17 +154,7 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     func showUpcomingChallenge() {
         self.performSegueWithIdentifier(SegueIdentifier.UpcomingChallenge.rawValue, sender: self)
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == SegueIdentifier.UpcomingChallenge.rawValue {
-            if let currentChallenge = vm.currentChallenge {
-                if let upcomingChallengeView = segue.destinationViewController as? UpcomingChallengeViewController {
-                    upcomingChallengeView.vm.setChallenge(currentChallenge)
-                }
-            }
-        }
-    }
-    
+        
     func showEndScreen() {
         self.performSegueWithIdentifier(SegueIdentifier.EndStudio.rawValue, sender: self)
     }

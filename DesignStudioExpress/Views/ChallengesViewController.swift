@@ -47,11 +47,7 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     }
     
     @IBAction func beginDesignStudio(sender: AnyObject) {
-        if AppDelegate.designStudio.isDesignStudioRunning {
-            performSegueWithIdentifier(SegueIdentifier.ShowTimer.rawValue, sender: self)
-        } else {
-            performSegueWithIdentifier(SegueIdentifier.BeginDesignStudio.rawValue, sender: self)
-        }
+        self.vm.beginDesignStudio()
     }
     
     // MARK: - Table view data source
@@ -218,9 +214,6 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
                 let destination = segue.destinationViewController as! ChallengeDetailViewController
                 destination.vm.setChallenge(vm.getChallengesData(indexPath))
             }
-        case SegueIdentifier.BeginDesignStudio.rawValue:
-            let destination = segue.destinationViewController as! UpcomingChallengeViewController
-            destination.vm.designStudio = self.vm.getDesignStudioData()
         default:
             return
         }

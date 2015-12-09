@@ -25,7 +25,6 @@ class UpcomingChallengeViewController: UIViewControllerBase {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.vm.upcomingChallengeDidLoad()
         self.populateFields()
         self.hideViewAfterTimeout()
     }
@@ -45,14 +44,14 @@ class UpcomingChallengeViewController: UIViewControllerBase {
     }
     
     // MARK: StyledNavigationBar
-    
+    /*
     override func customizeNavBarStyle() {
         super.customizeNavBarStyle()
         
         DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
         // don't allow going back to the timer screen
         self.navigationItem.setHidesBackButton(true, animated: false)
-    }
+    }*/
     
     // MARK - Navigation
     
