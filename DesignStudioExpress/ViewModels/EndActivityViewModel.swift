@@ -10,7 +10,7 @@ import Foundation
 
 class EndActivityViewModel {
     func nextActivity() {
-        NSNotificationCenter.defaultCenter().postNotificationName("EndActivityMoveToNextActivity", object: self, userInfo: nil)
+        AppDelegate.designStudio.endCurrentActivity()
     }
     
     func addMoreTime() {

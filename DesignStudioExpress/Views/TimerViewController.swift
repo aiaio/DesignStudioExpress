@@ -24,19 +24,12 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     let vm = TimerViewModel()
     var showPresenterNotes = true
     
-    enum SegueIdentifier: String {
-        case UpcomingChallenge = "ShowUpcomingChallenge"
-        case EndStudio = "ShowEndStudio"
-    }
-    
     let timerViewControllerIdentifier = "TimerViewController"
     let showNotesButtonLabel = "PRESENTER NOTES"
     let showDescriptionButtonLabel = "BACK TO DESCRIPTION"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.vm.timerDidLoad()
         
         self.removeLastViewFromNavigation()
         self.setUpTimerLabel()
@@ -65,15 +58,7 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     }
     
     @IBAction func skipToNextActivity(sender: AnyObject) {
-        self.vm.goToNextStep()
-        
-        if vm.showEndScreen {
-            self.showEndScreen()
-        } else if vm.showUpcomingChallenge {
-            self.showUpcomingChallenge()
-        } else {
-             self.showNextTimerScreen()
-        }       
+        self.vm.skipToNextActivity()
     }
         
     // MARK: StyledNavigationBar
@@ -149,13 +134,5 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
         if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(self.timerViewControllerIdentifier) as? TimerViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
-    }
-    
-    func showUpcomingChallenge() {
-        self.performSegueWithIdentifier(SegueIdentifier.UpcomingChallenge.rawValue, sender: self)
-    }
-        
-    func showEndScreen() {
-        self.performSegueWithIdentifier(SegueIdentifier.EndStudio.rawValue, sender: self)
     }
 }

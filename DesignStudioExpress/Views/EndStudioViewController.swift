@@ -8,15 +8,6 @@
 
 import UIKit
 
-class EndStudioViewController: UIViewControllerBase {
-
-    // MARK: StyledNavigationBar
-    
-    override func customizeNavBarStyle() {
-        super.customizeNavBarStyle()
-        
-        DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
-        // don't allow going back to the timer screen
-        self.navigationItem.setHidesBackButton(true, animated: false)
-    }
+class EndStudioViewController: UIViewController {
+//TODO remove this
 }

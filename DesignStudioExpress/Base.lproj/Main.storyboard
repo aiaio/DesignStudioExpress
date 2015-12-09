@@ -1735,7 +1735,6 @@
                         <outlet property="challengeTitle" destination="Tc6-DL-oN7" id="gTL-zP-bP5"/>
                         <outlet property="duration" destination="u80-YF-hkb" id="dcS-aP-Zfu"/>
                         <outlet property="numOfChallenges" destination="bVT-GZ-5md" id="vyg-1H-PZh"/>
-                        <segue destination="AmZ-1V-xYD" kind="show" identifier="ShowTimer" id="UKJ-wr-Am4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ML4-ET-M0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1947,12 +1946,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmI-95-ehm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2218.5" y="2476.5"/>
+            <point key="canvasLocation" x="2241" y="2814"/>
         </scene>
         <!--End Studio View Controller-->
         <scene sceneID="drG-G2-Ldh">
             <objects>
-                <viewController id="hQK-eX-rHn" customClass="EndStudioViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EndStudioViewController" id="hQK-eX-rHn" customClass="EndStudioViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Px5-jV-NFe"/>
                         <viewControllerLayoutGuide type="bottom" id="Arf-4E-rXS"/>
@@ -2040,7 +2039,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cP3-Ar-BZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2985" y="2476.5"/>
+            <point key="canvasLocation" x="2973" y="2814"/>
         </scene>
         <!--Challenge Detail View Controller-->
         <scene sceneID="ndZ-lY-XXN">
@@ -3189,6 +3188,5 @@
         <segue reference="SWD-un-Cl3"/>
         <segue reference="gcr-15-crY"/>
         <segue reference="aMA-7O-iQY"/>
-        <segue reference="UKJ-wr-Am4"/>
     </inferredMetricsTieBreakers>
 </document>

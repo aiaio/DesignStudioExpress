@@ -14,8 +14,12 @@ class UITabBarControllerBase: UITabBarController {
         case DesignStudioLoaded = "DesignStudioLoaded"
         case DesignStudioDeleted = "DesignStudioDeleted"
         case DesignStudioStarted = "DesignStudioStarted"
-        case ActivityEnded = "ActivityEnded"
-        case EndActivityMoveToNextActivity = "EndActivityMoveToNextActivity"
+        case ActivityEnded = "ActivityEnded" // when activity timer runs out
+        case PrepareTimerScreen = "PrepareTimerScreen" // when user clicks next activity from End Activity screen
+        case UpcomingChallengeDidAppear = "UpcomingChallengeDidAppear"
+        case ShowNextTimerScreen = "ShowNextTimerScreen"
+        case ShowNextChallengeScreen = "ShowNextChallengeScreen"
+        case ShowEndDesignStudioScreen = "ShowEndDesignStudioScreen"
     }
     
     enum ViewControllerIdentifier: String {
@@ -24,6 +28,7 @@ class UITabBarControllerBase: UITabBarController {
         case TimerViewController = "TimerViewController"
         case DetailDesignStudioViewController = "DetailDesignStudioViewController"
         case UpcomingChallengeViewController = "UpcomingChallengeViewController"
+        case EndStudioViewController = "EndStudioViewController"
     }
     
     // tabbar style customization
@@ -32,7 +37,13 @@ class UITabBarControllerBase: UITabBarController {
     let barItemBackgroundColorSelected = DesignStudioStyles.bottomNavigationBGColorSelected
     let tabBarHeight = CGFloat(60)
     
+    // 0-based index of the Design Studio tab
     let createDesignStudioNavTabIndex = 2
+    private unowned var dsNavController: UINavigationController {
+        get {
+            return self.viewControllers![createDesignStudioNavTabIndex] as! UINavigationController
+        }
+    }
     
     private var activeDesignStudioId: String?
     
@@ -44,8 +55,12 @@ class UITabBarControllerBase: UITabBarController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showDesignStudio:", name: NotificationIdentifier.DesignStudioLoaded.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "resetCurrentlyActiveDesignStudio:", name: NotificationIdentifier.DesignStudioDeleted.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEndActivityScreen:", name: NotificationIdentifier.ActivityEnded.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showTimerScreen:", name: NotificationIdentifier.EndActivityMoveToNextActivity.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showTimerScreen:", name: NotificationIdentifier.PrepareTimerScreen.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "beginDesignStudio:", name: NotificationIdentifier.DesignStudioStarted.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "upcomingChallengeDidAppear:", name: NotificationIdentifier.UpcomingChallengeDidAppear.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showNextTimerScreen:", name: NotificationIdentifier.ShowNextTimerScreen.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showNextChallengeScreen:", name: NotificationIdentifier.ShowNextChallengeScreen.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEndDesignStudioScreen:", name: NotificationIdentifier.ShowEndDesignStudioScreen.rawValue, object: nil)
     }
     
     // handler for showing the Detail DS screen when DesignStudioLoaded notification is raised
@@ -81,7 +96,8 @@ class UITabBarControllerBase: UITabBarController {
     
     func showEndActivityScreen(notification: NSNotification) {
         if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.ActivityEndedScreen.rawValue) {
-            vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext
+            vc.modalPresentationStyle = .OverCurrentContext
+            vc.modalTransitionStyle = .CrossDissolve
             
             // if we have a modal that's open, we have to open our modal from that vc
             let topController = self.findLastPresentedController()
@@ -102,7 +118,6 @@ class UITabBarControllerBase: UITabBarController {
     
     func showTimerScreen(notification: NSNotification) {
         self.addMissingViewControllers()
-        
         self.navigateToTimerScreen()
     }
     
@@ -110,7 +125,46 @@ class UITabBarControllerBase: UITabBarController {
         self.showUpcomingChallengeViewController()
     }
     
-    func addMissingViewControllers() {
+    // handler for UpcomingChallengeDidAppear notification
+    // insert new the timer into the view after the Upcoming challenge screen
+    // has finished loading so that we don't see the Timer being added to the nav stack
+    func upcomingChallengeDidAppear(notification: NSNotification) {
+        // add the timer vc into the navigation stack, so that we add it without animation
+        if let timerViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.TimerViewController.rawValue) as? TimerViewController {
+            self.dsNavController.viewControllers.append(timerViewController)
+        }
+        AppDelegate.designStudio.timerDidLoad() // TODO - we should refactor this logic if possible so that Upcoming challenge VM -> AppDelegate -> this
+    }
+    
+    func showNextTimerScreen(notification: NSNotification) {
+        // push the timer vc into the nav controller so we have animation
+        if let timerViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.TimerViewController.rawValue) as? TimerViewController {
+            self.dsNavController.pushViewController(timerViewController, animated: true)
+        }
+    }
+    
+    func showNextChallengeScreen(notification: NSNotification) {
+        self.showUpcomingChallengeViewController()
+    }
+    
+    func showEndDesignStudioScreen(notification: NSNotification) {
+        if let endStudio = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.EndStudioViewController.rawValue) as? EndStudioViewController {
+            endStudio.modalPresentationStyle = .FullScreen
+            endStudio.modalTransitionStyle = .CrossDissolve
+            self.presentViewController(endStudio, animated: true, completion: nil)
+            // TODO we should probably inject in nav stack another view that will appear here
+        }
+    }
+    
+    private func showUpcomingChallengeViewController() {
+        if let upcomingChallenge = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.UpcomingChallengeViewController.rawValue) as? UpcomingChallengeViewController {
+            upcomingChallenge.modalPresentationStyle = .FullScreen
+            upcomingChallenge.modalTransitionStyle = .CrossDissolve
+            self.presentViewController(upcomingChallenge, animated: true, completion: nil)
+        }
+    }
+    
+    private func addMissingViewControllers() {
         let navViewController = self.viewControllers![createDesignStudioNavTabIndex] as! UINavigationController
         // remove everything from the stack 
         // so we don't get weird edge cases
@@ -134,7 +188,8 @@ class UITabBarControllerBase: UITabBarController {
         }
     }
     
-    func navigateToTimerScreen() {
+    
+    private func navigateToTimerScreen() {
         // if the top vc is modal, we need to dismiss it, so that we can show the timer page
         // TODO we should find a better way to test for this
         // because if we're adding more modals this will not work
@@ -142,20 +197,9 @@ class UITabBarControllerBase: UITabBarController {
         if topController is ActivityDetailViewController {
             topController.dismissViewControllerAnimated(false, completion: nil)
         }
-        
-        let navViewController = self.viewControllers![createDesignStudioNavTabIndex] as! UINavigationController
-        let timerVC = navViewController.viewControllers[navViewController.viewControllers.endIndex-1] // endIndex is "past-the-end"
-        navigationController?.popToViewController(timerVC, animated: true)
-        
+                
         // jump to design studio tab
         self.selectedIndex = createDesignStudioNavTabIndex
-    }
-    
-    private func showUpcomingChallengeViewController() {
-        if let upcomingChallenge = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.UpcomingChallengeViewController.rawValue) as? UpcomingChallengeViewController {
-            upcomingChallenge.modalPresentationStyle = .FullScreen
-            self.presentViewController(upcomingChallenge, animated: true, completion: nil)
-        }
     }
     
     deinit {

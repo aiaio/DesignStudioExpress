@@ -68,25 +68,7 @@ class TimerViewModel {
         get { return self.showEndScreenFlag }
     }
     
-    func timerDidLoad() {
-        // if we're coming from a challenge go to next step to load data for the activity
-        // we don't want to kick this off on the challenge screen
-        // because the animation will skew the clock for the activity
-        if self.segueFromUpcomingChallenge {
-            self.goToNextStep()
-        }
-    }
-    
-    // TODO: comment the logic for this function
-    func goToNextStep() {
-        self.nextObject = AppDelegate.designStudio.getNextObject()
-        
-        // go to next activity
-        if nextObject is Challenge {
-            self.showUpcomingChallengeFlag = true
-        } else if nextObject == nil {
-            // there's no next challenge; we've reached the end
-            self.showEndScreenFlag = true
-        }
+    func skipToNextActivity() {
+        AppDelegate.designStudio.skipToNextActivity()
     }
 }

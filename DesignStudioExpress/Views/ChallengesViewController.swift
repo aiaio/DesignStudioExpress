@@ -15,7 +15,6 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         case AddNewChallengeCell = "AddNewChallengeCell"
         case EditChallenge = "EditChallenge"
         case BeginDesignStudio = "BeginDesignStudio"
-        case ShowTimer = "ShowTimerFromChallenges"
     }
     
     @IBOutlet weak var addChallengeView: UIView!

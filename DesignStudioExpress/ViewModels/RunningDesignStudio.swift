@@ -19,6 +19,10 @@ class RunningDesignStudio: NSObject {
     enum NotificationIdentifier: String {
         case DesignStudioStarted = "DesignStudioStarted"
         case ActivityEnded = "ActivityEnded"
+        case PrepareTimerScreen = "PrepareTimerScreen"
+        case ShowNextTimerScreen = "ShowNextTimerScreen"
+        case ShowNextChallengeScreen = "ShowNextChallengeScreen"
+        case ShowEndDesignStudioScreen = "ShowEndDesignStudioScreen"
     }
     
     private let addMoreMinutesDuration = 2 // how many minutes should we add from End activity screen
@@ -101,20 +105,33 @@ class RunningDesignStudio: NSObject {
         NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ActivityEnded.rawValue, object: self, userInfo: nil)
     }
     
-    func getNextObject() -> Object? {
-        
-        // try to get next activity in the current challenge
-        if self.currentChallengeIdx != nil && self.moveToNextActivity() {
-            return self.currentActivity
-        }
-        
-        // try to get next challenge
-        if self.moveToNextChallenge() {
-            return self.currentChallenge
-        }
-        
-        return nil
+    func timerDidLoad() {
+        self.getNextObject()
     }
+    
+    // this will be called when skip activity is called from the timer screen
+    func skipToNextActivity() {
+        self.showNextScreen()
+    }
+    
+    func endCurrentActivity() {
+        NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.PrepareTimerScreen.rawValue, object: self, userInfo: nil)
+        self.showNextScreen()
+    }
+    
+    private func showNextScreen() {
+        let nextObject = self.getNextObject()
+        if nextObject is Activity {
+            // show the timer screen
+            NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowNextTimerScreen.rawValue, object: self, userInfo: nil)
+        } else if nextObject is Challenge {
+            // show the challenge screen
+            NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowNextChallengeScreen.rawValue, object: self, userInfo: nil)
+        } else {
+            // we've reached the end, show the end screen
+            NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowEndDesignStudioScreen.rawValue, object: self, userInfo: nil)
+        }
+    }   
     
     func addMoreTimeToActivity() {
         do {
@@ -141,6 +158,21 @@ class RunningDesignStudio: NSObject {
         } catch {
             // todo
         }
+    }
+    
+    private func getNextObject() -> Object? {
+        
+        // try to get next activity in the current challenge
+        if self.currentChallengeIdx != nil && self.moveToNextActivity() {
+            return self.currentActivity
+        }
+        
+        // try to get next challenge
+        if self.moveToNextChallenge() {
+            return self.currentChallenge
+        }
+        
+        return nil
     }
     
     private func updateCurrentActivityTime() {

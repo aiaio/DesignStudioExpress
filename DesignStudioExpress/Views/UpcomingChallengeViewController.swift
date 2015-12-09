@@ -14,12 +14,12 @@ class UpcomingChallengeViewController: UIViewControllerBase {
     @IBOutlet weak var numOfChallenges: FXLabel!
     @IBOutlet weak var challengeTitle: UILabel!
     @IBOutlet weak var duration: UILabel!
-
-    enum SegueIdentifier: String {
-        case ShowTimer = "ShowTimer"
+    
+    enum NotificationIdentifier: String {
+        case UpcomingChallengeDidAppear = "UpcomingChallengeDidAppear"
     }
     
-    let showDuration = 1.0 // TODO: increase this after testing seconds
+    let showDuration = 1.0 // seconds TODO: increase this after testing
     let vm = UpcomingChallengeViewModel()
     
     override func viewDidLoad() {
@@ -27,6 +27,10 @@ class UpcomingChallengeViewController: UIViewControllerBase {
 
         self.populateFields()
         self.hideViewAfterTimeout()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.UpcomingChallengeDidAppear.rawValue, object: self, userInfo: nil)
     }
         
     func populateFields() {
@@ -40,26 +44,6 @@ class UpcomingChallengeViewController: UIViewControllerBase {
     }
     
     func hideView() {
-        self.performSegueWithIdentifier(SegueIdentifier.ShowTimer.rawValue, sender: self)
-    }
-    
-    // MARK: StyledNavigationBar
-    /*
-    override func customizeNavBarStyle() {
-        super.customizeNavBarStyle()
-        
-        DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
-        // don't allow going back to the timer screen
-        self.navigationItem.setHidesBackButton(true, animated: false)
-    }*/
-    
-    // MARK - Navigation
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == SegueIdentifier.ShowTimer.rawValue {
-            if let destination = segue.destinationViewController as? TimerViewController {
-                destination.vm.segueFromUpcomingChallenge = true
-            }
-        }
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
