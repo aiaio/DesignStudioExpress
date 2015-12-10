@@ -257,13 +257,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nde-vQ-O8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-528" y="1533"/>
+            <point key="canvasLocation" x="984" y="1539"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="0eJ-gl-wUH">
             <objects>
-                <tableViewController id="sXJ-yl-Usk" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="65Z-Vl-f5Y">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="sXJ-yl-Usk" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="28" id="65Z-Vl-f5Y">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -337,7 +337,6 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="DG7-Mo-fz8" secondAttribute="trailing" constant="-8" id="Ri4-L5-TcH"/>
                                                 <constraint firstItem="FGD-ZV-0OF" firstAttribute="leading" secondItem="bCZ-tC-h3n" secondAttribute="leadingMargin" constant="50" id="WVE-lT-ghc"/>
                                                 <constraint firstItem="FGD-ZV-0OF" firstAttribute="centerX" secondItem="bCZ-tC-h3n" secondAttribute="centerX" id="dxG-CH-7zy"/>
-                                                <constraint firstItem="DG7-Mo-fz8" firstAttribute="top" secondItem="bCZ-tC-h3n" secondAttribute="topMargin" constant="-8" id="fXc-lg-HP0"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="DG7-Mo-fz8" secondAttribute="bottom" constant="-9" id="i5E-dH-qrp"/>
                                                 <constraint firstItem="9rc-NL-tGW" firstAttribute="centerX" secondItem="bCZ-tC-h3n" secondAttribute="centerX" id="x5N-su-jc8"/>
                                             </constraints>
@@ -356,7 +355,6 @@
                                                     <exclude reference="dxG-CH-7zy"/>
                                                     <exclude reference="Ab6-qw-yJ9"/>
                                                     <exclude reference="Ri4-L5-TcH"/>
-                                                    <exclude reference="fXc-lg-HP0"/>
                                                     <exclude reference="i5E-dH-qrp"/>
                                                 </mask>
                                             </variation>
@@ -375,7 +373,6 @@
                                                     <include reference="dxG-CH-7zy"/>
                                                     <include reference="Ab6-qw-yJ9"/>
                                                     <include reference="Ri4-L5-TcH"/>
-                                                    <include reference="fXc-lg-HP0"/>
                                                     <include reference="i5E-dH-qrp"/>
                                                 </mask>
                                             </variation>
@@ -389,7 +386,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sFk-Xf-Tqo">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Open_Book" translatesAutoresizingMaskIntoConstraints="NO" id="sFk-Xf-Tqo">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="moi-aQ-oGp"/>
@@ -457,7 +454,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="169"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kva-Vq-JsF">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pencil" translatesAutoresizingMaskIntoConstraints="NO" id="kva-Vq-JsF">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="fX1-1A-KeW"/>
@@ -559,7 +556,7 @@ Sketching Templates</string>
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tDC-fv-k2e">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Download" translatesAutoresizingMaskIntoConstraints="NO" id="tDC-fv-k2e">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="7Yh-FI-6Wn"/>
@@ -626,11 +623,11 @@ Sketching Templates</string>
                             <outlet property="delegate" destination="sXJ-yl-Usk" id="yLM-xB-Ddv"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="" image="List_Icon" id="1nR-Lt-zXW"/>
+                    <navigationItem key="navigationItem" id="evq-nt-IlQ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4g-vU-wen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="237" y="1533"/>
+            <point key="canvasLocation" x="213" y="1539"/>
         </scene>
         <!--Tab Bar Controller Base-->
         <scene sceneID="B3E-Cj-aJ5">
@@ -643,7 +640,7 @@ Sketching Templates</string>
                     </tabBar>
                     <connections>
                         <segue destination="dLs-bE-YaS" kind="relationship" relationship="viewControllers" id="xyx-Wo-ZAI"/>
-                        <segue destination="sXJ-yl-Usk" kind="relationship" relationship="viewControllers" id="N56-CY-GSr"/>
+                        <segue destination="DWs-wg-rZB" kind="relationship" relationship="viewControllers" id="N56-CY-GSr"/>
                         <segue destination="FDt-ER-YtL" kind="relationship" relationship="viewControllers" id="Ibd-bU-ixZ"/>
                         <segue destination="LXi-CI-NKN" kind="relationship" relationship="viewControllers" id="Dcv-fT-q4T"/>
                     </connections>
@@ -701,9 +698,6 @@ Sketching Templates</string>
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Fgk-O3-KZM" kind="show" identifier="EditDesignStudio" id="gcr-15-crY"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -1976,7 +1970,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QyY-TM-Bia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2466" y="1533"/>
+            <point key="canvasLocation" x="3384" y="1533"/>
         </scene>
         <!--Upcoming Challenge View Controller-->
         <scene sceneID="orm-qB-Kv0">
@@ -2165,7 +2159,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ML4-ET-M0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1737" y="1533"/>
+            <point key="canvasLocation" x="2655" y="1533"/>
         </scene>
         <!--End Activity View Controller-->
         <scene sceneID="Eza-zW-wyM">
@@ -2372,7 +2366,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmI-95-ehm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3205.5" y="1533"/>
+            <point key="canvasLocation" x="4123.5" y="1533"/>
         </scene>
         <!--End Studio View Controller-->
         <scene sceneID="drG-G2-Ldh">
@@ -2465,7 +2459,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cP3-Ar-BZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3945" y="1533"/>
+            <point key="canvasLocation" x="4863" y="1533"/>
         </scene>
         <!--Challenge Detail View Controller-->
         <scene sceneID="ndZ-lY-XXN">
@@ -2972,6 +2966,9 @@ Sketching Templates</string>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="20" width="400" height="641"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="7iM-cl-ZBW" id="jOT-qd-Lcf"/>
                                     <outlet property="delegate" destination="7iM-cl-ZBW" id="jGZ-lU-if6"/>
@@ -3548,7 +3545,26 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhH-NS-4Bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1011" y="1533"/>
+            <point key="canvasLocation" x="1929" y="1533"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hvB-rN-igq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="DWs-wg-rZB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="List_Icon" id="1nR-Lt-zXW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dad-bE-imk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sXJ-yl-Usk" kind="relationship" relationship="rootViewController" id="vdM-7N-LcI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nKT-Hn-UmY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-528" y="1539"/>
         </scene>
     </scenes>
     <resources>
@@ -3557,9 +3573,12 @@ Sketching Templates</string>
         <image name="DS_Icon" width="23" height="23"/>
         <image name="DS_Icon_big" width="48" height="47"/>
         <image name="DesignStudioHome_Icon" width="300" height="184"/>
+        <image name="Download" width="19" height="18"/>
         <image name="House_Icon" width="23" height="24"/>
         <image name="List_Icon" width="23" height="17"/>
         <image name="List_Page_Image" width="375" height="360"/>
+        <image name="Open_Book" width="18" height="17"/>
+        <image name="Pencil" width="21" height="21"/>
         <image name="Pencil_Icon_Blue" width="20" height="20"/>
         <image name="Pencil_Icon_Orange" width="22" height="21"/>
         <image name="Settings_Icon" width="24" height="24"/>
@@ -3570,7 +3589,6 @@ Sketching Templates</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mkR-Ff-fxU"/>
-        <segue reference="gcr-15-crY"/>
         <segue reference="aMA-7O-iQY"/>
     </inferredMetricsTieBreakers>
 </document>
