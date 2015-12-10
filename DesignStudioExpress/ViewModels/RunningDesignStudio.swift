@@ -56,21 +56,15 @@ class RunningDesignStudio: NSObject {
     
     // in seconds
     var currentActivityRemainingDuration: Int {
-        // TODO REMOVE THIS!!!!!!
-        return 5
-        
-        if self.currentActivityStart != nil {
-            if let totalDuration = self.currentActivity?.duration {
-                let totalDurationSecs = totalDuration * 60
-                let totalElapsedSecs = -Int(currentActivityStart!.timeIntervalSinceNow) // totalElapsedSecs are negative
-                
-                return totalDurationSecs - totalElapsedSecs
+        if let totalDuration = self.currentActivity?.duration {
+            let totalDurationSecs = totalDuration * 60
+            if self.currentActivityStart == nil {
+                return totalDurationSecs
             }
+            let totalElapsedSecs = -Int(currentActivityStart!.timeIntervalSinceNow) // totalElapsedSecs are negative
+            return totalDurationSecs - totalElapsedSecs
         }
         
-        if let duration = self.currentActivity?.duration {
-            return duration * 60
-        }
         // fallback
         return 0
     }
@@ -88,6 +82,7 @@ class RunningDesignStudio: NSObject {
             self.currentChallengeIdx = nil
             self.currentActivityIdx = nil
             
+            // record that we started DS
             do {
                 try realm.write {
                     self.data?.started = true
@@ -96,16 +91,31 @@ class RunningDesignStudio: NSObject {
                 // TODO handle error
             }
             
-            // to get the challenge, which is the first screen to display
+            // get the challenge, which is the first screen to display
+            // don't set the startTimer flag, because we don't want the timer to start until 
+            // the challenge screen disappears
             self.getNextObject()
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.DesignStudioStarted.rawValue, object: self, userInfo: nil)
+        } else {
+            // if we're comming from the challenges screen, we just have to show the screen
+            // don't get the next object and don't reset/start the timer
+            NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowNextTimerScreen.rawValue, object: self, userInfo: nil)
         }
     }
     
+    // notification that gets called when the global timer for the activity runs out
+    // we need to show the End Activity screen
     func notifyEndActivity() {
         NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ActivityEnded.rawValue, object: self, userInfo: nil)
     }
     
+    // this will be called when the timer screen will appear
+    // startTimer flag controls if we need to move to next object 
+    // and start the global timer (that show's the End activity screen)
+    // we have to move to next activity after:
+    // - challenges screen has disappeared
+    // - next button is clicked on the Timer screen
+    // - next button is clicked on the End activity screen
     func timerWillAppear() {
         if self.startTimer {
             self.getNextObject()
@@ -137,7 +147,7 @@ class RunningDesignStudio: NSObject {
         if nextObject == Activity.self {
             // show the timer screen
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowNextTimerScreen.rawValue, object: self, userInfo: nil)
-            // don't move to next object, instead set a flag that will move to next object and kick off timer when the timer screen is loaded
+            // don't move to next object immediately, instead set a flag that will move to next object and kick off timer when the timer screen is loaded
             self.startTimer = true
         } else if nextObject == Challenge.self {
             // move to next object immediately, we don't have to worry about timers when displaying Challenges
@@ -178,6 +188,8 @@ class RunningDesignStudio: NSObject {
         }
     }
     
+    // helper function for determining what will be the next object, 
+    // so we can determine screen flow
     private func whatIsNextObject() -> Object.Type? {
         if self.currentChallenge != nil && self.getNextActivityIdx() != nil {
             return Activity.self
@@ -190,6 +202,10 @@ class RunningDesignStudio: NSObject {
         return nil
     }
     
+    // this will return either Challenge or Activity or nil, depending on the what's next to show
+    // Challenge is always first, then all the activities in that challenge
+    // then we repeat the process for next Challenge
+    // if the next object is activity the timer will be automatically started
     private func getNextObject() -> Object? {
         
         // try to get next activity in the current challenge
@@ -264,7 +280,6 @@ class RunningDesignStudio: NSObject {
     private func startCurrentActivity() {
         self.currentActivityStart = NSDate()
         
-        print("timer cancelled")
         self.timer?.invalidate()
         if let _ = self.currentActivity {
             self.timer = NSTimer.scheduledTimerWithTimeInterval(Double(self.currentActivityRemainingDuration), target: self, selector: "notifyEndActivity", userInfo: nil, repeats: false)
@@ -281,7 +296,7 @@ class RunningDesignStudio: NSObject {
         } else {
             self.finishDesignStudio()
         }
-                
+        
         return result
     }
     
