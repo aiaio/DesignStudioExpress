@@ -259,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nde-vQ-O8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-88.5" y="1523.25"/>
+            <point key="canvasLocation" x="-207" y="1794.75"/>
         </scene>
         <!--Tab Bar Controller Base-->
         <scene sceneID="B3E-Cj-aJ5">
@@ -1339,7 +1339,6 @@
                         <outlet property="beginDesignStudio" destination="BaA-1Q-LJs" id="Aul-c4-QlP"/>
                         <outlet property="tableView" destination="WZH-d9-lmw" id="qwu-2B-eDG"/>
                         <outlet property="tableViewParentView" destination="iDC-X6-CHq" id="3ev-Di-gyI"/>
-                        <segue destination="AmZ-1V-xYD" kind="show" identifier="ShowTimerFromChallenges" id="ecy-m5-O2Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fqw-pl-cgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1601,13 +1600,11 @@
                         <outlet property="skipToNextActivity" destination="Efe-R5-WcJ" id="AIX-P2-hfh"/>
                         <outlet property="timer" destination="Oga-Wv-HbZ" id="7Qz-MO-Kss"/>
                         <outlet property="toggleButton" destination="C88-5T-bIJ" id="fAC-y4-gXT"/>
-                        <segue destination="Jcl-AR-Twc" kind="show" identifier="ShowUpcomingChallenge" id="B2q-FO-lJa"/>
-                        <segue destination="hQK-eX-rHn" kind="show" identifier="ShowEndStudio" id="JJh-Eh-EHL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QyY-TM-Bia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2241" y="1794.75"/>
+            <point key="canvasLocation" x="3090" y="1512"/>
         </scene>
         <!--Upcoming Challenge View Controller-->
         <scene sceneID="orm-qB-Kv0">
@@ -1796,7 +1793,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ML4-ET-M0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2985" y="1794.75"/>
+            <point key="canvasLocation" x="2361" y="1512"/>
         </scene>
         <!--End Activity View Controller-->
         <scene sceneID="Eza-zW-wyM">
@@ -2003,7 +2000,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmI-95-ehm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2241" y="2814"/>
+            <point key="canvasLocation" x="3829.5" y="1512"/>
         </scene>
         <!--End Studio View Controller-->
         <scene sceneID="drG-G2-Ldh">
@@ -2096,7 +2093,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cP3-Ar-BZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2973" y="2814"/>
+            <point key="canvasLocation" x="4569" y="1512"/>
         </scene>
         <!--Challenge Detail View Controller-->
         <scene sceneID="ndZ-lY-XXN">

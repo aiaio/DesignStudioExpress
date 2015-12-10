@@ -38,6 +38,7 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        AppDelegate.designStudio.timerWillAppear()
         self.populateFields()
     }
     

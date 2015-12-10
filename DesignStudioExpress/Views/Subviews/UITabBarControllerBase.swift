@@ -86,12 +86,11 @@ class UITabBarControllerBase: UITabBarController {
     }
     
     private func setActiveDesignStudio(designStudio: DesignStudio?) {
-        let navViewController = self.viewControllers![createDesignStudioNavTabIndex] as! UINavigationController
-        let designStudioViewController = navViewController.viewControllers[0] as! DetailDesignStudioViewController
+        let designStudioViewController = self.dsNavController.viewControllers[0] as! DetailDesignStudioViewController
         designStudioViewController.vm.setDesignStudio(designStudio)
         
         // show the first view in the navigation
-        navViewController.popToRootViewControllerAnimated(true)
+        self.dsNavController.popToRootViewControllerAnimated(true)
     }
     
     func showEndActivityScreen(notification: NSNotification) {
@@ -133,7 +132,6 @@ class UITabBarControllerBase: UITabBarController {
         if let timerViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.TimerViewController.rawValue) as? TimerViewController {
             self.dsNavController.viewControllers.append(timerViewController)
         }
-        AppDelegate.designStudio.timerDidLoad() // TODO - we should refactor this logic if possible so that Upcoming challenge VM -> AppDelegate -> this
     }
     
     func showNextTimerScreen(notification: NSNotification) {
@@ -165,29 +163,27 @@ class UITabBarControllerBase: UITabBarController {
     }
     
     private func addMissingViewControllers() {
-        let navViewController = self.viewControllers![createDesignStudioNavTabIndex] as! UINavigationController
-        // remove everything from the stack 
+        // remove everything from the stack
         // so we don't get weird edge cases
         // calling removeAll directly does not remove them
-        var vc = navViewController.viewControllers
+        var vc = self.dsNavController.viewControllers
         vc.removeAll()
-        navViewController.viewControllers = vc
+        self.dsNavController.viewControllers = vc
         
         if let challengesList = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.DetailDesignStudioViewController.rawValue) as? DetailDesignStudioViewController {
             challengesList.vm.setDesignStudio(AppDelegate.designStudio.currentDesignStudio!)
-            navViewController.viewControllers.append(challengesList)
+            self.dsNavController.viewControllers.append(challengesList)
         }
         
         if let challengesList = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.ChallengesViewController.rawValue) as? ChallengesViewController {
             challengesList.vm.setDesignStudio(AppDelegate.designStudio.currentDesignStudio!)
-            navViewController.viewControllers.append(challengesList)
+            self.dsNavController.viewControllers.append(challengesList)
         }
         
         if let timerList = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.TimerViewController.rawValue) as? TimerViewController {
-            navViewController.viewControllers.append(timerList)
+            self.dsNavController.viewControllers.append(timerList)
         }
-    }
-    
+    }    
     
     private func navigateToTimerScreen() {
         // if the top vc is modal, we need to dismiss it, so that we can show the timer page

@@ -23,6 +23,7 @@ class RunningDesignStudio: NSObject {
         case ShowNextTimerScreen = "ShowNextTimerScreen"
         case ShowNextChallengeScreen = "ShowNextChallengeScreen"
         case ShowEndDesignStudioScreen = "ShowEndDesignStudioScreen"
+        case UpcomingChallengeDidAppear = "UpcomingChallengeDidAppear"
     }
     
     private let addMoreMinutesDuration = 2 // how many minutes should we add from End activity screen
@@ -94,19 +95,30 @@ class RunningDesignStudio: NSObject {
             } catch {
                 // TODO handle error
             }
+            
+            // to get the challenge, which is the first screen to display
+            self.getNextObject()
+            NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.DesignStudioStarted.rawValue, object: self, userInfo: nil)
         }
-        
-        // to get the challenge, which is the first screen to display
-        self.getNextObject()
-        NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.DesignStudioStarted.rawValue, object: self, userInfo: nil)
     }
     
     func notifyEndActivity() {
         NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ActivityEnded.rawValue, object: self, userInfo: nil)
     }
     
-    func timerDidLoad() {
-        self.getNextObject()
+    func timerWillAppear() {
+        if self.startTimer {
+            self.getNextObject()
+            self.startTimer = false
+        }
+    }
+    
+    func upcomingChallengeDidAppear() {
+        if self.currentChallengeIdx == 0 {
+            // if we're showing first Upcoming challenge then
+            NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.UpcomingChallengeDidAppear.rawValue, object: self, userInfo: nil)
+        }
+        self.startTimer = true
     }
     
     // this will be called when skip activity is called from the timer screen
@@ -119,14 +131,20 @@ class RunningDesignStudio: NSObject {
         self.showNextScreen()
     }
     
+    var startTimer = false
     private func showNextScreen() {
-        let nextObject = self.getNextObject()
-        if nextObject is Activity {
+        let nextObject = self.whatIsNextObject()
+        if nextObject == Activity.self {
             // show the timer screen
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowNextTimerScreen.rawValue, object: self, userInfo: nil)
-        } else if nextObject is Challenge {
+            // don't move to next object, instead set a flag that will move to next object and kick off timer when the timer screen is loaded
+            self.startTimer = true
+        } else if nextObject == Challenge.self {
+            // move to next object immediately, we don't have to worry about timers when displaying Challenges
+            self.getNextObject()
             // show the challenge screen
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowNextChallengeScreen.rawValue, object: self, userInfo: nil)
+            self.startTimer = true
         } else {
             // we've reached the end, show the end screen
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowEndDesignStudioScreen.rawValue, object: self, userInfo: nil)
@@ -158,6 +176,18 @@ class RunningDesignStudio: NSObject {
         } catch {
             // todo
         }
+    }
+    
+    private func whatIsNextObject() -> Object.Type? {
+        if self.currentChallenge != nil && self.getNextActivityIdx() != nil {
+            return Activity.self
+        }
+        
+        if self.getNextChallengeIdx() != nil {
+            return Challenge.self
+        }
+        
+        return nil
     }
     
     private func getNextObject() -> Object? {
@@ -205,14 +235,20 @@ class RunningDesignStudio: NSObject {
     
     private func moveActivityPointer() -> Bool {
         // move the pointer
-        let nextActivityIdx = self.currentActivityIdx != nil ? self.currentActivityIdx! + 1 : 0
-        if self.currentChallenge?.activities.count > nextActivityIdx {
+        if let nextActivityIdx = self.getNextActivityIdx() {
             self.currentActivityIdx = nextActivityIdx
             return true
         }
-        // there's no more activities in the challenge
         self.currentActivityIdx = nil
         return false
+    }
+    
+    private func getNextActivityIdx() -> Int? {
+        let nextActivityIdx = self.currentActivityIdx != nil ? self.currentActivityIdx! + 1 : 0
+        if self.currentChallenge?.activities.count > nextActivityIdx {
+            return nextActivityIdx
+        }
+        return nil
     }
     
     private func updateDesignStudioActivityIdx() {
@@ -228,6 +264,7 @@ class RunningDesignStudio: NSObject {
     private func startCurrentActivity() {
         self.currentActivityStart = NSDate()
         
+        print("timer cancelled")
         self.timer?.invalidate()
         if let _ = self.currentActivity {
             self.timer = NSTimer.scheduledTimerWithTimeInterval(Double(self.currentActivityRemainingDuration), target: self, selector: "notifyEndActivity", userInfo: nil, repeats: false)
@@ -244,7 +281,7 @@ class RunningDesignStudio: NSObject {
         } else {
             self.finishDesignStudio()
         }
-        
+                
         return result
     }
     
@@ -259,8 +296,7 @@ class RunningDesignStudio: NSObject {
     }
     
     private func moveChallengePointer() -> Bool {
-        let nextChallengeIdx = self.currentChallengeIdx != nil ? self.currentChallengeIdx! + 1 : 0
-        if self.data?.challenges.count > nextChallengeIdx {
+        if let nextChallengeIdx = self.getNextChallengeIdx() {
             self.currentChallengeIdx = nextChallengeIdx // move the pointer
             
             // in case that challenge has no activies move to next challenge
@@ -275,6 +311,12 @@ class RunningDesignStudio: NSObject {
         return false
     }
     
-    // MARK: - Time is up 
+    func getNextChallengeIdx() -> Int? {
+        let nextChallengeIdx = self.currentChallengeIdx != nil ? self.currentChallengeIdx! + 1 : 0
+        if self.data?.challenges.count > nextChallengeIdx {
+            return nextChallengeIdx
+        }
+        return nil
+    }
     
 }

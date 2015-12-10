@@ -15,11 +15,7 @@ class UpcomingChallengeViewController: UIViewControllerBase {
     @IBOutlet weak var challengeTitle: UILabel!
     @IBOutlet weak var duration: UILabel!
     
-    enum NotificationIdentifier: String {
-        case UpcomingChallengeDidAppear = "UpcomingChallengeDidAppear"
-    }
-    
-    let showDuration = 1.0 // seconds TODO: increase this after testing
+    let showDuration = 5.0 // seconds TODO: increase this after testing
     let vm = UpcomingChallengeViewModel()
     
     override func viewDidLoad() {
@@ -30,9 +26,9 @@ class UpcomingChallengeViewController: UIViewControllerBase {
     }
     
     override func viewDidAppear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.UpcomingChallengeDidAppear.rawValue, object: self, userInfo: nil)
+        AppDelegate.designStudio.upcomingChallengeDidAppear()
     }
-        
+    
     func populateFields() {
         self.numOfChallenges.text = self.vm.challengeCount
         self.challengeTitle.text = self.vm.title
