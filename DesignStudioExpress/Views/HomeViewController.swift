@@ -9,7 +9,7 @@
 import UIKit
 import MGSwipeTableCell
 
-class HomeViewController: UIViewControllerBase, UITableViewDataSource, UITableViewDelegate, MGSwipeTableCellDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MGSwipeTableCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var createButton: UIButton!
@@ -129,14 +129,6 @@ class HomeViewController: UIViewControllerBase, UITableViewDataSource, UITableVi
             let destination = segue.destinationViewController as! DetailDesignStudioViewController
             destination.vm.setDesignStudio(sender as? DesignStudio)
         }
-    }
-    
-    // MARK: StyledNavigationBar
-    
-    override func customizeNavBarStyle() {
-        super.customizeNavBarStyle()
-        
-        DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
     }
     
     // MARK: - Custom
