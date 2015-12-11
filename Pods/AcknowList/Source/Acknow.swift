@@ -1,7 +1,7 @@
 //
-// VTAcknowledgement.m
+// Acknow.swift
 //
-// Copyright (c) 2013-2015 Vincent Tourraine (http://www.vtourraine.net)
+// Copyright (c) 2015 Vincent Tourraine (http://www.vtourraine.net)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,33 +21,32 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "VTAcknowledgement.h"
 
-@interface VTAcknowledgement ()
+/**
+ Represents a single acknowledgement.
+*/
+public struct Acknow {
 
-- (instancetype)init NS_UNAVAILABLE;
+    /**
+    The acknowledgement title (for instance the pod’s name).
+    */
+    public let title: String
 
-@end
+    /**
+    The acknowledgement body text (for instance the pod’s license).
+    */
+    public let text: String
 
+    /**
+    Initializes the `Acknow` instance with a title and a text.
 
-@implementation VTAcknowledgement
+    - parameter title: The acknowledgement title (for instance the pod’s name).
+    - parameter text:  The acknowledgement body text (for instance the pod’s license).
 
-- (instancetype)init
-{
-    @throw nil;
-}
-
-- (instancetype)initWithTitle:(NSString *)title
-                         text:(NSString *)text
-{
-    self = [super init];
-
-    if (self) {
-        _title = title;
-        _text = text;
+    - returns: The new `Acknow` instance.
+    */
+    public init(title: String, text: String) {
+        self.title = title
+        self.text  = text
     }
-
-    return self;
 }
-
-@end

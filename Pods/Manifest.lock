@@ -1,4 +1,5 @@
 PODS:
+  - AcknowList (0.1)
   - Cartography (0.6.0)
   - Crashlytics (3.4.1):
     - Fabric (~> 1.6.0)
@@ -19,9 +20,9 @@ PODS:
   - SwiftyJSON (2.3.1)
   - SwiftyUserDefaults (2.0.0)
   - SZTextView (1.2.1)
-  - VTAcknowledgementsViewController (0.17)
 
 DEPENDENCIES:
+  - AcknowList
   - Cartography (~> 0.6)
   - Crashlytics
   - Fabric
@@ -35,7 +36,6 @@ DEPENDENCIES:
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
   - SwiftyUserDefaults
   - SZTextView
-  - VTAcknowledgementsViewController
 
 EXTERNAL SOURCES:
   NRSimplePlist:
@@ -53,6 +53,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
+  AcknowList: c5909608e47928763365f58648da5e43e6602e2f
   Cartography: 70af183a248547694a8cfaa6b989cb7e04589985
   Crashlytics: 41574a245bc6ae10c55d57f385ebd2004e5bee05
   Fabric: d737eda3a26ac940a5430230eedb35f16b226131
@@ -67,6 +68,5 @@ SPEC CHECKSUMS:
   SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
   SwiftyUserDefaults: 1266e9734c68bcfbac8294ee84173dc8ba6db312
   SZTextView: 906df45afd3c1b24fc5252088d5ef8061513c238
-  VTAcknowledgementsViewController: 6056f5f5e5ed995bbf0581bed6ddd29355ca9a80
 
 COCOAPODS: 0.39.0
