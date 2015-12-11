@@ -13,7 +13,6 @@ import AcknowList
 struct Setting {
     let title: String
     let icon: String
-    
     // this feels icky FIXME
     let action: (UIViewController) -> ()
 }
@@ -28,7 +27,6 @@ class SettingsViewModel {
     private func loadStaticSettings() -> [Setting] {
         return [
             // TODO images
-            // TODO closures for actions
             Setting(title: "About Ai", icon: "Clock", action:  { vc in
                 let svc = SFSafariViewController(URL: NSURL(string: "http://www.alexanderinteractive.com/company/")!)
                 vc.presentViewController(svc, animated: true, completion: nil)
@@ -42,10 +40,15 @@ class SettingsViewModel {
             }),
             
             Setting(title: "Contact Us", icon: "Clock", action: { vc in
-                var feedbackController = MPFeedbackMailComposeViewController()
+                // https://github.com/monkeymike/MPFeedbackMailComposeViewController
                 
-                //feedbackController.mailComposeDelegate = vc
+                let feedbackController = MPFeedbackMailComposeViewController()
+                
+                feedbackController.mailComposeDelegate = vc as! SettingsViewController
+                
+                // TODO update with real email
                 feedbackController.setToRecipients(["sms@alexanderinteractive.com"])
+                
                 feedbackController.setSubject("Design Studio Express Feedback")
                 feedbackController.setMessageBody("Feedback:\n\n\n\n\n\n\n\n\n--------\nDeveloper Information:", isHTML:false)
                 
@@ -60,6 +63,9 @@ class SettingsViewModel {
             }),
             
             Setting(title: "Share this app", icon: "Clock", action: { vc in
+                
+                //text lives in DesignStudioActivityItemSource.swift
+                
                 let activityController = UIActivityViewController(activityItems: [DesignStudioActivityItemSource()], applicationActivities: nil)
                 if let navigationController = vc.navigationController {
                     navigationController.presentViewController(activityController, animated: true, completion:nil)

@@ -55,8 +55,6 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
         let cell = self.createCell("swipeCell", indexPath: indexPath, MGSwipeTableCellCentered.self)
         cell.delegate = self
         
-        self.styleSwipeCell(cell, indexPath: indexPath)
-        
         return cell
     }
     
@@ -84,51 +82,10 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
         return CGFloat(rowHeight)
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    @objc func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let action = vm.getAction(indexPath) {
             action(self)
         }
-    }
-    
-    // MARK - MGSwipeTableCellDelegate
-    
-    /**
-    * Delegate method to enable/disable swipe gestures
-    * @return true if swipe is allowed
-    **/
-    func swipeTableCell(cell: MGSwipeTableCell!, canSwipe direction: MGSwipeDirection) -> Bool {
-        return false
-    }
-    
-    func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
-        if let indexPath = self.tableView.indexPathForCell(cell) {
-            // TODO implement
-        }
-        print("tap")
-        return true
-    }
-    
-
-    
-    
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        /*if segue.identifier == self.editDesignStudioSegue {
-            let destination = segue.destinationViewController as! DetailDesignStudioViewController
-            destination.vm.setDesignStudio(sender as? DesignStudio)
-        }*/
-        //TODO
-    }
-    
-    // MARK: StyledNavigationBar
-    
-    override func customizeNavBarStyle() {
-        super.customizeNavBarStyle()
-        
-        //TODO turn back on
-        //DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
     }
     
     // MARK: - Custom
@@ -146,7 +103,6 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
         attachment.image = UIImage(named: vm.getImageName(indexPath))
         // adjust the position of the icon
         
-        // TODO finish icon wiring
         // TODO fix text alignment (currently center)
         //attachment.bounds = CGRectMake(-4, -1, attachment.image!.size.width, attachment.image!.size.height);
         
@@ -159,11 +115,16 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
         iconString.appendAttributedString(initialText)
         
         cell.textLabel!.attributedText = iconString
+        cell.textLabel?.textColor = UIColor(red:0.53, green:0.65, blue:0.82, alpha:1.0)
         
         return cell
     }
     
     private func customizeStyle() {
+        // TODO fix settings text
+        // TODO add help text
+        // TODO fix image stretching
+        
         // TableView - style separator
         self.tableView.separatorColor = DesignStudioStyles.bottomNavigationBGColorUnselected
         // this in comb. with UIEdgeInsetsZero on layoutMargins for a cell
@@ -197,28 +158,8 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
         cell.userInteractionEnabled = false
     }
     
-    func styleSwipeCell(cell: MGSwipeTableCellCentered, indexPath: NSIndexPath) {
-        // no highlighted color so that we don't have higlighted cell
-        // when we go back
-        cell.selectionStyle = .None
-        
-        // background colors for cells
-        let cellColor = DesignStudioStyles.white
-        cell.backgroundColor = cellColor
-        
-        // set the icon for the duration lable
-
-        
-        // styling for for title
-        cell.textLabel?.font = UIFont(name: "Avenir-Book", size: 22)
-        cell.textLabel?.textColor = DesignStudioStyles.bottomNavigationIconSelected
-
-        
-        // set separator from edge to edge
-        cell.layoutMargins = UIEdgeInsetsZero
-    }
     
-    // MARK - MFMailComposeViewControllerDelegate
+    // MARK: - MFMailComposeViewControllerDelegate
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         self.dismissViewControllerAnimated(true, completion: {})
