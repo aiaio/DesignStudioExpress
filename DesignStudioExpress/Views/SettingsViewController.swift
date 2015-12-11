@@ -12,7 +12,6 @@ import MGSwipeTableCell
 
 class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITableViewDelegate, MGSwipeTableCellDelegate, MFMailComposeViewControllerDelegate {
 
-
     @IBOutlet weak var tableView: UITableView!
     
     let vm = SettingsViewModel()

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C86A9181C1A408E006CA6DA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C86A9171C1A408E006CA6DA /* SettingsViewController.swift */; };
-		0C86A9191C1A408E006CA6DA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C86A9171C1A408E006CA6DA /* SettingsViewController.swift */; };
 		0C86A91B1C1A40AF006CA6DA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C86A91A1C1A40AF006CA6DA /* SettingsViewModel.swift */; };
 		0C86A91C1C1A40AF006CA6DA /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C86A91A1C1A40AF006CA6DA /* SettingsViewModel.swift */; };
 		0C86A9211C1A677F006CA6DA /* Pods-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C86A9201C1A677F006CA6DA /* Pods-acknowledgements.plist */; };
@@ -17,6 +15,8 @@
 		0C86A92F1C1B0E3D006CA6DA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C86A92E1C1B0E3D006CA6DA /* MessageUI.framework */; };
 		0C86A93B1C1B151E006CA6DA /* MPFeedbackMailComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C86A93A1C1B151E006CA6DA /* MPFeedbackMailComposeViewController.m */; };
 		0C86A93C1C1B151E006CA6DA /* MPFeedbackMailComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C86A93A1C1B151E006CA6DA /* MPFeedbackMailComposeViewController.m */; };
+		0CA9C92E1C1B6E4500381E98 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA9C92D1C1B6E4500381E98 /* SettingsViewController.swift */; };
+		0CA9C92F1C1B6E4500381E98 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA9C92D1C1B6E4500381E98 /* SettingsViewController.swift */; };
 		0CE90CFB1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE90CFA1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift */; };
 		0CE90CFC1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE90CFA1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift */; };
 		DE9CC0FF2AB206A55D253AC2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF9E289780C23ADD06A8363 /* Pods.framework */; };
@@ -87,7 +87,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C86A9171C1A408E006CA6DA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0C86A91A1C1A40AF006CA6DA /* SettingsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		0C86A9201C1A677F006CA6DA /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-acknowledgements.plist"; path = "Pods/Target Support Files/Pods/Pods-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
 		0C86A92C1C1B0E37006CA6DA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -95,6 +94,7 @@
 		0C86A9301C1B1051006CA6DA /* DesignStudioExpress-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DesignStudioExpress-Bridging-Header.h"; sourceTree = "<group>"; };
 		0C86A9391C1B151E006CA6DA /* MPFeedbackMailComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFeedbackMailComposeViewController.h; sourceTree = "<group>"; };
 		0C86A93A1C1B151E006CA6DA /* MPFeedbackMailComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPFeedbackMailComposeViewController.m; sourceTree = "<group>"; };
+		0CA9C92D1C1B6E4500381E98 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0CE90CFA1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignStudioAtivityItemSource.swift; sourceTree = "<group>"; };
 		2F6E83CBFE1ADF513DD680AE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4C98F6B1E5929336083EA3A8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -343,6 +343,7 @@
 				E4D87AAA1C17501700362F07 /* EndActivityViewController.swift */,
 				E4D5BD4F1C18EB00005B28BE /* FaqViewController.swift */,
 				E4D5BD511C1B1D49005B28BE /* ListViewController.swift */,
+				0CA9C92D1C1B6E4500381E98 /* SettingsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -568,13 +569,13 @@
 				E40EDF261C10B34100F0D4C4 /* TimerViewModel.swift in Sources */,
 				E46A22061C010FC1004D5292 /* ChallengeDetailViewController.swift in Sources */,
 				E4D5BD521C1B1D49005B28BE /* ListViewController.swift in Sources */,
+				0CA9C92E1C1B6E4500381E98 /* SettingsViewController.swift in Sources */,
 				E4C113301BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift in Sources */,
 				0C86A93B1C1B151E006CA6DA /* MPFeedbackMailComposeViewController.m in Sources */,
 				E468028E1C0E5EF3002438E5 /* ActivityDetailViewModel.swift in Sources */,
 				E4D87AAD1C17567800362F07 /* EndActivityViewModel.swift in Sources */,
 				E41E772C1C06554D000364D6 /* UITextViewDelegateMaxLength.swift in Sources */,
 				E429AF651BF64DD300AE4DA7 /* HomeViewController.swift in Sources */,
-				0C86A9181C1A408E006CA6DA /* SettingsViewController.swift in Sources */,
 				E4607F261BF6A82C000C44C7 /* HomeViewModel.swift in Sources */,
 				E4D87AAB1C17501700362F07 /* EndActivityViewController.swift in Sources */,
 				E4FF2BC01BF78DE500A3C732 /* DesignStudio.swift in Sources */,
@@ -606,8 +607,8 @@
 			files = (
 				0CE90CFC1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift in Sources */,
 				E421C42B1BF164AD003F9D8A /* DesignStudioExpressTests.swift in Sources */,
-				0C86A9191C1A408E006CA6DA /* SettingsViewController.swift in Sources */,
 				0C86A93C1C1B151E006CA6DA /* MPFeedbackMailComposeViewController.m in Sources */,
+				0CA9C92F1C1B6E4500381E98 /* SettingsViewController.swift in Sources */,
 				0C86A91C1C1A40AF006CA6DA /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
