@@ -7,10 +7,14 @@
 //
 
 import Foundation
+import SafariServices
 
 struct Setting {
     let title: String
     let icon: String
+    
+    // this feels icky FIXME
+    let action: (UIViewController) -> ()
 }
 
 class SettingsViewModel {
@@ -22,8 +26,17 @@ class SettingsViewModel {
     
     private func loadStaticSettings() -> [Setting] {
         return [
-            Setting(title: "Test", icon: "Clock"),
-            Setting(title: "Test2", icon: "Clock"),
+            // TODO images
+            // TODO closures for actions
+            Setting(title: "About Ai", icon: "Clock", action:  { vc in
+                let svc = SFSafariViewController(URL: NSURL(string: "http://www.alexanderinteractive.com/company/")!)
+                vc.presentViewController(svc, animated: true, completion: nil)
+            }), 
+            //Setting(title: "Legal", icon: "Clock"), //PodfileViewController
+            //Setting(title: "Contact Us", icon: "Clock"), // Email, Pull from Weather Notifications
+            //Setting(title: "Review on App Store", icon: "Clock"), // Link to App Store
+            //Setting(title: "Share this app", icon: "Clock"), // Pop share sheet
+            //Setting(title: "The team", icon: "Clock"), // Github pod?
         ]
     }
     
@@ -53,5 +66,13 @@ class SettingsViewModel {
         }
         // row icon
         return data[indexPath.row-1].icon
+    }
+    
+    func getAction (indexPath: NSIndexPath) -> ((UIViewController) -> ())? {
+        if indexPath.row == 0 {
+
+            return nil
+        }
+        return data[indexPath.row-1].action
     }
 }

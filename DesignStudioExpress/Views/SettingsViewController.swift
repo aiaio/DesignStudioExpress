@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import MGSwipeTableCell
 
 
@@ -64,7 +63,7 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
     // customize row height
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         // default row height for DS cells
-        var rowHeight = 90
+        var rowHeight = 55 // TODO get real height from Kate
         
         // row height for photo
         // dynamically adjust based on the device height
@@ -86,8 +85,9 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        // TODO
+        if let action = vm.getAction(indexPath) {
+            action(self)
+        }
     }
     
     // MARK - MGSwipeTableCellDelegate
@@ -104,7 +104,7 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
         if let indexPath = self.tableView.indexPathForCell(cell) {
             // TODO implement
         }
-        
+        print("tap")
         return true
     }
     
@@ -141,15 +141,31 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
             cell = T(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
         }
         
-        cell.textLabel!.text = vm.getTitle(indexPath)
-        //cell.detailTextLabel!.text = vm.getDetail(indexPath)
+        // we have to add an image to the attachment
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: vm.getImageName(indexPath))
+        // adjust the position of the icon
+        
+        // TODO finish icon wiring
+        // TODO fix text alignment (currently center)
+        //attachment.bounds = CGRectMake(-4, -1, attachment.image!.size.width, attachment.image!.size.height);
+        
+        // create a attributed string with attachment
+        let attributedString = NSAttributedString(attachment: attachment)
+        // create mutable string from that so we can add more attributes
+        let iconString = NSMutableAttributedString(attributedString: attributedString)
+        // add the text to the iconString so that the text is on the right side of the icon
+        let initialText = NSMutableAttributedString(string: vm.getTitle(indexPath))
+        iconString.appendAttributedString(initialText)
+        
+        cell.textLabel!.attributedText = iconString
         
         return cell
     }
     
     private func customizeStyle() {
         // TableView - style separator
-        self.tableView.separatorColor = DesignStudioStyles.white
+        self.tableView.separatorColor = DesignStudioStyles.bottomNavigationBGColorUnselected
         // this in comb. with UIEdgeInsetsZero on layoutMargins for a cell
         // will make the cell separator show from edge to edge
         self.tableView.layoutMargins = UIEdgeInsetsZero
@@ -187,32 +203,16 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
         cell.selectionStyle = .None
         
         // background colors for cells
-        let cellColor = UIColor.redColor()
+        let cellColor = DesignStudioStyles.white
         cell.backgroundColor = cellColor
         
         // set the icon for the duration lable
-        // we have to add an image to the attachment
-        let attachment = NSTextAttachment()
-        attachment.image = UIImage(named: vm.getImageName(indexPath))
-        // adjust the position of the icon
-        attachment.bounds = CGRectMake(-4, -1, attachment.image!.size.width, attachment.image!.size.height);
-        
-        // create a attributed string with attachment
-        let attributedString = NSAttributedString(attachment: attachment)
-        // create mutable string from that so we can add more attributes
-        let iconString = NSMutableAttributedString(attributedString: attributedString)
-        // add the text to the iconString so that the text is on the right side of the icon
-        //let durationText = NSMutableAttributedString(string: cell.detailTextLabel!.text!)
-        //iconString.appendAttributedString(durationText)
-        //cell.detailTextLabel?.attributedText = iconString
+
         
         // styling for for title
         cell.textLabel?.font = UIFont(name: "Avenir-Book", size: 22)
-        cell.textLabel?.textColor = DesignStudioStyles.white
-        
-        // styling for the detail
-        cell.detailTextLabel?.font = UIFont(name: "Avenir-Light", size: 11)
-        cell.detailTextLabel?.textColor = DesignStudioStyles.white
+        cell.textLabel?.textColor = DesignStudioStyles.bottomNavigationIconSelected
+
         
         // set separator from edge to edge
         cell.layoutMargins = UIEdgeInsetsZero
