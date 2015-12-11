@@ -24,6 +24,7 @@ class RunningDesignStudio: NSObject {
         case ShowNextChallengeScreen = "ShowNextChallengeScreen"
         case ShowEndDesignStudioScreen = "ShowEndDesignStudioScreen"
         case UpcomingChallengeDidAppear = "UpcomingChallengeDidAppear"
+        case AddMoreTimeToCurrentActivity = "AddMoreTimeToCurrentActivity"
     }
     
     private let addMoreMinutesDuration = 2 // how many minutes should we add from End activity screen
@@ -31,6 +32,14 @@ class RunningDesignStudio: NSObject {
     private var data: DesignStudio?
     private var isRunning = false
     private var timer: NSTimer?
+    
+    // flag controls if we need to move to next object
+    // and start the global timer (that shows the End activity screen)
+    // we have to move to next activity after:
+    // - challenges screen has disappeared
+    // - next button is clicked on the Timer screen
+    // - next button is clicked on the End activity screen
+    var startTimer = false
     
     var currentDesignStudio: DesignStudio? {
         get { return data }
@@ -57,7 +66,7 @@ class RunningDesignStudio: NSObject {
     // in seconds
     var currentActivityRemainingDuration: Int {
         if let totalDuration = self.currentActivity?.duration {
-            let totalDurationSecs = totalDuration * 60
+            let totalDurationSecs = totalDuration * 60 // TODO fix this // convert minutes to seconds
             if self.currentActivityStart == nil {
                 return totalDurationSecs
             }
@@ -110,12 +119,6 @@ class RunningDesignStudio: NSObject {
     }
     
     // this will be called when the timer screen will appear
-    // startTimer flag controls if we need to move to next object 
-    // and start the global timer (that show's the End activity screen)
-    // we have to move to next activity after:
-    // - challenges screen has disappeared
-    // - next button is clicked on the Timer screen
-    // - next button is clicked on the End activity screen
     func timerWillAppear() {
         if self.startTimer {
             self.getNextObject()
@@ -136,12 +139,28 @@ class RunningDesignStudio: NSObject {
         self.showNextScreen()
     }
     
-    func endCurrentActivity() {
+    // called when next activity is touched on End Activity screen
+    func endCurrentActivityViewDidDisappear() {
+        // prep the navigation stack
         NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.PrepareTimerScreen.rawValue, object: self, userInfo: nil)
         self.showNextScreen()
     }
     
-    var startTimer = false
+    // called when add more time is touched on End Activity screen
+    func addMoreTimeViewDidDisappear() {
+        NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.AddMoreTimeToCurrentActivity.rawValue, object: self, userInfo: nil)
+    }    
+    
+    func addMoreTimeToActivity() {
+        do {
+            try realm.write {
+                self.currentActivity?.duration += self.addMoreMinutesDuration // mins
+            }
+        } catch {
+            // TODO handle error
+        }
+    }
+    
     private func showNextScreen() {
         let nextObject = self.whatIsNextObject()
         if nextObject == Activity.self {
@@ -160,16 +179,6 @@ class RunningDesignStudio: NSObject {
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowEndDesignStudioScreen.rawValue, object: self, userInfo: nil)
         }
     }   
-    
-    func addMoreTimeToActivity() {
-        do {
-            try realm.write {
-                self.currentActivity?.duration += self.addMoreMinutesDuration // mins
-            }
-        } catch {
-            // TODO handle error
-        }
-    }
     
     // it's not private because we have to use it on app exit
     func finishDesignStudio() {

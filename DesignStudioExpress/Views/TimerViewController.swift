@@ -21,10 +21,18 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     @IBOutlet weak var skipToNextActivity: UIButton!
     @IBOutlet weak var timer: MZTimerLabel!
     
+    enum NotificationIdentifier: String {
+        case AddMoreTimeToCurrentActivityNotification = "AddMoreTimeToCurrentActivity"
+    }
+    
+    enum ViewControllerIdentifier: String {
+        case TimerViewController = "TimerViewController"
+    }
+
+    
     let vm = TimerViewModel()
     var showPresenterNotes = true
     
-    let timerViewControllerIdentifier = "TimerViewController"
     let showNotesButtonLabel = "PRESENTER NOTES"
     let showDescriptionButtonLabel = "BACK TO DESCRIPTION"
 
@@ -33,6 +41,7 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
         
         self.removeLastViewFromNavigation()
         self.setUpTimerLabel()
+        self.addObservers()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -82,14 +91,29 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     
     // MARK: - Custom
     
-    func setUpTimerLabel() {
+    private func addObservers() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "refreshData:",
+            name: NotificationIdentifier.AddMoreTimeToCurrentActivityNotification.rawValue, object: nil)
+    }
+    
+    func refreshData(notification: NSNotification) {
+        self.populateFields()
+        self.timer.start()
+    }
+    
+    // remove
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    private func setUpTimerLabel() {
         self.timer.delegate = self
         self.timer.timerType = MZTimerLabelTypeTimer
         self.timer.timeFormat = "mm:ss"
         self.timer.timeLabel.textColor = DesignStudioStyles.white
     }
     
-    func populateFields () {
+    private func populateFields () {
         self.challengeTitle.text = vm.challengeTitle
         self.activityTitle.text = vm.activityTitle
         self.activityDescription.text = vm.activityDescription
@@ -100,7 +124,7 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     }
     
     // toggles between showing notes and description labels
-    func toggleDescription() {
+    private func toggleDescription() {
         // hide both buttons when there's no presenter notes
         if !vm.activityNotesEnabled {
             self.activityNotes.hidden = true
@@ -120,7 +144,7 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     
     // since we're segueing to the same VC, we need to remove the previous TimerViewController instance
     // so that Back button leads to Challenges screen
-    func removeLastViewFromNavigation() {
+    private func removeLastViewFromNavigation() {
         let endIndex = (self.navigationController?.viewControllers.endIndex ?? 0) - 1
         if endIndex > 0 {
             let previousVC = self.navigationController?.viewControllers[endIndex-1]
@@ -130,9 +154,9 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
         }
     }
     
-    func showNextTimerScreen() {
+    private func showNextTimerScreen() {
         // segue to self
-        if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(self.timerViewControllerIdentifier) as? TimerViewController {
+        if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.TimerViewController.rawValue) as? TimerViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

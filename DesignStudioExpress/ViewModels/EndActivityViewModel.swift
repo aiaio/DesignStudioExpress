@@ -9,16 +9,23 @@
 import Foundation
 
 class EndActivityViewModel {
-    func nextActivity() {
-        AppDelegate.designStudio.endCurrentActivity()
+    var didAddMoreTime = false
+    
+    func viewDidDisappear() {
+        if self.didAddMoreTime {
+            AppDelegate.designStudio.addMoreTimeViewDidDisappear()
+        } else {
+            AppDelegate.designStudio.endCurrentActivityViewDidDisappear()
+        }
     }
     
-    func addMoreTime() {
-        AppDelegate.designStudio.addMoreTimeToActivity()
-        self.raiseNotification()
+    func viewWillDisappear() {
+        if self.didAddMoreTime {
+            AppDelegate.designStudio.addMoreTimeToActivity()
+        }
     }
-    
-    func raiseNotification() {
         
+    func addMoreTime() {
+        self.didAddMoreTime = true
     }
 }

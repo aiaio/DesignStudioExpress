@@ -56,7 +56,7 @@ class HomeViewModel {
                     activity.title = "Activity \(idx3)"
                     activity.activityDescription = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne."
                     activity.notes = "Pri soleat nusquam at, natum diceret propriae nec et. Omittam expetendis ne pri, fabulas mentitum ut nam, reque consulatu mnesarchum his an."
-                    activity.duration = 5
+                    activity.duration = 1
                     challenge.activities.append(activity)
                 }
                 
