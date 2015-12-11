@@ -84,6 +84,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/AcknowList.framework"
   install_framework "Pods/Cartography.framework"
   install_framework "Pods/FXLabel.framework"
   install_framework "Pods/GMStepper.framework"
@@ -98,6 +99,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/SwiftyUserDefaults.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/AcknowList.framework"
   install_framework "Pods/Cartography.framework"
   install_framework "Pods/FXLabel.framework"
   install_framework "Pods/GMStepper.framework"

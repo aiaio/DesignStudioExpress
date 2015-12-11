@@ -1,4 +1,5 @@
 PODS:
+  - AcknowList (0.1)
   - Cartography (0.6.0)
   - Crashlytics (3.4.1):
     - Fabric (~> 1.6.0)
@@ -21,6 +22,7 @@ PODS:
   - SZTextView (1.2.1)
 
 DEPENDENCIES:
+  - AcknowList
   - Cartography (~> 0.6)
   - Crashlytics
   - Fabric
@@ -51,6 +53,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
+  AcknowList: c5909608e47928763365f58648da5e43e6602e2f
   Cartography: 70af183a248547694a8cfaa6b989cb7e04589985
   Crashlytics: 41574a245bc6ae10c55d57f385ebd2004e5bee05
   Fabric: d737eda3a26ac940a5430230eedb35f16b226131
