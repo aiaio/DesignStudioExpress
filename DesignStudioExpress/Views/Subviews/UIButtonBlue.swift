@@ -10,7 +10,7 @@ import UIKit
 
 class UIButtonBlue: UIButtonBase {
     
-    let highlightedColor = UIColor(red:0.32, green:0.56, blue:0.86, alpha:1.0) // #518EDC
+    let highlightedOpacity = CGFloat(0.8)
     override var defaultColor: UIColor { get { return UIColor(red:0.32, green:0.56, blue:0.86, alpha:1.0) /* #518EDC */ } }
     override var textColor:UIColor { get{ return DesignStudioStyles.white } }
     
@@ -21,11 +21,9 @@ class UIButtonBlue: UIButtonBase {
         set {
             super.highlighted = newValue
             if newValue {
-                backgroundColor = highlightedColor
-                layer.borderColor = highlightedColor.CGColor
+                self.alpha = highlightedOpacity
             } else {
-                backgroundColor = defaultColor
-                layer.backgroundColor = defaultColor.CGColor
+                self.alpha = 1.0
             }
         }
     }
