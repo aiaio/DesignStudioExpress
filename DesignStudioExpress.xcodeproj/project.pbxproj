@@ -17,6 +17,8 @@
 		0C86A92F1C1B0E3D006CA6DA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C86A92E1C1B0E3D006CA6DA /* MessageUI.framework */; };
 		0C86A93B1C1B151E006CA6DA /* MPFeedbackMailComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C86A93A1C1B151E006CA6DA /* MPFeedbackMailComposeViewController.m */; };
 		0C86A93C1C1B151E006CA6DA /* MPFeedbackMailComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C86A93A1C1B151E006CA6DA /* MPFeedbackMailComposeViewController.m */; };
+		0CE90CFB1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE90CFA1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift */; };
+		0CE90CFC1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE90CFA1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift */; };
 		DE9CC0FF2AB206A55D253AC2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF9E289780C23ADD06A8363 /* Pods.framework */; };
 		E40A81A51C0DF11200BC07E3 /* UITextFieldDelegateBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A81A41C0DF11200BC07E3 /* UITextFieldDelegateBase.swift */; };
 		E40A81A71C0DF4DC00BC07E3 /* UITextViewDelegateBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A81A61C0DF4DC00BC07E3 /* UITextViewDelegateBase.swift */; };
@@ -90,6 +92,7 @@
 		0C86A9301C1B1051006CA6DA /* DesignStudioExpress-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DesignStudioExpress-Bridging-Header.h"; sourceTree = "<group>"; };
 		0C86A9391C1B151E006CA6DA /* MPFeedbackMailComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPFeedbackMailComposeViewController.h; sourceTree = "<group>"; };
 		0C86A93A1C1B151E006CA6DA /* MPFeedbackMailComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPFeedbackMailComposeViewController.m; sourceTree = "<group>"; };
+		0CE90CFA1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignStudioAtivityItemSource.swift; sourceTree = "<group>"; };
 		2F6E83CBFE1ADF513DD680AE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4C98F6B1E5929336083EA3A8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AAF9E289780C23ADD06A8363 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +296,7 @@
 				E40EDF251C10B34100F0D4C4 /* TimerViewModel.swift */,
 				E40EDF2C1C11F3FA00F0D4C4 /* RunningDesignStudio.swift */,
 				E4D87AAC1C17567800362F07 /* EndActivityViewModel.swift */,
+				0CE90CFA1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -572,6 +576,7 @@
 				E40A81A51C0DF11200BC07E3 /* UITextFieldDelegateBase.swift in Sources */,
 				E41E77301C067D25000364D6 /* UITextFieldDelegateMaxLength.swift in Sources */,
 				E4CEA34B1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift in Sources */,
+				0CE90CFB1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift in Sources */,
 				E4ECC4F31BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift in Sources */,
 				E40A81A71C0DF4DC00BC07E3 /* UITextViewDelegateBase.swift in Sources */,
 				E4C113361BFBBE3B00A7E1B3 /* StringExtension.swift in Sources */,
@@ -588,6 +593,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CE90CFC1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift in Sources */,
 				E421C42B1BF164AD003F9D8A /* DesignStudioExpressTests.swift in Sources */,
 				0C86A9191C1A408E006CA6DA /* SettingsViewController.swift in Sources */,
 				0C86A93C1C1B151E006CA6DA /* MPFeedbackMailComposeViewController.m in Sources */,

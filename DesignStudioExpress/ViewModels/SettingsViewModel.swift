@@ -52,10 +52,20 @@ class SettingsViewModel {
                 if let navigationController = vc.navigationController {
                     navigationController.presentViewController(feedbackController, animated: true, completion:nil)
                 }
-            }), // Email, Pull from Weather Notifications
-            //Setting(title: "Review on App Store", icon: "Clock"), // Link to App Store
-            //Setting(title: "Share this app", icon: "Clock"), // Pop share sheet
-            //Setting(title: "The team", icon: "Clock"), // Github pod?
+            }),
+            
+            Setting(title: "Review on App Store", icon: "Clock", action: { vc in
+                // https://itunes.apple.com/us/app/whackjob/id1054379438?at=11laRZ&ct=pro&ls=1&mt=8
+                UIApplication.sharedApplication().openURL(NSURL(string : "itms-apps://itunes.apple.com/app/id1054379438")!)
+            }),
+            
+            Setting(title: "Share this app", icon: "Clock", action: { vc in
+                let activityController = UIActivityViewController(activityItems: [DesignStudioActivityItemSource()], applicationActivities: nil)
+                if let navigationController = vc.navigationController {
+                    navigationController.presentViewController(activityController, animated: true, completion:nil)
+                }
+            })
+                //Setting(title: "The team", icon: "Clock"), // Github pod?
         ]
     }
     
