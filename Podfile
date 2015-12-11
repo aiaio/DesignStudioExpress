@@ -11,5 +11,6 @@ pod 'FXLabel'
 pod 'SZTextView'
 pod 'GMStepper'
 pod 'MZTimerLabel'
+pod 'VTAcknowledgementsViewController'
 
 use_frameworks!

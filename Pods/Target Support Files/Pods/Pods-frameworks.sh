@@ -96,6 +96,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/SZTextView.framework"
   install_framework "Pods/SwiftyJSON.framework"
   install_framework "Pods/SwiftyUserDefaults.framework"
+  install_framework "Pods/VTAcknowledgementsViewController.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Cartography.framework"
@@ -110,4 +111,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/SZTextView.framework"
   install_framework "Pods/SwiftyJSON.framework"
   install_framework "Pods/SwiftyUserDefaults.framework"
+  install_framework "Pods/VTAcknowledgementsViewController.framework"
 fi

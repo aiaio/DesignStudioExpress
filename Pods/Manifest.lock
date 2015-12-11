@@ -19,6 +19,7 @@ PODS:
   - SwiftyJSON (2.3.1)
   - SwiftyUserDefaults (2.0.0)
   - SZTextView (1.2.1)
+  - VTAcknowledgementsViewController (0.17)
 
 DEPENDENCIES:
   - Cartography (~> 0.6)
@@ -34,6 +35,7 @@ DEPENDENCIES:
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
   - SwiftyUserDefaults
   - SZTextView
+  - VTAcknowledgementsViewController
 
 EXTERNAL SOURCES:
   NRSimplePlist:
@@ -65,5 +67,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
   SwiftyUserDefaults: 1266e9734c68bcfbac8294ee84173dc8ba6db312
   SZTextView: 906df45afd3c1b24fc5252088d5ef8061513c238
+  VTAcknowledgementsViewController: 6056f5f5e5ed995bbf0581bed6ddd29355ca9a80
 
 COCOAPODS: 0.39.0
