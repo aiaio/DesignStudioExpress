@@ -1612,12 +1612,14 @@ Sketching Templates</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T27-tB-Zgt">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaA-1Q-LJs" customClass="UIButtonRed" customModule="DesignStudioExpress" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaA-1Q-LJs" customClass="UIButtonBlue" customModule="DesignStudioExpress" customModuleProvider="target">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="aRD-sf-Wib"/>
                                                 </constraints>
-                                                <state key="normal" title="BEGIN DESIGN STUDIO"/>
+                                                <state key="normal" title="BEGIN DESIGN STUDIO">
+                                                    <color key="titleColor" red="0.31764705882352939" green="0.55686274509803924" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <variation key="default">
                                                     <mask key="constraints">
                                                         <exclude reference="aRD-sf-Wib"/>
@@ -1914,6 +1916,9 @@ Sketching Templates</string>
                                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </tableViewCell>
                                         </prototypes>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="20" width="400" height="641"/>
+                                        </variation>
                                         <connections>
                                             <outlet property="dataSource" destination="uXv-4T-Okg" id="Mlj-TK-YmR"/>
                                             <outlet property="delegate" destination="uXv-4T-Okg" id="HrQ-HF-CHV"/>

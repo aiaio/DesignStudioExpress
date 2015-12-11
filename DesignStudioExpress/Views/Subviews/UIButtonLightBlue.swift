@@ -10,10 +10,9 @@ import UIKit
 
 class UIButtonLightBlue: UIButtonBase {
     
-    
+    let highlightedOpacity = CGFloat(0.8)
     override var defaultColor: UIColor { get { return DesignStudioStyles.secondaryButton } }
     override var textColor:UIColor { get{ return DesignStudioStyles.secondaryButtonText } }
-    let highlightedOpacity = CGFloat(0.8)
     
     override var highlighted: Bool {
         get {
