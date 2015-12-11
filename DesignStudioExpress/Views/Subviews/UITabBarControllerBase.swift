@@ -29,6 +29,7 @@ class UITabBarControllerBase: UITabBarController {
         case DetailDesignStudioViewController = "DetailDesignStudioViewController"
         case UpcomingChallengeViewController = "UpcomingChallengeViewController"
         case EndStudioViewController = "EndStudioViewController"
+        case FaqViewController = "FaqViewController"
     }
     
     // tabbar style customization
@@ -37,8 +38,14 @@ class UITabBarControllerBase: UITabBarController {
     let barItemBackgroundColorSelected = DesignStudioStyles.bottomNavigationBGColorSelected
     let tabBarHeight = CGFloat(60)
     
+    // flag that determines that the view should go directly to Faq screen
+    // we're using this when we're comming from Initial screen
+    // because we want to have the tab bar - if we segue directly, there's no tab bar
+    var showFaq: Bool = false
+    
     // 0-based index of the Design Studio tab
     let createDesignStudioNavTabIndex = 2
+    // easy reference to the nav controller on the design studio tab
     private unowned var dsNavController: UINavigationController {
         get {
             return self.viewControllers![createDesignStudioNavTabIndex] as! UINavigationController
@@ -61,6 +68,21 @@ class UITabBarControllerBase: UITabBarController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showNextTimerScreen:", name: NotificationIdentifier.ShowNextTimerScreen.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showNextChallengeScreen:", name: NotificationIdentifier.ShowNextChallengeScreen.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEndDesignStudioScreen:", name: NotificationIdentifier.ShowEndDesignStudioScreen.rawValue, object: nil)
+        
+        if showFaq {
+            self.showFaqScreen()
+        }
+    }
+    
+    // shows the Faq screen
+    private func showFaqScreen() {
+        self.selectedIndex = 1
+        
+        if let vc = self.viewControllers![1] as? UINavigationController {
+            if let faqViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.FaqViewController.rawValue) {
+                vc.pushViewController(faqViewController, animated: false)
+            }
+        }
     }
     
     // handler for showing the Detail DS screen when DesignStudioLoaded notification is raised

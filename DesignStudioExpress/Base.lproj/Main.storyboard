@@ -59,6 +59,9 @@
                                         <include reference="OAp-aM-ssW"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="faq:" destination="aOo-7J-XTA" eventType="touchUpInside" id="5W5-bc-j61"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZu-3P-ol9">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -263,7 +266,7 @@
         <!--Table View Controller-->
         <scene sceneID="0eJ-gl-wUH">
             <objects>
-                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="sXJ-yl-Usk" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FaqViewController" automaticallyAdjustsScrollViewInsets="NO" id="sXJ-yl-Usk" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="28" id="65Z-Vl-f5Y">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -934,7 +937,7 @@ Sketching Templates</string>
         <!--Tab Bar Controller Base-->
         <scene sceneID="B3E-Cj-aJ5">
             <objects>
-                <tabBarController id="alx-4r-Kum" customClass="UITabBarControllerBase" customModule="DesignStudioExpress" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="alx-4r-Kum" customClass="UITabBarControllerBase" customModule="DesignStudioExpress" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="fp2-yq-fFR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
