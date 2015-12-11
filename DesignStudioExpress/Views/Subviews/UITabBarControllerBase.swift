@@ -59,30 +59,22 @@ class UITabBarControllerBase: UITabBarController {
         
         self.customizeStyle()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showDesignStudio:", name: NotificationIdentifier.DesignStudioLoaded.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resetCurrentlyActiveDesignStudio:", name: NotificationIdentifier.DesignStudioDeleted.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEndActivityScreen:", name: NotificationIdentifier.ActivityEnded.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showTimerScreen:", name: NotificationIdentifier.PrepareTimerScreen.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "beginDesignStudio:", name: NotificationIdentifier.DesignStudioStarted.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "upcomingChallengeDidAppear:", name: NotificationIdentifier.UpcomingChallengeDidAppear.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showNextTimerScreen:", name: NotificationIdentifier.ShowNextTimerScreen.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showNextChallengeScreen:", name: NotificationIdentifier.ShowNextChallengeScreen.rawValue, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEndDesignStudioScreen:", name: NotificationIdentifier.ShowEndDesignStudioScreen.rawValue, object: nil)
-        
         if showFaq {
             self.showFaqScreen()
         }
+        
+        self.addObservers()
     }
     
-    // shows the Faq screen
-    private func showFaqScreen() {
-        self.selectedIndex = 1
-        
-        if let vc = self.viewControllers![1] as? UINavigationController {
-            if let faqViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.FaqViewController.rawValue) {
-                vc.pushViewController(faqViewController, animated: false)
-            }
-        }
+    /**
+     * Change the height of the bar
+     */
+    override func viewWillLayoutSubviews() {
+        var tabBarFrame = self.tabBar.frame
+        // default value is around 50
+        tabBarFrame.size.height = self.tabBarHeight
+        tabBarFrame.origin.y = self.view.frame.size.height - self.tabBarHeight
+        self.tabBar.frame = tabBarFrame
     }
     
     // handler for showing the Detail DS screen when DesignStudioLoaded notification is raised
@@ -107,14 +99,6 @@ class UITabBarControllerBase: UITabBarController {
         }
     }
     
-    private func setActiveDesignStudio(designStudio: DesignStudio?) {
-        let designStudioViewController = self.dsNavController.viewControllers[0] as! DetailDesignStudioViewController
-        designStudioViewController.vm.setDesignStudio(designStudio)
-        
-        // show the first view in the navigation
-        self.dsNavController.popToRootViewControllerAnimated(true)
-    }
-    
     func showEndActivityScreen(notification: NSNotification) {
         if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.ActivityEndedScreen.rawValue) {
             vc.modalPresentationStyle = .OverCurrentContext
@@ -125,18 +109,7 @@ class UITabBarControllerBase: UITabBarController {
             topController.presentViewController(vc, animated: true, completion: nil)
         }
     }
-    
-    // finds the last presented controller in our view hierarchy
-    private func findLastPresentedController() -> UIViewController {
-        var topController = UIApplication.sharedApplication().keyWindow!.rootViewController;
-    
-        while topController?.presentedViewController != nil {
-            topController = topController!.presentedViewController;
-        }
-    
-     	   return topController!
-    }
-    
+
     func showTimerScreen(notification: NSNotification) {
         self.addMissingViewControllers()
         self.navigateToTimerScreen()
@@ -174,6 +147,44 @@ class UITabBarControllerBase: UITabBarController {
             self.presentViewController(endStudio, animated: true, completion: nil)
             // TODO we should probably inject in nav stack another view that will appear here
         }
+    }
+    
+    // shows the Faq screen
+    private func showFaqScreen() {
+        self.selectedIndex = 1
+        
+        if let vc = self.viewControllers![1] as? UINavigationController {
+            if let faqViewController = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.FaqViewController.rawValue) {
+                vc.pushViewController(faqViewController, animated: false)
+            }
+        }
+    }
+    
+    // register for notifications
+    private func addObservers() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showDesignStudio:", name: NotificationIdentifier.DesignStudioLoaded.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "resetCurrentlyActiveDesignStudio:", name: NotificationIdentifier.DesignStudioDeleted.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEndActivityScreen:", name: NotificationIdentifier.ActivityEnded.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showTimerScreen:", name: NotificationIdentifier.PrepareTimerScreen.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "beginDesignStudio:", name: NotificationIdentifier.DesignStudioStarted.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "upcomingChallengeDidAppear:", name: NotificationIdentifier.UpcomingChallengeDidAppear.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showNextTimerScreen:", name: NotificationIdentifier.ShowNextTimerScreen.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showNextChallengeScreen:", name: NotificationIdentifier.ShowNextChallengeScreen.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEndDesignStudioScreen:", name: NotificationIdentifier.ShowEndDesignStudioScreen.rawValue, object: nil)
+    }
+    
+    // remove 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    
+    private func setActiveDesignStudio(designStudio: DesignStudio?) {
+        let designStudioViewController = self.dsNavController.viewControllers[0] as! DetailDesignStudioViewController
+        designStudioViewController.vm.setDesignStudio(designStudio)
+        
+        // show the first view in the navigation
+        self.dsNavController.popToRootViewControllerAnimated(true)
     }
     
     private func showUpcomingChallengeViewController() {
@@ -220,8 +231,15 @@ class UITabBarControllerBase: UITabBarController {
         self.selectedIndex = createDesignStudioNavTabIndex
     }
     
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+    // finds the last presented controller in our view hierarchy
+    private func findLastPresentedController() -> UIViewController {
+        var topController = UIApplication.sharedApplication().keyWindow!.rootViewController;
+        
+        while topController?.presentedViewController != nil {
+            topController = topController!.presentedViewController;
+        }
+        
+        return topController!
     }
     
     /**
@@ -259,17 +277,6 @@ class UITabBarControllerBase: UITabBarController {
         let backgroundImage = UIImage.makeImageWithColorAndSize(self.barItemBackgroundColorSelected,
             size: CGSizeMake(tabBar.frame.width/numOfItems, self.tabBarHeight))
         self.tabBar.selectionIndicatorImage = backgroundImage
-    }
-    
-    /**
-     * Change the height of the bar
-     */
-    override func viewWillLayoutSubviews() {
-        var tabBarFrame = self.tabBar.frame
-        // default value is around 50
-        tabBarFrame.size.height = self.tabBarHeight
-        tabBarFrame.origin.y = self.view.frame.size.height - self.tabBarHeight
-        self.tabBar.frame = tabBarFrame
     }
 }
 

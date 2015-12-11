@@ -53,6 +53,8 @@
 		E4C113361BFBBE3B00A7E1B3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C113351BFBBE3B00A7E1B3 /* StringExtension.swift */; };
 		E4CEA34B1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CEA34A1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift */; };
 		E4D5BD501C18EB00005B28BE /* FaqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D5BD4F1C18EB00005B28BE /* FaqViewController.swift */; };
+		E4D5BD521C1B1D49005B28BE /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D5BD511C1B1D49005B28BE /* ListViewController.swift */; };
+		E4D5BD541C1B2087005B28BE /* templates.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E4D5BD531C1B2087005B28BE /* templates.pdf */; };
 		E4D87AAB1C17501700362F07 /* EndActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D87AAA1C17501700362F07 /* EndActivityViewController.swift */; };
 		E4D87AAD1C17567800362F07 /* EndActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D87AAC1C17567800362F07 /* EndActivityViewModel.swift */; };
 		E4EAC13F1C0228410079364C /* UITableViewCellChallengeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EAC13E1C0228410079364C /* UITableViewCellChallengeHeader.swift */; };
@@ -124,6 +126,8 @@
 		E4C113351BFBBE3B00A7E1B3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		E4CEA34A1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MGSwipeTableCellChallenge.swift; sourceTree = "<group>"; };
 		E4D5BD4F1C18EB00005B28BE /* FaqViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaqViewController.swift; sourceTree = "<group>"; };
+		E4D5BD511C1B1D49005B28BE /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		E4D5BD531C1B2087005B28BE /* templates.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = templates.pdf; sourceTree = "<group>"; };
 		E4D87AAA1C17501700362F07 /* EndActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndActivityViewController.swift; sourceTree = "<group>"; };
 		E4D87AAC1C17567800362F07 /* EndActivityViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndActivityViewModel.swift; sourceTree = "<group>"; };
 		E4EAC13E1C0228410079364C /* UITableViewCellChallengeHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellChallengeHeader.swift; sourceTree = "<group>"; };
@@ -269,6 +273,7 @@
 				E429AF571BF530B200AE4DA7 /* DesignStudioStyles.swift */,
 				E42DD3261BFE68380026390E /* DesignStudioStyleCustomization.swift */,
 				E42DD32D1BFE83FD0026390E /* Intro.mov */,
+				E4D5BD531C1B2087005B28BE /* templates.pdf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				E45541A31C14CCC800595944 /* EndStudioViewController.swift */,
 				E4D87AAA1C17501700362F07 /* EndActivityViewController.swift */,
 				E4D5BD4F1C18EB00005B28BE /* FaqViewController.swift */,
+				E4D5BD511C1B1D49005B28BE /* ListViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -404,6 +410,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D5BD541C1B2087005B28BE /* templates.pdf in Resources */,
 				E421C4201BF164AD003F9D8A /* LaunchScreen.storyboard in Resources */,
 				E42DD32E1BFE83FD0026390E /* Intro.mov in Resources */,
 				E421C41D1BF164AD003F9D8A /* Assets.xcassets in Resources */,
@@ -507,6 +514,7 @@
 				E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */,
 				E40EDF261C10B34100F0D4C4 /* TimerViewModel.swift in Sources */,
 				E46A22061C010FC1004D5292 /* ChallengeDetailViewController.swift in Sources */,
+				E4D5BD521C1B1D49005B28BE /* ListViewController.swift in Sources */,
 				E4C113301BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift in Sources */,
 				E468028E1C0E5EF3002438E5 /* ActivityDetailViewModel.swift in Sources */,
 				E4D87AAD1C17567800362F07 /* EndActivityViewModel.swift in Sources */,
