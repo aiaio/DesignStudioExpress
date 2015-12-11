@@ -10,7 +10,7 @@ import Foundation
 import MGSwipeTableCell
 
 
-class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITableViewDelegate, MGSwipeTableCellDelegate {
+class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITableViewDelegate, MGSwipeTableCellDelegate, MFMailComposeViewControllerDelegate {
 
 
     @IBOutlet weak var tableView: UITableView!
@@ -216,5 +216,11 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
         
         // set separator from edge to edge
         cell.layoutMargins = UIEdgeInsetsZero
+    }
+    
+    // MARK - MFMailComposeViewControllerDelegate
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        self.dismissViewControllerAnimated(true, completion: {})
     }
 }

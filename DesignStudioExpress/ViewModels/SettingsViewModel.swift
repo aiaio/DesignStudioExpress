@@ -8,6 +8,7 @@
 
 import Foundation
 import SafariServices
+import AcknowList
 
 struct Setting {
     let title: String
@@ -31,9 +32,27 @@ class SettingsViewModel {
             Setting(title: "About Ai", icon: "Clock", action:  { vc in
                 let svc = SFSafariViewController(URL: NSURL(string: "http://www.alexanderinteractive.com/company/")!)
                 vc.presentViewController(svc, animated: true, completion: nil)
-            }), 
-            //Setting(title: "Legal", icon: "Clock"), //PodfileViewController
-            //Setting(title: "Contact Us", icon: "Clock"), // Email, Pull from Weather Notifications
+            }),
+            
+            Setting(title: "Legal", icon: "Clock", action: { vc in
+                let legalController = AcknowListViewController()
+                if let navigationController = vc.navigationController {
+                    navigationController.pushViewController(legalController, animated: true)
+                }
+            }),
+            
+            Setting(title: "Contact Us", icon: "Clock", action: { vc in
+                var feedbackController = MPFeedbackMailComposeViewController()
+                
+                //feedbackController.mailComposeDelegate = vc
+                feedbackController.setToRecipients(["sms@alexanderinteractive.com"])
+                feedbackController.setSubject("Design Studio Express Feedback")
+                feedbackController.setMessageBody("Feedback:\n\n\n\n\n\n\n\n\n--------\nDeveloper Information:", isHTML:false)
+                
+                if let navigationController = vc.navigationController {
+                    navigationController.presentViewController(feedbackController, animated: true, completion:nil)
+                }
+            }), // Email, Pull from Weather Notifications
             //Setting(title: "Review on App Store", icon: "Clock"), // Link to App Store
             //Setting(title: "Share this app", icon: "Clock"), // Pop share sheet
             //Setting(title: "The team", icon: "Clock"), // Github pod?
