@@ -14,7 +14,7 @@ class FaqViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url: NSURL = NSURL(string: "https://designstudioexpress.s3.amazonaws.com/WebView/index.html")!
+        let url = NSURL(string: "https://designstudioexpress.s3.amazonaws.com/WebView/index.html")!
         let requestObj: NSURLRequest = NSURLRequest(URL: url)
         webView.loadRequest(requestObj)
     }

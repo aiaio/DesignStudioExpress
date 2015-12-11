@@ -19,6 +19,8 @@ class IntroViewController: UIViewController {
     let videoFileName = "Intro"
     let videoFileType = "mov"
     
+    let tabBarControllerIdentifier = "TabBarController"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +42,13 @@ class IntroViewController: UIViewController {
 
     override func viewWillDisappear(animated: Bool) {
         NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    @IBAction func faq(sender: AnyObject) {
+        if let tabBar = self.storyboard?.instantiateViewControllerWithIdentifier(self.tabBarControllerIdentifier) as? UITabBarControllerBase {
+            tabBar.showFaq = true
+            self.presentViewController(tabBar, animated: false, completion: nil)
+        }
     }
     
     func initVideoPlayer() -> AVPlayerLayer {

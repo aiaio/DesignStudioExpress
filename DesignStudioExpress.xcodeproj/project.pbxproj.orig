@@ -342,7 +342,11 @@
 				E45541A31C14CCC800595944 /* EndStudioViewController.swift */,
 				E4D87AAA1C17501700362F07 /* EndActivityViewController.swift */,
 				E4D5BD4F1C18EB00005B28BE /* FaqViewController.swift */,
+<<<<<<< HEAD
+				0C86A9171C1A408E006CA6DA /* SettingsViewController.swift */,
+=======
 				E4D5BD511C1B1D49005B28BE /* ListViewController.swift */,
+>>>>>>> dev/develop
 			);
 			path = Views;
 			sourceTree = "<group>";
