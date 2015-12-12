@@ -49,7 +49,7 @@
 		E42DD3341BFF97C70026390E /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DD3331BFF97C70026390E /* Activity.swift */; };
 		E446360B1C023675004B3156 /* UITableViewCellActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E446360A1C023675004B3156 /* UITableViewCellActivity.swift */; };
 		E45128F81BF29E09002AFC8A /* UIButtonRed.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45128F71BF29E09002AFC8A /* UIButtonRed.swift */; };
-		E45541A41C14CCC800595944 /* EndStudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45541A31C14CCC800595944 /* EndStudioViewController.swift */; };
+		E45541A41C14CCC800595944 /* EndDesignStudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45541A31C14CCC800595944 /* EndDesignStudioViewController.swift */; };
 		E4607F261BF6A82C000C44C7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */; };
 		E468028C1C0E1F7E002438E5 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468028B1C0E1F7E002438E5 /* ActivityDetailViewController.swift */; };
 		E468028E1C0E5EF3002438E5 /* ActivityDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468028D1C0E5EF3002438E5 /* ActivityDetailViewModel.swift */; };
@@ -132,7 +132,7 @@
 		E42DD3331BFF97C70026390E /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		E446360A1C023675004B3156 /* UITableViewCellActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellActivity.swift; sourceTree = "<group>"; };
 		E45128F71BF29E09002AFC8A /* UIButtonRed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonRed.swift; sourceTree = "<group>"; };
-		E45541A31C14CCC800595944 /* EndStudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndStudioViewController.swift; sourceTree = "<group>"; };
+		E45541A31C14CCC800595944 /* EndDesignStudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDesignStudioViewController.swift; sourceTree = "<group>"; };
 		E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E468028B1C0E1F7E002438E5 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
 		E468028D1C0E5EF3002438E5 /* ActivityDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewModel.swift; sourceTree = "<group>"; };
@@ -339,7 +339,7 @@
 				E468028B1C0E1F7E002438E5 /* ActivityDetailViewController.swift */,
 				E40EDF281C10E1AA00F0D4C4 /* UpcomingChallengeViewController.swift */,
 				E40EDF231C10B28200F0D4C4 /* TimerViewController.swift */,
-				E45541A31C14CCC800595944 /* EndStudioViewController.swift */,
+				E45541A31C14CCC800595944 /* EndDesignStudioViewController.swift */,
 				E4D87AAA1C17501700362F07 /* EndActivityViewController.swift */,
 				E4D5BD4F1C18EB00005B28BE /* FaqViewController.swift */,
 				E4D5BD511C1B1D49005B28BE /* ListViewController.swift */,
@@ -594,7 +594,7 @@
 				E4C113361BFBBE3B00A7E1B3 /* StringExtension.swift in Sources */,
 				E429AF4E1BF3F65400AE4DA7 /* UITabBarControllerBase.swift in Sources */,
 				E429AF691BF6619200AE4DA7 /* MGSwipeTableCellCentered.swift in Sources */,
-				E45541A41C14CCC800595944 /* EndStudioViewController.swift in Sources */,
+				E45541A41C14CCC800595944 /* EndDesignStudioViewController.swift in Sources */,
 				E49F45DC1BFE443B00F32AE9 /* StyledNavigationBar.swift in Sources */,
 				E42DD3321BFF76800026390E /* Challenge.swift in Sources */,
 				0C86A91B1C1A40AF006CA6DA /* SettingsViewModel.swift in Sources */,

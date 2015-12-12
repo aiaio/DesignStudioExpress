@@ -263,12 +263,12 @@
                                 <exclude reference="UNY-ds-qkc"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="hfY-0h-za3"/>
+                                <exclude reference="B9m-QZ-XoO"/>
+                                <exclude reference="YAp-kW-u3X"/>
                                 <exclude reference="7qN-tq-NpJ"/>
                                 <exclude reference="PKP-6y-cF5"/>
                                 <exclude reference="v26-I5-ALW"/>
-                                <exclude reference="B9m-QZ-XoO"/>
-                                <exclude reference="YAp-kW-u3X"/>
-                                <exclude reference="hfY-0h-za3"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -277,12 +277,12 @@
                                 <include reference="UNY-ds-qkc"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="hfY-0h-za3"/>
+                                <include reference="B9m-QZ-XoO"/>
+                                <include reference="YAp-kW-u3X"/>
                                 <include reference="7qN-tq-NpJ"/>
                                 <include reference="PKP-6y-cF5"/>
                                 <include reference="v26-I5-ALW"/>
-                                <include reference="B9m-QZ-XoO"/>
-                                <include reference="YAp-kW-u3X"/>
-                                <include reference="hfY-0h-za3"/>
                             </mask>
                         </variation>
                     </view>
@@ -2709,10 +2709,10 @@ Sketching Templates</string>
             </objects>
             <point key="canvasLocation" x="5041.5" y="1533"/>
         </scene>
-        <!--End Studio View Controller-->
+        <!--End Design Studio View Controller-->
         <scene sceneID="drG-G2-Ldh">
             <objects>
-                <viewController storyboardIdentifier="EndStudioViewController" id="hQK-eX-rHn" customClass="EndStudioViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EndDesignStudioViewController" id="hQK-eX-rHn" customClass="EndDesignStudioViewController" customModule="DesignStudioExpress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Px5-jV-NFe"/>
                         <viewControllerLayoutGuide type="bottom" id="Arf-4E-rXS"/>
@@ -2801,6 +2801,23 @@ Sketching Templates</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cP3-Ar-BZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5781" y="1533"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Z3w-16-t8W">
+            <objects>
+                <viewController storyboardIdentifier="PostDesignStudioViewController" id="c42-wT-IBN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VKM-eA-UzD"/>
+                        <viewControllerLayoutGuide type="bottom" id="1vs-Ox-0IL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eDg-TY-tBR">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pzX-yL-zEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6534" y="1533"/>
         </scene>
         <!--Challenge Detail View Controller-->
         <scene sceneID="ndZ-lY-XXN">
@@ -3986,8 +4003,8 @@ Sketching Templates</string>
         <image name="Timer_Image" width="375" height="259"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aMA-7O-iQY"/>
-        <segue reference="mkR-Ff-fxU"/>
         <segue reference="2ei-fb-G31"/>
+        <segue reference="mkR-Ff-fxU"/>
+        <segue reference="aMA-7O-iQY"/>
     </inferredMetricsTieBreakers>
 </document>

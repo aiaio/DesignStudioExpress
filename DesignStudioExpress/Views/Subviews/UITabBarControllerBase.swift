@@ -28,7 +28,8 @@ class UITabBarControllerBase: UITabBarController {
         case TimerViewController = "TimerViewController"
         case DetailDesignStudioViewController = "DetailDesignStudioViewController"
         case UpcomingChallengeViewController = "UpcomingChallengeViewController"
-        case EndStudioViewController = "EndStudioViewController"
+        case EndDesignStudioViewController = "EndDesignStudioViewController"
+        case PostDesignStudioViewController = "PostDesignStudioViewController"
         case FaqViewController = "FaqViewController"
     }
     
@@ -141,13 +142,20 @@ class UITabBarControllerBase: UITabBarController {
     }
     
     func showEndDesignStudioScreen(notification: NSNotification) {
-        if let endStudio = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.EndStudioViewController.rawValue) as? EndStudioViewController {
+        if let endStudio = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.EndDesignStudioViewController.rawValue) as? EndDesignStudioViewController {
             endStudio.modalPresentationStyle = .FullScreen
             endStudio.modalTransitionStyle = .CrossDissolve
             self.presentViewController(endStudio, animated: true, completion: nil)
-            // TODO we should probably inject in nav stack another view that will appear here
+            
+            // add post view studio in the view hierarchy, so when the End design studio disappears
+            // we will see the post studio screen
+            if let postStudio = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.PostDesignStudioViewController.rawValue) {
+                self.dsNavController.viewControllers.append(postStudio)
+            }
         }
     }
+    
+    
     
     // shows the Faq screen
     private func showFaqScreen() {

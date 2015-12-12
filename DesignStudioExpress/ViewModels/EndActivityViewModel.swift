@@ -6,8 +6,6 @@
 //  Copyright © 2015 Alexander Interactive. All rights reserved.
 //
 
-import Foundation
-
 class EndActivityViewModel {
     var didAddMoreTime = false
     
@@ -18,12 +16,6 @@ class EndActivityViewModel {
             AppDelegate.designStudio.endCurrentActivityViewDidDisappear()
         }
     }
-    /*
-    func viewWillDisappear() {
-        if self.didAddMoreTime {
-            AppDelegate.designStudio.addMoreTimeToActivity()
-        }
-    }*/
         
     func addMoreTime() {
         self.didAddMoreTime = true
