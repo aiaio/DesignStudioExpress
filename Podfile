@@ -12,5 +12,6 @@ pod 'SZTextView'
 pod 'GMStepper'
 pod 'MZTimerLabel'
 pod 'AcknowList'
+pod 'MHVideoPhotoGallery'
 
 use_frameworks!
