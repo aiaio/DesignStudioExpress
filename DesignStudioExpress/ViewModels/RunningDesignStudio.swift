@@ -66,7 +66,7 @@ class RunningDesignStudio: NSObject {
     // in seconds
     var currentActivityRemainingDuration: Int {
         if let totalDuration = self.currentActivity?.duration {
-            let totalDurationSecs = totalDuration * 60 // TODO fix this // convert minutes to seconds
+            let totalDurationSecs = totalDuration * 60
             if self.currentActivityStart == nil {
                 return totalDurationSecs
             }
@@ -146,12 +146,30 @@ class RunningDesignStudio: NSObject {
         self.showNextScreen()
     }
     
-    // called when add more time is touched on End Activity screen
     func addMoreTimeViewDidDisappear() {
+        guard self.currentActivity != nil else {
+            return
+        }
+        // we have to update the current activity start to be now - set duration, 
+        // because we want to add 2 more minutes from the time that user clicks the button,
+        // not from the time that we displayed the End activity screen
+        // the actual duration of the activity will be longer than initial duration +  mins
+        // but the timer will always start from 2 mins, and that's what we want
+        let now = NSDate()
+        self.currentActivityStart = now.dateByAddingTimeInterval(Double(self.currentActivity!.duration) * -60.0)
+        
+        // update actual data
+        self.addMoreTimeToActivity()
+        
+        // restart the global timer so that we get End activity screen again
+        self.startGlobalTimer()
+        
+        // refresh the data on Timer view if it's loaded
         NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.AddMoreTimeToCurrentActivity.rawValue, object: self, userInfo: nil)
     }    
     
-    func addMoreTimeToActivity() {
+    // updates the activity duration in the db
+    private func addMoreTimeToActivity() {
         do {
             try realm.write {
                 self.currentActivity?.duration += self.addMoreMinutesDuration // mins
@@ -230,8 +248,9 @@ class RunningDesignStudio: NSObject {
         return nil
     }
     
+    
+    // update the duration of the activity to the actual duration of the activity
     private func updateCurrentActivityTime() {
-        // update the duration of the activity to the actual duration
         do {
             if let diff = self.currentActivityStart?.timeIntervalSinceNow {
                 let duration = Int(round(-diff / 60)) // convert seconds to minutes
@@ -287,8 +306,17 @@ class RunningDesignStudio: NSObject {
     }
     
     private func startCurrentActivity() {
+        // mark the start of the current activity, so we can calculate
+        // total duration of the activity
         self.currentActivityStart = NSDate()
         
+        self.startGlobalTimer()
+    }
+    
+    // creates a global timer (and cancels any existing ones)
+    // that will show notify when activity is ended,
+    // so we can show End activity screen from any of the current views we're on
+    private func startGlobalTimer() {
         self.timer?.invalidate()
         if let _ = self.currentActivity {
             self.timer = NSTimer.scheduledTimerWithTimeInterval(Double(self.currentActivityRemainingDuration), target: self, selector: "notifyEndActivity", userInfo: nil, repeats: false)

@@ -15,12 +15,6 @@ class EndActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        self.vm.viewWillDisappear()
-    }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)

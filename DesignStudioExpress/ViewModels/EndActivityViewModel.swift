@@ -18,12 +18,12 @@ class EndActivityViewModel {
             AppDelegate.designStudio.endCurrentActivityViewDidDisappear()
         }
     }
-    
+    /*
     func viewWillDisappear() {
         if self.didAddMoreTime {
             AppDelegate.designStudio.addMoreTimeToActivity()
         }
-    }
+    }*/
         
     func addMoreTime() {
         self.didAddMoreTime = true
