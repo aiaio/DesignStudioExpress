@@ -18,4 +18,9 @@ class FaqViewController: UIViewController {
         let requestObj: NSURLRequest = NSURLRequest(URL: url)
         webView.loadRequest(requestObj)
     }
+    
+    
+    @IBAction func back(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }

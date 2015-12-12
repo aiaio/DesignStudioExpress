@@ -43,14 +43,7 @@ class IntroViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-    
-    @IBAction func faq(sender: AnyObject) {
-        if let tabBar = self.storyboard?.instantiateViewControllerWithIdentifier(self.tabBarControllerIdentifier) as? UITabBarControllerBase {
-            tabBar.showFaq = true
-            self.presentViewController(tabBar, animated: false, completion: nil)
-        }
-    }
-    
+        
     func initVideoPlayer() -> AVPlayerLayer {
         let videoBundle = NSBundle.mainBundle().pathForResource(videoFileName, ofType: videoFileType)
         let player = AVPlayer(URL:  NSURL(fileURLWithPath: videoBundle!))
