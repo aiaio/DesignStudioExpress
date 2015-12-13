@@ -22,7 +22,6 @@ class PostDesignStudioViewController: UIViewController, UICollectionViewDelegate
         
         self.collectionView.registerClass(MHMediaPreviewCollectionViewCell.self, forCellWithReuseIdentifier: "MHMediaPreviewCollectionViewCell")
         
-
         // Do any additional setup after loading the view.
     }
     
@@ -55,15 +54,30 @@ class PostDesignStudioViewController: UIViewController, UICollectionViewDelegate
         let imageView = cell.thumbnail
         let gallery = MHGalleryController(presentationStyle: .ImageViewerNavigationBarShown)
         gallery.UICustomization.showOverView = false
-        gallery.galleryItems = [MHGalleryItem (URL: "https://placeholdit.imgix.net/~text?txtsize=28&txt=300%C3%97300&w=300&h=300", galleryType: MHGalleryType.Image)]
+        gallery.galleryItems = [MHGalleryItem (URL: "https://placeholdit.imgix.net/~text?txtsize=28&txt=300%C3%97300&w=300&h=300", galleryType: MHGalleryType.Image),MHGalleryItem (URL: "https://placeholdit.imgix.net/~text?txtsize=28&txt=300%C3%97300&w=300&h=300", galleryType: MHGalleryType.Image)]
         gallery.presentingFromImageView = imageView
         gallery.presentationIndex = indexPath.row
-        //gallery.delegate = self ??
+        gallery.galleryDelegate = self
         
+        
+        
+        gallery.finishedCallback = { [weak gallery] (currentIndex: Int, image: UIImage!, interactiveTransition: MHTransitionDismissMHGallery!, viewMode: MHGalleryViewMode) -> Void in
+            
+            let newIndexPath: NSIndexPath = NSIndexPath(forRow: currentIndex, inSection: 0)
+            let cellFrame: CGRect = collectionView.collectionViewLayout.layoutAttributesForItemAtIndexPath(newIndexPath)!.frame
+            collectionView.scrollRectToVisible(cellFrame, animated: false)
+            
+            dispatch_async(dispatch_get_main_queue(), {[weak gallery] () -> Void in
+                collectionView.reloadItemsAtIndexPaths([newIndexPath])
+                collectionView.scrollToItemAtIndexPath(newIndexPath, atScrollPosition: .CenteredHorizontally, animated: false)
+                let cell: MHMediaPreviewCollectionViewCell = collectionView.cellForItemAtIndexPath(newIndexPath) as! MHMediaPreviewCollectionViewCell
+                
+                gallery!.dismissViewControllerAnimated(true, dismissImageView: cell.thumbnail, completion: nil)
+            })
+        }
         self.presentMHGalleryController(gallery, animated: true, completion: nil)
-        
-        
     }
+    
     
     // MARK: - MHGalleryDataSource
     
