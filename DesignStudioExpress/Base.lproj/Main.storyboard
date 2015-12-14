@@ -2816,8 +2816,9 @@ Sketching Templates</string>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rjm-Pa-Qjq">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="E6Y-Tu-NZN">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="75" height="75"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -2827,26 +2828,76 @@ Sketching Templates</string>
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </collectionViewCell>
                                 </cells>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="312" width="400" height="488"/>
-                                </variation>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photograph your groups' results now to automatically save them with this studio template. Share the brilliance. Take a bow." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mM4-vK-mxv" customClass="FXLabel">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="EOI-Pu-zfN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
+                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineSpacing">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EOI-Pu-zfN"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="EOI-Pu-zfN"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="mM4-vK-mxv" secondAttribute="leading" constant="-8" id="0pt-Z1-BFD"/>
+                            <constraint firstItem="rjm-Pa-Qjq" firstAttribute="top" secondItem="mM4-vK-mxv" secondAttribute="bottom" constant="15" id="6BM-2s-D1q"/>
+                            <constraint firstItem="mM4-vK-mxv" firstAttribute="top" secondItem="VKM-eA-UzD" secondAttribute="bottom" constant="15" id="8ab-I2-zgm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mM4-vK-mxv" secondAttribute="trailing" constant="8" id="BV9-xD-Dcz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rjm-Pa-Qjq" secondAttribute="trailing" constant="10" id="QNw-5g-QZB"/>
+                            <constraint firstItem="rjm-Pa-Qjq" firstAttribute="leading" secondItem="eDg-TY-tBR" secondAttribute="leadingMargin" constant="10" id="fmr-Mk-duE"/>
+                            <constraint firstItem="1vs-Ox-0IL" firstAttribute="top" secondItem="rjm-Pa-Qjq" secondAttribute="bottom" constant="30" id="keU-9m-QAM"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="rjm-Pa-Qjq"/>
+                                <exclude reference="mM4-vK-mxv"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0pt-Z1-BFD"/>
+                                <exclude reference="8ab-I2-zgm"/>
+                                <exclude reference="BV9-xD-Dcz"/>
+                                <exclude reference="6BM-2s-D1q"/>
+                                <exclude reference="QNw-5g-QZB"/>
+                                <exclude reference="fmr-Mk-duE"/>
+                                <exclude reference="keU-9m-QAM"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="rjm-Pa-Qjq"/>
+                                <include reference="mM4-vK-mxv"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0pt-Z1-BFD"/>
+                                <include reference="8ab-I2-zgm"/>
+                                <include reference="BV9-xD-Dcz"/>
+                                <include reference="6BM-2s-D1q"/>
+                                <include reference="QNw-5g-QZB"/>
+                                <include reference="fmr-Mk-duE"/>
+                                <include reference="keU-9m-QAM"/>
                             </mask>
                         </variation>
                     </view>
