@@ -12,10 +12,18 @@ class EndDesignStudioViewController: UIViewController {
     
     let showDuration = 5.0
     
+    let vm = EndDesignStudioViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.hideViewAfterTimeout()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.vm.endDesignStudioDidAppear()
     }
     
     func hideViewAfterTimeout() {

@@ -25,6 +25,7 @@ class RunningDesignStudio: NSObject {
         case ShowEndDesignStudioScreen = "ShowEndDesignStudioScreen"
         case ShowPostDesignStudioScreen = "ShowPostDesignStudioScreen"
         case UpcomingChallengeDidAppear = "UpcomingChallengeDidAppear"
+        case EndDesignStudioDidAppear = "EndDesignStudioDidAppear"
         case AddMoreTimeToCurrentActivity = "AddMoreTimeToCurrentActivity"
     }
     
@@ -146,6 +147,10 @@ class RunningDesignStudio: NSObject {
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.UpcomingChallengeDidAppear.rawValue, object: self, userInfo: nil)
         }
         self.startTimer = true
+    }
+    
+    func endDesignStudioDidAppear() {
+        NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.EndDesignStudioDidAppear.rawValue, object: self, userInfo: nil)
     }
     
     // this will be called when skip activity is called from the timer screen

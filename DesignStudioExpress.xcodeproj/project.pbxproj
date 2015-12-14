@@ -72,6 +72,7 @@
 		E4D87AAB1C17501700362F07 /* EndActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D87AAA1C17501700362F07 /* EndActivityViewController.swift */; };
 		E4D87AAD1C17567800362F07 /* EndActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D87AAC1C17567800362F07 /* EndActivityViewModel.swift */; };
 		E4E17BEC1C1F1C3A002E014C /* PostDesignStudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E17BEB1C1F1C3A002E014C /* PostDesignStudioViewModel.swift */; };
+		E4E17BEE1C1F234D002E014C /* EndDesignStudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E17BED1C1F234D002E014C /* EndDesignStudioViewModel.swift */; };
 		E4EAC13F1C0228410079364C /* UITableViewCellChallengeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EAC13E1C0228410079364C /* UITableViewCellChallengeHeader.swift */; };
 		E4ECC4F11BF8E92C00834AD3 /* DetailDesignStudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECC4F01BF8E92C00834AD3 /* DetailDesignStudioViewController.swift */; };
 		E4ECC4F31BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECC4F21BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift */; };
@@ -157,6 +158,7 @@
 		E4D87AAA1C17501700362F07 /* EndActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndActivityViewController.swift; sourceTree = "<group>"; };
 		E4D87AAC1C17567800362F07 /* EndActivityViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndActivityViewModel.swift; sourceTree = "<group>"; };
 		E4E17BEB1C1F1C3A002E014C /* PostDesignStudioViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDesignStudioViewModel.swift; sourceTree = "<group>"; };
+		E4E17BED1C1F234D002E014C /* EndDesignStudioViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDesignStudioViewModel.swift; sourceTree = "<group>"; };
 		E4EAC13E1C0228410079364C /* UITableViewCellChallengeHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellChallengeHeader.swift; sourceTree = "<group>"; };
 		E4ECC4F01BF8E92C00834AD3 /* DetailDesignStudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDesignStudioViewController.swift; sourceTree = "<group>"; };
 		E4ECC4F21BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDesignStudioViewModel.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				E4D87AAC1C17567800362F07 /* EndActivityViewModel.swift */,
 				0CE90CFA1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift */,
 				E4E17BEB1C1F1C3A002E014C /* PostDesignStudioViewModel.swift */,
+				E4E17BED1C1F234D002E014C /* EndDesignStudioViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				E46A22061C010FC1004D5292 /* ChallengeDetailViewController.swift in Sources */,
 				E4D5BD521C1B1D49005B28BE /* ListViewController.swift in Sources */,
 				E4E17BEC1C1F1C3A002E014C /* PostDesignStudioViewModel.swift in Sources */,
+				E4E17BEE1C1F234D002E014C /* EndDesignStudioViewModel.swift in Sources */,
 				0CA9C92E1C1B6E4500381E98 /* SettingsViewController.swift in Sources */,
 				E4C113301BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift in Sources */,
 				0C86A93B1C1B151E006CA6DA /* MPFeedbackMailComposeViewController.m in Sources */,

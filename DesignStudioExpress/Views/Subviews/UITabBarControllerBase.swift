@@ -17,6 +17,7 @@ class UITabBarControllerBase: UITabBarController {
         case ActivityEnded = "ActivityEnded" // when activity timer runs out
         case PrepareTimerScreen = "PrepareTimerScreen" // when user clicks next activity from End Activity screen
         case UpcomingChallengeDidAppear = "UpcomingChallengeDidAppear"
+        case EndDesignStudioDidAppear = "EndDesignStudioDidAppear"
         case ShowNextTimerScreen = "ShowNextTimerScreen"
         case ShowNextChallengeScreen = "ShowNextChallengeScreen"
         case ShowEndDesignStudioScreen = "ShowEndDesignStudioScreen"
@@ -147,12 +148,14 @@ class UITabBarControllerBase: UITabBarController {
             endStudio.modalPresentationStyle = .FullScreen
             endStudio.modalTransitionStyle = .CrossDissolve
             self.presentViewController(endStudio, animated: true, completion: nil)
-            
-            // add post view studio in the view hierarchy, so when the End design studio disappears
-            // we will see the post studio screen
-            if let postStudio = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.PostDesignStudioViewController.rawValue) {
-                self.dsNavController.viewControllers.append(postStudio)
-            }
+        }
+    }
+    
+    func endDesignStudioDidAppear(notification: NSNotification) {
+        // add post view studio in the view hierarchy, so when the End design studio disappears
+        // we will see the post studio screen
+        if let postStudio = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.PostDesignStudioViewController.rawValue) {
+            self.dsNavController.viewControllers.append(postStudio)
         }
     }
     
@@ -181,6 +184,7 @@ class UITabBarControllerBase: UITabBarController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showTimerScreen:", name: NotificationIdentifier.PrepareTimerScreen.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "beginDesignStudio:", name: NotificationIdentifier.DesignStudioStarted.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "upcomingChallengeDidAppear:", name: NotificationIdentifier.UpcomingChallengeDidAppear.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "endDesignStudioDidAppear:", name: NotificationIdentifier.EndDesignStudioDidAppear.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showNextTimerScreen:", name: NotificationIdentifier.ShowNextTimerScreen.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showNextChallengeScreen:", name: NotificationIdentifier.ShowNextChallengeScreen.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEndDesignStudioScreen:", name: NotificationIdentifier.ShowEndDesignStudioScreen.rawValue, object: nil)
