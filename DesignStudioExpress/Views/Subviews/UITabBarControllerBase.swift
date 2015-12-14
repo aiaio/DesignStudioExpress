@@ -154,15 +154,26 @@ class UITabBarControllerBase: UITabBarController {
     func endDesignStudioDidAppear(notification: NSNotification) {
         // add post view studio in the view hierarchy, so when the End design studio disappears
         // we will see the post studio screen
-        if let postStudio = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.PostDesignStudioViewController.rawValue) {
+        if let postStudio = self.createPostDesignStudioViewController(AppDelegate.designStudio.currentDesignStudio!) {
             self.dsNavController.viewControllers.append(postStudio)
         }
     }
     
     func showPostDesignStudioScreen(notification: NSNotification) {
-        if let postStudio = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.PostDesignStudioViewController.rawValue) as? PostDesignStudioViewController {
-            self.dsNavController.pushViewController(postStudio, animated: false)
+        let userInfo = notification.userInfo as? [String: AnyObject]
+        if let designStudio = userInfo?["DesignStudio"] as? DesignStudio {
+            if let postStudio = self.createPostDesignStudioViewController(designStudio) {
+                self.dsNavController.pushViewController(postStudio, animated: false)
+            }
         }
+    }
+    
+    private func createPostDesignStudioViewController(designStudio: DesignStudio) -> PostDesignStudioViewController? {
+        if let postStudio = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.PostDesignStudioViewController.rawValue) as? PostDesignStudioViewController {
+            postStudio.vm.setDesignStudio(designStudio)
+            return postStudio
+        }
+        return nil
     }
     
     // shows the Faq screen

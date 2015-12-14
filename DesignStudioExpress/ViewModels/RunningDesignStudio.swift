@@ -43,6 +43,7 @@ class RunningDesignStudio: NSObject {
     // - next button is clicked on the End activity screen
     var startTimer = false
     
+    // currently running design studio
     var currentDesignStudio: DesignStudio? {
         get { return data }
     }
@@ -95,7 +96,8 @@ class RunningDesignStudio: NSObject {
         
         // show the Gallery screen if the DS is finished
         } else if designStudio.finished {
-            NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowPostDesignStudioScreen.rawValue, object: self, userInfo: nil)
+            let userInfo = ["DesignStudio":designStudio]
+            NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowPostDesignStudioScreen.rawValue, object: self, userInfo: userInfo)
         // show the timer
         } else {
             // if we're comming from the challenges screen, we just have to show the screen

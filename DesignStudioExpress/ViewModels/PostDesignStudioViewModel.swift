@@ -7,5 +7,13 @@
 //
 
 class PostDesignStudioViewModel {
+    private var data: DesignStudio!
     
+    var designStudioTitle: String {
+        get { return data.title }
+    }
+    
+    func setDesignStudio(designStudio: DesignStudio) {
+        self.data = designStudio
+    }
 }

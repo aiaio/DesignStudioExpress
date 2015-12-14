@@ -13,11 +13,15 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    let vm = PostDesignStudioViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.removeLastViewFromNavigation()
         
+        
+        self.navigationItem.title = vm.designStudioTitle
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         

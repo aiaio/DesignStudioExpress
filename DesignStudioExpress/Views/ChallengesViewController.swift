@@ -167,8 +167,7 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     
     // Shows the Add New Challenge View, if DS is new
     func prepareViewState() {
-        if vm.isNewDesignStudio {
-            addChallengeView.hidden = false
+        if vm.isNewDesignStudio {            addChallengeView.hidden = false
             tableViewParentView.hidden = true
             // hide reordering rows button; the tableview is hidden
             self.navigationItem.rightBarButtonItem = nil
