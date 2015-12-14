@@ -15,17 +15,18 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
     
     let vm = PostDesignStudioViewModel()
     
+    let cellIdentifier = "MHMediaPreviewCollectionViewCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.removeLastViewFromNavigation()
-        
-        
+                
         self.navigationItem.title = vm.designStudioTitle
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
-        self.collectionView.registerClass(MHMediaPreviewCollectionViewCell.self, forCellWithReuseIdentifier: "MHMediaPreviewCollectionViewCell")
+        self.collectionView.registerClass(MHMediaPreviewCollectionViewCell.self, forCellWithReuseIdentifier: self.cellIdentifier)
         
         // Do any additional setup after loading the view.
     }
@@ -57,17 +58,16 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return vm.totalImages
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cellIdentifier = "MHMediaPreviewCollectionViewCell"
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath) as! MHMediaPreviewCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(self.cellIdentifier, forIndexPath: indexPath) as! MHMediaPreviewCollectionViewCell
         
         cell.thumbnail.contentMode = .ScaleAspectFill
         
         cell.thumbnail.image = nil;
-        cell.galleryItem = MHGalleryItem (URL: "https://placeholdit.imgix.net/~text?txtsize=28&txt=300%C3%97300&w=300&h=300", galleryType: MHGalleryType.Image);
+        cell.galleryItem = vm.getGalleryItem(indexPath.row)
         
         return cell;
     }
@@ -79,12 +79,10 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
         let imageView = cell.thumbnail
         let gallery = MHGalleryController(presentationStyle: .ImageViewerNavigationBarShown)
         gallery.UICustomization.showOverView = false
-        gallery.galleryItems = [MHGalleryItem (URL: "https://placeholdit.imgix.net/~text?txtsize=28&txt=300%C3%97300&w=300&h=300", galleryType: MHGalleryType.Image),MHGalleryItem (URL: "https://placeholdit.imgix.net/~text?txtsize=28&txt=300%C3%97300&w=300&h=300", galleryType: MHGalleryType.Image)]
+        gallery.galleryItems = vm.getAllGalleryItems()
         gallery.presentingFromImageView = imageView
         gallery.presentationIndex = indexPath.row
         gallery.galleryDelegate = self
-        
-        
         
         gallery.finishedCallback = { [weak gallery] (currentIndex: Int, image: UIImage!, interactiveTransition: MHTransitionDismissMHGallery!, viewMode: MHGalleryViewMode) -> Void in
             
@@ -107,8 +105,7 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
     // MARK: - MHGalleryDataSource
     
     func itemForIndex(index: Int) -> MHGalleryItem! {
-        
-        return MHGalleryItem (URL: "https://placeholdit.imgix.net/~text?txtsize=28&txt=300%C3%97300&w=300&h=300", galleryType: MHGalleryType.Image)
+        return vm.getGalleryItem(index)
     }
     /**
      *  @param galleryController
@@ -116,6 +113,6 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
      *  @return the number of Items you want to Display
      */
     func numberOfItemsInGallery(galleryController: MHGalleryController!) -> Int {
-        return 2
+        return vm.totalImages
     }
 }
