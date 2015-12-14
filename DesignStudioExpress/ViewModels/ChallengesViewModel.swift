@@ -32,6 +32,7 @@ class ChallengesViewModel {
         get { return data.count + 1 }
     }
     
+    // 'new' ds has no challenges
     var isNewDesignStudio: Bool {
         get { return data.count == 0 }
     }
@@ -49,11 +50,10 @@ class ChallengesViewModel {
     }
     
     var beginDesignStudioButtonEnabled: Bool {
-        return !self.designStudio.finished && !isNewDesignStudio && !isAnotherStudioRunning
+        return !isNewDesignStudio && !isAnotherStudioRunning
     }
     
     var beginDesignStudioButtonText: String {
-        
         if self.designStudio.finished {
             return self.buttonLabelFinished
         } else if AppDelegate.designStudio.isDesignStudioRunning {
@@ -130,8 +130,8 @@ class ChallengesViewModel {
         return createNewChallenge()
     }
     
-    func beginDesignStudio() {
-        AppDelegate.designStudio.startDesignStudio(self.designStudio)
+    func actionButtonTouched() {
+        AppDelegate.designStudio.challengesScreenActionButton(self.designStudio)
     }
     
     private func createNewChallenge() -> Challenge {

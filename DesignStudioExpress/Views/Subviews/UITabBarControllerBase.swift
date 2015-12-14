@@ -20,6 +20,7 @@ class UITabBarControllerBase: UITabBarController {
         case ShowNextTimerScreen = "ShowNextTimerScreen"
         case ShowNextChallengeScreen = "ShowNextChallengeScreen"
         case ShowEndDesignStudioScreen = "ShowEndDesignStudioScreen"
+        case ShowPostDesignStudioScreen = "ShowPostDesignStudioScreen"
     }
     
     enum ViewControllerIdentifier: String {
@@ -155,7 +156,11 @@ class UITabBarControllerBase: UITabBarController {
         }
     }
     
-    
+    func showPostDesignStudioScreen(notification: NSNotification) {
+        if let postStudio = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.PostDesignStudioViewController.rawValue) as? PostDesignStudioViewController {
+            self.dsNavController.pushViewController(postStudio, animated: false)
+        }
+    }
     
     // shows the Faq screen
     private func showFaqScreen() {
@@ -179,6 +184,7 @@ class UITabBarControllerBase: UITabBarController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showNextTimerScreen:", name: NotificationIdentifier.ShowNextTimerScreen.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showNextChallengeScreen:", name: NotificationIdentifier.ShowNextChallengeScreen.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEndDesignStudioScreen:", name: NotificationIdentifier.ShowEndDesignStudioScreen.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPostDesignStudioScreen:", name: NotificationIdentifier.ShowPostDesignStudioScreen.rawValue, object: nil)
     }
     
     // remove 

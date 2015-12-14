@@ -14,7 +14,6 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         case AddNewChallenge = "AddNewChallenge"
         case AddNewChallengeCell = "AddNewChallengeCell"
         case EditChallenge = "EditChallenge"
-        case BeginDesignStudio = "BeginDesignStudio"
     }
     
     @IBOutlet weak var addChallengeView: UIView!
@@ -45,8 +44,9 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         tableView.setEditing(editing, animated: true)
     }
     
-    @IBAction func beginDesignStudio(sender: AnyObject) {
-        self.vm.beginDesignStudio()
+    // universal action button that
+    @IBAction func actionButton(sender: AnyObject) {
+        self.vm.actionButtonTouched()
     }
     
     // MARK: - Table view data source

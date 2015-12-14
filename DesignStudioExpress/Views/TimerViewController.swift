@@ -142,8 +142,8 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
         }
     }
     
-    // since we're segueing to the same VC, we need to remove the previous TimerViewController instance
-    // so that Back button leads to Challenges screen
+    // to make back button always lead to the challenges screen
+    // remove all Timers and Upcoming challenge screens from the nav stack
     private func removeLastViewFromNavigation() {
         let endIndex = (self.navigationController?.viewControllers.endIndex ?? 0) - 1
         if endIndex > 0 {

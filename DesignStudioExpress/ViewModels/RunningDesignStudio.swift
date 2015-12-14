@@ -23,11 +23,12 @@ class RunningDesignStudio: NSObject {
         case ShowNextTimerScreen = "ShowNextTimerScreen"
         case ShowNextChallengeScreen = "ShowNextChallengeScreen"
         case ShowEndDesignStudioScreen = "ShowEndDesignStudioScreen"
+        case ShowPostDesignStudioScreen = "ShowPostDesignStudioScreen"
         case UpcomingChallengeDidAppear = "UpcomingChallengeDidAppear"
         case AddMoreTimeToCurrentActivity = "AddMoreTimeToCurrentActivity"
     }
     
-    private let addMoreMinutesDuration = 2 // how many minutes should we add from End activity screen
+    private let addMoreMinutesDuration = 1 // how many minutes should we add from End activity screen
     
     private var data: DesignStudio?
     private var isRunning = false
@@ -82,34 +83,47 @@ class RunningDesignStudio: NSObject {
         return self.isRunning
     }
     
-    func startDesignStudio(designStudio: DesignStudio) {
+    // called when user clicks the main action button on challenges screen
+    // we need to open an appropriate screen based on the state of the design studio
+    // that can be not started|running|finished
+    func challengesScreenActionButton (designStudio: DesignStudio) {
+        // start the design studio
         if !self.isRunning && !designStudio.started {
-            self.data = designStudio
-            self.isRunning = true
-            
-            // reset pointers, so that we can start another studio
-            self.currentChallengeIdx = nil
-            self.currentActivityIdx = nil
-            
-            // record that we started DS
-            do {
-                try realm.write {
-                    self.data?.started = true
-                }
-            } catch {
-                // TODO handle error
-            }
-            
-            // get the challenge, which is the first screen to display
-            // don't set the startTimer flag, because we don't want the timer to start until 
-            // the challenge screen disappears
-            self.getNextObject()
+            self.startDesignStudio(designStudio)
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.DesignStudioStarted.rawValue, object: self, userInfo: nil)
+        
+        // show the Gallery screen if the DS is finished
+        } else if designStudio.finished {
+            NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowPostDesignStudioScreen.rawValue, object: self, userInfo: nil)
+        // show the timer
         } else {
             // if we're comming from the challenges screen, we just have to show the screen
             // don't get the next object and don't reset/start the timer
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowNextTimerScreen.rawValue, object: self, userInfo: nil)
         }
+    }
+    
+    private func startDesignStudio(designStudio: DesignStudio) {
+        self.data = designStudio
+        self.isRunning = true
+        
+        // reset pointers, so that we can start another studio
+        self.currentChallengeIdx = nil
+        self.currentActivityIdx = nil
+        
+        // record that we started DS
+        do {
+            try realm.write {
+                self.data?.started = true
+            }
+        } catch {
+            // TODO handle error
+        }
+        
+        // get the challenge, which is the first screen to display
+        // don't set the startTimer flag, because we don't want the timer to start until
+        // the challenge screen disappears
+        self.getNextObject()
     }
     
     // notification that gets called when the global timer for the activity runs out
@@ -193,6 +207,7 @@ class RunningDesignStudio: NSObject {
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowNextChallengeScreen.rawValue, object: self, userInfo: nil)
             self.startTimer = true
         } else {
+            self.finishDesignStudio()
             // we've reached the end, show the end screen
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowEndDesignStudioScreen.rawValue, object: self, userInfo: nil)
         }
@@ -330,8 +345,6 @@ class RunningDesignStudio: NSObject {
         
         if result {
             self.updateDesignStudioChallengeIdx()
-        } else {
-            self.finishDesignStudio()
         }
         
         return result
