@@ -9,7 +9,7 @@
 import UIKit
 import MHVideoPhotoGallery
 
-class PostDesignStudioViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, MHGalleryDataSource,MHGalleryDelegate {
+class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDelegate, UICollectionViewDataSource, MHGalleryDataSource,MHGalleryDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -38,6 +38,13 @@ class PostDesignStudioViewController: UIViewController, UICollectionViewDelegate
         }
     }
 
+    // MARK: StyledNavigationBar
+    
+    override func customizeNavBarStyle() {
+        super.customizeNavBarStyle()
+        
+        DesignStudioElementStyles.pinkNavigationBar(self.navigationController!.navigationBar)
+    }
     
     // MARK: - UICollectionViewDataSource
     
