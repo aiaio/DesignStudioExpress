@@ -9,6 +9,7 @@
 import MHVideoPhotoGallery
 import Photos
 import AssetsLibrary
+import NRSimplePlist
 
 class PostDesignStudioViewModel {
     private var designStudio: DesignStudio?
@@ -44,10 +45,17 @@ class PostDesignStudioViewModel {
         //HAssetCollection.fetchTopLevelUserCollectionsWithOptions()
         let assetLibrary = ALAssetsLibrary()
         let assetsType : ALAssetsGroupType = Int(ALAssetsGroupAlbum) // all albums on the device not including Photo Stream or Shared Streams
-        
+        var defaultAlbumName = ""
+        do {
+            defaultAlbumName = try plistGet("AlbumName", forPlistNamed: "Settings") as! String
+        } catch let error as NSError {
+            // TODO handle errors
+            print(error)
+            return
+        }
         assetLibrary.enumerateGroupsWithTypes(assetsType, usingBlock: { (group: ALAssetsGroup!, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
-            // TODO move the album name to plist
-            guard group != nil && String(group.valueForProperty(ALAssetsGroupPropertyName)) == "DSX Photos" else {
+            
+            guard group != nil && String(group.valueForProperty(ALAssetsGroupPropertyName)) == defaultAlbumName else {
                 return
             }
 

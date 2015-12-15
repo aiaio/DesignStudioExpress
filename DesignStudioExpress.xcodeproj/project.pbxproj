@@ -74,6 +74,7 @@
 		E4E17BEC1C1F1C3A002E014C /* PostDesignStudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E17BEB1C1F1C3A002E014C /* PostDesignStudioViewModel.swift */; };
 		E4E17BEE1C1F234D002E014C /* EndDesignStudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E17BED1C1F234D002E014C /* EndDesignStudioViewModel.swift */; };
 		E4EAC13F1C0228410079364C /* UITableViewCellChallengeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4EAC13E1C0228410079364C /* UITableViewCellChallengeHeader.swift */; };
+		E4EB72B21C20CF950096BF07 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4EB72B11C20CF950096BF07 /* Settings.plist */; };
 		E4ECC4F11BF8E92C00834AD3 /* DetailDesignStudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECC4F01BF8E92C00834AD3 /* DetailDesignStudioViewController.swift */; };
 		E4ECC4F31BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4ECC4F21BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift */; };
 		E4FF2BC01BF78DE500A3C732 /* DesignStudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FF2BBF1BF78DE500A3C732 /* DesignStudio.swift */; };
@@ -160,6 +161,7 @@
 		E4E17BEB1C1F1C3A002E014C /* PostDesignStudioViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDesignStudioViewModel.swift; sourceTree = "<group>"; };
 		E4E17BED1C1F234D002E014C /* EndDesignStudioViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDesignStudioViewModel.swift; sourceTree = "<group>"; };
 		E4EAC13E1C0228410079364C /* UITableViewCellChallengeHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellChallengeHeader.swift; sourceTree = "<group>"; };
+		E4EB72B11C20CF950096BF07 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		E4ECC4F01BF8E92C00834AD3 /* DetailDesignStudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDesignStudioViewController.swift; sourceTree = "<group>"; };
 		E4ECC4F21BF8EF1200834AD3 /* DetailDesignStudioViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailDesignStudioViewModel.swift; sourceTree = "<group>"; };
 		E4FF2BBF1BF78DE500A3C732 /* DesignStudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignStudio.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				E421C4191BF164AD003F9D8A /* Main.storyboard */,
 				E421C41E1BF164AD003F9D8A /* LaunchScreen.storyboard */,
 				E421C4211BF164AD003F9D8A /* Info.plist */,
+				E4EB72B11C20CF950096BF07 /* Settings.plist */,
 				0C86A9301C1B1051006CA6DA /* DesignStudioExpress-Bridging-Header.h */,
 			);
 			path = DesignStudioExpress;
@@ -474,6 +477,7 @@
 				E421C4201BF164AD003F9D8A /* LaunchScreen.storyboard in Resources */,
 				E42DD32E1BFE83FD0026390E /* Intro.mov in Resources */,
 				E421C41D1BF164AD003F9D8A /* Assets.xcassets in Resources */,
+				E4EB72B21C20CF950096BF07 /* Settings.plist in Resources */,
 				0C86A9211C1A677F006CA6DA /* Pods-acknowledgements.plist in Resources */,
 				E421C41B1BF164AD003F9D8A /* Main.storyboard in Resources */,
 			);

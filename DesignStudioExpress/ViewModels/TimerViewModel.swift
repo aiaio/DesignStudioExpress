@@ -9,6 +9,7 @@
 import Foundation
 import RealmSwift
 import Photos
+import NRSimplePlist
 
 class TimerViewModel {
     private var nextObject: Object?
@@ -75,8 +76,6 @@ class TimerViewModel {
     
     // MARK - Photos
     
-    let albumName = "DSX Photos"
-    
     private var assetCollectionPlaceholder: PHObjectPlaceholder?
     
     func saveImage(image: UIImage) {
@@ -87,7 +86,15 @@ class TimerViewModel {
     
     private func getDefaultPhotoCollectionForApp(collectionReadyCallback: (assetCollection: PHAssetCollection) -> Void) {
         let fetchOptions = PHFetchOptions()
-        fetchOptions.predicate = NSPredicate(format: "title = %@", self.albumName) // TODO replace image
+        var defaultAlbumName = ""
+        do {
+            defaultAlbumName = try plistGet("AlbumName", forPlistNamed: "Settings") as! String
+        } catch let error as NSError {
+            // TODO handle errors
+            print(error)
+            return
+        }
+        fetchOptions.predicate = NSPredicate(format: "title = %@", defaultAlbumName) // TODO replace image
         
         let collection: PHFetchResult = PHAssetCollection.fetchAssetCollectionsWithType(.Album, subtype: .AlbumRegular, options: fetchOptions)
         
@@ -95,7 +102,7 @@ class TimerViewModel {
             collectionReadyCallback(assetCollection: assetCollection)
         } else {
             PHPhotoLibrary.sharedPhotoLibrary().performChanges({
-                let createAlbumRequest = PHAssetCollectionChangeRequest.creationRequestForAssetCollectionWithTitle(self.albumName)
+                let createAlbumRequest = PHAssetCollectionChangeRequest.creationRequestForAssetCollectionWithTitle(defaultAlbumName)
                     self.assetCollectionPlaceholder = createAlbumRequest.placeholderForCreatedAssetCollection
                 }, completionHandler: { success, error in
                     
