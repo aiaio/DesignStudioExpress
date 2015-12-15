@@ -8,6 +8,7 @@
 
 import MHVideoPhotoGallery
 import Photos
+import AssetsLibrary
 
 class PostDesignStudioViewModel {
     private var designStudio: DesignStudio?
@@ -44,54 +45,23 @@ class PostDesignStudioViewModel {
     }
     
     private func loadData() {
-        let collection = PHAssetCollection.fetchAssetCollectionsWithType(.SmartAlbum, subtype: .SmartAlbumUserLibrary, options: nil)
-        
-        guard let rec = collection.firstObject as? PHAssetCollection else {
-            return
-        }
-        
         //HAssetCollection.fetchTopLevelUserCollectionsWithOptions()
+        let assetLibrary = ALAssetsLibrary()
+        let assetsType : ALAssetsGroupType = Int(ALAssetsGroupAll)
         
-        let options = PHFetchOptions()
-        options.includeAssetSourceTypes = .TypeUserLibrary
-        options.predicate = NSPredicate(format: "mediaType == %@", NSNumber(integer: PHAssetMediaType.Image.rawValue))
-        
-        let imageManager = PHCachingImageManager()
-        
-        let assets = PHAsset.fetchAssetsInAssetCollection(rec, options: options)
-        let totalAssetsCount = assets.count
-        assets.enumerateObjectsUsingBlock { (object: AnyObject!, count: Int, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
-            //print("we have assets")
-            if object is PHAsset {
-                let asset = object as! PHAsset
-                
-                let imageSize = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
-                
-                let imageOptions = PHImageRequestOptions()
-                imageOptions.deliveryMode = PHImageRequestOptionsDeliveryMode.FastFormat
-                //imageOptions.synchronous = true
-                
-                    
-                imageManager.requestImageForAsset(asset, targetSize: imageSize, contentMode: .AspectFill, options: imageOptions, resultHandler: {
-                    (image: UIImage?, info: [NSObject : AnyObject]?) -> Void in
-                    //print("we have images")
-                    if let img = image {
-                        self.data.append(MHGalleryItem(image: img))
+        assetLibrary.enumerateGroupsWithTypes(assetsType, usingBlock: { (group: ALAssetsGroup!, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
+            guard group != nil else {
+                return
+            }
+            
+            group.enumerateAssetsUsingBlock({ (asset: ALAsset!, idx, stop) -> Void in
+                if asset != nil {
+                    if let defaultRep = asset.defaultRepresentation() {
+                        self.data.append(MHGalleryItem(URL: defaultRep.url().absoluteString, galleryType: .Image))
                     }
-                })
-            }
-            print(count)
-            if count >= totalAssetsCount - 1 {
-                print("finished loading")
-                self.finished = true
-                if self.finishedCallback != nil {
-                    self.finishedCallback()
                 }
-            }
-        }
+            })
+            
+        }, failureBlock: nil)
     }
-    var finished = false
-    var finishedCallback: (() -> Void)!
-    
-
 }

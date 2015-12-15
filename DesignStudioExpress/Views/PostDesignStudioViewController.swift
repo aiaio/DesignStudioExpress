@@ -27,11 +27,6 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
         self.collectionView.dataSource = self
         
         self.collectionView.registerClass(MHMediaPreviewCollectionViewCell.self, forCellWithReuseIdentifier: self.cellIdentifier)
-        
-        vm.finishedCallback = {
-            self.collectionView.reloadData()
-        }
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(animated: Bool) {
