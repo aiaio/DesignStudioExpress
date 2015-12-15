@@ -37,8 +37,8 @@ class PostDesignStudioViewModel {
         return self.data[index]
     }
     
-    func loadData() {
-        //HAssetCollection.fetchTopLevelUserCollectionsWithOptions()
+    func loadData(loadFinishedCallback: () -> Void) {
+        
         let assetLibrary = ALAssetsLibrary()
         let assetsType : ALAssetsGroupType = Int(ALAssetsGroupAlbum) // all albums on the device not including Photo Stream or Shared Streams
         var defaultAlbumName = ""
@@ -49,20 +49,30 @@ class PostDesignStudioViewModel {
             print(error)
             return
         }
+        
+        //remove all items when we're refreshing data
+        self.data.removeAll()
+
         assetLibrary.enumerateGroupsWithTypes(assetsType, usingBlock: { (group: ALAssetsGroup!, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             
             guard group != nil && String(group.valueForProperty(ALAssetsGroupPropertyName)) == defaultAlbumName else {
                 return
             }
-
+            
             // get only photos
             group.setAssetsFilter(ALAssetsFilter.allPhotos())
-           
+            
+            let totalImages = group.numberOfAssets()
+            
             group.enumerateAssetsUsingBlock({ (asset: ALAsset!, idx, stop) -> Void in
                 if asset != nil {
                     if let defaultRep = asset.defaultRepresentation() {
                         self.data.append(MHGalleryItem(URL: defaultRep.url().absoluteString, galleryType: .Image))
                     }
+                }
+                // check that we loaded all images before calling the callback
+                if idx >= totalImages - 1 {
+                    loadFinishedCallback()
                 }
             })
             

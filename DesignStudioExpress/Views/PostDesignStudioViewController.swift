@@ -27,11 +27,13 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
         self.collectionView.dataSource = self
         
         self.collectionView.registerClass(MHMediaPreviewCollectionViewCell.self, forCellWithReuseIdentifier: self.cellIdentifier)
+        
     }
     
-    override func viewDidAppear(animated: Bool) {
-        self.vm.loadData()
-        self.collectionView.reloadData()
+    override func viewWillAppear(animated: Bool) {
+        self.vm.loadData {
+            self.collectionView.reloadData()
+        }
     }
     
     // to make back button always lead to the challenges screen
