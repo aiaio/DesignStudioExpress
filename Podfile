@@ -13,5 +13,6 @@ pod 'GMStepper'
 pod 'MZTimerLabel'
 pod 'AcknowList'
 pod 'MHVideoPhotoGallery'
+pod 'DKCamera'
 
 use_frameworks!

@@ -86,6 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/AcknowList.framework"
   install_framework "Pods/Cartography.framework"
+  install_framework "Pods/DKCamera.framework"
   install_framework "Pods/FXLabel.framework"
   install_framework "Pods/GMStepper.framework"
   install_framework "Pods/MGSwipeTableCell.framework"
@@ -105,6 +106,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/AcknowList.framework"
   install_framework "Pods/Cartography.framework"
+  install_framework "Pods/DKCamera.framework"
   install_framework "Pods/FXLabel.framework"
   install_framework "Pods/GMStepper.framework"
   install_framework "Pods/MGSwipeTableCell.framework"
