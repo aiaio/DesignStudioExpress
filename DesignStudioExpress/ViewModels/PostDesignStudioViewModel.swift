@@ -14,11 +14,7 @@ class PostDesignStudioViewModel {
     private var designStudio: DesignStudio?
     private var data = [MHGalleryItem]()
     
-    // TODO REMOVE
     init () {
-        /*for _ in 1...100 {
-            self.data.append(MHGalleryItem (URL: "https://placeholdit.imgix.net/~text?txtsize=28&txt=300%C3%97300&w=300&h=300", galleryType: MHGalleryType.Image))
-        }*/
         self.loadData()
     }
     
@@ -47,13 +43,17 @@ class PostDesignStudioViewModel {
     private func loadData() {
         //HAssetCollection.fetchTopLevelUserCollectionsWithOptions()
         let assetLibrary = ALAssetsLibrary()
-        let assetsType : ALAssetsGroupType = Int(ALAssetsGroupAll)
+        let assetsType : ALAssetsGroupType = Int(ALAssetsGroupAlbum) // all albums on the device not including Photo Stream or Shared Streams
         
         assetLibrary.enumerateGroupsWithTypes(assetsType, usingBlock: { (group: ALAssetsGroup!, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
-            guard group != nil else {
+            // TODO move the album name to plist
+            guard group != nil && String(group.valueForProperty(ALAssetsGroupPropertyName)) == "DSX Photos" else {
                 return
             }
-            
+
+            // get only photos
+            group.setAssetsFilter(ALAssetsFilter.allPhotos())
+           
             group.enumerateAssetsUsingBlock({ (asset: ALAsset!, idx, stop) -> Void in
                 if asset != nil {
                     if let defaultRep = asset.defaultRepresentation() {
@@ -62,6 +62,9 @@ class PostDesignStudioViewModel {
                 }
             })
             
-        }, failureBlock: nil)
+            }, failureBlock: { (error: NSError!) -> Void in
+                // TODO handle errors
+            }
+        )
     }
 }
