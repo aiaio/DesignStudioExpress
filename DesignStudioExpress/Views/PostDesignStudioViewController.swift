@@ -30,6 +30,7 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
     }
     
     override func viewDidAppear(animated: Bool) {
+        self.vm.loadData()
         self.collectionView.reloadData()
     }
     

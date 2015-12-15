@@ -15,10 +15,6 @@ class PostDesignStudioViewModel {
     private var designStudio: DesignStudio?
     private var data = [MHGalleryItem]()
     
-    init () {
-        self.loadData()
-    }
-    
     var designStudioTitle: String {
         get { return self.designStudio?.title ?? "" }
     }
@@ -41,7 +37,7 @@ class PostDesignStudioViewModel {
         return self.data[index]
     }
     
-    private func loadData() {
+    func loadData() {
         //HAssetCollection.fetchTopLevelUserCollectionsWithOptions()
         let assetLibrary = ALAssetsLibrary()
         let assetsType : ALAssetsGroupType = Int(ALAssetsGroupAlbum) // all albums on the device not including Photo Stream or Shared Streams
