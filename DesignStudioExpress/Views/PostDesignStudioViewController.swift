@@ -28,7 +28,14 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
         
         self.collectionView.registerClass(MHMediaPreviewCollectionViewCell.self, forCellWithReuseIdentifier: self.cellIdentifier)
         
+        vm.finishedCallback = {
+            self.collectionView.reloadData()
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.collectionView.reloadData()
     }
     
     // to make back button always lead to the challenges screen
