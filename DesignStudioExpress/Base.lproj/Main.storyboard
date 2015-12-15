@@ -2099,6 +2099,9 @@ Sketching Templates</string>
                                         <include reference="Rza-ht-aQn"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="takePicture:" destination="AmZ-1V-xYD" eventType="touchUpInside" id="7sd-fd-LT7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRODUCT PAGES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2F-Uv-w2R" customClass="FXLabel">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -2876,13 +2879,13 @@ Sketching Templates</string>
                                 <exclude reference="mM4-vK-mxv"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="keU-9m-QAM"/>
                                 <exclude reference="0pt-Z1-BFD"/>
                                 <exclude reference="8ab-I2-zgm"/>
                                 <exclude reference="BV9-xD-Dcz"/>
                                 <exclude reference="6BM-2s-D1q"/>
                                 <exclude reference="QNw-5g-QZB"/>
                                 <exclude reference="fmr-Mk-duE"/>
-                                <exclude reference="keU-9m-QAM"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2891,13 +2894,13 @@ Sketching Templates</string>
                                 <include reference="mM4-vK-mxv"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="keU-9m-QAM"/>
                                 <include reference="0pt-Z1-BFD"/>
                                 <include reference="8ab-I2-zgm"/>
                                 <include reference="BV9-xD-Dcz"/>
                                 <include reference="6BM-2s-D1q"/>
                                 <include reference="QNw-5g-QZB"/>
                                 <include reference="fmr-Mk-duE"/>
-                                <include reference="keU-9m-QAM"/>
                             </mask>
                         </variation>
                     </view>

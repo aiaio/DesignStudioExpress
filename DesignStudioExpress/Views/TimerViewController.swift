@@ -9,6 +9,7 @@
 import UIKit
 import FXLabel
 import MZTimerLabel
+import DKCamera
 
 class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     
@@ -70,7 +71,23 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     @IBAction func skipToNextActivity(sender: AnyObject) {
         self.vm.skipToNextActivity()
     }
+    
+    @IBAction func takePicture(sender: AnyObject) {
+        let camera = DKCamera()
         
+        camera.didCancelled = { () in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        camera.didFinishCapturingImage = {(image: UIImage) in
+            self.vm.saveImage(image)
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        self.presentViewController(camera, animated: true, completion: nil)
+    }
+    
     // MARK: StyledNavigationBar
     
     override func customizeNavBarStyle() {
