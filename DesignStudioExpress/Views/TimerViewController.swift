@@ -138,20 +138,21 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
         
         self.timer.setCountDownTime(Double(vm.currentActivityRemainingDuration))
         self.timer.reset()
+        
+        // hide/show toggle button for switching between description and presenter notes
+        self.toggleButton.hidden = !vm.activityNotesEnabled
     }
     
     // toggles between showing notes and description labels
     private func toggleDescription() {
-        // hide both buttons when there's no presenter notes
-        if !vm.activityNotesEnabled {
-            self.activityNotes.hidden = true
-            self.activityDescription.hidden = true
-        } else if showPresenterNotes {
+        if showPresenterNotes {
+            // show activity notes
             self.toggleButton.setTitle(self.showDescriptionButtonLabel, forState: .Normal)
             self.activityNotes.hidden = false
             self.activityDescription.hidden = true
             self.showPresenterNotes = false
         } else {
+            // show activity description
             self.toggleButton.setTitle(self.showNotesButtonLabel, forState: .Normal)
             self.activityNotes.hidden = true
             self.activityDescription.hidden = false
