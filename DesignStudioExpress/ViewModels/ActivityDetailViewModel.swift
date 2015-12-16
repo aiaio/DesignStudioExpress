@@ -34,7 +34,7 @@ class ActivityDetailViewModel {
         do {
             try realm.write {
                 self.data.title = self.title
-                //self.data.duration = self.duration
+                self.data.duration = self.duration
                 self.data.activityDescription = self.description
                 self.data.notes = self.notes
                 self.realm.add(self.data, update: true)
