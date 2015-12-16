@@ -224,7 +224,6 @@ class RunningDesignStudio: NSObject {
             self.getNextObject()
             // show the challenge screen
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowNextChallengeScreen.rawValue, object: self, userInfo: nil)
-            self.startTimer = true
         } else {
             self.finishDesignStudio()
             // we've reached the end, show the end screen

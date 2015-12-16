@@ -26,6 +26,9 @@ class EndActivityViewController: UIViewController {
     }
 
     @IBAction func nextActivity(sender: AnyObject) {
+        // hide the controller
+        // forwarding to the timer screen happens on viewDidDisappear so we can avoid different
+        // problems like timer that starts too early, transitions of the screen behind the popup etc.
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

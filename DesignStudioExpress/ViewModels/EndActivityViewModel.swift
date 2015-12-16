@@ -41,6 +41,8 @@ class EndActivityViewModel {
     }
         
     func addMoreTime() {
+        // just set a flag, triggering of the action will happen
+        // on viewDidDisappear
         self.didAddMoreTime = true
     }
 }
