@@ -7,6 +7,7 @@
 //
 import Foundation
 import RealmSwift
+import NRSimplePlist
 
 class RunningDesignStudio: NSObject {
     
@@ -28,9 +29,7 @@ class RunningDesignStudio: NSObject {
         case EndDesignStudioDidAppear = "EndDesignStudioDidAppear"
         case AddMoreTimeToCurrentActivity = "AddMoreTimeToCurrentActivity"
     }
-    
-    private let addMoreMinutesDuration = 1 // how many minutes should we add from End activity screen
-    
+
     private var data: DesignStudio?
     private var isRunning = false
     private var timer: NSTimer?
@@ -191,9 +190,22 @@ class RunningDesignStudio: NSObject {
     
     // updates the activity duration in the db
     private func addMoreTimeToActivity() {
+        var duration = 0
+        do {
+            duration = try plistGet("AddMoreTimeMinutes", forPlistNamed: "Settings") as! Int
+            
+            if duration < 1 {
+                duration = 1
+            }
+        } catch let error {
+            // TODO handle errors
+            print(error)
+            duration = 1
+        }
+        
         do {
             try realm.write {
-                self.currentActivity?.duration += self.addMoreMinutesDuration // mins
+                self.currentActivity?.duration += duration // mins
             }
         } catch {
             // TODO handle error

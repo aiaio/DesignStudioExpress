@@ -44,7 +44,7 @@ class PostDesignStudioViewModel {
         var defaultAlbumName = ""
         do {
             defaultAlbumName = try plistGet("AlbumName", forPlistNamed: "Settings") as! String
-        } catch let error as NSError {
+        } catch let error {
             // TODO handle errors
             print(error)
             return

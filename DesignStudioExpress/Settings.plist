@@ -4,5 +4,7 @@
 <dict>
 	<key>AlbumName</key>
 	<string>DSX Photos</string>
+	<key>AddMoreTimeMinutes</key>
+	<integer>2</integer>
 </dict>
 </plist>

@@ -9,11 +9,14 @@
 import UIKit
 
 class EndActivityViewController: UIViewController {
+    @IBOutlet weak var addMoreTime: UIButtonTransparent!
 
     let vm = EndActivityViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.addMoreTime.setTitle(vm.addMoreTimeTitle, forState: .Normal)
     }
     
     override func viewDidDisappear(animated: Bool) {
