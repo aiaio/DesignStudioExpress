@@ -67,13 +67,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if indexPath.row == 0 {
             let screenSize = UIScreen.mainScreen().bounds.height
             if screenSize <= 480  { // 4s
-                rowHeight = 280
+                rowHeight = 245
             } else if screenSize <= 568 { // 5
-                rowHeight = 280
+                rowHeight = 245
             } else if screenSize <= 667 { // 6
                 rowHeight = 330
             } else { // 6++
-                rowHeight = 310
+                rowHeight = 320
             }
         }
         
