@@ -71,6 +71,10 @@ class ChallengesViewModel {
         get { return self.designStudio.title }
     }
     
+    var editingEnabled: Bool {
+        get { return !self.designStudio.started }
+    }
+    
     func isRowEditable(indexPath: NSIndexPath) -> Bool {
         return indexPath.row < data.count
     }

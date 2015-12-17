@@ -60,6 +60,7 @@
 		E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */; };
 		E49F45D91BFD468100F32AE9 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49F45D81BFD468100F32AE9 /* ChallengesViewController.swift */; };
 		E49F45DC1BFE443B00F32AE9 /* StyledNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49F45DB1BFE443B00F32AE9 /* StyledNavigationBar.swift */; };
+		E4A4B4631C2372CC00D6664E /* UITableViewCellAddChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4B4621C2372CC00D6664E /* UITableViewCellAddChallenge.swift */; };
 		E4BFF00C1BF3BF1100E4255A /* UIButtonBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */; };
 		E4C113301BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C1132F1BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift */; };
 		E4C113321BFA855700A7E1B3 /* RealmSwiftExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C113311BFA855700A7E1B3 /* RealmSwiftExtension.swift */; };
@@ -147,6 +148,7 @@
 		E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLightBlue.swift; sourceTree = "<group>"; };
 		E49F45D81BFD468100F32AE9 /* ChallengesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		E49F45DB1BFE443B00F32AE9 /* StyledNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledNavigationBar.swift; sourceTree = "<group>"; };
+		E4A4B4621C2372CC00D6664E /* UITableViewCellAddChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellAddChallenge.swift; sourceTree = "<group>"; };
 		E4BFF00B1BF3BF1100E4255A /* UIButtonBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonBase.swift; sourceTree = "<group>"; };
 		E4C1132F1BFA66CF00A7E1B3 /* NSAttributedStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtension.swift; sourceTree = "<group>"; };
 		E4C113311BFA855700A7E1B3 /* RealmSwiftExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSwiftExtension.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				E429AF5C1BF5404200AE4DA7 /* UIViewControllerBase.swift */,
 				E4EAC13E1C0228410079364C /* UITableViewCellChallengeHeader.swift */,
 				E446360A1C023675004B3156 /* UITableViewCellActivity.swift */,
+				E4A4B4621C2372CC00D6664E /* UITableViewCellAddChallenge.swift */,
 				E429AF4D1BF3F65400AE4DA7 /* UITabBarControllerBase.swift */,
 			);
 			path = Subviews;
@@ -602,6 +605,7 @@
 				E40EDF241C10B28200F0D4C4 /* TimerViewController.swift in Sources */,
 				E4EAC13F1C0228410079364C /* UITableViewCellChallengeHeader.swift in Sources */,
 				E40A81A51C0DF11200BC07E3 /* UITextFieldDelegateBase.swift in Sources */,
+				E4A4B4631C2372CC00D6664E /* UITableViewCellAddChallenge.swift in Sources */,
 				E41E77301C067D25000364D6 /* UITextFieldDelegateMaxLength.swift in Sources */,
 				E4CEA34B1BFFE2EF00EA2309 /* MGSwipeTableCellChallenge.swift in Sources */,
 				0CE90CFB1C1B200900E3F439 /* DesignStudioAtivityItemSource.swift in Sources */,

@@ -1488,6 +1488,7 @@ Sketching Templates</string>
                         <outlet property="challenges" destination="aNA-Ct-Ezc" id="2wb-Uk-nhc"/>
                         <outlet property="continueButton" destination="qra-NB-i6S" id="lBG-0o-5V0"/>
                         <outlet property="duration" destination="tdV-Xf-uov" id="FfB-wn-JEQ"/>
+                        <outlet property="editIcon" destination="U9D-jf-efE" id="5YM-L2-1XT"/>
                         <outlet property="name" destination="lI5-bb-OmX" id="dBE-Vg-Lc9"/>
                     </connections>
                 </viewController>
@@ -1886,7 +1887,7 @@ Sketching Templates</string>
                                                     <segue destination="7iM-cl-ZBW" kind="show" identifier="EditChallenge" id="SWD-un-Cl3"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="addButtonCell" rowHeight="75" id="c7z-w7-tMF">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="addButtonCell" rowHeight="75" id="c7z-w7-tMF" customClass="UITableViewCellAddChallenge" customModule="DesignStudioExpress" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="202" width="400" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c7z-w7-tMF" id="PS2-Aq-nEu">
@@ -1948,6 +1949,9 @@ Sketching Templates</string>
                                                     </variation>
                                                 </tableViewCellContentView>
                                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <connections>
+                                                    <outlet property="addChallenge" destination="ynE-yr-ku8" id="Y6n-vh-UO0"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -3164,6 +3168,7 @@ Sketching Templates</string>
                                         <connections>
                                             <outlet property="challengeDescription" destination="0uw-6E-pY1" id="bw6-dK-dxE"/>
                                             <outlet property="duration" destination="hbr-94-lLC" id="42n-g9-PQT"/>
+                                            <outlet property="editIcon" destination="9yW-MJ-fO7" id="Rdh-Gb-YER"/>
                                             <outlet property="title" destination="q0m-gI-nNx" id="RB7-HJ-TBy"/>
                                         </connections>
                                     </tableViewCell>
@@ -3975,9 +3980,11 @@ Sketching Templates</string>
                     </tableView>
                     <connections>
                         <outlet property="activityDescription" destination="De0-bQ-nJW" id="B2b-mk-bNK"/>
+                        <outlet property="deleteActivity" destination="AZ5-4Q-t8x" id="Zre-tI-L2e"/>
                         <outlet property="duration" destination="ZKU-aV-QvZ" id="2Ph-ta-3Sc"/>
                         <outlet property="name" destination="cJ3-9p-awJ" id="Nm5-ut-nd8"/>
                         <outlet property="notes" destination="bgO-P0-jyO" id="Ytt-ti-w5j"/>
+                        <outlet property="saveActivity" destination="SaP-0Q-gJO" id="nnE-UF-3ic"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gu7-hP-4jh" userLabel="First Responder" sceneMemberID="firstResponder"/>

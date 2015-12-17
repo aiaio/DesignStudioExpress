@@ -18,6 +18,12 @@ class ActivityDetailViewModel {
     var description: String = ""
     var notes: String = ""
     
+    var editingEnabled: Bool {
+        get {
+            return !self.data.finished && self.data.id != AppDelegate.designStudio.currentActivity?.id
+        }
+    }
+    
     func setActivity(newActivity: Activity) {
         self.loadActivity(newActivity)
     }

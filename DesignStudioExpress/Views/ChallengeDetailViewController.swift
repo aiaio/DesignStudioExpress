@@ -83,6 +83,10 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
             self.headerTitle = cell.title
             self.headerDescription = cell.challengeDescription
             
+            cell.title.enabled = vm.editingEnabled
+            cell.challengeDescription.editable = vm.editingEnabled
+            cell.editIcon.hidden = !vm.editingEnabled
+            
             // hide separator
             cell.separatorInset = UIEdgeInsetsMake(0, self.view.frame.width, 0, 0);
             return cell
@@ -134,7 +138,6 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
     // MARK: - Custom
     
     func addObservers() {
-        // add observers for when we're
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "challengeDetailChanged:", name: UITextFieldTextDidEndEditingNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "challengeDetailChanged:", name: UITextViewTextDidEndEditingNotification, object: nil)
     }

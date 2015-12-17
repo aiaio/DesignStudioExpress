@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class DetailDesignStudioViewModel {
-    enum FieldNames {
+    enum FieldName {
         case Title
         case Duration
     }
@@ -72,6 +72,10 @@ class DetailDesignStudioViewModel {
         }
     }
     
+    var editingEnabled: Bool {
+        get { return !self.data.started }
+    }
+    
     init () {
         createNewDesignStudio()
     }
@@ -108,7 +112,7 @@ class DetailDesignStudioViewModel {
         return self.data
     }
     
-    func maxLengthExceeded(fieldType: FieldNames, textFieldLength: Int, range: NSRange, replacementStringLength: Int) -> Bool {
+    func maxLengthExceeded(fieldType: FieldName, textFieldLength: Int, range: NSRange, replacementStringLength: Int) -> Bool {
         var maxLength = 0
         if fieldType == .Title {
             maxLength = 30 // TODO

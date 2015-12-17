@@ -63,10 +63,8 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         if indexPath.row == vm.totalRows - 1 {
-            let cell = self.createCell("addButtonCell", indexPath: indexPath, UITableViewCell.self)
-            
-            // hide separator
-            //cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, CGRectGetWidth(tableView.bounds))
+            let cell = self.createCell("addButtonCell", indexPath: indexPath, UITableViewCell.self) as! UITableViewCellAddChallenge
+            cell.addChallenge.hidden = !vm.editingEnabled
             
             return cell
         }
@@ -167,15 +165,20 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     
     // Shows the Add New Challenge View, if DS is new
     func prepareViewState() {
-        if vm.isNewDesignStudio {            addChallengeView.hidden = false
+        if vm.isNewDesignStudio {
+            addChallengeView.hidden = false
             tableViewParentView.hidden = true
             // hide reordering rows button; the tableview is hidden
             self.navigationItem.rightBarButtonItem = nil
         } else {
             addChallengeView.hidden = true
             tableViewParentView.hidden = false
-            // show the edit button for reordering of the rows
-            self.navigationItem.rightBarButtonItem = self.editButtonItem()
+            if vm.editingEnabled {
+                // show the edit button for reordering of the rows
+                self.navigationItem.rightBarButtonItem = self.editButtonItem()
+            } else {
+                self.navigationItem.rightBarButtonItem = nil
+            }
         }
         
         self.beginDesignStudio.enabled = self.vm.beginDesignStudioButtonEnabled

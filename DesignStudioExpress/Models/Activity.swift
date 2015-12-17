@@ -16,6 +16,7 @@ class Activity: Object {
     dynamic var duration: Int = 5 // minutes
     dynamic var notes = ""
     dynamic var dateCreated: NSDate = NSDate()
+    dynamic var finished: Bool = false
     
     override static func primaryKey() -> String? {
         return "id"

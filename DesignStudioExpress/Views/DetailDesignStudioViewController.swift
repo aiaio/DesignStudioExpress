@@ -15,6 +15,7 @@ class DetailDesignStudioViewController: UIViewControllerBase {
     @IBOutlet weak var duration: UITextField!
     @IBOutlet weak var challenges: UILabel!
     @IBOutlet weak var continueButton: UIButtonRed!
+    @IBOutlet weak var editIcon: UIImageView!
     
     let vm = DetailDesignStudioViewModel()
     
@@ -32,12 +33,12 @@ class DetailDesignStudioViewController: UIViewControllerBase {
         duration.delegate = durationDelegate
         
         self.addObservers()
-        self.populateFields()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.populateFields()
+        self.disableEnableFields()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -56,10 +57,8 @@ class DetailDesignStudioViewController: UIViewControllerBase {
     }
     
     @IBAction func editIconTapped(sender: AnyObject) {
-        print("tapped")
         self.name.becomeFirstResponder()
     }
-
     
     // MARK: - Navigation
     
@@ -99,6 +98,12 @@ class DetailDesignStudioViewController: UIViewControllerBase {
         self.challenges.text = vm.challenges
         // title of the button is different for new and existing design studios
         self.continueButton.setTitle(vm.buttonTitle, forState: .Normal)
+    }
+    
+    func disableEnableFields() {
+        self.name.editable = vm.editingEnabled
+        self.duration.enabled = vm.editingEnabled
+        self.editIcon.hidden = !vm.editingEnabled
     }
     
     func updateData() {

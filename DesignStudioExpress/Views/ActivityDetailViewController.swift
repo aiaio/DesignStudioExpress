@@ -17,6 +17,8 @@ class ActivityDetailViewController: UITableViewController {
     @IBOutlet weak var duration: GMStepper!
     @IBOutlet weak var activityDescription: SZTextView!
     @IBOutlet weak var notes: SZTextView!
+    @IBOutlet weak var saveActivity: UIButtonRed!
+    @IBOutlet weak var deleteActivity: UIButtonTransparent!
     
     let vm = ActivityDetailViewModel()
     
@@ -34,6 +36,7 @@ class ActivityDetailViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.populateFields()
+        self.enableDisableFields()
     }
     
     @IBAction func saveActivity(sender: AnyObject) {
@@ -72,6 +75,15 @@ class ActivityDetailViewController: UITableViewController {
         self.duration.value = Double(vm.duration)
         self.activityDescription.text = vm.description
         self.notes.text = vm.notes
+    }
+    
+    func enableDisableFields() {
+        self.name.enabled = vm.editingEnabled
+        self.activityDescription.editable = vm.editingEnabled
+        self.duration.enabled = vm.editingEnabled
+        
+        self.saveActivity.enabled = vm.editingEnabled
+        self.deleteActivity.enabled = vm.editingEnabled
     }
     
     func updateVMData() {

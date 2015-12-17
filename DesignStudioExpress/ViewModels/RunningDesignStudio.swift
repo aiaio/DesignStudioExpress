@@ -83,7 +83,7 @@ class RunningDesignStudio: NSObject {
     var isDesignStudioRunning: Bool {
         return self.isRunning
     }
-    
+        
     // called when user clicks the main action button on challenges screen
     // we need to open an appropriate screen based on the state of the design studio
     // that can be not started|running|finished
@@ -283,12 +283,14 @@ class RunningDesignStudio: NSObject {
     
     
     // update the duration of the activity to the actual duration of the activity
-    private func updateCurrentActivityTime() {
+    // and status of the activity (finished)
+    private func updateCurrentActivity() {
         do {
             if let diff = self.currentActivityStart?.timeIntervalSinceNow {
                 let duration = Int(round(-diff / 60)) // convert seconds to minutes
                 try realm.write {
                     self.currentActivity?.duration = duration
+                    self.currentActivity?.finished = true
                 }
             }
         } catch {
@@ -297,7 +299,7 @@ class RunningDesignStudio: NSObject {
     }
     
     private func moveToNextActivity() -> Bool {        
-        self.updateCurrentActivityTime()
+        self.updateCurrentActivity()
         
         let result = self.moveActivityPointer()
         
@@ -357,7 +359,7 @@ class RunningDesignStudio: NSObject {
     }
     
     private func moveToNextChallenge() -> Bool {
-        self.updateCurrentActivityTime()
+        self.updateCurrentActivity()
         
         let result = self.moveChallengePointer()
         

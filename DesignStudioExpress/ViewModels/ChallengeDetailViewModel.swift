@@ -59,6 +59,12 @@ class ChallengeDetailViewModel {
         }
     }
     
+    var editingEnabled: Bool {
+        get {
+            return !self.data.designStudio.started
+        }
+    }
+    
     func isRowEditable(indexPath: NSIndexPath) -> Bool {
         return indexPath.row > 0
     }
