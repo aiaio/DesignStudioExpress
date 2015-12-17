@@ -32,11 +32,9 @@ class HomeViewModel {
     private func createDefaultDesignStudios() {
         let realm = try! Realm()
         
-        realm.beginWrite()
+        DesignStudio.createDefaultTemplate1()
         
-        let ds1 = DesignStudio()
-        ds1.title = "First template"
-        realm.add(ds1)
+        realm.beginWrite()
         
         let ds2 = DesignStudio()
         ds2.title = "Second template"
