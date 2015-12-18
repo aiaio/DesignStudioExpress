@@ -209,4 +209,91 @@ class DesignStudio: Object {
             // TODO handler error
         }
     }
+    
+    class func createDefaultTemplate2() {
+        let realm = try! Realm()
+        
+        realm.beginWrite()
+        
+        let ds = DesignStudio()
+        ds.title = "Feature Iteration"
+        
+        let challenge = Challenge()
+        challenge.title = "Challenge"
+        challenge.challengeDescription  = "This round focuses on cardstorming and rapid sketching. Stick to rough sketches that convey your ideas. You will present, critique and refine your ideas after each activity. Good luck and get sketchy!"
+        
+        let activity1 = Activity()
+        activity1.title = "Cardstorming"
+        activity1.activityDescription = "Warmup and cardstorming. Write as many feature ideas as you can on individual stickies. Save features as your idea palette for sketching."
+        activity1.duration = 5
+        challenge.activities.append(activity1)
+        
+        let activity2 = Activity()
+        activity2.title = "Share ideas with mini group"
+        activity2.activityDescription = "Each person shares their ideas within their mini group."
+        activity2.duration = 20
+        challenge.activities.append(activity2)
+        
+        let activity3 = Activity()
+        activity3.title = "Draw 5 ideas in 5 minutes"
+        activity3.activityDescription = "Generate 5 ideas in 5 minutes — should be unique concepts, but can be very rough. Give one minute per idea. It’s okay to have fewer than the 5 ideas."
+        activity3.duration = 5
+        challenge.activities.append(activity3)
+        
+        let activity4 = Activity()
+        activity4.title = "Share sketches within mini groups"
+        activity4.activityDescription = "Present ideas to the group to share your concepts and get a critique. Write ideas/questions down as notes. Use most of this time to share ideas."
+        activity4.duration = 20
+        challenge.activities.append(activity4)
+        
+        let activity5 = Activity()
+        activity5.title = "Sketch"
+        activity5.activityDescription = "Refine your concepts into the top 2 ideas. Incorporate others’ ideas into your designs."
+        activity5.duration = 10
+        challenge.activities.append(activity5)
+        
+        let activity6 = Activity()
+        activity6.title = "Share in mini groups and prepare to present"
+        activity6.activityDescription = "Prepare to present your ideas as a group—condense and eliminate as much as possible. Don’t be afraid to throw away ideas, keep the strongest ones."
+        activity6.duration = 10
+        challenge.activities.append(activity6)
+        
+        let activity7 = Activity()
+        activity7.title = "Share and discuss"
+        activity7.activityDescription = "Each group presents and receives critiques. Discuss all ideas and determine which ideas people like the best. If you’d like, hold a vote."
+        activity7.duration = 20
+        challenge.activities.append(activity7)
+        
+        ds.challenges.append(challenge)
+        
+        // Final Challenge
+        
+        let challenge2 = Challenge()
+        challenge2.title = "Wrapup"
+        challenge2.challengeDescription  = "Discuss and document your work. During discussion think about the strengths and weaknesses from the user’s point of view. Remember to take photos, you don’t want to lose any valuable ideas."
+        
+        let activity21 = Activity()
+        activity21.title = "Final discussion"
+        activity21.activityDescription = "Share final thoughts on the ideas created or the design studio. Consider next steps and how you can each move forward with your new ideas."
+        activity21.duration = 20
+        challenge2.activities.append(activity21)
+        
+        let activity22 = Activity()
+        activity22.title = "Document and save"
+        activity22.activityDescription = "Gather everyone’s notes, stickies, and sketches to refer to as you create higher fidelity designs. Don’t forget to take photos."
+        activity22.duration = 5
+        challenge2.activities.append(activity22)
+        
+        ds.challenges.append(challenge2)
+        
+        // save the DS
+        realm.add(ds)
+        
+        do {
+            try realm.commitWrite()
+        } catch {
+            // TODO handler error
+        }
+    }
+
 }

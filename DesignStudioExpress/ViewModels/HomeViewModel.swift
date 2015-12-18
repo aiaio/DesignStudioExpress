@@ -30,10 +30,11 @@ class HomeViewModel {
     }
 
     private func createDefaultDesignStudios() {
-        let realm = try! Realm()
-        
         DesignStudio.createDefaultTemplate1()
+        DesignStudio.createDefaultTemplate2()
         
+        /* TODO: remove
+        let realm = try! Realm()
         realm.beginWrite()
         
         let ds2 = DesignStudio()
@@ -63,7 +64,7 @@ class HomeViewModel {
             realm.add(ds)
         }
         
-        try! realm.commitWrite()
+        try! realm.commitWrite() */
     }
     
     func refreshData() {
