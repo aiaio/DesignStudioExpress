@@ -14,6 +14,7 @@ class Challenge: Object {
     dynamic var title = ""
     dynamic var challengeDescription = "" // we can't use just description, because that's an NSObject stored property
     dynamic var dateCreated: NSDate = NSDate()
+    dynamic var finished: Bool = false
     
     let activities = List<Activity>()
     

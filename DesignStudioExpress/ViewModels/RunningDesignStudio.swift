@@ -360,6 +360,7 @@ class RunningDesignStudio: NSObject {
     
     private func moveToNextChallenge() -> Bool {
         self.updateCurrentActivity()
+        self.updateCurrentChallenge()
         
         let result = self.moveChallengePointer()
         
@@ -368,6 +369,16 @@ class RunningDesignStudio: NSObject {
         }
         
         return result
+    }
+    
+    private func updateCurrentChallenge() {
+        do {
+            try realm.write {
+                self.currentChallenge?.finished = true
+            }
+        } catch {
+            // TODO handle errors
+        }
     }
     
     private func updateDesignStudioChallengeIdx() {

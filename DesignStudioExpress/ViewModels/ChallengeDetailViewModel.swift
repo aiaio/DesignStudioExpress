@@ -61,7 +61,7 @@ class ChallengeDetailViewModel {
     
     var editingEnabled: Bool {
         get {
-            return !self.data.designStudio.started
+            return !self.data.finished && AppDelegate.designStudio.currentChallenge?.id != self.data.id
         }
     }
     
