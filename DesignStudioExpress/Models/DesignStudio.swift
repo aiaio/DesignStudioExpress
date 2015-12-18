@@ -44,7 +44,7 @@ class DesignStudio: Object {
         ds.title = "New Project Concept"
        
         let challenge = Challenge()
-        challenge.title = "Individual Sketching, Group Discussion"
+        challenge.title = "Solo Sketching"
         challenge.challengeDescription  = "This round focuses on cardstorming and rapid sketching. Stick to rough sketches that convey your ideas. You will present, critique and refine your ideas after each activity. Good luck and get sketchy!"
         
         let activity1 = Activity()
@@ -54,25 +54,25 @@ class DesignStudio: Object {
         challenge.activities.append(activity1)
         
         let activity2 = Activity()
-        activity2.title = "Draw 5 ideas in 5 minutes"
+        activity2.title = "5 ideas in 5 minutes"
         activity2.activityDescription = "Generate 5 ideas in 5 minutes — should be unique concepts, but can be very rough. Give one minute per idea. It’s okay to have fewer than the 5 ideas."
         activity2.duration = 5
         challenge.activities.append(activity2)
         
         let activity3 = Activity()
-        activity3.title = "Share sketches within mini groups"
+        activity3.title = "Discuss in mini groups"
         activity3.activityDescription = "Present ideas to the group to share your concepts and get a critique. Write ideas/questions down as notes. Use most of this time to share ideas."
         activity3.duration = 10
         challenge.activities.append(activity3)
         
         let activity4 = Activity()
-        activity4.title = "Sketch"
+        activity4.title = "Refine & sketch"
         activity4.activityDescription = "Refine your concepts into the top 2 ideas. Incorporate others’ ideas into your designs."
         activity4.duration = 10
         challenge.activities.append(activity4)
         
         let activity5 = Activity()
-        activity5.title = "Share in mini groups and prepare to present"
+        activity5.title = "Prepare to present"
         activity5.activityDescription = "Prepare to present your ideas as a group—condense and eliminate as much as possible. Don’t be afraid to throw away ideas, keep the strongest ones."
         activity5.duration = 10
         challenge.activities.append(activity5)
@@ -94,7 +94,7 @@ class DesignStudio: Object {
         // Challenge #2
         
         let challenge2 = Challenge()
-        challenge2.title = "Individual and Group Sketching"
+        challenge2.title = "Group Sketching"
         challenge2.challengeDescription  = "This round focuses on cardstorming and rapid sketching. Stick to rough sketches that convey your ideas. You will present, critique and refine your ideas after each activity. Good luck and get sketchy!"
         
         let activity21 = Activity()
@@ -104,13 +104,13 @@ class DesignStudio: Object {
         challenge2.activities.append(activity21)
         
         let activity22 = Activity()
-        activity22.title = "Draw 5 ideas in 5 minutes"
+        activity22.title = "5 ideas in 5 minutes"
         activity22.activityDescription = "Generate 5 ideas in 5 minutes — should be unique concepts, but can be very rough. Give one minute per idea. It’s okay to have fewer than the 5 ideas."
         activity22.duration = 5
         challenge2.activities.append(activity22)
         
         let activity23 = Activity()
-        activity23.title = "Share sketches within mini groups"
+        activity23.title = "Share within mini groups"
         activity23.activityDescription = "Present ideas to the group to share your concepts and get a critique. Write ideas/questions down as notes. Use most of this time to share ideas."
         activity23.duration = 10
         challenge2.activities.append(activity23)
@@ -122,7 +122,7 @@ class DesignStudio: Object {
         challenge2.activities.append(activity24)
         
         let activity25 = Activity()
-        activity25.title = "Sketch collaboratively in mini groups"
+        activity25.title = "Collaborative sketching"
         activity25.activityDescription = "Together, each mini group sketches, consolidating their ideas into a single vision to answer the challenge."
         activity25.duration = 10
         challenge2.activities.append(activity25)
@@ -145,7 +145,7 @@ class DesignStudio: Object {
         // Challenge #3
         
         let challenge3 = Challenge()
-        challenge3.title = "Grouping Similar Ideas"
+        challenge3.title = "Affinity Mapping"
         challenge3.challengeDescription  = "This is a cardstorming challenge. Present your best ideas and discuss their value. Then refine and  combine them into themes. Remember — ideas should be mapped to the users’ goals and needs."
         
         let activity31 = Activity()
@@ -161,7 +161,7 @@ class DesignStudio: Object {
         challenge3.activities.append(activity32)
         
         let activity33 = Activity()
-        activity33.title = "Group ideas by common themes"
+        activity33.title = "Grouping themes"
         activity33.activityDescription = "Group major themes together. Record any new ideas that come up during grouping and add in new stickies."
         activity33.duration = 10
         challenge3.activities.append(activity33)
@@ -173,7 +173,7 @@ class DesignStudio: Object {
         challenge3.activities.append(activity34)
         
         let activity35 = Activity()
-        activity35.title = "Present and discuss with the full group"
+        activity35.title = "Team Discussion"
         activity35.activityDescription = "Each group presents their categories and sub-topics. Group major themes together, other teams can add to existing categories or add new ones."
         activity35.duration = 20
         challenge3.activities.append(activity35)
@@ -229,19 +229,19 @@ class DesignStudio: Object {
         challenge.activities.append(activity1)
         
         let activity2 = Activity()
-        activity2.title = "Share ideas with mini group"
+        activity2.title = "Discuss in mini groups"
         activity2.activityDescription = "Each person shares their ideas within their mini group."
         activity2.duration = 20
         challenge.activities.append(activity2)
         
         let activity3 = Activity()
-        activity3.title = "Draw 5 ideas in 5 minutes"
-        activity3.activityDescription = "Generate 5 ideas in 5 minutes — should be unique concepts, but can be very rough. Give one minute per idea. It’s okay to have fewer than the 5 ideas."
+        activity3.title = "5 ideas in 5 minutes"
+        activity3.activityDescription = "Sketch 5 ideas in 5 minutes — should be unique concepts, but can be very rough. Give one minute per idea. It’s okay to have fewer than the 5 ideas."
         activity3.duration = 5
         challenge.activities.append(activity3)
         
         let activity4 = Activity()
-        activity4.title = "Share sketches within mini groups"
+        activity4.title = "Discuss in mini groups"
         activity4.activityDescription = "Present ideas to the group to share your concepts and get a critique. Write ideas/questions down as notes. Use most of this time to share ideas."
         activity4.duration = 20
         challenge.activities.append(activity4)
@@ -253,13 +253,13 @@ class DesignStudio: Object {
         challenge.activities.append(activity5)
         
         let activity6 = Activity()
-        activity6.title = "Share in mini groups and prepare to present"
+        activity6.title = "Prepare to present"
         activity6.activityDescription = "Prepare to present your ideas as a group—condense and eliminate as much as possible. Don’t be afraid to throw away ideas, keep the strongest ones."
         activity6.duration = 10
         challenge.activities.append(activity6)
         
         let activity7 = Activity()
-        activity7.title = "Share and discuss"
+        activity7.title = "Team discussion"
         activity7.activityDescription = "Each group presents and receives critiques. Discuss all ideas and determine which ideas people like the best. If you’d like, hold a vote."
         activity7.duration = 20
         challenge.activities.append(activity7)
