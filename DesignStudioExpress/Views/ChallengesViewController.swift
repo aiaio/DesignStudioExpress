@@ -16,6 +16,11 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         case EditChallenge = "EditChallenge"
     }
     
+    let confirmDeletionTitleText = "Warning"
+    let confirmDeletionMessage = "Are you sure you want to delete this challenge?"
+    let cannotDeleteChallengeTitleText = "Warning"
+    let cannotDeleteChallengeMessage = "You can't delete currently active or finished challenge!"
+    
     @IBOutlet weak var addChallengeView: UIView!
     @IBOutlet weak var tableViewParentView: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -129,12 +134,33 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     }
     
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
-        if let indexPath = self.tableView.indexPathForCell(cell) {
-            if vm.deleteChallenge(indexPath) {
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-                
-                self.prepareViewState()
-            }
+        guard let indexPath = self.tableView.indexPathForCell(cell) else {
+            return true
+        }
+        
+        if self.vm.canDeleteChallenge(indexPath) {
+            let alertController = UIAlertController(title: self.confirmDeletionTitleText, message: self.confirmDeletionMessage, preferredStyle: .Alert)
+            let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: { (action) -> Void in
+                // try to delete it and remove the row only if we succesfully deleted the challenge
+                if self.vm.deleteChallenge(indexPath) {
+                    self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                    
+                    self.prepareViewState()
+                }
+            })
+            alertController.addAction(deleteAction)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(title: self.cannotDeleteChallengeTitleText, message: self.cannotDeleteChallengeMessage, preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(okAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            return true
         }
         
         return true

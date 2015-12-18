@@ -75,6 +75,22 @@ class ChallengesViewModel {
         get { return !self.designStudio.started }
     }
     
+    func canDeleteChallenge(indexPath: NSIndexPath) -> Bool {
+        let idx = indexPath.row
+        
+        guard self.data.count > idx else {
+            return false
+        }
+        
+        if let challenge: Challenge = self.data[idx] {
+            if !challenge.finished && AppDelegate.designStudio.currentChallenge?.id != challenge.id {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     func isRowEditable(indexPath: NSIndexPath) -> Bool {
         return indexPath.row < data.count
     }
