@@ -13,6 +13,9 @@ class ActivityDetailViewModel {
     lazy var realm = try! Realm()
     private var data: Activity!
     
+    let saveActivityLabelText = "SAVE ACTIVITY"
+    let saveNotesLabelText = "SAVE NOTES"
+    
     var title: String = ""
     var duration: Int = 0
     var description: String = ""
@@ -21,6 +24,16 @@ class ActivityDetailViewModel {
     var editingEnabled: Bool {
         get {
             return !self.data.finished && self.data.id != AppDelegate.designStudio.currentActivity?.id
+        }
+    }
+    
+    var saveActivityLabel: String {
+        get {
+            if self.editingEnabled {
+                return self.saveActivityLabelText
+            } else {
+                return self.saveNotesLabelText
+            }
         }
     }
     
@@ -39,9 +52,12 @@ class ActivityDetailViewModel {
     func saveActivity() {
         do {
             try realm.write {
-                self.data.title = self.title
-                self.data.duration = self.duration
-                self.data.activityDescription = self.description
+                // we can update only notes when editing is disabled
+                if self.editingEnabled {
+                    self.data.title = self.title
+                    self.data.duration = self.duration
+                    self.data.activityDescription = self.description
+                }
                 self.data.notes = self.notes
                 self.realm.add(self.data, update: true)
             }
