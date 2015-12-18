@@ -12,6 +12,7 @@ import RealmSwift
 class HomeViewModel {
     lazy var realm = try! Realm()
     private var data: [DesignStudio]!
+    private var numOfTemplates = 0
     
     init () {
         data = self.loadDesignStudios()
@@ -22,8 +23,9 @@ class HomeViewModel {
         var designStudios = realm.objects(DesignStudio).sorted("dateCreated")
         
         if designStudios.count == 0 {
-            createDefaultDesignStudios()
+            self.createDefaultDesignStudios()
             designStudios = realm.objects(DesignStudio)
+            self.numOfTemplates = designStudios.count
         }
         
         return designStudios.toArray(DesignStudio.self)
@@ -67,6 +69,15 @@ class HomeViewModel {
         try! realm.commitWrite() */
     }
     
+    func canDeleteDesignStudio(indexPath: NSIndexPath) -> Bool {
+        // delete only design studios that are not templates
+        guard self.isRowEditable(indexPath) else {
+            return false
+        }
+        let designStudio = self.data[indexPath.row-1]
+        return designStudio.id != AppDelegate.designStudio.currentDesignStudio?.id
+    }
+    
     func refreshData() {
         data = loadDesignStudios()
     }
@@ -75,9 +86,8 @@ class HomeViewModel {
         return data.count + 1
     }
     
-    
     func isRowEditable(indexPath: NSIndexPath) -> Bool {
-        if indexPath.row > 2 {
+        if indexPath.row > self.numOfTemplates {
             return true
         }
         

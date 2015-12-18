@@ -17,6 +17,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let vm = HomeViewModel()
     let editDesignStudioSegue = "EditDesignStudio"
     
+    let confirmDeletionTitleText = "Warning"
+    let confirmDeletionMessage = "Are you sure you want to delete this design studio?"
+    let cannotDeleteCurrentStudioText = "You cannot delete currently active design studio!"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -99,10 +103,30 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func swipeTableCell(cell: MGSwipeTableCell!, tappedButtonAtIndex index: Int, direction: MGSwipeDirection, fromExpansion: Bool) -> Bool {
-        if let indexPath = self.tableView.indexPathForCell(cell) {
-            if vm.deleteDesignStudio(indexPath) {
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-            }
+        guard let indexPath = self.tableView.indexPathForCell(cell) else {
+            return true
+        }
+        
+        if self.vm.canDeleteDesignStudio(indexPath) {
+            let alertController = UIAlertController(title: self.confirmDeletionTitleText, message: self.confirmDeletionMessage, preferredStyle: .Alert)
+            let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: { (action) -> Void in
+                // try to delete it and remove the row only if we succesfully deleted design studio
+                if self.vm.deleteDesignStudio(indexPath) {
+                    self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                }
+            })
+            alertController.addAction(deleteAction)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            alertController.addAction(cancelAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(title: title, message: self.cannotDeleteCurrentStudioText, preferredStyle: .Alert)
+            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(okAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
         
         return true
