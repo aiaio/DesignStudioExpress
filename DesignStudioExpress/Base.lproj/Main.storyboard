@@ -2017,13 +2017,13 @@ Sketching Templates</string>
                                 <exclude reference="5bm-S9-BNa"/>
                                 <exclude reference="g3p-Za-2eu"/>
                                 <exclude reference="ssH-jf-Pcn"/>
-                                <exclude reference="dYb-Ss-973"/>
                                 <exclude reference="DuM-wl-RtL"/>
                                 <exclude reference="N10-bD-TaV"/>
                                 <exclude reference="YV4-KG-kCJ"/>
-                                <exclude reference="5H9-Jz-KNG"/>
                                 <exclude reference="kqN-fO-rov"/>
                                 <exclude reference="olu-cY-TST"/>
+                                <exclude reference="dYb-Ss-973"/>
+                                <exclude reference="5H9-Jz-KNG"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2035,13 +2035,13 @@ Sketching Templates</string>
                                 <include reference="5bm-S9-BNa"/>
                                 <include reference="g3p-Za-2eu"/>
                                 <include reference="ssH-jf-Pcn"/>
-                                <include reference="dYb-Ss-973"/>
                                 <include reference="DuM-wl-RtL"/>
                                 <include reference="N10-bD-TaV"/>
                                 <include reference="YV4-KG-kCJ"/>
-                                <include reference="5H9-Jz-KNG"/>
                                 <include reference="kqN-fO-rov"/>
                                 <include reference="olu-cY-TST"/>
+                                <include reference="dYb-Ss-973"/>
+                                <include reference="5H9-Jz-KNG"/>
                             </mask>
                         </variation>
                     </view>
@@ -2736,12 +2736,12 @@ Sketching Templates</string>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="190" id="T2X-WR-E2c"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                        <real key="value" value="0.20000000000000001"/>
+                                        <real key="value" value="0.25"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
@@ -2760,7 +2760,7 @@ Sketching Templates</string>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="360" id="MIg-cb-7RQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -3010,7 +3010,8 @@ Sketching Templates</string>
                                                             <exclude reference="kFy-YO-Ana"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="55" y="44" width="130" height="29"/>
                                                         <mask key="subviews">
                                                             <include reference="hbr-94-lLC"/>
                                                             <include reference="rK7-HV-JTV"/>
@@ -3047,7 +3048,8 @@ Sketching Templates</string>
                                                             <exclude reference="bTH-hm-Ddj"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="23" y="119" width="194" height="120"/>
                                                         <mask key="constraints">
                                                             <include reference="bTH-hm-Ddj"/>
                                                         </mask>
@@ -3074,7 +3076,8 @@ Sketching Templates</string>
                                                             <exclude reference="MS1-q4-xo0"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="-60" y="75" width="360" height="40"/>
                                                         <mask key="constraints">
                                                             <include reference="1no-mU-II7"/>
                                                             <include reference="MS1-q4-xo0"/>
@@ -3094,7 +3097,8 @@ Sketching Templates</string>
                                                             <exclude reference="LAw-Kj-pd3"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="170" y="44" width="50" height="50"/>
                                                         <mask key="constraints">
                                                             <include reference="Kfi-xx-WJS"/>
                                                             <include reference="LAw-Kj-pd3"/>
@@ -3191,7 +3195,8 @@ Sketching Templates</string>
                                                             <exclude reference="z4t-1B-hBe"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="170" y="14" width="52" height="42"/>
                                                         <mask key="constraints">
                                                             <include reference="04z-po-ric"/>
                                                             <include reference="z4t-1B-hBe"/>
@@ -3273,6 +3278,9 @@ Sketching Templates</string>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                                             <color key="textColor" red="0.1215686275" green="0.1450980392" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="83" y="0.0" width="81" height="28"/>
+                                                            </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="1 presenter note" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEn-Hm-HgN" userLabel="Activities Label">
                                                             <rect key="frame" x="263" y="52" width="85" height="11"/>
@@ -3315,7 +3323,8 @@ Sketching Templates</string>
                                                                     <exclude reference="N8S-xB-rHR"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="heightClass=regular-widthClass=compact">
+                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="24" y="48" width="160" height="76"/>
                                                                 <mask key="constraints">
                                                                     <include reference="N8S-xB-rHR"/>
                                                                 </mask>
@@ -3359,7 +3368,8 @@ Sketching Templates</string>
                                                             <exclude reference="z7t-5M-JUv"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="8" y="22" width="182" height="110"/>
                                                         <mask key="constraints">
                                                             <include reference="GS0-az-a33"/>
                                                             <include reference="0Ma-Pc-nQq"/>
@@ -4000,10 +4010,10 @@ Sketching Templates</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="eBQ-Sy-Rq5" firstAttribute="top" secondItem="KNI-Bi-xlp" secondAttribute="bottom" id="FWB-lv-g41"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eBQ-Sy-Rq5" secondAttribute="trailing" id="RNg-Ys-47b"/>
+                            <constraint firstItem="eBQ-Sy-Rq5" firstAttribute="top" secondItem="KNI-Bi-xlp" secondAttribute="bottom" constant="-64" id="FWB-lv-g41"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eBQ-Sy-Rq5" secondAttribute="trailing" constant="-20" id="RNg-Ys-47b"/>
                             <constraint firstItem="Z0C-KN-qT1" firstAttribute="top" secondItem="eBQ-Sy-Rq5" secondAttribute="bottom" id="leV-dE-aLv"/>
-                            <constraint firstItem="eBQ-Sy-Rq5" firstAttribute="leading" secondItem="SC4-ne-sh3" secondAttribute="leadingMargin" id="xhv-51-Te0"/>
+                            <constraint firstItem="eBQ-Sy-Rq5" firstAttribute="leading" secondItem="SC4-ne-sh3" secondAttribute="leadingMargin" constant="-20" id="xhv-51-Te0"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
