@@ -18,7 +18,8 @@ class ChallengesViewModel {
     let buttonLabelTimer = "SHOW TIMER"
     let buttonLabelFinished = "STUDIO FINISHED"
     let buttonLabelBeginDS = "BEGIN DESIGN STUDIO"
-    let buttonLabelRunning = "RUNNING"
+    let anotherStudioRunningText = " design studio is running."
+    let invalidDesignStudioText = "You have to have at least one challenge and every challenge has to have at least one activity."
     
     func setDesignStudio(newDesignStudio: DesignStudio) {
         if (self.designStudio?.id != newDesignStudio.id) {
@@ -50,19 +51,14 @@ class ChallengesViewModel {
     }
     
     var beginDesignStudioButtonEnabled: Bool {
-        return !isNewDesignStudio && !isAnotherStudioRunning
+        return !isNewDesignStudio
     }
     
     var beginDesignStudioButtonText: String {
         if self.designStudio.finished {
             return self.buttonLabelFinished
-        } else if AppDelegate.designStudio.isDesignStudioRunning {
-            if self.isAnotherStudioRunning {
-                let runningDSTitle = AppDelegate.designStudio.currentDesignStudio!.title
-                return "\(runningDSTitle)" + self.buttonLabelRunning
-            } else {
-                return self.buttonLabelTimer
-            }
+        } else if AppDelegate.designStudio.isDesignStudioRunning && !self.isAnotherStudioRunning {
+            return self.buttonLabelTimer
         }
         return self.buttonLabelBeginDS
     }
@@ -150,8 +146,31 @@ class ChallengesViewModel {
         return createNewChallenge()
     }
     
-    func actionButtonTouched() {
+    // if there's an error, return an error message
+    // otherwise return nil
+    func actionButtonTouched() -> String? {
+        if self.isAnotherStudioRunning {
+            return (AppDelegate.designStudio.currentDesignStudio?.title ?? "Another") + self.anotherStudioRunningText
+        }
+        
+        if !challengesAreValid() {
+            return self.invalidDesignStudioText
+        }
+    
         AppDelegate.designStudio.challengesScreenActionButton(self.designStudio)
+        return nil
+    }
+    
+    func challengesAreValid() -> Bool {
+        if self.data.count < 1 {
+            return false
+        }
+        for item in self.data {
+            if item.activities.count < 1 {
+                return false
+            }
+        }
+        return true
     }
     
     private func createNewChallenge() -> Challenge {

@@ -51,7 +51,9 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     
     // universal action button that
     @IBAction func actionButton(sender: AnyObject) {
-        self.vm.actionButtonTouched()
+        if let errorMessage = self.vm.actionButtonTouched() {
+            self.showWarningAlert("Warning", message: errorMessage)
+        }
     }
     
     // MARK: - Table view data source
@@ -155,11 +157,7 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
             
             self.presentViewController(alertController, animated: true, completion: nil)
         } else {
-            let alertController = UIAlertController(title: self.cannotDeleteChallengeTitleText, message: self.cannotDeleteChallengeMessage, preferredStyle: .Alert)
-            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            alertController.addAction(okAction)
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.showWarningAlert(self.cannotDeleteChallengeTitleText, message: self.cannotDeleteChallengeMessage)
             return true
         }
         
@@ -225,6 +223,14 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         }
         
         return cell
+    }
+    
+    private func showWarningAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(okAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     // MARK: - Navigation
