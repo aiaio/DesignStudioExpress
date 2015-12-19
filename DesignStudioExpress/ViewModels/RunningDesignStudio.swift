@@ -236,6 +236,8 @@ class RunningDesignStudio: NSObject {
         // don't forget to stop the timer at the end
         // we don't want any more popups
         self.timer?.invalidate()
+        // remove also all local notifications
+        UIApplication.sharedApplication().scheduledLocalNotifications?.removeAll()
         
         // mark design studio as finished
         do {
@@ -355,7 +357,23 @@ class RunningDesignStudio: NSObject {
         self.timer?.invalidate()
         if let _ = self.currentActivity {
             self.timer = NSTimer.scheduledTimerWithTimeInterval(Double(self.currentActivityRemainingDuration), target: self, selector: "notifyEndActivity", userInfo: nil, repeats: false)
+            
+            self.createLocalNotification(self.currentActivity!.title + " is finished",
+                sinceNow: Double(self.currentActivityRemainingDuration))
         }
+    }
+    
+    private func createLocalNotification(body: String, sinceNow: Double) {
+        let timeIsUpAlarm = UILocalNotification()
+        timeIsUpAlarm.fireDate = NSDate(timeIntervalSinceNow: sinceNow)
+        timeIsUpAlarm.timeZone = NSTimeZone.systemTimeZone()
+        
+        timeIsUpAlarm.alertAction = nil
+        timeIsUpAlarm.alertBody = body
+        timeIsUpAlarm.soundName = UILocalNotificationDefaultSoundName
+        
+        UIApplication.sharedApplication().scheduledLocalNotifications?.removeAll()
+        UIApplication.sharedApplication().scheduleLocalNotification(timeIsUpAlarm)
     }
     
     private func moveToNextChallenge() -> Bool {
