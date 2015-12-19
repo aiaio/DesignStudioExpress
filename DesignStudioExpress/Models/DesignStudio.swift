@@ -42,6 +42,7 @@ class DesignStudio: Object {
         copyDS.title = self.title
         copyDS.started = self.started
         copyDS.finished = self.finished
+        copyDS.template = false
         copyDS.currentChallengeId = self.currentChallengeId
         copyDS.currentActivityId = self.currentActivityId
         
