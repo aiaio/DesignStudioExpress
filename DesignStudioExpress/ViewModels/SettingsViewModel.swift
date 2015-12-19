@@ -40,20 +40,31 @@ class SettingsViewModel {
             }),
             
             Setting(title: "Contact Us", icon: "Clock", action: { vc in
-                // https://github.com/monkeymike/MPFeedbackMailComposeViewController
-                
-                let feedbackController = MPFeedbackMailComposeViewController()
-                
-                feedbackController.mailComposeDelegate = vc as! SettingsViewController
-                
-                // TODO update with real email
-                feedbackController.setToRecipients(["sms@alexanderinteractive.com"])
-                
-                feedbackController.setSubject("Design Studio Express Feedback")
-                feedbackController.setMessageBody("Feedback:\n\n\n\n\n\n\n\n\n--------\nDeveloper Information:", isHTML:false)
-                
-                if let navigationController = vc.navigationController {
-                    navigationController.presentViewController(feedbackController, animated: true, completion:nil)
+                if MFMailComposeViewController.canSendMail() {
+                    // https://github.com/monkeymike/MPFeedbackMailComposeViewController
+                    
+                    let feedbackController = MPFeedbackMailComposeViewController()
+                    
+                    feedbackController.mailComposeDelegate = vc as! SettingsViewController
+                    
+                    // TODO update with real email
+                    feedbackController.setToRecipients(["sms@alexanderinteractive.com"])
+                    
+                    feedbackController.setSubject("Design Studio Express Feedback")
+                    feedbackController.setMessageBody("Feedback:\n\n\n\n\n\n\n\n\n--------\nDeveloper Information:", isHTML:false)
+                    
+                    if let navigationController = vc.navigationController {
+                        navigationController.presentViewController(feedbackController, animated: true, completion:nil)
+                    }
+                } else {
+                    // show the alert if we can send the email
+                    let alertController = UIAlertController(title: "Preparing email failed", message: "Please configure your device to send email", preferredStyle: .Alert)
+                    let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alertController.addAction(okAction)
+                    
+                    if let navigationController = vc.navigationController {
+                        navigationController.presentViewController(alertController, animated: true, completion: nil)
+                    }
                 }
             }),
             

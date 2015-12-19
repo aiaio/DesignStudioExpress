@@ -68,13 +68,13 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
         if indexPath.row == 0 {
             let screenSize = UIScreen.mainScreen().bounds.height
             if screenSize <= 480  { // 4s
-                rowHeight = 280
+                rowHeight = 245
             } else if screenSize <= 568 { // 5
-                rowHeight = 280
+                rowHeight = 245
             } else if screenSize <= 667 { // 6
                 rowHeight = 330
             } else { // 6++
-                rowHeight = 310
+                rowHeight = 320
             }
         }
         
@@ -95,6 +95,13 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
         if cell == nil
         {
             cell = T(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
+        }
+        
+        cell.textLabel?.text = vm.getTitle(indexPath)
+        
+        // don't set the icon on the text for the first cell (with image)
+        if indexPath.row == 0 {
+            return cell
         }
         
         // we have to add an image to the attachment

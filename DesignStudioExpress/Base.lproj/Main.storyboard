@@ -2005,12 +2005,12 @@ Sketching Templates</string>
                                         <exclude reference="T27-tB-Zgt"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="ezn-Qi-FZN"/>
-                                        <exclude reference="v1x-FY-ExG"/>
                                         <exclude reference="5Du-14-QqG"/>
                                         <exclude reference="6HU-AN-s16"/>
                                         <exclude reference="6q8-wO-iw0"/>
                                         <exclude reference="oV8-Ju-2RA"/>
+                                        <exclude reference="ezn-Qi-FZN"/>
+                                        <exclude reference="v1x-FY-ExG"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -2018,12 +2018,12 @@ Sketching Templates</string>
                                         <include reference="T27-tB-Zgt"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="ezn-Qi-FZN"/>
-                                        <include reference="v1x-FY-ExG"/>
                                         <include reference="5Du-14-QqG"/>
                                         <include reference="6HU-AN-s16"/>
                                         <include reference="6q8-wO-iw0"/>
                                         <include reference="oV8-Ju-2RA"/>
+                                        <include reference="ezn-Qi-FZN"/>
+                                        <include reference="v1x-FY-ExG"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -2050,12 +2050,12 @@ Sketching Templates</string>
                                 <exclude reference="5bm-S9-BNa"/>
                                 <exclude reference="g3p-Za-2eu"/>
                                 <exclude reference="ssH-jf-Pcn"/>
+                                <exclude reference="dYb-Ss-973"/>
                                 <exclude reference="DuM-wl-RtL"/>
                                 <exclude reference="N10-bD-TaV"/>
+                                <exclude reference="YV4-KG-kCJ"/>
                                 <exclude reference="5H9-Jz-KNG"/>
                                 <exclude reference="olu-cY-TST"/>
-                                <exclude reference="dYb-Ss-973"/>
-                                <exclude reference="YV4-KG-kCJ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2067,12 +2067,12 @@ Sketching Templates</string>
                                 <include reference="5bm-S9-BNa"/>
                                 <include reference="g3p-Za-2eu"/>
                                 <include reference="ssH-jf-Pcn"/>
+                                <include reference="dYb-Ss-973"/>
                                 <include reference="DuM-wl-RtL"/>
                                 <include reference="N10-bD-TaV"/>
+                                <include reference="YV4-KG-kCJ"/>
                                 <include reference="5H9-Jz-KNG"/>
                                 <include reference="olu-cY-TST"/>
-                                <include reference="dYb-Ss-973"/>
-                                <include reference="YV4-KG-kCJ"/>
                             </mask>
                         </variation>
                     </view>
@@ -3979,12 +3979,12 @@ Sketching Templates</string>
                                                     <exclude reference="AZ5-4Q-t8x"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="3On-v3-fPK"/>
-                                                    <exclude reference="elU-DI-3Bx"/>
-                                                    <exclude reference="h46-Gm-Hsg"/>
                                                     <exclude reference="HEu-YA-o4C"/>
                                                     <exclude reference="I8S-mt-3R3"/>
                                                     <exclude reference="ep2-Aa-E2F"/>
+                                                    <exclude reference="3On-v3-fPK"/>
+                                                    <exclude reference="elU-DI-3Bx"/>
+                                                    <exclude reference="h46-Gm-Hsg"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -3993,12 +3993,12 @@ Sketching Templates</string>
                                                     <include reference="AZ5-4Q-t8x"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="3On-v3-fPK"/>
-                                                    <include reference="elU-DI-3Bx"/>
-                                                    <include reference="h46-Gm-Hsg"/>
                                                     <include reference="HEu-YA-o4C"/>
                                                     <include reference="I8S-mt-3R3"/>
                                                     <include reference="ep2-Aa-E2F"/>
+                                                    <include reference="3On-v3-fPK"/>
+                                                    <include reference="elU-DI-3Bx"/>
+                                                    <include reference="h46-Gm-Hsg"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -4038,9 +4038,12 @@ Sketching Templates</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBQ-Sy-Rq5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBQ-Sy-Rq5">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="751"/>
+                                </variation>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -4073,6 +4076,7 @@ Sketching Templates</string>
                             </mask>
                         </variation>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="vbp-L4-Wcp"/>
                     <connections>
                         <outlet property="tableView" destination="eBQ-Sy-Rq5" id="Fan-F0-ZfN"/>
@@ -4104,7 +4108,7 @@ Sketching Templates</string>
         <!--Navigation Controller-->
         <scene sceneID="7Us-LZ-YcU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Epf-zI-4iE" sceneMemberID="viewController">
+                <navigationController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="Epf-zI-4iE" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="3" title="" image="Settings_Icon" id="SaN-My-fSM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mcw-RC-IzM">
