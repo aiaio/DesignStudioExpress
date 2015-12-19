@@ -1393,6 +1393,26 @@ Sketching Templates</string>
                                     <outletCollection property="gestureRecognizers" destination="MXw-Nx-uvq" appends="YES" id="J0X-HH-wc4"/>
                                 </connections>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5RU-6m-MPY" customClass="UIButtonTransparent" customModule="DesignStudioExpress" customModuleProvider="target">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Xdo-ka-DeG"/>
+                                </constraints>
+                                <state key="normal" title="COPY DESIGN STUDIO"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Xdo-ka-DeG"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Xdo-ka-DeG"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="copyDesignStudio:" destination="Fgk-O3-KZM" eventType="touchUpInside" id="bDo-Ih-M0r"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1402,13 +1422,16 @@ Sketching Templates</string>
                             <constraint firstItem="qra-NB-i6S" firstAttribute="top" secondItem="kYY-da-6Bn" secondAttribute="bottom" constant="40" id="9pi-e4-WCa"/>
                             <constraint firstItem="KA9-Sj-yDl" firstAttribute="leading" secondItem="qra-NB-i6S" secondAttribute="leading" id="A4N-PK-MCz"/>
                             <constraint firstItem="kYY-da-6Bn" firstAttribute="top" secondItem="KA9-Sj-yDl" secondAttribute="bottom" constant="10" id="AA9-zs-a3b"/>
+                            <constraint firstItem="5RU-6m-MPY" firstAttribute="width" secondItem="qra-NB-i6S" secondAttribute="width" id="FAa-T4-aDK"/>
                             <constraint firstItem="xnX-Vg-sph" firstAttribute="top" secondItem="eUu-hw-rpN" secondAttribute="top" id="I5K-2o-6gz"/>
+                            <constraint firstItem="5RU-6m-MPY" firstAttribute="centerX" secondItem="qra-NB-i6S" secondAttribute="centerX" id="JSs-p1-b1h"/>
+                            <constraint firstItem="5RU-6m-MPY" firstAttribute="top" secondItem="qra-NB-i6S" secondAttribute="bottom" constant="5" id="NfI-Nd-vF6"/>
                             <constraint firstItem="qra-NB-i6S" firstAttribute="centerX" secondItem="eUu-hw-rpN" secondAttribute="centerX" id="Nm2-8l-CWv"/>
                             <constraint firstItem="xnX-Vg-sph" firstAttribute="leading" secondItem="eUu-hw-rpN" secondAttribute="leading" id="P82-qb-iC4"/>
                             <constraint firstItem="KA9-Sj-yDl" firstAttribute="top" secondItem="lI5-bb-OmX" secondAttribute="bottom" id="PyR-jX-Na9"/>
                             <constraint firstItem="4Hc-t9-ALZ" firstAttribute="leading" secondItem="qra-NB-i6S" secondAttribute="leading" id="X8o-VO-k0B"/>
-                            <constraint firstItem="ebn-cM-bwx" firstAttribute="top" secondItem="qra-NB-i6S" secondAttribute="bottom" constant="55" id="fOw-Wf-bLY"/>
                             <constraint firstItem="lI5-bb-OmX" firstAttribute="top" secondItem="4Hc-t9-ALZ" secondAttribute="bottom" id="fSJ-sn-But"/>
+                            <constraint firstItem="ebn-cM-bwx" firstAttribute="top" secondItem="5RU-6m-MPY" secondAttribute="bottom" constant="25" id="fvl-vK-90T"/>
                             <constraint firstItem="xnX-Vg-sph" firstAttribute="bottom" secondItem="ebn-cM-bwx" secondAttribute="top" id="iGR-RU-7R0"/>
                             <constraint firstItem="U9D-jf-efE" firstAttribute="trailing" secondItem="KA9-Sj-yDl" secondAttribute="trailing" constant="15" id="jyH-8o-DyW"/>
                             <constraint firstItem="lI5-bb-OmX" firstAttribute="leading" secondItem="qra-NB-i6S" secondAttribute="leading" constant="-8" id="nZ9-gC-jT3"/>
@@ -1427,27 +1450,31 @@ Sketching Templates</string>
                                 <exclude reference="kYY-da-6Bn"/>
                                 <exclude reference="qra-NB-i6S"/>
                                 <exclude reference="U9D-jf-efE"/>
+                                <exclude reference="5RU-6m-MPY"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="fOw-Wf-bLY"/>
-                                <exclude reference="9cm-bb-sfa"/>
-                                <exclude reference="9pi-e4-WCa"/>
-                                <exclude reference="Nm2-8l-CWv"/>
-                                <exclude reference="rWq-jm-BwL"/>
-                                <exclude reference="X8o-VO-k0B"/>
-                                <exclude reference="2zi-UV-s0g"/>
-                                <exclude reference="A4N-PK-MCz"/>
-                                <exclude reference="PyR-jX-Na9"/>
-                                <exclude reference="jyH-8o-DyW"/>
-                                <exclude reference="niF-Gm-GdS"/>
-                                <exclude reference="3DG-d9-b1f"/>
-                                <exclude reference="AA9-zs-a3b"/>
-                                <exclude reference="fSJ-sn-But"/>
-                                <exclude reference="nZ9-gC-jT3"/>
                                 <exclude reference="I5K-2o-6gz"/>
                                 <exclude reference="P82-qb-iC4"/>
                                 <exclude reference="iGR-RU-7R0"/>
                                 <exclude reference="rdA-6Z-nIk"/>
+                                <exclude reference="X8o-VO-k0B"/>
+                                <exclude reference="fSJ-sn-But"/>
+                                <exclude reference="nZ9-gC-jT3"/>
+                                <exclude reference="jyH-8o-DyW"/>
+                                <exclude reference="niF-Gm-GdS"/>
+                                <exclude reference="2zi-UV-s0g"/>
+                                <exclude reference="A4N-PK-MCz"/>
+                                <exclude reference="PyR-jX-Na9"/>
+                                <exclude reference="3DG-d9-b1f"/>
+                                <exclude reference="AA9-zs-a3b"/>
+                                <exclude reference="9cm-bb-sfa"/>
+                                <exclude reference="9pi-e4-WCa"/>
+                                <exclude reference="Nm2-8l-CWv"/>
+                                <exclude reference="rWq-jm-BwL"/>
+                                <exclude reference="FAa-T4-aDK"/>
+                                <exclude reference="JSs-p1-b1h"/>
+                                <exclude reference="NfI-Nd-vF6"/>
+                                <exclude reference="fvl-vK-90T"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1459,27 +1486,31 @@ Sketching Templates</string>
                                 <include reference="kYY-da-6Bn"/>
                                 <include reference="qra-NB-i6S"/>
                                 <include reference="U9D-jf-efE"/>
+                                <include reference="5RU-6m-MPY"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="fOw-Wf-bLY"/>
-                                <include reference="9cm-bb-sfa"/>
-                                <include reference="9pi-e4-WCa"/>
-                                <include reference="Nm2-8l-CWv"/>
-                                <include reference="rWq-jm-BwL"/>
-                                <include reference="X8o-VO-k0B"/>
-                                <include reference="2zi-UV-s0g"/>
-                                <include reference="A4N-PK-MCz"/>
-                                <include reference="PyR-jX-Na9"/>
-                                <include reference="jyH-8o-DyW"/>
-                                <include reference="niF-Gm-GdS"/>
-                                <include reference="3DG-d9-b1f"/>
-                                <include reference="AA9-zs-a3b"/>
-                                <include reference="fSJ-sn-But"/>
-                                <include reference="nZ9-gC-jT3"/>
                                 <include reference="I5K-2o-6gz"/>
                                 <include reference="P82-qb-iC4"/>
                                 <include reference="iGR-RU-7R0"/>
                                 <include reference="rdA-6Z-nIk"/>
+                                <include reference="X8o-VO-k0B"/>
+                                <include reference="fSJ-sn-But"/>
+                                <include reference="nZ9-gC-jT3"/>
+                                <include reference="jyH-8o-DyW"/>
+                                <include reference="niF-Gm-GdS"/>
+                                <include reference="2zi-UV-s0g"/>
+                                <include reference="A4N-PK-MCz"/>
+                                <include reference="PyR-jX-Na9"/>
+                                <include reference="3DG-d9-b1f"/>
+                                <include reference="AA9-zs-a3b"/>
+                                <include reference="9cm-bb-sfa"/>
+                                <include reference="9pi-e4-WCa"/>
+                                <include reference="Nm2-8l-CWv"/>
+                                <include reference="rWq-jm-BwL"/>
+                                <include reference="FAa-T4-aDK"/>
+                                <include reference="JSs-p1-b1h"/>
+                                <include reference="NfI-Nd-vF6"/>
+                                <include reference="fvl-vK-90T"/>
                             </mask>
                         </variation>
                     </view>

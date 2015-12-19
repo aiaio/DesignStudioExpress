@@ -35,6 +35,47 @@ class DesignStudio: Object {
         return "id"
     }
     
+    // TODO: we should implement NSCopying instead
+    func makeACopy() -> DesignStudio? {
+        let copyDS = DesignStudio()
+        copyDS.title = self.title
+        copyDS.started = self.started
+        copyDS.finished = self.finished
+        copyDS.currentChallengeId = self.currentChallengeId
+        copyDS.currentActivityId = self.currentActivityId
+        
+        for challenge in self.challenges {
+            let copyChallenge = Challenge()
+            copyChallenge.title = challenge.title
+            copyChallenge.challengeDescription = challenge.challengeDescription
+            copyChallenge.finished = false
+            
+            for activity in challenge.activities {
+                let copyActivity = Activity()
+                copyActivity.title = activity.title
+                copyActivity.activityDescription = activity.activityDescription
+                copyActivity.duration = activity.duration
+                copyActivity.notes = activity.notes
+                copyActivity.finished = false
+                                
+                copyChallenge.activities.append(copyActivity)
+            }
+            copyDS.challenges.append(copyChallenge)
+        }
+        
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.add(copyDS)
+            }
+        } catch {
+            return nil
+            //TODO handle errors
+        }
+        
+        return copyDS
+    }
+    
     class func createDefaultTemplate1() {
         let realm = try! Realm()
         

@@ -11,6 +11,10 @@ import SZTextView
 
 class DetailDesignStudioViewController: UIViewControllerBase {
     
+    enum NotificationIdentifier: String {
+        case DesignStudioCopied = "DesignStudioCopied"
+    }
+    
     @IBOutlet weak var name: SZTextView!
     @IBOutlet weak var duration: UITextField!
     @IBOutlet weak var challenges: UILabel!
@@ -60,6 +64,15 @@ class DetailDesignStudioViewController: UIViewControllerBase {
         self.name.becomeFirstResponder()
     }
     
+    @IBAction func copyDesignStudio(sender: AnyObject) {
+        if let copy = self.vm.copyDesignStudio() {
+            let notificationData = ["DesignStudio":copy]
+            NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.DesignStudioCopied.rawValue, object: self, userInfo: notificationData)
+        } else {
+            // TODO handle error, show message?
+        }
+    }
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -81,6 +94,9 @@ class DetailDesignStudioViewController: UIViewControllerBase {
         super.customizeNavBarStyle()
         
         DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
+        
+        // make the back button clear, so that it's invisible when we're transitioning to the same screen
+        self.navigationController?.navigationBar.tintColor = UIColor.clearColor()
     }
     
     // MARK: - custom

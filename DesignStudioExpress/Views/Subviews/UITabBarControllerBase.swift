@@ -12,6 +12,7 @@ class UITabBarControllerBase: UITabBarController {
     
     enum NotificationIdentifier: String {
         case DesignStudioLoaded = "DesignStudioLoaded"
+        case DesignStudioCopied = "DesignStudioCopied"
         case DesignStudioDeleted = "DesignStudioDeleted"
         case DesignStudioStarted = "DesignStudioStarted"
         case ActivityEnded = "ActivityEnded" // when activity timer runs out
@@ -25,11 +26,11 @@ class UITabBarControllerBase: UITabBarController {
     }
     
     enum ViewControllerIdentifier: String {
-        case ActivityEndedScreen = "ActivityEndedScreen"
-        case ChallengesViewController = "ChallengesViewController"
-        case TimerViewController = "TimerViewController"
         case DetailDesignStudioViewController = "DetailDesignStudioViewController"
+        case ChallengesViewController = "ChallengesViewController"
         case UpcomingChallengeViewController = "UpcomingChallengeViewController"
+        case TimerViewController = "TimerViewController"
+        case ActivityEndedScreen = "ActivityEndedScreen"
         case EndDesignStudioViewController = "EndDesignStudioViewController"
         case PostDesignStudioViewController = "PostDesignStudioViewController"
         case FaqViewController = "FaqViewController"
@@ -85,12 +86,27 @@ class UITabBarControllerBase: UITabBarController {
         // get the data from the notification
         let userInfo = notification.userInfo as? [String: AnyObject]
         let designStudio = userInfo?["DesignStudio"] as? DesignStudio
-        activeDesignStudioId = designStudio?.id
+        self.activeDesignStudioId = designStudio?.id
 
         self.setActiveDesignStudio(designStudio)
         
         // jump to design studio tab
         self.selectedIndex = createDesignStudioNavTabIndex
+    }
+    
+    func showCopiedDesignStudio(notification: NSNotification) {
+        // get the data from the notification
+        let userInfo = notification.userInfo as? [String: AnyObject]
+        let designStudio = userInfo?["DesignStudio"] as? DesignStudio
+        self.activeDesignStudioId = designStudio?.id
+        
+        // when copying the DS, we need to create a new DS
+        if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(ViewControllerIdentifier.DetailDesignStudioViewController.rawValue) as? DetailDesignStudioViewController{
+            vc.vm.setDesignStudio(designStudio)
+            
+            self.dsNavController.pushViewController(vc, animated: true)
+            self.dsNavController.viewControllers.removeFirst()
+        }
     }
     
     func resetCurrentlyActiveDesignStudio (notification: NSNotification) {
@@ -190,6 +206,7 @@ class UITabBarControllerBase: UITabBarController {
     // register for notifications
     private func addObservers() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showDesignStudio:", name: NotificationIdentifier.DesignStudioLoaded.rawValue, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showCopiedDesignStudio:", name: NotificationIdentifier.DesignStudioCopied.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "resetCurrentlyActiveDesignStudio:", name: NotificationIdentifier.DesignStudioDeleted.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showEndActivityScreen:", name: NotificationIdentifier.ActivityEnded.rawValue, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showTimerScreen:", name: NotificationIdentifier.PrepareTimerScreen.rawValue, object: nil)

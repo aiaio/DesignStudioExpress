@@ -65,7 +65,7 @@ class DetailDesignStudioViewModel {
     
     var buttonTitle: String {
         get {
-            if isNew {
+            if self.isNew {
                 return newStudioButtonText
             }
             return editStudioButtonText
@@ -77,7 +77,7 @@ class DetailDesignStudioViewModel {
     }
     
     init () {
-        createNewDesignStudio()
+        self.createNewDesignStudio()
     }
     
     func setDesignStudio(newDesignStudio: DesignStudio?) {
@@ -98,7 +98,7 @@ class DetailDesignStudioViewModel {
     
     func openDesignStudio(title: String, duration: String) -> DesignStudio {
         // save the design studio when we're moving to the next screen
-        if isNew {
+        if self.isNew {
             try! realm.write {
                 self.realm.add(self.data)
                 self.isNew = false
@@ -123,6 +123,11 @@ class DetailDesignStudioViewModel {
         }
     
         return checkMaxLength(textFieldLength, range: range, replacementStringLength: replacementStringLength, maxAllowedLength: maxLength)
+    }
+    
+    // TODO we should probably
+    func copyDesignStudio() -> DesignStudio? {
+        return self.data.makeACopy()
     }
     
     private func checkMaxLength(textFieldLength: Int, range: NSRange, replacementStringLength: Int, maxAllowedLength: Int) -> Bool {
