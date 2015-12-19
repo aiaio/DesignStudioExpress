@@ -3978,12 +3978,12 @@ Sketching Templates</string>
                                                     <exclude reference="AZ5-4Q-t8x"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="HEu-YA-o4C"/>
-                                                    <exclude reference="I8S-mt-3R3"/>
-                                                    <exclude reference="ep2-Aa-E2F"/>
                                                     <exclude reference="3On-v3-fPK"/>
                                                     <exclude reference="elU-DI-3Bx"/>
                                                     <exclude reference="h46-Gm-Hsg"/>
+                                                    <exclude reference="HEu-YA-o4C"/>
+                                                    <exclude reference="I8S-mt-3R3"/>
+                                                    <exclude reference="ep2-Aa-E2F"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -3992,12 +3992,12 @@ Sketching Templates</string>
                                                     <include reference="AZ5-4Q-t8x"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="HEu-YA-o4C"/>
-                                                    <include reference="I8S-mt-3R3"/>
-                                                    <include reference="ep2-Aa-E2F"/>
                                                     <include reference="3On-v3-fPK"/>
                                                     <include reference="elU-DI-3Bx"/>
                                                     <include reference="h46-Gm-Hsg"/>
+                                                    <include reference="HEu-YA-o4C"/>
+                                                    <include reference="I8S-mt-3R3"/>
+                                                    <include reference="ep2-Aa-E2F"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>

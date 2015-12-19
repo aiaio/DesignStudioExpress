@@ -53,6 +53,24 @@ class ActivityDetailViewController: UITableViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        switch indexPath.row {
+        case 0: return 110
+        case 1: return 80
+        case 2: return 180
+        case 3: return 180
+        case 4:
+            // change the height of the last cell
+            // so that we don't have empty space when hiding the button
+            if vm.locked {
+                return 80
+            }
+            return 160
+        default:
+            return 80
+        }
+    }
+    
     // MARK: - Custom
     
     func registerDelegates() {
@@ -88,7 +106,7 @@ class ActivityDetailViewController: UITableViewController {
         // so that we don't have empty space at the end of the cell
         // for smaller screens
         self.deleteActivityButtonHeightConstraint.constant = 50
-        if vm.editingEnabled || vm.locked {
+        if !vm.editingEnabled || vm.locked {
             self.deleteActivityButtonHeightConstraint.constant = 0
         }
         self.deleteActivity.hidden = !vm.editingEnabled || vm.locked
