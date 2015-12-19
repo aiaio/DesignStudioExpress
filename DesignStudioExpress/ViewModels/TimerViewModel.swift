@@ -21,7 +21,7 @@ class TimerViewModel {
     }
     
     var challengeTitle: String {
-        get { return AppDelegate.designStudio.currentChallenge?.title ?? "" }
+        get { return AppDelegate.designStudio.currentChallenge?.title.uppercaseString ?? "" }
     }
     
     var activityTitle: String {
