@@ -17,6 +17,7 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addActivityButton: UIButtonRed!
+    @IBOutlet weak var actionButtonHeightConstraint: NSLayoutConstraint!
     
     // store the text elements in a weak var for easy retrieval
     weak var headerTitle: UITextField?
@@ -35,6 +36,7 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         
         self.addObservers()
         self.customizeStyle()
+        self.prepareViewState()
     }
     
     deinit {
@@ -97,6 +99,7 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         cell.activityDescription.text = vm.activityDescription(indexPath)
         cell.duration.text = vm.activityDuration(indexPath)
         cell.details.text = vm.activityDetails(indexPath)
+        cell.actionButton.setTitle(vm.actionButtonText, forState: .Normal)
         
         // set separator from edge to edge
         cell.layoutMargins = UIEdgeInsetsZero
@@ -170,9 +173,20 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
         return cell
     }
     
-    func customizeStyle() {
+    private func customizeStyle() {
         // remove the separator from the last row; works when we have only one section
         self.tableView.tableFooterView = UIView(frame: CGRectMake(0, 0, self.tableView.frame.size.width, 1))
+    }
+    
+    private func prepareViewState() {
+        // change the height constraint of the view to show/hide the button
+        // so that we don't have empty space when the button is hidden
+        self.actionButtonHeightConstraint.constant = 88
+        
+        if vm.locked {
+            self.actionButtonHeightConstraint.constant = 0
+        }
+        self.addActivityButton.hidden = vm.locked
     }
     
     // MARK: - Navigation

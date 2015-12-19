@@ -19,6 +19,7 @@ class ActivityDetailViewController: UITableViewController {
     @IBOutlet weak var notes: SZTextView!
     @IBOutlet weak var saveActivity: UIButtonRed!
     @IBOutlet weak var deleteActivity: UIButtonTransparent!
+    @IBOutlet weak var deleteActivityButtonHeightConstraint: NSLayoutConstraint!
     
     let vm = ActivityDetailViewModel()
     
@@ -81,8 +82,15 @@ class ActivityDetailViewController: UITableViewController {
         self.name.enabled = vm.editingEnabled
         self.activityDescription.editable = vm.editingEnabled
         self.duration.enabled = vm.editingEnabled
-        self.notes.editable = !vm.locked
+        self.notes.editable = !vm.locked // disable notes only for template studios; notes for finished studios are editable
     
+        // hide and change the height of the Delete activity
+        // so that we don't have empty space at the end of the cell
+        // for smaller screens
+        self.deleteActivityButtonHeightConstraint.constant = 50
+        if vm.editingEnabled || vm.locked {
+            self.deleteActivityButtonHeightConstraint.constant = 0
+        }
         self.deleteActivity.hidden = !vm.editingEnabled || vm.locked
         self.saveActivity.setTitle(self.vm.saveActivityLabel, forState: .Normal)
     }

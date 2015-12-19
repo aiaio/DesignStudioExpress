@@ -13,6 +13,7 @@ class UITableViewCellActivity: UITableViewCell {
     @IBOutlet weak var duration: UILabel!
     @IBOutlet weak var details: UILabel!
     @IBOutlet weak var activityDescription: UILabel!
+    @IBOutlet weak var actionButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

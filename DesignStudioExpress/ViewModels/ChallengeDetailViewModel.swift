@@ -59,12 +59,25 @@ class ChallengeDetailViewModel {
         }
     }
     
+    var actionButtonText: String {
+        get {
+            if self.locked {
+                return "VIEW"
+            }
+            return "EDIT"
+        }
+    }
+    
     var editingEnabled: Bool {
         get {
             return !self.data.finished
                 && AppDelegate.designStudio.currentChallenge?.id != self.data.id
-                && !self.data.designStudio.template
+                && self.locked
         }
+    }
+    
+    var locked: Bool {
+        return self.data.designStudio.template
     }
     
     func isRowEditable(indexPath: NSIndexPath) -> Bool {

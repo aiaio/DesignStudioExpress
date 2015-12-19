@@ -3454,6 +3454,7 @@ Sketching Templates</string>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="actionButton" destination="VkZ-Ce-e3B" id="J6q-eh-yaD"/>
                                             <outlet property="activityDescription" destination="sTe-8S-iPH" id="vwv-eh-emT"/>
                                             <outlet property="details" destination="zEn-Hm-HgN" id="F3r-Rm-85f"/>
                                             <outlet property="duration" destination="J8W-Fm-QOg" id="g7s-sj-vPd"/>
@@ -3526,7 +3527,7 @@ Sketching Templates</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8Fy-Ov-mv4" firstAttribute="top" secondItem="PmS-1L-VvW" secondAttribute="bottom" constant="8" id="2rg-hA-WD4"/>
+                            <constraint firstItem="8Fy-Ov-mv4" firstAttribute="top" secondItem="PmS-1L-VvW" secondAttribute="bottom" id="2rg-hA-WD4"/>
                             <constraint firstItem="f5V-GX-pOQ" firstAttribute="leading" secondItem="Y5e-dN-xX0" secondAttribute="leading" id="T8i-n5-rRf"/>
                             <constraint firstItem="PmS-1L-VvW" firstAttribute="leading" secondItem="Y5e-dN-xX0" secondAttribute="leading" id="TzZ-Li-jVD"/>
                             <constraint firstItem="f5V-GX-pOQ" firstAttribute="top" secondItem="oQx-ve-YGO" secondAttribute="bottom" id="ZId-G3-auN"/>
@@ -3566,6 +3567,7 @@ Sketching Templates</string>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="actionButtonHeightConstraint" destination="oGp-Uw-SAR" id="mGz-L0-AGZ"/>
                         <outlet property="addActivityButton" destination="Poc-LB-Cfn" id="k98-hC-N04"/>
                         <outlet property="tableView" destination="f5V-GX-pOQ" id="loy-tk-EyW"/>
                     </connections>
@@ -4012,6 +4014,7 @@ Sketching Templates</string>
                     <connections>
                         <outlet property="activityDescription" destination="De0-bQ-nJW" id="B2b-mk-bNK"/>
                         <outlet property="deleteActivity" destination="AZ5-4Q-t8x" id="Zre-tI-L2e"/>
+                        <outlet property="deleteActivityButtonHeightConstraint" destination="FUP-9g-fN1" id="MZv-Ob-24p"/>
                         <outlet property="duration" destination="ZKU-aV-QvZ" id="2Ph-ta-3Sc"/>
                         <outlet property="name" destination="cJ3-9p-awJ" id="Nm5-ut-nd8"/>
                         <outlet property="notes" destination="bgO-P0-jyO" id="Ytt-ti-w5j"/>
