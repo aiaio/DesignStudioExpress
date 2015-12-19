@@ -15,6 +15,7 @@ class ActivityDetailViewModel {
     
     let saveActivityLabelText = "SAVE ACTIVITY"
     let saveNotesLabelText = "SAVE NOTES"
+    let backLabelText = "CLOSE"
     
     var title: String = ""
     var duration: Int = 0
@@ -23,15 +24,25 @@ class ActivityDetailViewModel {
     
     var editingEnabled: Bool {
         get {
-            return !self.data.finished && self.data.id != AppDelegate.designStudio.currentActivity?.id
+            return !self.data.finished
+                && self.data.id != AppDelegate.designStudio.currentActivity?.id
+                && !self.locked
         }
+    }
+    
+    // we're using this flag when loading/showing templates
+    // which are locked for editing
+    var locked: Bool {
+        return self.data.challenge.designStudio.template
     }
     
     var saveActivityLabel: String {
         get {
             if self.editingEnabled {
                 return self.saveActivityLabelText
-            } else {
+            } else if self.locked {
+                return self.backLabelText
+            }else {
                 return self.saveNotesLabelText
             }
         }
@@ -50,6 +61,9 @@ class ActivityDetailViewModel {
     }
     
     func saveActivity() {
+        if self.locked {
+            return
+        }
         do {
             try realm.write {
                 // we can update only notes when editing is disabled

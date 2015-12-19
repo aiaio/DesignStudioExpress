@@ -15,6 +15,7 @@ class DesignStudio: Object {
     dynamic var dateCreated: NSDate = NSDate()
     dynamic var started = false
     dynamic var finished = false
+    dynamic var template = false // only for built-in templates
     dynamic var currentChallengeId: String = ""
     dynamic var currentActivityId: String = ""
     
@@ -83,6 +84,7 @@ class DesignStudio: Object {
         
         let ds = DesignStudio()
         ds.title = "New Project Concept"
+        ds.template = true
        
         let challenge = Challenge()
         challenge.title = "Solo Sketching"
@@ -258,6 +260,7 @@ class DesignStudio: Object {
         
         let ds = DesignStudio()
         ds.title = "Feature Iteration"
+        ds.template = true
         
         let challenge = Challenge()
         challenge.title = "Challenge"

@@ -68,7 +68,11 @@ class ChallengesViewModel {
     }
     
     var editingEnabled: Bool {
-        get { return !self.designStudio.started }
+        get { return !self.designStudio.started && !self.locked }
+    }
+    
+    var locked: Bool {
+        return self.designStudio.template
     }
     
     func canDeleteChallenge(indexPath: NSIndexPath) -> Bool {

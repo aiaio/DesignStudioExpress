@@ -81,8 +81,9 @@ class ActivityDetailViewController: UITableViewController {
         self.name.enabled = vm.editingEnabled
         self.activityDescription.editable = vm.editingEnabled
         self.duration.enabled = vm.editingEnabled
-        
-        self.deleteActivity.hidden = !vm.editingEnabled
+        self.notes.editable = !vm.locked
+    
+        self.deleteActivity.hidden = !vm.editingEnabled || vm.locked
         self.saveActivity.setTitle(self.vm.saveActivityLabel, forState: .Normal)
     }
     

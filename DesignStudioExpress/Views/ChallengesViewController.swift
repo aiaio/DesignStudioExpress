@@ -129,7 +129,7 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
      **/
     func swipeTableCell(cell: MGSwipeTableCell!, canSwipe direction: MGSwipeDirection) -> Bool {
         if let indexPath = self.tableView.indexPathForCell(cell) {
-            return vm.isRowEditable(indexPath)
+            return vm.isRowEditable(indexPath) && !vm.locked
         }
         
         return false
@@ -190,13 +190,13 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     // Shows the Add New Challenge View, if DS is new
     func prepareViewState() {
         if vm.isNewDesignStudio {
-            addChallengeView.hidden = false
-            tableViewParentView.hidden = true
+            self.addChallengeView.hidden = false
+            self.tableViewParentView.hidden = true
             // hide reordering rows button; the tableview is hidden
             self.navigationItem.rightBarButtonItem = nil
         } else {
-            addChallengeView.hidden = true
-            tableViewParentView.hidden = false
+            self.addChallengeView.hidden = true
+            self.tableViewParentView.hidden = false
             if vm.editingEnabled {
                 // show the edit button for reordering of the rows
                 self.navigationItem.rightBarButtonItem = self.editButtonItem()
@@ -206,6 +206,7 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         }
         
         self.beginDesignStudio.enabled = self.vm.beginDesignStudioButtonEnabled
+        self.beginDesignStudio.hidden = self.vm.locked
         self.beginDesignStudio.setTitle(self.vm.beginDesignStudioButtonText, forState: .Normal)
     }
     

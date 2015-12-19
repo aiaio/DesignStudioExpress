@@ -73,7 +73,7 @@ class DetailDesignStudioViewModel {
     }
     
     var editingEnabled: Bool {
-        get { return !self.data.started }
+        get { return !self.data.started && !self.data.template }
     }
     
     init () {

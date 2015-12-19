@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aOo-7J-XTA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aOo-7J-XTA">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1453,28 +1453,28 @@ Sketching Templates</string>
                                 <exclude reference="5RU-6m-MPY"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="I5K-2o-6gz"/>
-                                <exclude reference="P82-qb-iC4"/>
-                                <exclude reference="iGR-RU-7R0"/>
-                                <exclude reference="rdA-6Z-nIk"/>
-                                <exclude reference="X8o-VO-k0B"/>
-                                <exclude reference="fSJ-sn-But"/>
-                                <exclude reference="nZ9-gC-jT3"/>
-                                <exclude reference="jyH-8o-DyW"/>
-                                <exclude reference="niF-Gm-GdS"/>
-                                <exclude reference="2zi-UV-s0g"/>
-                                <exclude reference="A4N-PK-MCz"/>
-                                <exclude reference="PyR-jX-Na9"/>
-                                <exclude reference="3DG-d9-b1f"/>
-                                <exclude reference="AA9-zs-a3b"/>
+                                <exclude reference="fvl-vK-90T"/>
+                                <exclude reference="FAa-T4-aDK"/>
+                                <exclude reference="JSs-p1-b1h"/>
+                                <exclude reference="NfI-Nd-vF6"/>
                                 <exclude reference="9cm-bb-sfa"/>
                                 <exclude reference="9pi-e4-WCa"/>
                                 <exclude reference="Nm2-8l-CWv"/>
                                 <exclude reference="rWq-jm-BwL"/>
-                                <exclude reference="FAa-T4-aDK"/>
-                                <exclude reference="JSs-p1-b1h"/>
-                                <exclude reference="NfI-Nd-vF6"/>
-                                <exclude reference="fvl-vK-90T"/>
+                                <exclude reference="X8o-VO-k0B"/>
+                                <exclude reference="2zi-UV-s0g"/>
+                                <exclude reference="A4N-PK-MCz"/>
+                                <exclude reference="PyR-jX-Na9"/>
+                                <exclude reference="jyH-8o-DyW"/>
+                                <exclude reference="niF-Gm-GdS"/>
+                                <exclude reference="3DG-d9-b1f"/>
+                                <exclude reference="AA9-zs-a3b"/>
+                                <exclude reference="fSJ-sn-But"/>
+                                <exclude reference="nZ9-gC-jT3"/>
+                                <exclude reference="I5K-2o-6gz"/>
+                                <exclude reference="P82-qb-iC4"/>
+                                <exclude reference="iGR-RU-7R0"/>
+                                <exclude reference="rdA-6Z-nIk"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1489,28 +1489,28 @@ Sketching Templates</string>
                                 <include reference="5RU-6m-MPY"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="I5K-2o-6gz"/>
-                                <include reference="P82-qb-iC4"/>
-                                <include reference="iGR-RU-7R0"/>
-                                <include reference="rdA-6Z-nIk"/>
-                                <include reference="X8o-VO-k0B"/>
-                                <include reference="fSJ-sn-But"/>
-                                <include reference="nZ9-gC-jT3"/>
-                                <include reference="jyH-8o-DyW"/>
-                                <include reference="niF-Gm-GdS"/>
-                                <include reference="2zi-UV-s0g"/>
-                                <include reference="A4N-PK-MCz"/>
-                                <include reference="PyR-jX-Na9"/>
-                                <include reference="3DG-d9-b1f"/>
-                                <include reference="AA9-zs-a3b"/>
+                                <include reference="fvl-vK-90T"/>
+                                <include reference="FAa-T4-aDK"/>
+                                <include reference="JSs-p1-b1h"/>
+                                <include reference="NfI-Nd-vF6"/>
                                 <include reference="9cm-bb-sfa"/>
                                 <include reference="9pi-e4-WCa"/>
                                 <include reference="Nm2-8l-CWv"/>
                                 <include reference="rWq-jm-BwL"/>
-                                <include reference="FAa-T4-aDK"/>
-                                <include reference="JSs-p1-b1h"/>
-                                <include reference="NfI-Nd-vF6"/>
-                                <include reference="fvl-vK-90T"/>
+                                <include reference="X8o-VO-k0B"/>
+                                <include reference="2zi-UV-s0g"/>
+                                <include reference="A4N-PK-MCz"/>
+                                <include reference="PyR-jX-Na9"/>
+                                <include reference="jyH-8o-DyW"/>
+                                <include reference="niF-Gm-GdS"/>
+                                <include reference="3DG-d9-b1f"/>
+                                <include reference="AA9-zs-a3b"/>
+                                <include reference="fSJ-sn-But"/>
+                                <include reference="nZ9-gC-jT3"/>
+                                <include reference="I5K-2o-6gz"/>
+                                <include reference="P82-qb-iC4"/>
+                                <include reference="iGR-RU-7R0"/>
+                                <include reference="rdA-6Z-nIk"/>
                             </mask>
                         </variation>
                     </view>
@@ -2050,11 +2050,11 @@ Sketching Templates</string>
                                 <exclude reference="ssH-jf-Pcn"/>
                                 <exclude reference="DuM-wl-RtL"/>
                                 <exclude reference="N10-bD-TaV"/>
-                                <exclude reference="YV4-KG-kCJ"/>
+                                <exclude reference="5H9-Jz-KNG"/>
                                 <exclude reference="kqN-fO-rov"/>
                                 <exclude reference="olu-cY-TST"/>
                                 <exclude reference="dYb-Ss-973"/>
-                                <exclude reference="5H9-Jz-KNG"/>
+                                <exclude reference="YV4-KG-kCJ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2068,11 +2068,11 @@ Sketching Templates</string>
                                 <include reference="ssH-jf-Pcn"/>
                                 <include reference="DuM-wl-RtL"/>
                                 <include reference="N10-bD-TaV"/>
-                                <include reference="YV4-KG-kCJ"/>
+                                <include reference="5H9-Jz-KNG"/>
                                 <include reference="kqN-fO-rov"/>
                                 <include reference="olu-cY-TST"/>
                                 <include reference="dYb-Ss-973"/>
-                                <include reference="5H9-Jz-KNG"/>
+                                <include reference="YV4-KG-kCJ"/>
                             </mask>
                         </variation>
                     </view>

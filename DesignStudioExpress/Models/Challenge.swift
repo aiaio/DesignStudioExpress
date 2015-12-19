@@ -28,6 +28,7 @@ class Challenge: Object {
         }
     }
     
+    // this field is not persisted
     var designStudio: DesignStudio {
         let parentDesignStudio = linkingObjects(DesignStudio.self, forProperty: "challenges")
         

@@ -18,6 +18,13 @@ class Activity: Object {
     dynamic var dateCreated: NSDate = NSDate()
     dynamic var finished: Bool = false
     
+    // this field is not persisted
+    var challenge: Challenge {
+        let parentChallenge = linkingObjects(Challenge.self, forProperty: "activities")
+        
+        return parentChallenge[0]
+    }
+    
     override static func primaryKey() -> String? {
         return "id"
     }
