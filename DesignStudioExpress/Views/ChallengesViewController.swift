@@ -25,6 +25,7 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     @IBOutlet weak var tableViewParentView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var beginDesignStudio: UIButtonRed!
+    @IBOutlet weak var actionButtonHeightConstraint: NSLayoutConstraint!
     
     let vm = ChallengesViewModel()
     
@@ -205,9 +206,17 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
             }
         }
         
+        // set the state/height/text of the action button (begin/view/timer button)
         self.beginDesignStudio.enabled = self.vm.beginDesignStudioButtonEnabled
-        self.beginDesignStudio.hidden = self.vm.locked
         self.beginDesignStudio.setTitle(self.vm.beginDesignStudioButtonText, forState: .Normal)
+        
+        self.beginDesignStudio.hidden = self.vm.locked
+        // if the button is hidden, hide the parent view, so that the table
+        // takes the full height of the container
+        self.actionButtonHeightConstraint.constant = 88
+        if vm.locked {
+            self.actionButtonHeightConstraint.constant = 0
+        }
     }
     
     func customizeStyle() {
