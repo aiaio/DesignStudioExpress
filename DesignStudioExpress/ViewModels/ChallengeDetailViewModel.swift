@@ -72,7 +72,7 @@ class ChallengeDetailViewModel {
         get {
             return !self.data.finished
                 && AppDelegate.designStudio.currentChallenge?.id != self.data.id
-                && self.locked
+                && !self.locked
         }
     }
     
