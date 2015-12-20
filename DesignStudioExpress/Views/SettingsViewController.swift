@@ -46,7 +46,7 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
             return cell
         }
         
-        let cell = self.createCell("swipeCell", indexPath: indexPath, UITableViewCell.self)
+        let cell = self.createCell("setttingCell", indexPath: indexPath, UITableViewCellSettings.self)
         
         return cell
     }
@@ -86,15 +86,22 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
     // creates table view cell of a specified type
     private func createCell<T: UITableViewCell>(reuseIdentifier: String, indexPath: NSIndexPath, _: T.Type) -> T {
         var cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as! T!
-        if cell == nil
-        {
+        if cell == nil {
             cell = T(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
         }
         
-        cell.textLabel?.text = vm.getTitle(indexPath)
+        if let settingsCell = cell as? UITableViewCellSettings {
+            settingsCell.title?.text = vm.getTitle(indexPath)
+        } else {
+            cell.textLabel?.text = vm.getTitle(indexPath)
+        }
+        
         if let description = vm.getDescription(indexPath) {
             cell.detailTextLabel?.text = description
         }
+        
+        // set separator from edge to edge
+        cell.layoutMargins = UIEdgeInsetsZero
         
         // image for the first cell is a background image not an icon
         // skip setting the icon for first row
@@ -129,12 +136,6 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
     }
     
     private func customizeStyle() {
-        // TODO fix settings text
-        // TODO add help text
-        // TODO fix image stretching
-        
-        // TableView - style separator
-        self.tableView.separatorColor = DesignStudioStyles.bottomNavigationBGColorUnselected
         // this in comb. with UIEdgeInsetsZero on layoutMargins for a cell
         // will make the cell separator show from edge to edge
         self.tableView.layoutMargins = UIEdgeInsetsZero

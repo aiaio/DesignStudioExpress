@@ -317,6 +317,9 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="List_Page_Image" translatesAutoresizingMaskIntoConstraints="NO" id="DG7-Mo-fz8">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="360"/>
+                                                    </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRO CHECKLIST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rc-NL-tGW" customClass="FXLabel">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -362,7 +365,8 @@ Background music is optional.</string>
                                                             <exclude reference="wg5-QA-gYC"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="33" y="130" width="334" height="130"/>
                                                         <mask key="constraints">
                                                             <include reference="wg5-QA-gYC"/>
                                                         </mask>
@@ -380,6 +384,7 @@ Background music is optional.</string>
                                                 <constraint firstAttribute="trailingMargin" secondItem="FGD-ZV-0OF" secondAttribute="trailing" constant="25" id="nci-SY-yTc"/>
                                                 <constraint firstItem="9rc-NL-tGW" firstAttribute="centerX" secondItem="bCZ-tC-h3n" secondAttribute="centerX" id="x5N-su-jc8"/>
                                             </constraints>
+                                            <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="0.0"/>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="DG7-Mo-fz8"/>
@@ -417,9 +422,10 @@ Background music is optional.</string>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="0.0"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="65" id="15G-Xs-5sa">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" rowHeight="65" id="15G-Xs-5sa">
                                         <rect key="frame" x="0.0" y="360" width="600" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="15G-Xs-5sa" id="xCz-BY-XdM">
@@ -583,11 +589,13 @@ Background music is optional.</string>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="0.0"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <segue destination="aJv-98-1PX" kind="presentation" modalTransitionStyle="crossDissolve" id="2ei-fb-G31"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="170" id="OSZ-Ao-iv7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" rowHeight="170" id="OSZ-Ao-iv7">
                                         <rect key="frame" x="0.0" y="425" width="600" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OSZ-Ao-iv7" id="mN1-Eq-NVs">
@@ -788,8 +796,10 @@ Sketching Templates</string>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="0.0"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="65" id="VBd-8q-urb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" rowHeight="65" id="VBd-8q-urb">
                                         <rect key="frame" x="0.0" y="595" width="600" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VBd-8q-urb" id="2Fk-YV-vqv">
@@ -953,6 +963,8 @@ Sketching Templates</string>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="0.0"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -4041,6 +4053,50 @@ Sketching Templates</string>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBQ-Sy-Rq5">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="setttingCell" rowHeight="60" id="noX-ab-eY3" customClass="UITableViewCellSettings" customModule="DesignStudioExpress" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="noX-ab-eY3" id="sj9-75-2wc">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9i-FW-Kse">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="E9i-FW-Kse" firstAttribute="centerY" secondItem="sj9-75-2wc" secondAttribute="centerY" id="LHf-k7-Cjp"/>
+                                                <constraint firstItem="E9i-FW-Kse" firstAttribute="leading" secondItem="sj9-75-2wc" secondAttribute="leadingMargin" constant="40" id="THO-C0-LLo"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="E9i-FW-Kse"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="LHf-k7-Cjp"/>
+                                                    <exclude reference="THO-C0-LLo"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="E9i-FW-Kse"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="LHf-k7-Cjp"/>
+                                                    <include reference="THO-C0-LLo"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="title" destination="E9i-FW-Kse" id="RIh-K2-usP"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="LXi-CI-NKN" id="C6J-vy-uyy"/>
                                     <outlet property="delegate" destination="LXi-CI-NKN" id="Q6u-l4-DxI"/>

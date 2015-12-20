@@ -122,7 +122,7 @@ class SettingsViewModel {
     func getImageName(indexPath: NSIndexPath) -> String? {
         // big image
         if indexPath.row == 0 {
-            return "DS_Home_BG_image"
+            return "Settings_Image"
         }
         // row icon
         return data[indexPath.row-1].icon
