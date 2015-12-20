@@ -125,7 +125,7 @@ class RunningDesignStudio: NSObject {
         // get the challenge, which is the first screen to display
         // don't set the startTimer flag, because we don't want the timer to start until
         // the challenge screen disappears
-        self.getNextObject()
+        self.moveToNextObject()
     }
     
     // notification that gets called when the global timer for the activity runs out
@@ -137,7 +137,7 @@ class RunningDesignStudio: NSObject {
     // this will be called when the timer screen will appear
     func timerWillAppear() {
         if self.startTimer {
-            self.getNextObject()
+            self.moveToNextObject()
             self.startTimer = false
         }
     }
@@ -221,7 +221,7 @@ class RunningDesignStudio: NSObject {
             self.startTimer = true
         } else if nextObject == Challenge.self {
             // move to next object immediately, we don't have to worry about timers when displaying Challenges
-            self.getNextObject()
+            self.moveToNextObject()
             // show the challenge screen
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowNextChallengeScreen.rawValue, object: self, userInfo: nil)
         } else {
@@ -250,6 +250,34 @@ class RunningDesignStudio: NSObject {
         }
     }
     
+    func getNextObjectTitle() -> String? {
+        let nextObject = self.getNextObject()
+        if let activity = nextObject as? Activity {
+            return activity.title
+        }
+        
+        if let challenge = nextObject as? Challenge {
+            return challenge.title
+        }
+        
+        return nil
+    }
+    
+    private func getNextObject() -> Object? {
+        let nextObject = self.whatIsNextObject()
+        if nextObject == Activity.self {
+            if let idx = self.getNextActivityIdx() {
+                return self.currentChallenge?.activities[idx]
+            }
+        } else if nextObject == Challenge.self {
+            if let idx = self.getNextChallengeIdx() {
+                return self.data?.challenges[idx]
+            }
+        }
+        
+        return nil
+    }
+    
     // helper function for determining what will be the next object, 
     // so we can determine screen flow
     private func whatIsNextObject() -> Object.Type? {
@@ -268,19 +296,15 @@ class RunningDesignStudio: NSObject {
     // Challenge is always first, then all the activities in that challenge
     // then we repeat the process for next Challenge
     // if the next object is activity the timer will be automatically started
-    private func getNextObject() -> Object? {
+    private func moveToNextObject() {
         
-        // try to get next activity in the current challenge
+        // try to move to next activity in the current challenge
         if self.currentChallengeIdx != nil && self.moveToNextActivity() {
-            return self.currentActivity
+            return
         }
         
-        // try to get next challenge
-        if self.moveToNextChallenge() {
-            return self.currentChallenge
-        }
-        
-        return nil
+        // try to move to next challenge
+        self.moveToNextChallenge()
     }
     
     

@@ -20,6 +20,10 @@ class TimerViewModel {
         get { return AppDelegate.designStudio.currentChallenge }
     }
     
+    var designStudioTitle: String {
+        get { return AppDelegate.designStudio.currentDesignStudio?.title ?? "" }
+    }
+    
     var challengeTitle: String {
         get { return AppDelegate.designStudio.currentChallenge?.title.uppercaseString ?? "" }
     }
@@ -53,6 +57,14 @@ class TimerViewModel {
                 return notes.length > 0
             }
             return false
+        }
+    }
+    
+    var nextButtonText: String {
+        if let nextTitle = AppDelegate.designStudio.getNextObjectTitle() {
+            return nextTitle.uppercaseString
+        } else {
+            return ("End " + (AppDelegate.designStudio.currentDesignStudio?.title ?? "")).uppercaseString
         }
     }
     

@@ -19,7 +19,7 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     @IBOutlet weak var activityNotes: UILabel!
     
     @IBOutlet weak var toggleButton: UIButtonLightBlue!
-    @IBOutlet weak var skipToNextActivity: UIButton!
+    @IBOutlet weak var skipToNextActivity: FXLabel!
     @IBOutlet weak var timer: MZTimerLabel!
     
     enum NotificationIdentifier: String {
@@ -131,6 +131,7 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     }
     
     private func populateFields () {
+        self.navigationItem.title = vm.designStudioTitle
         self.challengeTitle.text = vm.challengeTitle
         self.activityTitle.text = vm.activityTitle
         self.activityDescription.text = vm.activityDescription
@@ -138,6 +139,8 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
         
         self.timer.setCountDownTime(Double(vm.currentActivityRemainingDuration))
         self.timer.reset()
+        
+        self.skipToNextActivity.text = vm.nextButtonText
         
         // hide/show toggle button for switching between description and presenter notes
         self.toggleButton.hidden = !vm.activityNotesEnabled
