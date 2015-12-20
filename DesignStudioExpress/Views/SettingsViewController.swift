@@ -10,7 +10,7 @@ import Foundation
 import MGSwipeTableCell
 
 
-class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITableViewDelegate, MGSwipeTableCellDelegate, MFMailComposeViewControllerDelegate {
+class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,16 +19,11 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //TODO update to StoryBoard to follow project practice
-        tableView.delegate = self
-        tableView.dataSource = self
-        
         self.customizeStyle()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-//        vm.refreshData()
         tableView.reloadData()
     }
     
@@ -51,8 +46,7 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
             return cell
         }
         
-        let cell = self.createCell("swipeCell", indexPath: indexPath, MGSwipeTableCellCentered.self)
-        cell.delegate = self
+        let cell = self.createCell("swipeCell", indexPath: indexPath, UITableViewCell.self)
         
         return cell
     }
@@ -60,7 +54,7 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
     // customize row height
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         // default row height for DS cells
-        var rowHeight = 55 // TODO get real height from Kate
+        var rowHeight = 60
         
         // row height for photo
         // dynamically adjust based on the device height
@@ -98,15 +92,23 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
         }
         
         cell.textLabel?.text = vm.getTitle(indexPath)
+        if let description = vm.getDescription(indexPath) {
+            cell.detailTextLabel?.text = description
+        }
         
-        // don't set the icon on the text for the first cell (with image)
+        // image for the first cell is a background image not an icon
+        // skip setting the icon for first row
         if indexPath.row == 0 {
+            return cell
+        }
+        
+        guard let imagePath = vm.getImageName(indexPath) else {
             return cell
         }
         
         // we have to add an image to the attachment
         let attachment = NSTextAttachment()
-        attachment.image = UIImage(named: vm.getImageName(indexPath))
+        attachment.image = UIImage(named: imagePath)
         // adjust the position of the icon
         
         // TODO fix text alignment (currently center)
@@ -141,12 +143,13 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
     
     func stylePhotoCell(cell: MGSwipeTableCellCentered, indexPath: NSIndexPath) {
         // set the background image
-        let image = UIImage(named: vm.getImageName(indexPath))
-        let imageView = UIImageView(image: image)
-        imageView.clipsToBounds = true
-        imageView.contentMode = .ScaleAspectFill
-        cell.backgroundView = imageView
-        
+        if let imagePath = vm.getImageName(indexPath) {
+            let image = UIImage(named: imagePath)
+            let imageView = UIImageView(image: image)
+            imageView.clipsToBounds = true
+            imageView.contentMode = .ScaleAspectFill
+            cell.backgroundView = imageView
+        }
         // style title
         // TODO change to constant from DesignStudioStyle
         cell.textLabel?.textColor = UIColor(red:0.53, green:0.65, blue:0.82, alpha:1.0)

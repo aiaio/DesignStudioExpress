@@ -12,9 +12,17 @@ import AcknowList
 
 struct Setting {
     let title: String
-    let icon: String
+    let description: String?
+    let icon: String?
     // this feels icky FIXME
     let action: (UIViewController) -> ()
+    
+    init (title: String, description: String? = nil, icon: String? = nil, action: (UIViewController) -> ()) {
+        self.title = title
+        self.description = description
+        self.icon = icon
+        self.action = action
+    }
 }
 
 class SettingsViewModel {
@@ -27,19 +35,19 @@ class SettingsViewModel {
     private func loadStaticSettings() -> [Setting] {
         return [
             // TODO images
-            Setting(title: "About Ai", icon: "Clock", action:  { vc in
+            Setting(title: "About Ai", action:  { vc in
                 let svc = SFSafariViewController(URL: NSURL(string: "http://www.alexanderinteractive.com/company/")!)
                 vc.presentViewController(svc, animated: true, completion: nil)
             }),
             
-            Setting(title: "Legal", icon: "Clock", action: { vc in
+            Setting(title: "Legal", action: { vc in
                 let legalController = AcknowListViewController()
                 if let navigationController = vc.navigationController {
                     navigationController.pushViewController(legalController, animated: true)
                 }
             }),
             
-            Setting(title: "Contact Us", icon: "Clock", action: { vc in
+            Setting(title: "Contact Us", action: { vc in
                 if MFMailComposeViewController.canSendMail() {
                     // https://github.com/monkeymike/MPFeedbackMailComposeViewController
                     
@@ -68,12 +76,12 @@ class SettingsViewModel {
                 }
             }),
             
-            Setting(title: "Review on App Store", icon: "Clock", action: { vc in
+            Setting(title: "Review on App Store", action: { vc in
                 // https://itunes.apple.com/us/app/whackjob/id1054379438?at=11laRZ&ct=pro&ls=1&mt=8
                 UIApplication.sharedApplication().openURL(NSURL(string : "itms-apps://itunes.apple.com/app/id1054379438")!)
             }),
             
-            Setting(title: "Share this app", icon: "Clock", action: { vc in
+            Setting(title: "Share this app", action: { vc in
                 
                 //text lives in DesignStudioActivityItemSource.swift
                 
@@ -104,8 +112,14 @@ class SettingsViewModel {
         return data[indexPath.row-1].title
     }
     
+    func getDescription(indexPath: NSIndexPath) -> String? {
+        if indexPath.row == 0 {
+            return "Share, adjust sound or learn\n about the nerds who built this."
+        }
+        return data[indexPath.row-1].description
+    }
     
-    func getImageName(indexPath: NSIndexPath) -> String {
+    func getImageName(indexPath: NSIndexPath) -> String? {
         // big image
         if indexPath.row == 0 {
             return "DS_Home_BG_image"
