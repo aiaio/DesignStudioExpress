@@ -106,9 +106,6 @@ class SettingsViewModel {
     }
     
     func getTitle(indexPath: NSIndexPath) -> String {
-        if indexPath.row == 0 {
-            return "SETTINGS"
-        }
         return data[indexPath.row-1].title
     }
     

@@ -41,8 +41,7 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         if indexPath.row == 0 {
-            let cell = self.createCell("photoCell", indexPath: indexPath, MGSwipeTableCellCentered.self)
-            self.stylePhotoCell(cell, indexPath: indexPath)
+            let cell = self.createCell("settingsHeader", indexPath: indexPath, UITableViewCell.self)
             return cell
         }
         
@@ -64,11 +63,11 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
             if screenSize <= 480  { // 4s
                 rowHeight = 245
             } else if screenSize <= 568 { // 5
-                rowHeight = 245
+                rowHeight = 260
             } else if screenSize <= 667 { // 6
-                rowHeight = 330
+                rowHeight = 360
             } else { // 6++
-                rowHeight = 320
+                rowHeight = 360
             }
         }
         
@@ -90,23 +89,18 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
             cell = T(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
         }
         
-        if let settingsCell = cell as? UITableViewCellSettings {
-            settingsCell.title?.text = vm.getTitle(indexPath)
-        } else {
-            cell.textLabel?.text = vm.getTitle(indexPath)
+        // first cell contains static content
+        // skip setting the data
+        if indexPath.row == 0 {
+            return cell
+        }
+        
+        if let settingCell = cell as? UITableViewCellSettings {
+            settingCell.title?.text = vm.getTitle(indexPath)
         }
         
         if let description = vm.getDescription(indexPath) {
             cell.detailTextLabel?.text = description
-        }
-        
-        // set separator from edge to edge
-        cell.layoutMargins = UIEdgeInsetsZero
-        
-        // image for the first cell is a background image not an icon
-        // skip setting the icon for first row
-        if indexPath.row == 0 {
-            return cell
         }
         
         guard let imagePath = vm.getImageName(indexPath) else {
@@ -141,33 +135,6 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
         self.tableView.layoutMargins = UIEdgeInsetsZero
         
     }
-    
-    func stylePhotoCell(cell: MGSwipeTableCellCentered, indexPath: NSIndexPath) {
-        // set the background image
-        if let imagePath = vm.getImageName(indexPath) {
-            let image = UIImage(named: imagePath)
-            let imageView = UIImageView(image: image)
-            imageView.clipsToBounds = true
-            imageView.contentMode = .ScaleAspectFill
-            cell.backgroundView = imageView
-        }
-        // style title
-        // TODO change to constant from DesignStudioStyle
-        cell.textLabel?.textColor = UIColor(red:0.53, green:0.65, blue:0.82, alpha:1.0)
-        cell.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 14)
-        cell.textLabel?.attributedText = NSAttributedString.attributedStringWithSpacing(cell.textLabel!.attributedText!, kerning: 2.5)
-        
-        // style detail
-        cell.detailTextLabel?.textColor = DesignStudioStyles.white
-        cell.detailTextLabel?.font = UIFont(name: "Avenir-Light", size: 22)
-        cell.detailTextLabel?.lineBreakMode = .ByWordWrapping
-        cell.detailTextLabel?.numberOfLines = 0
-        cell.detailTextLabel?.sizeToFit()
-        
-        // disable user interactions so we don't have highlighted state
-        cell.userInteractionEnabled = false
-    }
-    
     
     // MARK: - MFMailComposeViewControllerDelegate
     

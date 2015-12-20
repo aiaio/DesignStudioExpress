@@ -317,9 +317,6 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="List_Page_Image" translatesAutoresizingMaskIntoConstraints="NO" id="DG7-Mo-fz8">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="0.0" width="400" height="360"/>
-                                                    </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRO CHECKLIST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rc-NL-tGW" customClass="FXLabel">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -365,8 +362,7 @@ Background music is optional.</string>
                                                             <exclude reference="wg5-QA-gYC"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="33" y="130" width="334" height="130"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="wg5-QA-gYC"/>
                                                         </mask>
@@ -4054,6 +4050,117 @@ Sketching Templates</string>
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="settingsHeader" rowHeight="360" id="Wok-aq-Yoi">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="360"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wok-aq-Yoi" id="sju-bD-bbO">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="359"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings_Image" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-OE-sve">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61i-8S-Zuq" customClass="FXLabel">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="140" id="df2-0R-LSk"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="13"/>
+                                                    <color key="textColor" red="0.3921568627" green="0.64705882349999999" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                            <real key="value" value="0.25"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="df2-0R-LSk"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="df2-0R-LSk"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share, adjust sound or learn about the nerds who built this." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBR-Nh-LTf">
+                                                    <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="130" id="37K-Mo-Gtm"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="22"/>
+                                                    <color key="textColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineSpacing">
+                                                            <real key="value" value="0.27000000000000002"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="37K-Mo-Gtm"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="37K-Mo-Gtm"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="S9R-OE-sve" secondAttribute="bottom" constant="-9" id="Jmx-wG-WE9"/>
+                                                <constraint firstItem="aBR-Nh-LTf" firstAttribute="centerY" secondItem="sju-bD-bbO" secondAttribute="centerY" constant="15" id="Kfc-mj-Mce"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="S9R-OE-sve" secondAttribute="trailing" constant="-8" id="TZb-4B-B4M"/>
+                                                <constraint firstItem="aBR-Nh-LTf" firstAttribute="leading" secondItem="sju-bD-bbO" secondAttribute="leadingMargin" constant="25" id="WD0-Mu-Mq3"/>
+                                                <constraint firstItem="S9R-OE-sve" firstAttribute="leading" secondItem="sju-bD-bbO" secondAttribute="leadingMargin" constant="-8" id="cem-0g-7KY"/>
+                                                <constraint firstItem="aBR-Nh-LTf" firstAttribute="centerX" secondItem="sju-bD-bbO" secondAttribute="centerX" id="cs3-f9-ha6"/>
+                                                <constraint firstItem="61i-8S-Zuq" firstAttribute="centerX" secondItem="sju-bD-bbO" secondAttribute="centerX" id="fqt-j6-kMD"/>
+                                                <constraint firstItem="aBR-Nh-LTf" firstAttribute="top" secondItem="61i-8S-Zuq" secondAttribute="bottom" constant="-5" id="kol-5c-hzu"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="aBR-Nh-LTf" secondAttribute="trailing" constant="25" id="xiC-6T-tWd"/>
+                                            </constraints>
+                                            <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="0.0"/>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="S9R-OE-sve"/>
+                                                    <exclude reference="61i-8S-Zuq"/>
+                                                    <exclude reference="aBR-Nh-LTf"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="fqt-j6-kMD"/>
+                                                    <exclude reference="kol-5c-hzu"/>
+                                                    <exclude reference="Kfc-mj-Mce"/>
+                                                    <exclude reference="WD0-Mu-Mq3"/>
+                                                    <exclude reference="cs3-f9-ha6"/>
+                                                    <exclude reference="xiC-6T-tWd"/>
+                                                    <exclude reference="cem-0g-7KY"/>
+                                                    <exclude reference="TZb-4B-B4M"/>
+                                                    <exclude reference="Jmx-wG-WE9"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="S9R-OE-sve"/>
+                                                    <include reference="61i-8S-Zuq"/>
+                                                    <include reference="aBR-Nh-LTf"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="fqt-j6-kMD"/>
+                                                    <include reference="kol-5c-hzu"/>
+                                                    <include reference="Kfc-mj-Mce"/>
+                                                    <include reference="WD0-Mu-Mq3"/>
+                                                    <include reference="cs3-f9-ha6"/>
+                                                    <include reference="xiC-6T-tWd"/>
+                                                    <include reference="cem-0g-7KY"/>
+                                                    <include reference="TZb-4B-B4M"/>
+                                                    <include reference="Jmx-wG-WE9"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="0.0"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="setttingCell" rowHeight="60" id="noX-ab-eY3" customClass="UITableViewCellSettings" customModule="DesignStudioExpress" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -4197,6 +4304,7 @@ Sketching Templates</string>
         <image name="Pencil_Icon_Blue" width="20" height="20"/>
         <image name="Pencil_Icon_Orange" width="22" height="21"/>
         <image name="Settings_Icon" width="24" height="24"/>
+        <image name="Settings_Image" width="375" height="370"/>
         <image name="Stopwatch" width="12" height="15"/>
         <image name="Stopwatch_Big_Icon" width="48" height="57"/>
         <image name="Timer_Camera_Icon" width="52" height="52"/>
