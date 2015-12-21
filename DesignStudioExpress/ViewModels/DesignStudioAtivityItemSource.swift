@@ -16,13 +16,13 @@ class DesignStudioActivityItemSource: NSObject, UIActivityItemSource {
     
     func activityViewController(activityViewController: UIActivityViewController, itemForActivityType activityType: String) -> AnyObject? {
         if activityType == UIActivityTypeMessage {
-            return "String for message"
+            return "String for message http://by.ai/dsx"
         } else if activityType == UIActivityTypeMail {
-            return "String for mail"
+            return "Solve design problems fast with Design Studio Express. DSX makes running a design studio easy. It guides your team through timed rounds to brainstorm, refine and present ideas — saving photos and templates, too! @aiaio #designstudio #designstudioexpress http://by.ai/dsx"
         } else if activityType == UIActivityTypePostToTwitter {
-            return "String for twitter"
+            return "DesignStudioExpress guides teams through timed rounds to brainstorm ideas and save photo/templates, too! @aiaio #DSX http://by.ai/dsx"
         } else if activityType == UIActivityTypePostToFacebook {
-            return "String for facebook"
+            return "String message" //this is no longer supported in facebook app
         }
         return nil
     }
@@ -31,16 +31,16 @@ class DesignStudioActivityItemSource: NSObject, UIActivityItemSource {
         if activityType == UIActivityTypeMessage {
             return "Subject for message"
         } else if activityType == UIActivityTypeMail {
-            return "Subject for mail"
+            return "Design Studio Express - like brainstorming on steroids"
         } else if activityType == UIActivityTypePostToTwitter {
             return "Subject for twitter"
         } else if activityType == UIActivityTypePostToFacebook {
-            return "Subject for facebook"
+            return "Design Studio Express - like brainstorming on steroids"
         }
         return ""
     }
     
-    func activityViewController(activityViewController: UIActivityViewController, thumbnailImageForActivityType activityType: String!, suggestedSize size: CGSize) -> UIImage! {
+    func activityViewController(activityViewController: UIActivityViewController, thumbnailImageForActivityType activityType: String?, suggestedSize size: CGSize) -> UIImage? {
         if activityType == UIActivityTypeMessage {
             return UIImage(named: "thumbnail-for-message")
         } else if activityType == UIActivityTypeMail {
