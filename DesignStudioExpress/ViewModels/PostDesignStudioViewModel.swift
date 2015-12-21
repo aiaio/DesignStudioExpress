@@ -25,9 +25,12 @@ class PostDesignStudioViewModel {
     
     var showGallery: Bool {
         // only show the gallery if we have obtained authorization and we have some images
-        return ALAssetsLibrary.authorizationStatus() == ALAuthorizationStatus.Authorized && self.data.count > 0
+        return self.accessToLibraryGranted && self.data.count > 0
     }
     
+    private var accessToLibraryGranted: Bool {
+        return ALAssetsLibrary.authorizationStatus() == ALAuthorizationStatus.Authorized
+    }
     // MARK: - Data
     
     var totalImages: Int {
@@ -43,6 +46,10 @@ class PostDesignStudioViewModel {
     }
     
     func loadData(loadFinishedCallback: () -> Void) {
+        // don't do anything if we didn't get the authorization from user to access gallery
+        if !self.accessToLibraryGranted {
+            return
+        }
         
         let assetLibrary = ALAssetsLibrary()
         let assetsType : ALAssetsGroupType = Int(ALAssetsGroupAlbum) // all albums on the device not including Photo Stream or Shared Streams

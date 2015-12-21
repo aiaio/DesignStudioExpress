@@ -30,8 +30,8 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
     override func viewWillAppear(animated: Bool) {
         self.vm.loadData {
             self.collectionView.reloadData()
+            self.prepareViewState()
         }
-        self.prepareViewState()
     }
     
     // to make back button always lead to the challenges screen
