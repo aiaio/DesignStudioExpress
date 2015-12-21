@@ -40,11 +40,11 @@ class DesignStudio: Object {
     func makeACopy() -> DesignStudio? {
         let copyDS = DesignStudio()
         copyDS.title = self.title
-        copyDS.started = self.started
-        copyDS.finished = self.finished
+        copyDS.started = false
+        copyDS.finished = false
         copyDS.template = false
-        copyDS.currentChallengeId = self.currentChallengeId
-        copyDS.currentActivityId = self.currentActivityId
+        copyDS.currentChallengeId = ""
+        copyDS.currentActivityId = ""
         
         for challenge in self.challenges {
             let copyChallenge = Challenge()
