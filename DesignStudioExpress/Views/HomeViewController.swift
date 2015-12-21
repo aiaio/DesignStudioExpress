@@ -23,7 +23,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         
+        // customize style of the view here, so that we have correct frame sizes 
+        // when we're adding borders etc.
         self.customizeStyle()
     }
     
@@ -195,6 +201,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.createButton.setTitleColor(DesignStudioStyles.headerTextLightBG, forState: .Normal)
         self.createButton.backgroundColor = DesignStudioStyles.white
         self.createButton.titleLabel?.font = UIFont(name: "Avenir-Book", size: 22)
+        
+        // Create a border for the button
+        let lineView = UIView(frame: CGRectMake(0, 0, self.createButton.frame.size.width , 1))
+        lineView.backgroundColor = DesignStudioStyles.bottomNavigationBGColorSelected
+        self.createButton.addSubview(lineView)
     }
     
     func stylePhotoCell(cell: MGSwipeTableCellCentered, indexPath: NSIndexPath) {
