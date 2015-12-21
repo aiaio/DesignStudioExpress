@@ -48,7 +48,7 @@ class PostDesignStudioViewModel {
     func loadData(loadFinishedCallback: () -> Void) {
         // don't do anything if we didn't get the authorization from user to access gallery
         if !self.accessToLibraryGranted {
-            return
+            loadFinishedCallback()
         }
         
         let assetLibrary = ALAssetsLibrary()
@@ -65,16 +65,24 @@ class PostDesignStudioViewModel {
         //remove all items when we're refreshing data
         self.data.removeAll()
         var temp = [MHGalleryItem]()
+        var foundPhotoLibrary = false
+        
         assetLibrary.enumerateGroupsWithTypes(assetsType, usingBlock: { (group: ALAssetsGroup!, stop:UnsafeMutablePointer<ObjCBool>) -> Void in
             
             guard group != nil && String(group.valueForProperty(ALAssetsGroupPropertyName)) == defaultAlbumName else {
                 return
             }
             
+            foundPhotoLibrary = true
+            
             // get only photos
             group.setAssetsFilter(ALAssetsFilter.allPhotos())
             
             let totalImages = group.numberOfAssets()
+            
+            if totalImages == 0 {
+                 loadFinishedCallback()
+            }
             
             group.enumerateAssetsUsingBlock({ (asset: ALAsset!, idx, stop) -> Void in
                 if asset != nil {
@@ -98,5 +106,10 @@ class PostDesignStudioViewModel {
                 // TODO handle errors
             }
         )
+        
+        if !foundPhotoLibrary {
+            loadFinishedCallback()
+        }
+        
     }
 }
