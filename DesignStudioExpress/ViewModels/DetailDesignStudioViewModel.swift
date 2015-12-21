@@ -111,20 +111,7 @@ class DetailDesignStudioViewModel {
         
         return self.data
     }
-    
-    func maxLengthExceeded(fieldType: FieldName, textFieldLength: Int, range: NSRange, replacementStringLength: Int) -> Bool {
-        var maxLength = 0
-        if fieldType == .Title {
-            maxLength = 30 // TODO
-        } else if fieldType == .Duration {
-            maxLength = 3 // TODO
-        } else {
-            maxLength = 0
-        }
-    
-        return checkMaxLength(textFieldLength, range: range, replacementStringLength: replacementStringLength, maxAllowedLength: maxLength)
-    }
-    
+        
     // TODO we should probably
     func copyDesignStudio() -> DesignStudio? {
         return self.data.makeACopy()

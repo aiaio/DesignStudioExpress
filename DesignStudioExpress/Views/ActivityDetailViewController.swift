@@ -23,7 +23,7 @@ class ActivityDetailViewController: UITableViewController {
     
     let vm = ActivityDetailViewModel()
     
-    let nameDelegate = UITextFieldDelegateMaxLength(maxLength: 30)
+    let nameDelegate = UITextFieldDelegateMaxLength(maxLength: 25)
     let descriptionDelegate = UITextViewDelegateMaxLength(maxLength: 150)
     let notesDelegate = UITextViewDelegateMaxLength(maxLength: 150)
     

@@ -23,8 +23,8 @@ class DetailDesignStudioViewController: UIViewControllerBase {
     
     let vm = DetailDesignStudioViewModel()
     
-    let nameDelegate = UITextViewDelegateMaxLength(maxLength: 20) // TODO adjust max length
-    let durationDelegate = UITextFieldDelegateMaxLength(maxLength: 100) // TODO adjust max legnth
+    let nameDelegate = UITextViewDelegateMaxLength(maxLength: 28)
+    let durationDelegate = UITextFieldDelegateMaxLength(maxLength: 100) 
     
     let openDesignStudioSegue = "OpenDesignStudio"
     var changedY = false
