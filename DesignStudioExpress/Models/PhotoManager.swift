@@ -26,14 +26,19 @@ class PhotoManager {
         
         // request authorization to access photo library
         PHPhotoLibrary.requestAuthorization({ (status: PHAuthorizationStatus) in
-            // create a default folder for the app
-            PHPhotoLibrary.sharedPhotoLibrary().performChanges(changeBlock, completionHandler: { success, error in
-                if (success) {
-                    // TODO log success / error
-                } else {
-                    // TODO log the error
-                }
-            })
+            if status == PHAuthorizationStatus.Authorized {
+                // create a default folder for the app
+                PHPhotoLibrary.sharedPhotoLibrary().performChanges(changeBlock, completionHandler: { success, error in
+                    if (success) {
+                        // TODO log success / error
+                    } else {
+                        // TODO log the error
+                    }
+                })
+            } else {
+                // we don't have access
+                // TODO log the error
+            }
         })
     }
     
