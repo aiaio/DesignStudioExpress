@@ -28,6 +28,9 @@ struct Setting {
 class SettingsViewModel {
     private var data: [Setting]!
     
+    let emailErrorMessageTitleText = "Preparing email failed"
+    let emailErrorMessageMessageText = "Please configure your device to send email"
+    
     init () {
         data = self.loadStaticSettings()
     }
@@ -66,7 +69,7 @@ class SettingsViewModel {
                     }
                 } else {
                     // show the alert if we can send the email
-                    let alertController = UIAlertController(title: "Preparing email failed", message: "Please configure your device to send email", preferredStyle: .Alert)
+                    let alertController = UIAlertController(title: self.emailErrorMessageTitleText, message: self.emailErrorMessageMessageText, preferredStyle: .Alert)
                     let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
                     alertController.addAction(okAction)
                     
