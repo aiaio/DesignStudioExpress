@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NRSimplePlist
 
 class FaqViewController: UIViewController {
     @IBOutlet weak var webView: UIWebView!
@@ -14,11 +15,24 @@ class FaqViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = NSURL(string: "https://designstudioexpress.s3.amazonaws.com/WebView/index.html")!
+        self.setUpWebView()
+    }
+    
+    private func setUpWebView() {
+        var urlString: String
+        do {
+            urlString = try plistGet("WebViewUrl", forPlistNamed: "Settings") as! String
+        } catch let error {
+            // TODO handle errors
+            print(error)
+            urlString = "http://www.alexanderinteractive.com"
+        }
+        
+        
+        let url = NSURL(string: urlString)!
         let requestObj: NSURLRequest = NSURLRequest(URL: url)
         webView.loadRequest(requestObj)
     }
-    
     
     @IBAction func back(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
