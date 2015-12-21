@@ -35,7 +35,7 @@ class SettingsViewModel {
     private func loadStaticSettings() -> [Setting] {
         return [
             // TODO images
-            Setting(title: "About Ai", action:  { vc in
+            Setting(title: "Who Made This?", action:  { vc in
                 let svc = SFSafariViewController(URL: NSURL(string: "http://www.alexanderinteractive.com/company/")!)
                 vc.presentViewController(svc, animated: true, completion: nil)
             }),
