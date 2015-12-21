@@ -84,7 +84,7 @@ class DesignStudio: Object {
         realm.beginWrite()
         
         let ds = DesignStudio()
-        ds.title = "New Project Concept"
+        ds.title = "Template: New Concept"
         ds.template = true
        
         let challenge = Challenge()
@@ -260,7 +260,7 @@ class DesignStudio: Object {
         realm.beginWrite()
         
         let ds = DesignStudio()
-        ds.title = "Feature Iteration"
+        ds.title = "Template: Feature Iteration"
         ds.template = true
         
         let challenge = Challenge()

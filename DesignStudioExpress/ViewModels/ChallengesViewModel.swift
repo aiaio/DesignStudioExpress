@@ -16,7 +16,7 @@ class ChallengesViewModel {
     private var data: List<Challenge>!
     
     let buttonLabelTimer = "SHOW TIMER"
-    let buttonLabelFinished = "STUDIO FINISHED"
+    let buttonLabelFinished = "ALL DONE. LAUNCH GALLERY"
     let buttonLabelBeginDS = "BEGIN DESIGN STUDIO"
     let anotherStudioRunningText = " design studio is running."
     let invalidDesignStudioText = "You have to have at least one challenge and every challenge has to have at least one activity."
