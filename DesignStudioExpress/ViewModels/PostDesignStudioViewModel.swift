@@ -23,14 +23,19 @@ class PostDesignStudioViewModel {
         self.designStudio = designStudio
     }
     
+    var showGallery: Bool {
+        // only show the gallery if we have obtained authorization and we have some images
+        return ALAssetsLibrary.authorizationStatus() == ALAuthorizationStatus.Authorized && self.data.count > 0
+    }
+    
     // MARK: - Data
     
     var totalImages: Int {
-        return data.count
+        return self.data.count
     }
     
     func getAllGalleryItems() -> [MHGalleryItem] {
-        return data
+        return self.data
     }
     
     func getGalleryItem(index: Int) -> MHGalleryItem {

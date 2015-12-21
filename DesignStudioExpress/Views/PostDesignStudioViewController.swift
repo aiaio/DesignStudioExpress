@@ -12,6 +12,8 @@ import MHVideoPhotoGallery
 class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDelegate, UICollectionViewDataSource, MHGalleryDataSource,MHGalleryDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var galleryView: UIView!
+    @IBOutlet weak var noGalleryView: UIView!
     
     let vm = PostDesignStudioViewModel()
     
@@ -21,19 +23,15 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
         super.viewDidLoad()
 
         self.removeLastViewFromNavigation()
-                
-        self.navigationItem.title = vm.designStudioTitle
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
         
         self.collectionView.registerClass(MHMediaPreviewCollectionViewCell.self, forCellWithReuseIdentifier: self.cellIdentifier)
-        
     }
     
     override func viewWillAppear(animated: Bool) {
         self.vm.loadData {
             self.collectionView.reloadData()
         }
+        self.prepareViewState()
     }
     
     // to make back button always lead to the challenges screen
@@ -45,6 +43,19 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
             if previousVC is TimerViewController || previousVC is EndActivityViewController {
                 self.navigationController?.viewControllers.removeAtIndex(endIndex-1)
             }
+        }
+    }
+    
+    private func prepareViewState() {
+        // set the title in the navbar
+        self.navigationItem.title = vm.designStudioTitle
+        
+        if vm.showGallery {
+            self.galleryView.hidden = false
+            self.noGalleryView.hidden = true
+        } else {
+            self.galleryView.hidden = true
+            self.noGalleryView.hidden = false
         }
     }
 
