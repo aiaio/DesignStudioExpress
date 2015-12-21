@@ -3359,10 +3359,31 @@ Sketching Templates</string>
                                                         <outletCollection property="gestureRecognizers" destination="tO8-XZ-l2G" appends="YES" id="VKP-ZB-yhl"/>
                                                     </connections>
                                                 </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lock_icon_White" translatesAutoresizingMaskIntoConstraints="NO" id="Wii-y9-fIl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="9" id="GU2-eD-3XH"/>
+                                                        <constraint firstAttribute="height" constant="11" id="Ytk-aQ-fYc"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="GU2-eD-3XH"/>
+                                                            <exclude reference="Ytk-aQ-fYc"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="GU2-eD-3XH"/>
+                                                            <include reference="Ytk-aQ-fYc"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="0uw-6E-pY1" firstAttribute="leading" secondItem="Wrj-h7-cgk" secondAttribute="leadingMargin" constant="15" id="5TG-YZ-97P"/>
+                                                <constraint firstItem="Wii-y9-fIl" firstAttribute="centerY" secondItem="q0m-gI-nNx" secondAttribute="centerY" id="6Yt-SF-CWA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Wii-y9-fIl" secondAttribute="trailing" constant="32" id="DWY-Fl-xfl"/>
                                                 <constraint firstItem="0uw-6E-pY1" firstAttribute="top" secondItem="q0m-gI-nNx" secondAttribute="bottom" constant="4" id="Ggk-5y-csC"/>
                                                 <constraint firstItem="q0m-gI-nNx" firstAttribute="centerX" secondItem="Wrj-h7-cgk" secondAttribute="centerX" id="Gtr-gi-Vgw"/>
                                                 <constraint firstItem="9yW-MJ-fO7" firstAttribute="top" secondItem="OtM-cX-U2h" secondAttribute="top" id="HhQ-A2-Tvg"/>
@@ -3379,6 +3400,7 @@ Sketching Templates</string>
                                                     <exclude reference="0uw-6E-pY1"/>
                                                     <exclude reference="q0m-gI-nNx"/>
                                                     <exclude reference="9yW-MJ-fO7"/>
+                                                    <exclude reference="Wii-y9-fIl"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="Gtr-gi-Vgw"/>
@@ -3388,9 +3410,11 @@ Sketching Templates</string>
                                                     <exclude reference="Ggk-5y-csC"/>
                                                     <exclude reference="aYO-Y9-8ba"/>
                                                     <exclude reference="w3z-zN-cx5"/>
+                                                    <exclude reference="k0y-xe-UTl"/>
                                                     <exclude reference="HhQ-A2-Tvg"/>
                                                     <exclude reference="LmM-90-kCS"/>
-                                                    <exclude reference="k0y-xe-UTl"/>
+                                                    <exclude reference="6Yt-SF-CWA"/>
+                                                    <exclude reference="DWY-Fl-xfl"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -3399,6 +3423,7 @@ Sketching Templates</string>
                                                     <include reference="0uw-6E-pY1"/>
                                                     <include reference="q0m-gI-nNx"/>
                                                     <include reference="9yW-MJ-fO7"/>
+                                                    <include reference="Wii-y9-fIl"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="Gtr-gi-Vgw"/>
@@ -3408,9 +3433,11 @@ Sketching Templates</string>
                                                     <include reference="Ggk-5y-csC"/>
                                                     <include reference="aYO-Y9-8ba"/>
                                                     <include reference="w3z-zN-cx5"/>
+                                                    <include reference="k0y-xe-UTl"/>
                                                     <include reference="HhQ-A2-Tvg"/>
                                                     <include reference="LmM-90-kCS"/>
-                                                    <include reference="k0y-xe-UTl"/>
+                                                    <include reference="6Yt-SF-CWA"/>
+                                                    <include reference="DWY-Fl-xfl"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -3420,6 +3447,7 @@ Sketching Templates</string>
                                             <outlet property="challengeDescription" destination="0uw-6E-pY1" id="bw6-dK-dxE"/>
                                             <outlet property="duration" destination="hbr-94-lLC" id="42n-g9-PQT"/>
                                             <outlet property="editIcon" destination="9yW-MJ-fO7" id="Rdh-Gb-YER"/>
+                                            <outlet property="lockIcon" destination="Wii-y9-fIl" id="Z0z-69-RxL"/>
                                             <outlet property="title" destination="q0m-gI-nNx" id="RB7-HJ-TBy"/>
                                         </connections>
                                     </tableViewCell>
@@ -3793,7 +3821,7 @@ Sketching Templates</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2904" y="800"/>
+            <point key="canvasLocation" x="2904" y="799.5"/>
         </scene>
         <!--Activity Detail View Controller-->
         <scene sceneID="nTs-Yi-Uj9">
@@ -4618,6 +4646,7 @@ Sketching Templates</string>
         <image name="List_Icon" width="23" height="17"/>
         <image name="List_Page_Image" width="375" height="360"/>
         <image name="Lock_icon" width="9" height="11"/>
+        <image name="Lock_icon_White" width="10" height="13"/>
         <image name="Open_Book" width="18" height="17"/>
         <image name="Pencil_Icon_Blue" width="20" height="20"/>
         <image name="Pencil_Icon_Orange" width="22" height="21"/>
@@ -4630,8 +4659,8 @@ Sketching Templates</string>
         <image name="Timer_Image" width="375" height="259"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2ei-fb-G31"/>
-        <segue reference="Tyj-mL-nW9"/>
+        <segue reference="rLU-CW-y4o"/>
+        <segue reference="mkR-Ff-fxU"/>
         <segue reference="aMA-7O-iQY"/>
     </inferredMetricsTieBreakers>
 </document>

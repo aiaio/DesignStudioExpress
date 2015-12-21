@@ -15,6 +15,7 @@ class UITableViewCellChallengeHeader: UITableViewCell {
     @IBOutlet weak var title: UITextField!
     @IBOutlet weak var challengeDescription: SZTextView!
     @IBOutlet weak var editIcon: UIImageView!
+    @IBOutlet weak var lockIcon: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -119,7 +119,7 @@ class DetailDesignStudioViewController: UIViewControllerBase {
     func disableEnableFields() {
         self.name.editable = vm.editingEnabled
         self.duration.enabled = vm.editingEnabled
-        self.editIcon.hidden = !vm.editingEnabled
+        self.editIcon.image = UIImage(named: vm.editIconImage)
     }
     
     func updateData() {

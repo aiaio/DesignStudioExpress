@@ -88,6 +88,7 @@ class ChallengeDetailViewController: UIViewControllerBase, UITableViewDataSource
             cell.title.enabled = vm.editingEnabled
             cell.challengeDescription.editable = vm.editingEnabled
             cell.editIcon.hidden = !vm.editingEnabled
+            cell.lockIcon.hidden = !vm.locked
             
             // hide separator
             cell.separatorInset = UIEdgeInsetsMake(0, self.view.frame.width, 0, 0);

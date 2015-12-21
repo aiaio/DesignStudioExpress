@@ -72,6 +72,15 @@ class DetailDesignStudioViewModel {
         }
     }
     
+    var editIconImage: String {
+        get {
+            if self.editingEnabled {
+                return "Pencil_Icon_Blue"
+            }
+            return "Lock_icon_White"
+        }
+    }
+    
     var editingEnabled: Bool {
         get { return !self.data.started && !self.data.template }
     }
