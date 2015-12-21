@@ -16,7 +16,7 @@ class DesignStudioActivityItemSource: NSObject, UIActivityItemSource {
     
     func activityViewController(activityViewController: UIActivityViewController, itemForActivityType activityType: String) -> AnyObject? {
         if activityType == UIActivityTypeMessage {
-            return "String for message http://by.ai/dsx"
+            return "Solve design problems fast with Design Studio Express. DSX makes running a design studio easy. It guides your team through timed rounds to brainstorm, refine and present ideas — saving photos and templates, too! @aiaio #designstudio #designstudioexpress http://by.ai/dsx"
         } else if activityType == UIActivityTypeMail {
             return "Solve design problems fast with Design Studio Express. DSX makes running a design studio easy. It guides your team through timed rounds to brainstorm, refine and present ideas — saving photos and templates, too! @aiaio #designstudio #designstudioexpress http://by.ai/dsx"
         } else if activityType == UIActivityTypePostToTwitter {
@@ -29,11 +29,11 @@ class DesignStudioActivityItemSource: NSObject, UIActivityItemSource {
     
     func activityViewController(activityViewController: UIActivityViewController, subjectForActivityType activityType: String?) -> String {
         if activityType == UIActivityTypeMessage {
-            return "Subject for message"
+            return "Design Studio Express - like brainstorming on steroids"
         } else if activityType == UIActivityTypeMail {
             return "Design Studio Express - like brainstorming on steroids"
         } else if activityType == UIActivityTypePostToTwitter {
-            return "Subject for twitter"
+            return "Design Studio Express - like brainstorming on steroids"
         } else if activityType == UIActivityTypePostToFacebook {
             return "Design Studio Express - like brainstorming on steroids"
         }
