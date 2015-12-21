@@ -8,8 +8,6 @@
 
 import Foundation
 import RealmSwift
-import Photos
-import NRSimplePlist
 
 class TimerViewModel {
     private var nextObject: Object?
@@ -86,65 +84,10 @@ class TimerViewModel {
         AppDelegate.designStudio.skipToNextActivity()
     }
     
-    // MARK - Photos
-    
-    private var assetCollectionPlaceholder: PHObjectPlaceholder?
     
     func saveImage(image: UIImage) {
-        self.getDefaultPhotoCollectionForApp({ (assetCollection: PHAssetCollection) -> Void in
-            self.createImage(image, assetCollection: assetCollection)
-        })
+        let photoManager = PhotoManager()
+        
+        photoManager.saveImage(image)
     }
-    
-    private func getDefaultPhotoCollectionForApp(collectionReadyCallback: (assetCollection: PHAssetCollection) -> Void) {
-        let fetchOptions = PHFetchOptions()
-        var defaultAlbumName = ""
-        do {
-            defaultAlbumName = try plistGet("AlbumName", forPlistNamed: "Settings") as! String
-        } catch let error {
-            // TODO handle errors
-            print(error)
-            return
-        }
-        fetchOptions.predicate = NSPredicate(format: "title = %@", defaultAlbumName) // TODO replace image
-        
-        let collection: PHFetchResult = PHAssetCollection.fetchAssetCollectionsWithType(.Album, subtype: .AlbumRegular, options: fetchOptions)
-        
-        if let assetCollection = collection.firstObject as? PHAssetCollection {
-            collectionReadyCallback(assetCollection: assetCollection)
-        } else {
-            PHPhotoLibrary.sharedPhotoLibrary().performChanges({
-                let createAlbumRequest = PHAssetCollectionChangeRequest.creationRequestForAssetCollectionWithTitle(defaultAlbumName)
-                    self.assetCollectionPlaceholder = createAlbumRequest.placeholderForCreatedAssetCollection
-                }, completionHandler: { success, error in
-                    
-                    if (success) {
-                        let collectionFetchResult = PHAssetCollection.fetchAssetCollectionsWithLocalIdentifiers([self.assetCollectionPlaceholder!.localIdentifier], options: nil)
-
-                        if let assetCollection = collectionFetchResult.firstObject as? PHAssetCollection {
-                            collectionReadyCallback(assetCollection: assetCollection)
-                        }
-                    }
-            })
-        }
-    }
-    
-    func createImage(image: UIImage, assetCollection: PHAssetCollection) {
-    
-        let changeBlock = { () -> Void in
-            let assetRequest = PHAssetChangeRequest.creationRequestForAssetFromImage(image)
-            if let assetPlaceholder = assetRequest.placeholderForCreatedAsset {
-                let albumChangeRequest = PHAssetCollectionChangeRequest(forAssetCollection: assetCollection)
-                let fastEnum: NSArray = [assetPlaceholder]
-                albumChangeRequest?.addAssets(fastEnum)
-            }
-        }
-        
-        let completionHandler = { (success: Bool, error: NSError?) -> Void in
-            // TODO handle errors
-        }
-        
-        PHPhotoLibrary.sharedPhotoLibrary().performChanges(changeBlock, completionHandler:  completionHandler)
-    }
-    
 }

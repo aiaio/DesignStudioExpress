@@ -24,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // for local notification, so that we can show notifications when the time is up
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
+     
+        // create default photo album
+        let photoManager = PhotoManager()
+        photoManager.createDefaultPhotoCollectionForApp()
         
         return true
     }
