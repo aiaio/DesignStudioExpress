@@ -295,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nde-vQ-O8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984" y="1539"/>
+            <point key="canvasLocation" x="-528" y="1829"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="0eJ-gl-wUH">
@@ -974,7 +974,7 @@ Sketching Templates</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4g-vU-wen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="213" y="1539"/>
+            <point key="canvasLocation" x="237" y="1829"/>
         </scene>
         <!--Tab Bar Controller Base-->
         <scene sceneID="B3E-Cj-aJ5">
@@ -1123,7 +1123,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibn-CI-tEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1011" y="67.5"/>
+            <point key="canvasLocation" x="1011" y="-67"/>
         </scene>
         <!--Detail Design Studio View Controller-->
         <scene sceneID="qo3-EG-jvo">
@@ -1538,7 +1538,7 @@ Sketching Templates</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1722" y="800.25"/>
+            <point key="canvasLocation" x="1544" y="800"/>
         </scene>
         <!--Challenges View Controller-->
         <scene sceneID="Arj-1v-XL8">
@@ -2094,7 +2094,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fqw-pl-cgd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2455.5" y="794.25"/>
+            <point key="canvasLocation" x="2113" y="800"/>
         </scene>
         <!--Timer View Controller-->
         <scene sceneID="hRY-AA-5n1">
@@ -2401,7 +2401,7 @@ Sketching Templates</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4302" y="1533"/>
+            <point key="canvasLocation" x="3854" y="1829"/>
         </scene>
         <!--Upcoming Challenge View Controller-->
         <scene sceneID="orm-qB-Kv0">
@@ -2590,7 +2590,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ML4-ET-M0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3573" y="1533"/>
+            <point key="canvasLocation" x="3295" y="1829"/>
         </scene>
         <!--End Activity View Controller-->
         <scene sceneID="Eza-zW-wyM">
@@ -2800,7 +2800,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmI-95-ehm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5041.5" y="1533"/>
+            <point key="canvasLocation" x="4427" y="1829"/>
         </scene>
         <!--End Design Studio View Controller-->
         <scene sceneID="drG-G2-Ldh">
@@ -2893,7 +2893,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cP3-Ar-BZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5781" y="1533"/>
+            <point key="canvasLocation" x="4981" y="1829"/>
         </scene>
         <!--Post Design Studio View Controller-->
         <scene sceneID="Z3w-16-t8W">
@@ -3172,7 +3172,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzX-yL-zEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6534" y="1533"/>
+            <point key="canvasLocation" x="5546" y="1829"/>
         </scene>
         <!--Challenge Detail View Controller-->
         <scene sceneID="ndZ-lY-XXN">
@@ -3265,8 +3265,7 @@ Sketching Templates</string>
                                                             <exclude reference="kFy-YO-Ana"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="55" y="44" width="130" height="29"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="subviews">
                                                             <include reference="hbr-94-lLC"/>
                                                             <include reference="rK7-HV-JTV"/>
@@ -3303,8 +3302,7 @@ Sketching Templates</string>
                                                             <exclude reference="bTH-hm-Ddj"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="23" y="119" width="194" height="120"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="bTH-hm-Ddj"/>
                                                         </mask>
@@ -3331,8 +3329,7 @@ Sketching Templates</string>
                                                             <exclude reference="MS1-q4-xo0"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="-60" y="75" width="360" height="40"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="1no-mU-II7"/>
                                                             <include reference="MS1-q4-xo0"/>
@@ -3352,8 +3349,7 @@ Sketching Templates</string>
                                                             <exclude reference="LAw-Kj-pd3"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="170" y="44" width="50" height="50"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="Kfi-xx-WJS"/>
                                                             <include reference="LAw-Kj-pd3"/>
@@ -3450,8 +3446,7 @@ Sketching Templates</string>
                                                             <exclude reference="z4t-1B-hBe"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="170" y="14" width="52" height="42"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="04z-po-ric"/>
                                                             <include reference="z4t-1B-hBe"/>
@@ -3533,9 +3528,6 @@ Sketching Templates</string>
                                                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                                             <color key="textColor" red="0.1215686275" green="0.1450980392" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
-                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="83" y="0.0" width="81" height="28"/>
-                                                            </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="1 presenter note" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEn-Hm-HgN" userLabel="Activities Label">
                                                             <rect key="frame" x="263" y="52" width="85" height="11"/>
@@ -3578,8 +3570,7 @@ Sketching Templates</string>
                                                                     <exclude reference="N8S-xB-rHR"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                                <rect key="frame" x="24" y="48" width="160" height="76"/>
+                                                            <variation key="heightClass=regular-widthClass=compact">
                                                                 <mask key="constraints">
                                                                     <include reference="N8S-xB-rHR"/>
                                                                 </mask>
@@ -3623,8 +3614,7 @@ Sketching Templates</string>
                                                             <exclude reference="z7t-5M-JUv"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="8" y="22" width="182" height="110"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="GS0-az-a33"/>
                                                             <include reference="0Ma-Pc-nQq"/>
@@ -3803,7 +3793,7 @@ Sketching Templates</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3246" y="794.25"/>
+            <point key="canvasLocation" x="2904" y="800"/>
         </scene>
         <!--Activity Detail View Controller-->
         <scene sceneID="nTs-Yi-Uj9">
@@ -3834,11 +3824,32 @@ Sketching Templates</string>
                                                     <color key="textColor" red="0.56862745098039214" green="0.56862745098039214" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lock_icon" translatesAutoresizingMaskIntoConstraints="NO" id="1Nz-sS-vaJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="9" id="Cpm-rv-zKY"/>
+                                                        <constraint firstAttribute="height" constant="11" id="LvF-GJ-kyx"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Cpm-rv-zKY"/>
+                                                            <exclude reference="LvF-GJ-kyx"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="Cpm-rv-zKY"/>
+                                                            <include reference="LvF-GJ-kyx"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="leadingMargin" secondItem="1oX-1W-MbR" secondAttribute="leading" id="51b-OY-DvG"/>
                                                 <constraint firstItem="cJ3-9p-awJ" firstAttribute="top" secondItem="1oX-1W-MbR" secondAttribute="bottom" constant="7" id="KXF-gv-buv"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="cJ3-9p-awJ" secondAttribute="trailing" id="RXi-Ih-l9v"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1Nz-sS-vaJ" secondAttribute="trailing" constant="8" id="Sjb-LR-4gb"/>
+                                                <constraint firstItem="1Nz-sS-vaJ" firstAttribute="centerY" secondItem="1oX-1W-MbR" secondAttribute="centerY" id="Uop-AO-9m2"/>
                                                 <constraint firstItem="1oX-1W-MbR" firstAttribute="top" secondItem="UDz-H4-bfB" secondAttribute="topMargin" constant="23" id="W9k-V5-GAz"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="1oX-1W-MbR" secondAttribute="trailing" constant="185" id="YoQ-7i-AMx">
                                                     <variation key="heightClass=regular-widthClass=compact" constant="100"/>
@@ -3851,30 +3862,36 @@ Sketching Templates</string>
                                                 <mask key="subviews">
                                                     <exclude reference="cJ3-9p-awJ"/>
                                                     <exclude reference="1oX-1W-MbR"/>
+                                                    <exclude reference="1Nz-sS-vaJ"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="51b-OY-DvG"/>
+                                                    <exclude reference="W9k-V5-GAz"/>
+                                                    <exclude reference="YoQ-7i-AMx"/>
                                                     <exclude reference="KXF-gv-buv"/>
                                                     <exclude reference="RXi-Ih-l9v"/>
                                                     <exclude reference="fCq-QQ-MYW"/>
                                                     <exclude reference="xZa-ZI-LTE"/>
-                                                    <exclude reference="51b-OY-DvG"/>
-                                                    <exclude reference="W9k-V5-GAz"/>
-                                                    <exclude reference="YoQ-7i-AMx"/>
+                                                    <exclude reference="Sjb-LR-4gb"/>
+                                                    <exclude reference="Uop-AO-9m2"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="cJ3-9p-awJ"/>
                                                     <include reference="1oX-1W-MbR"/>
+                                                    <include reference="1Nz-sS-vaJ"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="51b-OY-DvG"/>
+                                                    <include reference="W9k-V5-GAz"/>
+                                                    <include reference="YoQ-7i-AMx"/>
                                                     <include reference="KXF-gv-buv"/>
                                                     <include reference="RXi-Ih-l9v"/>
                                                     <include reference="fCq-QQ-MYW"/>
                                                     <include reference="xZa-ZI-LTE"/>
-                                                    <include reference="51b-OY-DvG"/>
-                                                    <include reference="W9k-V5-GAz"/>
-                                                    <include reference="YoQ-7i-AMx"/>
+                                                    <include reference="Sjb-LR-4gb"/>
+                                                    <include reference="Uop-AO-9m2"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -3939,10 +3956,31 @@ Sketching Templates</string>
                                                         </mask>
                                                     </variation>
                                                 </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lock_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Cs5-Ng-OI0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="9" id="Xhc-zI-Pbg"/>
+                                                        <constraint firstAttribute="height" constant="11" id="ddC-qD-RwR"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Xhc-zI-Pbg"/>
+                                                            <exclude reference="ddC-qD-RwR"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="Xhc-zI-Pbg"/>
+                                                            <include reference="ddC-qD-RwR"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ZKU-aV-QvZ" firstAttribute="top" secondItem="vTp-cl-cJy" secondAttribute="topMargin" constant="10" id="AhV-3a-td2"/>
+                                                <constraint firstItem="Cs5-Ng-OI0" firstAttribute="centerY" secondItem="GCA-Pk-I2k" secondAttribute="centerY" id="IUY-0G-m8a"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="GCA-Pk-I2k" secondAttribute="bottom" constant="11" id="MXX-Pn-DBE"/>
+                                                <constraint firstItem="Cs5-Ng-OI0" firstAttribute="leading" secondItem="GCA-Pk-I2k" secondAttribute="trailing" constant="8" id="O0n-0j-dOD"/>
                                                 <constraint firstItem="GCA-Pk-I2k" firstAttribute="top" secondItem="vTp-cl-cJy" secondAttribute="topMargin" constant="11" id="Tf6-1L-ida"/>
                                                 <constraint firstItem="GCA-Pk-I2k" firstAttribute="leading" secondItem="vTp-cl-cJy" secondAttribute="leadingMargin" id="kr2-Db-v4B"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ZKU-aV-QvZ" secondAttribute="trailing" id="mIn-th-Frh"/>
@@ -3953,11 +3991,14 @@ Sketching Templates</string>
                                                 <mask key="subviews">
                                                     <exclude reference="GCA-Pk-I2k"/>
                                                     <exclude reference="ZKU-aV-QvZ"/>
+                                                    <exclude reference="Cs5-Ng-OI0"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="MXX-Pn-DBE"/>
                                                     <exclude reference="Tf6-1L-ida"/>
                                                     <exclude reference="kr2-Db-v4B"/>
+                                                    <exclude reference="IUY-0G-m8a"/>
+                                                    <exclude reference="O0n-0j-dOD"/>
                                                     <exclude reference="AhV-3a-td2"/>
                                                     <exclude reference="mIn-th-Frh"/>
                                                     <exclude reference="oqg-wK-fHQ"/>
@@ -3967,11 +4008,14 @@ Sketching Templates</string>
                                                 <mask key="subviews">
                                                     <include reference="GCA-Pk-I2k"/>
                                                     <include reference="ZKU-aV-QvZ"/>
+                                                    <include reference="Cs5-Ng-OI0"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="MXX-Pn-DBE"/>
                                                     <include reference="Tf6-1L-ida"/>
                                                     <include reference="kr2-Db-v4B"/>
+                                                    <include reference="IUY-0G-m8a"/>
+                                                    <include reference="O0n-0j-dOD"/>
                                                     <include reference="AhV-3a-td2"/>
                                                     <include reference="mIn-th-Frh"/>
                                                     <include reference="oqg-wK-fHQ"/>
@@ -4017,6 +4061,25 @@ Sketching Templates</string>
                                                     <color key="textColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lock_icon" translatesAutoresizingMaskIntoConstraints="NO" id="wZR-AF-hH4">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="9" id="gu7-eL-hff"/>
+                                                        <constraint firstAttribute="height" constant="11" id="he9-Fa-KYZ"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="gu7-eL-hff"/>
+                                                            <exclude reference="he9-Fa-KYZ"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="gu7-eL-hff"/>
+                                                            <include reference="he9-Fa-KYZ"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="De0-bQ-nJW" firstAttribute="top" secondItem="Q9g-9r-4uM" secondAttribute="bottom" id="BhI-FR-8KE">
@@ -4026,15 +4089,18 @@ Sketching Templates</string>
                                                 <constraint firstAttribute="trailingMargin" secondItem="De0-bQ-nJW" secondAttribute="trailing" id="dit-0E-dnn"/>
                                                 <constraint firstAttribute="topMargin" secondItem="Q9g-9r-4uM" secondAttribute="top" constant="4" id="f5F-kG-aZs"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="De0-bQ-nJW" secondAttribute="leading" constant="5" id="hgk-ec-ANo"/>
+                                                <constraint firstItem="wZR-AF-hH4" firstAttribute="centerY" secondItem="Q9g-9r-4uM" secondAttribute="centerY" id="tyM-U9-oaX"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="De0-bQ-nJW" secondAttribute="bottom" id="xec-nI-Igo">
                                                     <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                                 </constraint>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wZR-AF-hH4" secondAttribute="trailing" constant="8" id="zyU-OQ-iAa"/>
                                             </constraints>
                                             <edgeInsets key="layoutMargins" top="20" left="32" bottom="20" right="32"/>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="De0-bQ-nJW"/>
                                                     <exclude reference="Q9g-9r-4uM"/>
+                                                    <exclude reference="wZR-AF-hH4"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="cMN-Fy-hyn"/>
@@ -4043,12 +4109,15 @@ Sketching Templates</string>
                                                     <exclude reference="dit-0E-dnn"/>
                                                     <exclude reference="hgk-ec-ANo"/>
                                                     <exclude reference="xec-nI-Igo"/>
+                                                    <exclude reference="tyM-U9-oaX"/>
+                                                    <exclude reference="zyU-OQ-iAa"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="De0-bQ-nJW"/>
                                                     <include reference="Q9g-9r-4uM"/>
+                                                    <include reference="wZR-AF-hH4"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="cMN-Fy-hyn"/>
@@ -4057,6 +4126,8 @@ Sketching Templates</string>
                                                     <include reference="dit-0E-dnn"/>
                                                     <include reference="hgk-ec-ANo"/>
                                                     <include reference="xec-nI-Igo"/>
+                                                    <include reference="tyM-U9-oaX"/>
+                                                    <include reference="zyU-OQ-iAa"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -4097,6 +4168,25 @@ Sketching Templates</string>
                                                     <color key="textColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lock_icon" translatesAutoresizingMaskIntoConstraints="NO" id="xrU-6k-Pgb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="11" id="60Z-hL-yk3"/>
+                                                        <constraint firstAttribute="width" constant="9" id="c3z-6Z-yr1"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="c3z-6Z-yr1"/>
+                                                            <exclude reference="60Z-hL-yk3"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="c3z-6Z-yr1"/>
+                                                            <include reference="60Z-hL-yk3"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7MT-s2-IQW" firstAttribute="leading" secondItem="jVY-u4-0oR" secondAttribute="leadingMargin" id="6W8-Lz-AnD"/>
@@ -4105,6 +4195,8 @@ Sketching Templates</string>
                                                 <constraint firstItem="bgO-P0-jyO" firstAttribute="top" secondItem="7MT-s2-IQW" secondAttribute="bottom" id="Vjp-c3-ybo">
                                                     <variation key="heightClass=regular-widthClass=compact" constant="-4"/>
                                                 </constraint>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xrU-6k-Pgb" secondAttribute="trailing" constant="8" id="k93-hJ-TKk"/>
+                                                <constraint firstItem="xrU-6k-Pgb" firstAttribute="centerY" secondItem="7MT-s2-IQW" secondAttribute="centerY" id="w28-7f-YRa"/>
                                                 <constraint firstAttribute="topMargin" secondItem="7MT-s2-IQW" secondAttribute="top" constant="4" id="yw5-80-w51"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="bgO-P0-jyO" secondAttribute="trailing" id="zxr-KR-2Q7"/>
                                             </constraints>
@@ -4113,6 +4205,7 @@ Sketching Templates</string>
                                                 <mask key="subviews">
                                                     <exclude reference="bgO-P0-jyO"/>
                                                     <exclude reference="7MT-s2-IQW"/>
+                                                    <exclude reference="xrU-6k-Pgb"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="6W8-Lz-AnD"/>
@@ -4121,12 +4214,15 @@ Sketching Templates</string>
                                                     <exclude reference="Hhp-0e-51c"/>
                                                     <exclude reference="Vjp-c3-ybo"/>
                                                     <exclude reference="zxr-KR-2Q7"/>
+                                                    <exclude reference="k93-hJ-TKk"/>
+                                                    <exclude reference="w28-7f-YRa"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="subviews">
                                                     <include reference="bgO-P0-jyO"/>
                                                     <include reference="7MT-s2-IQW"/>
+                                                    <include reference="xrU-6k-Pgb"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="6W8-Lz-AnD"/>
@@ -4135,6 +4231,8 @@ Sketching Templates</string>
                                                     <include reference="Hhp-0e-51c"/>
                                                     <include reference="Vjp-c3-ybo"/>
                                                     <include reference="zxr-KR-2Q7"/>
+                                                    <include reference="k93-hJ-TKk"/>
+                                                    <include reference="w28-7f-YRa"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -4243,11 +4341,15 @@ Sketching Templates</string>
                         <outlet property="name" destination="cJ3-9p-awJ" id="Nm5-ut-nd8"/>
                         <outlet property="notes" destination="bgO-P0-jyO" id="Ytt-ti-w5j"/>
                         <outlet property="saveActivity" destination="SaP-0Q-gJO" id="nnE-UF-3ic"/>
+                        <outletCollection property="lockIcons" destination="1Nz-sS-vaJ" collectionClass="NSMutableArray" id="opu-JN-VwY"/>
+                        <outletCollection property="lockIcons" destination="Cs5-Ng-OI0" collectionClass="NSMutableArray" id="GJY-z5-dSt"/>
+                        <outletCollection property="lockIcons" destination="wZR-AF-hH4" collectionClass="NSMutableArray" id="GcO-pV-WD2"/>
+                        <outletCollection property="lockIcons" destination="xrU-6k-Pgb" collectionClass="NSMutableArray" id="ImR-Go-jMI"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gu7-hP-4jh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4015.5" y="800.25"/>
+            <point key="canvasLocation" x="3595" y="800"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="39B-Jo-tZe">
@@ -4274,9 +4376,6 @@ Sketching Templates</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings_Image" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-OE-sve">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="-8" y="-10" width="256" height="370"/>
-                                                    </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61i-8S-Zuq" customClass="FXLabel">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -4296,8 +4395,7 @@ Sketching Templates</string>
                                                             <exclude reference="df2-0R-LSk"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="50" y="117" width="140" height="18"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="df2-0R-LSk"/>
                                                         </mask>
@@ -4321,8 +4419,7 @@ Sketching Templates</string>
                                                             <exclude reference="37K-Mo-Gtm"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="25" y="130" width="190" height="130"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="37K-Mo-Gtm"/>
                                                         </mask>
@@ -4468,7 +4565,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhH-NS-4Bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2847" y="1533"/>
+            <point key="canvasLocation" x="2569" y="1829"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hvB-rN-igq">
@@ -4487,7 +4584,7 @@ Sketching Templates</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nKT-Hn-UmY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-528" y="1539"/>
+            <point key="canvasLocation" x="831" y="1829"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Us-LZ-YcU">
@@ -4506,7 +4603,7 @@ Sketching Templates</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fR3-0V-lFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1929" y="1533"/>
+            <point key="canvasLocation" x="1651" y="1829"/>
         </scene>
     </scenes>
     <resources>
@@ -4520,6 +4617,7 @@ Sketching Templates</string>
         <image name="House_Icon" width="23" height="24"/>
         <image name="List_Icon" width="23" height="17"/>
         <image name="List_Page_Image" width="375" height="360"/>
+        <image name="Lock_icon" width="9" height="11"/>
         <image name="Open_Book" width="18" height="17"/>
         <image name="Pencil_Icon_Blue" width="20" height="20"/>
         <image name="Pencil_Icon_Orange" width="22" height="21"/>
@@ -4532,8 +4630,8 @@ Sketching Templates</string>
         <image name="Timer_Image" width="375" height="259"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rLU-CW-y4o"/>
-        <segue reference="mkR-Ff-fxU"/>
+        <segue reference="2ei-fb-G31"/>
+        <segue reference="Tyj-mL-nW9"/>
         <segue reference="aMA-7O-iQY"/>
     </inferredMetricsTieBreakers>
 </document>

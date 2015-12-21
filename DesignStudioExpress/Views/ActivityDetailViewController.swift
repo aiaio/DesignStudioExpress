@@ -20,6 +20,7 @@ class ActivityDetailViewController: UITableViewController {
     @IBOutlet weak var saveActivity: UIButtonRed!
     @IBOutlet weak var deleteActivity: UIButtonTransparent!
     @IBOutlet weak var deleteActivityButtonHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var lockIcons: [UIImageView]!
     
     let vm = ActivityDetailViewModel()
     
@@ -111,6 +112,17 @@ class ActivityDetailViewController: UITableViewController {
         }
         self.deleteActivity.hidden = !vm.editingEnabled || vm.locked
         self.saveActivity.setTitle(self.vm.saveActivityLabel, forState: .Normal)
+        
+        // show/hide the lock icon
+        for icon in self.lockIcons {
+            // lock for presentation notes is showed only when we're displaying template DS
+            // so we have to check the locked state
+            if icon.tag == 100 {
+                icon.hidden = !vm.locked
+            } else {
+                icon.hidden = vm.editingEnabled
+            }
+        }
     }
     
     func updateVMData() {
