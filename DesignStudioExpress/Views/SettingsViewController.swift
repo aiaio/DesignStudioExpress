@@ -95,36 +95,17 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
             return cell
         }
         
-        if let settingCell = cell as? UITableViewCellSettings {
-            settingCell.title?.text = vm.getTitle(indexPath)
+        guard let settingCell = cell as? UITableViewCellSettings else {
+            return cell
         }
         
-        if let description = vm.getDescription(indexPath) {
-            cell.detailTextLabel?.text = description
-        }
+        settingCell.title?.text = vm.getTitle(indexPath)
         
         guard let imagePath = vm.getImageName(indexPath) else {
             return cell
         }
         
-        // we have to add an image to the attachment
-        let attachment = NSTextAttachment()
-        attachment.image = UIImage(named: imagePath)
-        // adjust the position of the icon
-        
-        // TODO fix text alignment (currently center)
-        //attachment.bounds = CGRectMake(-4, -1, attachment.image!.size.width, attachment.image!.size.height);
-        
-        // create a attributed string with attachment
-        let attributedString = NSAttributedString(attachment: attachment)
-        // create mutable string from that so we can add more attributes
-        let iconString = NSMutableAttributedString(attributedString: attributedString)
-        // add the text to the iconString so that the text is on the right side of the icon
-        let initialText = NSMutableAttributedString(string: vm.getTitle(indexPath))
-        iconString.appendAttributedString(initialText)
-        
-        cell.textLabel!.attributedText = iconString
-        cell.textLabel?.textColor = UIColor(red:0.53, green:0.65, blue:0.82, alpha:1.0)
+        settingCell.icon.image = UIImage(named: imagePath)
         
         return cell
     }

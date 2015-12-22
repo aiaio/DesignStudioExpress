@@ -4513,6 +4513,25 @@ Sketching Templates</string>
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="moU-IQ-w26">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="QR3-pE-za2"/>
+                                                        <constraint firstAttribute="height" constant="30" id="XSz-uB-5FG"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="QR3-pE-za2"/>
+                                                            <exclude reference="XSz-uB-5FG"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="QR3-pE-za2"/>
+                                                            <include reference="XSz-uB-5FG"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9i-FW-Kse">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
@@ -4521,30 +4540,39 @@ Sketching Templates</string>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="E9i-FW-Kse" firstAttribute="leading" secondItem="moU-IQ-w26" secondAttribute="trailing" constant="25" id="0Jf-1B-wib"/>
+                                                <constraint firstItem="moU-IQ-w26" firstAttribute="centerY" secondItem="sj9-75-2wc" secondAttribute="centerY" id="BXC-CL-ioE"/>
                                                 <constraint firstItem="E9i-FW-Kse" firstAttribute="centerY" secondItem="sj9-75-2wc" secondAttribute="centerY" id="LHf-k7-Cjp"/>
-                                                <constraint firstItem="E9i-FW-Kse" firstAttribute="leading" secondItem="sj9-75-2wc" secondAttribute="leadingMargin" constant="40" id="THO-C0-LLo"/>
+                                                <constraint firstItem="moU-IQ-w26" firstAttribute="leading" secondItem="sj9-75-2wc" secondAttribute="leadingMargin" constant="24" id="fY1-w5-B45"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
+                                                    <exclude reference="moU-IQ-w26"/>
                                                     <exclude reference="E9i-FW-Kse"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <exclude reference="BXC-CL-ioE"/>
+                                                    <exclude reference="fY1-w5-B45"/>
+                                                    <exclude reference="0Jf-1B-wib"/>
                                                     <exclude reference="LHf-k7-Cjp"/>
-                                                    <exclude reference="THO-C0-LLo"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="subviews">
+                                                    <include reference="moU-IQ-w26"/>
                                                     <include reference="E9i-FW-Kse"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="BXC-CL-ioE"/>
+                                                    <include reference="fY1-w5-B45"/>
+                                                    <include reference="0Jf-1B-wib"/>
                                                     <include reference="LHf-k7-Cjp"/>
-                                                    <include reference="THO-C0-LLo"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
+                                            <outlet property="icon" destination="moU-IQ-w26" id="hwe-hg-qYL"/>
                                             <outlet property="title" destination="E9i-FW-Kse" id="RIh-K2-usP"/>
                                         </connections>
                                     </tableViewCell>
@@ -4593,7 +4621,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhH-NS-4Bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2569" y="1829"/>
+            <point key="canvasLocation" x="2568" y="1828.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hvB-rN-igq">
