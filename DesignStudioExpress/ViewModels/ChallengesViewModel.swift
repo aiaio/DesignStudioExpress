@@ -154,7 +154,7 @@ class ChallengesViewModel {
     // otherwise return nil
     func actionButtonTouched() -> String? {
         if self.isAnotherStudioRunning {
-            return (AppDelegate.designStudio.currentDesignStudio?.title ?? "Another") + self.anotherStudioRunningMessageText
+            return String(format: self.anotherStudioRunningMessageText, AppDelegate.designStudio.currentDesignStudio?.title ?? "")
         }
         
         if !challengesAreValid() {
