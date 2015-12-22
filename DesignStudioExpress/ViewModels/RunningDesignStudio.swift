@@ -88,6 +88,8 @@ class RunningDesignStudio: NSObject {
     // we need to open an appropriate screen based on the state of the design studio
     // that can be not started|running|finished
     func challengesScreenActionButton (designStudio: DesignStudio) {
+        let x  = self.isRunning
+        let y = designStudio.started
         // start the design studio
         if !self.isRunning && !designStudio.started {
             self.startDesignStudio(designStudio)

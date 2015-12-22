@@ -93,13 +93,30 @@ class DetailDesignStudioViewModel {
         if let designStudio = newDesignStudio {
             self.data = designStudio
             isNew = false
+            
+            self.fixDesignStudioState()
         } else {
             // create new DS, but don't save it until we segue to next screen
             createNewDesignStudio()
         }
     }
     
-    func createNewDesignStudio() {
+    // in case the the design studio is started, but not finished (crash?)
+    // this will fix the state
+    private func fixDesignStudioState() {
+        if self.data.started && !self.data.finished {
+            do {
+                try realm.write {
+                    self.data.finished = true
+                }
+            } catch let error {
+                print(error)
+                // TODO handle errors
+            }
+        }
+    }
+    
+    private func createNewDesignStudio() {
         let ds = DesignStudio()
         self.data = ds
         self.isNew = true
@@ -120,8 +137,7 @@ class DetailDesignStudioViewModel {
         
         return self.data
     }
-        
-    // TODO we should probably
+
     func copyDesignStudio() -> DesignStudio? {
         return self.data.makeACopy()
     }
