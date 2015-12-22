@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DKCamera
 
 class UITabBarControllerBase: UITabBarController {
     
@@ -269,7 +270,7 @@ class UITabBarControllerBase: UITabBarController {
         // TODO we should find a better way to test for this
         // because if we're adding more modals this will not work
         let topController = self.findLastPresentedController()
-        if topController is ActivityDetailViewController {
+        if topController is ActivityDetailViewController || topController is DKCamera {
             topController.dismissViewControllerAnimated(false, completion: nil)
         }
                 

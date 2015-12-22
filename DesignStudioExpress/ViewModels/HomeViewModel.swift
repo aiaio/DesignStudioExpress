@@ -12,7 +12,6 @@ import RealmSwift
 class HomeViewModel {
     lazy var realm = try! Realm()
     private var data: [DesignStudio] = []
-    private var numOfTemplates = 0
     
     init () {
         data = self.loadDesignStudios()
@@ -34,7 +33,6 @@ class HomeViewModel {
         if designStudios.count == 0 {
             self.createDefaultDesignStudios()
             designStudios = realm.objects(DesignStudio)
-            self.numOfTemplates = designStudios.count
         }
         
         return designStudios.toArray(DesignStudio.self)
@@ -96,7 +94,7 @@ class HomeViewModel {
     }
     
     func isRowEditable(indexPath: NSIndexPath) -> Bool {
-        if indexPath.row > self.numOfTemplates {
+        if indexPath.row - 1 < data.count && !data[indexPath.row-1].template {
             return true
         }
         
