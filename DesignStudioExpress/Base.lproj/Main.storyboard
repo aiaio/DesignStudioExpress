@@ -2055,15 +2055,15 @@ Sketching Templates</string>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="12k-h3-eqO"/>
-                                <exclude reference="5bm-S9-BNa"/>
                                 <exclude reference="g3p-Za-2eu"/>
                                 <exclude reference="ssH-jf-Pcn"/>
-                                <exclude reference="dYb-Ss-973"/>
                                 <exclude reference="DuM-wl-RtL"/>
                                 <exclude reference="N10-bD-TaV"/>
                                 <exclude reference="YV4-KG-kCJ"/>
                                 <exclude reference="5H9-Jz-KNG"/>
                                 <exclude reference="olu-cY-TST"/>
+                                <exclude reference="5bm-S9-BNa"/>
+                                <exclude reference="dYb-Ss-973"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2072,15 +2072,15 @@ Sketching Templates</string>
                             </mask>
                             <mask key="constraints">
                                 <include reference="12k-h3-eqO"/>
-                                <include reference="5bm-S9-BNa"/>
                                 <include reference="g3p-Za-2eu"/>
                                 <include reference="ssH-jf-Pcn"/>
-                                <include reference="dYb-Ss-973"/>
                                 <include reference="DuM-wl-RtL"/>
                                 <include reference="N10-bD-TaV"/>
                                 <include reference="YV4-KG-kCJ"/>
                                 <include reference="5H9-Jz-KNG"/>
                                 <include reference="olu-cY-TST"/>
+                                <include reference="5bm-S9-BNa"/>
+                                <include reference="dYb-Ss-973"/>
                             </mask>
                         </variation>
                     </view>

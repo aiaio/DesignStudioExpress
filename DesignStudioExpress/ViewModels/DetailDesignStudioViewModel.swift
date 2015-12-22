@@ -104,7 +104,8 @@ class DetailDesignStudioViewModel {
     // in case the the design studio is started, but not finished (crash?)
     // this will fix the state
     private func fixDesignStudioState() {
-        if self.data.started && !self.data.finished {
+        // if it's not finished and if it's not currently running
+        if self.data.started && !self.data.finished && AppDelegate.designStudio.currentDesignStudio?.id != self.data.id {
             do {
                 try realm.write {
                     self.data.finished = true
