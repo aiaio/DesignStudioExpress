@@ -15,8 +15,28 @@ class PostDesignStudioViewModel {
     private var designStudio: DesignStudio?
     private var data = [MHGalleryItem]()
     
+    let noPermissionsTitle = "Photos need your permission!"
+    let noPermissionsMessage = "Open iPhone Settings and tap on Design Studio Express. Allow app to access your photos. Take photos using camera as normal and save in new \"DSX Photos\" folder."
+    let noPhotosTitle = "What? No photos?"
+    let noPhotosMessage = "You'll want a visual record later to see how you solved your design challenge, or share with the team. Take photos using camera as normal and save in the \"DSX Photos\" folder."
+    
+    
     var designStudioTitle: String {
         get { return self.designStudio?.title ?? "" }
+    }
+    
+    var noGalleryTitle: String {
+        if !self.accessToLibraryGranted {
+            return self.noPermissionsTitle
+        }
+        return self.noPhotosTitle
+    }
+    
+    var noGalleryMessage: String {
+        if !self.accessToLibraryGranted {
+            return self.noPermissionsMessage
+        }
+        return self.noPhotosMessage
     }
     
     func setDesignStudio(designStudio: DesignStudio) {

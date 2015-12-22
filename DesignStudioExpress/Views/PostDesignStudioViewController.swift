@@ -14,6 +14,8 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var galleryView: UIView!
     @IBOutlet weak var noGalleryView: UIView!
+    @IBOutlet weak var noGalleryTitle: UILabel!
+    @IBOutlet weak var noGalleryMessage: UILabel!
     
     let vm = PostDesignStudioViewModel()
     
@@ -56,6 +58,8 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
         } else {
             self.galleryView.hidden = true
             self.noGalleryView.hidden = false
+            self.noGalleryTitle.text = vm.noGalleryTitle
+            self.noGalleryMessage.text = vm.noGalleryMessage
         }
     }
 

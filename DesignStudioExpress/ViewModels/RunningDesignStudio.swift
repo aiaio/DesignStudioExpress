@@ -87,10 +87,7 @@ class RunningDesignStudio: NSObject {
     // called when user clicks the main action button on challenges screen
     // we need to open an appropriate screen based on the state of the design studio
     // that can be not started|running|finished
-    func challengesScreenActionButton (designStudio: DesignStudio) {
-        let x  = self.isRunning
-        let y = designStudio.started
-        // start the design studio
+    func challengesScreenActionButton (designStudio: DesignStudio) {        // start the design studio
         if !self.isRunning && !designStudio.started {
             self.startDesignStudio(designStudio)
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.DesignStudioStarted.rawValue, object: self, userInfo: nil)
