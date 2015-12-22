@@ -10,6 +10,7 @@ import UIKit
 import FXLabel
 import MZTimerLabel
 import DKCamera
+import AVFoundation
 
 class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     
@@ -36,6 +37,8 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     
     let showNotesButtonLabel = "PRESENTER NOTES"
     let showDescriptionButtonLabel = "BACK TO DESCRIPTION"
+    let cameraAccessErrorTitle = "Camera needs your permission!"
+    let cameraAccessErrorMessage = "Open iPhone Settings and tap on Design Studio Express. Allow app to access your camera."
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +76,22 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     }
     
     @IBAction func takePicture(sender: AnyObject) {
+        if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) == .Authorized {
+            self.showCamera()
+        } else {
+            self.showWarningAlert(self.cameraAccessErrorTitle, message: self.cameraAccessErrorMessage)
+        }
+    }
+    
+    private func showWarningAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(okAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    private func showCamera() {
         let camera = DKCamera()
         
         camera.didCancelled = { () in
