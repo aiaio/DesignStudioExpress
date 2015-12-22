@@ -116,13 +116,13 @@
 		E41E772B1C06554D000364D6 /* UITextViewDelegateMaxLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewDelegateMaxLength.swift; sourceTree = "<group>"; };
 		E41E772D1C067C6C000364D6 /* UITextDelegateBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextDelegateBase.swift; sourceTree = "<group>"; };
 		E41E772F1C067D25000364D6 /* UITextFieldDelegateMaxLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldDelegateMaxLength.swift; sourceTree = "<group>"; };
-		E421C4121BF164AD003F9D8A /* DesignStudioExpress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignStudioExpress.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E421C4121BF164AD003F9D8A /* Design Studio Express.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Design Studio Express.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E421C4151BF164AD003F9D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E421C41A1BF164AD003F9D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E421C41C1BF164AD003F9D8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E421C41F1BF164AD003F9D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E421C4211BF164AD003F9D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E421C4261BF164AD003F9D8A /* DesignStudioExpressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignStudioExpressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E421C4261BF164AD003F9D8A /* Design Studio Express.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Design Studio Express.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E421C42A1BF164AD003F9D8A /* DesignStudioExpressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignStudioExpressTests.swift; sourceTree = "<group>"; };
 		E421C42C1BF164AD003F9D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E421C4361BF279FE003F9D8A /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -256,8 +256,8 @@
 		E421C4131BF164AD003F9D8A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E421C4121BF164AD003F9D8A /* DesignStudioExpress.app */,
-				E421C4261BF164AD003F9D8A /* DesignStudioExpressTests.xctest */,
+				E421C4121BF164AD003F9D8A /* Design Studio Express.app */,
+				E421C4261BF164AD003F9D8A /* Design Studio Express.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -400,9 +400,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E421C4111BF164AD003F9D8A /* DesignStudioExpress */ = {
+		E421C4111BF164AD003F9D8A /* Design Studio Express */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E421C42F1BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "DesignStudioExpress" */;
+			buildConfigurationList = E421C42F1BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "Design Studio Express" */;
 			buildPhases = (
 				D85651353B822225EAD177C7 /* Check Pods Manifest.lock */,
 				E421C40E1BF164AD003F9D8A /* Sources */,
@@ -416,14 +416,14 @@
 			);
 			dependencies = (
 			);
-			name = DesignStudioExpress;
+			name = "Design Studio Express";
 			productName = DesignStudioExpress;
-			productReference = E421C4121BF164AD003F9D8A /* DesignStudioExpress.app */;
+			productReference = E421C4121BF164AD003F9D8A /* Design Studio Express.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E421C4251BF164AD003F9D8A /* DesignStudioExpressTests */ = {
+		E421C4251BF164AD003F9D8A /* Design Studio ExpressTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E421C4321BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "DesignStudioExpressTests" */;
+			buildConfigurationList = E421C4321BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "Design Studio ExpressTests" */;
 			buildPhases = (
 				E421C4221BF164AD003F9D8A /* Sources */,
 				E421C4231BF164AD003F9D8A /* Frameworks */,
@@ -434,9 +434,9 @@
 			dependencies = (
 				E421C4281BF164AD003F9D8A /* PBXTargetDependency */,
 			);
-			name = DesignStudioExpressTests;
+			name = "Design Studio ExpressTests";
 			productName = DesignStudioExpressTests;
-			productReference = E421C4261BF164AD003F9D8A /* DesignStudioExpressTests.xctest */;
+			productReference = E421C4261BF164AD003F9D8A /* Design Studio Express.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -458,7 +458,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E421C40D1BF164AD003F9D8A /* Build configuration list for PBXProject "DesignStudioExpress" */;
+			buildConfigurationList = E421C40D1BF164AD003F9D8A /* Build configuration list for PBXProject "Design Studio Express" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -471,8 +471,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E421C4111BF164AD003F9D8A /* DesignStudioExpress */,
-				E421C4251BF164AD003F9D8A /* DesignStudioExpressTests */,
+				E421C4111BF164AD003F9D8A /* Design Studio Express */,
+				E421C4251BF164AD003F9D8A /* Design Studio ExpressTests */,
 			);
 		};
 /* End PBXProject section */
@@ -646,7 +646,7 @@
 /* Begin PBXTargetDependency section */
 		E421C4281BF164AD003F9D8A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E421C4111BF164AD003F9D8A /* DesignStudioExpress */;
+			target = E421C4111BF164AD003F9D8A /* Design Studio Express */;
 			targetProxy = E421C4271BF164AD003F9D8A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -768,7 +768,7 @@
 				INFOPLIST_FILE = DesignStudioExpress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderinteractive.whackjobapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Design Studio Express";
 				SWIFT_OBJC_BRIDGING_HEADER = "DesignStudioExpress/DesignStudioExpress-Bridging-Header.h";
 			};
 			name = Debug;
@@ -788,7 +788,7 @@
 				INFOPLIST_FILE = DesignStudioExpress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderinteractive.whackjobapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Design Studio Express";
 				SWIFT_OBJC_BRIDGING_HEADER = "DesignStudioExpress/DesignStudioExpress-Bridging-Header.h";
 			};
 			name = Release;
@@ -800,8 +800,8 @@
 				INFOPLIST_FILE = DesignStudioExpressTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderinteractive.DesignStudioExpressTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesignStudioExpress.app/DesignStudioExpress";
+				PRODUCT_NAME = "Design Studio Express";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Design Studio Express.app/Design Studio Express";
 			};
 			name = Debug;
 		};
@@ -812,15 +812,15 @@
 				INFOPLIST_FILE = DesignStudioExpressTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderinteractive.DesignStudioExpressTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DesignStudioExpress.app/DesignStudioExpress";
+				PRODUCT_NAME = "Design Studio Express";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Design Studio Express.app/Design Studio Express";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E421C40D1BF164AD003F9D8A /* Build configuration list for PBXProject "DesignStudioExpress" */ = {
+		E421C40D1BF164AD003F9D8A /* Build configuration list for PBXProject "Design Studio Express" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E421C42D1BF164AD003F9D8A /* Debug */,
@@ -829,7 +829,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E421C42F1BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "DesignStudioExpress" */ = {
+		E421C42F1BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "Design Studio Express" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E421C4301BF164AD003F9D8A /* Debug */,
@@ -838,7 +838,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E421C4321BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "DesignStudioExpressTests" */ = {
+		E421C4321BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "Design Studio ExpressTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E421C4331BF164AD003F9D8A /* Debug */,
