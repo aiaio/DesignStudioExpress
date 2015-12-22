@@ -20,7 +20,7 @@ class DesignStudioActivityItemSource: NSObject, UIActivityItemSource {
         } else if activityType == UIActivityTypeMail {
             return "Solve design problems fast with Design Studio Express. DSX makes running a design studio easy. It guides your team through timed rounds to brainstorm, refine and present ideas — saving photos and templates, too! @aiaio #designstudio #designstudioexpress http://by.ai/dsx"
         } else if activityType == UIActivityTypePostToTwitter {
-            return "DesignStudioExpress guides teams through timed rounds to brainstorm ideas and save photo/templates, too! @aiaio #DSX http://by.ai/dsx"
+            return "DesignStudioExpress guides teams through timed rounds of brainstorming to solve your design challenge fast! @aiaio #DSX http://by.ai/dsx"
         } else if activityType == UIActivityTypePostToFacebook {
             return "String message" //this is no longer supported in facebook app
         }
