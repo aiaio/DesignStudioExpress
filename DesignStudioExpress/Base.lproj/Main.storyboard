@@ -2993,7 +2993,7 @@ Sketching Templates</string>
                                     </mask>
                                 </variation>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uth-q4-iEs" userLabel="No permissions View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uth-q4-iEs" userLabel="No permissions View">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPS-6I-CJQ">
@@ -3005,24 +3005,22 @@ Sketching Templates</string>
                                                 <color key="textColor" red="0.28235294119999998" green="0.28627450980000002" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, no insolens constituam nec, eum dolore copiosae an" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k72-5e-PQQ" userLabel="Message">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k72-5e-PQQ" userLabel="Message">
                                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="283" id="o9c-aO-68o"/>
-                                                    <constraint firstAttribute="height" constant="70" id="rRV-as-BEP"/>
+                                                    <constraint firstAttribute="height" constant="110" id="rRV-as-BEP"/>
                                                 </constraints>
+                                                <string key="text">You'll want a visual record later to see how you solved your design challenge, or share with the team. Take photos using camera as normal and save in the "DSX Photos" folder.</string>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                                 <color key="textColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="o9c-aO-68o"/>
                                                         <exclude reference="rRV-as-BEP"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="o9c-aO-68o"/>
                                                         <include reference="rRV-as-BEP"/>
                                                     </mask>
                                                 </variation>
@@ -3050,12 +3048,13 @@ Sketching Templates</string>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="bUQ-hn-IAZ" firstAttribute="centerX" secondItem="vPS-6I-CJQ" secondAttribute="centerX" id="6Fd-Up-FR5"/>
-                                            <constraint firstItem="k72-5e-PQQ" firstAttribute="centerX" secondItem="vPS-6I-CJQ" secondAttribute="centerX" id="OMA-5n-NqD"/>
-                                            <constraint firstAttribute="bottom" secondItem="k72-5e-PQQ" secondAttribute="bottom" constant="136" id="WwK-jr-xXZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="k72-5e-PQQ" secondAttribute="trailing" constant="25" id="Aor-7m-RlR"/>
+                                            <constraint firstItem="k72-5e-PQQ" firstAttribute="leading" secondItem="vPS-6I-CJQ" secondAttribute="leading" constant="25" id="RFL-4G-Veg"/>
+                                            <constraint firstAttribute="bottom" secondItem="k72-5e-PQQ" secondAttribute="bottom" id="WwK-jr-xXZ"/>
                                             <constraint firstItem="k72-5e-PQQ" firstAttribute="top" secondItem="bUQ-hn-IAZ" secondAttribute="bottom" constant="20" id="X6k-nR-vYX"/>
                                             <constraint firstItem="bUQ-hn-IAZ" firstAttribute="centerX" secondItem="vPS-6I-CJQ" secondAttribute="centerX" id="YVV-cL-MCs"/>
                                             <constraint firstItem="bUQ-hn-IAZ" firstAttribute="top" secondItem="DxB-I9-bwv" secondAttribute="bottom" constant="50" id="lND-Mt-hXC"/>
-                                            <constraint firstAttribute="height" constant="360" id="mXk-YZ-c7i"/>
+                                            <constraint firstAttribute="height" constant="260" id="mXk-YZ-c7i"/>
                                             <constraint firstItem="DxB-I9-bwv" firstAttribute="centerX" secondItem="vPS-6I-CJQ" secondAttribute="centerX" id="viv-JA-9Jz"/>
                                         </constraints>
                                         <variation key="default">
@@ -3069,7 +3068,8 @@ Sketching Templates</string>
                                                 <exclude reference="6Fd-Up-FR5"/>
                                                 <exclude reference="YVV-cL-MCs"/>
                                                 <exclude reference="lND-Mt-hXC"/>
-                                                <exclude reference="OMA-5n-NqD"/>
+                                                <exclude reference="Aor-7m-RlR"/>
+                                                <exclude reference="RFL-4G-Veg"/>
                                                 <exclude reference="WwK-jr-xXZ"/>
                                                 <exclude reference="X6k-nR-vYX"/>
                                                 <exclude reference="viv-JA-9Jz"/>
@@ -3086,7 +3086,8 @@ Sketching Templates</string>
                                                 <include reference="6Fd-Up-FR5"/>
                                                 <include reference="YVV-cL-MCs"/>
                                                 <include reference="lND-Mt-hXC"/>
-                                                <include reference="OMA-5n-NqD"/>
+                                                <include reference="Aor-7m-RlR"/>
+                                                <include reference="RFL-4G-Veg"/>
                                                 <include reference="WwK-jr-xXZ"/>
                                                 <include reference="X6k-nR-vYX"/>
                                                 <include reference="viv-JA-9Jz"/>
@@ -3174,7 +3175,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzX-yL-zEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5546" y="1829"/>
+            <point key="canvasLocation" x="5545.5" y="1828.5"/>
         </scene>
         <!--Challenge Detail View Controller-->
         <scene sceneID="ndZ-lY-XXN">
