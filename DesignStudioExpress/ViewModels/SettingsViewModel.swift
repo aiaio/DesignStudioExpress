@@ -38,19 +38,19 @@ class SettingsViewModel {
     private func loadStaticSettings() -> [Setting] {
         return [
             // TODO images
-            Setting(title: "Who Made This?", icon: "ai", action:  { vc in
+            Setting(title: "Who Made This?", icon: "Ai", action:  { vc in
                 let svc = SFSafariViewController(URL: NSURL(string: "http://www.alexanderinteractive.com/company/")!)
                 vc.presentViewController(svc, animated: true, completion: nil)
             }),
             
-            Setting(title: "Legal", action: { vc in
+            Setting(title: "Legal", icon: "Legal", action: { vc in
                 let legalController = AcknowListViewController()
                 if let navigationController = vc.navigationController {
                     navigationController.pushViewController(legalController, animated: true)
                 }
             }),
             
-            Setting(title: "Contact Us", action: { vc in
+            Setting(title: "Contact Us", icon: "Contact", action: { vc in
                 if MFMailComposeViewController.canSendMail() {
                     // https://github.com/monkeymike/MPFeedbackMailComposeViewController
                     
@@ -79,12 +79,12 @@ class SettingsViewModel {
                 }
             }),
             
-            Setting(title: "Review on App Store", action: { vc in
+            Setting(title: "Review on App Store", icon: "Review", action: { vc in
                 // https://itunes.apple.com/us/app/whackjob/id1054379438?at=11laRZ&ct=pro&ls=1&mt=8
                 UIApplication.sharedApplication().openURL(NSURL(string : "itms-apps://itunes.apple.com/app/id1054379438")!)
             }),
             
-            Setting(title: "Share this app", action: { vc in
+            Setting(title: "Share this app", icon: "Share", action: { vc in
                 
                 //text lives in DesignStudioActivityItemSource.swift
                 
