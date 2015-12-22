@@ -18,8 +18,8 @@ class ChallengesViewModel {
     let buttonLabelTimer = "SHOW TIMER"
     let buttonLabelFinished = "ALL DONE. LAUNCH GALLERY"
     let buttonLabelBeginDS = "BEGIN DESIGN STUDIO"
-    let anotherStudioRunningText = " design studio is running."
-    let invalidDesignStudioText = "You have to have at least one challenge and every challenge has to have at least one activity."
+    let anotherStudioRunningMessageText = "Nice try on multi-tasking, but %@ design studio is already running."
+    let invalidDesignStudioMessageText = "Your design studio needs at least one challenge (each with at least one activity) before you can start it."
     
     func setDesignStudio(newDesignStudio: DesignStudio) {
         if (self.designStudio?.id != newDesignStudio.id) {
@@ -154,11 +154,11 @@ class ChallengesViewModel {
     // otherwise return nil
     func actionButtonTouched() -> String? {
         if self.isAnotherStudioRunning {
-            return (AppDelegate.designStudio.currentDesignStudio?.title ?? "Another") + self.anotherStudioRunningText
+            return (AppDelegate.designStudio.currentDesignStudio?.title ?? "Another") + self.anotherStudioRunningMessageText
         }
         
         if !challengesAreValid() {
-            return self.invalidDesignStudioText
+            return self.invalidDesignStudioMessageText
         }
     
         AppDelegate.designStudio.challengesScreenActionButton(self.designStudio)

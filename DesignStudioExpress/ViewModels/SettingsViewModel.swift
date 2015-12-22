@@ -28,8 +28,8 @@ struct Setting {
 class SettingsViewModel {
     private var data: [Setting]!
     
-    let emailErrorMessageTitleText = "Preparing email failed"
-    let emailErrorMessageMessageText = "Please configure your device to send email"
+    let emailErrorMessageTitleText = "I'm sorry, Dave. I'm afraid I can't do that."
+    let emailErrorMessageMessageText = "Please first configure your device to send email."
     
     init () {
         data = self.loadStaticSettings()

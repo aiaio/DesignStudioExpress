@@ -17,9 +17,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let vm = HomeViewModel()
     let editDesignStudioSegue = "EditDesignStudio"
     
-    let confirmDeletionTitleText = "Warning"
-    let confirmDeletionMessage = "Are you sure you want to delete this design studio?"
-    let cannotDeleteCurrentStudioText = "You cannot delete currently active design studio!"
+    let confirmDeletionTitleText = "You sure?"
+    let confirmDeletionMessage = "Deleting this design studio cannot be undone."
+    let cannotDeleteCurrentStudioTitleText = "Not right now"
+    let cannotDeleteCurrentStudioMessageText = "This Design Studio is in progress. Skip activities to complete it, then you can delete."
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,7 +129,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             self.presentViewController(alertController, animated: true, completion: nil)
         } else {
-            let alertController = UIAlertController(title: title, message: self.cannotDeleteCurrentStudioText, preferredStyle: .Alert)
+            let alertController = UIAlertController(title: self.cannotDeleteCurrentStudioTitleText, message: self.cannotDeleteCurrentStudioMessageText, preferredStyle: .Alert)
             let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
             alertController.addAction(okAction)
             

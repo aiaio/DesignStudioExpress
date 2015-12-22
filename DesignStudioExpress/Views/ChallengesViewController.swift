@@ -16,10 +16,12 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
         case EditChallenge = "EditChallenge"
     }
     
-    let confirmDeletionTitleText = "Warning"
-    let confirmDeletionMessage = "Are you sure you want to delete this challenge?"
-    let cannotDeleteChallengeTitleText = "Warning"
-    let cannotDeleteChallengeMessage = "You can't delete currently active or finished challenge!"
+    let confirmDeletionTitleText = "You sure?"
+    let confirmDeletionMessage = "Deleting this challenge cannot be undone."
+    let cannotDeleteChallengeTitleText = "Not right now"
+    let cannotDeleteChallengeMessage = "Active challenges cannot be deleted. Finish this Design Studio first, then you can delete."
+    
+    let errorMessageForActionButtonTitle = "Whoa!"
     
     @IBOutlet weak var addChallengeView: UIView!
     @IBOutlet weak var tableViewParentView: UIView!
@@ -53,7 +55,7 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
     // universal action button that
     @IBAction func actionButton(sender: AnyObject) {
         if let errorMessage = self.vm.actionButtonTouched() {
-            self.showWarningAlert("Warning", message: errorMessage)
+            self.showWarningAlert(self.errorMessageForActionButtonTitle, message: errorMessage)
         }
     }
     
