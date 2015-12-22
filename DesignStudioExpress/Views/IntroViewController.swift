@@ -30,14 +30,6 @@ class IntroViewController: UIViewController {
         // bring buttons on top of the video
         self.view.bringSubviewToFront(createButton)
         self.view.bringSubviewToFront(faqButton)
-        
-        // TODO: this drops entire db
-        // remove it!
-        if let path = Realm.Configuration.defaultConfiguration.path {
-            if NSFileManager.defaultManager().fileExistsAtPath(path) {
-                try! NSFileManager.defaultManager().removeItemAtPath(path)
-            }
-        }
     }
 
     override func viewWillDisappear(animated: Bool) {

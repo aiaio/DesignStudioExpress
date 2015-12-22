@@ -11,11 +11,20 @@ import RealmSwift
 
 class HomeViewModel {
     lazy var realm = try! Realm()
-    private var data: [DesignStudio]!
+    private var data: [DesignStudio] = []
     private var numOfTemplates = 0
     
     init () {
         data = self.loadDesignStudios()
+        
+        /* 
+         * This will delete entire database, only for testing purposes
+         *
+        if let path = Realm.Configuration.defaultConfiguration.path {
+            if NSFileManager.defaultManager().fileExistsAtPath(path) {
+                try! NSFileManager.defaultManager().removeItemAtPath(path)
+            }
+        } */
     }
     
     private func loadDesignStudios() -> [DesignStudio] {
@@ -35,7 +44,7 @@ class HomeViewModel {
         DesignStudio.createDefaultTemplate1()
         DesignStudio.createDefaultTemplate2()
         
-        /* TODO: remove
+        /* TODO: remove test data
         let realm = try! Realm()
         realm.beginWrite()
         
