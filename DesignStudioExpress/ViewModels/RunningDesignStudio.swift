@@ -151,7 +151,10 @@ class RunningDesignStudio: NSObject {
     }
     
     func endDesignStudioDidAppear() {
-        NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.EndDesignStudioDidAppear.rawValue, object: self, userInfo: nil)
+        let currentStudio = self.currentDesignStudio!
+        // reset it here
+        self.resetCurrentlyRunningStudio()
+        NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.EndDesignStudioDidAppear.rawValue, object: self, userInfo: ["DesignStudio":currentStudio])
     }
     
     // this will be called when skip activity is called from the timer screen
@@ -248,6 +251,15 @@ class RunningDesignStudio: NSObject {
         } catch {
             // todo
         }
+    }
+    
+    // resets the state of the current object
+    // so that the finished design studio is no longer set as current DS
+    private func resetCurrentlyRunningStudio() {
+        self.data = nil
+        self.currentChallengeIdx = nil
+        self.currentActivityIdx = nil
+        self.currentActivityStart = nil
     }
     
     func getNextObjectTitle() -> String? {
