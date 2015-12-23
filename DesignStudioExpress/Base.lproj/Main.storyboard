@@ -2055,15 +2055,15 @@ Sketching Templates</string>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="12k-h3-eqO"/>
+                                <exclude reference="5bm-S9-BNa"/>
                                 <exclude reference="g3p-Za-2eu"/>
                                 <exclude reference="ssH-jf-Pcn"/>
+                                <exclude reference="dYb-Ss-973"/>
                                 <exclude reference="DuM-wl-RtL"/>
                                 <exclude reference="N10-bD-TaV"/>
                                 <exclude reference="YV4-KG-kCJ"/>
                                 <exclude reference="5H9-Jz-KNG"/>
                                 <exclude reference="olu-cY-TST"/>
-                                <exclude reference="5bm-S9-BNa"/>
-                                <exclude reference="dYb-Ss-973"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2072,15 +2072,15 @@ Sketching Templates</string>
                             </mask>
                             <mask key="constraints">
                                 <include reference="12k-h3-eqO"/>
+                                <include reference="5bm-S9-BNa"/>
                                 <include reference="g3p-Za-2eu"/>
                                 <include reference="ssH-jf-Pcn"/>
+                                <include reference="dYb-Ss-973"/>
                                 <include reference="DuM-wl-RtL"/>
                                 <include reference="N10-bD-TaV"/>
                                 <include reference="YV4-KG-kCJ"/>
                                 <include reference="5H9-Jz-KNG"/>
                                 <include reference="olu-cY-TST"/>
-                                <include reference="5bm-S9-BNa"/>
-                                <include reference="dYb-Ss-973"/>
                             </mask>
                         </variation>
                     </view>
@@ -2164,8 +2164,11 @@ Sketching Templates</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write as many feature ideas as you can on individual stickies. Save the stickies as an idea palette for sketching." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIX-VS-Eg2" customClass="FXLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write as many feature ideas as you can on individual stickies. Save the stickies as an idea palette for sketching." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIX-VS-Eg2" customClass="FXLabel">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="gAr-94-2em"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2174,8 +2177,18 @@ Sketching Templates</string>
                                         <real key="value" value="0.19"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gAr-94-2em"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="gAr-94-2em"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gF-je-4sC" userLabel="Activity Notes">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gF-je-4sC" userLabel="Activity Notes">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-BookOblique" family="Avenir" pointSize="14"/>
                                 <color key="textColor" red="0.37254901960784315" green="0.53333333333333333" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
@@ -2210,61 +2223,102 @@ Sketching Templates</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEO-Ru-lSL" userLabel="Skip to Parent VIew">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKIP TO:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnI-b2-5Pl">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SKIP TO:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnI-b2-5Pl" customClass="FXLabel">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="qdZ-Sv-GdT"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="12"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="qdZ-Sv-GdT"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="qdZ-Sv-GdT"/>
+                                            </mask>
+                                        </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VERY LONG ACTIVITY NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="vge-0q-SUQ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VERY LONG ACTIVITY NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="vge-0q-SUQ" customClass="FXLabel">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="283" id="DhA-33-uFe"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="12"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="DhA-33-uFe"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="DhA-33-uFe"/>
+                                            </mask>
+                                        </variation>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="Arrow_Shape" translatesAutoresizingMaskIntoConstraints="NO" id="1P1-Us-GJ9">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.47058823529411764" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="vge-0q-SUQ" firstAttribute="centerY" secondItem="tEO-Ru-lSL" secondAttribute="centerY" id="5KO-Tw-cn0"/>
+                                    <constraint firstItem="1P1-Us-GJ9" firstAttribute="centerY" secondItem="tEO-Ru-lSL" secondAttribute="centerY" id="87n-f4-pji"/>
                                     <constraint firstAttribute="height" constant="45" id="9zz-0V-7q1"/>
                                     <constraint firstItem="hnI-b2-5Pl" firstAttribute="centerY" secondItem="tEO-Ru-lSL" secondAttribute="centerY" id="MCv-Py-YmB"/>
-                                    <constraint firstItem="vge-0q-SUQ" firstAttribute="centerY" secondItem="tEO-Ru-lSL" secondAttribute="centerY" id="OwW-iU-nXH"/>
+                                    <constraint firstItem="1P1-Us-GJ9" firstAttribute="leading" secondItem="vge-0q-SUQ" secondAttribute="trailing" constant="20" id="Rdz-Dq-AzM"/>
                                     <constraint firstItem="vge-0q-SUQ" firstAttribute="centerY" secondItem="tEO-Ru-lSL" secondAttribute="centerY" id="URt-rx-5O2"/>
-                                    <constraint firstItem="hnI-b2-5Pl" firstAttribute="baseline" secondItem="vge-0q-SUQ" secondAttribute="baseline" id="ZKU-9q-M0d"/>
-                                    <constraint firstItem="vge-0q-SUQ" firstAttribute="centerX" secondItem="tEO-Ru-lSL" secondAttribute="centerX" constant="25" id="ZkC-Hk-8wi"/>
                                     <constraint firstItem="vge-0q-SUQ" firstAttribute="leading" secondItem="hnI-b2-5Pl" secondAttribute="trailing" constant="8" id="nrc-xc-oml"/>
+                                    <constraint firstAttribute="trailing" secondItem="1P1-Us-GJ9" secondAttribute="trailing" constant="20" id="oft-Y9-94x"/>
+                                    <constraint firstItem="hnI-b2-5Pl" firstAttribute="leading" secondItem="tEO-Ru-lSL" secondAttribute="leading" constant="22" id="sjV-KC-MPn"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="hnI-b2-5Pl"/>
                                         <exclude reference="vge-0q-SUQ"/>
+                                        <exclude reference="1P1-Us-GJ9"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="9zz-0V-7q1"/>
                                         <exclude reference="MCv-Py-YmB"/>
-                                        <exclude reference="ZKU-9q-M0d"/>
-                                        <exclude reference="5KO-Tw-cn0"/>
-                                        <exclude reference="OwW-iU-nXH"/>
+                                        <exclude reference="sjV-KC-MPn"/>
                                         <exclude reference="URt-rx-5O2"/>
-                                        <exclude reference="ZkC-Hk-8wi"/>
                                         <exclude reference="nrc-xc-oml"/>
+                                        <exclude reference="87n-f4-pji"/>
+                                        <exclude reference="Rdz-Dq-AzM"/>
+                                        <exclude reference="oft-Y9-94x"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="hnI-b2-5Pl"/>
                                         <include reference="vge-0q-SUQ"/>
+                                        <include reference="1P1-Us-GJ9"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="9zz-0V-7q1"/>
                                         <include reference="MCv-Py-YmB"/>
-                                        <exclude reference="ZKU-9q-M0d"/>
-                                        <exclude reference="5KO-Tw-cn0"/>
-                                        <exclude reference="OwW-iU-nXH"/>
+                                        <include reference="sjV-KC-MPn"/>
                                         <include reference="URt-rx-5O2"/>
-                                        <include reference="ZkC-Hk-8wi"/>
                                         <include reference="nrc-xc-oml"/>
+                                        <include reference="87n-f4-pji"/>
+                                        <include reference="Rdz-Dq-AzM"/>
+                                        <include reference="oft-Y9-94x"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -2286,14 +2340,15 @@ Sketching Templates</string>
                             <constraint firstItem="Oga-Wv-HbZ" firstAttribute="centerY" secondItem="idW-Lh-Kbq" secondAttribute="centerY" constant="32" id="XG0-Mr-CcP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="idW-Lh-Kbq" secondAttribute="trailing" constant="-20" id="Yma-lb-LC1"/>
                             <constraint firstAttribute="leadingMargin" secondItem="X2F-Uv-w2R" secondAttribute="leading" id="aBg-6a-7oK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WIX-VS-Eg2" secondAttribute="trailing" constant="15" id="c9x-c7-3ti"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tEO-Ru-lSL" secondAttribute="trailing" constant="-20" id="cmY-tc-DtR"/>
                             <constraint firstItem="idW-Lh-Kbq" firstAttribute="leading" secondItem="GWD-B8-Vcl" secondAttribute="leadingMargin" constant="-20" id="d1P-dI-0YO"/>
                             <constraint firstItem="Idx-u8-oLd" firstAttribute="centerX" secondItem="GWD-B8-Vcl" secondAttribute="centerX" id="dAq-vk-LQj"/>
                             <constraint firstAttribute="leadingMargin" secondItem="wBd-QA-Qkf" secondAttribute="leading" id="dpe-ad-1yE"/>
                             <constraint firstItem="umt-eQ-gme" firstAttribute="top" secondItem="tEO-Ru-lSL" secondAttribute="bottom" id="fg7-ak-Cgy"/>
                             <constraint firstItem="X2F-Uv-w2R" firstAttribute="top" secondItem="idW-Lh-Kbq" secondAttribute="bottom" constant="56" id="gSp-x6-7mD"/>
+                            <constraint firstItem="WIX-VS-Eg2" firstAttribute="leading" secondItem="GWD-B8-Vcl" secondAttribute="leadingMargin" constant="15" id="gU7-TL-IiN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="X2F-Uv-w2R" secondAttribute="trailing" id="grH-dl-Ad3"/>
-                            <constraint firstItem="WIX-VS-Eg2" firstAttribute="width" secondItem="C88-5T-bIJ" secondAttribute="width" id="h9j-wu-buo"/>
                             <constraint firstItem="Oga-Wv-HbZ" firstAttribute="centerX" secondItem="idW-Lh-Kbq" secondAttribute="centerX" id="ipX-tx-HR2"/>
                             <constraint firstItem="WIX-VS-Eg2" firstAttribute="top" secondItem="wBd-QA-Qkf" secondAttribute="bottom" constant="16" id="lml-Of-Vld"/>
                             <constraint firstItem="5gF-je-4sC" firstAttribute="bottom" secondItem="WIX-VS-Eg2" secondAttribute="bottom" id="pG1-RJ-bdC"/>
@@ -2314,32 +2369,33 @@ Sketching Templates</string>
                                 <exclude reference="tEO-Ru-lSL"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="fg7-ak-Cgy"/>
-                                <exclude reference="7LI-LD-dlp"/>
-                                <exclude reference="ROb-vA-hB8"/>
-                                <exclude reference="vKS-xA-hiK"/>
-                                <exclude reference="0y1-Hs-E0f"/>
-                                <exclude reference="dAq-vk-LQj"/>
-                                <exclude reference="K3G-oX-iN1"/>
-                                <exclude reference="WOY-UL-wII"/>
-                                <exclude reference="pG1-RJ-bdC"/>
-                                <exclude reference="tHL-Ph-O51"/>
+                                <exclude reference="ROL-b7-PL0"/>
+                                <exclude reference="Yma-lb-LC1"/>
+                                <exclude reference="d1P-dI-0YO"/>
                                 <exclude reference="XG0-Mr-CcP"/>
                                 <exclude reference="ipX-tx-HR2"/>
-                                <exclude reference="QbR-hD-zoF"/>
-                                <exclude reference="h9j-wu-buo"/>
-                                <exclude reference="lml-Of-Vld"/>
+                                <exclude reference="0y1-Hs-E0f"/>
+                                <exclude reference="dAq-vk-LQj"/>
                                 <exclude reference="aBg-6a-7oK"/>
                                 <exclude reference="gSp-x6-7mD"/>
                                 <exclude reference="grH-dl-Ad3"/>
                                 <exclude reference="MgW-6j-Gh9"/>
                                 <exclude reference="dpe-ad-1yE"/>
                                 <exclude reference="sUh-gF-qDV"/>
-                                <exclude reference="ROL-b7-PL0"/>
-                                <exclude reference="Yma-lb-LC1"/>
-                                <exclude reference="d1P-dI-0YO"/>
+                                <exclude reference="K3G-oX-iN1"/>
+                                <exclude reference="WOY-UL-wII"/>
+                                <exclude reference="pG1-RJ-bdC"/>
+                                <exclude reference="tHL-Ph-O51"/>
+                                <exclude reference="QbR-hD-zoF"/>
+                                <exclude reference="c9x-c7-3ti"/>
+                                <exclude reference="gU7-TL-IiN"/>
+                                <exclude reference="lml-Of-Vld"/>
+                                <exclude reference="7LI-LD-dlp"/>
+                                <exclude reference="ROb-vA-hB8"/>
+                                <exclude reference="vKS-xA-hiK"/>
                                 <exclude reference="Ry0-Qm-DaX"/>
                                 <exclude reference="cmY-tc-DtR"/>
+                                <exclude reference="fg7-ak-Cgy"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2355,32 +2411,33 @@ Sketching Templates</string>
                                 <include reference="tEO-Ru-lSL"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="fg7-ak-Cgy"/>
-                                <include reference="7LI-LD-dlp"/>
-                                <include reference="ROb-vA-hB8"/>
-                                <include reference="vKS-xA-hiK"/>
-                                <include reference="0y1-Hs-E0f"/>
-                                <include reference="dAq-vk-LQj"/>
-                                <include reference="K3G-oX-iN1"/>
-                                <include reference="WOY-UL-wII"/>
-                                <include reference="pG1-RJ-bdC"/>
-                                <include reference="tHL-Ph-O51"/>
+                                <include reference="ROL-b7-PL0"/>
+                                <include reference="Yma-lb-LC1"/>
+                                <include reference="d1P-dI-0YO"/>
                                 <include reference="XG0-Mr-CcP"/>
                                 <include reference="ipX-tx-HR2"/>
-                                <include reference="QbR-hD-zoF"/>
-                                <include reference="h9j-wu-buo"/>
-                                <include reference="lml-Of-Vld"/>
+                                <include reference="0y1-Hs-E0f"/>
+                                <include reference="dAq-vk-LQj"/>
                                 <include reference="aBg-6a-7oK"/>
                                 <include reference="gSp-x6-7mD"/>
                                 <include reference="grH-dl-Ad3"/>
                                 <include reference="MgW-6j-Gh9"/>
                                 <include reference="dpe-ad-1yE"/>
                                 <include reference="sUh-gF-qDV"/>
-                                <include reference="ROL-b7-PL0"/>
-                                <include reference="Yma-lb-LC1"/>
-                                <include reference="d1P-dI-0YO"/>
+                                <include reference="K3G-oX-iN1"/>
+                                <include reference="WOY-UL-wII"/>
+                                <include reference="pG1-RJ-bdC"/>
+                                <include reference="tHL-Ph-O51"/>
+                                <include reference="QbR-hD-zoF"/>
+                                <include reference="c9x-c7-3ti"/>
+                                <include reference="gU7-TL-IiN"/>
+                                <include reference="lml-Of-Vld"/>
+                                <include reference="7LI-LD-dlp"/>
+                                <include reference="ROb-vA-hB8"/>
+                                <include reference="vKS-xA-hiK"/>
                                 <include reference="Ry0-Qm-DaX"/>
                                 <include reference="cmY-tc-DtR"/>
+                                <include reference="fg7-ak-Cgy"/>
                             </mask>
                         </variation>
                     </view>
@@ -2401,7 +2458,7 @@ Sketching Templates</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3854" y="1829"/>
+            <point key="canvasLocation" x="3853.5" y="1828.5"/>
         </scene>
         <!--Upcoming Challenge View Controller-->
         <scene sceneID="orm-qB-Kv0">
@@ -3152,14 +3209,14 @@ Sketching Templates</string>
                                         <exclude reference="ERg-nw-rWt"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="7yu-Qe-MYX"/>
-                                        <exclude reference="YLx-vH-u5g"/>
-                                        <exclude reference="jZW-F7-6Fy"/>
+                                        <exclude reference="Xfl-IZ-444"/>
+                                        <exclude reference="yaI-2t-GIl"/>
                                         <exclude reference="PY2-fQ-bTJ"/>
                                         <exclude reference="fx9-bt-PEr"/>
                                         <exclude reference="gWv-wl-peT"/>
-                                        <exclude reference="Xfl-IZ-444"/>
-                                        <exclude reference="yaI-2t-GIl"/>
+                                        <exclude reference="7yu-Qe-MYX"/>
+                                        <exclude reference="YLx-vH-u5g"/>
+                                        <exclude reference="jZW-F7-6Fy"/>
                                         <exclude reference="5sg-Zb-YwA"/>
                                         <exclude reference="I8T-dM-Sbv"/>
                                         <exclude reference="xUs-dl-dPQ"/>
@@ -3172,14 +3229,14 @@ Sketching Templates</string>
                                         <include reference="ERg-nw-rWt"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="7yu-Qe-MYX"/>
-                                        <include reference="YLx-vH-u5g"/>
-                                        <include reference="jZW-F7-6Fy"/>
+                                        <include reference="Xfl-IZ-444"/>
+                                        <include reference="yaI-2t-GIl"/>
                                         <include reference="PY2-fQ-bTJ"/>
                                         <include reference="fx9-bt-PEr"/>
                                         <include reference="gWv-wl-peT"/>
-                                        <include reference="Xfl-IZ-444"/>
-                                        <include reference="yaI-2t-GIl"/>
+                                        <include reference="7yu-Qe-MYX"/>
+                                        <include reference="YLx-vH-u5g"/>
+                                        <include reference="jZW-F7-6Fy"/>
                                         <include reference="5sg-Zb-YwA"/>
                                         <include reference="I8T-dM-Sbv"/>
                                         <include reference="xUs-dl-dPQ"/>
@@ -4747,6 +4804,7 @@ Sketching Templates</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Arrow_Shape" width="9" height="14"/>
         <image name="Background-Image" width="375" height="667"/>
         <image name="Clock" width="11" height="10"/>
         <image name="Close_Icon" width="21" height="21"/>
