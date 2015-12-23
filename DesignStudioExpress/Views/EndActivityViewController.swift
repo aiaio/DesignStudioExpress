@@ -19,6 +19,10 @@ class EndActivityViewController: UIViewController {
         self.addMoreTime.setTitle(vm.addMoreTimeTitle, forState: .Normal)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        self.vm.viewDidAppear()
+    }
+    
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         

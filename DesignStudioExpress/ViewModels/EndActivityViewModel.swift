@@ -6,6 +6,7 @@
 //  Copyright © 2015 Alexander Interactive. All rights reserved.
 //
 import NRSimplePlist
+import AudioToolbox
 
 class EndActivityViewModel {
     var didAddMoreTime = false
@@ -30,6 +31,10 @@ class EndActivityViewModel {
             }
             return "ADD \(duration) MINUTES"
         }
+    }
+    
+    func viewDidAppear() {
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
     }
     
     func viewDidDisappear() {
