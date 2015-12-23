@@ -76,19 +76,16 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
     }
     
     @IBAction func takePicture(sender: AnyObject) {
-        if AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo) == .Authorized {
-            self.showCamera()
-        } else {
-            self.showWarningAlert(self.cameraAccessErrorTitle, message: self.cameraAccessErrorMessage)
-        }
-    }
-    
-    private func showWarningAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-        alertController.addAction(okAction)
+        let authorizationStatus = AVCaptureDevice.authorizationStatusForMediaType(AVMediaTypeVideo)
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        switch authorizationStatus {
+        case .Authorized:
+            self.showCamera()
+        case .NotDetermined:
+            self.requestAccess()
+        default:
+            self.showWarningAlert()
+        }
     }
     
     private func showCamera() {
@@ -106,6 +103,27 @@ class TimerViewController: UIViewControllerBase, MZTimerLabelDelegate {
         
         self.presentViewController(camera, animated: true, completion: nil)
     }
+    
+    private func requestAccess() {
+        AVCaptureDevice.requestAccessForMediaType(AVMediaTypeVideo) { (granted: Bool) -> Void in
+            if granted {
+                self.showCamera()
+            } else {
+                self.showWarningAlert()
+            }
+        }
+    }
+    
+    private func showWarningAlert() {
+        let title = self.cameraAccessErrorTitle
+        let message = self.cameraAccessErrorMessage
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(okAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+
     
     // MARK: StyledNavigationBar
     
