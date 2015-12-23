@@ -9,6 +9,7 @@
 import Foundation
 import SafariServices
 import AcknowList
+import NRSimplePlist
 
 struct Setting {
     let title: String
@@ -94,13 +95,10 @@ class SettingsViewModel {
             }),
             
             Setting(title: "Terms and Conditions", icon: "Legal", action:  { vc in
-                let svc = SFSafariViewController(URL: NSURL(string: "http://www.alexanderinteractive.com/")!)
-                vc.presentViewController(svc, animated: true, completion: nil)
+                vc.performSegueWithIdentifier("TermsAndConditions", sender: vc)
             }),
-            
-            
-            
-                            //Setting(title: "The team", icon: "Clock"), // Github pod?
+    
+            //Setting(title: "The team", icon: "Clock"), // Github pod?
         ]
     }
     

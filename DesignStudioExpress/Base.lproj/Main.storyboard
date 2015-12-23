@@ -974,7 +974,7 @@ Sketching Templates</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c4g-vU-wen" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="237" y="1829"/>
+            <point key="canvasLocation" x="159" y="1828.5"/>
         </scene>
         <!--Tab Bar Controller Base-->
         <scene sceneID="B3E-Cj-aJ5">
@@ -2458,7 +2458,7 @@ Sketching Templates</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3853.5" y="1828.5"/>
+            <point key="canvasLocation" x="3778.5" y="1828.5"/>
         </scene>
         <!--Upcoming Challenge View Controller-->
         <scene sceneID="orm-qB-Kv0">
@@ -2647,7 +2647,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ML4-ET-M0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3295" y="1829"/>
+            <point key="canvasLocation" x="3102" y="1828.5"/>
         </scene>
         <!--End Activity View Controller-->
         <scene sceneID="Eza-zW-wyM">
@@ -2857,7 +2857,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmI-95-ehm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4427" y="1829"/>
+            <point key="canvasLocation" x="4420.5" y="1828.5"/>
         </scene>
         <!--End Design Studio View Controller-->
         <scene sceneID="drG-G2-Ldh">
@@ -2950,7 +2950,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cP3-Ar-BZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4981" y="1829"/>
+            <point key="canvasLocation" x="5091" y="1828.5"/>
         </scene>
         <!--Post Design Studio View Controller-->
         <scene sceneID="Z3w-16-t8W">
@@ -3297,7 +3297,7 @@ Sketching Templates</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzX-yL-zEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5545.5" y="1828.5"/>
+            <point key="canvasLocation" x="5767.5" y="1828.5"/>
         </scene>
         <!--Challenge Detail View Controller-->
         <scene sceneID="ndZ-lY-XXN">
@@ -4758,11 +4758,185 @@ Sketching Templates</string>
                     <navigationItem key="navigationItem" id="vbp-L4-Wcp"/>
                     <connections>
                         <outlet property="tableView" destination="eBQ-Sy-Rq5" id="Fan-F0-ZfN"/>
+                        <segue destination="rpW-D7-QrF" kind="show" identifier="TermsAndConditions" id="eS6-OH-GbQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhH-NS-4Bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2568" y="1828.5"/>
+            <point key="canvasLocation" x="2379" y="1828.5"/>
+        </scene>
+        <!--Terms And Conditions View Controller-->
+        <scene sceneID="jJR-l6-LI9">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sNj-vs-fsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="rpW-D7-QrF" customClass="TermsAndConditionsViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HYb-V4-r3t"/>
+                        <viewControllerLayoutGuide type="bottom" id="8AP-xp-KlD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hvs-DA-EGZ">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASX-xY-Wcp">
+                                <rect key="frame" x="-10" y="54" width="440" height="711"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYd-lH-UCq">
+                                        <rect key="frame" x="20" y="20" width="400" height="671"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxe-UF-sgl">
+                                                <rect key="frame" x="20" y="20" width="168" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="204" id="9yg-9d-P6C"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="9yg-9d-P6C"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="9yg-9d-P6C"/>
+                                                    </mask>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Se5-mk-qfg" customClass="FXLabel">
+                                                <rect key="frame" x="20" y="49" width="360" height="602"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="740" id="mqP-vW-oxe"/>
+                                                </constraints>
+                                                <mutableString key="text">Design Studio Express Privacy Policy
+Effective Date: 2015-12-23
+
+Design Studio Express collects the e-mail addresses of those who communicate with us via e-mail, and information submitted through voluntary activities such as site registrations or participation in surveys. We also collect aggregate data regarding the web pages that visitors access on AlexanderInteractive.com website. The information we collect is not shared with or sold to others.
+
+Your data
+Design Studio Express uses third party vendors and hosting partners to provide the necessary hardware, software, networking, storage, and related technology required to run Design Studio Express. Alexander Interactive owns the code, databases, and all rights to the Design Studio Express application. We will not share your data or information with any unauthorized 3rd party vendors without your consent.
+
+Ad servers &amp; Security
+We do not partner with or have special relationships with any ad server companies.
+
+All data and information transmitted with Service is secured by SSL protocol.
+
+Changes
+Design Studio Express may change or update this policy in the future. We will post these changes to our Website and notify you accordingly. If you are concerned about how your information is used, check back at the App Store.
+
+Questions?
+Please contact us at sms@alexanderinteractive.com</mutableString>
+                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="13"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <mutableString key="userLabel">Design Studio Express Privacy Policy Effective Date: 2015-12-23  Design Studio Express collects the e-mail addresses of those who communicate with us via e-mail, and information submitted through voluntary activities such as site registrations or participation in surveys. We also collect aggregate data regarding the web pages that visitors access on AlexanderInteractive.com website. The information we collect is not shared with or sold to others.   Your data Design Studio Express uses third party vendors and hosting partners to provide the necessary hardware, software, networking, storage, and related technology required to run Design Studio Express. Alexander Interactive owns the code, databases, and all rights to the Design Studio Express application. We will not share your data or information with any unauthorized 3rd party vendors without your consent.   Ad servers &amp; Security We do not partner with or have special relationships with any ad server companies.  All data and information transmitted with Service is secured by SSL protocol.   Changes Design Studio Express may change or update this policy in the future. We will post these changes to our Website and notify you accordingly. If you are concerned about how your information is used, check back at the App Store.  Questions? Please contact us at sms@alexanderinteractive.com</mutableString>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineSpacing">
+                                                        <real key="value" value="0.14999999999999999"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="mqP-vW-oxe"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="mqP-vW-oxe"/>
+                                                    </mask>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Se5-mk-qfg" firstAttribute="top" secondItem="hxe-UF-sgl" secondAttribute="bottom" constant="8" id="0fl-E7-JbM"/>
+                                            <constraint firstAttribute="trailing" secondItem="Se5-mk-qfg" secondAttribute="trailing" constant="20" id="ANL-mG-IOS"/>
+                                            <constraint firstItem="hxe-UF-sgl" firstAttribute="leading" secondItem="eYd-lH-UCq" secondAttribute="leading" constant="20" id="BgZ-zL-ACv"/>
+                                            <constraint firstItem="hxe-UF-sgl" firstAttribute="top" secondItem="eYd-lH-UCq" secondAttribute="top" constant="20" id="QI8-Y9-LJ0"/>
+                                            <constraint firstAttribute="height" constant="960" id="clq-9w-NzB"/>
+                                            <constraint firstItem="Se5-mk-qfg" firstAttribute="leading" secondItem="eYd-lH-UCq" secondAttribute="leading" constant="20" id="rt8-fa-Kp1"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="clq-9w-NzB"/>
+                                                <exclude reference="BgZ-zL-ACv"/>
+                                                <exclude reference="QI8-Y9-LJ0"/>
+                                                <exclude reference="0fl-E7-JbM"/>
+                                                <exclude reference="ANL-mG-IOS"/>
+                                                <exclude reference="rt8-fa-Kp1"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="clq-9w-NzB"/>
+                                                <include reference="BgZ-zL-ACv"/>
+                                                <include reference="QI8-Y9-LJ0"/>
+                                                <include reference="0fl-E7-JbM"/>
+                                                <include reference="ANL-mG-IOS"/>
+                                                <include reference="rt8-fa-Kp1"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eYd-lH-UCq" secondAttribute="trailing" id="ETu-48-HZ8"/>
+                                    <constraint firstItem="eYd-lH-UCq" firstAttribute="top" secondItem="ASX-xY-Wcp" secondAttribute="top" id="OlI-hP-EB9"/>
+                                    <constraint firstAttribute="bottom" secondItem="eYd-lH-UCq" secondAttribute="bottom" constant="-76" id="gW1-bE-alB"/>
+                                    <constraint firstItem="eYd-lH-UCq" firstAttribute="leading" secondItem="ASX-xY-Wcp" secondAttribute="leading" id="zEP-vw-pRh"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ETu-48-HZ8"/>
+                                        <exclude reference="OlI-hP-EB9"/>
+                                        <exclude reference="gW1-bE-alB"/>
+                                        <exclude reference="zEP-vw-pRh"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="ETu-48-HZ8"/>
+                                        <include reference="OlI-hP-EB9"/>
+                                        <include reference="gW1-bE-alB"/>
+                                        <include reference="zEP-vw-pRh"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ASX-xY-Wcp" secondAttribute="trailing" constant="-20" id="2ER-Jm-3iF"/>
+                            <constraint firstItem="eYd-lH-UCq" firstAttribute="width" secondItem="Hvs-DA-EGZ" secondAttribute="width" id="6P6-e9-X93"/>
+                            <constraint firstItem="eYd-lH-UCq" firstAttribute="leading" secondItem="Hvs-DA-EGZ" secondAttribute="leadingMargin" constant="-20" id="JDc-Rs-evV"/>
+                            <constraint firstItem="8AP-xp-KlD" firstAttribute="top" secondItem="ASX-xY-Wcp" secondAttribute="bottom" constant="-38" id="ffc-0s-sEg"/>
+                            <constraint firstItem="eYd-lH-UCq" firstAttribute="leading" secondItem="Hvs-DA-EGZ" secondAttribute="leadingMargin" constant="-20" id="fpg-kV-2T6"/>
+                            <constraint firstItem="ASX-xY-Wcp" firstAttribute="leading" secondItem="Hvs-DA-EGZ" secondAttribute="leadingMargin" constant="-20" id="nw8-cX-ZxQ"/>
+                            <constraint firstItem="ASX-xY-Wcp" firstAttribute="top" secondItem="HYb-V4-r3t" secondAttribute="bottom" id="r7x-5B-n5h"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2ER-Jm-3iF"/>
+                                <exclude reference="nw8-cX-ZxQ"/>
+                                <exclude reference="r7x-5B-n5h"/>
+                                <exclude reference="6P6-e9-X93"/>
+                                <exclude reference="JDc-Rs-evV"/>
+                                <exclude reference="fpg-kV-2T6"/>
+                                <exclude reference="ffc-0s-sEg"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="2ER-Jm-3iF"/>
+                                <include reference="nw8-cX-ZxQ"/>
+                                <include reference="r7x-5B-n5h"/>
+                                <include reference="6P6-e9-X93"/>
+                                <include reference="JDc-Rs-evV"/>
+                                <include reference="fpg-kV-2T6"/>
+                                <include reference="ffc-0s-sEg"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2379" y="2514"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hvB-rN-igq">
@@ -4800,7 +4974,96 @@ Sketching Templates</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fR3-0V-lFQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1651" y="1829"/>
+            <point key="canvasLocation" x="1563" y="1828.5"/>
+        </scene>
+        <!--Faq View Controller-->
+        <scene sceneID="fGP-Ow-MIa">
+            <objects>
+                <viewController id="yVp-t2-5ay" customClass="FaqViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8Vu-5L-cZj"/>
+                        <viewControllerLayoutGuide type="bottom" id="AS0-UF-hQ0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eh1-eG-N38">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJt-fu-1pn">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryE-ka-BcX">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0mf-0t-jEG"/>
+                                    <constraint firstAttribute="width" constant="40" id="oZz-UL-MKB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" image="Close_Icon">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0mf-0t-jEG"/>
+                                        <exclude reference="oZz-UL-MKB"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="0mf-0t-jEG"/>
+                                        <include reference="oZz-UL-MKB"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="back:" destination="yVp-t2-5ay" eventType="touchUpInside" id="oWN-OT-U3I"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AS0-UF-hQ0" firstAttribute="top" secondItem="PJt-fu-1pn" secondAttribute="bottom" id="0n9-ZC-djH"/>
+                            <constraint firstItem="PJt-fu-1pn" firstAttribute="leading" secondItem="eh1-eG-N38" secondAttribute="leading" id="LmM-mD-Ckv"/>
+                            <constraint firstAttribute="trailing" secondItem="PJt-fu-1pn" secondAttribute="trailing" id="SVd-cY-fah"/>
+                            <constraint firstItem="PJt-fu-1pn" firstAttribute="top" secondItem="eh1-eG-N38" secondAttribute="top" id="T0F-NX-2dg"/>
+                            <constraint firstItem="ryE-ka-BcX" firstAttribute="top" secondItem="8Vu-5L-cZj" secondAttribute="bottom" constant="16" id="eL1-Hu-IZl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ryE-ka-BcX" secondAttribute="trailing" id="uo5-jy-qTJ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="PJt-fu-1pn"/>
+                                <exclude reference="ryE-ka-BcX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0n9-ZC-djH"/>
+                                <exclude reference="uo5-jy-qTJ"/>
+                                <exclude reference="eL1-Hu-IZl"/>
+                                <exclude reference="T0F-NX-2dg"/>
+                                <exclude reference="LmM-mD-Ckv"/>
+                                <exclude reference="SVd-cY-fah"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="PJt-fu-1pn"/>
+                                <include reference="ryE-ka-BcX"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0n9-ZC-djH"/>
+                                <include reference="uo5-jy-qTJ"/>
+                                <include reference="eL1-Hu-IZl"/>
+                                <include reference="T0F-NX-2dg"/>
+                                <include reference="LmM-mD-Ckv"/>
+                                <include reference="SVd-cY-fah"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="PJt-fu-1pn" id="cRI-gI-vFg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LmO-vv-GJP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-528" y="1829"/>
         </scene>
     </scenes>
     <resources>
@@ -4829,7 +5092,7 @@ Sketching Templates</string>
         <image name="Timer_Image" width="375" height="259"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rLU-CW-y4o"/>
+        <segue reference="2ei-fb-G31"/>
         <segue reference="mkR-Ff-fxU"/>
         <segue reference="aMA-7O-iQY"/>
     </inferredMetricsTieBreakers>

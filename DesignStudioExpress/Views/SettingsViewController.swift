@@ -80,6 +80,14 @@ class SettingsViewController: UIViewControllerBase, UITableViewDataSource, UITab
         }
     }
     
+    // MARK: StyledNavigationBar
+    
+    override func customizeNavBarStyle() {
+        super.customizeNavBarStyle()
+        
+        DesignStudioElementStyles.transparentNavigationBar(self.navigationController!.navigationBar)
+    }
+    
     // MARK: - Custom
     
     // creates table view cell of a specified type

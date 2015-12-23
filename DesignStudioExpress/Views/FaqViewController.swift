@@ -21,16 +21,15 @@ class FaqViewController: UIViewController {
     private func setUpWebView() {
         var urlString: String
         do {
-            urlString = try plistGet("WebViewUrl", forPlistNamed: "Settings") as! String
+            urlString = try plistGet("FaqWebViewUrl", forPlistNamed: "Settings") as! String
         } catch let error {
             // TODO handle errors
             print(error)
             urlString = "http://www.alexanderinteractive.com"
         }
         
-        
         let url = NSURL(string: urlString)!
-        let requestObj: NSURLRequest = NSURLRequest(URL: url)
+        let requestObj = NSURLRequest(URL: url)
         webView.loadRequest(requestObj)
     }
     

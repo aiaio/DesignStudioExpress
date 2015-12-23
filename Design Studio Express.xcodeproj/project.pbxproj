@@ -53,6 +53,7 @@
 		E45541A41C14CCC800595944 /* EndDesignStudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45541A31C14CCC800595944 /* EndDesignStudioViewController.swift */; };
 		E4607F261BF6A82C000C44C7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */; };
 		E4671BCD1C28B6B200EF21B7 /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4671BCC1C28B6B200EF21B7 /* PhotoManager.swift */; };
+		E4671BCF1C2AF5ED00EF21B7 /* TermsAndConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4671BCE1C2AF5ED00EF21B7 /* TermsAndConditionsViewController.swift */; };
 		E468028C1C0E1F7E002438E5 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468028B1C0E1F7E002438E5 /* ActivityDetailViewController.swift */; };
 		E468028E1C0E5EF3002438E5 /* ActivityDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E468028D1C0E5EF3002438E5 /* ActivityDetailViewModel.swift */; };
 		E46A22061C010FC1004D5292 /* ChallengeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46A22051C010FC1004D5292 /* ChallengeDetailViewController.swift */; };
@@ -143,6 +144,7 @@
 		E45541A31C14CCC800595944 /* EndDesignStudioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndDesignStudioViewController.swift; sourceTree = "<group>"; };
 		E4607F251BF6A82C000C44C7 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E4671BCC1C28B6B200EF21B7 /* PhotoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
+		E4671BCE1C2AF5ED00EF21B7 /* TermsAndConditionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsViewController.swift; sourceTree = "<group>"; };
 		E468028B1C0E1F7E002438E5 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
 		E468028D1C0E5EF3002438E5 /* ActivityDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewModel.swift; sourceTree = "<group>"; };
 		E46A22051C010FC1004D5292 /* ChallengeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewController.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				E4D5BD511C1B1D49005B28BE /* ListViewController.swift */,
 				0CA9C92D1C1B6E4500381E98 /* SettingsViewController.swift */,
 				E428B83D1C1CA8A90078533E /* PostDesignStudioViewController.swift */,
+				E4671BCE1C2AF5ED00EF21B7 /* TermsAndConditionsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				E429AF5B1BF539BC00AE4DA7 /* UIImageExtension.swift in Sources */,
 				E468028C1C0E1F7E002438E5 /* ActivityDetailViewController.swift in Sources */,
 				E4D5BD561C1B237F005B28BE /* UIButtonBlue.swift in Sources */,
+				E4671BCF1C2AF5ED00EF21B7 /* TermsAndConditionsViewController.swift in Sources */,
 				E41E772E1C067C6C000364D6 /* UITextDelegateBase.swift in Sources */,
 				E428B83E1C1CA8A90078533E /* PostDesignStudioViewController.swift in Sources */,
 				E46A22081C010FE5004D5292 /* ChallengeDetailViewModel.swift in Sources */,

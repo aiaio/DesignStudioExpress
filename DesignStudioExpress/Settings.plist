@@ -6,7 +6,7 @@
 	<string>DSX Photos</string>
 	<key>AddMoreTimeMinutes</key>
 	<integer>2</integer>
-	<key>WebViewUrl</key>
+	<key>FaqWebViewUrl</key>
 	<string>https://designstudioexpress.s3.amazonaws.com/WebView/index.html</string>
 </dict>
 </plist>
