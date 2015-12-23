@@ -34,6 +34,10 @@ class EndActivityViewModel {
     }
     
     func viewDidAppear() {
+        // play alarm sound
+        // http://iphonedevwiki.net/index.php/AudioServices
+        AudioServicesPlayAlertSound(1304)
+        // play vibration sound
         AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
     }
     
