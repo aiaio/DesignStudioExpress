@@ -635,7 +635,7 @@ Background music is optional.</string>
                                                         </mask>
                                                     </variation>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Download" translatesAutoresizingMaskIntoConstraints="NO" id="qMJ-H3-9Na">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pencil_Icon_Gray" translatesAutoresizingMaskIntoConstraints="NO" id="qMJ-H3-9Na">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="2es-qA-ySG"/>
@@ -694,6 +694,7 @@ Background music is optional.</string>
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="120" id="NFu-zH-w0q"/>
+                                                        <constraint firstAttribute="width" constant="200" id="hiA-ec-JIx"/>
                                                     </constraints>
                                                     <string key="text">Colored markers
 Pens
@@ -711,11 +712,13 @@ Sketching Templates</string>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="NFu-zH-w0q"/>
+                                                            <exclude reference="hiA-ec-JIx"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="NFu-zH-w0q"/>
+                                                            <include reference="hiA-ec-JIx"/>
                                                         </mask>
                                                     </variation>
                                                 </label>
@@ -2369,33 +2372,33 @@ Sketching Templates</string>
                                 <exclude reference="tEO-Ru-lSL"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="ROL-b7-PL0"/>
-                                <exclude reference="Yma-lb-LC1"/>
-                                <exclude reference="d1P-dI-0YO"/>
-                                <exclude reference="XG0-Mr-CcP"/>
-                                <exclude reference="ipX-tx-HR2"/>
+                                <exclude reference="fg7-ak-Cgy"/>
+                                <exclude reference="7LI-LD-dlp"/>
+                                <exclude reference="ROb-vA-hB8"/>
+                                <exclude reference="vKS-xA-hiK"/>
                                 <exclude reference="0y1-Hs-E0f"/>
                                 <exclude reference="dAq-vk-LQj"/>
+                                <exclude reference="K3G-oX-iN1"/>
+                                <exclude reference="WOY-UL-wII"/>
+                                <exclude reference="pG1-RJ-bdC"/>
+                                <exclude reference="tHL-Ph-O51"/>
+                                <exclude reference="XG0-Mr-CcP"/>
+                                <exclude reference="ipX-tx-HR2"/>
+                                <exclude reference="QbR-hD-zoF"/>
+                                <exclude reference="c9x-c7-3ti"/>
+                                <exclude reference="gU7-TL-IiN"/>
+                                <exclude reference="lml-Of-Vld"/>
                                 <exclude reference="aBg-6a-7oK"/>
                                 <exclude reference="gSp-x6-7mD"/>
                                 <exclude reference="grH-dl-Ad3"/>
                                 <exclude reference="MgW-6j-Gh9"/>
                                 <exclude reference="dpe-ad-1yE"/>
                                 <exclude reference="sUh-gF-qDV"/>
-                                <exclude reference="K3G-oX-iN1"/>
-                                <exclude reference="WOY-UL-wII"/>
-                                <exclude reference="pG1-RJ-bdC"/>
-                                <exclude reference="tHL-Ph-O51"/>
-                                <exclude reference="QbR-hD-zoF"/>
-                                <exclude reference="c9x-c7-3ti"/>
-                                <exclude reference="gU7-TL-IiN"/>
-                                <exclude reference="lml-Of-Vld"/>
-                                <exclude reference="7LI-LD-dlp"/>
-                                <exclude reference="ROb-vA-hB8"/>
-                                <exclude reference="vKS-xA-hiK"/>
+                                <exclude reference="ROL-b7-PL0"/>
+                                <exclude reference="Yma-lb-LC1"/>
+                                <exclude reference="d1P-dI-0YO"/>
                                 <exclude reference="Ry0-Qm-DaX"/>
                                 <exclude reference="cmY-tc-DtR"/>
-                                <exclude reference="fg7-ak-Cgy"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -2411,33 +2414,33 @@ Sketching Templates</string>
                                 <include reference="tEO-Ru-lSL"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="ROL-b7-PL0"/>
-                                <include reference="Yma-lb-LC1"/>
-                                <include reference="d1P-dI-0YO"/>
-                                <include reference="XG0-Mr-CcP"/>
-                                <include reference="ipX-tx-HR2"/>
+                                <include reference="fg7-ak-Cgy"/>
+                                <include reference="7LI-LD-dlp"/>
+                                <include reference="ROb-vA-hB8"/>
+                                <include reference="vKS-xA-hiK"/>
                                 <include reference="0y1-Hs-E0f"/>
                                 <include reference="dAq-vk-LQj"/>
+                                <include reference="K3G-oX-iN1"/>
+                                <include reference="WOY-UL-wII"/>
+                                <include reference="pG1-RJ-bdC"/>
+                                <include reference="tHL-Ph-O51"/>
+                                <include reference="XG0-Mr-CcP"/>
+                                <include reference="ipX-tx-HR2"/>
+                                <include reference="QbR-hD-zoF"/>
+                                <include reference="c9x-c7-3ti"/>
+                                <include reference="gU7-TL-IiN"/>
+                                <include reference="lml-Of-Vld"/>
                                 <include reference="aBg-6a-7oK"/>
                                 <include reference="gSp-x6-7mD"/>
                                 <include reference="grH-dl-Ad3"/>
                                 <include reference="MgW-6j-Gh9"/>
                                 <include reference="dpe-ad-1yE"/>
                                 <include reference="sUh-gF-qDV"/>
-                                <include reference="K3G-oX-iN1"/>
-                                <include reference="WOY-UL-wII"/>
-                                <include reference="pG1-RJ-bdC"/>
-                                <include reference="tHL-Ph-O51"/>
-                                <include reference="QbR-hD-zoF"/>
-                                <include reference="c9x-c7-3ti"/>
-                                <include reference="gU7-TL-IiN"/>
-                                <include reference="lml-Of-Vld"/>
-                                <include reference="7LI-LD-dlp"/>
-                                <include reference="ROb-vA-hB8"/>
-                                <include reference="vKS-xA-hiK"/>
+                                <include reference="ROL-b7-PL0"/>
+                                <include reference="Yma-lb-LC1"/>
+                                <include reference="d1P-dI-0YO"/>
                                 <include reference="Ry0-Qm-DaX"/>
                                 <include reference="cmY-tc-DtR"/>
-                                <include reference="fg7-ak-Cgy"/>
                             </mask>
                         </variation>
                     </view>
@@ -4768,22 +4771,22 @@ Sketching Templates</string>
         <!--Terms And Conditions View Controller-->
         <scene sceneID="jJR-l6-LI9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sNj-vs-fsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="rpW-D7-QrF" customClass="TermsAndConditionsViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HYb-V4-r3t"/>
                         <viewControllerLayoutGuide type="bottom" id="8AP-xp-KlD"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hvs-DA-EGZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASX-xY-Wcp">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ASX-xY-Wcp">
                                 <rect key="frame" x="-10" y="54" width="440" height="711"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYd-lH-UCq">
+                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eYd-lH-UCq">
                                         <rect key="frame" x="20" y="20" width="400" height="671"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxe-UF-sgl">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Terms and Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxe-UF-sgl">
                                                 <rect key="frame" x="20" y="20" width="168" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="204" id="9yg-9d-P6C"/>
@@ -4802,12 +4805,12 @@ Sketching Templates</string>
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Se5-mk-qfg" customClass="FXLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Se5-mk-qfg" customClass="FXLabel">
                                                 <rect key="frame" x="20" y="49" width="360" height="602"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="740" id="mqP-vW-oxe"/>
                                                 </constraints>
-                                                <mutableString key="text">Design Studio Express Privacy Policy
+                                                <string key="text">Design Studio Express Privacy Policy
 Effective Date: 2015-12-23
 
 Design Studio Express collects the e-mail addresses of those who communicate with us via e-mail, and information submitted through voluntary activities such as site registrations or participation in surveys. We also collect aggregate data regarding the web pages that visitors access on AlexanderInteractive.com website. The information we collect is not shared with or sold to others.
@@ -4824,11 +4827,11 @@ Changes
 Design Studio Express may change or update this policy in the future. We will post these changes to our Website and notify you accordingly. If you are concerned about how your information is used, check back at the App Store.
 
 Questions?
-Please contact us at sms@alexanderinteractive.com</mutableString>
+Please contact us at sms@alexanderinteractive.com</string>
                                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="13"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <mutableString key="userLabel">Design Studio Express Privacy Policy Effective Date: 2015-12-23  Design Studio Express collects the e-mail addresses of those who communicate with us via e-mail, and information submitted through voluntary activities such as site registrations or participation in surveys. We also collect aggregate data regarding the web pages that visitors access on AlexanderInteractive.com website. The information we collect is not shared with or sold to others.   Your data Design Studio Express uses third party vendors and hosting partners to provide the necessary hardware, software, networking, storage, and related technology required to run Design Studio Express. Alexander Interactive owns the code, databases, and all rights to the Design Studio Express application. We will not share your data or information with any unauthorized 3rd party vendors without your consent.   Ad servers &amp; Security We do not partner with or have special relationships with any ad server companies.  All data and information transmitted with Service is secured by SSL protocol.   Changes Design Studio Express may change or update this policy in the future. We will post these changes to our Website and notify you accordingly. If you are concerned about how your information is used, check back at the App Store.  Questions? Please contact us at sms@alexanderinteractive.com</mutableString>
+                                                <string key="userLabel">Design Studio Express Privacy Policy Effective Date: 2015-12-23  Design Studio Express collects the e-mail addresses of those who communicate with us via e-mail, and information submitted through voluntary activities such as site registrations or participation in surveys. We also collect aggregate data regarding the web pages that visitors access on AlexanderInteractive.com website. The information we collect is not shared with or sold to others.   Your data Design Studio Express uses third party vendors and hosting partners to provide the necessary hardware, software, networking, storage, and related technology required to run Design Studio Express. Alexander Interactive owns the code, databases, and all rights to the Design Studio Express application. We will not share your data or information with any unauthorized 3rd party vendors without your consent.   Ad servers &amp; Security We do not partner with or have special relationships with any ad server companies.  All data and information transmitted with Service is secured by SSL protocol.   Changes Design Studio Express may change or update this policy in the future. We will post these changes to our Website and notify you accordingly. If you are concerned about how your information is used, check back at the App Store.  Questions? Please contact us at sms@alexanderinteractive.com</string>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="lineSpacing">
                                                         <real key="value" value="0.14999999999999999"/>
@@ -4935,6 +4938,7 @@ Please contact us at sms@alexanderinteractive.com</mutableString>
                         </variation>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sNj-vs-fsk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2379" y="2514"/>
         </scene>
@@ -5035,11 +5039,11 @@ Please contact us at sms@alexanderinteractive.com</mutableString>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="0n9-ZC-djH"/>
-                                <exclude reference="uo5-jy-qTJ"/>
                                 <exclude reference="eL1-Hu-IZl"/>
-                                <exclude reference="T0F-NX-2dg"/>
+                                <exclude reference="uo5-jy-qTJ"/>
                                 <exclude reference="LmM-mD-Ckv"/>
                                 <exclude reference="SVd-cY-fah"/>
+                                <exclude reference="T0F-NX-2dg"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -5049,11 +5053,11 @@ Please contact us at sms@alexanderinteractive.com</mutableString>
                             </mask>
                             <mask key="constraints">
                                 <include reference="0n9-ZC-djH"/>
-                                <include reference="uo5-jy-qTJ"/>
                                 <include reference="eL1-Hu-IZl"/>
-                                <include reference="T0F-NX-2dg"/>
+                                <include reference="uo5-jy-qTJ"/>
                                 <include reference="LmM-mD-Ckv"/>
                                 <include reference="SVd-cY-fah"/>
+                                <include reference="T0F-NX-2dg"/>
                             </mask>
                         </variation>
                     </view>
@@ -5082,6 +5086,7 @@ Please contact us at sms@alexanderinteractive.com</mutableString>
         <image name="Lock_icon_White" width="10" height="13"/>
         <image name="Open_Book" width="18" height="17"/>
         <image name="Pencil_Icon_Blue" width="20" height="20"/>
+        <image name="Pencil_Icon_Gray" width="21" height="21"/>
         <image name="Pencil_Icon_Orange" width="22" height="21"/>
         <image name="Post_Studio_Camera" width="53" height="42"/>
         <image name="Settings_Icon" width="24" height="24"/>

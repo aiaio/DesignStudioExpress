@@ -14,8 +14,6 @@ class HomeViewModel {
     private var data: [DesignStudio] = []
     
     init () {
-        data = self.loadDesignStudios()
-        
         /* 
          * This will delete entire database, only for testing purposes
          *
@@ -23,7 +21,9 @@ class HomeViewModel {
             if NSFileManager.defaultManager().fileExistsAtPath(path) {
                 try! NSFileManager.defaultManager().removeItemAtPath(path)
             }
-        } */
+        }*/
+        
+        data = self.loadDesignStudios()
     }
     
     private func loadDesignStudios() -> [DesignStudio] {
