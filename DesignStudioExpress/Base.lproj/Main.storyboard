@@ -4092,7 +4092,7 @@ Sketching Templates</string>
                                                             <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="labelTextColor">
-                                                            <color key="value" red="0.96862745100000003" green="0.70588235290000001" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="value" red="0.24313725490196078" green="0.27843137254901962" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="labelBackgroundColor">
                                                             <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
