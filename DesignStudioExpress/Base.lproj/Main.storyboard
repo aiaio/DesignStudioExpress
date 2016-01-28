@@ -1531,6 +1531,7 @@ Sketching Templates</string>
                         <outlet property="continueButton" destination="qra-NB-i6S" id="lBG-0o-5V0"/>
                         <outlet property="duration" destination="tdV-Xf-uov" id="FfB-wn-JEQ"/>
                         <outlet property="editIcon" destination="U9D-jf-efE" id="5YM-L2-1XT"/>
+                        <outlet property="editLabel" destination="4Hc-t9-ALZ" id="BMk-gI-Gp5"/>
                         <outlet property="name" destination="lI5-bb-OmX" id="dBE-Vg-Lc9"/>
                     </connections>
                 </viewController>

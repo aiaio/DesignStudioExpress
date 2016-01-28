@@ -8,6 +8,7 @@
 
 import UIKit
 import SZTextView
+import FXLabel
 
 class DetailDesignStudioViewController: UIViewControllerBase {
     
@@ -20,6 +21,7 @@ class DetailDesignStudioViewController: UIViewControllerBase {
     @IBOutlet weak var challenges: UILabel!
     @IBOutlet weak var continueButton: UIButtonRed!
     @IBOutlet weak var editIcon: UIImageView!
+    @IBOutlet weak var editLabel: FXLabel!
     
     let vm = DetailDesignStudioViewModel()
     
@@ -120,6 +122,7 @@ class DetailDesignStudioViewController: UIViewControllerBase {
         self.name.editable = vm.editingEnabled
         self.duration.enabled = vm.editingEnabled
         self.editIcon.image = UIImage(named: vm.editIconImage)
+        self.editLabel.hidden = !vm.editingEnabled
     }
     
     func updateData() {
