@@ -12,7 +12,7 @@
         <!--Intro View Controller-->
         <scene sceneID="J55-N2-4xT">
             <objects>
-                <viewController id="aOo-7J-XTA" customClass="IntroViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aOo-7J-XTA" customClass="IntroViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pBu-Ie-QKl"/>
                         <viewControllerLayoutGuide type="bottom" id="iEb-sR-1Qz"/>
@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32R-dO-Hca" customClass="UIButtonRed" customModule="Design_Studio_Express" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32R-dO-Hca" customClass="UIButtonRed" customModule="Design_Studio" customModuleProvider="target">
                                 <rect key="frame" x="312" y="535" width="268" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="268" id="9g2-9o-tHe"/>
@@ -43,7 +43,7 @@
                                     <segue destination="alx-4r-Kum" kind="modal" modalTransitionStyle="crossDissolve" id="fkA-8A-Adk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMB-pt-1Ro" customClass="UIButtonLightBlue" customModule="Design_Studio_Express" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMB-pt-1Ro" customClass="UIButtonLightBlue" customModule="Design_Studio" customModuleProvider="target">
                                 <rect key="frame" x="20" y="535" width="269" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="OAp-aM-ssW"/>
@@ -211,7 +211,7 @@
         <!--Faq View Controller-->
         <scene sceneID="saD-SH-QxR">
             <objects>
-                <viewController id="aJv-98-1PX" customClass="FaqViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aJv-98-1PX" customClass="FaqViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c1h-Pg-gVl"/>
                         <viewControllerLayoutGuide type="bottom" id="I2v-hP-3gM"/>
@@ -300,7 +300,7 @@
         <!--List View Controller-->
         <scene sceneID="0eJ-gl-wUH">
             <objects>
-                <tableViewController storyboardIdentifier="FaqViewController" automaticallyAdjustsScrollViewInsets="NO" id="sXJ-yl-Usk" customClass="ListViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FaqViewController" automaticallyAdjustsScrollViewInsets="NO" id="sXJ-yl-Usk" customClass="ListViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="28" id="65Z-Vl-f5Y">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -982,7 +982,7 @@ Sketching Templates</string>
         <!--Tab Bar Controller Base-->
         <scene sceneID="B3E-Cj-aJ5">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" id="alx-4r-Kum" customClass="UITabBarControllerBase" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="alx-4r-Kum" customClass="UITabBarControllerBase" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="fp2-yq-fFR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1023,7 +1023,7 @@ Sketching Templates</string>
         <!--Home View Controller-->
         <scene sceneID="A2k-Yd-poh">
             <objects>
-                <viewController id="dLs-bE-YaS" customClass="HomeViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dLs-bE-YaS" customClass="HomeViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lna-Su-ilg"/>
                         <viewControllerLayoutGuide type="bottom" id="pFn-Ej-NQy"/>
@@ -1131,7 +1131,7 @@ Sketching Templates</string>
         <!--Detail Design Studio View Controller-->
         <scene sceneID="qo3-EG-jvo">
             <objects>
-                <viewController storyboardIdentifier="DetailDesignStudioViewController" id="Fgk-O3-KZM" customClass="DetailDesignStudioViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailDesignStudioViewController" id="Fgk-O3-KZM" customClass="DetailDesignStudioViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bab-s9-4mB"/>
                         <viewControllerLayoutGuide type="bottom" id="ebn-cM-bwx"/>
@@ -1362,7 +1362,7 @@ Sketching Templates</string>
                                     <action selector="durationBackgroundTouched:" destination="Fgk-O3-KZM" eventType="touchUpInside" id="I5v-nP-n9q"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qra-NB-i6S" customClass="UIButtonRed" customModule="Design_Studio_Express" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qra-NB-i6S" customClass="UIButtonRed" customModule="Design_Studio" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="UI4-2e-JqN"/>
@@ -1404,7 +1404,7 @@ Sketching Templates</string>
                                     <outletCollection property="gestureRecognizers" destination="MXw-Nx-uvq" appends="YES" id="J0X-HH-wc4"/>
                                 </connections>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5RU-6m-MPY" customClass="UIButtonTransparent" customModule="Design_Studio_Express" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5RU-6m-MPY" customClass="UIButtonTransparent" customModule="Design_Studio" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Xdo-ka-DeG"/>
@@ -1547,7 +1547,7 @@ Sketching Templates</string>
         <!--Challenges View Controller-->
         <scene sceneID="Arj-1v-XL8">
             <objects>
-                <viewController storyboardIdentifier="ChallengesViewController" id="uXv-4T-Okg" customClass="ChallengesViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChallengesViewController" id="uXv-4T-Okg" customClass="ChallengesViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="37G-fI-jCc"/>
                         <viewControllerLayoutGuide type="bottom" id="oqx-gn-HlL"/>
@@ -1587,7 +1587,7 @@ Sketching Templates</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tg6-Z7-knV" customClass="UIButtonRed" customModule="Design_Studio_Express" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tg6-Z7-knV" customClass="UIButtonRed" customModule="Design_Studio" customModuleProvider="target">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="OGC-WR-73X"/>
@@ -1690,7 +1690,7 @@ Sketching Templates</string>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T27-tB-Zgt">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaA-1Q-LJs" customClass="UIButtonBlue" customModule="Design_Studio_Express" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BaA-1Q-LJs" customClass="UIButtonBlue" customModule="Design_Studio" customModuleProvider="target">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="aRD-sf-Wib"/>
@@ -1751,7 +1751,7 @@ Sketching Templates</string>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="challengeCell" rowHeight="110" id="FwK-TZ-qVW" customClass="MGSwipeTableCellChallenge" customModule="Design_Studio_Express" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="challengeCell" rowHeight="110" id="FwK-TZ-qVW" customClass="MGSwipeTableCellChallenge" customModule="Design_Studio" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="92" width="400" height="110"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FwK-TZ-qVW" id="YB4-4x-Nbp">
@@ -1930,14 +1930,14 @@ Sketching Templates</string>
                                                     <segue destination="7iM-cl-ZBW" kind="show" identifier="EditChallenge" id="SWD-un-Cl3"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="addButtonCell" rowHeight="75" id="c7z-w7-tMF" customClass="UITableViewCellAddChallenge" customModule="Design_Studio_Express" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="addButtonCell" rowHeight="75" id="c7z-w7-tMF" customClass="UITableViewCellAddChallenge" customModule="Design_Studio" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="202" width="400" height="75"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c7z-w7-tMF" id="PS2-Aq-nEu">
                                                     <rect key="frame" x="0.0" y="0.0" width="400" height="74"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynE-yr-ku8" customClass="UIButtonTransparent" customModule="Design_Studio_Express" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynE-yr-ku8" customClass="UIButtonTransparent" customModule="Design_Studio" customModuleProvider="target">
                                                             <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="50" id="Iwq-0w-4mE"/>
@@ -2103,7 +2103,7 @@ Sketching Templates</string>
         <!--Timer View Controller-->
         <scene sceneID="hRY-AA-5n1">
             <objects>
-                <viewController storyboardIdentifier="TimerViewController" id="AmZ-1V-xYD" customClass="TimerViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimerViewController" id="AmZ-1V-xYD" customClass="TimerViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CzE-h2-Ij5"/>
                         <viewControllerLayoutGuide type="bottom" id="umt-eQ-gme"/>
@@ -2198,7 +2198,7 @@ Sketching Templates</string>
                                 <color key="textColor" red="0.37254901960784315" green="0.53333333333333333" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C88-5T-bIJ" customClass="UIButtonLightBlue" customModule="Design_Studio_Express" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C88-5T-bIJ" customClass="UIButtonLightBlue" customModule="Design_Studio" customModuleProvider="target">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Pe1-DO-iiz"/>
@@ -2467,7 +2467,7 @@ Sketching Templates</string>
         <!--Upcoming Challenge View Controller-->
         <scene sceneID="orm-qB-Kv0">
             <objects>
-                <viewController storyboardIdentifier="UpcomingChallengeViewController" id="Jcl-AR-Twc" customClass="UpcomingChallengeViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpcomingChallengeViewController" id="Jcl-AR-Twc" customClass="UpcomingChallengeViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sKu-bs-iFp"/>
                         <viewControllerLayoutGuide type="bottom" id="QDM-h2-rPj"/>
@@ -2656,7 +2656,7 @@ Sketching Templates</string>
         <!--End Activity View Controller-->
         <scene sceneID="Eza-zW-wyM">
             <objects>
-                <viewController storyboardIdentifier="ActivityEndedScreen" id="L7p-8g-BbD" customClass="EndActivityViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActivityEndedScreen" id="L7p-8g-BbD" customClass="EndActivityViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hoo-PC-iVv"/>
                         <viewControllerLayoutGuide type="bottom" id="DUb-mc-39k"/>
@@ -2720,7 +2720,7 @@ Sketching Templates</string>
                                             </mask>
                                         </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P44-PC-iWg" customClass="UIButtonRed" customModule="Design_Studio_Express" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P44-PC-iWg" customClass="UIButtonRed" customModule="Design_Studio" customModuleProvider="target">
                                         <rect key="frame" x="142" y="145" width="108" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="VQk-mb-BqS"/>
@@ -2743,7 +2743,7 @@ Sketching Templates</string>
                                             <action selector="nextActivity:" destination="L7p-8g-BbD" eventType="touchUpInside" id="Mbd-qk-PPo"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlU-ML-Fuk" customClass="UIButtonTransparent" customModule="Design_Studio_Express" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlU-ML-Fuk" customClass="UIButtonTransparent" customModule="Design_Studio" customModuleProvider="target">
                                         <rect key="frame" x="151" y="183" width="99" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="1hu-aB-5M3"/>
@@ -2866,7 +2866,7 @@ Sketching Templates</string>
         <!--End Design Studio View Controller-->
         <scene sceneID="drG-G2-Ldh">
             <objects>
-                <viewController storyboardIdentifier="EndDesignStudioViewController" id="hQK-eX-rHn" customClass="EndDesignStudioViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EndDesignStudioViewController" id="hQK-eX-rHn" customClass="EndDesignStudioViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Px5-jV-NFe"/>
                         <viewControllerLayoutGuide type="bottom" id="Arf-4E-rXS"/>
@@ -2959,7 +2959,7 @@ Sketching Templates</string>
         <!--Post Design Studio View Controller-->
         <scene sceneID="Z3w-16-t8W">
             <objects>
-                <viewController storyboardIdentifier="PostDesignStudioViewController" id="c42-wT-IBN" customClass="PostDesignStudioViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostDesignStudioViewController" id="c42-wT-IBN" customClass="PostDesignStudioViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VKM-eA-UzD"/>
                         <viewControllerLayoutGuide type="bottom" id="1vs-Ox-0IL"/>
@@ -3306,7 +3306,7 @@ Sketching Templates</string>
         <!--Challenge Detail View Controller-->
         <scene sceneID="ndZ-lY-XXN">
             <objects>
-                <viewController id="7iM-cl-ZBW" customClass="ChallengeDetailViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7iM-cl-ZBW" customClass="ChallengeDetailViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oQx-ve-YGO"/>
                         <viewControllerLayoutGuide type="bottom" id="8Fy-Ov-mv4"/>
@@ -3320,7 +3320,7 @@ Sketching Templates</string>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="headerCell" rowHeight="250" id="LDO-q0-UZE" customClass="UITableViewCellChallengeHeader" customModule="Design_Studio_Express" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" showsReorderControl="YES" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="headerCell" rowHeight="250" id="LDO-q0-UZE" customClass="UITableViewCellChallengeHeader" customModule="Design_Studio" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LDO-q0-UZE" id="Wrj-h7-cgk">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="249"/>
@@ -3585,7 +3585,7 @@ Sketching Templates</string>
                                             <outlet property="title" destination="q0m-gI-nNx" id="RB7-HJ-TBy"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="activityCell" rowHeight="155" id="B85-3B-pyO" customClass="UITableViewCellActivity" customModule="Design_Studio_Express" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="activityCell" rowHeight="155" id="B85-3B-pyO" customClass="UITableViewCellActivity" customModule="Design_Studio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B85-3B-pyO" id="JpU-Tl-TVE">
@@ -3852,7 +3852,7 @@ Sketching Templates</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PmS-1L-VvW">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Poc-LB-Cfn" customClass="UIButtonRed" customModule="Design_Studio_Express" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Poc-LB-Cfn" customClass="UIButtonRed" customModule="Design_Studio" customModuleProvider="target">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="Veh-2G-ZyI"/>
@@ -3966,7 +3966,7 @@ Sketching Templates</string>
         <!--Activity Detail View Controller-->
         <scene sceneID="nTs-Yi-Uj9">
             <objects>
-                <tableViewController id="kCB-ZA-PFf" customClass="ActivityDetailViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="kCB-ZA-PFf" customClass="ActivityDetailViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" id="6zO-9o-EAh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4413,7 +4413,7 @@ Sketching Templates</string>
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="169"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaP-0Q-gJO" customClass="UIButtonRed" customModule="Design_Studio_Express" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SaP-0Q-gJO" customClass="UIButtonRed" customModule="Design_Studio" customModuleProvider="target">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="5HC-Ef-lW6"/>
@@ -4433,7 +4433,7 @@ Sketching Templates</string>
                                                         <action selector="saveActivity:" destination="kCB-ZA-PFf" eventType="touchUpInside" id="Vvp-9d-NCs"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZ5-4Q-t8x" customClass="UIButtonTransparent" customModule="Design_Studio_Express" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZ5-4Q-t8x" customClass="UIButtonTransparent" customModule="Design_Studio" customModuleProvider="target">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="FUP-9g-fN1"/>
@@ -4522,7 +4522,7 @@ Sketching Templates</string>
         <!--Settings View Controller-->
         <scene sceneID="39B-Jo-tZe">
             <objects>
-                <viewController id="LXi-CI-NKN" customClass="SettingsViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LXi-CI-NKN" customClass="SettingsViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KNI-Bi-xlp"/>
                         <viewControllerLayoutGuide type="bottom" id="Z0C-KN-qT1"/>
@@ -4651,7 +4651,7 @@ Sketching Templates</string>
                                         <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="0.0"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="setttingCell" rowHeight="60" id="noX-ab-eY3" customClass="UITableViewCellSettings" customModule="Design_Studio_Express" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="setttingCell" rowHeight="60" id="noX-ab-eY3" customClass="UITableViewCellSettings" customModule="Design_Studio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="noX-ab-eY3" id="sj9-75-2wc">
@@ -4772,7 +4772,7 @@ Sketching Templates</string>
         <!--Terms And Conditions View Controller-->
         <scene sceneID="jJR-l6-LI9">
             <objects>
-                <viewController id="rpW-D7-QrF" customClass="TermsAndConditionsViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rpW-D7-QrF" customClass="TermsAndConditionsViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HYb-V4-r3t"/>
                         <viewControllerLayoutGuide type="bottom" id="8AP-xp-KlD"/>
@@ -4784,11 +4784,72 @@ Sketching Templates</string>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXL-lT-pRG">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Last updated: January 05, 2016Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the Design Studio Express mobile application (the "Service") operated by Alexander Interactive ("us", "we", or "our").Your access to and use of the Service is conditioned upon your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who wish to access or use the Service.By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you do not have permission to access the Service.Intellectual PropertyThe Service and its original content, features and functionality are and will remain the exclusive property of Alexander Interactive and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Alexander Interactive.    Links To Other Web SitesOur Service may contain links to third party web sites or services that are not owned or controlled by Alexander Interactive.Alexander Interactive has no control over, and assumes no responsibility for the content, privacy policies, or practices of any third party web sites or services. We do not warrant the offerings of any of these entities/individuals or their websites.You acknowledge and agree that Alexander Interactive shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such third party web sites or services.We strongly advise you to read the terms and conditions and privacy policies of any third party web sites or services that you visit.TerminationWe may terminate or suspend your access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.IndemnificationYou agree to defend, indemnify and hold harmless Alexander Interactive and its licensee and licensors, and their employees, contractors, agents, officers and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees), resulting from or arising out of a) your use and access of the Service, or b) a breach of these Terms.            Limitation Of LiabilityIn no event shall Alexander Interactive, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.DisclaimerYour use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance.Alexander Interactive its subsidiaries, affiliates, and its licensors do not warrant that a) the Service will function uninterrupted, secure or available at any particular time or location; b) any errors or defects will be corrected; c) the Service is free of viruses or other harmful components; or d) the results of using the Service will meet your requirements.ExclusionsSome jurisdictions do not allow the exclusion of certain warranties or the exclusion or limitation of liability for consequential or incidental damages, so the limitations above may not apply to you.Governing LawThese Terms shall be governed and construed in accordance with the laws of New York, United States, without regard to its conflict of law provisions.Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have had between us regarding the Service.ChangesWe reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.By continuing to access or use our Service after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use the Service.Contact UsIf you have any questions about these Terms, please contact us: appsupport@alexanderinteractive.com</mutableString>
+                                <string key="text">Last updated: January 05, 2016
+
+Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the Design Studio Express mobile application (the "Service") operated by Alexander Interactive ("us", "we", or "our").
+
+Your access to and use of the Service is conditioned upon your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who wish to access or use the Service.
+
+By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you do not have permission to access the Service.
+
+Intellectual Property
+The Service and its original content, features and functionality are and will remain the exclusive property of Alexander Interactive and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Alexander Interactive.    
+
+Links To Other Web Sites
+
+Our Service may contain links to third party web sites or services that are not owned or controlled by Alexander Interactive.
+
+Alexander Interactive has no control over, and assumes no responsibility for the content, privacy policies, or practices of any third party web sites or services. We do not warrant the offerings of any of these entities/individuals or their websites.
+
+You acknowledge and agree that Alexander Interactive shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such third party web sites or services.
+
+We strongly advise you to read the terms and conditions and privacy policies of any third party web sites or services that you visit.
+
+Termination
+
+We may terminate or suspend your access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.
+
+All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
+
+Indemnification
+
+You agree to defend, indemnify and hold harmless Alexander Interactive and its licensee and licensors, and their employees, contractors, agents, officers and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees), resulting from or arising out of a) your use and access of the Service, or b) a breach of these Terms.    
+        
+Limitation Of Liability
+
+In no event shall Alexander Interactive, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.
+
+Disclaimer
+
+Your use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance.
+
+Alexander Interactive its subsidiaries, affiliates, and its licensors do not warrant that a) the Service will function uninterrupted, secure or available at any particular time or location; b) any errors or defects will be corrected; c) the Service is free of viruses or other harmful components; or d) the results of using the Service will meet your requirements.
+
+Exclusions
+
+Some jurisdictions do not allow the exclusion of certain warranties or the exclusion or limitation of liability for consequential or incidental damages, so the limitations above may not apply to you.
+
+
+Governing Law
+
+These Terms shall be governed and construed in accordance with the laws of New York, United States, without regard to its conflict of law provisions.
+
+Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have had between us regarding the Service.
+
+Changes
+
+We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.
+
+By continuing to access or use our Service after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use the Service.
+
+Contact Us
+
+If you have any questions about these Terms, please contact us: appsupport@alexanderinteractive.com
+</string>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Terms and Conditions (&quot;Terms&quot;)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxe-UF-sgl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and Conditions (&quot;Terms&quot;)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxe-UF-sgl">
                                 <rect key="frame" x="20" y="20" width="168" height="21"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -4810,12 +4871,12 @@ Sketching Templates</string>
                                 <exclude reference="hxe-UF-sgl"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="h59-Wk-YKt"/>
                                 <exclude reference="03g-5p-MRC"/>
                                 <exclude reference="TSc-HK-3vV"/>
                                 <exclude reference="Z5o-jA-c6M"/>
                                 <exclude reference="hwX-kb-OVg"/>
                                 <exclude reference="n4p-nK-LKI"/>
-                                <exclude reference="h59-Wk-YKt"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -4824,12 +4885,12 @@ Sketching Templates</string>
                                 <include reference="hxe-UF-sgl"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="h59-Wk-YKt"/>
                                 <include reference="03g-5p-MRC"/>
                                 <include reference="TSc-HK-3vV"/>
                                 <include reference="Z5o-jA-c6M"/>
                                 <include reference="hwX-kb-OVg"/>
                                 <include reference="n4p-nK-LKI"/>
-                                <include reference="h59-Wk-YKt"/>
                             </mask>
                         </variation>
                     </view>
@@ -4879,7 +4940,7 @@ Sketching Templates</string>
         <!--Faq View Controller-->
         <scene sceneID="fGP-Ow-MIa">
             <objects>
-                <viewController id="yVp-t2-5ay" customClass="FaqViewController" customModule="Design_Studio_Express" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yVp-t2-5ay" customClass="FaqViewController" customModule="Design_Studio" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Vu-5L-cZj"/>
                         <viewControllerLayoutGuide type="bottom" id="AS0-UF-hQ0"/>
