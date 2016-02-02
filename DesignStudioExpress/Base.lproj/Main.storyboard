@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aOo-7J-XTA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aOo-7J-XTA">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -4544,6 +4544,9 @@ Sketching Templates</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings_Image" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-OE-sve">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="-8" y="-10" width="256" height="370"/>
+                                                    </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61i-8S-Zuq" customClass="FXLabel">
                                                     <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -4563,7 +4566,8 @@ Sketching Templates</string>
                                                             <exclude reference="df2-0R-LSk"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="50" y="117" width="140" height="18"/>
                                                         <mask key="constraints">
                                                             <include reference="df2-0R-LSk"/>
                                                         </mask>
@@ -4587,7 +4591,8 @@ Sketching Templates</string>
                                                             <exclude reference="37K-Mo-Gtm"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="25" y="130" width="190" height="130"/>
                                                         <mask key="constraints">
                                                             <include reference="37K-Mo-Gtm"/>
                                                         </mask>
@@ -4776,160 +4781,55 @@ Sketching Templates</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ASX-xY-Wcp">
-                                <rect key="frame" x="-10" y="54" width="440" height="711"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eYd-lH-UCq">
-                                        <rect key="frame" x="20" y="20" width="400" height="671"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Terms and Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxe-UF-sgl">
-                                                <rect key="frame" x="20" y="20" width="168" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="204" id="9yg-9d-P6C"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="9yg-9d-P6C"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="heightClass=regular-widthClass=compact">
-                                                    <mask key="constraints">
-                                                        <include reference="9yg-9d-P6C"/>
-                                                    </mask>
-                                                </variation>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Se5-mk-qfg" customClass="FXLabel">
-                                                <rect key="frame" x="20" y="49" width="360" height="602"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="740" id="mqP-vW-oxe"/>
-                                                </constraints>
-                                                <string key="text">Design Studio Express Privacy Policy
-Effective Date: 2015-12-23
-
-Design Studio Express collects the e-mail addresses of those who communicate with us via e-mail, and information submitted through voluntary activities such as site registrations or participation in surveys. We also collect aggregate data regarding the web pages that visitors access on AlexanderInteractive.com website. The information we collect is not shared with or sold to others.
-
-Your data
-Design Studio Express uses third party vendors and hosting partners to provide the necessary hardware, software, networking, storage, and related technology required to run Design Studio Express. Alexander Interactive owns the code, databases, and all rights to the Design Studio Express application. We will not share your data or information with any unauthorized 3rd party vendors without your consent.
-
-Ad servers &amp; Security
-We do not partner with or have special relationships with any ad server companies.
-
-All data and information transmitted with Service is secured by SSL protocol.
-
-Changes
-Design Studio Express may change or update this policy in the future. We will post these changes to our Website and notify you accordingly. If you are concerned about how your information is used, check back at the App Store.
-
-Questions?
-Please contact us at sms@alexanderinteractive.com</string>
-                                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="13"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                                <string key="userLabel">Design Studio Express Privacy Policy Effective Date: 2015-12-23  Design Studio Express collects the e-mail addresses of those who communicate with us via e-mail, and information submitted through voluntary activities such as site registrations or participation in surveys. We also collect aggregate data regarding the web pages that visitors access on AlexanderInteractive.com website. The information we collect is not shared with or sold to others.   Your data Design Studio Express uses third party vendors and hosting partners to provide the necessary hardware, software, networking, storage, and related technology required to run Design Studio Express. Alexander Interactive owns the code, databases, and all rights to the Design Studio Express application. We will not share your data or information with any unauthorized 3rd party vendors without your consent.   Ad servers &amp; Security We do not partner with or have special relationships with any ad server companies.  All data and information transmitted with Service is secured by SSL protocol.   Changes Design Studio Express may change or update this policy in the future. We will post these changes to our Website and notify you accordingly. If you are concerned about how your information is used, check back at the App Store.  Questions? Please contact us at sms@alexanderinteractive.com</string>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="lineSpacing">
-                                                        <real key="value" value="0.14999999999999999"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="mqP-vW-oxe"/>
-                                                    </mask>
-                                                </variation>
-                                                <variation key="heightClass=regular-widthClass=compact">
-                                                    <mask key="constraints">
-                                                        <include reference="mqP-vW-oxe"/>
-                                                    </mask>
-                                                </variation>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="Se5-mk-qfg" firstAttribute="top" secondItem="hxe-UF-sgl" secondAttribute="bottom" constant="8" id="0fl-E7-JbM"/>
-                                            <constraint firstAttribute="trailing" secondItem="Se5-mk-qfg" secondAttribute="trailing" constant="20" id="ANL-mG-IOS"/>
-                                            <constraint firstItem="hxe-UF-sgl" firstAttribute="leading" secondItem="eYd-lH-UCq" secondAttribute="leading" constant="20" id="BgZ-zL-ACv"/>
-                                            <constraint firstItem="hxe-UF-sgl" firstAttribute="top" secondItem="eYd-lH-UCq" secondAttribute="top" constant="20" id="QI8-Y9-LJ0"/>
-                                            <constraint firstAttribute="height" constant="960" id="clq-9w-NzB"/>
-                                            <constraint firstItem="Se5-mk-qfg" firstAttribute="leading" secondItem="eYd-lH-UCq" secondAttribute="leading" constant="20" id="rt8-fa-Kp1"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="clq-9w-NzB"/>
-                                                <exclude reference="BgZ-zL-ACv"/>
-                                                <exclude reference="QI8-Y9-LJ0"/>
-                                                <exclude reference="0fl-E7-JbM"/>
-                                                <exclude reference="ANL-mG-IOS"/>
-                                                <exclude reference="rt8-fa-Kp1"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
-                                            <mask key="constraints">
-                                                <include reference="clq-9w-NzB"/>
-                                                <include reference="BgZ-zL-ACv"/>
-                                                <include reference="QI8-Y9-LJ0"/>
-                                                <include reference="0fl-E7-JbM"/>
-                                                <include reference="ANL-mG-IOS"/>
-                                                <include reference="rt8-fa-Kp1"/>
-                                            </mask>
-                                        </variation>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="eYd-lH-UCq" secondAttribute="trailing" id="ETu-48-HZ8"/>
-                                    <constraint firstItem="eYd-lH-UCq" firstAttribute="top" secondItem="ASX-xY-Wcp" secondAttribute="top" id="OlI-hP-EB9"/>
-                                    <constraint firstAttribute="bottom" secondItem="eYd-lH-UCq" secondAttribute="bottom" constant="-76" id="gW1-bE-alB"/>
-                                    <constraint firstItem="eYd-lH-UCq" firstAttribute="leading" secondItem="ASX-xY-Wcp" secondAttribute="leading" id="zEP-vw-pRh"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="ETu-48-HZ8"/>
-                                        <exclude reference="OlI-hP-EB9"/>
-                                        <exclude reference="gW1-bE-alB"/>
-                                        <exclude reference="zEP-vw-pRh"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="ETu-48-HZ8"/>
-                                        <include reference="OlI-hP-EB9"/>
-                                        <include reference="gW1-bE-alB"/>
-                                        <include reference="zEP-vw-pRh"/>
-                                    </mask>
-                                </variation>
-                            </scrollView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXL-lT-pRG">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Last updated: January 05, 2016Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the Design Studio Express mobile application (the "Service") operated by Alexander Interactive ("us", "we", or "our").Your access to and use of the Service is conditioned upon your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who wish to access or use the Service.By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you do not have permission to access the Service.Intellectual PropertyThe Service and its original content, features and functionality are and will remain the exclusive property of Alexander Interactive and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries. Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Alexander Interactive.    Links To Other Web SitesOur Service may contain links to third party web sites or services that are not owned or controlled by Alexander Interactive.Alexander Interactive has no control over, and assumes no responsibility for the content, privacy policies, or practices of any third party web sites or services. We do not warrant the offerings of any of these entities/individuals or their websites.You acknowledge and agree that Alexander Interactive shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such third party web sites or services.We strongly advise you to read the terms and conditions and privacy policies of any third party web sites or services that you visit.TerminationWe may terminate or suspend your access to the Service immediately, without prior notice or liability, under our sole discretion, for any reason whatsoever and without limitation, including but not limited to a breach of the Terms.All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.IndemnificationYou agree to defend, indemnify and hold harmless Alexander Interactive and its licensee and licensors, and their employees, contractors, agents, officers and directors, from and against any and all claims, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees), resulting from or arising out of a) your use and access of the Service, or b) a breach of these Terms.            Limitation Of LiabilityIn no event shall Alexander Interactive, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the Service; (ii) any conduct or content of any third party on the Service; (iii) any content obtained from the Service; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.DisclaimerYour use of the Service is at your sole risk. The Service is provided on an "AS IS" and "AS AVAILABLE" basis. The Service is provided without warranties of any kind, whether express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose, non-infringement or course of performance.Alexander Interactive its subsidiaries, affiliates, and its licensors do not warrant that a) the Service will function uninterrupted, secure or available at any particular time or location; b) any errors or defects will be corrected; c) the Service is free of viruses or other harmful components; or d) the results of using the Service will meet your requirements.ExclusionsSome jurisdictions do not allow the exclusion of certain warranties or the exclusion or limitation of liability for consequential or incidental damages, so the limitations above may not apply to you.Governing LawThese Terms shall be governed and construed in accordance with the laws of New York, United States, without regard to its conflict of law provisions.Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have had between us regarding the Service.ChangesWe reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.By continuing to access or use our Service after any revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, you are no longer authorized to use the Service.Contact UsIf you have any questions about these Terms, please contact us: appsupport@alexanderinteractive.com</mutableString>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Terms and Conditions (&quot;Terms&quot;)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxe-UF-sgl">
+                                <rect key="frame" x="20" y="20" width="168" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="ASX-xY-Wcp" secondAttribute="trailing" constant="-20" id="2ER-Jm-3iF"/>
-                            <constraint firstItem="eYd-lH-UCq" firstAttribute="width" secondItem="Hvs-DA-EGZ" secondAttribute="width" id="6P6-e9-X93"/>
-                            <constraint firstItem="eYd-lH-UCq" firstAttribute="leading" secondItem="Hvs-DA-EGZ" secondAttribute="leadingMargin" constant="-20" id="JDc-Rs-evV"/>
-                            <constraint firstItem="8AP-xp-KlD" firstAttribute="top" secondItem="ASX-xY-Wcp" secondAttribute="bottom" constant="-38" id="ffc-0s-sEg"/>
-                            <constraint firstItem="eYd-lH-UCq" firstAttribute="leading" secondItem="Hvs-DA-EGZ" secondAttribute="leadingMargin" constant="-20" id="fpg-kV-2T6"/>
-                            <constraint firstItem="ASX-xY-Wcp" firstAttribute="leading" secondItem="Hvs-DA-EGZ" secondAttribute="leadingMargin" constant="-20" id="nw8-cX-ZxQ"/>
-                            <constraint firstItem="ASX-xY-Wcp" firstAttribute="top" secondItem="HYb-V4-r3t" secondAttribute="bottom" id="r7x-5B-n5h"/>
+                            <constraint firstItem="hxe-UF-sgl" firstAttribute="top" secondItem="HYb-V4-r3t" secondAttribute="bottom" constant="13" id="03g-5p-MRC"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="hxe-UF-sgl" secondAttribute="leading" id="TSc-HK-3vV"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="TXL-lT-pRG" secondAttribute="leading" constant="4" id="Z5o-jA-c6M"/>
+                            <constraint firstItem="8AP-xp-KlD" firstAttribute="top" secondItem="TXL-lT-pRG" secondAttribute="bottom" id="h59-Wk-YKt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TXL-lT-pRG" secondAttribute="trailing" constant="-4" id="hwX-kb-OVg"/>
+                            <constraint firstItem="TXL-lT-pRG" firstAttribute="top" secondItem="hxe-UF-sgl" secondAttribute="bottom" constant="8" id="n4p-nK-LKI"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="TXL-lT-pRG"/>
+                                <exclude reference="hxe-UF-sgl"/>
+                            </mask>
                             <mask key="constraints">
-                                <exclude reference="2ER-Jm-3iF"/>
-                                <exclude reference="nw8-cX-ZxQ"/>
-                                <exclude reference="r7x-5B-n5h"/>
-                                <exclude reference="6P6-e9-X93"/>
-                                <exclude reference="JDc-Rs-evV"/>
-                                <exclude reference="fpg-kV-2T6"/>
-                                <exclude reference="ffc-0s-sEg"/>
+                                <exclude reference="03g-5p-MRC"/>
+                                <exclude reference="TSc-HK-3vV"/>
+                                <exclude reference="Z5o-jA-c6M"/>
+                                <exclude reference="hwX-kb-OVg"/>
+                                <exclude reference="n4p-nK-LKI"/>
+                                <exclude reference="h59-Wk-YKt"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="TXL-lT-pRG"/>
+                                <include reference="hxe-UF-sgl"/>
+                            </mask>
                             <mask key="constraints">
-                                <include reference="2ER-Jm-3iF"/>
-                                <include reference="nw8-cX-ZxQ"/>
-                                <include reference="r7x-5B-n5h"/>
-                                <include reference="6P6-e9-X93"/>
-                                <include reference="JDc-Rs-evV"/>
-                                <include reference="fpg-kV-2T6"/>
-                                <include reference="ffc-0s-sEg"/>
+                                <include reference="03g-5p-MRC"/>
+                                <include reference="TSc-HK-3vV"/>
+                                <include reference="Z5o-jA-c6M"/>
+                                <include reference="hwX-kb-OVg"/>
+                                <include reference="n4p-nK-LKI"/>
+                                <include reference="h59-Wk-YKt"/>
                             </mask>
                         </variation>
                     </view>
