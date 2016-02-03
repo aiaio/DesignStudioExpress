@@ -54,12 +54,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         if indexPath.row == 0 {
-            let cell = self.createCell("photoCell", indexPath: indexPath, MGSwipeTableCellCentered.self)
-            self.stylePhotoCell(cell, indexPath: indexPath)
+            let cell = self.createCell("photoCell", indexPath: indexPath, UITableViewCell.self)
+            //self.stylePhotoCell(cell, indexPath: indexPath)
             return cell
         }
         
         let cell = self.createCell("swipeCell", indexPath: indexPath, MGSwipeTableCellCentered.self)
+        cell.textLabel?.text = vm.getTitle(indexPath)
+        cell.detailTextLabel?.text = vm.getDetail(indexPath)
         cell.delegate = self
         
         self.styleSwipeCell(cell, indexPath: indexPath)
@@ -185,9 +187,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell = T(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseIdentifier)
         }
         
-        cell.textLabel!.text = vm.getTitle(indexPath)
-        cell.detailTextLabel!.text = vm.getDetail(indexPath)
-        
         return cell
     }
     
@@ -207,31 +206,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let lineView = UIView(frame: CGRectMake(0, 0, self.createButton.frame.size.width , 1))
         lineView.backgroundColor = DesignStudioStyles.bottomNavigationBGColorSelected
         self.createButton.addSubview(lineView)
-    }
-    
-    func stylePhotoCell(cell: MGSwipeTableCellCentered, indexPath: NSIndexPath) {
-        // set the background image
-        let image = UIImage(named: vm.getImageName(indexPath))
-        let imageView = UIImageView(image: image)
-        imageView.clipsToBounds = true
-        imageView.contentMode = .ScaleAspectFill
-        cell.backgroundView = imageView
-        
-        // style title
-        // TODO change to constant from DesignStudioStyle
-        cell.textLabel?.textColor = UIColor(red:0.53, green:0.65, blue:0.82, alpha:1.0)
-        cell.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 14)
-        cell.textLabel?.attributedText = NSAttributedString.attributedStringWithSpacing(cell.textLabel!.attributedText!, kerning: 2.5)
-        
-        // style detail
-        cell.detailTextLabel?.textColor = DesignStudioStyles.white
-        cell.detailTextLabel?.font = UIFont(name: "Avenir-Light", size: 22)
-        cell.detailTextLabel?.lineBreakMode = .ByWordWrapping
-        cell.detailTextLabel?.numberOfLines = 0
-        cell.detailTextLabel?.sizeToFit()
-        
-        // disable user interactions so we don't have highlighted state
-        cell.userInteractionEnabled = false
     }
     
     func styleSwipeCell(cell: MGSwipeTableCellCentered, indexPath: NSIndexPath) {
