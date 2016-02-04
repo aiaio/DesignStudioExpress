@@ -32,6 +32,9 @@ class DetailDesignStudioViewController: UIViewControllerBase {
     var changedY = false
     var keyboardHeight: CGFloat = 300
     
+    let copyErrorTitle = "Whoa"
+    let copyErrorMessage = "Couldn't create a copy"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,7 +74,8 @@ class DetailDesignStudioViewController: UIViewControllerBase {
             let notificationData = ["DesignStudio":copy]
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.DesignStudioCopied.rawValue, object: self, userInfo: notificationData)
         } else {
-            // TODO handle error, show message?
+            let alertController = UIAlertController.createAlertController(self.copyErrorTitle, message: self.copyErrorMessage)
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
     

@@ -118,7 +118,7 @@ class RunningDesignStudio: NSObject {
                 self.data?.started = true
             }
         } catch {
-            // TODO handle error
+            print("Couldn't save design studio while starting it")
         }
         
         // get the challenge, which is the first screen to display
@@ -200,7 +200,6 @@ class RunningDesignStudio: NSObject {
                 duration = 1
             }
         } catch let error {
-            // TODO handle errors
             print(error)
             duration = 1
         }
@@ -209,8 +208,8 @@ class RunningDesignStudio: NSObject {
             try realm.write {
                 self.currentActivity?.duration += duration // mins
             }
-        } catch {
-            // TODO handle error
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
     
@@ -247,8 +246,8 @@ class RunningDesignStudio: NSObject {
                 self.data?.finished = true
             }
             self.isRunning = false
-        } catch {
-            // todo
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
     
@@ -330,8 +329,8 @@ class RunningDesignStudio: NSObject {
                     self.currentActivity?.finished = true
                 }
             }
-        } catch {
-            // TODO handle errors
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
     
@@ -372,8 +371,8 @@ class RunningDesignStudio: NSObject {
             try realm.write {
                 self.data?.currentActivityId = self.currentActivity?.id ?? ""
             }
-        } catch {
-            // todo
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
     
@@ -429,8 +428,8 @@ class RunningDesignStudio: NSObject {
             try realm.write {
                 self.currentChallenge?.finished = true
             }
-        } catch {
-            // TODO handle errors
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
     
@@ -439,8 +438,8 @@ class RunningDesignStudio: NSObject {
             try realm.write {
                 self.data?.currentChallengeId = self.currentChallenge?.id ?? ""
             }
-        } catch {
-            // todo
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
     

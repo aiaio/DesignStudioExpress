@@ -318,10 +318,10 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="List_Page_Image" translatesAutoresizingMaskIntoConstraints="NO" id="DG7-Mo-fz8">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opU-bJ-Qrg">
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="opU-bJ-Qrg">
                                                     <rect key="frame" x="5" y="151" width="390" height="159"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRO CHECKLIST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rc-NL-tGW" customClass="FXLabel">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="PRO CHECKLIST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9rc-NL-tGW" customClass="FXLabel">
                                                             <rect key="frame" x="145" y="20" width="101" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="140" id="UuL-HU-r7C"/>
@@ -339,13 +339,14 @@
                                                                     <exclude reference="UuL-HU-r7C"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="heightClass=regular-widthClass=compact">
+                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="131" y="0.0" width="140" height="18"/>
                                                                 <mask key="constraints">
                                                                     <include reference="UuL-HU-r7C"/>
                                                                 </mask>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGD-ZV-0OF">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGD-ZV-0OF">
                                                             <rect key="frame" x="20" y="48" width="350" height="91"/>
                                                             <string key="text">Set the tables with these design studio essentials. 
 Background music is optional.</string>
@@ -1079,16 +1080,16 @@ Sketching Templates</string>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="photoCell" rowHeight="360" id="xBq-IG-bji">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xBq-IG-bji" id="9dx-az-0Aq">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="89"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="359"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DS_Home_BG_image" translatesAutoresizingMaskIntoConstraints="NO" id="V2g-i0-bgJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9A3-rP-t9M">
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9A3-rP-t9M">
                                                     <rect key="frame" x="38" y="64" width="309" height="181"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY DESIGN STUDIOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toq-o8-L63" customClass="FXLabel">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="MY DESIGN STUDIOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Toq-o8-L63" customClass="FXLabel">
                                                             <rect key="frame" x="64" y="20" width="196" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="220" id="OW9-1Z-xff"/>
@@ -1174,14 +1175,14 @@ Sketching Templates</string>
                                                     <exclude reference="KVG-5r-6EQ"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="9oI-sj-SlW"/>
-                                                    <exclude reference="A9K-sw-Zdc"/>
-                                                    <exclude reference="GaV-Zt-TUN"/>
-                                                    <exclude reference="KJa-Lg-Gcv"/>
                                                     <exclude reference="1nr-Qp-eOr"/>
                                                     <exclude reference="Cvm-mU-U8G"/>
                                                     <exclude reference="evb-2V-EgV"/>
                                                     <exclude reference="xXg-hZ-63d"/>
+                                                    <exclude reference="9oI-sj-SlW"/>
+                                                    <exclude reference="A9K-sw-Zdc"/>
+                                                    <exclude reference="GaV-Zt-TUN"/>
+                                                    <exclude reference="KJa-Lg-Gcv"/>
                                                     <exclude reference="Gj0-fZ-5Bp"/>
                                                     <exclude reference="ZD0-Fx-7mu"/>
                                                 </mask>
@@ -1192,14 +1193,14 @@ Sketching Templates</string>
                                                     <include reference="KVG-5r-6EQ"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="9oI-sj-SlW"/>
-                                                    <include reference="A9K-sw-Zdc"/>
-                                                    <include reference="GaV-Zt-TUN"/>
-                                                    <include reference="KJa-Lg-Gcv"/>
                                                     <include reference="1nr-Qp-eOr"/>
                                                     <include reference="Cvm-mU-U8G"/>
                                                     <include reference="evb-2V-EgV"/>
                                                     <include reference="xXg-hZ-63d"/>
+                                                    <include reference="9oI-sj-SlW"/>
+                                                    <include reference="A9K-sw-Zdc"/>
+                                                    <include reference="GaV-Zt-TUN"/>
+                                                    <include reference="KJa-Lg-Gcv"/>
                                                     <include reference="Gj0-fZ-5Bp"/>
                                                     <include reference="ZD0-Fx-7mu"/>
                                                 </mask>
@@ -4671,10 +4672,10 @@ Sketching Templates</string>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings_Image" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-OE-sve">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vj-cu-Yk3">
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1vj-cu-Yk3">
                                                     <rect key="frame" x="5" y="97" width="390" height="183"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61i-8S-Zuq" customClass="FXLabel">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61i-8S-Zuq" customClass="FXLabel">
                                                             <rect key="frame" x="125" y="20" width="140" height="18"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="KDN-C7-8t5"/>
@@ -4698,7 +4699,7 @@ Sketching Templates</string>
                                                                 </mask>
                                                             </variation>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share, review or learn more about the nerds who built this." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBR-Nh-LTf">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Share, review or learn more about the nerds who built this." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBR-Nh-LTf">
                                                             <rect key="frame" x="20" y="33" width="350" height="130"/>
                                                             <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="22"/>
                                                             <color key="textColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>

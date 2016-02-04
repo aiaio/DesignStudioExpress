@@ -41,39 +41,6 @@ class HomeViewModel {
     private func createDefaultDesignStudios() {
         DesignStudio.createDefaultTemplate1()
         DesignStudio.createDefaultTemplate2()
-        
-        /* TODO: remove test data
-        let realm = try! Realm()
-        realm.beginWrite()
-        
-        let ds2 = DesignStudio()
-        ds2.title = "Second template"
-        realm.add(ds2)
-
-        for idx in 1...5 {
-            let ds = DesignStudio()
-
-            ds.title = "My studio \(idx)"
-            for idx2 in 1...2 {
-                let challenge = Challenge()
-                challenge.title = "Challenge \(idx2)"
-                challenge.challengeDescription  = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne."
-                
-                for idx3 in 1...2 {
-                    let activity = Activity()
-                    activity.title = "Activity \(idx3)"
-                    activity.activityDescription = "Lorem ipsum dolor sit amet, eos erant integre tractatos ne, dicta everti maiestatis in has. Aperiri reprimique id pro. Liber dolore periculis est ne."
-                    activity.notes = "Pri soleat nusquam at, natum diceret propriae nec et. Omittam expetendis ne pri, fabulas mentitum ut nam, reque consulatu mnesarchum his an."
-                    activity.duration = 1
-                    challenge.activities.append(activity)
-                }
-                
-                ds.challenges.append(challenge)
-            }
-            realm.add(ds)
-        }
-        
-        try! realm.commitWrite() */
     }
     
     func canDeleteDesignStudio(indexPath: NSIndexPath) -> Bool {

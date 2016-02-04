@@ -101,7 +101,7 @@ class DetailDesignStudioViewModel {
         }
     }
     
-    // in case the the design studio is started, but not finished (crash?)
+    // in case the the design studio is started, but not finished
     // this will fix the state
     private func fixDesignStudioState() {
         // if it's not finished and if it's not currently running
@@ -110,9 +110,8 @@ class DetailDesignStudioViewModel {
                 try realm.write {
                     self.data.finished = true
                 }
-            } catch let error {
-                print(error)
-                // TODO handle errors
+            } catch let error as NSError {
+                print("Couldn't save design studio: " + error.localizedDescription)
             }
         }
     }
@@ -126,9 +125,13 @@ class DetailDesignStudioViewModel {
     func openDesignStudio(title: String, duration: String) -> DesignStudio {
         // save the design studio when we're moving to the next screen
         if self.isNew {
-            try! realm.write {
-                self.realm.add(self.data)
-                self.isNew = false
+            do {
+                try realm.write {
+                    self.realm.add(self.data)
+                    self.isNew = false
+                }
+            } catch let error as NSError {
+                print("Couldn't save a new design studio: " + error.localizedDescription)
             }
         } else {
             // in case user clicks continue while the keyboard is still active
@@ -140,7 +143,21 @@ class DetailDesignStudioViewModel {
     }
 
     func copyDesignStudio() -> DesignStudio? {
-        return self.data.makeACopy()
+        if let copyDS = self.data.makeACopy() {
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    realm.add(copyDS)
+                }
+            } catch let error as NSError {
+                print("Couldn't save the Design Studio copy: " + error.localizedDescription)
+                return nil
+            }
+           
+            return copyDS
+        }
+        
+        return nil
     }
     
     private func checkMaxLength(textFieldLength: Int, range: NSRange, replacementStringLength: Int, maxAllowedLength: Int) -> Bool {
