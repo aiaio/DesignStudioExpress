@@ -36,7 +36,9 @@ Start from a templated set of activities or easily build your own design studio:
 * iPhone 6 and greater with iOS 9.1+
 
 ## Permissions
-* Any permissions needed by the app
+* Photos
+* Camera
+* Notifications
 
 ## License 
 * see [LICENSE](https://github.com/aiaio/DesignStudioExpress/blob/master/LICENSE.md) file (MIT)
