@@ -24,10 +24,11 @@ Start from a templated set of activities or easily build your own design studio:
 * Saves photos and templates together to make downloading, sharing and referencing easy
 
 #### Screenshot
-![Screenshot iOS](http://url/screenshot-appname-ios.png "screenshot iOS")
+![Screenshot iOS](https://github.com/aiaio/DesignStudioExpress/blob/master/Screenshots/designstudio.jpeg)
+![Screenshot iOS](https://github.com/aiaio/DesignStudioExpress/blob/master/Screenshots/challenge.jpeg)
+![Screenshot iOS](https://github.com/aiaio/DesignStudioExpress/blob/master/Screenshots/timer.jpeg)
 
-<!-- edit this image location -->
-[![Download on the AppStore](https://raw.github.com/repat/README-template/master/appstore.png)](https://itunes.apple.com/us/app/design-studio-express/id1054379438)
+[![Download on the AppStore](https://github.com/aiaio/DesignStudioExpress/blob/master/Screenshots/appstore.png)](https://itunes.apple.com/us/app/design-studio-express/id1054379438)
 
 ## Tests
 #### Works on
@@ -63,6 +64,7 @@ $ pod install
 $ open "Design\ Studio.xcworkspace"
 ```
 4) Change the Bundle identified key (General -> Identity -> Bundle Identifier)
+
 5) Compile and run the app
 
 ## Contact
