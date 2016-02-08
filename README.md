@@ -27,7 +27,7 @@ Start from a templated set of activities or easily build your own design studio:
 ![Screenshot iOS](https://github.com/aiaio/DesignStudioExpress/blob/master/Screenshots/designstudio.jpeg)
 ![Screenshot iOS](https://github.com/aiaio/DesignStudioExpress/blob/master/Screenshots/challenge.jpeg)
 ![Screenshot iOS](https://github.com/aiaio/DesignStudioExpress/blob/master/Screenshots/timer.jpeg)
-
+![Screenshot iOS](https://github.com/aiaio/DesignStudioExpress/blob/master/Screenshots/gallery.jpeg)
 [![Download on the AppStore](https://github.com/aiaio/DesignStudioExpress/blob/master/Screenshots/appstore.png)](https://itunes.apple.com/us/app/design-studio-express/id1054379438)
 
 ## Tests
