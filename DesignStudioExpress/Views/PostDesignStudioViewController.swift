@@ -24,8 +24,6 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.removeLastViewFromNavigation()
-        
         self.collectionView.registerClass(MHMediaPreviewCollectionViewCell.self, forCellWithReuseIdentifier: self.cellIdentifier)
     }
     
@@ -33,18 +31,6 @@ class PostDesignStudioViewController: UIViewControllerBase, UICollectionViewDele
         self.vm.loadData {
             self.collectionView.reloadData()
             self.prepareViewState()
-        }
-    }
-    
-    // to make back button always lead to the challenges screen
-    // remove all Timers and End screens from the nav stack
-    private func removeLastViewFromNavigation() {
-        let endIndex = (self.navigationController?.viewControllers.endIndex ?? 0) - 1
-        if endIndex > 0 {
-            let previousVC = self.navigationController?.viewControllers[endIndex-1]
-            if previousVC is TimerViewController || previousVC is EndActivityViewController {
-                self.navigationController?.viewControllers.removeAtIndex(endIndex-1)
-            }
         }
     }
     

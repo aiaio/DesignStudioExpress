@@ -180,6 +180,8 @@ class UITabBarControllerBase: UITabBarController {
         // add post view studio in the view hierarchy, so when the End design studio disappears
         // we will see the post studio screen
         if let postStudio = self.createPostDesignStudioViewController(notification) {
+             // remove the Timer screen from the stack first
+            self.dsNavController.popViewControllerAnimated(false)
             self.dsNavController.viewControllers.append(postStudio)
         }
     }
