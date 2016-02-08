@@ -228,7 +228,7 @@ class UITabBarControllerBase: UITabBarController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPostDesignStudioScreen:", name: NotificationIdentifier.ShowPostDesignStudioScreen.rawValue, object: nil)
     }
     
-    // remove 
+    // remove all observers on deinit
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
