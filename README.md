@@ -42,17 +42,28 @@ Start from a templated set of activities or easily build your own design studio:
 ## Version 
 * Version 1.0
 
-## How-to use this code
+## How-to use build
 #### Requirements
-1. Xcode 7 / iOS 9 / Swift 2
-2. CocoaPods
+* Xcode 7 / iOS 9 / Swift 2
+* CocoaPods
 
 #### Installation
 
-1. Clone the repository
-2. `cd DesignStudioExpress`
-3. `pod install`
-4. `open Design Studio.xcworkspace`
+1) Clone the repository
+```
+$ https://github.com/aiaio/DesignStudioExpress.git
+````
+2) Install pods
+```
+$ cd DesignStudioExpress
+$ pod install
+```
+3) Open the workspace in Xcode
+```
+$ open "Design\ Studio.xcworkspace"
+```
+4) Change the Bundle identified key (General -> Identity -> Bundle Identifier)
+5) Compile and run the app
 
 ## Contact
 #### Alexander Interactive
