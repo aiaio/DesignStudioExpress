@@ -1085,6 +1085,9 @@ Sketching Templates</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DS_Home_BG_image" translatesAutoresizingMaskIntoConstraints="NO" id="V2g-i0-bgJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="359"/>
+                                                    </variation>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9A3-rP-t9M">
                                                     <rect key="frame" x="38" y="64" width="309" height="181"/>
@@ -1107,7 +1110,8 @@ Sketching Templates</string>
                                                                     <exclude reference="OW9-1Z-xff"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="heightClass=regular-widthClass=compact">
+                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="10" y="8" width="220" height="18"/>
                                                                 <mask key="constraints">
                                                                     <include reference="OW9-1Z-xff"/>
                                                                 </mask>
@@ -1127,7 +1131,8 @@ Sketching Templates</string>
                                                             <exclude reference="YRJ-GS-qPG"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="120" width="240" height="120"/>
                                                         <mask key="constraints">
                                                             <include reference="tVh-d2-0s1"/>
                                                             <include reference="2tG-2K-jRN"/>
@@ -1148,7 +1153,8 @@ Sketching Templates</string>
                                                             <exclude reference="2U6-T9-iB6"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="-15" y="154" width="270" height="61"/>
                                                         <mask key="constraints">
                                                             <include reference="2U6-T9-iB6"/>
                                                         </mask>
@@ -3532,7 +3538,8 @@ Sketching Templates</string>
                                                             <exclude reference="kFy-YO-Ana"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="55" y="44" width="130" height="29"/>
                                                         <mask key="subviews">
                                                             <include reference="hbr-94-lLC"/>
                                                             <include reference="rK7-HV-JTV"/>
@@ -3569,7 +3576,8 @@ Sketching Templates</string>
                                                             <exclude reference="bTH-hm-Ddj"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="23" y="119" width="194" height="120"/>
                                                         <mask key="constraints">
                                                             <include reference="bTH-hm-Ddj"/>
                                                         </mask>
@@ -3596,7 +3604,8 @@ Sketching Templates</string>
                                                             <exclude reference="MS1-q4-xo0"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="-60" y="75" width="360" height="40"/>
                                                         <mask key="constraints">
                                                             <include reference="1no-mU-II7"/>
                                                             <include reference="MS1-q4-xo0"/>
@@ -3616,7 +3625,8 @@ Sketching Templates</string>
                                                             <exclude reference="LAw-Kj-pd3"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="170" y="44" width="50" height="50"/>
                                                         <mask key="constraints">
                                                             <include reference="Kfi-xx-WJS"/>
                                                             <include reference="LAw-Kj-pd3"/>
@@ -3638,7 +3648,8 @@ Sketching Templates</string>
                                                             <exclude reference="Ytk-aQ-fYc"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="191" y="89" width="9" height="11"/>
                                                         <mask key="constraints">
                                                             <include reference="GU2-eD-3XH"/>
                                                             <include reference="Ytk-aQ-fYc"/>
@@ -4671,6 +4682,9 @@ Sketching Templates</string>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings_Image" translatesAutoresizingMaskIntoConstraints="NO" id="S9R-OE-sve">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="-8" y="-10" width="256" height="370"/>
+                                                    </variation>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1vj-cu-Yk3">
                                                     <rect key="frame" x="5" y="97" width="390" height="183"/>
@@ -4693,7 +4707,8 @@ Sketching Templates</string>
                                                                     <exclude reference="KDN-C7-8t5"/>
                                                                 </mask>
                                                             </variation>
-                                                            <variation key="heightClass=regular-widthClass=compact">
+                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="70" y="0.0" width="100" height="18"/>
                                                                 <mask key="constraints">
                                                                     <include reference="KDN-C7-8t5"/>
                                                                 </mask>
@@ -4709,6 +4724,9 @@ Sketching Templates</string>
                                                                     <real key="value" value="0.27000000000000002"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="25" y="26" width="190" height="121"/>
+                                                            </variation>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -4732,7 +4750,8 @@ Sketching Templates</string>
                                                             <exclude reference="zLs-33-OAG"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="120" width="240" height="120"/>
                                                         <mask key="constraints">
                                                             <include reference="Tci-bF-yKd"/>
                                                             <include reference="II6-at-pQW"/>
