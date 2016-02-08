@@ -125,7 +125,15 @@ class UITabBarControllerBase: UITabBarController {
             vc.modalTransitionStyle = .CrossDissolve
             
             // if we have a modal that's open, we have to open our modal from that vc
-            let topController = self.findLastPresentedController()
+            var topController = self.findLastPresentedController()
+            
+            // if there's a alert controller visible, dismiss it
+            if topController is UIAlertController {
+                if let presentingViewController = topController.presentingViewController {
+                    topController.dismissViewControllerAnimated(false, completion: nil)
+                    topController = presentingViewController
+                }
+            }
             topController.presentViewController(vc, animated: true, completion: nil)
         }
     }
@@ -220,7 +228,7 @@ class UITabBarControllerBase: UITabBarController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPostDesignStudioScreen:", name: NotificationIdentifier.ShowPostDesignStudioScreen.rawValue, object: nil)
     }
     
-    // remove 
+    // remove all observers on deinit
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }

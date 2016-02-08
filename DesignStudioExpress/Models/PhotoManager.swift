@@ -12,6 +12,7 @@ import NRSimplePlist
 class PhotoManager {
     
     func createDefaultPhotoCollectionForApp() {
+        // if we have the photo collection, return immediately
         if let _ = self.getDefaultPhotoCollectionForApp() {
             return
         }
@@ -30,14 +31,11 @@ class PhotoManager {
                 // create a default folder for the app
                 PHPhotoLibrary.sharedPhotoLibrary().performChanges(changeBlock, completionHandler: { success, error in
                     if (success) {
-                        // TODO log success / error
+                        print("Photo library successfuly created")
                     } else {
-                        // TODO log the error
+                        print(error)
                     }
                 })
-            } else {
-                // we don't have access
-                // TODO log the error
             }
         })
     }
@@ -57,7 +55,7 @@ class PhotoManager {
         }
         
         let completionHandler = { (success: Bool, error: NSError?) -> Void in
-            // TODO handle errors
+            print(error)
         }
         
         PHPhotoLibrary.sharedPhotoLibrary().performChanges(changeBlock, completionHandler:  completionHandler)
@@ -85,7 +83,6 @@ class PhotoManager {
         do {
             defaultAlbumName = try plistGet("AlbumName", forPlistNamed: "Settings") as! String
         } catch let error {
-            // TODO handle errors
             print(error)
             return nil
         }

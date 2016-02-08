@@ -33,10 +33,11 @@ class RunningDesignStudio: NSObject {
     private var data: DesignStudio?
     private var isRunning = false
     private var timer: NSTimer?
+    private var shouldRescheduleTimer = false
     
-    // flag controls if we need to move to next object
-    // and start the global timer (that shows the End activity screen)
-    // we have to move to next activity after:
+    // Flag that controls if we need to move to next object
+    // and start the global timer (that shows the End activity screen).
+    // We have to move to next activity after:
     // - challenges screen has disappeared
     // - next button is clicked on the Timer screen
     // - next button is clicked on the End activity screen
@@ -87,7 +88,8 @@ class RunningDesignStudio: NSObject {
     // called when user clicks the main action button on challenges screen
     // we need to open an appropriate screen based on the state of the design studio
     // that can be not started|running|finished
-    func challengesScreenActionButton (designStudio: DesignStudio) {        // start the design studio
+    func challengesScreenActionButton (designStudio: DesignStudio) {
+        // start the design studio
         if !self.isRunning && !designStudio.started {
             self.startDesignStudio(designStudio)
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.DesignStudioStarted.rawValue, object: self, userInfo: nil)
@@ -118,7 +120,7 @@ class RunningDesignStudio: NSObject {
                 self.data?.started = true
             }
         } catch {
-            // TODO handle error
+            print("Couldn't save design studio while starting it")
         }
         
         // get the challenge, which is the first screen to display
@@ -200,7 +202,6 @@ class RunningDesignStudio: NSObject {
                 duration = 1
             }
         } catch let error {
-            // TODO handle errors
             print(error)
             duration = 1
         }
@@ -209,8 +210,8 @@ class RunningDesignStudio: NSObject {
             try realm.write {
                 self.currentActivity?.duration += duration // mins
             }
-        } catch {
-            // TODO handle error
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
     
@@ -237,7 +238,7 @@ class RunningDesignStudio: NSObject {
     func finishDesignStudio() {
         // don't forget to stop the timer at the end
         // we don't want any more popups
-        self.timer?.invalidate()
+        self.disableScheduledTimer(false)
         // remove also all local notifications
         UIApplication.sharedApplication().scheduledLocalNotifications?.removeAll()
         
@@ -247,8 +248,8 @@ class RunningDesignStudio: NSObject {
                 self.data?.finished = true
             }
             self.isRunning = false
-        } catch {
-            // todo
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
     
@@ -330,8 +331,8 @@ class RunningDesignStudio: NSObject {
                     self.currentActivity?.finished = true
                 }
             }
-        } catch {
-            // TODO handle errors
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
     
@@ -372,8 +373,8 @@ class RunningDesignStudio: NSObject {
             try realm.write {
                 self.data?.currentActivityId = self.currentActivity?.id ?? ""
             }
-        } catch {
-            // todo
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
     
@@ -389,12 +390,38 @@ class RunningDesignStudio: NSObject {
     // that will show notify when activity is ended,
     // so we can show End activity screen from any of the current views we're on
     private func startGlobalTimer() {
-        self.timer?.invalidate()
-        if let _ = self.currentActivity {
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(Double(self.currentActivityRemainingDuration), target: self, selector: "notifyEndActivity", userInfo: nil, repeats: false)
-            
+        if self.currentActivity != nil {
+            self.scheduleTimer()
             self.createLocalNotification(self.currentActivity!.title + " is finished",
                 sinceNow: Double(self.currentActivityRemainingDuration))
+        }
+    }
+    
+    func rescheduleTimer() {
+        if self.shouldRescheduleTimer {
+            self.shouldRescheduleTimer = false
+            self.scheduleTimer()
+        }
+    }
+    
+    // disable the timer (e.g. when the app is moving to the background)
+    // and saves the state for the timer if we need to reschedule it
+    func disableScheduledTimer(rememberTimerState: Bool) {
+        if rememberTimerState && self.timer != nil && self.timer!.valid {
+            self.shouldRescheduleTimer = true
+        }
+        
+        self.timer?.invalidate()
+        self.timer = nil
+    }
+    
+    // schedules a NSTimer that will fire when activity ends
+    // fires a notification that's showing the End Activity screen
+    private func scheduleTimer() {
+        if self.isRunning && self.currentActivity != nil {
+            self.timer?.invalidate()
+            self.timer = nil
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(Double(self.currentActivityRemainingDuration), target: self, selector: "notifyEndActivity", userInfo: nil, repeats: false)
         }
     }
     
@@ -429,8 +456,8 @@ class RunningDesignStudio: NSObject {
             try realm.write {
                 self.currentChallenge?.finished = true
             }
-        } catch {
-            // TODO handle errors
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
     
@@ -439,8 +466,8 @@ class RunningDesignStudio: NSObject {
             try realm.write {
                 self.data?.currentChallengeId = self.currentChallenge?.id ?? ""
             }
-        } catch {
-            // todo
+        } catch let error as NSError {
+            print(error.localizedDescription)
         }
     }
     

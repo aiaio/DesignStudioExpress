@@ -8,6 +8,7 @@
 
 import UIKit
 import SZTextView
+import FXLabel
 
 class DetailDesignStudioViewController: UIViewControllerBase {
     
@@ -20,6 +21,7 @@ class DetailDesignStudioViewController: UIViewControllerBase {
     @IBOutlet weak var challenges: UILabel!
     @IBOutlet weak var continueButton: UIButtonRed!
     @IBOutlet weak var editIcon: UIImageView!
+    @IBOutlet weak var editLabel: FXLabel!
     
     let vm = DetailDesignStudioViewModel()
     
@@ -29,6 +31,9 @@ class DetailDesignStudioViewController: UIViewControllerBase {
     let openDesignStudioSegue = "OpenDesignStudio"
     var changedY = false
     var keyboardHeight: CGFloat = 300
+    
+    let copyErrorTitle = "Whoa"
+    let copyErrorMessage = "Couldn't create a copy"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +74,8 @@ class DetailDesignStudioViewController: UIViewControllerBase {
             let notificationData = ["DesignStudio":copy]
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.DesignStudioCopied.rawValue, object: self, userInfo: notificationData)
         } else {
-            // TODO handle error, show message?
+            let alertController = UIAlertController.createAlertController(self.copyErrorTitle, message: self.copyErrorMessage)
+            self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
     
@@ -120,6 +126,7 @@ class DetailDesignStudioViewController: UIViewControllerBase {
         self.name.editable = vm.editingEnabled
         self.duration.enabled = vm.editingEnabled
         self.editIcon.image = UIImage(named: vm.editIconImage)
+        self.editLabel.hidden = !vm.editingEnabled
     }
     
     func updateData() {

@@ -15,7 +15,7 @@ class TermsAndConditionsViewController: UIViewControllerBase {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Legal"
+        self.navigationItem.title = "Terms and Conditions"
     }
         
     // MARK: StyledNavigationBar

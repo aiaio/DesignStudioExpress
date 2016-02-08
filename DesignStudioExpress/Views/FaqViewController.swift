@@ -23,7 +23,6 @@ class FaqViewController: UIViewController {
         do {
             urlString = try plistGet("FaqWebViewUrl", forPlistNamed: "Settings") as! String
         } catch let error {
-            // TODO handle errors
             print(error)
             urlString = "http://www.alexanderinteractive.com"
         }

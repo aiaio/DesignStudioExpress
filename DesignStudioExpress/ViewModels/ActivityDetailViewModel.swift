@@ -17,6 +17,9 @@ class ActivityDetailViewModel {
     let saveNotesLabelText = "SAVE NOTES"
     let backLabelText = "CLOSE"
     
+    let saveErrorMsg = "Couldn't save the activity: "
+    let deleteErrorMsg = "Couldn't delete the activity"
+
     var title: String = ""
     var duration: Int = 0
     var description: String = ""
@@ -60,9 +63,9 @@ class ActivityDetailViewModel {
         self.notes = newActivity.notes
     }
     
-    func saveActivity() {
+    func saveActivity() -> String? {
         if self.locked {
-            return
+            return nil
         }
         do {
             try realm.write {
@@ -75,21 +78,23 @@ class ActivityDetailViewModel {
                 self.data.notes = self.notes
                 self.realm.add(self.data, update: true)
             }
-        } catch {
-            //TODO: handle errors
-            print("Couldn't save the activity")
+        } catch let error as NSError {
+            print(self.saveErrorMsg + error.localizedDescription)
+            return self.saveErrorMsg
         }
+        return nil
     }
     
-    func deleteActivity() {
+    func deleteActivity() -> String? {
         do {
             try realm.write {
                 self.realm.delete(self.data)
             }
-        } catch {
-            //TODO: handle errors
-            print("Couldn't delete the activity")
+        } catch let error as NSError {
+            print(self.deleteErrorMsg + error.localizedDescription)
+            return self.deleteErrorMsg
         }
+        return nil
     }
 }
 

@@ -43,14 +43,19 @@ class ActivityDetailViewController: UITableViewController {
     
     @IBAction func saveActivity(sender: AnyObject) {
         self.updateVMData()
-        // don't forget to persist the changes
-        vm.saveActivity()
+        if let error = vm.saveActivity() {
+            let alertController = UIAlertController.createAlertController("Whoa!", message: error)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func deleteActivity(sender: AnyObject) {
-        vm.deleteActivity()
+        if let error = vm.deleteActivity() {
+            let alertController = UIAlertController.createAlertController("Whoa!", message: error)
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

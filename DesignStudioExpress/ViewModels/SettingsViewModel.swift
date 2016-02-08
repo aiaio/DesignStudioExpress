@@ -51,8 +51,7 @@ class SettingsViewModel {
                     
                     feedbackController.mailComposeDelegate = vc as! SettingsViewController
                     
-                    // TODO update with real email
-                    feedbackController.setToRecipients(["sms@alexanderinteractive.com"])
+                    feedbackController.setToRecipients(["appsupport@alexanderinteractive.com"])
                     
                     feedbackController.setSubject("Design Studio Express Feedback")
                     feedbackController.setMessageBody("Feedback:\n\n\n\n\n\n\n\n\n--------\nDeveloper Information:", isHTML:false)

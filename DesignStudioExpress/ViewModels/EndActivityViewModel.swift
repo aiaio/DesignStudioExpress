@@ -21,7 +21,6 @@ class EndActivityViewModel {
                     duration = 1
                 }
             } catch let error {
-                // TODO handle errors
                 print(error)
                 duration = 1
             }

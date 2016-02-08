@@ -77,7 +77,6 @@ class PostDesignStudioViewModel {
         do {
             defaultAlbumName = try plistGet("AlbumName", forPlistNamed: "Settings") as! String
         } catch let error {
-            // TODO handle errors
             print(error)
             return
         }
@@ -123,7 +122,7 @@ class PostDesignStudioViewModel {
             })
             
             }, failureBlock: { (error: NSError!) -> Void in
-                // TODO handle errors
+                print(error.localizedDescription)
             }
         )
         

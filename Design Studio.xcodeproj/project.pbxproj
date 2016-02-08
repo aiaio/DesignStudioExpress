@@ -60,6 +60,7 @@
 		E46A22081C010FE5004D5292 /* ChallengeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46A22071C010FE5004D5292 /* ChallengeDetailViewModel.swift */; };
 		E47294E71C00C9FF00E59587 /* UIButtonTransparent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47294E61C00C9FF00E59587 /* UIButtonTransparent.swift */; };
 		E4766B4D1BF2A8550021059F /* UIButtonLightBlue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */; };
+		E48641461C63FAA70063D624 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48641451C63FAA70063D624 /* UIAlertController.swift */; };
 		E49F45D91BFD468100F32AE9 /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49F45D81BFD468100F32AE9 /* ChallengesViewController.swift */; };
 		E49F45DC1BFE443B00F32AE9 /* StyledNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49F45DB1BFE443B00F32AE9 /* StyledNavigationBar.swift */; };
 		E4A4B4631C2372CC00D6664E /* UITableViewCellAddChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A4B4621C2372CC00D6664E /* UITableViewCellAddChallenge.swift */; };
@@ -117,13 +118,13 @@
 		E41E772B1C06554D000364D6 /* UITextViewDelegateMaxLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewDelegateMaxLength.swift; sourceTree = "<group>"; };
 		E41E772D1C067C6C000364D6 /* UITextDelegateBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextDelegateBase.swift; sourceTree = "<group>"; };
 		E41E772F1C067D25000364D6 /* UITextFieldDelegateMaxLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldDelegateMaxLength.swift; sourceTree = "<group>"; };
-		E421C4121BF164AD003F9D8A /* Design Studio Express.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Design Studio Express.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E421C4121BF164AD003F9D8A /* Design Studio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Design Studio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E421C4151BF164AD003F9D8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E421C41A1BF164AD003F9D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E421C41C1BF164AD003F9D8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E421C41F1BF164AD003F9D8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E421C4211BF164AD003F9D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E421C4261BF164AD003F9D8A /* Design Studio Express.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Design Studio Express.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E421C4261BF164AD003F9D8A /* Design Studio.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Design Studio.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E421C42A1BF164AD003F9D8A /* DesignStudioExpressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignStudioExpressTests.swift; sourceTree = "<group>"; };
 		E421C42C1BF164AD003F9D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E421C4361BF279FE003F9D8A /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 		E46A22071C010FE5004D5292 /* ChallengeDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewModel.swift; sourceTree = "<group>"; };
 		E47294E61C00C9FF00E59587 /* UIButtonTransparent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonTransparent.swift; sourceTree = "<group>"; };
 		E4766B4C1BF2A8550021059F /* UIButtonLightBlue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonLightBlue.swift; sourceTree = "<group>"; };
+		E48641451C63FAA70063D624 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		E49F45D81BFD468100F32AE9 /* ChallengesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
 		E49F45DB1BFE443B00F32AE9 /* StyledNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledNavigationBar.swift; sourceTree = "<group>"; };
 		E4A4B4621C2372CC00D6664E /* UITableViewCellAddChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellAddChallenge.swift; sourceTree = "<group>"; };
@@ -258,8 +260,8 @@
 		E421C4131BF164AD003F9D8A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E421C4121BF164AD003F9D8A /* Design Studio Express.app */,
-				E421C4261BF164AD003F9D8A /* Design Studio Express.xctest */,
+				E421C4121BF164AD003F9D8A /* Design Studio.app */,
+				E421C4261BF164AD003F9D8A /* Design Studio.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -302,6 +304,7 @@
 				E4C113311BFA855700A7E1B3 /* RealmSwiftExtension.swift */,
 				E4C113351BFBBE3B00A7E1B3 /* StringExtension.swift */,
 				E429AF5A1BF539BC00AE4DA7 /* UIImageExtension.swift */,
+				E48641451C63FAA70063D624 /* UIAlertController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -403,9 +406,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E421C4111BF164AD003F9D8A /* Design Studio Express */ = {
+		E421C4111BF164AD003F9D8A /* Design Studio */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E421C42F1BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "Design Studio Express" */;
+			buildConfigurationList = E421C42F1BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "Design Studio" */;
 			buildPhases = (
 				D85651353B822225EAD177C7 /* Check Pods Manifest.lock */,
 				E421C40E1BF164AD003F9D8A /* Sources */,
@@ -419,14 +422,14 @@
 			);
 			dependencies = (
 			);
-			name = "Design Studio Express";
+			name = "Design Studio";
 			productName = DesignStudioExpress;
-			productReference = E421C4121BF164AD003F9D8A /* Design Studio Express.app */;
+			productReference = E421C4121BF164AD003F9D8A /* Design Studio.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E421C4251BF164AD003F9D8A /* Design Studio ExpressTests */ = {
+		E421C4251BF164AD003F9D8A /* Design StudioTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E421C4321BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "Design Studio ExpressTests" */;
+			buildConfigurationList = E421C4321BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "Design StudioTests" */;
 			buildPhases = (
 				E421C4221BF164AD003F9D8A /* Sources */,
 				E421C4231BF164AD003F9D8A /* Frameworks */,
@@ -437,9 +440,9 @@
 			dependencies = (
 				E421C4281BF164AD003F9D8A /* PBXTargetDependency */,
 			);
-			name = "Design Studio ExpressTests";
+			name = "Design StudioTests";
 			productName = DesignStudioExpressTests;
-			productReference = E421C4261BF164AD003F9D8A /* Design Studio Express.xctest */;
+			productReference = E421C4261BF164AD003F9D8A /* Design Studio.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -461,7 +464,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E421C40D1BF164AD003F9D8A /* Build configuration list for PBXProject "Design Studio Express" */;
+			buildConfigurationList = E421C40D1BF164AD003F9D8A /* Build configuration list for PBXProject "Design Studio" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -474,8 +477,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E421C4111BF164AD003F9D8A /* Design Studio Express */,
-				E421C4251BF164AD003F9D8A /* Design Studio ExpressTests */,
+				E421C4111BF164AD003F9D8A /* Design Studio */,
+				E421C4251BF164AD003F9D8A /* Design StudioTests */,
 			);
 		};
 /* End PBXProject section */
@@ -575,6 +578,7 @@
 				E42DD3301BFE98020026390E /* ChallengesViewModel.swift in Sources */,
 				E421C4371BF279FE003F9D8A /* IntroViewController.swift in Sources */,
 				E4EB7A951C271226003FADA3 /* UITableViewCellSettings.swift in Sources */,
+				E48641461C63FAA70063D624 /* UIAlertController.swift in Sources */,
 				E429AF581BF530B200AE4DA7 /* DesignStudioStyles.swift in Sources */,
 				E45128F81BF29E09002AFC8A /* UIButtonRed.swift in Sources */,
 				E47294E71C00C9FF00E59587 /* UIButtonTransparent.swift in Sources */,
@@ -650,7 +654,7 @@
 /* Begin PBXTargetDependency section */
 		E421C4281BF164AD003F9D8A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E421C4111BF164AD003F9D8A /* Design Studio Express */;
+			target = E421C4111BF164AD003F9D8A /* Design Studio */;
 			targetProxy = E421C4271BF164AD003F9D8A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -772,7 +776,7 @@
 				INFOPLIST_FILE = DesignStudioExpress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderinteractive.whackjobapp;
-				PRODUCT_NAME = "Design Studio Express";
+				PRODUCT_NAME = "Design Studio";
 				SWIFT_OBJC_BRIDGING_HEADER = "DesignStudioExpress/DesignStudioExpress-Bridging-Header.h";
 			};
 			name = Debug;
@@ -792,7 +796,7 @@
 				INFOPLIST_FILE = DesignStudioExpress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderinteractive.whackjobapp;
-				PRODUCT_NAME = "Design Studio Express";
+				PRODUCT_NAME = "Design Studio";
 				SWIFT_OBJC_BRIDGING_HEADER = "DesignStudioExpress/DesignStudioExpress-Bridging-Header.h";
 			};
 			name = Release;
@@ -804,8 +808,8 @@
 				INFOPLIST_FILE = DesignStudioExpressTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderinteractive.DesignStudioExpressTests;
-				PRODUCT_NAME = "Design Studio Express";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Design Studio Express.app/Design Studio Express";
+				PRODUCT_NAME = "Design Studio";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Design Studio.app/Design Studio";
 			};
 			name = Debug;
 		};
@@ -816,15 +820,15 @@
 				INFOPLIST_FILE = DesignStudioExpressTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderinteractive.DesignStudioExpressTests;
-				PRODUCT_NAME = "Design Studio Express";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Design Studio Express.app/Design Studio Express";
+				PRODUCT_NAME = "Design Studio";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Design Studio.app/Design Studio";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E421C40D1BF164AD003F9D8A /* Build configuration list for PBXProject "Design Studio Express" */ = {
+		E421C40D1BF164AD003F9D8A /* Build configuration list for PBXProject "Design Studio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E421C42D1BF164AD003F9D8A /* Debug */,
@@ -833,7 +837,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E421C42F1BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "Design Studio Express" */ = {
+		E421C42F1BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "Design Studio" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E421C4301BF164AD003F9D8A /* Debug */,
@@ -842,7 +846,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E421C4321BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "Design Studio ExpressTests" */ = {
+		E421C4321BF164AD003F9D8A /* Build configuration list for PBXNativeTarget "Design StudioTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E421C4331BF164AD003F9D8A /* Debug */,
