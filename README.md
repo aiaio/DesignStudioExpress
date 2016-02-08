@@ -39,7 +39,7 @@ Start from a templated set of activities or easily build your own design studio:
 * Any permissions needed by the app
 
 ## License 
-* see [LICENSE](https://github.com/aiaio/DesignStudioExpress/blob/master/LICENSE.md) file
+* see [LICENSE](https://github.com/aiaio/DesignStudioExpress/blob/master/LICENSE.md) file (MIT)
 
 ## Version 
 * Version 1.0
@@ -64,7 +64,7 @@ $ pod install
 ```
 $ open "Design\ Studio.xcworkspace"
 ```
-4) Change the Bundle identified key (General -> Identity -> Bundle Identifier)
+4) Change the Bundle identifier (General -> Identity -> Bundle Identifier)
 
 5) Compile and run the app
 
