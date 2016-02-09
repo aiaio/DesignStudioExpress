@@ -21,10 +21,17 @@ class UIViewControllerBase: UIViewController, StyledNavigationBar {
     }
     
     func customizeNavBarStyle() {
+        // Change the back button image and adjust the position because the new image is smaller
+        let insets = UIEdgeInsetsMake(0, 0, -3, 0);
+        let backImage = UIImage(named: "Arrow_Left_Icon")?.imageWithAlignmentRectInsets(insets)
+        
+        self.navigationController?.navigationBar.backIndicatorImage = backImage
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
+        
         // Remove "Back" title from all back buttons
         let backButton = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButton
-        
+
         // Make navigation text and buttons white
         self.navigationController?.navigationBar.tintColor = DesignStudioStyles.white
         
