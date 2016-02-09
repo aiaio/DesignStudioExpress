@@ -147,7 +147,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return []
         } 
         
-        if direction == .LeftToRight {
+        if direction == .RightToLeft {
             return [DesignStudioElementStyles.swipeDeleteButtonWhite()]
         }
         return []
