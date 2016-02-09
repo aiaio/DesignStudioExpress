@@ -77,7 +77,7 @@ class ChallengeDetailViewModel {
     }
     
     var locked: Bool {
-        return self.data.designStudio.template
+        return self.data.designStudio.template || self.data.designStudio.finished
     }
     
     func isRowEditable(indexPath: NSIndexPath) -> Bool {
