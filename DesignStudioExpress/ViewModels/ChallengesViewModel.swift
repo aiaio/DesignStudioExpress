@@ -68,7 +68,7 @@ class ChallengesViewModel {
     }
     
     var editingEnabled: Bool {
-        get { return !self.designStudio.started && !self.locked }
+        get { return !self.designStudio.started && !self.designStudio.finished && !self.locked }
     }
     
     var locked: Bool {
@@ -78,7 +78,7 @@ class ChallengesViewModel {
     func canDeleteChallenge(indexPath: NSIndexPath) -> Bool {
         let idx = indexPath.row
         
-        guard self.data.count > idx else {
+        guard self.data.count > idx && self.editingEnabled else {
             return false
         }
         

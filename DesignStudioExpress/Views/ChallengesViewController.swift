@@ -132,7 +132,7 @@ class ChallengesViewController: UIViewControllerBase, UITableViewDataSource, UIT
      **/
     func swipeTableCell(cell: MGSwipeTableCell!, canSwipe direction: MGSwipeDirection) -> Bool {
         if let indexPath = self.tableView.indexPathForCell(cell) {
-            return vm.isRowEditable(indexPath) && !vm.locked
+            return vm.isRowEditable(indexPath) && vm.editingEnabled
         }
         
         return false
