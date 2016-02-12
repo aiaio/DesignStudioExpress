@@ -228,6 +228,8 @@ class RunningDesignStudio: NSObject {
             // show the challenge screen
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowNextChallengeScreen.rawValue, object: self, userInfo: nil)
         } else {
+            // update finished activity time before closing DS
+            self.updateCurrentActivity()
             self.finishDesignStudio()
             // we've reached the end, show the end screen
             NSNotificationCenter.defaultCenter().postNotificationName(NotificationIdentifier.ShowEndDesignStudioScreen.rawValue, object: self, userInfo: nil)
@@ -331,7 +333,7 @@ class RunningDesignStudio: NSObject {
         self.startCurrentActivity()
         
         return result
-    }   
+    }
     
     // update the duration of the activity to the actual duration of the activity
     // and status of the activity (finished)
