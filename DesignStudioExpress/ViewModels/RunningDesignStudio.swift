@@ -319,23 +319,6 @@ class RunningDesignStudio: NSObject {
         self.moveToNextChallenge()
     }
     
-    
-    // update the duration of the activity to the actual duration of the activity
-    // and status of the activity (finished)
-    private func updateCurrentActivity() {
-        do {
-            if let diff = self.currentActivityStart?.timeIntervalSinceNow {
-                let duration = Int(round(-diff / 60)) // convert seconds to minutes
-                try realm.write {
-                    self.currentActivity?.duration = duration
-                    self.currentActivity?.finished = true
-                }
-            }
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-    }
-    
     private func moveToNextActivity() -> Bool {        
         self.updateCurrentActivity()
         
@@ -348,6 +331,25 @@ class RunningDesignStudio: NSObject {
         self.startCurrentActivity()
         
         return result
+    }   
+    
+    // update the duration of the activity to the actual duration of the activity
+    // and status of the activity (finished)
+    private func updateCurrentActivity() {
+        do {
+            if let diff = self.currentActivityStart?.timeIntervalSinceNow {
+                var duration = Int(round(-diff / 60)) // convert seconds to minutes
+                if duration < 1 {
+                    duration = 1
+                }
+                try realm.write {
+                    self.currentActivity?.duration = duration
+                    self.currentActivity?.finished = true
+                }
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
     }
     
     private func moveActivityPointer() -> Bool {
